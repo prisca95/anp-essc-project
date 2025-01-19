@@ -32,50 +32,50 @@ jobs:
         with:
           ref: gh-pages
           path: gh-pages
-      - name: Copy existing content to allure-history
-        run: |
-          mkdir -p allure-history
-          if [ -d gh-pages ]; then
-            cp -r gh-pages/* allure-history/
-          fi
-      - name: Find latest folder in gh-pages
-        id: latest_folder
-        run: |
-          latest_folder=$(find gh-pages -mindepth 1 -maxdepth 1 -type d -name '[0-9]*' | sort -n | tail -n 1)
-          echo "Latest Folder: $latest_folder"
-          echo "::set-output name=latest_folder::$latest_folder"
-      - name: Parse latest summary.json
-        id: parse_json
-        run: |
-          summary_path="${{ steps.latest_folder.outputs.latest_folder }}/widgets/summary.json"
-          echo "Summary Path: $summary_path"
-          if [ -f "$summary_path" ]; then
-            cat "$summary_path"
-            passed_tests=$(jq -r '.statistic.passed' "$summary_path")
-            failed_tests=$(jq -r '.statistic.failed' "$summary_path")
-            total_tests=$((passed_tests + failed_tests))
-            if [ "$total_tests" -gt 0 ]; then
-              passing_percentage=$(( passed_tests * 100 / total_tests ))
-              failing_percentage=$(( failed_tests * 100 / total_tests ))
-            else
-              passing_percentage=0
-              failing_percentage=0
-            fi
-            echo "Passed Tests: $passed_tests"
-            echo "Failed Tests: $failed_tests"
-            echo "Passing Percentage: $passing_percentage%"
-            echo "Failing Percentage: $failing_percentage%"
-            echo "::set-output name=passing_percentage::$passing_percentage"
-            echo "::set-output name=failing_percentage::$failing_percentage"
-            echo "::set-output name=passed_tests::$passed_tests"
-            echo "::set-output name=failed_tests::$failed_tests"
-          else
-            echo "summary.json not found"
-            echo "::set-output name=passing_percentage::0"
-            echo "::set-output name=failing_percentage::0"
-            echo "::set-output name=passed_tests::0"
-            echo "::set-output name=failed_tests::0"
-          fi
+      # - name: Copy existing content to allure-history
+      #   run: |
+      #     mkdir -p allure-history
+      #     if [ -d gh-pages ]; then
+      #       cp -r gh-pages/* allure-history/
+      #     fi
+      # - name: Find latest folder in gh-pages
+      #   id: latest_folder
+      #   run: |
+      #     latest_folder=$(find gh-pages -mindepth 1 -maxdepth 1 -type d -name '[0-9]*' | sort -n | tail -n 1)
+      #     echo "Latest Folder: $latest_folder"
+      #     echo "::set-output name=latest_folder::$latest_folder"
+      # - name: Parse latest summary.json
+        # id: parse_json
+        # run: |
+        #   summary_path="${{ steps.latest_folder.outputs.latest_folder }}/widgets/summary.json"
+        #   echo "Summary Path: $summary_path"
+        #   if [ -f "$summary_path" ]; then
+        #     cat "$summary_path"
+        #     passed_tests=$(jq -r '.statistic.passed' "$summary_path")
+        #     failed_tests=$(jq -r '.statistic.failed' "$summary_path")
+        #     total_tests=$((passed_tests + failed_tests))
+        #     if [ "$total_tests" -gt 0 ]; then
+        #       passing_percentage=$(( passed_tests * 100 / total_tests ))
+        #       failing_percentage=$(( failed_tests * 100 / total_tests ))
+        #     else
+        #       passing_percentage=0
+          #     failing_percentage=0
+          #   fi
+          #   echo "Passed Tests: $passed_tests"
+          #   echo "Failed Tests: $failed_tests"
+          #   echo "Passing Percentage: $passing_percentage%"
+          #   echo "Failing Percentage: $failing_percentage%"
+          #   echo "::set-output name=passing_percentage::$passing_percentage"
+          #   echo "::set-output name=failing_percentage::$failing_percentage"
+          #   echo "::set-output name=passed_tests::$passed_tests"
+          #   echo "::set-output name=failed_tests::$failed_tests"
+          # else
+          #   echo "summary.json not found"
+          #   echo "::set-output name=passing_percentage::0"
+          #   echo "::set-output name=failing_percentage::0"
+          #   echo "::set-output name=passed_tests::0"
+          #   echo "::set-output name=failed_tests::0"
+          # fi
       - name: Update Allure Report Widget Title
         continue-on-error: true
         if: steps.build.outcome == 'success'
