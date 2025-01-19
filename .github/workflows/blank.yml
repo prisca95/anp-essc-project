@@ -22,16 +22,6 @@ jobs:
           newman run Postmans-Collections/Postmans-Collections.json --reporters cli,allure --reporter-allure-export=allure-results
           echo "Postman tests run."
       
-      - name: Check Allure results existence
-        run: |
-          if [ -d "allure-results" ]; then
-            echo "Allure results found."
-            ls -la allure-results
-          else
-            echo "ERROR: allure-results directory not found!"
-            exit 1
-          fi
-      
       - name: Get Allure history
         uses: actions/checkout@v2
         if: always()
@@ -48,16 +38,6 @@ jobs:
           gh_pages: gh-pages
           allure_report: allure-report
           allure_history: allure-history
-      
-      - name: Check Allure history existence
-        run: |
-          if [ -d "allure-history" ]; then
-            echo "Allure history found."
-            ls -la allure-history
-          else
-            echo "ERROR: allure-history directory not found!"
-            exit 1
-          fi
       
       - name: Deploy report to GitHub Pages
         id: deploy
