@@ -35307,7 +35307,7 @@
 													"var responseJSON = pm.response.json();\r",
 													"var data = responseJSON.data;\r",
 													"\r",
-													"pm.test(\"Verify that supplier is created\", function () {\r",
+													"pm.test(\"Verify that goods is created successfully\", function () {\r",
 													"    pm.expect(responseJSON.isSuccess).to.be.a(\"boolean\");\r",
 													"    pm.expect(data.message).to.be.a(\"string\").and.not.empty;\r",
 													"    pm.expect(data.id).to.be.a(\"string\").and.not.empty;\r",
