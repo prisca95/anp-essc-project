@@ -36726,6 +36726,32 @@
 									"item": [
 										{
 											"name": "Anp Goods Services Features Create Get A Product Endpoint",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"id": "5735e97c-85b2-4a0d-846c-999780958136",
+														"exec": [
+															"pm.test(\"Status code is 200\", function () {\r",
+															"    pm.response.to.have.status(200);\r",
+															"});\r",
+															"\r",
+															"var responseJSON = pm.response.json(); \r",
+															"\r",
+															"pm.test(\"Verify that product is returned\", function () {\r",
+															"\r",
+															"   // pm.expect(responseJSON.isSuccess).to.be.a(\"boolean\");\r",
+															"    pm.expect(responseJSON.data.productId).to.be.a(\"string\").and.not.empty;\r",
+															"    pm.expect(responseJSON.data.productName).to.be.a(\"string\").and.not.empty;\r",
+															"    pm.expect(responseJSON.data.price).to.be.a(\"number\");\r",
+															"\r",
+															"});"
+														],
+														"type": "text/javascript",
+														"packages": {}
+													}
+												}
+											],
 											"id": "61fb8fb6-df2d-4a79-bc63-07398fb3ea83",
 											"protocolProfileBehavior": {
 												"disableBodyPruning": true
@@ -36752,9 +36778,8 @@
 													],
 													"variable": [
 														{
-															"id": "5dfc8ed4-90f6-4415-b461-526d57634b80",
 															"key": "productId",
-															"value": "<string>",
+															"value": "{{productId}}",
 															"description": "(Required) "
 														}
 													]
@@ -41080,6 +41105,10 @@
 		},
 		{
 			"key": "tagId2",
+			"value": ""
+		},
+		{
+			"key": "productId",
 			"value": ""
 		}
 	]
