@@ -36423,6 +36423,30 @@
 							"item": [
 								{
 									"name": "Anp Goods Services Features Create Get All Products Endpoint",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "e70e1b2b-a29c-4c64-a215-d15cc261bde0",
+												"exec": [
+													"pm.collectionVariables.set(\"productId\", pm.response.json().data[0].productId);\r",
+													"\r",
+													"pm.test(\"Status code is 200\", function () {\r",
+													"    pm.response.to.have.status(200);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Verify that products are returned\", function () {\r",
+													"    pm.expect(pm.response.json().data[0].productId).to.be.a(\"string\").and.not.empty;\r",
+													"    pm.expect(pm.response.json().data[0].productName).to.be.a(\"string\").and.not.empty;\r",
+													"    pm.expect(pm.response.json().data[0].price).to.be.a(\"number\");\r",
+													"});\r",
+													""
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
 									"id": "c95dcf2d-5f72-444d-a40e-2f3d48e64585",
 									"protocolProfileBehavior": {
 										"disableBodyPruning": true
@@ -36437,7 +36461,7 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "{{baseUrl}}/api/goods/list?categoryId=<string>&supplierId=<string>&industryId=<string>&startDate=<dateTime>&endDate=<dateTime>&tagIds=<string>&tagIds=<string>&sortOrder=4&productType=1&country=<string>&productName=<string>&pageNumber=<integer>&pageSize=<integer>",
+											"raw": "{{baseUrl}}/api/goods/list?pageNumber=1&pageSize=5",
 											"host": [
 												"{{baseUrl}}"
 											],
@@ -36449,56 +36473,72 @@
 											"query": [
 												{
 													"key": "categoryId",
-													"value": "<string>"
+													"value": "37a8e66c-3820-4243-b190-08dd097ccba0",
+													"disabled": true
 												},
 												{
 													"key": "supplierId",
-													"value": "<string>"
+													"value": "<string>",
+													"disabled": true
 												},
 												{
 													"key": "industryId",
-													"value": "<string>"
+													"value": "<string>",
+													"disabled": true
 												},
 												{
 													"key": "startDate",
-													"value": "<dateTime>"
+													"value": "2024-12-01T00:00:00",
+													"description": "not working",
+													"disabled": true
 												},
 												{
 													"key": "endDate",
-													"value": "<dateTime>"
+													"value": "<dateTime>",
+													"description": "??",
+													"disabled": true
 												},
 												{
 													"key": "tagIds",
-													"value": "<string>"
+													"value": "<string>",
+													"disabled": true
 												},
 												{
 													"key": "tagIds",
-													"value": "<string>"
+													"value": "<string>",
+													"disabled": true
 												},
 												{
 													"key": "sortOrder",
-													"value": "4"
+													"value": "4",
+													"description": "??",
+													"disabled": true
 												},
 												{
 													"key": "productType",
-													"value": "1"
+													"value": "0",
+													"description": "Working",
+													"disabled": true
 												},
 												{
 													"key": "country",
-													"value": "<string>"
+													"value": "<string>",
+													"disabled": true
 												},
 												{
 													"key": "productName",
-													"value": "<string>"
+													"value": "UltraTech Pro Laptop",
+													"description": "Working",
+													"disabled": true
 												},
 												{
 													"key": "pageNumber",
-													"value": "<integer>",
+													"value": "1",
 													"description": "(Required) "
 												},
 												{
 													"key": "pageSize",
-													"value": "<integer>",
+													"value": "5",
 													"description": "(Required) "
 												}
 											]
