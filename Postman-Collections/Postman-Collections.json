@@ -30598,7 +30598,7 @@
 										"auth": {
 											"type": "bearer",
 											"bearer": {
-												"token": "{{bearerToken}}"
+												"token": "{{secondApproverBearerToken}}"
 											}
 										},
 										"method": "GET",
@@ -30707,7 +30707,7 @@
 										],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n  \"requestId\": \"{{requestId}}\",//\"fa087b2a-e880-47ac-bb83-08dd341c5bcc\",\n  \"entityId\": \"{{supplierId}}\",\n  \"entityName\": \"Supplier\",\n  \"comment\": \"<string>\",\n  \"workflowAction\": \"Approved\",\n  \"approverId\": \"{{approverUserId}}\",//login user id\n  \"descriptions\": \"Supplier verification for bailey@yopmail.com\"\n}",
+											"raw": "{\n  \"requestId\": \"98c3ae3f-3e99-4d49-9301-08dd3947d106\",// \"{{requestId}}\",//\"fa087b2a-e880-47ac-bb83-08dd341c5bcc\",\n  \"entityId\": \"{{supplierId}}\",\n  \"entityName\": \"Supplier\",\n  \"comment\": \"<string>\",\n  \"workflowAction\": \"Approved\",\n  \"approverId\": \"{{secondApproverUserId}}\",//login user id\n  \"descriptions\": \"Supplier verification for bailey@yopmail.com\"\n}",
 											"options": {
 												"raw": {
 													"headerFamily": "json",
@@ -41362,7 +41362,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "2882cef0-803f-452a-934e-8a6bd0f789c1",
+				"id": "7b67c973-776b-416f-b135-f8c63b0ac388",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -41373,7 +41373,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "cc2f5eb7-ed3b-419d-bec5-6f10d3b82074",
+				"id": "32377ffe-b34a-4e6b-83dc-1bc3d1a4c2f1",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -41501,11 +41501,13 @@
 		},
 		{
 			"key": "tagId1",
-			"value": ""
+			"value": "",
+			"disabled": true
 		},
 		{
 			"key": "tagId2",
-			"value": ""
+			"value": "",
+			"disabled": true
 		},
 		{
 			"key": "productId",
@@ -41517,14 +41519,6 @@
 		},
 		{
 			"key": "itemId",
-			"value": ""
-		},
-		{
-			"key": "tagid1",
-			"value": ""
-		},
-		{
-			"key": "tagid2",
 			"value": ""
 		}
 	]
