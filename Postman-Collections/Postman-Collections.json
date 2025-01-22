@@ -36800,10 +36800,10 @@
 															"    pm.response.to.have.status(200);\r",
 															"});\r",
 															"\r",
-															"pm.test(\"Verify that products are returned\", function () {\r",
+															"pm.test(\"Verify that item is added to cart returned\", function () {\r",
 															"        pm.expect(pm.response.json().isSuccess).to.be.a(\"boolean\");\r",
-															"    pm.expect(pm.response.json().data[0].id).to.be.a(\"string\").and.not.empty;\r",
-															"    pm.expect(pm.response.json().data[0].message).to.be.a(\"string\").and.not.empty;\r",
+															"    pm.expect(pm.response.json().data.id).to.be.a(\"string\").and.not.empty;\r",
+															"    pm.expect(pm.response.json().data.message).to.be.a(\"string\").and.not.empty;\r",
 															"});\r",
 															""
 														],
@@ -36963,7 +36963,7 @@
 												],
 												"body": {
 													"mode": "raw",
-													"raw": "{\n // \"orderId\": \"<string>\",\n  \"customerId\": \"{{supplierId}}\",\n  \"itemsList\": [\n    {\n      \"quantity\": \"2\",\n      \"cost\": \"100\",\n      \"productId\": \"{{productId}}\"\n    }\n    // {\n    //   \"quantity\": \"<integer>\",\n    //   \"cost\": \"<number>\",\n    //   \"productId\": \"<string>\"\n    // }\n  ]\n}",
+													"raw": "{\n // \"orderId\": \"<string>\",\n  \"customerId\": \"\",\n  \"itemsList\": [\n    {\n      \"quantity\": \"1\",\n      \"cost\": \"100\",\n      \"productId\": \"{{productId}}\"\n    }\n    // {\n    //   \"quantity\": \"<integer>\",\n    //   \"cost\": \"<number>\",\n    //   \"productId\": \"<string>\"\n    // }\n  ]\n}",
 													"options": {
 														"raw": {
 															"headerFamily": "json",
