@@ -36916,6 +36916,266 @@
 													"body": ""
 												}
 											]
+										},
+										{
+											"name": "Anp Goods Services Features Cart Add Cart Item Endpoint Copy",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"id": "8829db34-caf1-4d2e-96a2-57294db08d92",
+														"exec": [
+															"\r",
+															"pm.test(\"Status code is 200\", function () {\r",
+															"    pm.response.to.have.status(200);\r",
+															"});\r",
+															"\r",
+															"pm.test(\"Verify that products are returned\", function () {\r",
+															"        pm.expect(pm.response.json().isSuccess).to.be.a(\"boolean\");\r",
+															"    pm.expect(pm.response.json().data[0].id).to.be.a(\"string\").and.not.empty;\r",
+															"    pm.expect(pm.response.json().data[0].message).to.be.a(\"string\").and.not.empty;\r",
+															"});\r",
+															""
+														],
+														"type": "text/javascript",
+														"packages": {}
+													}
+												}
+											],
+											"id": "c4bcdfea-6399-4d51-9b3d-7b01df852875",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": {
+														"token": "{{bearerToken}}"
+													}
+												},
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n // \"orderId\": \"<string>\",\n  \"customerId\": \"{{supplierId}}\",\n  \"itemsList\": [\n    {\n      \"quantity\": \"1\",\n      \"cost\": \"1000\",\n      \"productId\": \"{{productId}}\"\n    }\n    // {\n    //   \"quantity\": \"<integer>\",\n    //   \"cost\": \"<number>\",\n    //   \"productId\": \"<string>\"\n    // }\n  ]\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl}}/api/goods/cart/add"
+											},
+											"response": [
+												{
+													"id": "052eabd6-67b0-40fc-b29e-3ee5d7f3fde7",
+													"name": "Success",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"orderId\": \"<string>\",\n  \"customerId\": \"<string>\",\n  \"itemsList\": [\n    {\n      \"quantity\": \"<integer>\",\n      \"cost\": \"<number>\",\n      \"productId\": \"<string>\"\n    },\n    {\n      \"quantity\": \"<integer>\",\n      \"cost\": \"<number>\",\n      \"productId\": \"<string>\"\n    }\n  ]\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl}}/api/goods/cart/add"
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												},
+												{
+													"id": "78e98077-678f-48b3-a31f-50311dcfc1aa",
+													"name": "Unauthorized",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"orderId\": \"<string>\",\n  \"customerId\": \"<string>\",\n  \"itemsList\": [\n    {\n      \"quantity\": \"<integer>\",\n      \"cost\": \"<number>\",\n      \"productId\": \"<string>\"\n    },\n    {\n      \"quantity\": \"<integer>\",\n      \"cost\": \"<number>\",\n      \"productId\": \"<string>\"\n    }\n  ]\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl}}/api/goods/cart/add"
+													},
+													"status": "Unauthorized",
+													"code": 401,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												}
+											]
+										},
+										{
+											"name": "Anp Goods Services Features Cart Add Cart Item Endpoint Copy 2",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"id": "8829db34-caf1-4d2e-96a2-57294db08d92",
+														"exec": [
+															"\r",
+															"pm.test(\"Status code is 200\", function () {\r",
+															"    pm.response.to.have.status(200);\r",
+															"});\r",
+															"\r",
+															"pm.test(\"Verify that products are returned\", function () {\r",
+															"        pm.expect(pm.response.json().isSuccess).to.be.a(\"boolean\");\r",
+															"    pm.expect(pm.response.json().data[0].id).to.be.a(\"string\").and.not.empty;\r",
+															"    pm.expect(pm.response.json().data[0].message).to.be.a(\"string\").and.not.empty;\r",
+															"});\r",
+															""
+														],
+														"type": "text/javascript",
+														"packages": {}
+													}
+												}
+											],
+											"id": "52a268df-6302-4869-814f-32499da56649",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": {
+														"token": "{{bearerToken}}"
+													}
+												},
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n // \"orderId\": \"<string>\",\n  \"customerId\": \"{{supplierId}}\",\n  \"itemsList\": [\n    {\n      \"quantity\": \"1\",\n      \"cost\": \"1000\",\n      \"productId\": \"{{productId}}\"\n    }\n    // {\n    //   \"quantity\": \"<integer>\",\n    //   \"cost\": \"<number>\",\n    //   \"productId\": \"<string>\"\n    // }\n  ]\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl}}/api/goods/cart/add"
+											},
+											"response": [
+												{
+													"id": "68a2fd69-c5e8-436c-9f0c-b5f32481feb8",
+													"name": "Success",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"orderId\": \"<string>\",\n  \"customerId\": \"<string>\",\n  \"itemsList\": [\n    {\n      \"quantity\": \"<integer>\",\n      \"cost\": \"<number>\",\n      \"productId\": \"<string>\"\n    },\n    {\n      \"quantity\": \"<integer>\",\n      \"cost\": \"<number>\",\n      \"productId\": \"<string>\"\n    }\n  ]\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl}}/api/goods/cart/add"
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												},
+												{
+													"id": "f779c97a-31af-4dcd-8571-67a44ddf5c2c",
+													"name": "Unauthorized",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"orderId\": \"<string>\",\n  \"customerId\": \"<string>\",\n  \"itemsList\": [\n    {\n      \"quantity\": \"<integer>\",\n      \"cost\": \"<number>\",\n      \"productId\": \"<string>\"\n    },\n    {\n      \"quantity\": \"<integer>\",\n      \"cost\": \"<number>\",\n      \"productId\": \"<string>\"\n    }\n  ]\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl}}/api/goods/cart/add"
+													},
+													"status": "Unauthorized",
+													"code": 401,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												}
+											]
 										}
 									],
 									"id": "033f0fa7-dde2-4c92-8c22-7e8a419ff8bc"
@@ -37370,6 +37630,31 @@
 									"item": [
 										{
 											"name": "Anp Goods Services Features Cart Get My Order Endpoint",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"id": "ee524963-f041-4443-b21b-739be2978dbe",
+														"exec": [
+															"pm.test(\"Status code is 200\", function () {\r",
+															"    pm.response.to.have.status(200);\r",
+															"});\r",
+															"\r",
+															"pm.test(\"Verify that items in cart are returned\", function () {\r",
+															"    pm.expect(pm.response.json().data[0].orderId).to.be.a(\"string\").and.not.empty;\r",
+															"    pm.expect(pm.response.json().data[0].cost).to.be.a(\"number\");\r",
+															"        pm.expect(pm.response.json().data[0].quantity).to.be.a(\"number\");\r",
+															"                pm.expect(pm.response.json().data[0].itemId).to.be.a(\"string\").and.not.be.empty;\r",
+															"\r",
+															"\r",
+															"});\r",
+															""
+														],
+														"type": "text/javascript",
+														"packages": {}
+													}
+												}
+											],
 											"id": "564e446e-0f42-4537-825f-d5f75bc121b7",
 											"protocolProfileBehavior": {
 												"disableBodyPruning": true
@@ -37384,7 +37669,7 @@
 												"method": "GET",
 												"header": [],
 												"url": {
-													"raw": "{{baseUrl}}/api/goods/cart/myOrder?pageNumber=<integer>&pageSize=<integer>",
+													"raw": "{{baseUrl}}/api/goods/cart/myOrder?pageNumber=1&pageSize=10",
 													"host": [
 														"{{baseUrl}}"
 													],
@@ -37397,12 +37682,12 @@
 													"query": [
 														{
 															"key": "pageNumber",
-															"value": "<integer>",
+															"value": "1",
 															"description": "(Required) "
 														},
 														{
 															"key": "pageSize",
-															"value": "<integer>",
+															"value": "10",
 															"description": "(Required) "
 														}
 													]
