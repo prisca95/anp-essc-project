@@ -1174,7 +1174,7 @@
 										],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n    //\"email\": \"{{email}}\",\n // \"userName\": \"bailey@yopmail.com\",//\"yinka@yopmail.com\",\n  // \"userName\":\"cesaltino.babo@anp.tl\", //initiator\n   \"userName\": \"abel.saldanha@anp.tl\", //1st approver\n  // \"userName\": \"jaime.ximenes@anp.tl\", //2nd approver\n  \"password\": \"Password12@@\"\n}",
+											"raw": "{\n    //\"email\": \"{{email}}\",\n  \"userName\": \"varun@yopmail.com\",//\"yinka@yopmail.com\",\n  // \"userName\":\"cesaltino.babo@anp.tl\", //initiator\n //  \"userName\": \"abel.saldanha@anp.tl\", //1st approver\n  // \"userName\": \"jaime.ximenes@anp.tl\", //2nd approver\n  \"password\": \"Password12@@\"\n}",
 											"options": {
 												"raw": {
 													"headerFamily": "json",
@@ -36925,6 +36925,32 @@
 									"item": [
 										{
 											"name": "Anp Goods Services Features Cart Get All Carts Endpoint",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"id": "b9eee099-376a-4791-930e-ee4b64dc9783",
+														"exec": [
+															"pm.collectionVariables.set(\"orderId\", pm.response.json().data[0].orderId);\r",
+															"pm.test(\"Status code is 200\", function () {\r",
+															"    pm.response.to.have.status(200);\r",
+															"});\r",
+															"\r",
+															"pm.test(\"Verify that items in cart are returned\", function () {\r",
+															"    pm.expect(pm.response.json().data[0].orderId).to.be.a(\"string\").and.not.empty;\r",
+															"    pm.expect(pm.response.json().data[0].cost).to.be.a(\"number\");\r",
+															"        pm.expect(pm.response.json().data[0].quantity).to.be.a(\"number\");\r",
+															"                pm.expect(pm.response.json().data[0].itemId).to.be.a(\"string\").and.not.be.empty;\r",
+															"\r",
+															"\r",
+															"});\r",
+															""
+														],
+														"type": "text/javascript",
+														"packages": {}
+													}
+												}
+											],
 											"id": "db915329-2671-45fb-999d-9da505f97e30",
 											"protocolProfileBehavior": {
 												"disableBodyPruning": true
@@ -36939,7 +36965,7 @@
 												"method": "GET",
 												"header": [],
 												"url": {
-													"raw": "{{baseUrl}}/api/goods/cart/list?customerId=<string>&pageNumber=<integer>&pageSize=<integer>",
+													"raw": "{{baseUrl}}/api/goods/cart/list?customerId={{supplierId}}&pageNumber=1&pageSize=10",
 													"host": [
 														"{{baseUrl}}"
 													],
@@ -36952,17 +36978,17 @@
 													"query": [
 														{
 															"key": "customerId",
-															"value": "<string>",
+															"value": "{{supplierId}}",
 															"description": "(Required) "
 														},
 														{
 															"key": "pageNumber",
-															"value": "<integer>",
+															"value": "1",
 															"description": "(Required) "
 														},
 														{
 															"key": "pageSize",
-															"value": "<integer>",
+															"value": "10",
 															"description": "(Required) "
 														}
 													]
@@ -37073,6 +37099,119 @@
 										}
 									],
 									"id": "af49fa04-bf82-4788-b602-0b427c27dc2f"
+								},
+								{
+									"name": "remove",
+									"item": [
+										{
+											"name": "Anp Goods Services Features Cart Remove Cart Item Endpoint",
+											"id": "d7f49f22-57ec-4ee9-b23a-8778be2b77de",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": {
+														"token": "{{bearerToken}}"
+													}
+												},
+												"method": "DELETE",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"itemId\": \"<string>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl}}/api/goods/cart/remove"
+											},
+											"response": [
+												{
+													"id": "8807b228-1876-4427-b4e8-465dda18164f",
+													"name": "Success",
+													"originalRequest": {
+														"method": "DELETE",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"itemId\": \"<string>\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl}}/api/goods/cart/remove"
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												},
+												{
+													"id": "2f116dff-1184-4d86-85c8-79569b04c0df",
+													"name": "Unauthorized",
+													"originalRequest": {
+														"method": "DELETE",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"itemId\": \"<string>\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl}}/api/goods/cart/remove"
+													},
+													"status": "Unauthorized",
+													"code": 401,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												}
+											]
+										}
+									],
+									"id": "6ae4f97f-6180-4989-b5a8-26ed109f0f42"
 								},
 								{
 									"name": "myOrder",
@@ -37212,119 +37351,6 @@
 										}
 									],
 									"id": "dc4eff6a-2e2a-4884-84da-c3c569564687"
-								},
-								{
-									"name": "remove",
-									"item": [
-										{
-											"name": "Anp Goods Services Features Cart Remove Cart Item Endpoint",
-											"id": "d7f49f22-57ec-4ee9-b23a-8778be2b77de",
-											"protocolProfileBehavior": {
-												"disableBodyPruning": true
-											},
-											"request": {
-												"auth": {
-													"type": "bearer",
-													"bearer": {
-														"token": "{{bearerToken}}"
-													}
-												},
-												"method": "DELETE",
-												"header": [
-													{
-														"key": "Content-Type",
-														"value": "application/json"
-													}
-												],
-												"body": {
-													"mode": "raw",
-													"raw": "{\n  \"itemId\": \"<string>\"\n}",
-													"options": {
-														"raw": {
-															"headerFamily": "json",
-															"language": "json"
-														}
-													}
-												},
-												"url": "{{baseUrl}}/api/goods/cart/remove"
-											},
-											"response": [
-												{
-													"id": "8807b228-1876-4427-b4e8-465dda18164f",
-													"name": "Success",
-													"originalRequest": {
-														"method": "DELETE",
-														"header": [
-															{
-																"key": "Content-Type",
-																"value": "application/json"
-															},
-															{
-																"description": "Added as a part of security scheme: bearer",
-																"key": "Authorization",
-																"value": "Bearer <token>"
-															}
-														],
-														"body": {
-															"mode": "raw",
-															"raw": "{\n  \"itemId\": \"<string>\"\n}",
-															"options": {
-																"raw": {
-																	"headerFamily": "json",
-																	"language": "json"
-																}
-															}
-														},
-														"url": "{{baseUrl}}/api/goods/cart/remove"
-													},
-													"status": "OK",
-													"code": 200,
-													"_postman_previewlanguage": "text",
-													"header": [],
-													"cookie": [],
-													"responseTime": null,
-													"body": ""
-												},
-												{
-													"id": "2f116dff-1184-4d86-85c8-79569b04c0df",
-													"name": "Unauthorized",
-													"originalRequest": {
-														"method": "DELETE",
-														"header": [
-															{
-																"key": "Content-Type",
-																"value": "application/json"
-															},
-															{
-																"description": "Added as a part of security scheme: bearer",
-																"key": "Authorization",
-																"value": "Bearer <token>"
-															}
-														],
-														"body": {
-															"mode": "raw",
-															"raw": "{\n  \"itemId\": \"<string>\"\n}",
-															"options": {
-																"raw": {
-																	"headerFamily": "json",
-																	"language": "json"
-																}
-															}
-														},
-														"url": "{{baseUrl}}/api/goods/cart/remove"
-													},
-													"status": "Unauthorized",
-													"code": 401,
-													"_postman_previewlanguage": "text",
-													"header": [],
-													"cookie": [],
-													"responseTime": null,
-													"body": ""
-												}
-											]
-										}
-									],
-									"id": "6ae4f97f-6180-4989-b5a8-26ed109f0f42"
 								}
 							],
 							"id": "9b4c29cb-bd4f-4621-9e67-32e2fd524621"
