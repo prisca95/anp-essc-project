@@ -37797,6 +37797,740 @@
 					"id": "d5e0db51-be4c-4d19-888b-ac38554471f5"
 				},
 				{
+					"name": "review",
+					"item": [
+						{
+							"name": "create",
+							"item": [
+								{
+									"name": "Anp Goods Services Features Create Create Product Review Endpoint1",
+									"id": "50fa9827-d686-4ca7-aa93-2cdf2929b36d",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": {
+												"token": "{{bearerToken}}"
+											}
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"reviewId\": \"<string>\",\n  \"reviewerName\": \"<string>\",\n  \"comment\": \"<string>\",\n  \"rating\": 4,\n  \"productId\": \"<string>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{baseUrl}}/api/goods/review/create"
+									},
+									"response": [
+										{
+											"id": "fb1541a9-823e-47e5-a9bc-87053dea5532",
+											"name": "Success",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"description": "Added as a part of security scheme: bearer",
+														"key": "Authorization",
+														"value": "Bearer <token>"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"reviewId\": \"<string>\",\n  \"reviewerName\": \"<string>\",\n  \"comment\": \"<string>\",\n  \"rating\": 4,\n  \"productId\": \"<string>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl}}/api/goods/review/create"
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"responseTime": null,
+											"body": ""
+										},
+										{
+											"id": "17864410-4472-4728-8fbd-6b655399b47e",
+											"name": "Unauthorized",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"description": "Added as a part of security scheme: bearer",
+														"key": "Authorization",
+														"value": "Bearer <token>"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"reviewId\": \"<string>\",\n  \"reviewerName\": \"<string>\",\n  \"comment\": \"<string>\",\n  \"rating\": 4,\n  \"productId\": \"<string>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl}}/api/goods/review/create"
+											},
+											"status": "Unauthorized",
+											"code": 401,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"responseTime": null,
+											"body": ""
+										}
+									]
+								}
+							],
+							"id": "53db11ee-4060-479f-8726-f1a2e71ce5fc"
+						},
+						{
+							"name": "update",
+							"item": [
+								{
+									"name": "Anp Goods Services Features Create Create Product Review Endpoint2",
+									"id": "33f35a2e-0b01-4c5a-9107-74d6443980f4",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": {
+												"token": "{{bearerToken}}"
+											}
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"reviewId\": \"<string>\",\n  \"reviewerName\": \"<string>\",\n  \"comment\": \"<string>\",\n  \"rating\": 4,\n  \"productId\": \"<string>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{baseUrl}}/api/goods/review/update"
+									},
+									"response": [
+										{
+											"id": "4ae73027-b9d5-486a-9c45-8d2b25257f06",
+											"name": "Success",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"description": "Added as a part of security scheme: bearer",
+														"key": "Authorization",
+														"value": "Bearer <token>"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"reviewId\": \"<string>\",\n  \"reviewerName\": \"<string>\",\n  \"comment\": \"<string>\",\n  \"rating\": 4,\n  \"productId\": \"<string>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl}}/api/goods/review/update"
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"responseTime": null,
+											"body": ""
+										},
+										{
+											"id": "98b2c63d-3731-43e5-bde7-56bdc42da3cf",
+											"name": "Unauthorized",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"description": "Added as a part of security scheme: bearer",
+														"key": "Authorization",
+														"value": "Bearer <token>"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"reviewId\": \"<string>\",\n  \"reviewerName\": \"<string>\",\n  \"comment\": \"<string>\",\n  \"rating\": 4,\n  \"productId\": \"<string>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl}}/api/goods/review/update"
+											},
+											"status": "Unauthorized",
+											"code": 401,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"responseTime": null,
+											"body": ""
+										}
+									]
+								}
+							],
+							"id": "b7adaaa1-2b3c-48b9-96f8-084966106c92"
+						},
+						{
+							"name": "GetReview",
+							"item": [
+								{
+									"name": "{reviewId}",
+									"item": [
+										{
+											"name": "Anp Goods Services Features Create Get A Product Review Endpoint",
+											"id": "c5e634bc-fb11-4a5c-a62d-da3012547a45",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": {
+														"token": "{{bearerToken}}"
+													}
+												},
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/goods/review/GetReview/:reviewId",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"goods",
+														"review",
+														"GetReview",
+														":reviewId"
+													],
+													"variable": [
+														{
+															"id": "4d1901df-59ba-4af5-ab2c-a8aa8e9e5203",
+															"key": "reviewId",
+															"value": "<string>",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"response": [
+												{
+													"id": "f8bffdb4-868c-4700-b630-770975b49d79",
+													"name": "Success",
+													"originalRequest": {
+														"method": "GET",
+														"header": [
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/goods/review/GetReview/:reviewId",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"goods",
+																"review",
+																"GetReview",
+																":reviewId"
+															],
+															"variable": [
+																{
+																	"key": "reviewId"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												},
+												{
+													"id": "128b8092-6d6e-4df0-b33f-4b7c6d3a4ec6",
+													"name": "Unauthorized",
+													"originalRequest": {
+														"method": "GET",
+														"header": [
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/goods/review/GetReview/:reviewId",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"goods",
+																"review",
+																"GetReview",
+																":reviewId"
+															],
+															"variable": [
+																{
+																	"key": "reviewId"
+																}
+															]
+														}
+													},
+													"status": "Unauthorized",
+													"code": 401,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												}
+											]
+										}
+									],
+									"id": "d26687b2-7ff3-4532-8505-b9c9bb3422a4"
+								}
+							],
+							"id": "7d5f9f1c-720f-47a8-90b4-37690ec81c08"
+						},
+						{
+							"name": "getProductReviews",
+							"item": [
+								{
+									"name": "Anp Goods Services Features Create Get Product Reviews Endpoint",
+									"id": "18e03e7b-27e7-4122-b8ca-3971ce457e91",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": {
+												"token": "{{bearerToken}}"
+											}
+										},
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/goods/review/getProductReviews?productId=<string>",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"goods",
+												"review",
+												"getProductReviews"
+											],
+											"query": [
+												{
+													"key": "productId",
+													"value": "<string>",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"id": "d8f9ac58-67fd-4e04-9749-ed594e34117c",
+											"name": "Success",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"description": "Added as a part of security scheme: bearer",
+														"key": "Authorization",
+														"value": "Bearer <token>"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/goods/review/getProductReviews?productId=<string>",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"goods",
+														"review",
+														"getProductReviews"
+													],
+													"query": [
+														{
+															"description": "(Required) ",
+															"key": "productId",
+															"value": "<string>"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"responseTime": null,
+											"body": ""
+										},
+										{
+											"id": "442eae1d-0bbd-4568-ba84-48b83547e1d2",
+											"name": "Unauthorized",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"description": "Added as a part of security scheme: bearer",
+														"key": "Authorization",
+														"value": "Bearer <token>"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/goods/review/getProductReviews?productId=<string>",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"goods",
+														"review",
+														"getProductReviews"
+													],
+													"query": [
+														{
+															"description": "(Required) ",
+															"key": "productId",
+															"value": "<string>"
+														}
+													]
+												}
+											},
+											"status": "Unauthorized",
+											"code": 401,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"responseTime": null,
+											"body": ""
+										}
+									]
+								}
+							],
+							"id": "45b2f5f8-7545-439a-a785-24edc6e50faf"
+						},
+						{
+							"name": "getSupplierRating",
+							"item": [
+								{
+									"name": "Anp Goods Services Features Create Get Supplier Rating Endpoint",
+									"id": "83d95e0e-7fdf-4187-bd47-b5247bc5730d",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": {
+												"token": "{{bearerToken}}"
+											}
+										},
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/goods/review/getSupplierRating?supplierId=<string>",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"goods",
+												"review",
+												"getSupplierRating"
+											],
+											"query": [
+												{
+													"key": "supplierId",
+													"value": "<string>",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"id": "3427c913-44f4-4bcb-b1c5-a56f43733848",
+											"name": "Success",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"description": "Added as a part of security scheme: bearer",
+														"key": "Authorization",
+														"value": "Bearer <token>"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/goods/review/getSupplierRating?supplierId=<string>",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"goods",
+														"review",
+														"getSupplierRating"
+													],
+													"query": [
+														{
+															"description": "(Required) ",
+															"key": "supplierId",
+															"value": "<string>"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"responseTime": null,
+											"body": ""
+										},
+										{
+											"id": "fe94953d-fd21-4beb-b5eb-6bc678b917ea",
+											"name": "Unauthorized",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"description": "Added as a part of security scheme: bearer",
+														"key": "Authorization",
+														"value": "Bearer <token>"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/goods/review/getSupplierRating?supplierId=<string>",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"goods",
+														"review",
+														"getSupplierRating"
+													],
+													"query": [
+														{
+															"description": "(Required) ",
+															"key": "supplierId",
+															"value": "<string>"
+														}
+													]
+												}
+											},
+											"status": "Unauthorized",
+											"code": 401,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"responseTime": null,
+											"body": ""
+										}
+									]
+								}
+							],
+							"id": "1e7ce43e-b9bb-4705-977a-dfbde98f486f"
+						},
+						{
+							"name": "getSupplierReview",
+							"item": [
+								{
+									"name": "Anp Goods Services Features Create Get Supplier Review Endpoint",
+									"id": "1669be11-d429-495e-b93f-694950df90c1",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": {
+												"token": "{{bearerToken}}"
+											}
+										},
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/goods/review/getSupplierReview?supplierId=<string>",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"goods",
+												"review",
+												"getSupplierReview"
+											],
+											"query": [
+												{
+													"key": "supplierId",
+													"value": "<string>",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"id": "aaba1e1f-be6b-442b-9802-7f2c3a3020f4",
+											"name": "Success",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"description": "Added as a part of security scheme: bearer",
+														"key": "Authorization",
+														"value": "Bearer <token>"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/goods/review/getSupplierReview?supplierId=<string>",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"goods",
+														"review",
+														"getSupplierReview"
+													],
+													"query": [
+														{
+															"description": "(Required) ",
+															"key": "supplierId",
+															"value": "<string>"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"responseTime": null,
+											"body": ""
+										},
+										{
+											"id": "629fe01c-a6de-455e-8286-82b32a3b5600",
+											"name": "Unauthorized",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"description": "Added as a part of security scheme: bearer",
+														"key": "Authorization",
+														"value": "Bearer <token>"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/goods/review/getSupplierReview?supplierId=<string>",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"goods",
+														"review",
+														"getSupplierReview"
+													],
+													"query": [
+														{
+															"description": "(Required) ",
+															"key": "supplierId",
+															"value": "<string>"
+														}
+													]
+												}
+											},
+											"status": "Unauthorized",
+											"code": 401,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"responseTime": null,
+											"body": ""
+										}
+									]
+								}
+							],
+							"id": "58bc993e-fe99-407c-b3b0-d7c095230db1"
+						}
+					],
+					"id": "90d3ea8f-a9f5-4303-ac6a-757c41c9f500"
+				},
+				{
 					"name": "operator",
 					"item": [
 						{
@@ -38618,740 +39352,6 @@
 						}
 					],
 					"id": "892d1054-674b-4507-bc2f-0b6a2e64a52c"
-				},
-				{
-					"name": "review",
-					"item": [
-						{
-							"name": "create",
-							"item": [
-								{
-									"name": "Anp Goods Services Features Create Create Product Review Endpoint1",
-									"id": "50fa9827-d686-4ca7-aa93-2cdf2929b36d",
-									"protocolProfileBehavior": {
-										"disableBodyPruning": true
-									},
-									"request": {
-										"auth": {
-											"type": "bearer",
-											"bearer": {
-												"token": "{{bearerToken}}"
-											}
-										},
-										"method": "POST",
-										"header": [
-											{
-												"key": "Content-Type",
-												"value": "application/json"
-											}
-										],
-										"body": {
-											"mode": "raw",
-											"raw": "{\n  \"reviewId\": \"<string>\",\n  \"reviewerName\": \"<string>\",\n  \"comment\": \"<string>\",\n  \"rating\": 4,\n  \"productId\": \"<string>\"\n}",
-											"options": {
-												"raw": {
-													"headerFamily": "json",
-													"language": "json"
-												}
-											}
-										},
-										"url": "{{baseUrl}}/api/goods/review/create"
-									},
-									"response": [
-										{
-											"id": "fb1541a9-823e-47e5-a9bc-87053dea5532",
-											"name": "Success",
-											"originalRequest": {
-												"method": "POST",
-												"header": [
-													{
-														"key": "Content-Type",
-														"value": "application/json"
-													},
-													{
-														"description": "Added as a part of security scheme: bearer",
-														"key": "Authorization",
-														"value": "Bearer <token>"
-													}
-												],
-												"body": {
-													"mode": "raw",
-													"raw": "{\n  \"reviewId\": \"<string>\",\n  \"reviewerName\": \"<string>\",\n  \"comment\": \"<string>\",\n  \"rating\": 4,\n  \"productId\": \"<string>\"\n}",
-													"options": {
-														"raw": {
-															"headerFamily": "json",
-															"language": "json"
-														}
-													}
-												},
-												"url": "{{baseUrl}}/api/goods/review/create"
-											},
-											"status": "OK",
-											"code": 200,
-											"_postman_previewlanguage": "text",
-											"header": [],
-											"cookie": [],
-											"responseTime": null,
-											"body": ""
-										},
-										{
-											"id": "17864410-4472-4728-8fbd-6b655399b47e",
-											"name": "Unauthorized",
-											"originalRequest": {
-												"method": "POST",
-												"header": [
-													{
-														"key": "Content-Type",
-														"value": "application/json"
-													},
-													{
-														"description": "Added as a part of security scheme: bearer",
-														"key": "Authorization",
-														"value": "Bearer <token>"
-													}
-												],
-												"body": {
-													"mode": "raw",
-													"raw": "{\n  \"reviewId\": \"<string>\",\n  \"reviewerName\": \"<string>\",\n  \"comment\": \"<string>\",\n  \"rating\": 4,\n  \"productId\": \"<string>\"\n}",
-													"options": {
-														"raw": {
-															"headerFamily": "json",
-															"language": "json"
-														}
-													}
-												},
-												"url": "{{baseUrl}}/api/goods/review/create"
-											},
-											"status": "Unauthorized",
-											"code": 401,
-											"_postman_previewlanguage": "text",
-											"header": [],
-											"cookie": [],
-											"responseTime": null,
-											"body": ""
-										}
-									]
-								}
-							],
-							"id": "53db11ee-4060-479f-8726-f1a2e71ce5fc"
-						},
-						{
-							"name": "update",
-							"item": [
-								{
-									"name": "Anp Goods Services Features Create Create Product Review Endpoint2",
-									"id": "33f35a2e-0b01-4c5a-9107-74d6443980f4",
-									"protocolProfileBehavior": {
-										"disableBodyPruning": true
-									},
-									"request": {
-										"auth": {
-											"type": "bearer",
-											"bearer": {
-												"token": "{{bearerToken}}"
-											}
-										},
-										"method": "POST",
-										"header": [
-											{
-												"key": "Content-Type",
-												"value": "application/json"
-											}
-										],
-										"body": {
-											"mode": "raw",
-											"raw": "{\n  \"reviewId\": \"<string>\",\n  \"reviewerName\": \"<string>\",\n  \"comment\": \"<string>\",\n  \"rating\": 4,\n  \"productId\": \"<string>\"\n}",
-											"options": {
-												"raw": {
-													"headerFamily": "json",
-													"language": "json"
-												}
-											}
-										},
-										"url": "{{baseUrl}}/api/goods/review/update"
-									},
-									"response": [
-										{
-											"id": "4ae73027-b9d5-486a-9c45-8d2b25257f06",
-											"name": "Success",
-											"originalRequest": {
-												"method": "POST",
-												"header": [
-													{
-														"key": "Content-Type",
-														"value": "application/json"
-													},
-													{
-														"description": "Added as a part of security scheme: bearer",
-														"key": "Authorization",
-														"value": "Bearer <token>"
-													}
-												],
-												"body": {
-													"mode": "raw",
-													"raw": "{\n  \"reviewId\": \"<string>\",\n  \"reviewerName\": \"<string>\",\n  \"comment\": \"<string>\",\n  \"rating\": 4,\n  \"productId\": \"<string>\"\n}",
-													"options": {
-														"raw": {
-															"headerFamily": "json",
-															"language": "json"
-														}
-													}
-												},
-												"url": "{{baseUrl}}/api/goods/review/update"
-											},
-											"status": "OK",
-											"code": 200,
-											"_postman_previewlanguage": "text",
-											"header": [],
-											"cookie": [],
-											"responseTime": null,
-											"body": ""
-										},
-										{
-											"id": "98b2c63d-3731-43e5-bde7-56bdc42da3cf",
-											"name": "Unauthorized",
-											"originalRequest": {
-												"method": "POST",
-												"header": [
-													{
-														"key": "Content-Type",
-														"value": "application/json"
-													},
-													{
-														"description": "Added as a part of security scheme: bearer",
-														"key": "Authorization",
-														"value": "Bearer <token>"
-													}
-												],
-												"body": {
-													"mode": "raw",
-													"raw": "{\n  \"reviewId\": \"<string>\",\n  \"reviewerName\": \"<string>\",\n  \"comment\": \"<string>\",\n  \"rating\": 4,\n  \"productId\": \"<string>\"\n}",
-													"options": {
-														"raw": {
-															"headerFamily": "json",
-															"language": "json"
-														}
-													}
-												},
-												"url": "{{baseUrl}}/api/goods/review/update"
-											},
-											"status": "Unauthorized",
-											"code": 401,
-											"_postman_previewlanguage": "text",
-											"header": [],
-											"cookie": [],
-											"responseTime": null,
-											"body": ""
-										}
-									]
-								}
-							],
-							"id": "b7adaaa1-2b3c-48b9-96f8-084966106c92"
-						},
-						{
-							"name": "GetReview",
-							"item": [
-								{
-									"name": "{reviewId}",
-									"item": [
-										{
-											"name": "Anp Goods Services Features Create Get A Product Review Endpoint",
-											"id": "c5e634bc-fb11-4a5c-a62d-da3012547a45",
-											"protocolProfileBehavior": {
-												"disableBodyPruning": true
-											},
-											"request": {
-												"auth": {
-													"type": "bearer",
-													"bearer": {
-														"token": "{{bearerToken}}"
-													}
-												},
-												"method": "GET",
-												"header": [],
-												"url": {
-													"raw": "{{baseUrl}}/api/goods/review/GetReview/:reviewId",
-													"host": [
-														"{{baseUrl}}"
-													],
-													"path": [
-														"api",
-														"goods",
-														"review",
-														"GetReview",
-														":reviewId"
-													],
-													"variable": [
-														{
-															"id": "4d1901df-59ba-4af5-ab2c-a8aa8e9e5203",
-															"key": "reviewId",
-															"value": "<string>",
-															"description": "(Required) "
-														}
-													]
-												}
-											},
-											"response": [
-												{
-													"id": "f8bffdb4-868c-4700-b630-770975b49d79",
-													"name": "Success",
-													"originalRequest": {
-														"method": "GET",
-														"header": [
-															{
-																"description": "Added as a part of security scheme: bearer",
-																"key": "Authorization",
-																"value": "Bearer <token>"
-															}
-														],
-														"url": {
-															"raw": "{{baseUrl}}/api/goods/review/GetReview/:reviewId",
-															"host": [
-																"{{baseUrl}}"
-															],
-															"path": [
-																"api",
-																"goods",
-																"review",
-																"GetReview",
-																":reviewId"
-															],
-															"variable": [
-																{
-																	"key": "reviewId"
-																}
-															]
-														}
-													},
-													"status": "OK",
-													"code": 200,
-													"_postman_previewlanguage": "text",
-													"header": [],
-													"cookie": [],
-													"responseTime": null,
-													"body": ""
-												},
-												{
-													"id": "128b8092-6d6e-4df0-b33f-4b7c6d3a4ec6",
-													"name": "Unauthorized",
-													"originalRequest": {
-														"method": "GET",
-														"header": [
-															{
-																"description": "Added as a part of security scheme: bearer",
-																"key": "Authorization",
-																"value": "Bearer <token>"
-															}
-														],
-														"url": {
-															"raw": "{{baseUrl}}/api/goods/review/GetReview/:reviewId",
-															"host": [
-																"{{baseUrl}}"
-															],
-															"path": [
-																"api",
-																"goods",
-																"review",
-																"GetReview",
-																":reviewId"
-															],
-															"variable": [
-																{
-																	"key": "reviewId"
-																}
-															]
-														}
-													},
-													"status": "Unauthorized",
-													"code": 401,
-													"_postman_previewlanguage": "text",
-													"header": [],
-													"cookie": [],
-													"responseTime": null,
-													"body": ""
-												}
-											]
-										}
-									],
-									"id": "d26687b2-7ff3-4532-8505-b9c9bb3422a4"
-								}
-							],
-							"id": "7d5f9f1c-720f-47a8-90b4-37690ec81c08"
-						},
-						{
-							"name": "getProductReviews",
-							"item": [
-								{
-									"name": "Anp Goods Services Features Create Get Product Reviews Endpoint",
-									"id": "18e03e7b-27e7-4122-b8ca-3971ce457e91",
-									"protocolProfileBehavior": {
-										"disableBodyPruning": true
-									},
-									"request": {
-										"auth": {
-											"type": "bearer",
-											"bearer": {
-												"token": "{{bearerToken}}"
-											}
-										},
-										"method": "GET",
-										"header": [],
-										"url": {
-											"raw": "{{baseUrl}}/api/goods/review/getProductReviews?productId=<string>",
-											"host": [
-												"{{baseUrl}}"
-											],
-											"path": [
-												"api",
-												"goods",
-												"review",
-												"getProductReviews"
-											],
-											"query": [
-												{
-													"key": "productId",
-													"value": "<string>",
-													"description": "(Required) "
-												}
-											]
-										}
-									},
-									"response": [
-										{
-											"id": "d8f9ac58-67fd-4e04-9749-ed594e34117c",
-											"name": "Success",
-											"originalRequest": {
-												"method": "GET",
-												"header": [
-													{
-														"description": "Added as a part of security scheme: bearer",
-														"key": "Authorization",
-														"value": "Bearer <token>"
-													}
-												],
-												"url": {
-													"raw": "{{baseUrl}}/api/goods/review/getProductReviews?productId=<string>",
-													"host": [
-														"{{baseUrl}}"
-													],
-													"path": [
-														"api",
-														"goods",
-														"review",
-														"getProductReviews"
-													],
-													"query": [
-														{
-															"description": "(Required) ",
-															"key": "productId",
-															"value": "<string>"
-														}
-													]
-												}
-											},
-											"status": "OK",
-											"code": 200,
-											"_postman_previewlanguage": "text",
-											"header": [],
-											"cookie": [],
-											"responseTime": null,
-											"body": ""
-										},
-										{
-											"id": "442eae1d-0bbd-4568-ba84-48b83547e1d2",
-											"name": "Unauthorized",
-											"originalRequest": {
-												"method": "GET",
-												"header": [
-													{
-														"description": "Added as a part of security scheme: bearer",
-														"key": "Authorization",
-														"value": "Bearer <token>"
-													}
-												],
-												"url": {
-													"raw": "{{baseUrl}}/api/goods/review/getProductReviews?productId=<string>",
-													"host": [
-														"{{baseUrl}}"
-													],
-													"path": [
-														"api",
-														"goods",
-														"review",
-														"getProductReviews"
-													],
-													"query": [
-														{
-															"description": "(Required) ",
-															"key": "productId",
-															"value": "<string>"
-														}
-													]
-												}
-											},
-											"status": "Unauthorized",
-											"code": 401,
-											"_postman_previewlanguage": "text",
-											"header": [],
-											"cookie": [],
-											"responseTime": null,
-											"body": ""
-										}
-									]
-								}
-							],
-							"id": "45b2f5f8-7545-439a-a785-24edc6e50faf"
-						},
-						{
-							"name": "getSupplierRating",
-							"item": [
-								{
-									"name": "Anp Goods Services Features Create Get Supplier Rating Endpoint",
-									"id": "83d95e0e-7fdf-4187-bd47-b5247bc5730d",
-									"protocolProfileBehavior": {
-										"disableBodyPruning": true
-									},
-									"request": {
-										"auth": {
-											"type": "bearer",
-											"bearer": {
-												"token": "{{bearerToken}}"
-											}
-										},
-										"method": "GET",
-										"header": [],
-										"url": {
-											"raw": "{{baseUrl}}/api/goods/review/getSupplierRating?supplierId=<string>",
-											"host": [
-												"{{baseUrl}}"
-											],
-											"path": [
-												"api",
-												"goods",
-												"review",
-												"getSupplierRating"
-											],
-											"query": [
-												{
-													"key": "supplierId",
-													"value": "<string>",
-													"description": "(Required) "
-												}
-											]
-										}
-									},
-									"response": [
-										{
-											"id": "3427c913-44f4-4bcb-b1c5-a56f43733848",
-											"name": "Success",
-											"originalRequest": {
-												"method": "GET",
-												"header": [
-													{
-														"description": "Added as a part of security scheme: bearer",
-														"key": "Authorization",
-														"value": "Bearer <token>"
-													}
-												],
-												"url": {
-													"raw": "{{baseUrl}}/api/goods/review/getSupplierRating?supplierId=<string>",
-													"host": [
-														"{{baseUrl}}"
-													],
-													"path": [
-														"api",
-														"goods",
-														"review",
-														"getSupplierRating"
-													],
-													"query": [
-														{
-															"description": "(Required) ",
-															"key": "supplierId",
-															"value": "<string>"
-														}
-													]
-												}
-											},
-											"status": "OK",
-											"code": 200,
-											"_postman_previewlanguage": "text",
-											"header": [],
-											"cookie": [],
-											"responseTime": null,
-											"body": ""
-										},
-										{
-											"id": "fe94953d-fd21-4beb-b5eb-6bc678b917ea",
-											"name": "Unauthorized",
-											"originalRequest": {
-												"method": "GET",
-												"header": [
-													{
-														"description": "Added as a part of security scheme: bearer",
-														"key": "Authorization",
-														"value": "Bearer <token>"
-													}
-												],
-												"url": {
-													"raw": "{{baseUrl}}/api/goods/review/getSupplierRating?supplierId=<string>",
-													"host": [
-														"{{baseUrl}}"
-													],
-													"path": [
-														"api",
-														"goods",
-														"review",
-														"getSupplierRating"
-													],
-													"query": [
-														{
-															"description": "(Required) ",
-															"key": "supplierId",
-															"value": "<string>"
-														}
-													]
-												}
-											},
-											"status": "Unauthorized",
-											"code": 401,
-											"_postman_previewlanguage": "text",
-											"header": [],
-											"cookie": [],
-											"responseTime": null,
-											"body": ""
-										}
-									]
-								}
-							],
-							"id": "1e7ce43e-b9bb-4705-977a-dfbde98f486f"
-						},
-						{
-							"name": "getSupplierReview",
-							"item": [
-								{
-									"name": "Anp Goods Services Features Create Get Supplier Review Endpoint",
-									"id": "1669be11-d429-495e-b93f-694950df90c1",
-									"protocolProfileBehavior": {
-										"disableBodyPruning": true
-									},
-									"request": {
-										"auth": {
-											"type": "bearer",
-											"bearer": {
-												"token": "{{bearerToken}}"
-											}
-										},
-										"method": "GET",
-										"header": [],
-										"url": {
-											"raw": "{{baseUrl}}/api/goods/review/getSupplierReview?supplierId=<string>",
-											"host": [
-												"{{baseUrl}}"
-											],
-											"path": [
-												"api",
-												"goods",
-												"review",
-												"getSupplierReview"
-											],
-											"query": [
-												{
-													"key": "supplierId",
-													"value": "<string>",
-													"description": "(Required) "
-												}
-											]
-										}
-									},
-									"response": [
-										{
-											"id": "aaba1e1f-be6b-442b-9802-7f2c3a3020f4",
-											"name": "Success",
-											"originalRequest": {
-												"method": "GET",
-												"header": [
-													{
-														"description": "Added as a part of security scheme: bearer",
-														"key": "Authorization",
-														"value": "Bearer <token>"
-													}
-												],
-												"url": {
-													"raw": "{{baseUrl}}/api/goods/review/getSupplierReview?supplierId=<string>",
-													"host": [
-														"{{baseUrl}}"
-													],
-													"path": [
-														"api",
-														"goods",
-														"review",
-														"getSupplierReview"
-													],
-													"query": [
-														{
-															"description": "(Required) ",
-															"key": "supplierId",
-															"value": "<string>"
-														}
-													]
-												}
-											},
-											"status": "OK",
-											"code": 200,
-											"_postman_previewlanguage": "text",
-											"header": [],
-											"cookie": [],
-											"responseTime": null,
-											"body": ""
-										},
-										{
-											"id": "629fe01c-a6de-455e-8286-82b32a3b5600",
-											"name": "Unauthorized",
-											"originalRequest": {
-												"method": "GET",
-												"header": [
-													{
-														"description": "Added as a part of security scheme: bearer",
-														"key": "Authorization",
-														"value": "Bearer <token>"
-													}
-												],
-												"url": {
-													"raw": "{{baseUrl}}/api/goods/review/getSupplierReview?supplierId=<string>",
-													"host": [
-														"{{baseUrl}}"
-													],
-													"path": [
-														"api",
-														"goods",
-														"review",
-														"getSupplierReview"
-													],
-													"query": [
-														{
-															"description": "(Required) ",
-															"key": "supplierId",
-															"value": "<string>"
-														}
-													]
-												}
-											},
-											"status": "Unauthorized",
-											"code": 401,
-											"_postman_previewlanguage": "text",
-											"header": [],
-											"cookie": [],
-											"responseTime": null,
-											"body": ""
-										}
-									]
-								}
-							],
-							"id": "58bc993e-fe99-407c-b3b0-d7c095230db1"
-						}
-					],
-					"id": "90d3ea8f-a9f5-4303-ac6a-757c41c9f500"
 				},
 				{
 					"name": "lang",
