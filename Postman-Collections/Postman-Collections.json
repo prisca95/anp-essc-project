@@ -36932,6 +36932,8 @@
 														"id": "b9eee099-376a-4791-930e-ee4b64dc9783",
 														"exec": [
 															"pm.collectionVariables.set(\"orderId\", pm.response.json().data[0].orderId);\r",
+															"pm.collectionVariables.set(\"itemId\", pm.response.json().data[0].itemId);\r",
+															"\r",
 															"pm.test(\"Status code is 200\", function () {\r",
 															"    pm.response.to.have.status(200);\r",
 															"});\r",
@@ -37105,6 +37107,30 @@
 									"item": [
 										{
 											"name": "Anp Goods Services Features Cart Remove Cart Item Endpoint",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"id": "9db08ea3-52bf-42f1-88c4-cbf0c1b529c2",
+														"exec": [
+															"pm.test(\"Status code is 400\", function () {\r",
+															"    pm.response.to.have.status(400);\r",
+															"});\r",
+															"\r",
+															"var responseJSON = pm.response.json();\r",
+															"var errors = responseJSON.errors;\r",
+															"\r",
+															"pm.test(\"Verify that itemId is required\", function () {\r",
+															"    pm.expect(errors[0].name).to.be.a(\"string\").and.not.be.empty;\r",
+															"    pm.expect(errors[0].reason).to.be.a(\"string\").and.not.be.empty;\r",
+															"});\r",
+															""
+														],
+														"type": "text/javascript",
+														"packages": {}
+													}
+												}
+											],
 											"id": "d7f49f22-57ec-4ee9-b23a-8778be2b77de",
 											"protocolProfileBehavior": {
 												"disableBodyPruning": true
@@ -37125,7 +37151,7 @@
 												],
 												"body": {
 													"mode": "raw",
-													"raw": "{\n  \"itemId\": \"<string>\"\n}",
+													"raw": "{\n  \"itemId\": \"\"\n}",
 													"options": {
 														"raw": {
 															"headerFamily": "json",
@@ -37174,6 +37200,132 @@
 												},
 												{
 													"id": "2f116dff-1184-4d86-85c8-79569b04c0df",
+													"name": "Unauthorized",
+													"originalRequest": {
+														"method": "DELETE",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"itemId\": \"<string>\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl}}/api/goods/cart/remove"
+													},
+													"status": "Unauthorized",
+													"code": 401,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												}
+											]
+										},
+										{
+											"name": "No auth - Remove Cart Item Endpoint",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"id": "9db08ea3-52bf-42f1-88c4-cbf0c1b529c2",
+														"exec": [
+															"pm.test(\"Status code is 401\", function () {\r",
+															"    pm.response.to.have.status(401);\r",
+															"});\r",
+															"\r",
+															"pm.test(\"Status code name has 'Unauthorized'\", function () {\r",
+															"    pm.response.to.have.status(\"Unauthorized\");\r",
+															"});"
+														],
+														"type": "text/javascript",
+														"packages": {}
+													}
+												}
+											],
+											"id": "c732f457-2014-40e5-9988-c222339a7a82",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": {
+														"token": "{{bearerToken}}"
+													}
+												},
+												"method": "DELETE",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"itemId\": \"\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl}}/api/goods/cart/remove"
+											},
+											"response": [
+												{
+													"id": "cef4e57f-ab9c-4f1e-b202-bfb46b8f3544",
+													"name": "Success",
+													"originalRequest": {
+														"method": "DELETE",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"itemId\": \"<string>\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl}}/api/goods/cart/remove"
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												},
+												{
+													"id": "0bad6e8a-1f7c-42ba-9710-0d0ea03c78ae",
 													"name": "Unauthorized",
 													"originalRequest": {
 														"method": "DELETE",
@@ -41073,6 +41225,10 @@
 		},
 		{
 			"key": "orderId",
+			"value": ""
+		},
+		{
+			"key": "itemId",
 			"value": ""
 		}
 	]
