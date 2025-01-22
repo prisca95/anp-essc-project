@@ -36963,7 +36963,7 @@
 												],
 												"body": {
 													"mode": "raw",
-													"raw": "{\n // \"orderId\": \"<string>\",\n  \"customerId\": \"\",\n  \"itemsList\": [\n    {\n      \"quantity\": \"1\",\n      \"cost\": \"1000\",\n      \"productId\": \"{{productId}}\"\n    }\n    // {\n    //   \"quantity\": \"<integer>\",\n    //   \"cost\": \"<number>\",\n    //   \"productId\": \"<string>\"\n    // }\n  ]\n}",
+													"raw": "{\n // \"orderId\": \"<string>\",\n  \"customerId\": \"{{supplierId}}\",\n  \"itemsList\": [\n    {\n      \"quantity\": \"2\",\n      \"cost\": \"100\",\n      \"productId\": \"{{productId}}\"\n    }\n    // {\n    //   \"quantity\": \"<integer>\",\n    //   \"cost\": \"<number>\",\n    //   \"productId\": \"<string>\"\n    // }\n  ]\n}",
 													"options": {
 														"raw": {
 															"headerFamily": "json",
