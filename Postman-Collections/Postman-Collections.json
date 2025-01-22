@@ -37106,7 +37106,7 @@
 									"name": "remove",
 									"item": [
 										{
-											"name": "Anp Goods Services Features Cart Remove Cart Item Endpoint",
+											"name": "No itemId - Remove Cart Item",
 											"event": [
 												{
 													"listen": "test",
