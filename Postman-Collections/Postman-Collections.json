@@ -36789,6 +36789,29 @@
 									"item": [
 										{
 											"name": "Anp Goods Services Features Cart Add Cart Item Endpoint",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"id": "8829db34-caf1-4d2e-96a2-57294db08d92",
+														"exec": [
+															"\r",
+															"pm.test(\"Status code is 200\", function () {\r",
+															"    pm.response.to.have.status(200);\r",
+															"});\r",
+															"\r",
+															"pm.test(\"Verify that products are returned\", function () {\r",
+															"        pm.expect(pm.response.json().isSuccess).to.be.a(\"boolean\");\r",
+															"    pm.expect(pm.response.json().data[0].id).to.be.a(\"string\").and.not.empty;\r",
+															"    pm.expect(pm.response.json().data[0].message).to.be.a(\"string\").and.not.empty;\r",
+															"});\r",
+															""
+														],
+														"type": "text/javascript",
+														"packages": {}
+													}
+												}
+											],
 											"id": "be4f29bf-1add-4c3c-8d0e-00fd609a2854",
 											"protocolProfileBehavior": {
 												"disableBodyPruning": true
@@ -36809,7 +36832,7 @@
 												],
 												"body": {
 													"mode": "raw",
-													"raw": "{\n  \"orderId\": \"<string>\",\n  \"customerId\": \"<string>\",\n  \"itemsList\": [\n    {\n      \"quantity\": \"<integer>\",\n      \"cost\": \"<number>\",\n      \"productId\": \"<string>\"\n    },\n    {\n      \"quantity\": \"<integer>\",\n      \"cost\": \"<number>\",\n      \"productId\": \"<string>\"\n    }\n  ]\n}",
+													"raw": "{\n // \"orderId\": \"<string>\",\n  \"customerId\": \"{{supplierId}}\",\n  \"itemsList\": [\n    {\n      \"quantity\": \"1\",\n      \"cost\": \"1000\",\n      \"productId\": \"{{productId}}\"\n    }\n    // {\n    //   \"quantity\": \"<integer>\",\n    //   \"cost\": \"<number>\",\n    //   \"productId\": \"<string>\"\n    // }\n  ]\n}",
 													"options": {
 														"raw": {
 															"headerFamily": "json",
@@ -41020,6 +41043,10 @@
 		},
 		{
 			"key": "productId",
+			"value": ""
+		},
+		{
+			"key": "orderId",
 			"value": ""
 		}
 	]
