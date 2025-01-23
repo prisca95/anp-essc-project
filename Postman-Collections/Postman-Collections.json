@@ -26450,8 +26450,8 @@
 												"id": "06130ddd-a937-4a0d-87c4-1f6f5e566239",
 												"exec": [
 													"pm.collectionVariables.set(\"supplierUserId\", pm.response.json().supplierUserId);\r",
-													"pm.collectionVariables.set(\"tagid1\", pm.response.json().tags[0].tagId);\r",
-													"pm.collectionVariables.set(\"tagid2\", pm.response.json().tags[1].tagId);\r",
+													"// pm.collectionVariables.set(\"tagid1\", pm.response.json().tags[0].tagId);\r",
+													"// pm.collectionVariables.set(\"tagid2\", pm.response.json().tags[1].tagId);\r",
 													"\r",
 													"pm.test(\"Status code is 200\", function () {\r",
 													"    pm.response.to.have.status(200);\r",
@@ -35341,7 +35341,7 @@
 										],
 										"body": {
 											"mode": "raw",
-											"raw": "{ \n    \"availability\":6,\n\"brand\":\"Film\",\n\"categoryId\":\"1c21b2e3-8d22-4d9a-ea86-08dd033c624c\",\n\"certification\":\"Cert 1\",\n\"comment\":\"\",\n\"currency\": \"USD\",\n\"description\":\"\",\n\"distributionMechanism\":\"Mechanism 1\",\n\"globalPrice\": 850,\n\"isTaxInclusive\":false,\n\"location\":\"New York\",\n\"model\":\"45455665\",\n\"price\":1000,\n\"productLine\":\"Film\",\n\"productName\":\"Film\",\n\"productType\":0,\n\"productionCountry\":\"Country 1\",\n\"quantity\":4,\n\"serialNumber\":\"344556\",\n\"status\": \"Publish\",\n\"tagIds\": [\"{{tagid1}}\"],\n\"tax\": 3,\n\"warrantType\": \"Type 1\",\n\"warrantyDuration\": 1\n} //frontend payload \n\n//  {\n//  // \"productId\": \"string\",\n//   \"description\": \"Factory safeties\",\n//   \"productName\": \"{{$randomProduct}}\",\n//   \"dimension\": \"56\",\n//   \"serviceSource\": \"string\",\n//   \"price\": {{$randomPrice}},\n//   \"quantity\": 10,\n//   \"createdDate\": \"2025-01-21T13:09:39.325Z\",\n//   \"companyId\": \"{{supplierId}}\",\n//   \"categoryId\": \"57b3ec6c-8741-4ac4-8576-08dd1ba9c97f\",\n//   \"location\": \"New york\",\n//   \"globalPrice\": {{$randomPrice}},\n//   \"status\": \"publish\",\n//   \"productType\": 1,\n//   \"brand\": \"{{$randomCompanyName}}\",\n//   \"serialNumber\": \"123443\",\n//   \"certification\": \"Cert 1\",\n//   \"productLine\": \"Samsung\",\n//   \"warrantyDuration\": 1,\n//   \"warrantType\": \"Type 1\",\n//   \"availability\": 10,\n//   \"distributionMechanism\": \"Mechanism 1\",\n//   \"comment\": \"string\",\n//   \"model\": \"423323\",\n//   \"productionCountry\": \"USA\",\n//   \"currency\": \"USD\",\n//   \"tagIds\": [\n//     \"{{tagId1}}\",\n//     \"{{tagId2}}\"\n//   ],\n//   \"tax\": 2,\n//   \"isTaxInclusive\": false\n// } //swagger payload\n\n// {\n//  // \"productId\": \"<string>\",\n//   \"description\": \"Factory safeties\",\n//   \"productName\": \"{{$randomProduct}}\",\n//   \"price\": \"{{$randomPrice}}\",\n//   \"quantity\": \"15\",\n//   \"createdDate\": \"2025-01-21\",\n//   \"companyId\": \"{{supplierId}}\",\n//   \"categoryId\": \"57b3ec6c-8741-4ac4-8576-08dd1ba9c97f\",\n//   \"location\": \"New york\",\n//   \"globalPrice\": \"{{$randomPrice}}\",\n//   \"status\": \"<string>\",\n//   \"productType\": 0,\n//   \"brand\": \"{{$randomCompanyName}}\",\n//   \"serialNumber\": \"34756434566\",\n//   \"certification\": \"Cert 1\",\n//   \"productLine\": \"Safety\",\n//   \"warrantyDuration\": \"1\",\n//   \"warrantType\": \"Type 1\",\n//   \"availability\": \"15\",\n//   \"distributionMechanism\": \"Mechanism 1\",\n//   \"comment\": \"<string>\",\n//   \"model\": \"576787877\",\n//   \"productionCountry\": \"USA\",\n//   \"currency\": \"USD\",\n//   \"tagIds\": [\n//     \"{{tagId1}}\",//\"fd9ac3bd-0cb4-485a-5d7c-08dd28d7f704\",\n//     \"{{tagId2}}\"//\"06e8eebe-cff5-4866-5d7d-08dd28d7f704\"\n//   ],\n//   \"tax\": \"2\",\n//   \"isTaxInclusive\": false\n// }\n//",
+											"raw": "{ \n    \"availability\":6,\n\"brand\":\"Film\",\n\"categoryId\":\"1c21b2e3-8d22-4d9a-ea86-08dd033c624c\",\n\"certification\":\"Cert 1\",\n\"comment\":\"\",\n\"currency\": \"USD\",\n\"description\":\"\",\n\"distributionMechanism\":\"Mechanism 1\",\n\"globalPrice\": 850,\n\"isTaxInclusive\":false,\n\"location\":\"New York\",\n\"model\":\"45455665\",\n\"price\":1000,\n\"productLine\":\"Film\",\n\"productName\":\"Film\",\n\"productType\":0,\n\"productionCountry\":\"Country 1\",\n\"quantity\":4,\n\"serialNumber\":\"344556\",\n\"status\": \"Publish\",\n\"tagIds\": [\"{{tagId1}}\"],\n\"tax\": 3,\n\"warrantType\": \"Type 1\",\n\"warrantyDuration\": 1\n} //frontend payload \n\n//  {\n//  // \"productId\": \"string\",\n//   \"description\": \"Factory safeties\",\n//   \"productName\": \"{{$randomProduct}}\",\n//   \"dimension\": \"56\",\n//   \"serviceSource\": \"string\",\n//   \"price\": {{$randomPrice}},\n//   \"quantity\": 10,\n//   \"createdDate\": \"2025-01-21T13:09:39.325Z\",\n//   \"companyId\": \"{{supplierId}}\",\n//   \"categoryId\": \"57b3ec6c-8741-4ac4-8576-08dd1ba9c97f\",\n//   \"location\": \"New york\",\n//   \"globalPrice\": {{$randomPrice}},\n//   \"status\": \"publish\",\n//   \"productType\": 1,\n//   \"brand\": \"{{$randomCompanyName}}\",\n//   \"serialNumber\": \"123443\",\n//   \"certification\": \"Cert 1\",\n//   \"productLine\": \"Samsung\",\n//   \"warrantyDuration\": 1,\n//   \"warrantType\": \"Type 1\",\n//   \"availability\": 10,\n//   \"distributionMechanism\": \"Mechanism 1\",\n//   \"comment\": \"string\",\n//   \"model\": \"423323\",\n//   \"productionCountry\": \"USA\",\n//   \"currency\": \"USD\",\n//   \"tagIds\": [\n//     \"{{tagId1}}\",\n//     \"{{tagId2}}\"\n//   ],\n//   \"tax\": 2,\n//   \"isTaxInclusive\": false\n// } //swagger payload\n\n// {\n//  // \"productId\": \"<string>\",\n//   \"description\": \"Factory safeties\",\n//   \"productName\": \"{{$randomProduct}}\",\n//   \"price\": \"{{$randomPrice}}\",\n//   \"quantity\": \"15\",\n//   \"createdDate\": \"2025-01-21\",\n//   \"companyId\": \"{{supplierId}}\",\n//   \"categoryId\": \"57b3ec6c-8741-4ac4-8576-08dd1ba9c97f\",\n//   \"location\": \"New york\",\n//   \"globalPrice\": \"{{$randomPrice}}\",\n//   \"status\": \"<string>\",\n//   \"productType\": 0,\n//   \"brand\": \"{{$randomCompanyName}}\",\n//   \"serialNumber\": \"34756434566\",\n//   \"certification\": \"Cert 1\",\n//   \"productLine\": \"Safety\",\n//   \"warrantyDuration\": \"1\",\n//   \"warrantType\": \"Type 1\",\n//   \"availability\": \"15\",\n//   \"distributionMechanism\": \"Mechanism 1\",\n//   \"comment\": \"<string>\",\n//   \"model\": \"576787877\",\n//   \"productionCountry\": \"USA\",\n//   \"currency\": \"USD\",\n//   \"tagIds\": [\n//     \"{{tagId1}}\",//\"fd9ac3bd-0cb4-485a-5d7c-08dd28d7f704\",\n//     \"{{tagId2}}\"//\"06e8eebe-cff5-4866-5d7d-08dd28d7f704\"\n//   ],\n//   \"tax\": \"2\",\n//   \"isTaxInclusive\": false\n// }\n//",
 											"options": {
 												"raw": {
 													"headerFamily": "json",
@@ -37799,6 +37799,1147 @@
 					"id": "d5e0db51-be4c-4d19-888b-ac38554471f5"
 				},
 				{
+					"name": "procurement",
+					"item": [
+						{
+							"name": "create",
+							"item": [
+								{
+									"name": "Anp Procurement Features Service Information Create Endpoint1",
+									"id": "dc45a175-1144-419a-81d1-815d1eb06ac9",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": {
+												"token": "{{bearerToken}}"
+											}
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"serviceInformationId\": \"<string>\",\n  \"title\": \"<string>\",\n  \"bidStartDate\": \"<dateTime>\",\n  \"bidEndDate\": \"<dateTime>\",\n  \"description\": \"<string>\",\n  \"bidRequirement\": \"<string>\",\n  \"prerequisite\": \"<string>\",\n  \"workReference\": \"<string>\",\n  \"additionalInformation\": \"<string>\",\n  \"industryId\": \"<string>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{baseUrl}}/api/procurement/create"
+									},
+									"response": [
+										{
+											"id": "ab1a7f0b-12ba-4989-a50e-b4717695f3d8",
+											"name": "Success",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"description": "Added as a part of security scheme: bearer",
+														"key": "Authorization",
+														"value": "Bearer <token>"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"serviceInformationId\": \"<string>\",\n  \"title\": \"<string>\",\n  \"bidStartDate\": \"<dateTime>\",\n  \"bidEndDate\": \"<dateTime>\",\n  \"description\": \"<string>\",\n  \"bidRequirement\": \"<string>\",\n  \"prerequisite\": \"<string>\",\n  \"workReference\": \"<string>\",\n  \"additionalInformation\": \"<string>\",\n  \"industryId\": \"<string>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl}}/api/procurement/create"
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"responseTime": null,
+											"body": ""
+										},
+										{
+											"id": "b3c8def2-6af6-45dd-9c53-357ebe101c93",
+											"name": "Unauthorized",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"description": "Added as a part of security scheme: bearer",
+														"key": "Authorization",
+														"value": "Bearer <token>"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"serviceInformationId\": \"<string>\",\n  \"title\": \"<string>\",\n  \"bidStartDate\": \"<dateTime>\",\n  \"bidEndDate\": \"<dateTime>\",\n  \"description\": \"<string>\",\n  \"bidRequirement\": \"<string>\",\n  \"prerequisite\": \"<string>\",\n  \"workReference\": \"<string>\",\n  \"additionalInformation\": \"<string>\",\n  \"industryId\": \"<string>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl}}/api/procurement/create"
+											},
+											"status": "Unauthorized",
+											"code": 401,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"responseTime": null,
+											"body": ""
+										}
+									]
+								}
+							],
+							"id": "770566d1-cc9a-48ca-a30e-0de8fd6991cd"
+						},
+						{
+							"name": "edit",
+							"item": [
+								{
+									"name": "Anp Procurement Features Service Information Create Endpoint2",
+									"id": "b6ddb346-ff03-4c54-a3ad-467df7929b32",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": {
+												"token": "{{bearerToken}}"
+											}
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"serviceInformationId\": \"<string>\",\n  \"title\": \"<string>\",\n  \"bidStartDate\": \"<dateTime>\",\n  \"bidEndDate\": \"<dateTime>\",\n  \"description\": \"<string>\",\n  \"bidRequirement\": \"<string>\",\n  \"prerequisite\": \"<string>\",\n  \"workReference\": \"<string>\",\n  \"additionalInformation\": \"<string>\",\n  \"industryId\": \"<string>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{baseUrl}}/api/procurement/edit"
+									},
+									"response": [
+										{
+											"id": "860e0f1d-b269-4f9d-a324-7e666d76367a",
+											"name": "Success",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"description": "Added as a part of security scheme: bearer",
+														"key": "Authorization",
+														"value": "Bearer <token>"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"serviceInformationId\": \"<string>\",\n  \"title\": \"<string>\",\n  \"bidStartDate\": \"<dateTime>\",\n  \"bidEndDate\": \"<dateTime>\",\n  \"description\": \"<string>\",\n  \"bidRequirement\": \"<string>\",\n  \"prerequisite\": \"<string>\",\n  \"workReference\": \"<string>\",\n  \"additionalInformation\": \"<string>\",\n  \"industryId\": \"<string>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl}}/api/procurement/edit"
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"responseTime": null,
+											"body": ""
+										},
+										{
+											"id": "57f786c3-db6b-4cd2-8285-60ba6481024a",
+											"name": "Unauthorized",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"description": "Added as a part of security scheme: bearer",
+														"key": "Authorization",
+														"value": "Bearer <token>"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"serviceInformationId\": \"<string>\",\n  \"title\": \"<string>\",\n  \"bidStartDate\": \"<dateTime>\",\n  \"bidEndDate\": \"<dateTime>\",\n  \"description\": \"<string>\",\n  \"bidRequirement\": \"<string>\",\n  \"prerequisite\": \"<string>\",\n  \"workReference\": \"<string>\",\n  \"additionalInformation\": \"<string>\",\n  \"industryId\": \"<string>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl}}/api/procurement/edit"
+											},
+											"status": "Unauthorized",
+											"code": 401,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"responseTime": null,
+											"body": ""
+										}
+									]
+								}
+							],
+							"id": "c1b1a4b1-3804-4f7b-bba1-c8dee9fe03d2"
+						}
+					],
+					"id": "dae1c0f2-cc3a-4f39-a5c1-500b1f6470c6",
+					"description": "Regulator and operator creates procurement\n\nRegulator approves procurement"
+				},
+				{
+					"name": "procurementProjects",
+					"item": [
+						{
+							"name": "TenderDocument",
+							"item": [
+								{
+									"name": "create",
+									"item": [
+										{
+											"name": "Anp Procurement Features Service Information Create Tender Document Endpoint1",
+											"id": "6ed1fa02-8cca-4472-8a4b-724f9fc90e2b",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": {
+														"token": "{{bearerToken}}"
+													}
+												},
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"tenderDocumentId\": \"<string>\",\n  \"documentName\": \"<string>\",\n  \"assignPoint\": \"<integer>\",\n  \"tenderDocumentType\": 2,\n  \"serviceInformationId\": \"<string>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl}}/api/procurementProjects/TenderDocument/create"
+											},
+											"response": [
+												{
+													"id": "325471b4-dae7-40cd-a11c-3b7c7b5f3e5c",
+													"name": "Success",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"tenderDocumentId\": \"<string>\",\n  \"documentName\": \"<string>\",\n  \"assignPoint\": \"<integer>\",\n  \"tenderDocumentType\": 2,\n  \"serviceInformationId\": \"<string>\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl}}/api/procurementProjects/TenderDocument/create"
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												},
+												{
+													"id": "3863ba62-9bf6-4ee6-b0fa-de6d51261190",
+													"name": "Unauthorized",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"tenderDocumentId\": \"<string>\",\n  \"documentName\": \"<string>\",\n  \"assignPoint\": \"<integer>\",\n  \"tenderDocumentType\": 2,\n  \"serviceInformationId\": \"<string>\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl}}/api/procurementProjects/TenderDocument/create"
+													},
+													"status": "Unauthorized",
+													"code": 401,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												}
+											]
+										}
+									],
+									"id": "a5b84e6b-a459-493a-8f14-de33b9d9379d"
+								},
+								{
+									"name": "edit",
+									"item": [
+										{
+											"name": "Anp Procurement Features Service Information Create Tender Document Endpoint2",
+											"id": "ebe70026-4ef7-49f5-857d-7b619b3e4855",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": {
+														"token": "{{bearerToken}}"
+													}
+												},
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"tenderDocumentId\": \"<string>\",\n  \"documentName\": \"<string>\",\n  \"assignPoint\": \"<integer>\",\n  \"tenderDocumentType\": 2,\n  \"serviceInformationId\": \"<string>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl}}/api/procurementProjects/TenderDocument/edit"
+											},
+											"response": [
+												{
+													"id": "03c40112-65f0-4861-ab23-8d37aff68843",
+													"name": "Success",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"tenderDocumentId\": \"<string>\",\n  \"documentName\": \"<string>\",\n  \"assignPoint\": \"<integer>\",\n  \"tenderDocumentType\": 2,\n  \"serviceInformationId\": \"<string>\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl}}/api/procurementProjects/TenderDocument/edit"
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												},
+												{
+													"id": "3633bf7b-22cf-494b-9658-ccea8adfbf7e",
+													"name": "Unauthorized",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"tenderDocumentId\": \"<string>\",\n  \"documentName\": \"<string>\",\n  \"assignPoint\": \"<integer>\",\n  \"tenderDocumentType\": 2,\n  \"serviceInformationId\": \"<string>\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl}}/api/procurementProjects/TenderDocument/edit"
+													},
+													"status": "Unauthorized",
+													"code": 401,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												}
+											]
+										}
+									],
+									"id": "7f232c8f-1537-4ac0-9c81-ab685de0cb27"
+								}
+							],
+							"id": "b9fd9982-e1da-4478-845e-19c856e28dcf"
+						},
+						{
+							"name": "TenderGoodsService",
+							"item": [
+								{
+									"name": "create",
+									"item": [
+										{
+											"name": "Anp Procurement Features Service Information Create Tender Goods Service Endpoint1",
+											"id": "415d2054-1888-4b2e-8d1b-ef913d7ba811",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": {
+														"token": "{{bearerToken}}"
+													}
+												},
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"tenderGoodsServicesId\": \"<string>\",\n  \"itemName\": \"<string>\",\n  \"description\": \"<string>\",\n  \"quantity\": \"<integer>\",\n  \"estimatedCost\": \"<number>\",\n  \"procurementMethod\": \"<string>\",\n  \"warrantyDuration\": \"<integer>\",\n  \"warrantyType\": \"<string>\",\n  \"serviceInformationId\": \"<string>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl}}/api/procurementProjects/TenderGoodsService/create"
+											},
+											"response": [
+												{
+													"id": "5fbf6201-dbc2-41a4-8c4d-5ca5545b4208",
+													"name": "Success",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"tenderGoodsServicesId\": \"<string>\",\n  \"itemName\": \"<string>\",\n  \"description\": \"<string>\",\n  \"quantity\": \"<integer>\",\n  \"estimatedCost\": \"<number>\",\n  \"procurementMethod\": \"<string>\",\n  \"warrantyDuration\": \"<integer>\",\n  \"warrantyType\": \"<string>\",\n  \"serviceInformationId\": \"<string>\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl}}/api/procurementProjects/TenderGoodsService/create"
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												},
+												{
+													"id": "792f517e-6504-4e43-b75d-585a05ba53da",
+													"name": "Unauthorized",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"tenderGoodsServicesId\": \"<string>\",\n  \"itemName\": \"<string>\",\n  \"description\": \"<string>\",\n  \"quantity\": \"<integer>\",\n  \"estimatedCost\": \"<number>\",\n  \"procurementMethod\": \"<string>\",\n  \"warrantyDuration\": \"<integer>\",\n  \"warrantyType\": \"<string>\",\n  \"serviceInformationId\": \"<string>\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl}}/api/procurementProjects/TenderGoodsService/create"
+													},
+													"status": "Unauthorized",
+													"code": 401,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												}
+											]
+										}
+									],
+									"id": "7a5c2198-7895-4b88-8873-f49944056734"
+								},
+								{
+									"name": "edit",
+									"item": [
+										{
+											"name": "Anp Procurement Features Service Information Create Tender Goods Service Endpoint2",
+											"id": "5e8bcfb7-2055-489b-85ec-9bb0ff0fdad0",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": {
+														"token": "{{bearerToken}}"
+													}
+												},
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"tenderGoodsServicesId\": \"<string>\",\n  \"itemName\": \"<string>\",\n  \"description\": \"<string>\",\n  \"quantity\": \"<integer>\",\n  \"estimatedCost\": \"<number>\",\n  \"procurementMethod\": \"<string>\",\n  \"warrantyDuration\": \"<integer>\",\n  \"warrantyType\": \"<string>\",\n  \"serviceInformationId\": \"<string>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl}}/api/procurementProjects/TenderGoodsService/edit"
+											},
+											"response": [
+												{
+													"id": "8d19a7be-b367-4c24-92f6-31c51eff984e",
+													"name": "Success",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"tenderGoodsServicesId\": \"<string>\",\n  \"itemName\": \"<string>\",\n  \"description\": \"<string>\",\n  \"quantity\": \"<integer>\",\n  \"estimatedCost\": \"<number>\",\n  \"procurementMethod\": \"<string>\",\n  \"warrantyDuration\": \"<integer>\",\n  \"warrantyType\": \"<string>\",\n  \"serviceInformationId\": \"<string>\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl}}/api/procurementProjects/TenderGoodsService/edit"
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												},
+												{
+													"id": "2096dec5-97bd-4b94-bdc4-34ad2197dffc",
+													"name": "Unauthorized",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"tenderGoodsServicesId\": \"<string>\",\n  \"itemName\": \"<string>\",\n  \"description\": \"<string>\",\n  \"quantity\": \"<integer>\",\n  \"estimatedCost\": \"<number>\",\n  \"procurementMethod\": \"<string>\",\n  \"warrantyDuration\": \"<integer>\",\n  \"warrantyType\": \"<string>\",\n  \"serviceInformationId\": \"<string>\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl}}/api/procurementProjects/TenderGoodsService/edit"
+													},
+													"status": "Unauthorized",
+													"code": 401,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												}
+											]
+										}
+									],
+									"id": "d72d683e-0bc0-45bf-b953-3e48e4e1ac39"
+								}
+							],
+							"id": "567e8696-9613-40e8-b1df-29404d87be20"
+						},
+						{
+							"name": "listServiceInformation",
+							"item": [
+								{
+									"name": "Anp Procurement Features Service Information Get All Service Information Endpoint",
+									"id": "43636ad0-ad3c-42a0-bd41-fc2c71e7939b",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": {
+												"token": "{{bearerToken}}"
+											}
+										},
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/procurementProjects/listServiceInformation?operatorId=<string>&pageNumber=<integer>&pageSize=<integer>",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"procurementProjects",
+												"listServiceInformation"
+											],
+											"query": [
+												{
+													"key": "operatorId",
+													"value": "<string>"
+												},
+												{
+													"key": "pageNumber",
+													"value": "<integer>",
+													"description": "(Required) "
+												},
+												{
+													"key": "pageSize",
+													"value": "<integer>",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"id": "83615754-7b8f-4eff-be9a-8525838f9d8b",
+											"name": "Success",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"description": "Added as a part of security scheme: bearer",
+														"key": "Authorization",
+														"value": "Bearer <token>"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/procurementProjects/listServiceInformation?operatorId=<string>&pageNumber=<integer>&pageSize=<integer>",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"procurementProjects",
+														"listServiceInformation"
+													],
+													"query": [
+														{
+															"key": "operatorId",
+															"value": "<string>"
+														},
+														{
+															"description": "(Required) ",
+															"key": "pageNumber",
+															"value": "<integer>"
+														},
+														{
+															"description": "(Required) ",
+															"key": "pageSize",
+															"value": "<integer>"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"responseTime": null,
+											"body": ""
+										},
+										{
+											"id": "0528c29d-aade-4e88-ba37-2101658f6ebf",
+											"name": "Unauthorized",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"description": "Added as a part of security scheme: bearer",
+														"key": "Authorization",
+														"value": "Bearer <token>"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/procurementProjects/listServiceInformation?operatorId=<string>&pageNumber=<integer>&pageSize=<integer>",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"procurementProjects",
+														"listServiceInformation"
+													],
+													"query": [
+														{
+															"key": "operatorId",
+															"value": "<string>"
+														},
+														{
+															"description": "(Required) ",
+															"key": "pageNumber",
+															"value": "<integer>"
+														},
+														{
+															"description": "(Required) ",
+															"key": "pageSize",
+															"value": "<integer>"
+														}
+													]
+												}
+											},
+											"status": "Unauthorized",
+											"code": 401,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"responseTime": null,
+											"body": ""
+										}
+									]
+								}
+							],
+							"id": "a5671d2e-ed59-42f9-a42b-53ddd13e6783"
+						},
+						{
+							"name": "listTenderGoodsServices",
+							"item": [
+								{
+									"name": "{serviceInformationId}",
+									"item": [
+										{
+											"name": "Anp Procurement Features Service Information Get All Tender Goods Services Endpoint",
+											"id": "c5507c71-c8a6-4c3f-a044-1425f02df2c6",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": {
+														"token": "{{bearerToken}}"
+													}
+												},
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/procurementProjects/listTenderGoodsServices/:serviceInformationId?pageNumber=<integer>&pageSize=<integer>",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"procurementProjects",
+														"listTenderGoodsServices",
+														":serviceInformationId"
+													],
+													"query": [
+														{
+															"key": "pageNumber",
+															"value": "<integer>",
+															"description": "(Required) "
+														},
+														{
+															"key": "pageSize",
+															"value": "<integer>",
+															"description": "(Required) "
+														}
+													],
+													"variable": [
+														{
+															"id": "b730714b-0a1c-4f62-992f-6bb92421a588",
+															"key": "serviceInformationId",
+															"value": "<string>",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"response": [
+												{
+													"id": "48c83a33-9dfe-4312-9acf-d988d5393e54",
+													"name": "Success",
+													"originalRequest": {
+														"method": "GET",
+														"header": [
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/procurementProjects/listTenderGoodsServices/:serviceInformationId?pageNumber=<integer>&pageSize=<integer>",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"procurementProjects",
+																"listTenderGoodsServices",
+																":serviceInformationId"
+															],
+															"query": [
+																{
+																	"description": "(Required) ",
+																	"key": "pageNumber",
+																	"value": "<integer>"
+																},
+																{
+																	"description": "(Required) ",
+																	"key": "pageSize",
+																	"value": "<integer>"
+																}
+															],
+															"variable": [
+																{
+																	"key": "serviceInformationId"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												},
+												{
+													"id": "ab901154-827e-4a0c-849e-2b463d2f7b97",
+													"name": "Unauthorized",
+													"originalRequest": {
+														"method": "GET",
+														"header": [
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/procurementProjects/listTenderGoodsServices/:serviceInformationId?pageNumber=<integer>&pageSize=<integer>",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"procurementProjects",
+																"listTenderGoodsServices",
+																":serviceInformationId"
+															],
+															"query": [
+																{
+																	"description": "(Required) ",
+																	"key": "pageNumber",
+																	"value": "<integer>"
+																},
+																{
+																	"description": "(Required) ",
+																	"key": "pageSize",
+																	"value": "<integer>"
+																}
+															],
+															"variable": [
+																{
+																	"key": "serviceInformationId"
+																}
+															]
+														}
+													},
+													"status": "Unauthorized",
+													"code": 401,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												}
+											]
+										}
+									],
+									"id": "0180bdae-79ed-4366-9227-54630ce9c5ec"
+								}
+							],
+							"id": "4d7cb102-3c07-4fa6-a122-d34607697027"
+						},
+						{
+							"name": "getAServiceInformation",
+							"item": [
+								{
+									"name": "{serviceInformationId}",
+									"item": [
+										{
+											"name": "Anp Procurement Features Service Information Get A Service Information Endpoint",
+											"id": "b9954a36-e15a-44fb-bea4-ba0f9cde181e",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": {
+														"token": "{{bearerToken}}"
+													}
+												},
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/procurementProjects/getAServiceInformation/:serviceInformationId",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"procurementProjects",
+														"getAServiceInformation",
+														":serviceInformationId"
+													],
+													"variable": [
+														{
+															"id": "c47ddf26-aa25-4ea9-8fb5-c6a52fe57926",
+															"key": "serviceInformationId",
+															"value": "<string>",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"response": [
+												{
+													"id": "807286b6-c8e6-477c-bbda-6fc41b68a568",
+													"name": "Success",
+													"originalRequest": {
+														"method": "GET",
+														"header": [
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/procurementProjects/getAServiceInformation/:serviceInformationId",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"procurementProjects",
+																"getAServiceInformation",
+																":serviceInformationId"
+															],
+															"variable": [
+																{
+																	"key": "serviceInformationId"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												},
+												{
+													"id": "6841abd1-3bc3-4939-baf3-a8ccc165606f",
+													"name": "Unauthorized",
+													"originalRequest": {
+														"method": "GET",
+														"header": [
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/procurementProjects/getAServiceInformation/:serviceInformationId",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"procurementProjects",
+																"getAServiceInformation",
+																":serviceInformationId"
+															],
+															"variable": [
+																{
+																	"key": "serviceInformationId"
+																}
+															]
+														}
+													},
+													"status": "Unauthorized",
+													"code": 401,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												}
+											]
+										}
+									],
+									"id": "934fdcf8-f083-442e-b012-41e1d6578800"
+								}
+							],
+							"id": "269226d0-0656-4134-9919-52d30c15fa68"
+						}
+					],
+					"id": "3925f857-9bdd-41ee-8b0e-aae1843565d1"
+				},
+				{
 					"name": "review",
 					"item": [
 						{
@@ -39818,1147 +40959,6 @@
 					"id": "a1928d27-9fb5-450a-92f9-2a965dce3ff0"
 				},
 				{
-					"name": "procurement",
-					"item": [
-						{
-							"name": "create",
-							"item": [
-								{
-									"name": "Anp Procurement Features Service Information Create Endpoint1",
-									"id": "dc45a175-1144-419a-81d1-815d1eb06ac9",
-									"protocolProfileBehavior": {
-										"disableBodyPruning": true
-									},
-									"request": {
-										"auth": {
-											"type": "bearer",
-											"bearer": {
-												"token": "{{bearerToken}}"
-											}
-										},
-										"method": "POST",
-										"header": [
-											{
-												"key": "Content-Type",
-												"value": "application/json"
-											}
-										],
-										"body": {
-											"mode": "raw",
-											"raw": "{\n  \"serviceInformationId\": \"<string>\",\n  \"title\": \"<string>\",\n  \"bidStartDate\": \"<dateTime>\",\n  \"bidEndDate\": \"<dateTime>\",\n  \"description\": \"<string>\",\n  \"bidRequirement\": \"<string>\",\n  \"prerequisite\": \"<string>\",\n  \"workReference\": \"<string>\",\n  \"additionalInformation\": \"<string>\",\n  \"industryId\": \"<string>\"\n}",
-											"options": {
-												"raw": {
-													"headerFamily": "json",
-													"language": "json"
-												}
-											}
-										},
-										"url": "{{baseUrl}}/api/procurement/create"
-									},
-									"response": [
-										{
-											"id": "ab1a7f0b-12ba-4989-a50e-b4717695f3d8",
-											"name": "Success",
-											"originalRequest": {
-												"method": "POST",
-												"header": [
-													{
-														"key": "Content-Type",
-														"value": "application/json"
-													},
-													{
-														"description": "Added as a part of security scheme: bearer",
-														"key": "Authorization",
-														"value": "Bearer <token>"
-													}
-												],
-												"body": {
-													"mode": "raw",
-													"raw": "{\n  \"serviceInformationId\": \"<string>\",\n  \"title\": \"<string>\",\n  \"bidStartDate\": \"<dateTime>\",\n  \"bidEndDate\": \"<dateTime>\",\n  \"description\": \"<string>\",\n  \"bidRequirement\": \"<string>\",\n  \"prerequisite\": \"<string>\",\n  \"workReference\": \"<string>\",\n  \"additionalInformation\": \"<string>\",\n  \"industryId\": \"<string>\"\n}",
-													"options": {
-														"raw": {
-															"headerFamily": "json",
-															"language": "json"
-														}
-													}
-												},
-												"url": "{{baseUrl}}/api/procurement/create"
-											},
-											"status": "OK",
-											"code": 200,
-											"_postman_previewlanguage": "text",
-											"header": [],
-											"cookie": [],
-											"responseTime": null,
-											"body": ""
-										},
-										{
-											"id": "b3c8def2-6af6-45dd-9c53-357ebe101c93",
-											"name": "Unauthorized",
-											"originalRequest": {
-												"method": "POST",
-												"header": [
-													{
-														"key": "Content-Type",
-														"value": "application/json"
-													},
-													{
-														"description": "Added as a part of security scheme: bearer",
-														"key": "Authorization",
-														"value": "Bearer <token>"
-													}
-												],
-												"body": {
-													"mode": "raw",
-													"raw": "{\n  \"serviceInformationId\": \"<string>\",\n  \"title\": \"<string>\",\n  \"bidStartDate\": \"<dateTime>\",\n  \"bidEndDate\": \"<dateTime>\",\n  \"description\": \"<string>\",\n  \"bidRequirement\": \"<string>\",\n  \"prerequisite\": \"<string>\",\n  \"workReference\": \"<string>\",\n  \"additionalInformation\": \"<string>\",\n  \"industryId\": \"<string>\"\n}",
-													"options": {
-														"raw": {
-															"headerFamily": "json",
-															"language": "json"
-														}
-													}
-												},
-												"url": "{{baseUrl}}/api/procurement/create"
-											},
-											"status": "Unauthorized",
-											"code": 401,
-											"_postman_previewlanguage": "text",
-											"header": [],
-											"cookie": [],
-											"responseTime": null,
-											"body": ""
-										}
-									]
-								}
-							],
-							"id": "770566d1-cc9a-48ca-a30e-0de8fd6991cd"
-						},
-						{
-							"name": "edit",
-							"item": [
-								{
-									"name": "Anp Procurement Features Service Information Create Endpoint2",
-									"id": "b6ddb346-ff03-4c54-a3ad-467df7929b32",
-									"protocolProfileBehavior": {
-										"disableBodyPruning": true
-									},
-									"request": {
-										"auth": {
-											"type": "bearer",
-											"bearer": {
-												"token": "{{bearerToken}}"
-											}
-										},
-										"method": "POST",
-										"header": [
-											{
-												"key": "Content-Type",
-												"value": "application/json"
-											}
-										],
-										"body": {
-											"mode": "raw",
-											"raw": "{\n  \"serviceInformationId\": \"<string>\",\n  \"title\": \"<string>\",\n  \"bidStartDate\": \"<dateTime>\",\n  \"bidEndDate\": \"<dateTime>\",\n  \"description\": \"<string>\",\n  \"bidRequirement\": \"<string>\",\n  \"prerequisite\": \"<string>\",\n  \"workReference\": \"<string>\",\n  \"additionalInformation\": \"<string>\",\n  \"industryId\": \"<string>\"\n}",
-											"options": {
-												"raw": {
-													"headerFamily": "json",
-													"language": "json"
-												}
-											}
-										},
-										"url": "{{baseUrl}}/api/procurement/edit"
-									},
-									"response": [
-										{
-											"id": "860e0f1d-b269-4f9d-a324-7e666d76367a",
-											"name": "Success",
-											"originalRequest": {
-												"method": "POST",
-												"header": [
-													{
-														"key": "Content-Type",
-														"value": "application/json"
-													},
-													{
-														"description": "Added as a part of security scheme: bearer",
-														"key": "Authorization",
-														"value": "Bearer <token>"
-													}
-												],
-												"body": {
-													"mode": "raw",
-													"raw": "{\n  \"serviceInformationId\": \"<string>\",\n  \"title\": \"<string>\",\n  \"bidStartDate\": \"<dateTime>\",\n  \"bidEndDate\": \"<dateTime>\",\n  \"description\": \"<string>\",\n  \"bidRequirement\": \"<string>\",\n  \"prerequisite\": \"<string>\",\n  \"workReference\": \"<string>\",\n  \"additionalInformation\": \"<string>\",\n  \"industryId\": \"<string>\"\n}",
-													"options": {
-														"raw": {
-															"headerFamily": "json",
-															"language": "json"
-														}
-													}
-												},
-												"url": "{{baseUrl}}/api/procurement/edit"
-											},
-											"status": "OK",
-											"code": 200,
-											"_postman_previewlanguage": "text",
-											"header": [],
-											"cookie": [],
-											"responseTime": null,
-											"body": ""
-										},
-										{
-											"id": "57f786c3-db6b-4cd2-8285-60ba6481024a",
-											"name": "Unauthorized",
-											"originalRequest": {
-												"method": "POST",
-												"header": [
-													{
-														"key": "Content-Type",
-														"value": "application/json"
-													},
-													{
-														"description": "Added as a part of security scheme: bearer",
-														"key": "Authorization",
-														"value": "Bearer <token>"
-													}
-												],
-												"body": {
-													"mode": "raw",
-													"raw": "{\n  \"serviceInformationId\": \"<string>\",\n  \"title\": \"<string>\",\n  \"bidStartDate\": \"<dateTime>\",\n  \"bidEndDate\": \"<dateTime>\",\n  \"description\": \"<string>\",\n  \"bidRequirement\": \"<string>\",\n  \"prerequisite\": \"<string>\",\n  \"workReference\": \"<string>\",\n  \"additionalInformation\": \"<string>\",\n  \"industryId\": \"<string>\"\n}",
-													"options": {
-														"raw": {
-															"headerFamily": "json",
-															"language": "json"
-														}
-													}
-												},
-												"url": "{{baseUrl}}/api/procurement/edit"
-											},
-											"status": "Unauthorized",
-											"code": 401,
-											"_postman_previewlanguage": "text",
-											"header": [],
-											"cookie": [],
-											"responseTime": null,
-											"body": ""
-										}
-									]
-								}
-							],
-							"id": "c1b1a4b1-3804-4f7b-bba1-c8dee9fe03d2"
-						}
-					],
-					"id": "dae1c0f2-cc3a-4f39-a5c1-500b1f6470c6",
-					"description": "Regulator and operator creates procurement\n\nRegulator approves procurement"
-				},
-				{
-					"name": "procurementProjects",
-					"item": [
-						{
-							"name": "TenderDocument",
-							"item": [
-								{
-									"name": "create",
-									"item": [
-										{
-											"name": "Anp Procurement Features Service Information Create Tender Document Endpoint1",
-											"id": "6ed1fa02-8cca-4472-8a4b-724f9fc90e2b",
-											"protocolProfileBehavior": {
-												"disableBodyPruning": true
-											},
-											"request": {
-												"auth": {
-													"type": "bearer",
-													"bearer": {
-														"token": "{{bearerToken}}"
-													}
-												},
-												"method": "POST",
-												"header": [
-													{
-														"key": "Content-Type",
-														"value": "application/json"
-													}
-												],
-												"body": {
-													"mode": "raw",
-													"raw": "{\n  \"tenderDocumentId\": \"<string>\",\n  \"documentName\": \"<string>\",\n  \"assignPoint\": \"<integer>\",\n  \"tenderDocumentType\": 2,\n  \"serviceInformationId\": \"<string>\"\n}",
-													"options": {
-														"raw": {
-															"headerFamily": "json",
-															"language": "json"
-														}
-													}
-												},
-												"url": "{{baseUrl}}/api/procurementProjects/TenderDocument/create"
-											},
-											"response": [
-												{
-													"id": "325471b4-dae7-40cd-a11c-3b7c7b5f3e5c",
-													"name": "Success",
-													"originalRequest": {
-														"method": "POST",
-														"header": [
-															{
-																"key": "Content-Type",
-																"value": "application/json"
-															},
-															{
-																"description": "Added as a part of security scheme: bearer",
-																"key": "Authorization",
-																"value": "Bearer <token>"
-															}
-														],
-														"body": {
-															"mode": "raw",
-															"raw": "{\n  \"tenderDocumentId\": \"<string>\",\n  \"documentName\": \"<string>\",\n  \"assignPoint\": \"<integer>\",\n  \"tenderDocumentType\": 2,\n  \"serviceInformationId\": \"<string>\"\n}",
-															"options": {
-																"raw": {
-																	"headerFamily": "json",
-																	"language": "json"
-																}
-															}
-														},
-														"url": "{{baseUrl}}/api/procurementProjects/TenderDocument/create"
-													},
-													"status": "OK",
-													"code": 200,
-													"_postman_previewlanguage": "text",
-													"header": [],
-													"cookie": [],
-													"responseTime": null,
-													"body": ""
-												},
-												{
-													"id": "3863ba62-9bf6-4ee6-b0fa-de6d51261190",
-													"name": "Unauthorized",
-													"originalRequest": {
-														"method": "POST",
-														"header": [
-															{
-																"key": "Content-Type",
-																"value": "application/json"
-															},
-															{
-																"description": "Added as a part of security scheme: bearer",
-																"key": "Authorization",
-																"value": "Bearer <token>"
-															}
-														],
-														"body": {
-															"mode": "raw",
-															"raw": "{\n  \"tenderDocumentId\": \"<string>\",\n  \"documentName\": \"<string>\",\n  \"assignPoint\": \"<integer>\",\n  \"tenderDocumentType\": 2,\n  \"serviceInformationId\": \"<string>\"\n}",
-															"options": {
-																"raw": {
-																	"headerFamily": "json",
-																	"language": "json"
-																}
-															}
-														},
-														"url": "{{baseUrl}}/api/procurementProjects/TenderDocument/create"
-													},
-													"status": "Unauthorized",
-													"code": 401,
-													"_postman_previewlanguage": "text",
-													"header": [],
-													"cookie": [],
-													"responseTime": null,
-													"body": ""
-												}
-											]
-										}
-									],
-									"id": "a5b84e6b-a459-493a-8f14-de33b9d9379d"
-								},
-								{
-									"name": "edit",
-									"item": [
-										{
-											"name": "Anp Procurement Features Service Information Create Tender Document Endpoint2",
-											"id": "ebe70026-4ef7-49f5-857d-7b619b3e4855",
-											"protocolProfileBehavior": {
-												"disableBodyPruning": true
-											},
-											"request": {
-												"auth": {
-													"type": "bearer",
-													"bearer": {
-														"token": "{{bearerToken}}"
-													}
-												},
-												"method": "POST",
-												"header": [
-													{
-														"key": "Content-Type",
-														"value": "application/json"
-													}
-												],
-												"body": {
-													"mode": "raw",
-													"raw": "{\n  \"tenderDocumentId\": \"<string>\",\n  \"documentName\": \"<string>\",\n  \"assignPoint\": \"<integer>\",\n  \"tenderDocumentType\": 2,\n  \"serviceInformationId\": \"<string>\"\n}",
-													"options": {
-														"raw": {
-															"headerFamily": "json",
-															"language": "json"
-														}
-													}
-												},
-												"url": "{{baseUrl}}/api/procurementProjects/TenderDocument/edit"
-											},
-											"response": [
-												{
-													"id": "03c40112-65f0-4861-ab23-8d37aff68843",
-													"name": "Success",
-													"originalRequest": {
-														"method": "POST",
-														"header": [
-															{
-																"key": "Content-Type",
-																"value": "application/json"
-															},
-															{
-																"description": "Added as a part of security scheme: bearer",
-																"key": "Authorization",
-																"value": "Bearer <token>"
-															}
-														],
-														"body": {
-															"mode": "raw",
-															"raw": "{\n  \"tenderDocumentId\": \"<string>\",\n  \"documentName\": \"<string>\",\n  \"assignPoint\": \"<integer>\",\n  \"tenderDocumentType\": 2,\n  \"serviceInformationId\": \"<string>\"\n}",
-															"options": {
-																"raw": {
-																	"headerFamily": "json",
-																	"language": "json"
-																}
-															}
-														},
-														"url": "{{baseUrl}}/api/procurementProjects/TenderDocument/edit"
-													},
-													"status": "OK",
-													"code": 200,
-													"_postman_previewlanguage": "text",
-													"header": [],
-													"cookie": [],
-													"responseTime": null,
-													"body": ""
-												},
-												{
-													"id": "3633bf7b-22cf-494b-9658-ccea8adfbf7e",
-													"name": "Unauthorized",
-													"originalRequest": {
-														"method": "POST",
-														"header": [
-															{
-																"key": "Content-Type",
-																"value": "application/json"
-															},
-															{
-																"description": "Added as a part of security scheme: bearer",
-																"key": "Authorization",
-																"value": "Bearer <token>"
-															}
-														],
-														"body": {
-															"mode": "raw",
-															"raw": "{\n  \"tenderDocumentId\": \"<string>\",\n  \"documentName\": \"<string>\",\n  \"assignPoint\": \"<integer>\",\n  \"tenderDocumentType\": 2,\n  \"serviceInformationId\": \"<string>\"\n}",
-															"options": {
-																"raw": {
-																	"headerFamily": "json",
-																	"language": "json"
-																}
-															}
-														},
-														"url": "{{baseUrl}}/api/procurementProjects/TenderDocument/edit"
-													},
-													"status": "Unauthorized",
-													"code": 401,
-													"_postman_previewlanguage": "text",
-													"header": [],
-													"cookie": [],
-													"responseTime": null,
-													"body": ""
-												}
-											]
-										}
-									],
-									"id": "7f232c8f-1537-4ac0-9c81-ab685de0cb27"
-								}
-							],
-							"id": "b9fd9982-e1da-4478-845e-19c856e28dcf"
-						},
-						{
-							"name": "TenderGoodsService",
-							"item": [
-								{
-									"name": "create",
-									"item": [
-										{
-											"name": "Anp Procurement Features Service Information Create Tender Goods Service Endpoint1",
-											"id": "415d2054-1888-4b2e-8d1b-ef913d7ba811",
-											"protocolProfileBehavior": {
-												"disableBodyPruning": true
-											},
-											"request": {
-												"auth": {
-													"type": "bearer",
-													"bearer": {
-														"token": "{{bearerToken}}"
-													}
-												},
-												"method": "POST",
-												"header": [
-													{
-														"key": "Content-Type",
-														"value": "application/json"
-													}
-												],
-												"body": {
-													"mode": "raw",
-													"raw": "{\n  \"tenderGoodsServicesId\": \"<string>\",\n  \"itemName\": \"<string>\",\n  \"description\": \"<string>\",\n  \"quantity\": \"<integer>\",\n  \"estimatedCost\": \"<number>\",\n  \"procurementMethod\": \"<string>\",\n  \"warrantyDuration\": \"<integer>\",\n  \"warrantyType\": \"<string>\",\n  \"serviceInformationId\": \"<string>\"\n}",
-													"options": {
-														"raw": {
-															"headerFamily": "json",
-															"language": "json"
-														}
-													}
-												},
-												"url": "{{baseUrl}}/api/procurementProjects/TenderGoodsService/create"
-											},
-											"response": [
-												{
-													"id": "5fbf6201-dbc2-41a4-8c4d-5ca5545b4208",
-													"name": "Success",
-													"originalRequest": {
-														"method": "POST",
-														"header": [
-															{
-																"key": "Content-Type",
-																"value": "application/json"
-															},
-															{
-																"description": "Added as a part of security scheme: bearer",
-																"key": "Authorization",
-																"value": "Bearer <token>"
-															}
-														],
-														"body": {
-															"mode": "raw",
-															"raw": "{\n  \"tenderGoodsServicesId\": \"<string>\",\n  \"itemName\": \"<string>\",\n  \"description\": \"<string>\",\n  \"quantity\": \"<integer>\",\n  \"estimatedCost\": \"<number>\",\n  \"procurementMethod\": \"<string>\",\n  \"warrantyDuration\": \"<integer>\",\n  \"warrantyType\": \"<string>\",\n  \"serviceInformationId\": \"<string>\"\n}",
-															"options": {
-																"raw": {
-																	"headerFamily": "json",
-																	"language": "json"
-																}
-															}
-														},
-														"url": "{{baseUrl}}/api/procurementProjects/TenderGoodsService/create"
-													},
-													"status": "OK",
-													"code": 200,
-													"_postman_previewlanguage": "text",
-													"header": [],
-													"cookie": [],
-													"responseTime": null,
-													"body": ""
-												},
-												{
-													"id": "792f517e-6504-4e43-b75d-585a05ba53da",
-													"name": "Unauthorized",
-													"originalRequest": {
-														"method": "POST",
-														"header": [
-															{
-																"key": "Content-Type",
-																"value": "application/json"
-															},
-															{
-																"description": "Added as a part of security scheme: bearer",
-																"key": "Authorization",
-																"value": "Bearer <token>"
-															}
-														],
-														"body": {
-															"mode": "raw",
-															"raw": "{\n  \"tenderGoodsServicesId\": \"<string>\",\n  \"itemName\": \"<string>\",\n  \"description\": \"<string>\",\n  \"quantity\": \"<integer>\",\n  \"estimatedCost\": \"<number>\",\n  \"procurementMethod\": \"<string>\",\n  \"warrantyDuration\": \"<integer>\",\n  \"warrantyType\": \"<string>\",\n  \"serviceInformationId\": \"<string>\"\n}",
-															"options": {
-																"raw": {
-																	"headerFamily": "json",
-																	"language": "json"
-																}
-															}
-														},
-														"url": "{{baseUrl}}/api/procurementProjects/TenderGoodsService/create"
-													},
-													"status": "Unauthorized",
-													"code": 401,
-													"_postman_previewlanguage": "text",
-													"header": [],
-													"cookie": [],
-													"responseTime": null,
-													"body": ""
-												}
-											]
-										}
-									],
-									"id": "7a5c2198-7895-4b88-8873-f49944056734"
-								},
-								{
-									"name": "edit",
-									"item": [
-										{
-											"name": "Anp Procurement Features Service Information Create Tender Goods Service Endpoint2",
-											"id": "5e8bcfb7-2055-489b-85ec-9bb0ff0fdad0",
-											"protocolProfileBehavior": {
-												"disableBodyPruning": true
-											},
-											"request": {
-												"auth": {
-													"type": "bearer",
-													"bearer": {
-														"token": "{{bearerToken}}"
-													}
-												},
-												"method": "POST",
-												"header": [
-													{
-														"key": "Content-Type",
-														"value": "application/json"
-													}
-												],
-												"body": {
-													"mode": "raw",
-													"raw": "{\n  \"tenderGoodsServicesId\": \"<string>\",\n  \"itemName\": \"<string>\",\n  \"description\": \"<string>\",\n  \"quantity\": \"<integer>\",\n  \"estimatedCost\": \"<number>\",\n  \"procurementMethod\": \"<string>\",\n  \"warrantyDuration\": \"<integer>\",\n  \"warrantyType\": \"<string>\",\n  \"serviceInformationId\": \"<string>\"\n}",
-													"options": {
-														"raw": {
-															"headerFamily": "json",
-															"language": "json"
-														}
-													}
-												},
-												"url": "{{baseUrl}}/api/procurementProjects/TenderGoodsService/edit"
-											},
-											"response": [
-												{
-													"id": "8d19a7be-b367-4c24-92f6-31c51eff984e",
-													"name": "Success",
-													"originalRequest": {
-														"method": "POST",
-														"header": [
-															{
-																"key": "Content-Type",
-																"value": "application/json"
-															},
-															{
-																"description": "Added as a part of security scheme: bearer",
-																"key": "Authorization",
-																"value": "Bearer <token>"
-															}
-														],
-														"body": {
-															"mode": "raw",
-															"raw": "{\n  \"tenderGoodsServicesId\": \"<string>\",\n  \"itemName\": \"<string>\",\n  \"description\": \"<string>\",\n  \"quantity\": \"<integer>\",\n  \"estimatedCost\": \"<number>\",\n  \"procurementMethod\": \"<string>\",\n  \"warrantyDuration\": \"<integer>\",\n  \"warrantyType\": \"<string>\",\n  \"serviceInformationId\": \"<string>\"\n}",
-															"options": {
-																"raw": {
-																	"headerFamily": "json",
-																	"language": "json"
-																}
-															}
-														},
-														"url": "{{baseUrl}}/api/procurementProjects/TenderGoodsService/edit"
-													},
-													"status": "OK",
-													"code": 200,
-													"_postman_previewlanguage": "text",
-													"header": [],
-													"cookie": [],
-													"responseTime": null,
-													"body": ""
-												},
-												{
-													"id": "2096dec5-97bd-4b94-bdc4-34ad2197dffc",
-													"name": "Unauthorized",
-													"originalRequest": {
-														"method": "POST",
-														"header": [
-															{
-																"key": "Content-Type",
-																"value": "application/json"
-															},
-															{
-																"description": "Added as a part of security scheme: bearer",
-																"key": "Authorization",
-																"value": "Bearer <token>"
-															}
-														],
-														"body": {
-															"mode": "raw",
-															"raw": "{\n  \"tenderGoodsServicesId\": \"<string>\",\n  \"itemName\": \"<string>\",\n  \"description\": \"<string>\",\n  \"quantity\": \"<integer>\",\n  \"estimatedCost\": \"<number>\",\n  \"procurementMethod\": \"<string>\",\n  \"warrantyDuration\": \"<integer>\",\n  \"warrantyType\": \"<string>\",\n  \"serviceInformationId\": \"<string>\"\n}",
-															"options": {
-																"raw": {
-																	"headerFamily": "json",
-																	"language": "json"
-																}
-															}
-														},
-														"url": "{{baseUrl}}/api/procurementProjects/TenderGoodsService/edit"
-													},
-													"status": "Unauthorized",
-													"code": 401,
-													"_postman_previewlanguage": "text",
-													"header": [],
-													"cookie": [],
-													"responseTime": null,
-													"body": ""
-												}
-											]
-										}
-									],
-									"id": "d72d683e-0bc0-45bf-b953-3e48e4e1ac39"
-								}
-							],
-							"id": "567e8696-9613-40e8-b1df-29404d87be20"
-						},
-						{
-							"name": "listServiceInformation",
-							"item": [
-								{
-									"name": "Anp Procurement Features Service Information Get All Service Information Endpoint",
-									"id": "43636ad0-ad3c-42a0-bd41-fc2c71e7939b",
-									"protocolProfileBehavior": {
-										"disableBodyPruning": true
-									},
-									"request": {
-										"auth": {
-											"type": "bearer",
-											"bearer": {
-												"token": "{{bearerToken}}"
-											}
-										},
-										"method": "GET",
-										"header": [],
-										"url": {
-											"raw": "{{baseUrl}}/api/procurementProjects/listServiceInformation?operatorId=<string>&pageNumber=<integer>&pageSize=<integer>",
-											"host": [
-												"{{baseUrl}}"
-											],
-											"path": [
-												"api",
-												"procurementProjects",
-												"listServiceInformation"
-											],
-											"query": [
-												{
-													"key": "operatorId",
-													"value": "<string>"
-												},
-												{
-													"key": "pageNumber",
-													"value": "<integer>",
-													"description": "(Required) "
-												},
-												{
-													"key": "pageSize",
-													"value": "<integer>",
-													"description": "(Required) "
-												}
-											]
-										}
-									},
-									"response": [
-										{
-											"id": "83615754-7b8f-4eff-be9a-8525838f9d8b",
-											"name": "Success",
-											"originalRequest": {
-												"method": "GET",
-												"header": [
-													{
-														"description": "Added as a part of security scheme: bearer",
-														"key": "Authorization",
-														"value": "Bearer <token>"
-													}
-												],
-												"url": {
-													"raw": "{{baseUrl}}/api/procurementProjects/listServiceInformation?operatorId=<string>&pageNumber=<integer>&pageSize=<integer>",
-													"host": [
-														"{{baseUrl}}"
-													],
-													"path": [
-														"api",
-														"procurementProjects",
-														"listServiceInformation"
-													],
-													"query": [
-														{
-															"key": "operatorId",
-															"value": "<string>"
-														},
-														{
-															"description": "(Required) ",
-															"key": "pageNumber",
-															"value": "<integer>"
-														},
-														{
-															"description": "(Required) ",
-															"key": "pageSize",
-															"value": "<integer>"
-														}
-													]
-												}
-											},
-											"status": "OK",
-											"code": 200,
-											"_postman_previewlanguage": "text",
-											"header": [],
-											"cookie": [],
-											"responseTime": null,
-											"body": ""
-										},
-										{
-											"id": "0528c29d-aade-4e88-ba37-2101658f6ebf",
-											"name": "Unauthorized",
-											"originalRequest": {
-												"method": "GET",
-												"header": [
-													{
-														"description": "Added as a part of security scheme: bearer",
-														"key": "Authorization",
-														"value": "Bearer <token>"
-													}
-												],
-												"url": {
-													"raw": "{{baseUrl}}/api/procurementProjects/listServiceInformation?operatorId=<string>&pageNumber=<integer>&pageSize=<integer>",
-													"host": [
-														"{{baseUrl}}"
-													],
-													"path": [
-														"api",
-														"procurementProjects",
-														"listServiceInformation"
-													],
-													"query": [
-														{
-															"key": "operatorId",
-															"value": "<string>"
-														},
-														{
-															"description": "(Required) ",
-															"key": "pageNumber",
-															"value": "<integer>"
-														},
-														{
-															"description": "(Required) ",
-															"key": "pageSize",
-															"value": "<integer>"
-														}
-													]
-												}
-											},
-											"status": "Unauthorized",
-											"code": 401,
-											"_postman_previewlanguage": "text",
-											"header": [],
-											"cookie": [],
-											"responseTime": null,
-											"body": ""
-										}
-									]
-								}
-							],
-							"id": "a5671d2e-ed59-42f9-a42b-53ddd13e6783"
-						},
-						{
-							"name": "listTenderGoodsServices",
-							"item": [
-								{
-									"name": "{serviceInformationId}",
-									"item": [
-										{
-											"name": "Anp Procurement Features Service Information Get All Tender Goods Services Endpoint",
-											"id": "c5507c71-c8a6-4c3f-a044-1425f02df2c6",
-											"protocolProfileBehavior": {
-												"disableBodyPruning": true
-											},
-											"request": {
-												"auth": {
-													"type": "bearer",
-													"bearer": {
-														"token": "{{bearerToken}}"
-													}
-												},
-												"method": "GET",
-												"header": [],
-												"url": {
-													"raw": "{{baseUrl}}/api/procurementProjects/listTenderGoodsServices/:serviceInformationId?pageNumber=<integer>&pageSize=<integer>",
-													"host": [
-														"{{baseUrl}}"
-													],
-													"path": [
-														"api",
-														"procurementProjects",
-														"listTenderGoodsServices",
-														":serviceInformationId"
-													],
-													"query": [
-														{
-															"key": "pageNumber",
-															"value": "<integer>",
-															"description": "(Required) "
-														},
-														{
-															"key": "pageSize",
-															"value": "<integer>",
-															"description": "(Required) "
-														}
-													],
-													"variable": [
-														{
-															"id": "b730714b-0a1c-4f62-992f-6bb92421a588",
-															"key": "serviceInformationId",
-															"value": "<string>",
-															"description": "(Required) "
-														}
-													]
-												}
-											},
-											"response": [
-												{
-													"id": "48c83a33-9dfe-4312-9acf-d988d5393e54",
-													"name": "Success",
-													"originalRequest": {
-														"method": "GET",
-														"header": [
-															{
-																"description": "Added as a part of security scheme: bearer",
-																"key": "Authorization",
-																"value": "Bearer <token>"
-															}
-														],
-														"url": {
-															"raw": "{{baseUrl}}/api/procurementProjects/listTenderGoodsServices/:serviceInformationId?pageNumber=<integer>&pageSize=<integer>",
-															"host": [
-																"{{baseUrl}}"
-															],
-															"path": [
-																"api",
-																"procurementProjects",
-																"listTenderGoodsServices",
-																":serviceInformationId"
-															],
-															"query": [
-																{
-																	"description": "(Required) ",
-																	"key": "pageNumber",
-																	"value": "<integer>"
-																},
-																{
-																	"description": "(Required) ",
-																	"key": "pageSize",
-																	"value": "<integer>"
-																}
-															],
-															"variable": [
-																{
-																	"key": "serviceInformationId"
-																}
-															]
-														}
-													},
-													"status": "OK",
-													"code": 200,
-													"_postman_previewlanguage": "text",
-													"header": [],
-													"cookie": [],
-													"responseTime": null,
-													"body": ""
-												},
-												{
-													"id": "ab901154-827e-4a0c-849e-2b463d2f7b97",
-													"name": "Unauthorized",
-													"originalRequest": {
-														"method": "GET",
-														"header": [
-															{
-																"description": "Added as a part of security scheme: bearer",
-																"key": "Authorization",
-																"value": "Bearer <token>"
-															}
-														],
-														"url": {
-															"raw": "{{baseUrl}}/api/procurementProjects/listTenderGoodsServices/:serviceInformationId?pageNumber=<integer>&pageSize=<integer>",
-															"host": [
-																"{{baseUrl}}"
-															],
-															"path": [
-																"api",
-																"procurementProjects",
-																"listTenderGoodsServices",
-																":serviceInformationId"
-															],
-															"query": [
-																{
-																	"description": "(Required) ",
-																	"key": "pageNumber",
-																	"value": "<integer>"
-																},
-																{
-																	"description": "(Required) ",
-																	"key": "pageSize",
-																	"value": "<integer>"
-																}
-															],
-															"variable": [
-																{
-																	"key": "serviceInformationId"
-																}
-															]
-														}
-													},
-													"status": "Unauthorized",
-													"code": 401,
-													"_postman_previewlanguage": "text",
-													"header": [],
-													"cookie": [],
-													"responseTime": null,
-													"body": ""
-												}
-											]
-										}
-									],
-									"id": "0180bdae-79ed-4366-9227-54630ce9c5ec"
-								}
-							],
-							"id": "4d7cb102-3c07-4fa6-a122-d34607697027"
-						},
-						{
-							"name": "getAServiceInformation",
-							"item": [
-								{
-									"name": "{serviceInformationId}",
-									"item": [
-										{
-											"name": "Anp Procurement Features Service Information Get A Service Information Endpoint",
-											"id": "b9954a36-e15a-44fb-bea4-ba0f9cde181e",
-											"protocolProfileBehavior": {
-												"disableBodyPruning": true
-											},
-											"request": {
-												"auth": {
-													"type": "bearer",
-													"bearer": {
-														"token": "{{bearerToken}}"
-													}
-												},
-												"method": "GET",
-												"header": [],
-												"url": {
-													"raw": "{{baseUrl}}/api/procurementProjects/getAServiceInformation/:serviceInformationId",
-													"host": [
-														"{{baseUrl}}"
-													],
-													"path": [
-														"api",
-														"procurementProjects",
-														"getAServiceInformation",
-														":serviceInformationId"
-													],
-													"variable": [
-														{
-															"id": "c47ddf26-aa25-4ea9-8fb5-c6a52fe57926",
-															"key": "serviceInformationId",
-															"value": "<string>",
-															"description": "(Required) "
-														}
-													]
-												}
-											},
-											"response": [
-												{
-													"id": "807286b6-c8e6-477c-bbda-6fc41b68a568",
-													"name": "Success",
-													"originalRequest": {
-														"method": "GET",
-														"header": [
-															{
-																"description": "Added as a part of security scheme: bearer",
-																"key": "Authorization",
-																"value": "Bearer <token>"
-															}
-														],
-														"url": {
-															"raw": "{{baseUrl}}/api/procurementProjects/getAServiceInformation/:serviceInformationId",
-															"host": [
-																"{{baseUrl}}"
-															],
-															"path": [
-																"api",
-																"procurementProjects",
-																"getAServiceInformation",
-																":serviceInformationId"
-															],
-															"variable": [
-																{
-																	"key": "serviceInformationId"
-																}
-															]
-														}
-													},
-													"status": "OK",
-													"code": 200,
-													"_postman_previewlanguage": "text",
-													"header": [],
-													"cookie": [],
-													"responseTime": null,
-													"body": ""
-												},
-												{
-													"id": "6841abd1-3bc3-4939-baf3-a8ccc165606f",
-													"name": "Unauthorized",
-													"originalRequest": {
-														"method": "GET",
-														"header": [
-															{
-																"description": "Added as a part of security scheme: bearer",
-																"key": "Authorization",
-																"value": "Bearer <token>"
-															}
-														],
-														"url": {
-															"raw": "{{baseUrl}}/api/procurementProjects/getAServiceInformation/:serviceInformationId",
-															"host": [
-																"{{baseUrl}}"
-															],
-															"path": [
-																"api",
-																"procurementProjects",
-																"getAServiceInformation",
-																":serviceInformationId"
-															],
-															"variable": [
-																{
-																	"key": "serviceInformationId"
-																}
-															]
-														}
-													},
-													"status": "Unauthorized",
-													"code": 401,
-													"_postman_previewlanguage": "text",
-													"header": [],
-													"cookie": [],
-													"responseTime": null,
-													"body": ""
-												}
-											]
-										}
-									],
-									"id": "934fdcf8-f083-442e-b012-41e1d6578800"
-								}
-							],
-							"id": "269226d0-0656-4134-9919-52d30c15fa68"
-						}
-					],
-					"id": "3925f857-9bdd-41ee-8b0e-aae1843565d1"
-				},
-				{
 					"name": "edms",
 					"item": [
 						{
@@ -41519,6 +41519,22 @@
 		},
 		{
 			"key": "itemId",
+			"value": ""
+		},
+		{
+			"key": "tagId1",
+			"value": ""
+		},
+		{
+			"key": "tagId2",
+			"value": ""
+		},
+		{
+			"key": "tagid1",
+			"value": ""
+		},
+		{
+			"key": "tagid2",
 			"value": ""
 		}
 	]
