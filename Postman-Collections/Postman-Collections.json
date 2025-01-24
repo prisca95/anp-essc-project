@@ -39579,6 +39579,32 @@
 									"item": [
 										{
 											"name": "Get all Tender Document by Service Information Id",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"id": "681f9a4d-2f01-4516-8309-f04a5fa478a3",
+														"exec": [
+															"pm.test(\"Status code is 200\", function () {\r",
+															"    pm.response.to.have.status(200);\r",
+															"});\r",
+															"\r",
+															"var responseJSON = pm.response.json(); \r",
+															"\r",
+															"pm.test(\"Verify that tender document is returned\", function () {\r",
+															"\r",
+															"    pm.expect(responseJSON.isSuccess).to.be.a(\"boolean\");\r",
+															"    pm.expect(responseJSON.data.email).to.be.a(\"string\").and.not.empty;\r",
+															"    pm.expect(responseJSON.data.userName).to.be.a(\"string\").and.not.empty;\r",
+															"        pm.expect(responseJSON.data.phoneNumber).to.be.a(\"string\").and.not.empty;\r",
+															"\r",
+															"});"
+														],
+														"type": "text/javascript",
+														"packages": {}
+													}
+												}
+											],
 											"id": "7804081a-16b0-4b7f-8800-923941830154",
 											"protocolProfileBehavior": {
 												"disableBodyPruning": true
@@ -39792,6 +39818,32 @@
 									"item": [
 										{
 											"name": "Anp Procurement Features Service Information Get All Tender Goods Services Endpoint",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"id": "4fa3dfab-c665-40e1-b305-d5eb9527d91e",
+														"exec": [
+															"pm.test(\"Status code is 200\", function () {\r",
+															"    pm.response.to.have.status(200);\r",
+															"});\r",
+															"\r",
+															"var responseJSON = pm.response.json(); \r",
+															"\r",
+															"pm.test(\"Verify that user profile is returned\", function () {\r",
+															"\r",
+															"    pm.expect(responseJSON.isSuccess).to.be.a(\"boolean\");\r",
+															"    pm.expect(responseJSON.data.email).to.be.a(\"string\").and.not.empty;\r",
+															"    pm.expect(responseJSON.data.userName).to.be.a(\"string\").and.not.empty;\r",
+															"        pm.expect(responseJSON.data.phoneNumber).to.be.a(\"string\").and.not.empty;\r",
+															"\r",
+															"});"
+														],
+														"type": "text/javascript",
+														"packages": {}
+													}
+												}
+											],
 											"id": "e809a5b5-3d18-4287-8684-5c2010c098fa",
 											"protocolProfileBehavior": {
 												"disableBodyPruning": true
@@ -39806,7 +39858,7 @@
 												"method": "GET",
 												"header": [],
 												"url": {
-													"raw": "{{baseUrl}}/api/procurement/listTenderGoodsServices/:serviceInformationId?pageNumber=<integer>&pageSize=<integer>",
+													"raw": "{{baseUrl}}/api/procurement/listTenderGoodsServices/:serviceInformationId?pageNumber=1&pageSize=10",
 													"host": [
 														"{{baseUrl}}"
 													],
@@ -39819,18 +39871,17 @@
 													"query": [
 														{
 															"key": "pageNumber",
-															"value": "<integer>",
+															"value": "1",
 															"description": "(Required) "
 														},
 														{
 															"key": "pageSize",
-															"value": "<integer>",
+															"value": "10",
 															"description": "(Required) "
 														}
 													],
 													"variable": [
 														{
-															"id": "eec1b2e8-fb79-46a4-916a-a279e11f50b6",
 															"key": "serviceInformationId",
 															"value": "<string>",
 															"description": "(Required) "
@@ -40005,6 +40056,32 @@
 									"item": [
 										{
 											"name": "Anp Procurement Features Service Information Get A Service Information Endpoint",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"id": "c382a785-6111-4ff6-831b-74bfc82ba8b9",
+														"exec": [
+															"pm.test(\"Status code is 200\", function () {\r",
+															"    pm.response.to.have.status(200);\r",
+															"});\r",
+															"\r",
+															"var responseJSON = pm.response.json(); \r",
+															"\r",
+															"pm.test(\"Verify that user profile is returned\", function () {\r",
+															"\r",
+															"    pm.expect(responseJSON.isSuccess).to.be.a(\"boolean\");\r",
+															"    pm.expect(responseJSON.data.email).to.be.a(\"string\").and.not.empty;\r",
+															"    pm.expect(responseJSON.data.userName).to.be.a(\"string\").and.not.empty;\r",
+															"        pm.expect(responseJSON.data.phoneNumber).to.be.a(\"string\").and.not.empty;\r",
+															"\r",
+															"});"
+														],
+														"type": "text/javascript",
+														"packages": {}
+													}
+												}
+											],
 											"id": "75525ebb-c022-4e59-ba1a-bc9041a8ac5f",
 											"protocolProfileBehavior": {
 												"disableBodyPruning": true
@@ -40031,7 +40108,6 @@
 													],
 													"variable": [
 														{
-															"id": "9784eae4-4a68-4160-8f7c-c99a538bf510",
 															"key": "serviceInformationId",
 															"value": "<string>",
 															"description": "(Required) "
@@ -40170,6 +40246,32 @@
 									"item": [
 										{
 											"name": "Anp Procurement Features Service Information Get A Tender Document Endpoint",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"id": "6aa402f0-df5a-4afd-8cd0-8a1f0a71f4f4",
+														"exec": [
+															"pm.test(\"Status code is 200\", function () {\r",
+															"    pm.response.to.have.status(200);\r",
+															"});\r",
+															"\r",
+															"var responseJSON = pm.response.json(); \r",
+															"\r",
+															"pm.test(\"Verify that user profile is returned\", function () {\r",
+															"\r",
+															"    pm.expect(responseJSON.isSuccess).to.be.a(\"boolean\");\r",
+															"    pm.expect(responseJSON.data.email).to.be.a(\"string\").and.not.empty;\r",
+															"    pm.expect(responseJSON.data.userName).to.be.a(\"string\").and.not.empty;\r",
+															"        pm.expect(responseJSON.data.phoneNumber).to.be.a(\"string\").and.not.empty;\r",
+															"\r",
+															"});"
+														],
+														"type": "text/javascript",
+														"packages": {}
+													}
+												}
+											],
 											"id": "4b75d60f-358b-4842-9c03-bbd88f7d32e5",
 											"protocolProfileBehavior": {
 												"disableBodyPruning": true
@@ -40196,7 +40298,6 @@
 													],
 													"variable": [
 														{
-															"id": "0d6682f6-05c7-4548-ae71-99f7504b68f8",
 															"key": "tenderDocumentId",
 															"value": "<string>",
 															"description": "(Required) "
@@ -40332,6 +40433,32 @@
 							"item": [
 								{
 									"name": "Anp Procurement Features Service Information Set Tender Status Endpoint",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "62e7bd3c-1c00-4109-83c4-6f34fa1ec798",
+												"exec": [
+													"pm.test(\"Status code is 200\", function () {\r",
+													"    pm.response.to.have.status(200);\r",
+													"});\r",
+													"\r",
+													"var responseJSON = pm.response.json(); \r",
+													"\r",
+													"pm.test(\"Verify that user profile is returned\", function () {\r",
+													"\r",
+													"    pm.expect(responseJSON.isSuccess).to.be.a(\"boolean\");\r",
+													"    pm.expect(responseJSON.data.email).to.be.a(\"string\").and.not.empty;\r",
+													"    pm.expect(responseJSON.data.userName).to.be.a(\"string\").and.not.empty;\r",
+													"        pm.expect(responseJSON.data.phoneNumber).to.be.a(\"string\").and.not.empty;\r",
+													"\r",
+													"});"
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
 									"id": "f630d465-b574-45a2-a859-939b3f484c37",
 									"protocolProfileBehavior": {
 										"disableBodyPruning": true
