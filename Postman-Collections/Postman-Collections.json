@@ -38909,17 +38909,17 @@
 													"script": {
 														"id": "c59e502d-d745-43e5-8cc7-baabb5d01df7",
 														"exec": [
-															"pm.test(\"Status code is 200\", function () {\r",
-															"    pm.response.to.have.status(200);\r",
+															"pm.test(\"Status code is 400\", function () {\r",
+															"    pm.response.to.have.status(400);\r",
 															"});\r",
 															"\r",
 															"var responseJSON = pm.response.json(); \r",
 															"\r",
-															"pm.test(\"Verify that Service Information is already deleted \", function () {\r",
+															"pm.test(\"Verify that Service Information Id is required \", function () {\r",
 															"\r",
-															"    pm.expect(responseJSON.isSuccess).to.be.a(\"boolean\");\r",
-															"    pm.expect(responseJSON.data).to.be.null;\r",
-															"    pm.expect(responseJSON.errorMessage).to.be.a(\"string\").and.not.empty;\r",
+															"   pm.expect(responseJSON.errors[0].name).to.be.a(\"string\").and.not.empty;\r",
+															"        pm.expect(responseJSON.errors[0].reason).to.be.a(\"string\").and.not.empty;\r",
+															"\r",
 															"\r",
 															"});"
 														],
@@ -38954,16 +38954,14 @@
 													],
 													"query": [
 														{
-															"key": null,
-															"value": null,
-															"type": "text"
+															"key": "",
+															"value": null
 														}
 													],
 													"variable": [
 														{
-															"id": "0155ac5e-2dda-4ad7-8299-b45d026220d8",
 															"key": "serviceInformationId",
-															"value": "47a1b0f2-1244-4b2b-5840-08dd210be61b",
+															"value": "",
 															"description": "(Required) "
 														}
 													]
