@@ -8253,7 +8253,7 @@
 													"var responseJSON = pm.response.json();\r",
 													"var list = responseJSON;\r",
 													"\r",
-													"pm.test(\"Verify that employees are returned\", function () {\r",
+													"pm.test(\"Verify that suppliers are returned\", function () {\r",
 													"    pm.expect(list.data[0].companyId).to.be.a(\"string\").and.not.be.empty;\r",
 													"    pm.expect(list.data[0].businessName).to.be.a(\"string\").and.not.be.empty;\r",
 													"    pm.expect(list.data[0].dateOfEstablishment).to.be.a(\"string\").and.not.be.empty;\r",
@@ -8280,7 +8280,7 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "{{baseUrl}}/api/supplier/list?pageNumber=1&pageSize=10",
+											"raw": "{{baseUrl}}/api/supplier/list?pageNumber=1&pageSize=30",
 											"host": [
 												"{{baseUrl}}"
 											],
@@ -8297,7 +8297,7 @@
 												},
 												{
 													"key": "pageSize",
-													"value": "10",
+													"value": "30",
 													"description": "(Required) "
 												}
 											]
@@ -30475,7 +30475,7 @@
 										],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n  \"entityId\": \"{{supplierId}}\",\n  \"entityName\": \"Supplier\",\n  \"workflowDescription\": \"Supplier verification for bailey@yopmail.com\",\n  \"parameters\": [\n    {\n      \"parameterName\": \"SupplierId\",\n      \"parameterValue\": \"{{supplierId}}\"  //from login\n    },\n    {\n      \"parameterName\": \"baseurl\",\n      \"parameterValue\": \"{{baseUrl}}\"\n    },\n      {\n      \"parameterName\": \"RoleId\",\n      \"parameterValue\": \"{{roleId}}\"//\"b53300b8-5f92-40c8-bf66-08dcf4682678\" \n    },\n     {\n      \"parameterName\": \"UserId\",\n      \"parameterValue\": \"{{supplierUserId}}\"//\"3d7d0b63-17e9-4d94-8afd-08dd23248f67\"  //from suppliers\n    }\n  ],\n  \"selectedWorkflowType\": \"Supplier\"\n}",
+											"raw": "{\n  \"entityId\": \"{{supplierId}}\",\n  \"entityName\": \"Supplier\",\n  \"workflowDescription\": \"Supplier verification for sly@yopmail.com\",\n  \"parameters\": [\n    {\n      \"parameterName\": \"SupplierId\",\n      \"parameterValue\": \"{{supplierId}}\"  //from login\n    },\n    {\n      \"parameterName\": \"baseurl\",\n      \"parameterValue\": \"{{baseUrl}}\"\n    },\n      {\n      \"parameterName\": \"RoleId\",\n      \"parameterValue\": \"{{roleId}}\"//\"b53300b8-5f92-40c8-bf66-08dcf4682678\" \n    },\n     {\n      \"parameterName\": \"UserId\",\n      \"parameterValue\": \"{{supplierUserId}}\"//\"3d7d0b63-17e9-4d94-8afd-08dd23248f67\"  //from suppliers\n    }\n  ],\n  \"selectedWorkflowType\": \"Supplier\"\n}",
 											"options": {
 												"raw": {
 													"headerFamily": "json",
@@ -30699,7 +30699,7 @@
 										"auth": {
 											"type": "bearer",
 											"bearer": {
-												"token": "{{bearerToken}}"
+												"token": "{{secondApproverBearerToken}}"
 											}
 										},
 										"method": "POST",
@@ -30711,7 +30711,7 @@
 										],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n  \"requestId\": \"98c3ae3f-3e99-4d49-9301-08dd3947d106\",// \"{{requestId}}\",//\"fa087b2a-e880-47ac-bb83-08dd341c5bcc\",\n  \"entityId\": \"{{supplierId}}\",\n  \"entityName\": \"Supplier\",\n  \"comment\": \"<string>\",\n  \"workflowAction\": \"Approved\",\n  \"approverId\": \"{{secondApproverUserId}}\",//login user id\n  \"descriptions\": \"Supplier verification for bailey@yopmail.com\"\n}",
+											"raw": "{\n  \"requestId\":  \"{{requestId}}\",//\"fa087b2a-e880-47ac-bb83-08dd341c5bcc\",\n  \"entityId\": \"{{supplierId}}\",\n  \"entityName\": \"Supplier\",\n  \"comment\": \"<string>\",\n  \"workflowAction\": \"Approved\",\n  \"approverId\": \"{{secondApproverUserId}}\",//login user id\n  \"descriptions\": \"Supplier verification for sly@yopmail.com\"\n}",
 											"options": {
 												"raw": {
 													"headerFamily": "json",
@@ -37810,6 +37810,33 @@
 							"item": [
 								{
 									"name": "Anp Procurement Features Service Information Create Endpoint1",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "e90c1f36-be54-434a-8a22-748bb3d24f2e",
+												"exec": [
+													"pm.collectionVariables.set(\"serviceInformationId\", pm.response.json().data.id);\r",
+													"\r",
+													"pm.test(\"Status code is 200\", function () {\r",
+													"    pm.response.to.have.status(200);\r",
+													"});\r",
+													"\r",
+													"var responseJSON = pm.response.json(); \r",
+													"\r",
+													"pm.test(\"Verify that Service Information is created successfully\", function () {\r",
+													"\r",
+													"    pm.expect(responseJSON.isSuccess).to.be.a(\"boolean\");\r",
+													"    pm.expect(responseJSON.data.id).to.be.a(\"string\").and.not.empty;\r",
+													"    pm.expect(responseJSON.data.message).to.be.a(\"string\").and.not.empty;\r",
+													"\r",
+													"});"
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
 									"id": "44575044-23cb-49ab-9dcb-4ec8cec83490",
 									"protocolProfileBehavior": {
 										"disableBodyPruning": true
@@ -37818,7 +37845,7 @@
 										"auth": {
 											"type": "bearer",
 											"bearer": {
-												"token": "{{bearerToken}}"
+												"token": "{{approverBearerToken}}"
 											}
 										},
 										"method": "POST",
@@ -37830,7 +37857,7 @@
 										],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n  \"serviceInformationId\": \"<string>\",\n  \"title\": \"<string>\",\n  \"bidStartDate\": \"<dateTime>\",\n  \"bidEndDate\": \"<dateTime>\",\n  \"description\": \"<string>\",\n  \"businessType\": \"<string>\",\n  \"bidRequirement\": \"<string>\",\n  \"prerequisite\": \"<string>\",\n  \"workReference\": \"<string>\",\n  \"additionalInformation\": \"<string>\",\n  \"industryId\": \"<string>\",\n  \"status\": 3\n}",
+											"raw": "{\n  //\"serviceInformationId\": \"<string>\",\n  \"title\": \"Oil minning\",\n  \"bidStartDate\": \"2025-01-25\",\n  \"bidEndDate\": \"2025-01-30\",\n  \"description\": \"Oil minning\",\n  \"businessType\": \"Sole proprietorship\",\n  \"bidRequirement\": \"3 contracts executed\",\n  \"prerequisite\": \"CAC\",\n  \"workReference\": \"<string>\",\n  \"additionalInformation\": \"<string>\",\n  \"industryId\": \"{{industryId}}\",\n  \"status\": 4\n}",
 											"options": {
 												"raw": {
 													"headerFamily": "json",
@@ -37967,7 +37994,7 @@
 										"auth": {
 											"type": "bearer",
 											"bearer": {
-												"token": "{{bearerToken}}"
+												"token": "{{approverBearerToken}}"
 											}
 										},
 										"method": "POST",
@@ -38111,6 +38138,31 @@
 									"item": [
 										{
 											"name": "Anp Procurement Features Service Information Create Tender Goods Service Endpoint1",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"id": "adae8ba5-cae9-4f7f-9fe0-50841d10c3f3",
+														"exec": [
+															"pm.test(\"Status code is 200\", function () {\r",
+															"    pm.response.to.have.status(200);\r",
+															"});\r",
+															"\r",
+															"var responseJSON = pm.response.json(); \r",
+															"\r",
+															"pm.test(\"Verify that Service Information is created successfully\", function () {\r",
+															"\r",
+															"    pm.expect(responseJSON.isSuccess).to.be.a(\"boolean\");\r",
+															"    pm.expect(responseJSON.data.id).to.be.a(\"string\").and.not.empty;\r",
+															"    pm.expect(responseJSON.data.message).to.be.a(\"string\").and.not.empty;\r",
+															"\r",
+															"});"
+														],
+														"type": "text/javascript",
+														"packages": {}
+													}
+												}
+											],
 											"id": "fc57bcd4-667b-4d83-9e93-cf517011c18e",
 											"protocolProfileBehavior": {
 												"disableBodyPruning": true
@@ -38119,7 +38171,7 @@
 												"auth": {
 													"type": "bearer",
 													"bearer": {
-														"token": "{{bearerToken}}"
+														"token": "{{approverBearerToken}}"
 													}
 												},
 												"method": "POST",
@@ -38131,7 +38183,7 @@
 												],
 												"body": {
 													"mode": "raw",
-													"raw": "{\n  \"tenderGoodsServicesId\": \"<string>\",\n  \"itemName\": \"<string>\",\n  \"description\": \"<string>\",\n  \"quantity\": \"<integer>\",\n  \"estimatedCost\": \"<number>\",\n  \"procurementMethod\": \"<string>\",\n  \"warrantyDuration\": \"<integer>\",\n  \"warrantyType\": \"<string>\",\n  \"serviceInformationId\": \"<string>\"\n}",
+													"raw": "{\n // \"tenderGoodsServicesId\": \"<string>\",\n  \"itemName\": \"Gold\",\n  \"description\": \"Gold minning\",\n  \"quantity\": \"10\",\n  \"estimatedCost\": \"50000\",\n  \"procurementMethod\": \"Request for proposal\",\n  \"warrantyDuration\": \"5\",\n  \"warrantyType\": \"Standard\",\n  \"serviceInformationId\": \"85218a2b-83c4-464a-3cd6-08dd3c7c59fc\"\n}",
 													"options": {
 														"raw": {
 															"headerFamily": "json",
@@ -38415,6 +38467,33 @@
 									"item": [
 										{
 											"name": "Anp Procurement Features Service Information Create Tender Document Endpoint1",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"id": "20c3e128-f154-4846-9243-b6208d301bc4",
+														"exec": [
+															"//pm.collectionVariables.set(\"serviceInformationId\", pm.response.json().data.id);\r",
+															"\r",
+															"pm.test(\"Status code is 200\", function () {\r",
+															"    pm.response.to.have.status(200);\r",
+															"});\r",
+															"\r",
+															"var responseJSON = pm.response.json(); \r",
+															"\r",
+															"pm.test(\"Verify that Service Information is created successfully\", function () {\r",
+															"\r",
+															"    pm.expect(responseJSON.isSuccess).to.be.a(\"boolean\");\r",
+															"    pm.expect(responseJSON.data.id).to.be.a(\"string\").and.not.empty;\r",
+															"    pm.expect(responseJSON.data.message).to.be.a(\"string\").and.not.empty;\r",
+															"\r",
+															"});"
+														],
+														"type": "text/javascript",
+														"packages": {}
+													}
+												}
+											],
 											"id": "77658c99-5671-4e21-aebf-b67f7109655e",
 											"protocolProfileBehavior": {
 												"disableBodyPruning": true
@@ -38423,7 +38502,7 @@
 												"auth": {
 													"type": "bearer",
 													"bearer": {
-														"token": "{{bearerToken}}"
+														"token": "{{approverBearerToken}}"
 													}
 												},
 												"method": "POST",
@@ -38435,7 +38514,7 @@
 												],
 												"body": {
 													"mode": "raw",
-													"raw": "{\n  \"tenderDetailId\": \"<string>\",\n  \"startdate\": \"<dateTime>\",\n  \"endDate\": \"<dateTime>\",\n  \"tenderType\": \"Commercials\",\n  \"serviceInformationId\": \"<string>\",\n  \"tenderDocuments\": [\n    {\n      \"tenderDocumentId\": \"<string>\",\n      \"documentName\": \"<string>\",\n      \"assignPoint\": \"<integer>\"\n    },\n    {\n      \"tenderDocumentId\": \"<string>\",\n      \"documentName\": \"<string>\",\n      \"assignPoint\": \"<integer>\"\n    }\n  ]\n}",
+													"raw": "{\n // \"tenderDetailId\": \"<string>\",\n  \"startdate\": \"2025-01-25T14:09:39.906Z\",\n  \"endDate\": \"2025-01-30T14:09:39.906Z\",\n  \"tenderType\": \"Commercials\",\n  \"serviceInformationId\": \"85218a2b-83c4-464a-3cd6-08dd3c7c59fc\",\n  \"tenderDocuments\": [\n    {\n     // \"tenderDocumentId\": \"<string>\",\n      \"documentName\": \"CAC\",\n      \"assignPoint\": \"30\"\n    }\n    // {\n    //   \"tenderDocumentId\": \"<string>\",\n    //   \"documentName\": \"<string>\",\n    //   \"assignPoint\": \"<integer>\"\n    // }\n  ]\n}",
 													"options": {
 														"raw": {
 															"headerFamily": "json",
@@ -39746,6 +39825,33 @@
 							"item": [
 								{
 									"name": "Anp Procurement Features Service Information Get All Service Information Endpoint",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "012053ec-52e5-437a-8498-28be4d66fe5e",
+												"exec": [
+													"//pm.collectionVariables.set(\"serviceInformationId\", pm.response.json().data.id);\r",
+													"\r",
+													"pm.test(\"Status code is 200\", function () {\r",
+													"    pm.response.to.have.status(200);\r",
+													"});\r",
+													"\r",
+													"var responseJSON = pm.response.json(); \r",
+													"\r",
+													"pm.test(\"Verify that Service Information is returned successfully\", function () {\r",
+													"\r",
+													"    // pm.expect(responseJSON.isSuccess).to.be.a(\"boolean\");\r",
+													"    // pm.expect(responseJSON.data.id).to.be.a(\"string\").and.not.empty;\r",
+													"    pm.expect(responseJSON.data[0]).to.be.an(\"object\").and.not.empty;\r",
+													"\r",
+													"});"
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
 									"id": "356afeeb-f919-4f83-8baa-a30f1c390682",
 									"protocolProfileBehavior": {
 										"disableBodyPruning": true
@@ -39754,13 +39860,13 @@
 										"auth": {
 											"type": "bearer",
 											"bearer": {
-												"token": "{{bearerToken}}"
+												"token": "{{approverBearerToken}}"
 											}
 										},
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "{{baseUrl}}/api/procurement/listServiceInformation?operatorId=<string>&status=0&pageNumber=<integer>&pageSize=<integer>",
+											"raw": "{{baseUrl}}/api/procurement/listServiceInformation?pageNumber=1&pageSize=10",
 											"host": [
 												"{{baseUrl}}"
 											],
@@ -39772,20 +39878,22 @@
 											"query": [
 												{
 													"key": "operatorId",
-													"value": "<string>"
+													"value": "<string>",
+													"disabled": true
 												},
 												{
 													"key": "status",
-													"value": "0"
+													"value": "0",
+													"disabled": true
 												},
 												{
 													"key": "pageNumber",
-													"value": "<integer>",
+													"value": "1",
 													"description": "(Required) "
 												},
 												{
 													"key": "pageSize",
-													"value": "<integer>",
+													"value": "10",
 													"description": "(Required) "
 												}
 											]
