@@ -11926,6 +11926,8 @@
 											"script": {
 												"id": "cca1f095-69e7-48c9-bd98-ba6453dc07b0",
 												"exec": [
+													"pm.collectionVariables.set(\"industryId\", pm.response.json().data[0].industryId);\r",
+													"\r",
 													"pm.test(\"Status code is 200\", function () {\r",
 													"    pm.response.to.have.status(200);\r",
 													"});\r",
@@ -46922,6 +46924,10 @@
 		},
 		{
 			"key": "initiatorUserId",
+			"value": ""
+		},
+		{
+			"key": "industryId",
 			"value": ""
 		}
 	]
