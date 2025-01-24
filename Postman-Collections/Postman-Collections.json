@@ -271,7 +271,7 @@
 										],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n  \"userName\": \"{{$randomUserName}}\",\n  \"password\": \"Password12@@\",\n  \"confirmPassword\": \"Password12@@\",\n  \"email\": \"*}zWl8B@.>cndg.\",\n  \"phoneNumber\": \"+234{{phonenumber}}\",\n  \"firstName\": \"{{$randomFirstName}}\",\n  \"lastName\": \"{{$randomLastName}}\"\n}",
+											"raw": "{\n  \"userName\": \"*}zWl8B@.>cndg.\",\n  \"password\": \"Password12@@\",\n  \"confirmPassword\": \"Password12@@\",\n  \"email\": \"*}zWl8B@.>cndg.\",\n  \"phoneNumber\": \"+234{{phonenumber}}\",\n  \"firstName\": \"{{$randomFirstName}}\",\n  \"lastName\": \"{{$randomLastName}}\"\n}",
 											"options": {
 												"raw": {
 													"headerFamily": "json",
