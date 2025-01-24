@@ -38718,7 +38718,32 @@
 									"name": "{serviceInformationId}",
 									"item": [
 										{
-											"name": "Anp Procurement Features Service Information Delete Service Info Endpoint",
+											"name": "Already deleted - Delete Service Info Endpoint",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"id": "c59e502d-d745-43e5-8cc7-baabb5d01df7",
+														"exec": [
+															"pm.test(\"Status code is 200\", function () {\r",
+															"    pm.response.to.have.status(200);\r",
+															"});\r",
+															"\r",
+															"var responseJSON = pm.response.json(); \r",
+															"\r",
+															"pm.test(\"Verify that Service Information is already deleted \", function () {\r",
+															"\r",
+															"    pm.expect(responseJSON.isSuccess).to.be.a(\"boolean\");\r",
+															"    pm.expect(responseJSON.data).to.be.null;\r",
+															"    pm.expect(responseJSON.errorMessage).to.be.a(\"string\").and.not.empty;\r",
+															"\r",
+															"});"
+														],
+														"type": "text/javascript",
+														"packages": {}
+													}
+												}
+											],
 											"id": "da4d1c34-57b6-4c48-84f2-033d68713cad",
 											"protocolProfileBehavior": {
 												"disableBodyPruning": true
@@ -38727,13 +38752,13 @@
 												"auth": {
 													"type": "bearer",
 													"bearer": {
-														"token": "{{bearerToken}}"
+														"token": "{{approverBearerToken}}"
 													}
 												},
 												"method": "DELETE",
 												"header": [],
 												"url": {
-													"raw": "{{baseUrl}}/api/procurement/deleteServiceInfo/:serviceInformationId",
+													"raw": "{{baseUrl}}/api/procurement/deleteServiceInfo/:serviceInformationId?",
 													"host": [
 														"{{baseUrl}}"
 													],
@@ -38743,11 +38768,17 @@
 														"deleteServiceInfo",
 														":serviceInformationId"
 													],
+													"query": [
+														{
+															"key": null,
+															"value": null,
+															"type": "text"
+														}
+													],
 													"variable": [
 														{
-															"id": "3662b305-25d8-4d76-9541-5d24a4d4390f",
 															"key": "serviceInformationId",
-															"value": "<string>",
+															"value": "47a1b0f2-1244-4b2b-5840-08dd210be61b",
 															"description": "(Required) "
 														}
 													]
@@ -38832,6 +38863,191 @@
 												},
 												{
 													"id": "c84f7b93-d15f-47ef-a4f1-006bb1be5e9d",
+													"name": "Forbidden",
+													"originalRequest": {
+														"method": "DELETE",
+														"header": [
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/procurement/deleteServiceInfo/:serviceInformationId",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"procurement",
+																"deleteServiceInfo",
+																":serviceInformationId"
+															],
+															"variable": [
+																{
+																	"key": "serviceInformationId"
+																}
+															]
+														}
+													},
+													"status": "Forbidden",
+													"code": 403,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												}
+											]
+										},
+										{
+											"name": "Already deleted - Delete Service Info Endpoint Copy",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"id": "c59e502d-d745-43e5-8cc7-baabb5d01df7",
+														"exec": [
+															"pm.test(\"Status code is 200\", function () {\r",
+															"    pm.response.to.have.status(200);\r",
+															"});\r",
+															"\r",
+															"var responseJSON = pm.response.json(); \r",
+															"\r",
+															"pm.test(\"Verify that Service Information is already deleted \", function () {\r",
+															"\r",
+															"    pm.expect(responseJSON.isSuccess).to.be.a(\"boolean\");\r",
+															"    pm.expect(responseJSON.data).to.be.null;\r",
+															"    pm.expect(responseJSON.errorMessage).to.be.a(\"string\").and.not.empty;\r",
+															"\r",
+															"});"
+														],
+														"type": "text/javascript",
+														"packages": {}
+													}
+												}
+											],
+											"id": "d3d65ea5-de05-4531-8feb-8f361ea69a00",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": {
+														"token": "{{approverBearerToken}}"
+													}
+												},
+												"method": "DELETE",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/procurement/deleteServiceInfo/:serviceInformationId?",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"procurement",
+														"deleteServiceInfo",
+														":serviceInformationId"
+													],
+													"query": [
+														{
+															"key": null,
+															"value": null,
+															"type": "text"
+														}
+													],
+													"variable": [
+														{
+															"id": "0155ac5e-2dda-4ad7-8299-b45d026220d8",
+															"key": "serviceInformationId",
+															"value": "47a1b0f2-1244-4b2b-5840-08dd210be61b",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"response": [
+												{
+													"id": "4444edc7-ffbf-445b-9fc5-d775b4feba47",
+													"name": "Success",
+													"originalRequest": {
+														"method": "DELETE",
+														"header": [
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/procurement/deleteServiceInfo/:serviceInformationId",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"procurement",
+																"deleteServiceInfo",
+																":serviceInformationId"
+															],
+															"variable": [
+																{
+																	"key": "serviceInformationId"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												},
+												{
+													"id": "7413c827-d6ef-4957-b2ee-51e88c055bb1",
+													"name": "Unauthorized",
+													"originalRequest": {
+														"method": "DELETE",
+														"header": [
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/procurement/deleteServiceInfo/:serviceInformationId",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"procurement",
+																"deleteServiceInfo",
+																":serviceInformationId"
+															],
+															"variable": [
+																{
+																	"key": "serviceInformationId"
+																}
+															]
+														}
+													},
+													"status": "Unauthorized",
+													"code": 401,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												},
+												{
+													"id": "a1386454-2126-4d47-a1f8-b007e23d1dc9",
 													"name": "Forbidden",
 													"originalRequest": {
 														"method": "DELETE",
