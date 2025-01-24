@@ -38902,7 +38902,7 @@
 											]
 										},
 										{
-											"name": "Already deleted - Delete Service Info Endpoint Copy",
+											"name": "No Service Information Id - Delete Service Info Endpoint",
 											"event": [
 												{
 													"listen": "test",
