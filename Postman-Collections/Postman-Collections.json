@@ -38104,310 +38104,6 @@
 							"id": "050f8717-99e2-4bfa-b0b3-ad638e708edd"
 						},
 						{
-							"name": "TenderDocument",
-							"item": [
-								{
-									"name": "create",
-									"item": [
-										{
-											"name": "Anp Procurement Features Service Information Create Tender Document Endpoint1",
-											"id": "77658c99-5671-4e21-aebf-b67f7109655e",
-											"protocolProfileBehavior": {
-												"disableBodyPruning": true
-											},
-											"request": {
-												"auth": {
-													"type": "bearer",
-													"bearer": {
-														"token": "{{bearerToken}}"
-													}
-												},
-												"method": "POST",
-												"header": [
-													{
-														"key": "Content-Type",
-														"value": "application/json"
-													}
-												],
-												"body": {
-													"mode": "raw",
-													"raw": "{\n  \"tenderDetailId\": \"<string>\",\n  \"startdate\": \"<dateTime>\",\n  \"endDate\": \"<dateTime>\",\n  \"tenderType\": \"Commercials\",\n  \"serviceInformationId\": \"<string>\",\n  \"tenderDocuments\": [\n    {\n      \"tenderDocumentId\": \"<string>\",\n      \"documentName\": \"<string>\",\n      \"assignPoint\": \"<integer>\"\n    },\n    {\n      \"tenderDocumentId\": \"<string>\",\n      \"documentName\": \"<string>\",\n      \"assignPoint\": \"<integer>\"\n    }\n  ]\n}",
-													"options": {
-														"raw": {
-															"headerFamily": "json",
-															"language": "json"
-														}
-													}
-												},
-												"url": "{{baseUrl}}/api/procurement/TenderDocument/create"
-											},
-											"response": [
-												{
-													"id": "f6e67ebe-aff0-4ec4-ab23-e15f1dd27cd5",
-													"name": "Success",
-													"originalRequest": {
-														"method": "POST",
-														"header": [
-															{
-																"key": "Content-Type",
-																"value": "application/json"
-															},
-															{
-																"description": "Added as a part of security scheme: bearer",
-																"key": "Authorization",
-																"value": "Bearer <token>"
-															}
-														],
-														"body": {
-															"mode": "raw",
-															"raw": "{\n  \"tenderDetailId\": \"<string>\",\n  \"startdate\": \"<dateTime>\",\n  \"endDate\": \"<dateTime>\",\n  \"tenderType\": \"Commercials\",\n  \"serviceInformationId\": \"<string>\",\n  \"tenderDocuments\": [\n    {\n      \"tenderDocumentId\": \"<string>\",\n      \"documentName\": \"<string>\",\n      \"assignPoint\": \"<integer>\"\n    },\n    {\n      \"tenderDocumentId\": \"<string>\",\n      \"documentName\": \"<string>\",\n      \"assignPoint\": \"<integer>\"\n    }\n  ]\n}",
-															"options": {
-																"raw": {
-																	"headerFamily": "json",
-																	"language": "json"
-																}
-															}
-														},
-														"url": "{{baseUrl}}/api/procurement/TenderDocument/create"
-													},
-													"status": "OK",
-													"code": 200,
-													"_postman_previewlanguage": "text",
-													"header": [],
-													"cookie": [],
-													"responseTime": null,
-													"body": ""
-												},
-												{
-													"id": "9bc61153-bad3-4dd0-9bd5-f3a376bd572d",
-													"name": "Unauthorized",
-													"originalRequest": {
-														"method": "POST",
-														"header": [
-															{
-																"key": "Content-Type",
-																"value": "application/json"
-															},
-															{
-																"description": "Added as a part of security scheme: bearer",
-																"key": "Authorization",
-																"value": "Bearer <token>"
-															}
-														],
-														"body": {
-															"mode": "raw",
-															"raw": "{\n  \"tenderDetailId\": \"<string>\",\n  \"startdate\": \"<dateTime>\",\n  \"endDate\": \"<dateTime>\",\n  \"tenderType\": \"Commercials\",\n  \"serviceInformationId\": \"<string>\",\n  \"tenderDocuments\": [\n    {\n      \"tenderDocumentId\": \"<string>\",\n      \"documentName\": \"<string>\",\n      \"assignPoint\": \"<integer>\"\n    },\n    {\n      \"tenderDocumentId\": \"<string>\",\n      \"documentName\": \"<string>\",\n      \"assignPoint\": \"<integer>\"\n    }\n  ]\n}",
-															"options": {
-																"raw": {
-																	"headerFamily": "json",
-																	"language": "json"
-																}
-															}
-														},
-														"url": "{{baseUrl}}/api/procurement/TenderDocument/create"
-													},
-													"status": "Unauthorized",
-													"code": 401,
-													"_postman_previewlanguage": "text",
-													"header": [],
-													"cookie": [],
-													"responseTime": null,
-													"body": ""
-												},
-												{
-													"id": "18d75aed-4b55-4c08-99d5-6ef1aee31575",
-													"name": "Forbidden",
-													"originalRequest": {
-														"method": "POST",
-														"header": [
-															{
-																"key": "Content-Type",
-																"value": "application/json"
-															},
-															{
-																"description": "Added as a part of security scheme: bearer",
-																"key": "Authorization",
-																"value": "Bearer <token>"
-															}
-														],
-														"body": {
-															"mode": "raw",
-															"raw": "{\n  \"tenderDetailId\": \"<string>\",\n  \"startdate\": \"<dateTime>\",\n  \"endDate\": \"<dateTime>\",\n  \"tenderType\": \"Commercials\",\n  \"serviceInformationId\": \"<string>\",\n  \"tenderDocuments\": [\n    {\n      \"tenderDocumentId\": \"<string>\",\n      \"documentName\": \"<string>\",\n      \"assignPoint\": \"<integer>\"\n    },\n    {\n      \"tenderDocumentId\": \"<string>\",\n      \"documentName\": \"<string>\",\n      \"assignPoint\": \"<integer>\"\n    }\n  ]\n}",
-															"options": {
-																"raw": {
-																	"headerFamily": "json",
-																	"language": "json"
-																}
-															}
-														},
-														"url": "{{baseUrl}}/api/procurement/TenderDocument/create"
-													},
-													"status": "Forbidden",
-													"code": 403,
-													"_postman_previewlanguage": "text",
-													"header": [],
-													"cookie": [],
-													"responseTime": null,
-													"body": ""
-												}
-											]
-										}
-									],
-									"id": "acaf3795-5709-49ac-bebf-4cfb228a9e41"
-								},
-								{
-									"name": "edit",
-									"item": [
-										{
-											"name": "Anp Procurement Features Service Information Create Tender Document Endpoint2",
-											"id": "75c03239-40f1-4dd4-87cd-72a9dccb1991",
-											"protocolProfileBehavior": {
-												"disableBodyPruning": true
-											},
-											"request": {
-												"auth": {
-													"type": "bearer",
-													"bearer": {
-														"token": "{{bearerToken}}"
-													}
-												},
-												"method": "POST",
-												"header": [
-													{
-														"key": "Content-Type",
-														"value": "application/json"
-													}
-												],
-												"body": {
-													"mode": "raw",
-													"raw": "{\n  \"tenderDetailId\": \"<string>\",\n  \"startdate\": \"<dateTime>\",\n  \"endDate\": \"<dateTime>\",\n  \"tenderType\": \"Commercials\",\n  \"serviceInformationId\": \"<string>\",\n  \"tenderDocuments\": [\n    {\n      \"tenderDocumentId\": \"<string>\",\n      \"documentName\": \"<string>\",\n      \"assignPoint\": \"<integer>\"\n    },\n    {\n      \"tenderDocumentId\": \"<string>\",\n      \"documentName\": \"<string>\",\n      \"assignPoint\": \"<integer>\"\n    }\n  ]\n}",
-													"options": {
-														"raw": {
-															"headerFamily": "json",
-															"language": "json"
-														}
-													}
-												},
-												"url": "{{baseUrl}}/api/procurement/TenderDocument/edit"
-											},
-											"response": [
-												{
-													"id": "03866276-f445-45d2-bddd-8aeb9b98940d",
-													"name": "Success",
-													"originalRequest": {
-														"method": "POST",
-														"header": [
-															{
-																"key": "Content-Type",
-																"value": "application/json"
-															},
-															{
-																"description": "Added as a part of security scheme: bearer",
-																"key": "Authorization",
-																"value": "Bearer <token>"
-															}
-														],
-														"body": {
-															"mode": "raw",
-															"raw": "{\n  \"tenderDetailId\": \"<string>\",\n  \"startdate\": \"<dateTime>\",\n  \"endDate\": \"<dateTime>\",\n  \"tenderType\": \"Commercials\",\n  \"serviceInformationId\": \"<string>\",\n  \"tenderDocuments\": [\n    {\n      \"tenderDocumentId\": \"<string>\",\n      \"documentName\": \"<string>\",\n      \"assignPoint\": \"<integer>\"\n    },\n    {\n      \"tenderDocumentId\": \"<string>\",\n      \"documentName\": \"<string>\",\n      \"assignPoint\": \"<integer>\"\n    }\n  ]\n}",
-															"options": {
-																"raw": {
-																	"headerFamily": "json",
-																	"language": "json"
-																}
-															}
-														},
-														"url": "{{baseUrl}}/api/procurement/TenderDocument/edit"
-													},
-													"status": "OK",
-													"code": 200,
-													"_postman_previewlanguage": "text",
-													"header": [],
-													"cookie": [],
-													"responseTime": null,
-													"body": ""
-												},
-												{
-													"id": "826ed7c6-83bd-45b8-9319-7aa5ff4cad53",
-													"name": "Unauthorized",
-													"originalRequest": {
-														"method": "POST",
-														"header": [
-															{
-																"key": "Content-Type",
-																"value": "application/json"
-															},
-															{
-																"description": "Added as a part of security scheme: bearer",
-																"key": "Authorization",
-																"value": "Bearer <token>"
-															}
-														],
-														"body": {
-															"mode": "raw",
-															"raw": "{\n  \"tenderDetailId\": \"<string>\",\n  \"startdate\": \"<dateTime>\",\n  \"endDate\": \"<dateTime>\",\n  \"tenderType\": \"Commercials\",\n  \"serviceInformationId\": \"<string>\",\n  \"tenderDocuments\": [\n    {\n      \"tenderDocumentId\": \"<string>\",\n      \"documentName\": \"<string>\",\n      \"assignPoint\": \"<integer>\"\n    },\n    {\n      \"tenderDocumentId\": \"<string>\",\n      \"documentName\": \"<string>\",\n      \"assignPoint\": \"<integer>\"\n    }\n  ]\n}",
-															"options": {
-																"raw": {
-																	"headerFamily": "json",
-																	"language": "json"
-																}
-															}
-														},
-														"url": "{{baseUrl}}/api/procurement/TenderDocument/edit"
-													},
-													"status": "Unauthorized",
-													"code": 401,
-													"_postman_previewlanguage": "text",
-													"header": [],
-													"cookie": [],
-													"responseTime": null,
-													"body": ""
-												},
-												{
-													"id": "1587e3c4-9faa-4cea-883d-2fdbbeae2ce1",
-													"name": "Forbidden",
-													"originalRequest": {
-														"method": "POST",
-														"header": [
-															{
-																"key": "Content-Type",
-																"value": "application/json"
-															},
-															{
-																"description": "Added as a part of security scheme: bearer",
-																"key": "Authorization",
-																"value": "Bearer <token>"
-															}
-														],
-														"body": {
-															"mode": "raw",
-															"raw": "{\n  \"tenderDetailId\": \"<string>\",\n  \"startdate\": \"<dateTime>\",\n  \"endDate\": \"<dateTime>\",\n  \"tenderType\": \"Commercials\",\n  \"serviceInformationId\": \"<string>\",\n  \"tenderDocuments\": [\n    {\n      \"tenderDocumentId\": \"<string>\",\n      \"documentName\": \"<string>\",\n      \"assignPoint\": \"<integer>\"\n    },\n    {\n      \"tenderDocumentId\": \"<string>\",\n      \"documentName\": \"<string>\",\n      \"assignPoint\": \"<integer>\"\n    }\n  ]\n}",
-															"options": {
-																"raw": {
-																	"headerFamily": "json",
-																	"language": "json"
-																}
-															}
-														},
-														"url": "{{baseUrl}}/api/procurement/TenderDocument/edit"
-													},
-													"status": "Forbidden",
-													"code": 403,
-													"_postman_previewlanguage": "text",
-													"header": [],
-													"cookie": [],
-													"responseTime": null,
-													"body": ""
-												}
-											]
-										}
-									],
-									"id": "a70ee208-0f73-454a-99c0-5fe709e5d21b"
-								}
-							],
-							"id": "527e3bec-cf41-4a40-a5ea-c6c7f4ef18a4"
-						},
-						{
 							"name": "TenderGoodsService",
 							"item": [
 								{
@@ -38710,6 +38406,310 @@
 								}
 							],
 							"id": "0805c8f0-3ce6-4555-ad1e-a7a9bc3dec2f"
+						},
+						{
+							"name": "TenderDocument",
+							"item": [
+								{
+									"name": "create",
+									"item": [
+										{
+											"name": "Anp Procurement Features Service Information Create Tender Document Endpoint1",
+											"id": "77658c99-5671-4e21-aebf-b67f7109655e",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": {
+														"token": "{{bearerToken}}"
+													}
+												},
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"tenderDetailId\": \"<string>\",\n  \"startdate\": \"<dateTime>\",\n  \"endDate\": \"<dateTime>\",\n  \"tenderType\": \"Commercials\",\n  \"serviceInformationId\": \"<string>\",\n  \"tenderDocuments\": [\n    {\n      \"tenderDocumentId\": \"<string>\",\n      \"documentName\": \"<string>\",\n      \"assignPoint\": \"<integer>\"\n    },\n    {\n      \"tenderDocumentId\": \"<string>\",\n      \"documentName\": \"<string>\",\n      \"assignPoint\": \"<integer>\"\n    }\n  ]\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl}}/api/procurement/TenderDocument/create"
+											},
+											"response": [
+												{
+													"id": "f6e67ebe-aff0-4ec4-ab23-e15f1dd27cd5",
+													"name": "Success",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"tenderDetailId\": \"<string>\",\n  \"startdate\": \"<dateTime>\",\n  \"endDate\": \"<dateTime>\",\n  \"tenderType\": \"Commercials\",\n  \"serviceInformationId\": \"<string>\",\n  \"tenderDocuments\": [\n    {\n      \"tenderDocumentId\": \"<string>\",\n      \"documentName\": \"<string>\",\n      \"assignPoint\": \"<integer>\"\n    },\n    {\n      \"tenderDocumentId\": \"<string>\",\n      \"documentName\": \"<string>\",\n      \"assignPoint\": \"<integer>\"\n    }\n  ]\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl}}/api/procurement/TenderDocument/create"
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												},
+												{
+													"id": "9bc61153-bad3-4dd0-9bd5-f3a376bd572d",
+													"name": "Unauthorized",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"tenderDetailId\": \"<string>\",\n  \"startdate\": \"<dateTime>\",\n  \"endDate\": \"<dateTime>\",\n  \"tenderType\": \"Commercials\",\n  \"serviceInformationId\": \"<string>\",\n  \"tenderDocuments\": [\n    {\n      \"tenderDocumentId\": \"<string>\",\n      \"documentName\": \"<string>\",\n      \"assignPoint\": \"<integer>\"\n    },\n    {\n      \"tenderDocumentId\": \"<string>\",\n      \"documentName\": \"<string>\",\n      \"assignPoint\": \"<integer>\"\n    }\n  ]\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl}}/api/procurement/TenderDocument/create"
+													},
+													"status": "Unauthorized",
+													"code": 401,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												},
+												{
+													"id": "18d75aed-4b55-4c08-99d5-6ef1aee31575",
+													"name": "Forbidden",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"tenderDetailId\": \"<string>\",\n  \"startdate\": \"<dateTime>\",\n  \"endDate\": \"<dateTime>\",\n  \"tenderType\": \"Commercials\",\n  \"serviceInformationId\": \"<string>\",\n  \"tenderDocuments\": [\n    {\n      \"tenderDocumentId\": \"<string>\",\n      \"documentName\": \"<string>\",\n      \"assignPoint\": \"<integer>\"\n    },\n    {\n      \"tenderDocumentId\": \"<string>\",\n      \"documentName\": \"<string>\",\n      \"assignPoint\": \"<integer>\"\n    }\n  ]\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl}}/api/procurement/TenderDocument/create"
+													},
+													"status": "Forbidden",
+													"code": 403,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												}
+											]
+										}
+									],
+									"id": "acaf3795-5709-49ac-bebf-4cfb228a9e41"
+								},
+								{
+									"name": "edit",
+									"item": [
+										{
+											"name": "Anp Procurement Features Service Information Create Tender Document Endpoint2",
+											"id": "75c03239-40f1-4dd4-87cd-72a9dccb1991",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": {
+														"token": "{{bearerToken}}"
+													}
+												},
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"tenderDetailId\": \"<string>\",\n  \"startdate\": \"<dateTime>\",\n  \"endDate\": \"<dateTime>\",\n  \"tenderType\": \"Commercials\",\n  \"serviceInformationId\": \"<string>\",\n  \"tenderDocuments\": [\n    {\n      \"tenderDocumentId\": \"<string>\",\n      \"documentName\": \"<string>\",\n      \"assignPoint\": \"<integer>\"\n    },\n    {\n      \"tenderDocumentId\": \"<string>\",\n      \"documentName\": \"<string>\",\n      \"assignPoint\": \"<integer>\"\n    }\n  ]\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl}}/api/procurement/TenderDocument/edit"
+											},
+											"response": [
+												{
+													"id": "03866276-f445-45d2-bddd-8aeb9b98940d",
+													"name": "Success",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"tenderDetailId\": \"<string>\",\n  \"startdate\": \"<dateTime>\",\n  \"endDate\": \"<dateTime>\",\n  \"tenderType\": \"Commercials\",\n  \"serviceInformationId\": \"<string>\",\n  \"tenderDocuments\": [\n    {\n      \"tenderDocumentId\": \"<string>\",\n      \"documentName\": \"<string>\",\n      \"assignPoint\": \"<integer>\"\n    },\n    {\n      \"tenderDocumentId\": \"<string>\",\n      \"documentName\": \"<string>\",\n      \"assignPoint\": \"<integer>\"\n    }\n  ]\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl}}/api/procurement/TenderDocument/edit"
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												},
+												{
+													"id": "826ed7c6-83bd-45b8-9319-7aa5ff4cad53",
+													"name": "Unauthorized",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"tenderDetailId\": \"<string>\",\n  \"startdate\": \"<dateTime>\",\n  \"endDate\": \"<dateTime>\",\n  \"tenderType\": \"Commercials\",\n  \"serviceInformationId\": \"<string>\",\n  \"tenderDocuments\": [\n    {\n      \"tenderDocumentId\": \"<string>\",\n      \"documentName\": \"<string>\",\n      \"assignPoint\": \"<integer>\"\n    },\n    {\n      \"tenderDocumentId\": \"<string>\",\n      \"documentName\": \"<string>\",\n      \"assignPoint\": \"<integer>\"\n    }\n  ]\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl}}/api/procurement/TenderDocument/edit"
+													},
+													"status": "Unauthorized",
+													"code": 401,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												},
+												{
+													"id": "1587e3c4-9faa-4cea-883d-2fdbbeae2ce1",
+													"name": "Forbidden",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"tenderDetailId\": \"<string>\",\n  \"startdate\": \"<dateTime>\",\n  \"endDate\": \"<dateTime>\",\n  \"tenderType\": \"Commercials\",\n  \"serviceInformationId\": \"<string>\",\n  \"tenderDocuments\": [\n    {\n      \"tenderDocumentId\": \"<string>\",\n      \"documentName\": \"<string>\",\n      \"assignPoint\": \"<integer>\"\n    },\n    {\n      \"tenderDocumentId\": \"<string>\",\n      \"documentName\": \"<string>\",\n      \"assignPoint\": \"<integer>\"\n    }\n  ]\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl}}/api/procurement/TenderDocument/edit"
+													},
+													"status": "Forbidden",
+													"code": 403,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												}
+											]
+										}
+									],
+									"id": "a70ee208-0f73-454a-99c0-5fe709e5d21b"
+								}
+							],
+							"id": "527e3bec-cf41-4a40-a5ea-c6c7f4ef18a4"
 						},
 						{
 							"name": "deleteServiceInfo",
@@ -39587,13 +39587,13 @@
 												"auth": {
 													"type": "bearer",
 													"bearer": {
-														"token": "{{bearerToken}}"
+														"token": "{{approverBearerToken}}"
 													}
 												},
 												"method": "GET",
 												"header": [],
 												"url": {
-													"raw": "{{baseUrl}}/api/procurement/listTenderDocument/:serviceInformationId?pageNumber=<integer>&pageSize=<integer>",
+													"raw": "{{baseUrl}}/api/procurement/listTenderDocument/:serviceInformationId?pageNumber=1&pageSize=10",
 													"host": [
 														"{{baseUrl}}"
 													],
@@ -39606,20 +39606,19 @@
 													"query": [
 														{
 															"key": "pageNumber",
-															"value": "<integer>",
+															"value": "1",
 															"description": "(Required) "
 														},
 														{
 															"key": "pageSize",
-															"value": "<integer>",
+															"value": "10",
 															"description": "(Required) "
 														}
 													],
 													"variable": [
 														{
-															"id": "1565d85f-9001-4271-ae8c-78b31e508900",
 															"key": "serviceInformationId",
-															"value": "<string>",
+															"value": "85218a2b-83c4-464a-3cd6-08dd3c7c59fc",
 															"description": "(Required) "
 														}
 													]
