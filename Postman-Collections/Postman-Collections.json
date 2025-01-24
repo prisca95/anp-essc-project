@@ -990,7 +990,7 @@
 										],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n  \"email\": \"{{signedUpEmail}}\",//\"ola@yopmail.com\",\n  \"code\": \"123456\"\n}",
+											"raw": "{\n  \"email\": \"sly@yopmail.com\",//\"{{signedUpEmail}}\",//\"ola@yopmail.com\",\n  \"code\": \"539399\"\n}",
 											"options": {
 												"raw": {
 													"headerFamily": "json",
@@ -1174,7 +1174,7 @@
 										],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n    //\"email\": \"{{email}}\",\n  \"userName\": \"varun@yopmail.com\",//\"yinka@yopmail.com\",\n  // \"userName\":\"cesaltino.babo@anp.tl\", //initiator\n //  \"userName\": \"abel.saldanha@anp.tl\", //1st approver\n  // \"userName\": \"jaime.ximenes@anp.tl\", //2nd approver\n  \"password\": \"Password12@@\"\n}",
+											"raw": "{\n    //\"email\": \"{{email}}\",\n  \"userName\":  \"sly@yopmail.com\",//\"varun@yopmail.com\",//\"yinka@yopmail.com\",\n  // \"userName\":\"cesaltino.babo@anp.tl\", //initiator\n //  \"userName\": \"abel.saldanha@anp.tl\", //1st approver\n  // \"userName\": \"jaime.ximenes@anp.tl\", //2nd approver\n  \"password\": \"Password12@@\"\n}",
 											"options": {
 												"raw": {
 													"headerFamily": "json",
@@ -10713,7 +10713,7 @@
 										],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n  \"businessName\": \"Bailey Industries\",\n  \"dateOfEstablishment\": \"2024-12-20\",\n  \"streetName\": \"Joebin\",\n  \"region\": \"East\",\n  \"city\": \"Abia\",\n  \"registrationNumber\": \"7847888w\",\n  \"town\": \"Okpa\",\n  \"phoneNumber\": \"09054889955\",\n  \"website\": \"https://www.yinkaindustries.com\",\n  \"email\": \"july@yopmail.com\",\n  \"supplierCategory\": \"5f7398c2-9307-49e5-7205-08dd0935660a\",\n // \"companyId\": \"<string>\", //not required\n  \"activate\": false,\n  \"businessType\": \"Hospitality\",\n  \"country\": \"Nigeria\",\n  \"parentCompanyId\": null,\n  \"industryId\": \"513f3a56-83ec-47cc-8010-08dcff87fbf6\",\n  \"tags\": [\n    {\n     // \"tagId\": \"<string>\",\n      \"tagName\": \"Equipments\" //lookup endpoint\n     // \"companyId\": \"<string>\"\n    },\n    {\n     // \"tagId\": \"<string>\",\n      \"tagName\": \"Maintenance\"\n     // \"companyId\": \"<string>\"\n    }\n  ]\n}",
+											"raw": "{\n  \"businessName\": \"Sly Industries\",\n  \"dateOfEstablishment\": \"2024-12-20\",\n  \"streetName\": \"Joebin\",\n  \"region\": \"East\",\n  \"city\": \"Abia\",\n  \"registrationNumber\": \"7847888w\",\n  \"town\": \"Okpa\",\n  \"phoneNumber\": \"09054889955\",\n  \"website\": \"https://www.slyindustries.com\",\n  \"email\": \"july@yopmail.com\",\n  \"supplierCategory\": \"5f7398c2-9307-49e5-7205-08dd0935660a\",\n // \"companyId\": \"<string>\", //not required\n  \"activate\": false,\n  \"businessType\": \"Hospitality\",\n  \"country\": \"Nigeria\",\n  \"parentCompanyId\": null,\n  \"industryId\": \"513f3a56-83ec-47cc-8010-08dcff87fbf6\",\n  \"tags\": [\n    {\n     // \"tagId\": \"<string>\",\n      \"tagName\": \"Equipments\" //lookup endpoint\n     // \"companyId\": \"<string>\"\n    },\n    {\n     // \"tagId\": \"<string>\",\n      \"tagName\": \"Maintenance\"\n     // \"companyId\": \"<string>\"\n    }\n  ]\n}",
 											"options": {
 												"raw": {
 													"headerFamily": "json",
@@ -42604,6 +42604,32 @@
 									"item": [
 										{
 											"name": "Anp Procurement Features Bids Get All Bids Endpoint",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"id": "8d95e2d2-f50f-4367-99ca-ed43142b0850",
+														"exec": [
+															"pm.test(\"Status code is 200\", function () {\r",
+															"    pm.response.to.have.status(200);\r",
+															"});\r",
+															"\r",
+															"var responseJSON = pm.response.json(); \r",
+															"\r",
+															"pm.test(\"Verify that user profile is returned\", function () {\r",
+															"\r",
+															"    pm.expect(responseJSON.isSuccess).to.be.a(\"boolean\");\r",
+															"    pm.expect(responseJSON.data.email).to.be.a(\"string\").and.not.empty;\r",
+															"    pm.expect(responseJSON.data.userName).to.be.a(\"string\").and.not.empty;\r",
+															"        pm.expect(responseJSON.data.phoneNumber).to.be.a(\"string\").and.not.empty;\r",
+															"\r",
+															"});"
+														],
+														"type": "text/javascript",
+														"packages": {}
+													}
+												}
+											],
 											"id": "17135d38-c194-4751-ac96-51c72c040d90",
 											"protocolProfileBehavior": {
 												"disableBodyPruning": true
@@ -42618,7 +42644,7 @@
 												"method": "GET",
 												"header": [],
 												"url": {
-													"raw": "{{baseUrl}}/api/procurement/supplier/bids?supplierId=<string>&pageNumber=<integer>&pageSize=<integer>",
+													"raw": "{{baseUrl}}/api/procurement/supplier/bids?supplierId={{supplierId}}&pageNumber=1&pageSize=10",
 													"host": [
 														"{{baseUrl}}"
 													],
@@ -42631,16 +42657,16 @@
 													"query": [
 														{
 															"key": "supplierId",
-															"value": "<string>"
+															"value": "{{supplierId}}"
 														},
 														{
 															"key": "pageNumber",
-															"value": "<integer>",
+															"value": "1",
 															"description": "(Required) "
 														},
 														{
 															"key": "pageSize",
-															"value": "<integer>",
+															"value": "10",
 															"description": "(Required) "
 														}
 													]
