@@ -39086,16 +39086,32 @@
 										},
 										{
 											"name": "No Auth - Delete Service Info",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"id": "209b734a-9821-4d28-9d6e-03e70e23913e",
+														"exec": [
+															"pm.test(\"Status code is 401\", function () {\r",
+															"    pm.response.to.have.status(401);\r",
+															"});\r",
+															"\r",
+															"pm.test(\"Status code name has 'Unauthorized'\", function () {\r",
+															"    pm.response.to.have.status(\"Unauthorized\");\r",
+															"});"
+														],
+														"type": "text/javascript",
+														"packages": {}
+													}
+												}
+											],
 											"id": "8e5ba106-911b-4ce4-a181-dc80b2b8d76b",
 											"protocolProfileBehavior": {
 												"disableBodyPruning": true
 											},
 											"request": {
 												"auth": {
-													"type": "bearer",
-													"bearer": {
-														"token": "{{bearerToken}}"
-													}
+													"type": "noauth"
 												},
 												"method": "DELETE",
 												"header": [],
@@ -39112,7 +39128,6 @@
 													],
 													"variable": [
 														{
-															"id": "3662b305-25d8-4d76-9541-5d24a4d4390f",
 															"key": "serviceInformationId",
 															"value": "<string>",
 															"description": "(Required) "
