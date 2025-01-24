@@ -40068,12 +40068,12 @@
 															"\r",
 															"var responseJSON = pm.response.json(); \r",
 															"\r",
-															"pm.test(\"Verify that user profile is returned\", function () {\r",
+															"pm.test(\"Verify that service information is returned\", function () {\r",
 															"\r",
 															"    pm.expect(responseJSON.isSuccess).to.be.a(\"boolean\");\r",
-															"    pm.expect(responseJSON.data.email).to.be.a(\"string\").and.not.empty;\r",
-															"    pm.expect(responseJSON.data.userName).to.be.a(\"string\").and.not.empty;\r",
-															"        pm.expect(responseJSON.data.phoneNumber).to.be.a(\"string\").and.not.empty;\r",
+															"    pm.expect(responseJSON.data).to.be.an(\"object\").and.not.empty;\r",
+															"    // pm.expect(responseJSON.data.userName).to.be.a(\"string\").and.not.empty;\r",
+															"    //     pm.expect(responseJSON.data.phoneNumber).to.be.a(\"string\").and.not.empty;\r",
 															"\r",
 															"});"
 														],
@@ -40090,7 +40090,7 @@
 												"auth": {
 													"type": "bearer",
 													"bearer": {
-														"token": "{{bearerToken}}"
+														"token": "{{approverBearerToken}}"
 													}
 												},
 												"method": "GET",
@@ -40109,7 +40109,7 @@
 													"variable": [
 														{
 															"key": "serviceInformationId",
-															"value": "<string>",
+															"value": "47a1b0f2-1244-4b2b-5840-08dd210be61b",
 															"description": "(Required) "
 														}
 													]
