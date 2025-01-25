@@ -43272,7 +43272,7 @@
 											]
 										},
 										{
-											"name": "No serviceInformationId - Get A Service Information Copy",
+											"name": "Invalid serviceInformationId - Get A Service Information",
 											"event": [
 												{
 													"listen": "test",
@@ -43285,7 +43285,7 @@
 															"\r",
 															"var responseJSON = pm.response.json(); \r",
 															"\r",
-															"pm.test(\"Verify that serviceInformationId is required\", function () {\r",
+															"pm.test(\"Verify that serviceInformationId is invalid\", function () {\r",
 															"\r",
 															"   // pm.expect(responseJSON.isSuccess).to.be.a(\"boolean\");\r",
 															"    pm.expect(responseJSON.errors[0].name).to.be.a(\"string\").and.not.empty;\r",
@@ -43325,9 +43325,8 @@
 													],
 													"variable": [
 														{
-															"id": "2dbb118d-7b65-4696-8dd5-0d0ed7679fd7",
 															"key": "serviceInformationId",
-															"value": "",
+															"value": "47a1b0f2-1244-4b2b-5840-08dd210be6",
 															"description": "(Required) "
 														}
 													]
@@ -43770,6 +43769,185 @@
 												},
 												{
 													"id": "98ebd951-97e2-4058-b264-9d95509ad3cb",
+													"name": "Forbidden",
+													"originalRequest": {
+														"method": "GET",
+														"header": [
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/procurement/getATenderDocument/:tenderDocumentId",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"procurement",
+																"getATenderDocument",
+																":tenderDocumentId"
+															],
+															"variable": [
+																{
+																	"key": "tenderDocumentId"
+																}
+															]
+														}
+													},
+													"status": "Forbidden",
+													"code": 403,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												}
+											]
+										},
+										{
+											"name": "No tenderDocumentId - Get A Tender Document Endpoint",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"id": "6aa402f0-df5a-4afd-8cd0-8a1f0a71f4f4",
+														"exec": [
+															"pm.test(\"Status code is 200\", function () {\r",
+															"    pm.response.to.have.status(200);\r",
+															"});\r",
+															"\r",
+															"var responseJSON = pm.response.json(); \r",
+															"\r",
+															"pm.test(\"Verify that user profile is returned\", function () {\r",
+															"\r",
+															"    pm.expect(responseJSON.isSuccess).to.be.a(\"boolean\");\r",
+															"    pm.expect(responseJSON.data.email).to.be.a(\"string\").and.not.empty;\r",
+															"    pm.expect(responseJSON.data.userName).to.be.a(\"string\").and.not.empty;\r",
+															"        pm.expect(responseJSON.data.phoneNumber).to.be.a(\"string\").and.not.empty;\r",
+															"\r",
+															"});"
+														],
+														"type": "text/javascript",
+														"packages": {}
+													}
+												}
+											],
+											"id": "61a89dc5-8d52-4b1a-b631-814e631d1c3b",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": {
+														"token": "{{bearerToken}}"
+													}
+												},
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/procurement/getATenderDocument/:tenderDocumentId",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"procurement",
+														"getATenderDocument",
+														":tenderDocumentId"
+													],
+													"variable": [
+														{
+															"id": "020c63f4-0862-4cf4-9966-6eb0457236a7",
+															"key": "tenderDocumentId",
+															"value": "<string>",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"response": [
+												{
+													"id": "d9d22c02-d056-4b03-8b09-55b1ef63c855",
+													"name": "Success",
+													"originalRequest": {
+														"method": "GET",
+														"header": [
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/procurement/getATenderDocument/:tenderDocumentId",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"procurement",
+																"getATenderDocument",
+																":tenderDocumentId"
+															],
+															"variable": [
+																{
+																	"key": "tenderDocumentId"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												},
+												{
+													"id": "aaea8e95-e7f2-4e47-b268-c0335085f2e3",
+													"name": "Unauthorized",
+													"originalRequest": {
+														"method": "GET",
+														"header": [
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/procurement/getATenderDocument/:tenderDocumentId",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"procurement",
+																"getATenderDocument",
+																":tenderDocumentId"
+															],
+															"variable": [
+																{
+																	"key": "tenderDocumentId"
+																}
+															]
+														}
+													},
+													"status": "Unauthorized",
+													"code": 401,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												},
+												{
+													"id": "6a51e177-33f6-40d3-83aa-eebcf6e56960",
 													"name": "Forbidden",
 													"originalRequest": {
 														"method": "GET",
