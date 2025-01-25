@@ -39866,7 +39866,7 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "{{baseUrl}}/api/procurement/listServiceInformation?pageNumber=1&pageSize=10",
+											"raw": "{{baseUrl}}/api/procurement/listServiceInformation?pageNumber=1&pageSize=20",
 											"host": [
 												"{{baseUrl}}"
 											],
@@ -39893,7 +39893,7 @@
 												},
 												{
 													"key": "pageSize",
-													"value": "10",
+													"value": "20",
 													"description": "(Required) "
 												}
 											]
