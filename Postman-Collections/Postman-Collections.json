@@ -43988,7 +43988,7 @@
 											]
 										},
 										{
-											"name": "Invalid tenderDocumentId - Get A Tender Document Endpoint Copy",
+											"name": "Invalid tenderDocumentId - Get A Tender Document",
 											"event": [
 												{
 													"listen": "test",
