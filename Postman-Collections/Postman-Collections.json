@@ -40612,7 +40612,7 @@
 											]
 										},
 										{
-											"name": "Anp Procurement Features Service Information Get All Tender Goods Services Endpoint Copy",
+											"name": "No ServiceInformationId - Get All Tender Goods Services",
 											"event": [
 												{
 													"listen": "test",
@@ -41292,6 +41292,447 @@
 													"body": ""
 												}
 											]
+										},
+										{
+											"name": "No ServiceInformationId - Get all Tender Document by Service Information Id",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"id": "681f9a4d-2f01-4516-8309-f04a5fa478a3",
+														"exec": [
+															"pm.test(\"Status code is 200\", function () {\r",
+															"    pm.response.to.have.status(200);\r",
+															"});\r",
+															"\r",
+															"var responseJSON = pm.response.json(); \r",
+															"\r",
+															"pm.test(\"Verify that tender document is returned\", function () {\r",
+															"\r",
+															"   // pm.expect(responseJSON.isSuccess).to.be.a(\"boolean\");\r",
+															"   // pm.expect(responseJSON.data.email).to.be.a(\"string\").and.not.empty;\r",
+															"   // pm.expect(responseJSON.data.userName).to.be.a(\"string\").and.not.empty;\r",
+															"        pm.expect(responseJSON.data[0]).to.be.a(\"object\").and.not.empty;\r",
+															"\r",
+															"});"
+														],
+														"type": "text/javascript",
+														"packages": {}
+													}
+												}
+											],
+											"id": "d4bc6abb-4995-4e1f-8a5d-c2c83d93615a",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"auth": {
+													"type": "noauth"
+												},
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/procurement/listTenderDocument/:serviceInformationId?pageNumber=1&pageSize=10",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"procurement",
+														"listTenderDocument",
+														":serviceInformationId"
+													],
+													"query": [
+														{
+															"key": "pageNumber",
+															"value": "1",
+															"description": "(Required) "
+														},
+														{
+															"key": "pageSize",
+															"value": "10",
+															"description": "(Required) "
+														}
+													],
+													"variable": [
+														{
+															"key": "serviceInformationId",
+															"value": "85218a2b-83c4-464a-3cd6-08dd3c7c59fc",
+															"description": "(Required) "
+														}
+													]
+												},
+												"description": "Get all Tender Document by Service Information Id"
+											},
+											"response": [
+												{
+													"id": "6f7e42ce-6404-4fe4-8304-da85be2bea40",
+													"name": "Success",
+													"originalRequest": {
+														"method": "GET",
+														"header": [
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/procurement/listTenderDocument/:serviceInformationId?pageNumber=<integer>&pageSize=<integer>",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"procurement",
+																"listTenderDocument",
+																":serviceInformationId"
+															],
+															"query": [
+																{
+																	"description": "(Required) ",
+																	"key": "pageNumber",
+																	"value": "<integer>"
+																},
+																{
+																	"description": "(Required) ",
+																	"key": "pageSize",
+																	"value": "<integer>"
+																}
+															],
+															"variable": [
+																{
+																	"key": "serviceInformationId"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												},
+												{
+													"id": "017d2e49-5de4-4b7d-bc8d-21eef37d1a54",
+													"name": "Unauthorized",
+													"originalRequest": {
+														"method": "GET",
+														"header": [
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/procurement/listTenderDocument/:serviceInformationId?pageNumber=<integer>&pageSize=<integer>",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"procurement",
+																"listTenderDocument",
+																":serviceInformationId"
+															],
+															"query": [
+																{
+																	"description": "(Required) ",
+																	"key": "pageNumber",
+																	"value": "<integer>"
+																},
+																{
+																	"description": "(Required) ",
+																	"key": "pageSize",
+																	"value": "<integer>"
+																}
+															],
+															"variable": [
+																{
+																	"key": "serviceInformationId"
+																}
+															]
+														}
+													},
+													"status": "Unauthorized",
+													"code": 401,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												},
+												{
+													"id": "0d3aa80d-3a8e-4ab2-8363-ffc77bcf38f1",
+													"name": "Forbidden",
+													"originalRequest": {
+														"method": "GET",
+														"header": [
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/procurement/listTenderDocument/:serviceInformationId?pageNumber=<integer>&pageSize=<integer>",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"procurement",
+																"listTenderDocument",
+																":serviceInformationId"
+															],
+															"query": [
+																{
+																	"description": "(Required) ",
+																	"key": "pageNumber",
+																	"value": "<integer>"
+																},
+																{
+																	"description": "(Required) ",
+																	"key": "pageSize",
+																	"value": "<integer>"
+																}
+															],
+															"variable": [
+																{
+																	"key": "serviceInformationId"
+																}
+															]
+														}
+													},
+													"status": "Forbidden",
+													"code": 403,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												}
+											]
+										},
+										{
+											"name": "No Auth - Get all Tender Document by Service Information Id",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"id": "681f9a4d-2f01-4516-8309-f04a5fa478a3",
+														"exec": [
+															"pm.test(\"Status code is 401\", function () {\r",
+															"    pm.response.to.have.status(401);\r",
+															"});\r",
+															"\r",
+															"pm.test(\"Status code name has 'Unauthorized'\", function () {\r",
+															"    pm.response.to.have.status(\"Unauthorized\");\r",
+															"});"
+														],
+														"type": "text/javascript",
+														"packages": {}
+													}
+												}
+											],
+											"id": "5323abe6-91ed-4c33-8b75-824b6f88f0d4",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"auth": {
+													"type": "noauth"
+												},
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/procurement/listTenderDocument/:serviceInformationId?pageNumber=1&pageSize=10",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"procurement",
+														"listTenderDocument",
+														":serviceInformationId"
+													],
+													"query": [
+														{
+															"key": "pageNumber",
+															"value": "1",
+															"description": "(Required) "
+														},
+														{
+															"key": "pageSize",
+															"value": "10",
+															"description": "(Required) "
+														}
+													],
+													"variable": [
+														{
+															"key": "serviceInformationId",
+															"value": "85218a2b-83c4-464a-3cd6-08dd3c7c59fc",
+															"description": "(Required) "
+														}
+													]
+												},
+												"description": "Get all Tender Document by Service Information Id"
+											},
+											"response": [
+												{
+													"id": "18640379-1139-42a8-b58f-0da0a4e460b7",
+													"name": "Success",
+													"originalRequest": {
+														"method": "GET",
+														"header": [
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/procurement/listTenderDocument/:serviceInformationId?pageNumber=<integer>&pageSize=<integer>",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"procurement",
+																"listTenderDocument",
+																":serviceInformationId"
+															],
+															"query": [
+																{
+																	"description": "(Required) ",
+																	"key": "pageNumber",
+																	"value": "<integer>"
+																},
+																{
+																	"description": "(Required) ",
+																	"key": "pageSize",
+																	"value": "<integer>"
+																}
+															],
+															"variable": [
+																{
+																	"key": "serviceInformationId"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												},
+												{
+													"id": "a04212a4-e4d0-4bfd-9c39-91a7ac6b26f3",
+													"name": "Unauthorized",
+													"originalRequest": {
+														"method": "GET",
+														"header": [
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/procurement/listTenderDocument/:serviceInformationId?pageNumber=<integer>&pageSize=<integer>",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"procurement",
+																"listTenderDocument",
+																":serviceInformationId"
+															],
+															"query": [
+																{
+																	"description": "(Required) ",
+																	"key": "pageNumber",
+																	"value": "<integer>"
+																},
+																{
+																	"description": "(Required) ",
+																	"key": "pageSize",
+																	"value": "<integer>"
+																}
+															],
+															"variable": [
+																{
+																	"key": "serviceInformationId"
+																}
+															]
+														}
+													},
+													"status": "Unauthorized",
+													"code": 401,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												},
+												{
+													"id": "c3e72f37-d616-49dd-b85d-bdc930d6c449",
+													"name": "Forbidden",
+													"originalRequest": {
+														"method": "GET",
+														"header": [
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/procurement/listTenderDocument/:serviceInformationId?pageNumber=<integer>&pageSize=<integer>",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"procurement",
+																"listTenderDocument",
+																":serviceInformationId"
+															],
+															"query": [
+																{
+																	"description": "(Required) ",
+																	"key": "pageNumber",
+																	"value": "<integer>"
+																},
+																{
+																	"description": "(Required) ",
+																	"key": "pageSize",
+																	"value": "<integer>"
+																}
+															],
+															"variable": [
+																{
+																	"key": "serviceInformationId"
+																}
+															]
+														}
+													},
+													"status": "Forbidden",
+													"code": 403,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												}
+											]
 										}
 									],
 									"id": "be592fae-58e3-49e9-8773-354b03813277"
@@ -41445,6 +41886,185 @@
 												},
 												{
 													"id": "2d5f97b2-0e93-4ec3-9461-39864031e629",
+													"name": "Forbidden",
+													"originalRequest": {
+														"method": "GET",
+														"header": [
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/procurement/TenderGoodsServices/:tenderGoodsServicesId",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"procurement",
+																"TenderGoodsServices",
+																":tenderGoodsServicesId"
+															],
+															"variable": [
+																{
+																	"key": "tenderGoodsServicesId"
+																}
+															]
+														}
+													},
+													"status": "Forbidden",
+													"code": 403,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												}
+											]
+										},
+										{
+											"name": "Anp Procurement Features Service Information Get A Tender Goods Services Endpoint Copy",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"id": "5b9e1f78-514f-40ec-af3d-f86c1f8bafe9",
+														"exec": [
+															"pm.test(\"Status code is 200\", function () {\r",
+															"    pm.response.to.have.status(200);\r",
+															"});\r",
+															"\r",
+															"var responseJSON = pm.response.json(); \r",
+															"\r",
+															"pm.test(\"Verify that tender goods and services are returned\", function () {\r",
+															"\r",
+															"   // pm.expect(responseJSON.isSuccess).to.be.a(\"boolean\");\r",
+															"    pm.expect(responseJSON.data).to.be.an(\"object\").and.not.empty;\r",
+															"  //  pm.expect(responseJSON.data.userName).to.be.a(\"string\").and.not.empty;\r",
+															"      //  pm.expect(responseJSON.data.phoneNumber).to.be.a(\"string\").and.not.empty;\r",
+															"\r",
+															"});"
+														],
+														"type": "text/javascript",
+														"packages": {}
+													}
+												}
+											],
+											"id": "e1d41d51-6bd2-4529-b29f-c886302eb8b3",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": {
+														"token": "{{approverBearerToken}}"
+													}
+												},
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/procurement/TenderGoodsServices/:tenderGoodsServicesId",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"procurement",
+														"TenderGoodsServices",
+														":tenderGoodsServicesId"
+													],
+													"variable": [
+														{
+															"id": "971544f4-09dd-467f-a997-b6bebd88890f",
+															"key": "tenderGoodsServicesId",
+															"value": "61702bda-7363-4553-c353-08dd3c7d3efd",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"response": [
+												{
+													"id": "563bbd1c-0b7d-4008-8e42-339e9d0b9dce",
+													"name": "Success",
+													"originalRequest": {
+														"method": "GET",
+														"header": [
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/procurement/TenderGoodsServices/:tenderGoodsServicesId",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"procurement",
+																"TenderGoodsServices",
+																":tenderGoodsServicesId"
+															],
+															"variable": [
+																{
+																	"key": "tenderGoodsServicesId"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												},
+												{
+													"id": "bc023c9c-f068-44db-9998-1504679be943",
+													"name": "Unauthorized",
+													"originalRequest": {
+														"method": "GET",
+														"header": [
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/procurement/TenderGoodsServices/:tenderGoodsServicesId",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"procurement",
+																"TenderGoodsServices",
+																":tenderGoodsServicesId"
+															],
+															"variable": [
+																{
+																	"key": "tenderGoodsServicesId"
+																}
+															]
+														}
+													},
+													"status": "Unauthorized",
+													"code": 401,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												},
+												{
+													"id": "ef38e7f8-82e6-4ede-a699-a4f16bdf0984",
 													"name": "Forbidden",
 													"originalRequest": {
 														"method": "GET",
