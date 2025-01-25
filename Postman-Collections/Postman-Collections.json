@@ -43887,17 +43887,33 @@
 									]
 								},
 								{
-									"name": "Anp Procurement Features Service Information Delete Tender Goods Endpoint Copy",
+									"name": "No Auth - Delete Tender Goods",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "3a34da5b-aba9-4b74-b9d2-4925f01bf8a2",
+												"exec": [
+													"pm.test(\"Status code is 401\", function () {\r",
+													"    pm.response.to.have.status(401);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Status code name has 'Unauthorized'\", function () {\r",
+													"    pm.response.to.have.status(\"Unauthorized\");\r",
+													"});"
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
 									"id": "8d857d2a-dfc3-4f96-bc86-23e45d40d65d",
 									"protocolProfileBehavior": {
 										"disableBodyPruning": true
 									},
 									"request": {
 										"auth": {
-											"type": "bearer",
-											"bearer": {
-												"token": "{{bearerToken}}"
-											}
+											"type": "noauth"
 										},
 										"method": "DELETE",
 										"header": [],
@@ -43914,7 +43930,6 @@
 											],
 											"variable": [
 												{
-													"id": "0869be3c-9361-49e2-bfae-7f0cb100e960",
 													"key": "tenderGoodsServicesId",
 													"value": "<string>",
 													"description": "(Required) "
@@ -44163,6 +44178,174 @@
 												},
 												{
 													"id": "767c2233-b4c5-4f54-8f14-4015bf770b14",
+													"name": "Forbidden",
+													"originalRequest": {
+														"method": "DELETE",
+														"header": [
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/procurement/deleteTenderDocument/:tenderDocumentId",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"procurement",
+																"deleteTenderDocument",
+																":tenderDocumentId"
+															],
+															"variable": [
+																{
+																	"key": "tenderDocumentId"
+																}
+															]
+														}
+													},
+													"status": "Forbidden",
+													"code": 403,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												}
+											]
+										},
+										{
+											"name": "No Auth - Delete Tender Document",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"id": "a7072e30-9641-4b32-8fdb-6b59778d036e",
+														"exec": [
+															"pm.test(\"Status code is 401\", function () {\r",
+															"    pm.response.to.have.status(401);\r",
+															"});\r",
+															"\r",
+															"pm.test(\"Status code name has 'Unauthorized'\", function () {\r",
+															"    pm.response.to.have.status(\"Unauthorized\");\r",
+															"});"
+														],
+														"type": "text/javascript",
+														"packages": {}
+													}
+												}
+											],
+											"id": "9117bf04-78f8-479a-8bb1-a759d107ff90",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"auth": {
+													"type": "noauth"
+												},
+												"method": "DELETE",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/procurement/deleteTenderDocument/:tenderDocumentId",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"procurement",
+														"deleteTenderDocument",
+														":tenderDocumentId"
+													],
+													"variable": [
+														{
+															"key": "tenderDocumentId",
+															"value": "<string>",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"response": [
+												{
+													"id": "ec4ea6dd-c4c2-4dfa-b016-d7e73976eff1",
+													"name": "Success",
+													"originalRequest": {
+														"method": "DELETE",
+														"header": [
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/procurement/deleteTenderDocument/:tenderDocumentId",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"procurement",
+																"deleteTenderDocument",
+																":tenderDocumentId"
+															],
+															"variable": [
+																{
+																	"key": "tenderDocumentId"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												},
+												{
+													"id": "89ff8034-de04-4f11-9a3a-b25ac2633bb2",
+													"name": "Unauthorized",
+													"originalRequest": {
+														"method": "DELETE",
+														"header": [
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/procurement/deleteTenderDocument/:tenderDocumentId",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"procurement",
+																"deleteTenderDocument",
+																":tenderDocumentId"
+															],
+															"variable": [
+																{
+																	"key": "tenderDocumentId"
+																}
+															]
+														}
+													},
+													"status": "Unauthorized",
+													"code": 401,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												},
+												{
+													"id": "c72422d3-162a-49cb-b073-95a8d05d535f",
 													"name": "Forbidden",
 													"originalRequest": {
 														"method": "DELETE",
@@ -44492,6 +44675,165 @@
 										},
 										{
 											"id": "4c872a4c-612e-4817-bc5e-d00fc655d008",
+											"name": "Forbidden",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"description": "Added as a part of security scheme: bearer",
+														"key": "Authorization",
+														"value": "Bearer <token>"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"tenderAccessId\": \"<string>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl}}/api/procurement/requestForProposal"
+											},
+											"status": "Forbidden",
+											"code": 403,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"responseTime": null,
+											"body": ""
+										}
+									]
+								},
+								{
+									"name": "No Auth - Apply For Rfp",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "7ce1dfca-692a-4a32-88cf-d1d6b0ea1eb4",
+												"exec": [
+													"pm.test(\"Status code is 401\", function () {\r",
+													"    pm.response.to.have.status(401);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Status code name has 'Unauthorized'\", function () {\r",
+													"    pm.response.to.have.status(\"Unauthorized\");\r",
+													"});"
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
+									"id": "212b36d5-2cdc-4c4f-8aed-0ede682ad9fc",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"auth": {
+											"type": "noauth"
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"tenderAccessId\": \"<string>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{baseUrl}}/api/procurement/requestForProposal"
+									},
+									"response": [
+										{
+											"id": "71116a59-252e-4807-80f8-4610113e4ee0",
+											"name": "Success",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"description": "Added as a part of security scheme: bearer",
+														"key": "Authorization",
+														"value": "Bearer <token>"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"tenderAccessId\": \"<string>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl}}/api/procurement/requestForProposal"
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"responseTime": null,
+											"body": ""
+										},
+										{
+											"id": "e8abf6ac-aef7-4ac8-883e-df6353b32130",
+											"name": "Unauthorized",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"description": "Added as a part of security scheme: bearer",
+														"key": "Authorization",
+														"value": "Bearer <token>"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"tenderAccessId\": \"<string>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl}}/api/procurement/requestForProposal"
+											},
+											"status": "Unauthorized",
+											"code": 401,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"responseTime": null,
+											"body": ""
+										},
+										{
+											"id": "f6bd6181-a3ee-4286-b4e9-8cde18ab0f0c",
 											"name": "Forbidden",
 											"originalRequest": {
 												"method": "POST",
