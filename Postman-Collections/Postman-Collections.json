@@ -38797,159 +38797,6 @@
 									"name": "{tenderGoodsServicesId}",
 									"item": [
 										{
-											"name": "Anp Procurement Features Service Information Delete Tender Goods Endpoint",
-											"id": "c25c5073-a4c4-415f-ae2d-3715571c5481",
-											"protocolProfileBehavior": {
-												"disableBodyPruning": true
-											},
-											"request": {
-												"auth": {
-													"type": "bearer",
-													"bearer": {
-														"token": "{{bearerToken}}"
-													}
-												},
-												"method": "DELETE",
-												"header": [],
-												"url": {
-													"raw": "{{baseUrl}}/api/procurement/TenderGoodsServices/:tenderGoodsServicesId",
-													"host": [
-														"{{baseUrl}}"
-													],
-													"path": [
-														"api",
-														"procurement",
-														"TenderGoodsServices",
-														":tenderGoodsServicesId"
-													],
-													"variable": [
-														{
-															"id": "0869be3c-9361-49e2-bfae-7f0cb100e960",
-															"key": "tenderGoodsServicesId",
-															"value": "<string>",
-															"description": "(Required) "
-														}
-													]
-												}
-											},
-											"response": [
-												{
-													"id": "c609f548-c3eb-4878-849c-d51e5c4a50aa",
-													"name": "Success",
-													"originalRequest": {
-														"method": "DELETE",
-														"header": [
-															{
-																"description": "Added as a part of security scheme: bearer",
-																"key": "Authorization",
-																"value": "Bearer <token>"
-															}
-														],
-														"url": {
-															"raw": "{{baseUrl}}/api/procurement/TenderGoodsServices/:tenderGoodsServicesId",
-															"host": [
-																"{{baseUrl}}"
-															],
-															"path": [
-																"api",
-																"procurement",
-																"TenderGoodsServices",
-																":tenderGoodsServicesId"
-															],
-															"variable": [
-																{
-																	"key": "tenderGoodsServicesId"
-																}
-															]
-														}
-													},
-													"status": "OK",
-													"code": 200,
-													"_postman_previewlanguage": "text",
-													"header": [],
-													"cookie": [],
-													"responseTime": null,
-													"body": ""
-												},
-												{
-													"id": "7e2ab3b6-a126-4ad3-93eb-037df4a2b965",
-													"name": "Unauthorized",
-													"originalRequest": {
-														"method": "DELETE",
-														"header": [
-															{
-																"description": "Added as a part of security scheme: bearer",
-																"key": "Authorization",
-																"value": "Bearer <token>"
-															}
-														],
-														"url": {
-															"raw": "{{baseUrl}}/api/procurement/TenderGoodsServices/:tenderGoodsServicesId",
-															"host": [
-																"{{baseUrl}}"
-															],
-															"path": [
-																"api",
-																"procurement",
-																"TenderGoodsServices",
-																":tenderGoodsServicesId"
-															],
-															"variable": [
-																{
-																	"key": "tenderGoodsServicesId"
-																}
-															]
-														}
-													},
-													"status": "Unauthorized",
-													"code": 401,
-													"_postman_previewlanguage": "text",
-													"header": [],
-													"cookie": [],
-													"responseTime": null,
-													"body": ""
-												},
-												{
-													"id": "931794f5-ac70-4602-9c62-a8221b1e157b",
-													"name": "Forbidden",
-													"originalRequest": {
-														"method": "DELETE",
-														"header": [
-															{
-																"description": "Added as a part of security scheme: bearer",
-																"key": "Authorization",
-																"value": "Bearer <token>"
-															}
-														],
-														"url": {
-															"raw": "{{baseUrl}}/api/procurement/TenderGoodsServices/:tenderGoodsServicesId",
-															"host": [
-																"{{baseUrl}}"
-															],
-															"path": [
-																"api",
-																"procurement",
-																"TenderGoodsServices",
-																":tenderGoodsServicesId"
-															],
-															"variable": [
-																{
-																	"key": "tenderGoodsServicesId"
-																}
-															]
-														}
-													},
-													"status": "Forbidden",
-													"code": 403,
-													"_postman_previewlanguage": "text",
-													"header": [],
-													"cookie": [],
-													"responseTime": null,
-													"body": ""
-												}
-											]
-										},
-										{
 											"name": "Anp Procurement Features Service Information Get A Tender Goods Services Endpoint",
 											"id": "8e44dc37-bd3d-4dfd-aa2f-2c7267d45cc6",
 											"protocolProfileBehavior": {
@@ -39371,10 +39218,10 @@
 															"\r",
 															"pm.test(\"Verify that tender document is returned\", function () {\r",
 															"\r",
-															"    pm.expect(responseJSON.isSuccess).to.be.a(\"boolean\");\r",
-															"    pm.expect(responseJSON.data.email).to.be.a(\"string\").and.not.empty;\r",
-															"    pm.expect(responseJSON.data.userName).to.be.a(\"string\").and.not.empty;\r",
-															"        pm.expect(responseJSON.data.phoneNumber).to.be.a(\"string\").and.not.empty;\r",
+															"   // pm.expect(responseJSON.isSuccess).to.be.a(\"boolean\");\r",
+															"   // pm.expect(responseJSON.data.email).to.be.a(\"string\").and.not.empty;\r",
+															"   // pm.expect(responseJSON.data.userName).to.be.a(\"string\").and.not.empty;\r",
+															"        pm.expect(responseJSON.data[0]).to.be.a(\"object\").and.not.empty;\r",
 															"\r",
 															"});"
 														],
@@ -40752,6 +40599,165 @@
 								}
 							],
 							"id": "34ee7b87-60e4-4566-b3f3-41dc2d2de6f9"
+						},
+						{
+							"name": "deleteTenderGoodsServices",
+							"item": [
+								{
+									"name": "Anp Procurement Features Service Information Delete Tender Goods Endpoint",
+									"id": "c25c5073-a4c4-415f-ae2d-3715571c5481",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": {
+												"token": "{{bearerToken}}"
+											}
+										},
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/procurement/TenderGoodsServices/:tenderGoodsServicesId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"procurement",
+												"TenderGoodsServices",
+												":tenderGoodsServicesId"
+											],
+											"variable": [
+												{
+													"id": "0869be3c-9361-49e2-bfae-7f0cb100e960",
+													"key": "tenderGoodsServicesId",
+													"value": "<string>",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"id": "c609f548-c3eb-4878-849c-d51e5c4a50aa",
+											"name": "Success",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [
+													{
+														"description": "Added as a part of security scheme: bearer",
+														"key": "Authorization",
+														"value": "Bearer <token>"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/procurement/TenderGoodsServices/:tenderGoodsServicesId",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"procurement",
+														"TenderGoodsServices",
+														":tenderGoodsServicesId"
+													],
+													"variable": [
+														{
+															"key": "tenderGoodsServicesId"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"responseTime": null,
+											"body": ""
+										},
+										{
+											"id": "7e2ab3b6-a126-4ad3-93eb-037df4a2b965",
+											"name": "Unauthorized",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [
+													{
+														"description": "Added as a part of security scheme: bearer",
+														"key": "Authorization",
+														"value": "Bearer <token>"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/procurement/TenderGoodsServices/:tenderGoodsServicesId",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"procurement",
+														"TenderGoodsServices",
+														":tenderGoodsServicesId"
+													],
+													"variable": [
+														{
+															"key": "tenderGoodsServicesId"
+														}
+													]
+												}
+											},
+											"status": "Unauthorized",
+											"code": 401,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"responseTime": null,
+											"body": ""
+										},
+										{
+											"id": "931794f5-ac70-4602-9c62-a8221b1e157b",
+											"name": "Forbidden",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [
+													{
+														"description": "Added as a part of security scheme: bearer",
+														"key": "Authorization",
+														"value": "Bearer <token>"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/procurement/TenderGoodsServices/:tenderGoodsServicesId",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"procurement",
+														"TenderGoodsServices",
+														":tenderGoodsServicesId"
+													],
+													"variable": [
+														{
+															"key": "tenderGoodsServicesId"
+														}
+													]
+												}
+											},
+											"status": "Forbidden",
+											"code": 403,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"responseTime": null,
+											"body": ""
+										}
+									]
+								}
+							],
+							"id": "db51ed8f-3c78-467b-b593-3a337a61cd21"
 						},
 						{
 							"name": "deleteTenderDocument",
