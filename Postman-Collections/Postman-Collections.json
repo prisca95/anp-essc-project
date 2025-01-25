@@ -38659,6 +38659,9 @@
 													"script": {
 														"id": "adae8ba5-cae9-4f7f-9fe0-50841d10c3f3",
 														"exec": [
+															"pm.collectionVariables.set(\"tenderGoodsServiceId\", pm.response.json().data.id);\r",
+															"\r",
+															"\r",
 															"pm.test(\"Status code is 200\", function () {\r",
 															"    pm.response.to.have.status(200);\r",
 															"});\r",
@@ -39033,7 +39036,7 @@
 												],
 												"body": {
 													"mode": "raw",
-													"raw": "// {\n//   \"tenderGoodsServicesId\": \"<string>\",\n//   \"itemName\": \"<string>\",\n//   \"description\": \"<string>\",\n//   \"quantity\": \"<integer>\",\n//   \"estimatedCost\": \"<number>\",\n//   \"procurementMethod\": \"<string>\",\n//   \"warrantyDuration\": \"<integer>\",\n//   \"warrantyType\": \"<string>\",\n//   \"serviceInformationId\": \"<string>\"\n// }\n\n{\n            \"tenderGoodsServicesId\": \"61702bda-7363-4553-c353-08dd3c7d3efd\",\n            \"itemName\": \"Gold\",\n            \"description\": \"Gold minning\",\n            \"quantity\": 20,\n            \"estimatedCost\": 40000.00,\n            \"procurementMethod\": \"Request for proposal\",\n            \"warrantyDuration\": 5,\n            \"warrantyType\": \"Standard\",\n            \"serviceInformationId\":  \"85218a2b-83c4-464a-3cd6-08dd3c7c59fc\"\n}",
+													"raw": "// {\n//   \"tenderGoodsServicesId\": \"<string>\",\n//   \"itemName\": \"<string>\",\n//   \"description\": \"<string>\",\n//   \"quantity\": \"<integer>\",\n//   \"estimatedCost\": \"<number>\",\n//   \"procurementMethod\": \"<string>\",\n//   \"warrantyDuration\": \"<integer>\",\n//   \"warrantyType\": \"<string>\",\n//   \"serviceInformationId\": \"<string>\"\n// }\n\n{\n            \"tenderGoodsServicesId\":\"{{tenderGoodsServiceId}}\",//\"61702bda-7363-4553-c353-08dd3c7d3efd\",\n            \"itemName\": \"Gold\",\n            \"description\": \"Gold minning\",\n            \"quantity\": 20,\n            \"estimatedCost\": 40000.00,\n            \"procurementMethod\": \"Request for proposal\",\n            \"warrantyDuration\": 5,\n            \"warrantyType\": \"Standard\",\n            \"serviceInformationId\":  \"{{serviceInformationId}}\"//\"85218a2b-83c4-464a-3cd6-08dd3c7c59fc\"\n}",
 													"options": {
 														"raw": {
 															"headerFamily": "json",
@@ -39333,7 +39336,7 @@
 													"script": {
 														"id": "20c3e128-f154-4846-9243-b6208d301bc4",
 														"exec": [
-															"//pm.collectionVariables.set(\"serviceInformationId\", pm.response.json().data.id);\r",
+															"pm.collectionVariables.set(\"tenderDocumentId\", pm.response.json().data.id);\r",
 															"\r",
 															"pm.test(\"Status code is 200\", function () {\r",
 															"    pm.response.to.have.status(200);\r",
@@ -39374,7 +39377,7 @@
 												],
 												"body": {
 													"mode": "raw",
-													"raw": "{\n // \"tenderDetailId\": \"<string>\",\n  \"startdate\": \"2025-01-25T14:09:39.906Z\",\n  \"endDate\": \"2025-01-30T14:09:39.906Z\",\n  \"tenderType\": \"TechnicalInformation\",//\"ExpressionOfInterest\",//\"Commercials\",\n  \"serviceInformationId\": \"85218a2b-83c4-464a-3cd6-08dd3c7c59fc\",\n  \"tenderDocuments\": [\n    {\n     // \"tenderDocumentId\": \"<string>\",\n      \"documentName\": \"CAC\",\n      \"assignPoint\": \"30\"\n    }\n    // {\n    //   \"tenderDocumentId\": \"<string>\",\n    //   \"documentName\": \"<string>\",\n    //   \"assignPoint\": \"<integer>\"\n    // }\n  ]\n}",
+													"raw": "{\n // \"tenderDetailId\": \"<string>\",\n  \"startdate\": \"2025-01-25T14:09:39.906Z\",\n  \"endDate\": \"2025-01-30T14:09:39.906Z\",\n  \"tenderType\": \"TechnicalInformation\",//\"ExpressionOfInterest\",//\"Commercials\",\n  \"serviceInformationId\": \"{{serviceInformationId}}\",//\"85218a2b-83c4-464a-3cd6-08dd3c7c59fc\",\n  \"tenderDocuments\": [\n    {\n     // \"tenderDocumentId\": \"<string>\",\n      \"documentName\": \"CAC\",\n      \"assignPoint\": \"30\"\n    }\n    // {\n    //   \"tenderDocumentId\": \"<string>\",\n    //   \"documentName\": \"<string>\",\n    //   \"assignPoint\": \"<integer>\"\n    // }\n  ]\n}",
 													"options": {
 														"raw": {
 															"headerFamily": "json",
