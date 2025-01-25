@@ -38457,17 +38457,33 @@
 									]
 								},
 								{
-									"name": "Anp Procurement Features Service Information Create Endpoint2 Copy",
+									"name": "No Auth - Service Information Edit",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "e26fe15b-e159-40de-97aa-8c6d6683f9e1",
+												"exec": [
+													"pm.test(\"Status code is 401\", function () {\r",
+													"    pm.response.to.have.status(401);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Status code name has 'Unauthorized'\", function () {\r",
+													"    pm.response.to.have.status(\"Unauthorized\");\r",
+													"});"
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
 									"id": "2838e5b5-492c-4c6b-b938-5e5b3d782d25",
 									"protocolProfileBehavior": {
 										"disableBodyPruning": true
 									},
 									"request": {
 										"auth": {
-											"type": "bearer",
-											"bearer": {
-												"token": "{{approverBearerToken}}"
-											}
+											"type": "noauth"
 										},
 										"method": "POST",
 										"header": [
@@ -38775,6 +38791,165 @@
 													"body": ""
 												}
 											]
+										},
+										{
+											"name": "No Auth - Create Tender Goods Service",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"id": "adae8ba5-cae9-4f7f-9fe0-50841d10c3f3",
+														"exec": [
+															"pm.test(\"Status code is 401\", function () {\r",
+															"    pm.response.to.have.status(401);\r",
+															"});\r",
+															"\r",
+															"pm.test(\"Status code name has 'Unauthorized'\", function () {\r",
+															"    pm.response.to.have.status(\"Unauthorized\");\r",
+															"});"
+														],
+														"type": "text/javascript",
+														"packages": {}
+													}
+												}
+											],
+											"id": "65f1b809-4a61-448a-85f8-dc0842ccadd5",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"auth": {
+													"type": "noauth"
+												},
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n // \"tenderGoodsServicesId\": \"<string>\",\n  \"itemName\": \"Gold\",\n  \"description\": \"Gold minning\",\n  \"quantity\": \"10\",\n  \"estimatedCost\": \"50000\",\n  \"procurementMethod\": \"Request for proposal\",\n  \"warrantyDuration\": \"5\",\n  \"warrantyType\": \"Standard\",\n  \"serviceInformationId\": \"85218a2b-83c4-464a-3cd6-08dd3c7c59fc\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl}}/api/procurement/TenderGoodsService/create"
+											},
+											"response": [
+												{
+													"id": "defda989-0fcb-41e4-b34a-b4c53894e6fb",
+													"name": "Success",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"tenderGoodsServicesId\": \"<string>\",\n  \"itemName\": \"<string>\",\n  \"description\": \"<string>\",\n  \"quantity\": \"<integer>\",\n  \"estimatedCost\": \"<number>\",\n  \"procurementMethod\": \"<string>\",\n  \"warrantyDuration\": \"<integer>\",\n  \"warrantyType\": \"<string>\",\n  \"serviceInformationId\": \"<string>\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl}}/api/procurement/TenderGoodsService/create"
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												},
+												{
+													"id": "a02877c1-4983-4280-8417-207ddfe5132d",
+													"name": "Unauthorized",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"tenderGoodsServicesId\": \"<string>\",\n  \"itemName\": \"<string>\",\n  \"description\": \"<string>\",\n  \"quantity\": \"<integer>\",\n  \"estimatedCost\": \"<number>\",\n  \"procurementMethod\": \"<string>\",\n  \"warrantyDuration\": \"<integer>\",\n  \"warrantyType\": \"<string>\",\n  \"serviceInformationId\": \"<string>\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl}}/api/procurement/TenderGoodsService/create"
+													},
+													"status": "Unauthorized",
+													"code": 401,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												},
+												{
+													"id": "59b28f1f-9482-4fa0-a4d3-87a9d4e51ab9",
+													"name": "Forbidden",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"tenderGoodsServicesId\": \"<string>\",\n  \"itemName\": \"<string>\",\n  \"description\": \"<string>\",\n  \"quantity\": \"<integer>\",\n  \"estimatedCost\": \"<number>\",\n  \"procurementMethod\": \"<string>\",\n  \"warrantyDuration\": \"<integer>\",\n  \"warrantyType\": \"<string>\",\n  \"serviceInformationId\": \"<string>\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl}}/api/procurement/TenderGoodsService/create"
+													},
+													"status": "Forbidden",
+													"code": 403,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												}
+											]
 										}
 									],
 									"id": "6bead6d5-f1e0-499a-80ac-86e6e51ebd96"
@@ -38889,6 +39064,165 @@
 												},
 												{
 													"id": "033010d9-a763-4f71-8ccf-e1bac4c72372",
+													"name": "Forbidden",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"tenderGoodsServicesId\": \"<string>\",\n  \"itemName\": \"<string>\",\n  \"description\": \"<string>\",\n  \"quantity\": \"<integer>\",\n  \"estimatedCost\": \"<number>\",\n  \"procurementMethod\": \"<string>\",\n  \"warrantyDuration\": \"<integer>\",\n  \"warrantyType\": \"<string>\",\n  \"serviceInformationId\": \"<string>\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl}}/api/procurement/TenderGoodsService/edit"
+													},
+													"status": "Forbidden",
+													"code": 403,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												}
+											]
+										},
+										{
+											"name": "No Auth - Tender Goods Service Edit",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"id": "eb716062-ee75-4bc0-8dd3-c4280746c8f7",
+														"exec": [
+															"pm.test(\"Status code is 401\", function () {\r",
+															"    pm.response.to.have.status(401);\r",
+															"});\r",
+															"\r",
+															"pm.test(\"Status code name has 'Unauthorized'\", function () {\r",
+															"    pm.response.to.have.status(\"Unauthorized\");\r",
+															"});"
+														],
+														"type": "text/javascript",
+														"packages": {}
+													}
+												}
+											],
+											"id": "eda8ee03-685f-4973-b0bc-c228d57615c7",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"auth": {
+													"type": "noauth"
+												},
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"tenderGoodsServicesId\": \"<string>\",\n  \"itemName\": \"<string>\",\n  \"description\": \"<string>\",\n  \"quantity\": \"<integer>\",\n  \"estimatedCost\": \"<number>\",\n  \"procurementMethod\": \"<string>\",\n  \"warrantyDuration\": \"<integer>\",\n  \"warrantyType\": \"<string>\",\n  \"serviceInformationId\": \"<string>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl}}/api/procurement/TenderGoodsService/edit"
+											},
+											"response": [
+												{
+													"id": "908918da-2e31-409e-82ae-82de8e8dec4f",
+													"name": "Success",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"tenderGoodsServicesId\": \"<string>\",\n  \"itemName\": \"<string>\",\n  \"description\": \"<string>\",\n  \"quantity\": \"<integer>\",\n  \"estimatedCost\": \"<number>\",\n  \"procurementMethod\": \"<string>\",\n  \"warrantyDuration\": \"<integer>\",\n  \"warrantyType\": \"<string>\",\n  \"serviceInformationId\": \"<string>\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl}}/api/procurement/TenderGoodsService/edit"
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												},
+												{
+													"id": "8d387100-f07e-479c-87f3-b17b076c9b44",
+													"name": "Unauthorized",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"tenderGoodsServicesId\": \"<string>\",\n  \"itemName\": \"<string>\",\n  \"description\": \"<string>\",\n  \"quantity\": \"<integer>\",\n  \"estimatedCost\": \"<number>\",\n  \"procurementMethod\": \"<string>\",\n  \"warrantyDuration\": \"<integer>\",\n  \"warrantyType\": \"<string>\",\n  \"serviceInformationId\": \"<string>\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl}}/api/procurement/TenderGoodsService/edit"
+													},
+													"status": "Unauthorized",
+													"code": 401,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												},
+												{
+													"id": "62be0891-3dab-49da-8297-260981971357",
 													"name": "Forbidden",
 													"originalRequest": {
 														"method": "POST",
@@ -39106,6 +39440,165 @@
 													"body": ""
 												}
 											]
+										},
+										{
+											"name": "No Auth - Create Tender Document",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"id": "20c3e128-f154-4846-9243-b6208d301bc4",
+														"exec": [
+															"pm.test(\"Status code is 401\", function () {\r",
+															"    pm.response.to.have.status(401);\r",
+															"});\r",
+															"\r",
+															"pm.test(\"Status code name has 'Unauthorized'\", function () {\r",
+															"    pm.response.to.have.status(\"Unauthorized\");\r",
+															"});"
+														],
+														"type": "text/javascript",
+														"packages": {}
+													}
+												}
+											],
+											"id": "134571a7-97c6-4c30-9eef-1c209cd73337",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"auth": {
+													"type": "noauth"
+												},
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n // \"tenderDetailId\": \"<string>\",\n  \"startdate\": \"2025-01-25T14:09:39.906Z\",\n  \"endDate\": \"2025-01-30T14:09:39.906Z\",\n  \"tenderType\": \"TechnicalInformation\",//\"ExpressionOfInterest\",//\"Commercials\",\n  \"serviceInformationId\": \"85218a2b-83c4-464a-3cd6-08dd3c7c59fc\",\n  \"tenderDocuments\": [\n    {\n     // \"tenderDocumentId\": \"<string>\",\n      \"documentName\": \"CAC\",\n      \"assignPoint\": \"30\"\n    }\n    // {\n    //   \"tenderDocumentId\": \"<string>\",\n    //   \"documentName\": \"<string>\",\n    //   \"assignPoint\": \"<integer>\"\n    // }\n  ]\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl}}/api/procurement/TenderDocument/create"
+											},
+											"response": [
+												{
+													"id": "7353d2dc-ac1f-4872-ba72-8ae03222c4ba",
+													"name": "Success",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"tenderDetailId\": \"<string>\",\n  \"startdate\": \"<dateTime>\",\n  \"endDate\": \"<dateTime>\",\n  \"tenderType\": \"Commercials\",\n  \"serviceInformationId\": \"<string>\",\n  \"tenderDocuments\": [\n    {\n      \"tenderDocumentId\": \"<string>\",\n      \"documentName\": \"<string>\",\n      \"assignPoint\": \"<integer>\"\n    },\n    {\n      \"tenderDocumentId\": \"<string>\",\n      \"documentName\": \"<string>\",\n      \"assignPoint\": \"<integer>\"\n    }\n  ]\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl}}/api/procurement/TenderDocument/create"
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												},
+												{
+													"id": "e9071ef1-214a-4d85-99c8-44f8758aed02",
+													"name": "Unauthorized",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"tenderDetailId\": \"<string>\",\n  \"startdate\": \"<dateTime>\",\n  \"endDate\": \"<dateTime>\",\n  \"tenderType\": \"Commercials\",\n  \"serviceInformationId\": \"<string>\",\n  \"tenderDocuments\": [\n    {\n      \"tenderDocumentId\": \"<string>\",\n      \"documentName\": \"<string>\",\n      \"assignPoint\": \"<integer>\"\n    },\n    {\n      \"tenderDocumentId\": \"<string>\",\n      \"documentName\": \"<string>\",\n      \"assignPoint\": \"<integer>\"\n    }\n  ]\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl}}/api/procurement/TenderDocument/create"
+													},
+													"status": "Unauthorized",
+													"code": 401,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												},
+												{
+													"id": "f223863f-5a3a-4e69-93cd-5ce2106ae715",
+													"name": "Forbidden",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"tenderDetailId\": \"<string>\",\n  \"startdate\": \"<dateTime>\",\n  \"endDate\": \"<dateTime>\",\n  \"tenderType\": \"Commercials\",\n  \"serviceInformationId\": \"<string>\",\n  \"tenderDocuments\": [\n    {\n      \"tenderDocumentId\": \"<string>\",\n      \"documentName\": \"<string>\",\n      \"assignPoint\": \"<integer>\"\n    },\n    {\n      \"tenderDocumentId\": \"<string>\",\n      \"documentName\": \"<string>\",\n      \"assignPoint\": \"<integer>\"\n    }\n  ]\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl}}/api/procurement/TenderDocument/create"
+													},
+													"status": "Forbidden",
+													"code": 403,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												}
+											]
 										}
 									],
 									"id": "acaf3795-5709-49ac-bebf-4cfb228a9e41"
@@ -39220,6 +39713,149 @@
 												},
 												{
 													"id": "1587e3c4-9faa-4cea-883d-2fdbbeae2ce1",
+													"name": "Forbidden",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"tenderDetailId\": \"<string>\",\n  \"startdate\": \"<dateTime>\",\n  \"endDate\": \"<dateTime>\",\n  \"tenderType\": \"Commercials\",\n  \"serviceInformationId\": \"<string>\",\n  \"tenderDocuments\": [\n    {\n      \"tenderDocumentId\": \"<string>\",\n      \"documentName\": \"<string>\",\n      \"assignPoint\": \"<integer>\"\n    },\n    {\n      \"tenderDocumentId\": \"<string>\",\n      \"documentName\": \"<string>\",\n      \"assignPoint\": \"<integer>\"\n    }\n  ]\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl}}/api/procurement/TenderDocument/edit"
+													},
+													"status": "Forbidden",
+													"code": 403,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												}
+											]
+										},
+										{
+											"name": "Anp Procurement Features Service Information Create Tender Document Endpoint2 Copy",
+											"id": "677bf9fe-03c5-40e0-ade0-8a65170c74e5",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": {
+														"token": "{{bearerToken}}"
+													}
+												},
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"tenderDetailId\": \"<string>\",\n  \"startdate\": \"<dateTime>\",\n  \"endDate\": \"<dateTime>\",\n  \"tenderType\": \"Commercials\",\n  \"serviceInformationId\": \"<string>\",\n  \"tenderDocuments\": [\n    {\n      \"tenderDocumentId\": \"<string>\",\n      \"documentName\": \"<string>\",\n      \"assignPoint\": \"<integer>\"\n    },\n    {\n      \"tenderDocumentId\": \"<string>\",\n      \"documentName\": \"<string>\",\n      \"assignPoint\": \"<integer>\"\n    }\n  ]\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl}}/api/procurement/TenderDocument/edit"
+											},
+											"response": [
+												{
+													"id": "1c21f035-c021-4f51-979f-d02bbb30473a",
+													"name": "Success",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"tenderDetailId\": \"<string>\",\n  \"startdate\": \"<dateTime>\",\n  \"endDate\": \"<dateTime>\",\n  \"tenderType\": \"Commercials\",\n  \"serviceInformationId\": \"<string>\",\n  \"tenderDocuments\": [\n    {\n      \"tenderDocumentId\": \"<string>\",\n      \"documentName\": \"<string>\",\n      \"assignPoint\": \"<integer>\"\n    },\n    {\n      \"tenderDocumentId\": \"<string>\",\n      \"documentName\": \"<string>\",\n      \"assignPoint\": \"<integer>\"\n    }\n  ]\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl}}/api/procurement/TenderDocument/edit"
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												},
+												{
+													"id": "501aaef9-d9af-4e55-afa5-45b8b7f0afac",
+													"name": "Unauthorized",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"tenderDetailId\": \"<string>\",\n  \"startdate\": \"<dateTime>\",\n  \"endDate\": \"<dateTime>\",\n  \"tenderType\": \"Commercials\",\n  \"serviceInformationId\": \"<string>\",\n  \"tenderDocuments\": [\n    {\n      \"tenderDocumentId\": \"<string>\",\n      \"documentName\": \"<string>\",\n      \"assignPoint\": \"<integer>\"\n    },\n    {\n      \"tenderDocumentId\": \"<string>\",\n      \"documentName\": \"<string>\",\n      \"assignPoint\": \"<integer>\"\n    }\n  ]\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl}}/api/procurement/TenderDocument/edit"
+													},
+													"status": "Unauthorized",
+													"code": 401,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												},
+												{
+													"id": "1c5c0152-43f5-42fd-a79e-4e838313213a",
 													"name": "Forbidden",
 													"originalRequest": {
 														"method": "POST",
