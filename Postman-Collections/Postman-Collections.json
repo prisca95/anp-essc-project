@@ -40612,24 +40612,24 @@
 											]
 										},
 										{
-											"name": "No ServiceInformationId - Get All Tender Goods Services",
+											"name": "Invalid ServiceInformationId - Get All Tender Goods Services",
 											"event": [
 												{
 													"listen": "test",
 													"script": {
 														"id": "4fa3dfab-c665-40e1-b305-d5eb9527d91e",
 														"exec": [
-															"pm.test(\"Status code is 200\", function () {\r",
-															"    pm.response.to.have.status(200);\r",
+															"pm.test(\"Status code is 400\", function () {\r",
+															"    pm.response.to.have.status(400);\r",
 															"});\r",
 															"\r",
 															"var responseJSON = pm.response.json(); \r",
 															"\r",
-															"pm.test(\"Verify that tender goods and services are returned\", function () {\r",
+															"pm.test(\"Verify that tender goods and services Id is invalid\", function () {\r",
 															"\r",
 															"   // pm.expect(responseJSON.isSuccess).to.be.a(\"boolean\");\r",
-															"    pm.expect(responseJSON.data[0]).to.be.an(\"object\").and.not.empty;\r",
-															"  //  pm.expect(responseJSON.data.userName).to.be.a(\"string\").and.not.empty;\r",
+															"    pm.expect(responseJSON.errors[0].name).to.be.a(\"string\").and.not.empty;\r",
+															"    pm.expect(responseJSON.errors[0].reason).to.be.a(\"string\").and.not.empty;\r",
 															"      //  pm.expect(responseJSON.data.phoneNumber).to.be.a(\"string\").and.not.empty;\r",
 															"\r",
 															"});"
@@ -40677,9 +40677,8 @@
 													],
 													"variable": [
 														{
-															"id": "bfae5484-9aa0-4177-ae40-69805d126d6b",
 															"key": "serviceInformationId",
-															"value": "85218a2b-83c4-464a-3cd6-08dd3c7c59fc",
+															"value": "85218a2b-83c4-464a-3cd6-08dd3c7c",
 															"description": "(Required) "
 														}
 													]
@@ -40788,6 +40787,232 @@
 												},
 												{
 													"id": "7db23baa-64a8-4f52-9bca-ea6504ae01b7",
+													"name": "Forbidden",
+													"originalRequest": {
+														"method": "GET",
+														"header": [
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/procurement/listTenderGoodsServices/:serviceInformationId?pageNumber=<integer>&pageSize=<integer>",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"procurement",
+																"listTenderGoodsServices",
+																":serviceInformationId"
+															],
+															"query": [
+																{
+																	"description": "(Required) ",
+																	"key": "pageNumber",
+																	"value": "<integer>"
+																},
+																{
+																	"description": "(Required) ",
+																	"key": "pageSize",
+																	"value": "<integer>"
+																}
+															],
+															"variable": [
+																{
+																	"key": "serviceInformationId"
+																}
+															]
+														}
+													},
+													"status": "Forbidden",
+													"code": 403,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												}
+											]
+										},
+										{
+											"name": "No ServiceInformationId - Get All Tender Goods Services",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"id": "4fa3dfab-c665-40e1-b305-d5eb9527d91e",
+														"exec": [
+															"pm.test(\"Status code is 400\", function () {\r",
+															"    pm.response.to.have.status(400);\r",
+															"});\r",
+															"\r",
+															"var responseJSON = pm.response.json(); \r",
+															"\r",
+															"pm.test(\"Verify that tender goods and services Id is invalid\", function () {\r",
+															"\r",
+															"   // pm.expect(responseJSON.isSuccess).to.be.a(\"boolean\");\r",
+															"    pm.expect(responseJSON.errors[0].name).to.be.a(\"string\").and.not.empty;\r",
+															"    pm.expect(responseJSON.errors[0].reason).to.be.a(\"string\").and.not.empty;\r",
+															"      //  pm.expect(responseJSON.data.phoneNumber).to.be.a(\"string\").and.not.empty;\r",
+															"\r",
+															"});"
+														],
+														"type": "text/javascript",
+														"packages": {}
+													}
+												}
+											],
+											"id": "f7d72bf1-d869-4381-ac3b-7cdb81d335cf",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": {
+														"token": "{{bearerToken}}"
+													}
+												},
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/procurement/listTenderGoodsServices/:serviceInformationId?pageNumber=1&pageSize=10",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"procurement",
+														"listTenderGoodsServices",
+														":serviceInformationId"
+													],
+													"query": [
+														{
+															"key": "pageNumber",
+															"value": "1",
+															"description": "(Required) "
+														},
+														{
+															"key": "pageSize",
+															"value": "10",
+															"description": "(Required) "
+														}
+													],
+													"variable": [
+														{
+															"key": "serviceInformationId",
+															"value": "",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"response": [
+												{
+													"id": "7060cb0a-0e52-4def-b51a-e55733c60061",
+													"name": "Success",
+													"originalRequest": {
+														"method": "GET",
+														"header": [
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/procurement/listTenderGoodsServices/:serviceInformationId?pageNumber=<integer>&pageSize=<integer>",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"procurement",
+																"listTenderGoodsServices",
+																":serviceInformationId"
+															],
+															"query": [
+																{
+																	"description": "(Required) ",
+																	"key": "pageNumber",
+																	"value": "<integer>"
+																},
+																{
+																	"description": "(Required) ",
+																	"key": "pageSize",
+																	"value": "<integer>"
+																}
+															],
+															"variable": [
+																{
+																	"key": "serviceInformationId"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												},
+												{
+													"id": "335bb35a-5c0c-4e62-b113-c9037d1c760a",
+													"name": "Unauthorized",
+													"originalRequest": {
+														"method": "GET",
+														"header": [
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/procurement/listTenderGoodsServices/:serviceInformationId?pageNumber=<integer>&pageSize=<integer>",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"procurement",
+																"listTenderGoodsServices",
+																":serviceInformationId"
+															],
+															"query": [
+																{
+																	"description": "(Required) ",
+																	"key": "pageNumber",
+																	"value": "<integer>"
+																},
+																{
+																	"description": "(Required) ",
+																	"key": "pageSize",
+																	"value": "<integer>"
+																}
+															],
+															"variable": [
+																{
+																	"key": "serviceInformationId"
+																}
+															]
+														}
+													},
+													"status": "Unauthorized",
+													"code": 401,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												},
+												{
+													"id": "d2d305a1-5bda-4b91-822a-cf54004f5a41",
 													"name": "Forbidden",
 													"originalRequest": {
 														"method": "GET",
