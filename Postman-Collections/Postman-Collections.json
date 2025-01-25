@@ -39662,6 +39662,33 @@
 									"item": [
 										{
 											"name": "Anp Procurement Features Service Information Create Tender Document Endpoint2",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"id": "28279aee-87cf-4d66-9e7a-78a3edc06085",
+														"exec": [
+															"//pm.collectionVariables.set(\"serviceInformationId\", pm.response.json().data.id);\r",
+															"\r",
+															"pm.test(\"Status code is 200\", function () {\r",
+															"    pm.response.to.have.status(200);\r",
+															"});\r",
+															"\r",
+															"var responseJSON = pm.response.json(); \r",
+															"\r",
+															"pm.test(\"Verify that Service Information is updated successfully\", function () {\r",
+															"\r",
+															"    pm.expect(responseJSON.isSuccess).to.be.a(\"boolean\");\r",
+															"    pm.expect(responseJSON.data.id).to.be.a(\"string\").and.not.empty;\r",
+															"    pm.expect(responseJSON.data.message).to.be.a(\"string\").and.not.empty;\r",
+															"\r",
+															"});"
+														],
+														"type": "text/javascript",
+														"packages": {}
+													}
+												}
+											],
 											"id": "75c03239-40f1-4dd4-87cd-72a9dccb1991",
 											"protocolProfileBehavior": {
 												"disableBodyPruning": true
@@ -39670,7 +39697,7 @@
 												"auth": {
 													"type": "bearer",
 													"bearer": {
-														"token": "{{bearerToken}}"
+														"token": "{{approverBearerToken}}"
 													}
 												},
 												"method": "POST",
@@ -39682,7 +39709,7 @@
 												],
 												"body": {
 													"mode": "raw",
-													"raw": "{\n  \"tenderDetailId\": \"<string>\",\n  \"startdate\": \"<dateTime>\",\n  \"endDate\": \"<dateTime>\",\n  \"tenderType\": \"Commercials\",\n  \"serviceInformationId\": \"<string>\",\n  \"tenderDocuments\": [\n    {\n      \"tenderDocumentId\": \"<string>\",\n      \"documentName\": \"<string>\",\n      \"assignPoint\": \"<integer>\"\n    },\n    {\n      \"tenderDocumentId\": \"<string>\",\n      \"documentName\": \"<string>\",\n      \"assignPoint\": \"<integer>\"\n    }\n  ]\n}",
+													"raw": "// {\n//   \"tenderDetailId\": \"<string>\",\n//   \"startdate\": \"<dateTime>\",\n//   \"endDate\": \"<dateTime>\",\n//   \"tenderType\": \"Commercials\",\n//   \"serviceInformationId\": \"<string>\",\n//   \"tenderDocuments\": [\n//     {\n//       \"tenderDocumentId\": \"<string>\",\n//       \"documentName\": \"<string>\",\n//       \"assignPoint\": \"<integer>\"\n//     },\n//     {\n//       \"tenderDocumentId\": \"<string>\",\n//       \"documentName\": \"<string>\",\n//       \"assignPoint\": \"<integer>\"\n//     }\n//   ]\n// }\n\n{\n \"tenderDetailId\": \"3ddc6a60-c611-46d5-90ea-08dd3d4d6e53\",\n  \"startdate\": \"2025-01-25T14:09:39.906Z\",\n  \"endDate\": \"2025-01-30T14:09:39.906Z\",\n  \"tenderType\": \"TechnicalInformation\",//\"ExpressionOfInterest\",//\"Commercials\",\n  \"serviceInformationId\": \"85218a2b-83c4-464a-3cd6-08dd3c7c59fc\",\n  \"tenderDocuments\": [\n    {\n      \"tenderDocumentId\": \"4c121b45-cb83-440b-c468-08dd3d4d6e57\",\n      \"documentName\": \"NIN\",\n      \"assignPoint\": \"20\"\n    }\n    // {\n    //   \"tenderDocumentId\": \"<string>\",\n    //   \"documentName\": \"<string>\",\n    //   \"assignPoint\": \"<integer>\"\n    // }\n  ]\n}",
 													"options": {
 														"raw": {
 															"headerFamily": "json",
@@ -43025,7 +43052,7 @@
 													"variable": [
 														{
 															"key": "serviceInformationId",
-															"value": "47a1b0f2-1244-4b2b-5840-08dd210be61b",
+															"value": "056c9951-15e5-42e0-7c60-08dd3c8ae4f9",
 															"description": "(Required) "
 														}
 													]
@@ -43870,18 +43897,18 @@
 													"script": {
 														"id": "6aa402f0-df5a-4afd-8cd0-8a1f0a71f4f4",
 														"exec": [
-															"pm.test(\"Status code is 200\", function () {\r",
-															"    pm.response.to.have.status(200);\r",
+															"pm.test(\"Status code is 400\", function () {\r",
+															"    pm.response.to.have.status(400);\r",
 															"});\r",
 															"\r",
 															"var responseJSON = pm.response.json(); \r",
 															"\r",
-															"pm.test(\"Verify that user profile is returned\", function () {\r",
+															"pm.test(\"Verify that tenderDocumentId is required\", function () {\r",
 															"\r",
-															"    pm.expect(responseJSON.isSuccess).to.be.a(\"boolean\");\r",
-															"    pm.expect(responseJSON.data.email).to.be.a(\"string\").and.not.empty;\r",
-															"    pm.expect(responseJSON.data.userName).to.be.a(\"string\").and.not.empty;\r",
-															"        pm.expect(responseJSON.data.phoneNumber).to.be.a(\"string\").and.not.empty;\r",
+															"   // pm.expect(responseJSON.isSuccess).to.be.a(\"boolean\");\r",
+															"    pm.expect(responseJSON.errors[0].name).to.be.a(\"string\").and.not.empty;\r",
+															"    pm.expect(responseJSON.errors[0].reason).to.be.a(\"string\").and.not.empty;\r",
+															"      //  pm.expect(responseJSON.data.phoneNumber).to.be.a(\"string\").and.not.empty;\r",
 															"\r",
 															"});"
 														],
@@ -43916,9 +43943,8 @@
 													],
 													"variable": [
 														{
-															"id": "020c63f4-0862-4cf4-9966-6eb0457236a7",
 															"key": "tenderDocumentId",
-															"value": "<string>",
+															"value": "",
 															"description": "(Required) "
 														}
 													]
