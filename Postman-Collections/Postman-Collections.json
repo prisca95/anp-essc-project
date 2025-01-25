@@ -41925,7 +41925,7 @@
 											]
 										},
 										{
-											"name": "Anp Procurement Features Service Information Get A Tender Goods Services Endpoint Copy",
+											"name": "No tenderGoodsServiceId - Get A Tender Goods Services",
 											"event": [
 												{
 													"listen": "test",
@@ -41952,7 +41952,7 @@
 													}
 												}
 											],
-											"id": "e1d41d51-6bd2-4529-b29f-c886302eb8b3",
+											"id": "a5443d71-f31d-4439-8d38-a169949fd045",
 											"protocolProfileBehavior": {
 												"disableBodyPruning": true
 											},
@@ -41978,7 +41978,175 @@
 													],
 													"variable": [
 														{
-															"id": "971544f4-09dd-467f-a997-b6bebd88890f",
+															"id": "65eed4ed-b65c-453d-827f-d1555a55cd7c",
+															"key": "tenderGoodsServicesId",
+															"value": "61702bda-7363-4553-c353-08dd3c7d3efd",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"response": [
+												{
+													"id": "f0ce6d59-13d5-4980-8fce-30649d3a9eca",
+													"name": "Success",
+													"originalRequest": {
+														"method": "GET",
+														"header": [
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/procurement/TenderGoodsServices/:tenderGoodsServicesId",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"procurement",
+																"TenderGoodsServices",
+																":tenderGoodsServicesId"
+															],
+															"variable": [
+																{
+																	"key": "tenderGoodsServicesId"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												},
+												{
+													"id": "6e690605-01eb-4199-901a-c5075d66f526",
+													"name": "Unauthorized",
+													"originalRequest": {
+														"method": "GET",
+														"header": [
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/procurement/TenderGoodsServices/:tenderGoodsServicesId",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"procurement",
+																"TenderGoodsServices",
+																":tenderGoodsServicesId"
+															],
+															"variable": [
+																{
+																	"key": "tenderGoodsServicesId"
+																}
+															]
+														}
+													},
+													"status": "Unauthorized",
+													"code": 401,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												},
+												{
+													"id": "7fc0cf3f-4d84-40e7-8c18-f20d9726d8db",
+													"name": "Forbidden",
+													"originalRequest": {
+														"method": "GET",
+														"header": [
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/procurement/TenderGoodsServices/:tenderGoodsServicesId",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"procurement",
+																"TenderGoodsServices",
+																":tenderGoodsServicesId"
+															],
+															"variable": [
+																{
+																	"key": "tenderGoodsServicesId"
+																}
+															]
+														}
+													},
+													"status": "Forbidden",
+													"code": 403,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												}
+											]
+										},
+										{
+											"name": "No Auth - Get A Tender Goods Services",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"id": "5b9e1f78-514f-40ec-af3d-f86c1f8bafe9",
+														"exec": [
+															"pm.test(\"Status code is 401\", function () {\r",
+															"    pm.response.to.have.status(401);\r",
+															"});\r",
+															"\r",
+															"pm.test(\"Status code name has 'Unauthorized'\", function () {\r",
+															"    pm.response.to.have.status(\"Unauthorized\");\r",
+															"});"
+														],
+														"type": "text/javascript",
+														"packages": {}
+													}
+												}
+											],
+											"id": "e1d41d51-6bd2-4529-b29f-c886302eb8b3",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"auth": {
+													"type": "noauth"
+												},
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/procurement/TenderGoodsServices/:tenderGoodsServicesId",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"procurement",
+														"TenderGoodsServices",
+														":tenderGoodsServicesId"
+													],
+													"variable": [
+														{
 															"key": "tenderGoodsServicesId",
 															"value": "61702bda-7363-4553-c353-08dd3c7d3efd",
 															"description": "(Required) "
@@ -42292,6 +42460,353 @@
 													"body": ""
 												}
 											]
+										},
+										{
+											"name": "No serviceInformationId - Get A Service Information",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"id": "c382a785-6111-4ff6-831b-74bfc82ba8b9",
+														"exec": [
+															"pm.test(\"Status code is 200\", function () {\r",
+															"    pm.response.to.have.status(200);\r",
+															"});\r",
+															"\r",
+															"var responseJSON = pm.response.json(); \r",
+															"\r",
+															"pm.test(\"Verify that service information is returned\", function () {\r",
+															"\r",
+															"    pm.expect(responseJSON.isSuccess).to.be.a(\"boolean\");\r",
+															"    pm.expect(responseJSON.data).to.be.an(\"object\").and.not.empty;\r",
+															"    // pm.expect(responseJSON.data.userName).to.be.a(\"string\").and.not.empty;\r",
+															"    //     pm.expect(responseJSON.data.phoneNumber).to.be.a(\"string\").and.not.empty;\r",
+															"\r",
+															"});"
+														],
+														"type": "text/javascript",
+														"packages": {}
+													}
+												}
+											],
+											"id": "81c383dc-5fb9-4130-a9a7-225fdac20c5c",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": {
+														"token": "{{approverBearerToken}}"
+													}
+												},
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/procurement/getAServiceInformation/:serviceInformationId",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"procurement",
+														"getAServiceInformation",
+														":serviceInformationId"
+													],
+													"variable": [
+														{
+															"id": "8149ac72-1ffb-4787-9c98-f86ba80d6b0e",
+															"key": "serviceInformationId",
+															"value": "47a1b0f2-1244-4b2b-5840-08dd210be61b",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"response": [
+												{
+													"id": "8bfdbed0-e66b-43d7-85c3-129c23017b33",
+													"name": "Success",
+													"originalRequest": {
+														"method": "GET",
+														"header": [
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/procurement/getAServiceInformation/:serviceInformationId",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"procurement",
+																"getAServiceInformation",
+																":serviceInformationId"
+															],
+															"variable": [
+																{
+																	"key": "serviceInformationId"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												},
+												{
+													"id": "136278f0-facc-47a2-941a-a412f3db946c",
+													"name": "Unauthorized",
+													"originalRequest": {
+														"method": "GET",
+														"header": [
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/procurement/getAServiceInformation/:serviceInformationId",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"procurement",
+																"getAServiceInformation",
+																":serviceInformationId"
+															],
+															"variable": [
+																{
+																	"key": "serviceInformationId"
+																}
+															]
+														}
+													},
+													"status": "Unauthorized",
+													"code": 401,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												},
+												{
+													"id": "f9c2ff34-3d22-4bb8-8f8b-78b39848255e",
+													"name": "Forbidden",
+													"originalRequest": {
+														"method": "GET",
+														"header": [
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/procurement/getAServiceInformation/:serviceInformationId",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"procurement",
+																"getAServiceInformation",
+																":serviceInformationId"
+															],
+															"variable": [
+																{
+																	"key": "serviceInformationId"
+																}
+															]
+														}
+													},
+													"status": "Forbidden",
+													"code": 403,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												}
+											]
+										},
+										{
+											"name": "No Auth - Get A Service Information",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"id": "c382a785-6111-4ff6-831b-74bfc82ba8b9",
+														"exec": [
+															"pm.test(\"Status code is 401\", function () {\r",
+															"    pm.response.to.have.status(401);\r",
+															"});\r",
+															"\r",
+															"pm.test(\"Status code name has 'Unauthorized'\", function () {\r",
+															"    pm.response.to.have.status(\"Unauthorized\");\r",
+															"});"
+														],
+														"type": "text/javascript",
+														"packages": {}
+													}
+												}
+											],
+											"id": "d8a3e4fd-7cd8-4cbc-9cfc-7156d57a2f4f",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"auth": {
+													"type": "noauth"
+												},
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/procurement/getAServiceInformation/:serviceInformationId",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"procurement",
+														"getAServiceInformation",
+														":serviceInformationId"
+													],
+													"variable": [
+														{
+															"key": "serviceInformationId",
+															"value": "47a1b0f2-1244-4b2b-5840-08dd210be61b",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"response": [
+												{
+													"id": "b9f1ed92-0fe6-4aa0-bd8f-e63aa6bf1ae6",
+													"name": "Success",
+													"originalRequest": {
+														"method": "GET",
+														"header": [
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/procurement/getAServiceInformation/:serviceInformationId",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"procurement",
+																"getAServiceInformation",
+																":serviceInformationId"
+															],
+															"variable": [
+																{
+																	"key": "serviceInformationId"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												},
+												{
+													"id": "57bd86bb-5fc5-4883-8453-dd0652c36067",
+													"name": "Unauthorized",
+													"originalRequest": {
+														"method": "GET",
+														"header": [
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/procurement/getAServiceInformation/:serviceInformationId",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"procurement",
+																"getAServiceInformation",
+																":serviceInformationId"
+															],
+															"variable": [
+																{
+																	"key": "serviceInformationId"
+																}
+															]
+														}
+													},
+													"status": "Unauthorized",
+													"code": 401,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												},
+												{
+													"id": "23d0a3e4-c45b-4010-9e59-b1e62edd9505",
+													"name": "Forbidden",
+													"originalRequest": {
+														"method": "GET",
+														"header": [
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/procurement/getAServiceInformation/:serviceInformationId",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"procurement",
+																"getAServiceInformation",
+																":serviceInformationId"
+															],
+															"variable": [
+																{
+																	"key": "serviceInformationId"
+																}
+															]
+														}
+													},
+													"status": "Forbidden",
+													"code": 403,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												}
+											]
 										}
 									],
 									"id": "87e7ce24-924d-4298-948d-801e5e14655f"
@@ -42445,6 +42960,185 @@
 												},
 												{
 													"id": "98ebd951-97e2-4058-b264-9d95509ad3cb",
+													"name": "Forbidden",
+													"originalRequest": {
+														"method": "GET",
+														"header": [
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/procurement/getATenderDocument/:tenderDocumentId",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"procurement",
+																"getATenderDocument",
+																":tenderDocumentId"
+															],
+															"variable": [
+																{
+																	"key": "tenderDocumentId"
+																}
+															]
+														}
+													},
+													"status": "Forbidden",
+													"code": 403,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												}
+											]
+										},
+										{
+											"name": "Anp Procurement Features Service Information Get A Tender Document Endpoint Copy",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"id": "6aa402f0-df5a-4afd-8cd0-8a1f0a71f4f4",
+														"exec": [
+															"pm.test(\"Status code is 200\", function () {\r",
+															"    pm.response.to.have.status(200);\r",
+															"});\r",
+															"\r",
+															"var responseJSON = pm.response.json(); \r",
+															"\r",
+															"pm.test(\"Verify that user profile is returned\", function () {\r",
+															"\r",
+															"    pm.expect(responseJSON.isSuccess).to.be.a(\"boolean\");\r",
+															"    pm.expect(responseJSON.data.email).to.be.a(\"string\").and.not.empty;\r",
+															"    pm.expect(responseJSON.data.userName).to.be.a(\"string\").and.not.empty;\r",
+															"        pm.expect(responseJSON.data.phoneNumber).to.be.a(\"string\").and.not.empty;\r",
+															"\r",
+															"});"
+														],
+														"type": "text/javascript",
+														"packages": {}
+													}
+												}
+											],
+											"id": "3b09fe22-d737-40c0-a467-ae869bebcbc2",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": {
+														"token": "{{bearerToken}}"
+													}
+												},
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/procurement/getATenderDocument/:tenderDocumentId",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"procurement",
+														"getATenderDocument",
+														":tenderDocumentId"
+													],
+													"variable": [
+														{
+															"id": "343d4149-7523-4435-9f57-447dc4015c2e",
+															"key": "tenderDocumentId",
+															"value": "<string>",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"response": [
+												{
+													"id": "5a83c9ef-a1d6-4e5a-ba0b-66d2072d6293",
+													"name": "Success",
+													"originalRequest": {
+														"method": "GET",
+														"header": [
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/procurement/getATenderDocument/:tenderDocumentId",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"procurement",
+																"getATenderDocument",
+																":tenderDocumentId"
+															],
+															"variable": [
+																{
+																	"key": "tenderDocumentId"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												},
+												{
+													"id": "2970f5d5-1929-4a8f-8183-b9809d05e2d6",
+													"name": "Unauthorized",
+													"originalRequest": {
+														"method": "GET",
+														"header": [
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/procurement/getATenderDocument/:tenderDocumentId",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"procurement",
+																"getATenderDocument",
+																":tenderDocumentId"
+															],
+															"variable": [
+																{
+																	"key": "tenderDocumentId"
+																}
+															]
+														}
+													},
+													"status": "Unauthorized",
+													"code": 401,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												},
+												{
+													"id": "aa4accfa-fb49-468b-bcee-7cf304b1aa87",
 													"name": "Forbidden",
 													"originalRequest": {
 														"method": "GET",
@@ -43154,6 +43848,159 @@
 										},
 										{
 											"id": "931794f5-ac70-4602-9c62-a8221b1e157b",
+											"name": "Forbidden",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [
+													{
+														"description": "Added as a part of security scheme: bearer",
+														"key": "Authorization",
+														"value": "Bearer <token>"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/procurement/TenderGoodsServices/:tenderGoodsServicesId",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"procurement",
+														"TenderGoodsServices",
+														":tenderGoodsServicesId"
+													],
+													"variable": [
+														{
+															"key": "tenderGoodsServicesId"
+														}
+													]
+												}
+											},
+											"status": "Forbidden",
+											"code": 403,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"responseTime": null,
+											"body": ""
+										}
+									]
+								},
+								{
+									"name": "Anp Procurement Features Service Information Delete Tender Goods Endpoint Copy",
+									"id": "8d857d2a-dfc3-4f96-bc86-23e45d40d65d",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": {
+												"token": "{{bearerToken}}"
+											}
+										},
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/procurement/TenderGoodsServices/:tenderGoodsServicesId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"procurement",
+												"TenderGoodsServices",
+												":tenderGoodsServicesId"
+											],
+											"variable": [
+												{
+													"id": "0869be3c-9361-49e2-bfae-7f0cb100e960",
+													"key": "tenderGoodsServicesId",
+													"value": "<string>",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"id": "e219a84f-5821-45b7-97d2-61523ee4c3c9",
+											"name": "Success",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [
+													{
+														"description": "Added as a part of security scheme: bearer",
+														"key": "Authorization",
+														"value": "Bearer <token>"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/procurement/TenderGoodsServices/:tenderGoodsServicesId",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"procurement",
+														"TenderGoodsServices",
+														":tenderGoodsServicesId"
+													],
+													"variable": [
+														{
+															"key": "tenderGoodsServicesId"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"responseTime": null,
+											"body": ""
+										},
+										{
+											"id": "22fd002d-3026-4255-a9df-d9446433e91c",
+											"name": "Unauthorized",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [
+													{
+														"description": "Added as a part of security scheme: bearer",
+														"key": "Authorization",
+														"value": "Bearer <token>"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/procurement/TenderGoodsServices/:tenderGoodsServicesId",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"procurement",
+														"TenderGoodsServices",
+														":tenderGoodsServicesId"
+													],
+													"variable": [
+														{
+															"key": "tenderGoodsServicesId"
+														}
+													]
+												}
+											},
+											"status": "Unauthorized",
+											"code": 401,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"responseTime": null,
+											"body": ""
+										},
+										{
+											"id": "128fc3ca-c7a3-409c-b718-55737c496561",
 											"name": "Forbidden",
 											"originalRequest": {
 												"method": "DELETE",
