@@ -38514,7 +38514,7 @@
 												],
 												"body": {
 													"mode": "raw",
-													"raw": "{\n // \"tenderDetailId\": \"<string>\",\n  \"startdate\": \"2025-01-25T14:09:39.906Z\",\n  \"endDate\": \"2025-01-30T14:09:39.906Z\",\n  \"tenderType\": \"Commercials\",\n  \"serviceInformationId\": \"85218a2b-83c4-464a-3cd6-08dd3c7c59fc\",\n  \"tenderDocuments\": [\n    {\n     // \"tenderDocumentId\": \"<string>\",\n      \"documentName\": \"CAC\",\n      \"assignPoint\": \"30\"\n    }\n    // {\n    //   \"tenderDocumentId\": \"<string>\",\n    //   \"documentName\": \"<string>\",\n    //   \"assignPoint\": \"<integer>\"\n    // }\n  ]\n}",
+													"raw": "{\n // \"tenderDetailId\": \"<string>\",\n  \"startdate\": \"2025-01-25T14:09:39.906Z\",\n  \"endDate\": \"2025-01-30T14:09:39.906Z\",\n  \"tenderType\": \"TechnicalInformation\",//\"ExpressionOfInterest\",//\"Commercials\",\n  \"serviceInformationId\": \"85218a2b-83c4-464a-3cd6-08dd3c7c59fc\",\n  \"tenderDocuments\": [\n    {\n     // \"tenderDocumentId\": \"<string>\",\n      \"documentName\": \"CAC\",\n      \"assignPoint\": \"30\"\n    }\n    // {\n    //   \"tenderDocumentId\": \"<string>\",\n    //   \"documentName\": \"<string>\",\n    //   \"assignPoint\": \"<integer>\"\n    // }\n  ]\n}",
 													"options": {
 														"raw": {
 															"headerFamily": "json",
@@ -38789,718 +38789,6 @@
 								}
 							],
 							"id": "527e3bec-cf41-4a40-a5ea-c6c7f4ef18a4"
-						},
-						{
-							"name": "deleteServiceInfo",
-							"item": [
-								{
-									"name": "{serviceInformationId}",
-									"item": [
-										{
-											"name": "Already deleted - Delete Service Info Endpoint",
-											"event": [
-												{
-													"listen": "test",
-													"script": {
-														"id": "c59e502d-d745-43e5-8cc7-baabb5d01df7",
-														"exec": [
-															"pm.test(\"Status code is 200\", function () {\r",
-															"    pm.response.to.have.status(200);\r",
-															"});\r",
-															"\r",
-															"var responseJSON = pm.response.json(); \r",
-															"\r",
-															"pm.test(\"Verify that Service Information is already deleted \", function () {\r",
-															"\r",
-															"    pm.expect(responseJSON.isSuccess).to.be.a(\"boolean\");\r",
-															"    pm.expect(responseJSON.data).to.be.null;\r",
-															"    pm.expect(responseJSON.errorMessage).to.be.a(\"string\").and.not.empty;\r",
-															"\r",
-															"});"
-														],
-														"type": "text/javascript",
-														"packages": {}
-													}
-												}
-											],
-											"id": "da4d1c34-57b6-4c48-84f2-033d68713cad",
-											"protocolProfileBehavior": {
-												"disableBodyPruning": true
-											},
-											"request": {
-												"auth": {
-													"type": "bearer",
-													"bearer": {
-														"token": "{{approverBearerToken}}"
-													}
-												},
-												"method": "DELETE",
-												"header": [],
-												"url": {
-													"raw": "{{baseUrl}}/api/procurement/deleteServiceInfo/:serviceInformationId?",
-													"host": [
-														"{{baseUrl}}"
-													],
-													"path": [
-														"api",
-														"procurement",
-														"deleteServiceInfo",
-														":serviceInformationId"
-													],
-													"query": [
-														{
-															"key": null,
-															"value": null,
-															"type": "text"
-														}
-													],
-													"variable": [
-														{
-															"key": "serviceInformationId",
-															"value": "47a1b0f2-1244-4b2b-5840-08dd210be61b",
-															"description": "(Required) "
-														}
-													]
-												}
-											},
-											"response": [
-												{
-													"id": "5736b345-138b-4385-b729-f7c06cc30a44",
-													"name": "Success",
-													"originalRequest": {
-														"method": "DELETE",
-														"header": [
-															{
-																"description": "Added as a part of security scheme: bearer",
-																"key": "Authorization",
-																"value": "Bearer <token>"
-															}
-														],
-														"url": {
-															"raw": "{{baseUrl}}/api/procurement/deleteServiceInfo/:serviceInformationId",
-															"host": [
-																"{{baseUrl}}"
-															],
-															"path": [
-																"api",
-																"procurement",
-																"deleteServiceInfo",
-																":serviceInformationId"
-															],
-															"variable": [
-																{
-																	"key": "serviceInformationId"
-																}
-															]
-														}
-													},
-													"status": "OK",
-													"code": 200,
-													"_postman_previewlanguage": "text",
-													"header": [],
-													"cookie": [],
-													"responseTime": null,
-													"body": ""
-												},
-												{
-													"id": "b3fd9eec-cd7b-4176-882f-1f38aac7e62e",
-													"name": "Unauthorized",
-													"originalRequest": {
-														"method": "DELETE",
-														"header": [
-															{
-																"description": "Added as a part of security scheme: bearer",
-																"key": "Authorization",
-																"value": "Bearer <token>"
-															}
-														],
-														"url": {
-															"raw": "{{baseUrl}}/api/procurement/deleteServiceInfo/:serviceInformationId",
-															"host": [
-																"{{baseUrl}}"
-															],
-															"path": [
-																"api",
-																"procurement",
-																"deleteServiceInfo",
-																":serviceInformationId"
-															],
-															"variable": [
-																{
-																	"key": "serviceInformationId"
-																}
-															]
-														}
-													},
-													"status": "Unauthorized",
-													"code": 401,
-													"_postman_previewlanguage": "text",
-													"header": [],
-													"cookie": [],
-													"responseTime": null,
-													"body": ""
-												},
-												{
-													"id": "c84f7b93-d15f-47ef-a4f1-006bb1be5e9d",
-													"name": "Forbidden",
-													"originalRequest": {
-														"method": "DELETE",
-														"header": [
-															{
-																"description": "Added as a part of security scheme: bearer",
-																"key": "Authorization",
-																"value": "Bearer <token>"
-															}
-														],
-														"url": {
-															"raw": "{{baseUrl}}/api/procurement/deleteServiceInfo/:serviceInformationId",
-															"host": [
-																"{{baseUrl}}"
-															],
-															"path": [
-																"api",
-																"procurement",
-																"deleteServiceInfo",
-																":serviceInformationId"
-															],
-															"variable": [
-																{
-																	"key": "serviceInformationId"
-																}
-															]
-														}
-													},
-													"status": "Forbidden",
-													"code": 403,
-													"_postman_previewlanguage": "text",
-													"header": [],
-													"cookie": [],
-													"responseTime": null,
-													"body": ""
-												}
-											]
-										},
-										{
-											"name": "No Service Information Id - Delete Service Info Endpoint",
-											"event": [
-												{
-													"listen": "test",
-													"script": {
-														"id": "c59e502d-d745-43e5-8cc7-baabb5d01df7",
-														"exec": [
-															"pm.test(\"Status code is 400\", function () {\r",
-															"    pm.response.to.have.status(400);\r",
-															"});\r",
-															"\r",
-															"var responseJSON = pm.response.json(); \r",
-															"\r",
-															"pm.test(\"Verify that Service Information Id is required \", function () {\r",
-															"\r",
-															"   pm.expect(responseJSON.errors[0].name).to.be.a(\"string\").and.not.empty;\r",
-															"        pm.expect(responseJSON.errors[0].reason).to.be.a(\"string\").and.not.empty;\r",
-															"\r",
-															"\r",
-															"});"
-														],
-														"type": "text/javascript",
-														"packages": {}
-													}
-												}
-											],
-											"id": "d3d65ea5-de05-4531-8feb-8f361ea69a00",
-											"protocolProfileBehavior": {
-												"disableBodyPruning": true
-											},
-											"request": {
-												"auth": {
-													"type": "bearer",
-													"bearer": {
-														"token": "{{approverBearerToken}}"
-													}
-												},
-												"method": "DELETE",
-												"header": [],
-												"url": {
-													"raw": "{{baseUrl}}/api/procurement/deleteServiceInfo/:serviceInformationId?",
-													"host": [
-														"{{baseUrl}}"
-													],
-													"path": [
-														"api",
-														"procurement",
-														"deleteServiceInfo",
-														":serviceInformationId"
-													],
-													"query": [
-														{
-															"key": "",
-															"value": null
-														}
-													],
-													"variable": [
-														{
-															"key": "serviceInformationId",
-															"value": "",
-															"description": "(Required) "
-														}
-													]
-												}
-											},
-											"response": [
-												{
-													"id": "4444edc7-ffbf-445b-9fc5-d775b4feba47",
-													"name": "Success",
-													"originalRequest": {
-														"method": "DELETE",
-														"header": [
-															{
-																"description": "Added as a part of security scheme: bearer",
-																"key": "Authorization",
-																"value": "Bearer <token>"
-															}
-														],
-														"url": {
-															"raw": "{{baseUrl}}/api/procurement/deleteServiceInfo/:serviceInformationId",
-															"host": [
-																"{{baseUrl}}"
-															],
-															"path": [
-																"api",
-																"procurement",
-																"deleteServiceInfo",
-																":serviceInformationId"
-															],
-															"variable": [
-																{
-																	"key": "serviceInformationId"
-																}
-															]
-														}
-													},
-													"status": "OK",
-													"code": 200,
-													"_postman_previewlanguage": "text",
-													"header": [],
-													"cookie": [],
-													"responseTime": null,
-													"body": ""
-												},
-												{
-													"id": "7413c827-d6ef-4957-b2ee-51e88c055bb1",
-													"name": "Unauthorized",
-													"originalRequest": {
-														"method": "DELETE",
-														"header": [
-															{
-																"description": "Added as a part of security scheme: bearer",
-																"key": "Authorization",
-																"value": "Bearer <token>"
-															}
-														],
-														"url": {
-															"raw": "{{baseUrl}}/api/procurement/deleteServiceInfo/:serviceInformationId",
-															"host": [
-																"{{baseUrl}}"
-															],
-															"path": [
-																"api",
-																"procurement",
-																"deleteServiceInfo",
-																":serviceInformationId"
-															],
-															"variable": [
-																{
-																	"key": "serviceInformationId"
-																}
-															]
-														}
-													},
-													"status": "Unauthorized",
-													"code": 401,
-													"_postman_previewlanguage": "text",
-													"header": [],
-													"cookie": [],
-													"responseTime": null,
-													"body": ""
-												},
-												{
-													"id": "a1386454-2126-4d47-a1f8-b007e23d1dc9",
-													"name": "Forbidden",
-													"originalRequest": {
-														"method": "DELETE",
-														"header": [
-															{
-																"description": "Added as a part of security scheme: bearer",
-																"key": "Authorization",
-																"value": "Bearer <token>"
-															}
-														],
-														"url": {
-															"raw": "{{baseUrl}}/api/procurement/deleteServiceInfo/:serviceInformationId",
-															"host": [
-																"{{baseUrl}}"
-															],
-															"path": [
-																"api",
-																"procurement",
-																"deleteServiceInfo",
-																":serviceInformationId"
-															],
-															"variable": [
-																{
-																	"key": "serviceInformationId"
-																}
-															]
-														}
-													},
-													"status": "Forbidden",
-													"code": 403,
-													"_postman_previewlanguage": "text",
-													"header": [],
-													"cookie": [],
-													"responseTime": null,
-													"body": ""
-												}
-											]
-										},
-										{
-											"name": "No Auth - Delete Service Info",
-											"event": [
-												{
-													"listen": "test",
-													"script": {
-														"id": "209b734a-9821-4d28-9d6e-03e70e23913e",
-														"exec": [
-															"pm.test(\"Status code is 401\", function () {\r",
-															"    pm.response.to.have.status(401);\r",
-															"});\r",
-															"\r",
-															"pm.test(\"Status code name has 'Unauthorized'\", function () {\r",
-															"    pm.response.to.have.status(\"Unauthorized\");\r",
-															"});"
-														],
-														"type": "text/javascript",
-														"packages": {}
-													}
-												}
-											],
-											"id": "8e5ba106-911b-4ce4-a181-dc80b2b8d76b",
-											"protocolProfileBehavior": {
-												"disableBodyPruning": true
-											},
-											"request": {
-												"auth": {
-													"type": "noauth"
-												},
-												"method": "DELETE",
-												"header": [],
-												"url": {
-													"raw": "{{baseUrl}}/api/procurement/deleteServiceInfo/:serviceInformationId",
-													"host": [
-														"{{baseUrl}}"
-													],
-													"path": [
-														"api",
-														"procurement",
-														"deleteServiceInfo",
-														":serviceInformationId"
-													],
-													"variable": [
-														{
-															"key": "serviceInformationId",
-															"value": "<string>",
-															"description": "(Required) "
-														}
-													]
-												}
-											},
-											"response": [
-												{
-													"id": "c3dacf6c-03f0-4b5c-aacf-51c3846d0ea2",
-													"name": "Success",
-													"originalRequest": {
-														"method": "DELETE",
-														"header": [
-															{
-																"description": "Added as a part of security scheme: bearer",
-																"key": "Authorization",
-																"value": "Bearer <token>"
-															}
-														],
-														"url": {
-															"raw": "{{baseUrl}}/api/procurement/deleteServiceInfo/:serviceInformationId",
-															"host": [
-																"{{baseUrl}}"
-															],
-															"path": [
-																"api",
-																"procurement",
-																"deleteServiceInfo",
-																":serviceInformationId"
-															],
-															"variable": [
-																{
-																	"key": "serviceInformationId"
-																}
-															]
-														}
-													},
-													"status": "OK",
-													"code": 200,
-													"_postman_previewlanguage": "text",
-													"header": [],
-													"cookie": [],
-													"responseTime": null,
-													"body": ""
-												},
-												{
-													"id": "0113102a-bcae-42bd-84e9-a9f338756dc3",
-													"name": "Unauthorized",
-													"originalRequest": {
-														"method": "DELETE",
-														"header": [
-															{
-																"description": "Added as a part of security scheme: bearer",
-																"key": "Authorization",
-																"value": "Bearer <token>"
-															}
-														],
-														"url": {
-															"raw": "{{baseUrl}}/api/procurement/deleteServiceInfo/:serviceInformationId",
-															"host": [
-																"{{baseUrl}}"
-															],
-															"path": [
-																"api",
-																"procurement",
-																"deleteServiceInfo",
-																":serviceInformationId"
-															],
-															"variable": [
-																{
-																	"key": "serviceInformationId"
-																}
-															]
-														}
-													},
-													"status": "Unauthorized",
-													"code": 401,
-													"_postman_previewlanguage": "text",
-													"header": [],
-													"cookie": [],
-													"responseTime": null,
-													"body": ""
-												},
-												{
-													"id": "235763de-7466-4b4e-834d-3e60688b2a05",
-													"name": "Forbidden",
-													"originalRequest": {
-														"method": "DELETE",
-														"header": [
-															{
-																"description": "Added as a part of security scheme: bearer",
-																"key": "Authorization",
-																"value": "Bearer <token>"
-															}
-														],
-														"url": {
-															"raw": "{{baseUrl}}/api/procurement/deleteServiceInfo/:serviceInformationId",
-															"host": [
-																"{{baseUrl}}"
-															],
-															"path": [
-																"api",
-																"procurement",
-																"deleteServiceInfo",
-																":serviceInformationId"
-															],
-															"variable": [
-																{
-																	"key": "serviceInformationId"
-																}
-															]
-														}
-													},
-													"status": "Forbidden",
-													"code": 403,
-													"_postman_previewlanguage": "text",
-													"header": [],
-													"cookie": [],
-													"responseTime": null,
-													"body": ""
-												}
-											]
-										}
-									],
-									"id": "cf202894-b2ee-4564-b636-6dae49f0ed36"
-								}
-							],
-							"id": "34ee7b87-60e4-4566-b3f3-41dc2d2de6f9"
-						},
-						{
-							"name": "deleteTenderDocument",
-							"item": [
-								{
-									"name": "{tenderDocumentId}",
-									"item": [
-										{
-											"name": "Anp Procurement Features Service Information Delete Tender Document Endpoint",
-											"id": "5e227169-7545-4952-a96e-caadc198fb42",
-											"protocolProfileBehavior": {
-												"disableBodyPruning": true
-											},
-											"request": {
-												"auth": {
-													"type": "bearer",
-													"bearer": {
-														"token": "{{bearerToken}}"
-													}
-												},
-												"method": "DELETE",
-												"header": [],
-												"url": {
-													"raw": "{{baseUrl}}/api/procurement/deleteTenderDocument/:tenderDocumentId",
-													"host": [
-														"{{baseUrl}}"
-													],
-													"path": [
-														"api",
-														"procurement",
-														"deleteTenderDocument",
-														":tenderDocumentId"
-													],
-													"variable": [
-														{
-															"id": "60c221fd-6118-4cac-94b6-996a972e263a",
-															"key": "tenderDocumentId",
-															"value": "<string>",
-															"description": "(Required) "
-														}
-													]
-												}
-											},
-											"response": [
-												{
-													"id": "a91c7483-4ab3-4e08-a1ce-0bd6d305b26b",
-													"name": "Success",
-													"originalRequest": {
-														"method": "DELETE",
-														"header": [
-															{
-																"description": "Added as a part of security scheme: bearer",
-																"key": "Authorization",
-																"value": "Bearer <token>"
-															}
-														],
-														"url": {
-															"raw": "{{baseUrl}}/api/procurement/deleteTenderDocument/:tenderDocumentId",
-															"host": [
-																"{{baseUrl}}"
-															],
-															"path": [
-																"api",
-																"procurement",
-																"deleteTenderDocument",
-																":tenderDocumentId"
-															],
-															"variable": [
-																{
-																	"key": "tenderDocumentId"
-																}
-															]
-														}
-													},
-													"status": "OK",
-													"code": 200,
-													"_postman_previewlanguage": "text",
-													"header": [],
-													"cookie": [],
-													"responseTime": null,
-													"body": ""
-												},
-												{
-													"id": "754cef23-c024-4cd1-804c-8c2df5531c86",
-													"name": "Unauthorized",
-													"originalRequest": {
-														"method": "DELETE",
-														"header": [
-															{
-																"description": "Added as a part of security scheme: bearer",
-																"key": "Authorization",
-																"value": "Bearer <token>"
-															}
-														],
-														"url": {
-															"raw": "{{baseUrl}}/api/procurement/deleteTenderDocument/:tenderDocumentId",
-															"host": [
-																"{{baseUrl}}"
-															],
-															"path": [
-																"api",
-																"procurement",
-																"deleteTenderDocument",
-																":tenderDocumentId"
-															],
-															"variable": [
-																{
-																	"key": "tenderDocumentId"
-																}
-															]
-														}
-													},
-													"status": "Unauthorized",
-													"code": 401,
-													"_postman_previewlanguage": "text",
-													"header": [],
-													"cookie": [],
-													"responseTime": null,
-													"body": ""
-												},
-												{
-													"id": "767c2233-b4c5-4f54-8f14-4015bf770b14",
-													"name": "Forbidden",
-													"originalRequest": {
-														"method": "DELETE",
-														"header": [
-															{
-																"description": "Added as a part of security scheme: bearer",
-																"key": "Authorization",
-																"value": "Bearer <token>"
-															}
-														],
-														"url": {
-															"raw": "{{baseUrl}}/api/procurement/deleteTenderDocument/:tenderDocumentId",
-															"host": [
-																"{{baseUrl}}"
-															],
-															"path": [
-																"api",
-																"procurement",
-																"deleteTenderDocument",
-																":tenderDocumentId"
-															],
-															"variable": [
-																{
-																	"key": "tenderDocumentId"
-																}
-															]
-														}
-													},
-													"status": "Forbidden",
-													"code": 403,
-													"_postman_previewlanguage": "text",
-													"header": [],
-													"cookie": [],
-													"responseTime": null,
-													"body": ""
-												}
-											]
-										}
-									],
-									"id": "63129155-b24e-48ec-a29f-c5d673b7131c"
-								}
-							],
-							"id": "e492b579-2f2e-4864-867b-785d16790da5"
 						},
 						{
 							"name": "TenderGoodsServices",
@@ -40917,6 +40205,718 @@
 								}
 							],
 							"id": "0e0e30fb-4ece-4de2-9b23-52302105b1f0"
+						},
+						{
+							"name": "deleteServiceInfo",
+							"item": [
+								{
+									"name": "{serviceInformationId}",
+									"item": [
+										{
+											"name": "Already deleted - Delete Service Info Endpoint",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"id": "c59e502d-d745-43e5-8cc7-baabb5d01df7",
+														"exec": [
+															"pm.test(\"Status code is 200\", function () {\r",
+															"    pm.response.to.have.status(200);\r",
+															"});\r",
+															"\r",
+															"var responseJSON = pm.response.json(); \r",
+															"\r",
+															"pm.test(\"Verify that Service Information is already deleted \", function () {\r",
+															"\r",
+															"    pm.expect(responseJSON.isSuccess).to.be.a(\"boolean\");\r",
+															"    pm.expect(responseJSON.data).to.be.null;\r",
+															"    pm.expect(responseJSON.errorMessage).to.be.a(\"string\").and.not.empty;\r",
+															"\r",
+															"});"
+														],
+														"type": "text/javascript",
+														"packages": {}
+													}
+												}
+											],
+											"id": "da4d1c34-57b6-4c48-84f2-033d68713cad",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": {
+														"token": "{{approverBearerToken}}"
+													}
+												},
+												"method": "DELETE",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/procurement/deleteServiceInfo/:serviceInformationId?",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"procurement",
+														"deleteServiceInfo",
+														":serviceInformationId"
+													],
+													"query": [
+														{
+															"key": null,
+															"value": null,
+															"type": "text"
+														}
+													],
+													"variable": [
+														{
+															"key": "serviceInformationId",
+															"value": "47a1b0f2-1244-4b2b-5840-08dd210be61b",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"response": [
+												{
+													"id": "5736b345-138b-4385-b729-f7c06cc30a44",
+													"name": "Success",
+													"originalRequest": {
+														"method": "DELETE",
+														"header": [
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/procurement/deleteServiceInfo/:serviceInformationId",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"procurement",
+																"deleteServiceInfo",
+																":serviceInformationId"
+															],
+															"variable": [
+																{
+																	"key": "serviceInformationId"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												},
+												{
+													"id": "b3fd9eec-cd7b-4176-882f-1f38aac7e62e",
+													"name": "Unauthorized",
+													"originalRequest": {
+														"method": "DELETE",
+														"header": [
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/procurement/deleteServiceInfo/:serviceInformationId",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"procurement",
+																"deleteServiceInfo",
+																":serviceInformationId"
+															],
+															"variable": [
+																{
+																	"key": "serviceInformationId"
+																}
+															]
+														}
+													},
+													"status": "Unauthorized",
+													"code": 401,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												},
+												{
+													"id": "c84f7b93-d15f-47ef-a4f1-006bb1be5e9d",
+													"name": "Forbidden",
+													"originalRequest": {
+														"method": "DELETE",
+														"header": [
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/procurement/deleteServiceInfo/:serviceInformationId",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"procurement",
+																"deleteServiceInfo",
+																":serviceInformationId"
+															],
+															"variable": [
+																{
+																	"key": "serviceInformationId"
+																}
+															]
+														}
+													},
+													"status": "Forbidden",
+													"code": 403,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												}
+											]
+										},
+										{
+											"name": "No Service Information Id - Delete Service Info Endpoint",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"id": "c59e502d-d745-43e5-8cc7-baabb5d01df7",
+														"exec": [
+															"pm.test(\"Status code is 400\", function () {\r",
+															"    pm.response.to.have.status(400);\r",
+															"});\r",
+															"\r",
+															"var responseJSON = pm.response.json(); \r",
+															"\r",
+															"pm.test(\"Verify that Service Information Id is required \", function () {\r",
+															"\r",
+															"   pm.expect(responseJSON.errors[0].name).to.be.a(\"string\").and.not.empty;\r",
+															"        pm.expect(responseJSON.errors[0].reason).to.be.a(\"string\").and.not.empty;\r",
+															"\r",
+															"\r",
+															"});"
+														],
+														"type": "text/javascript",
+														"packages": {}
+													}
+												}
+											],
+											"id": "d3d65ea5-de05-4531-8feb-8f361ea69a00",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": {
+														"token": "{{approverBearerToken}}"
+													}
+												},
+												"method": "DELETE",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/procurement/deleteServiceInfo/:serviceInformationId?",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"procurement",
+														"deleteServiceInfo",
+														":serviceInformationId"
+													],
+													"query": [
+														{
+															"key": "",
+															"value": null
+														}
+													],
+													"variable": [
+														{
+															"key": "serviceInformationId",
+															"value": "",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"response": [
+												{
+													"id": "4444edc7-ffbf-445b-9fc5-d775b4feba47",
+													"name": "Success",
+													"originalRequest": {
+														"method": "DELETE",
+														"header": [
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/procurement/deleteServiceInfo/:serviceInformationId",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"procurement",
+																"deleteServiceInfo",
+																":serviceInformationId"
+															],
+															"variable": [
+																{
+																	"key": "serviceInformationId"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												},
+												{
+													"id": "7413c827-d6ef-4957-b2ee-51e88c055bb1",
+													"name": "Unauthorized",
+													"originalRequest": {
+														"method": "DELETE",
+														"header": [
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/procurement/deleteServiceInfo/:serviceInformationId",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"procurement",
+																"deleteServiceInfo",
+																":serviceInformationId"
+															],
+															"variable": [
+																{
+																	"key": "serviceInformationId"
+																}
+															]
+														}
+													},
+													"status": "Unauthorized",
+													"code": 401,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												},
+												{
+													"id": "a1386454-2126-4d47-a1f8-b007e23d1dc9",
+													"name": "Forbidden",
+													"originalRequest": {
+														"method": "DELETE",
+														"header": [
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/procurement/deleteServiceInfo/:serviceInformationId",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"procurement",
+																"deleteServiceInfo",
+																":serviceInformationId"
+															],
+															"variable": [
+																{
+																	"key": "serviceInformationId"
+																}
+															]
+														}
+													},
+													"status": "Forbidden",
+													"code": 403,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												}
+											]
+										},
+										{
+											"name": "No Auth - Delete Service Info",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"id": "209b734a-9821-4d28-9d6e-03e70e23913e",
+														"exec": [
+															"pm.test(\"Status code is 401\", function () {\r",
+															"    pm.response.to.have.status(401);\r",
+															"});\r",
+															"\r",
+															"pm.test(\"Status code name has 'Unauthorized'\", function () {\r",
+															"    pm.response.to.have.status(\"Unauthorized\");\r",
+															"});"
+														],
+														"type": "text/javascript",
+														"packages": {}
+													}
+												}
+											],
+											"id": "8e5ba106-911b-4ce4-a181-dc80b2b8d76b",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"auth": {
+													"type": "noauth"
+												},
+												"method": "DELETE",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/procurement/deleteServiceInfo/:serviceInformationId",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"procurement",
+														"deleteServiceInfo",
+														":serviceInformationId"
+													],
+													"variable": [
+														{
+															"key": "serviceInformationId",
+															"value": "<string>",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"response": [
+												{
+													"id": "c3dacf6c-03f0-4b5c-aacf-51c3846d0ea2",
+													"name": "Success",
+													"originalRequest": {
+														"method": "DELETE",
+														"header": [
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/procurement/deleteServiceInfo/:serviceInformationId",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"procurement",
+																"deleteServiceInfo",
+																":serviceInformationId"
+															],
+															"variable": [
+																{
+																	"key": "serviceInformationId"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												},
+												{
+													"id": "0113102a-bcae-42bd-84e9-a9f338756dc3",
+													"name": "Unauthorized",
+													"originalRequest": {
+														"method": "DELETE",
+														"header": [
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/procurement/deleteServiceInfo/:serviceInformationId",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"procurement",
+																"deleteServiceInfo",
+																":serviceInformationId"
+															],
+															"variable": [
+																{
+																	"key": "serviceInformationId"
+																}
+															]
+														}
+													},
+													"status": "Unauthorized",
+													"code": 401,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												},
+												{
+													"id": "235763de-7466-4b4e-834d-3e60688b2a05",
+													"name": "Forbidden",
+													"originalRequest": {
+														"method": "DELETE",
+														"header": [
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/procurement/deleteServiceInfo/:serviceInformationId",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"procurement",
+																"deleteServiceInfo",
+																":serviceInformationId"
+															],
+															"variable": [
+																{
+																	"key": "serviceInformationId"
+																}
+															]
+														}
+													},
+													"status": "Forbidden",
+													"code": 403,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												}
+											]
+										}
+									],
+									"id": "cf202894-b2ee-4564-b636-6dae49f0ed36"
+								}
+							],
+							"id": "34ee7b87-60e4-4566-b3f3-41dc2d2de6f9"
+						},
+						{
+							"name": "deleteTenderDocument",
+							"item": [
+								{
+									"name": "{tenderDocumentId}",
+									"item": [
+										{
+											"name": "Anp Procurement Features Service Information Delete Tender Document Endpoint",
+											"id": "5e227169-7545-4952-a96e-caadc198fb42",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": {
+														"token": "{{bearerToken}}"
+													}
+												},
+												"method": "DELETE",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/procurement/deleteTenderDocument/:tenderDocumentId",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"procurement",
+														"deleteTenderDocument",
+														":tenderDocumentId"
+													],
+													"variable": [
+														{
+															"id": "60c221fd-6118-4cac-94b6-996a972e263a",
+															"key": "tenderDocumentId",
+															"value": "<string>",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"response": [
+												{
+													"id": "a91c7483-4ab3-4e08-a1ce-0bd6d305b26b",
+													"name": "Success",
+													"originalRequest": {
+														"method": "DELETE",
+														"header": [
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/procurement/deleteTenderDocument/:tenderDocumentId",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"procurement",
+																"deleteTenderDocument",
+																":tenderDocumentId"
+															],
+															"variable": [
+																{
+																	"key": "tenderDocumentId"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												},
+												{
+													"id": "754cef23-c024-4cd1-804c-8c2df5531c86",
+													"name": "Unauthorized",
+													"originalRequest": {
+														"method": "DELETE",
+														"header": [
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/procurement/deleteTenderDocument/:tenderDocumentId",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"procurement",
+																"deleteTenderDocument",
+																":tenderDocumentId"
+															],
+															"variable": [
+																{
+																	"key": "tenderDocumentId"
+																}
+															]
+														}
+													},
+													"status": "Unauthorized",
+													"code": 401,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												},
+												{
+													"id": "767c2233-b4c5-4f54-8f14-4015bf770b14",
+													"name": "Forbidden",
+													"originalRequest": {
+														"method": "DELETE",
+														"header": [
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/procurement/deleteTenderDocument/:tenderDocumentId",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"procurement",
+																"deleteTenderDocument",
+																":tenderDocumentId"
+															],
+															"variable": [
+																{
+																	"key": "tenderDocumentId"
+																}
+															]
+														}
+													},
+													"status": "Forbidden",
+													"code": 403,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												}
+											]
+										}
+									],
+									"id": "63129155-b24e-48ec-a29f-c5d673b7131c"
+								}
+							],
+							"id": "e492b579-2f2e-4864-867b-785d16790da5"
 						},
 						{
 							"name": "setTenderStatus",
