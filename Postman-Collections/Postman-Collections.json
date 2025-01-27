@@ -1174,7 +1174,7 @@
 										],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n    //\"email\": \"{{email}}\",\n  \"userName\":  \"sly@yopmail.com\",//\"varun@yopmail.com\",//\"yinka@yopmail.com\",\n  // \"userName\":\"cesaltino.babo@anp.tl\", //initiator\n //  \"userName\": \"abel.saldanha@anp.tl\", //1st approver\n  // \"userName\": \"jaime.ximenes@anp.tl\", //2nd approver\n  \"password\": \"Password12@@\"\n}",
+											"raw": "{\n    //\"email\": \"{{email}}\",\n  \"userName\":  \"varun@yopmail.com\",//\"varun@yopmail.com\",//\"yinka@yopmail.com\",\n  // \"userName\":\"cesaltino.babo@anp.tl\", //initiator\n //  \"userName\": \"abel.saldanha@anp.tl\", //1st approver\n  // \"userName\": \"jaime.ximenes@anp.tl\", //2nd approver\n  \"password\": \"Password12@@\"\n}",
 											"options": {
 												"raw": {
 													"headerFamily": "json",
@@ -35742,7 +35742,8 @@
 											"query": [
 												{
 													"key": "categoryId",
-													"value": "37a8e66c-3820-4243-b190-08dd097ccba0",
+													"value": "90413696-a73a-4035-de6d-08dd14195a47",
+													"description": "worked",
 													"disabled": true
 												},
 												{
@@ -35757,30 +35758,31 @@
 												},
 												{
 													"key": "startDate",
-													"value": "2024-12-01T00:00:00",
-													"description": "not working",
+													"value": "2025-01-01",
+													"description": "worked",
 													"disabled": true
 												},
 												{
 													"key": "endDate",
-													"value": "<dateTime>",
-													"description": "??",
+													"value": "2025-01-28",
+													"description": "worked",
 													"disabled": true
 												},
 												{
 													"key": "tagIds",
-													"value": "<string>",
+													"value": "ed876256-5746-4123-2e45-08dd3c72e2cf",
 													"disabled": true
 												},
 												{
 													"key": "tagIds",
-													"value": "<string>",
+													"value": "3bc30e49-d403-4a15-90b1-08dd370c3ffd",
+													"description": "worked",
 													"disabled": true
 												},
 												{
 													"key": "sortOrder",
 													"value": "0",
-													"description": "??"
+													"description": "01234"
 												},
 												{
 													"key": "productType",
@@ -35789,7 +35791,7 @@
 												},
 												{
 													"key": "country",
-													"value": "<string>",
+													"value": "New York",
 													"disabled": true
 												},
 												{
@@ -52239,6 +52241,12 @@
 										"disableBodyPruning": true
 									},
 									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": {
+												"token": "{{bearerToken}}"
+											}
+										},
 										"method": "POST",
 										"header": [
 											{
@@ -52251,19 +52259,26 @@
 											"formdata": [
 												{
 													"key": "entityId",
-													"value": "<string>",
-													"type": "text"
+													"value": "a151f408-ee5c-4142-a909-08dd3b014fd2",
+													"type": "text",
+													"description": "productId"
 												},
 												{
 													"description": " (This can only be one of 0,1,2,3,4)",
 													"key": "module",
-													"value": "1",
+													"value": "0",
 													"type": "text"
 												},
 												{
 													"key": "documentTypeName",
-													"value": "<string>",
+													"value": "ProductImages",
 													"type": "text"
+												},
+												{
+													"key": "files",
+													"type": "file",
+													"uuid": "dc2af9ba-9412-4e2b-b4db-5f6c725dc1bf",
+													"src": "-NPhyPcgA/Screenshot (9).png"
 												}
 											]
 										},
