@@ -10156,7 +10156,7 @@
 												"method": "GET",
 												"header": [],
 												"url": {
-													"raw": "{{baseUrl}}/api/goods/category/categories?isParentCategory=true",
+													"raw": "{{baseUrl}}/api/goods/category/categories?isParentCategory=false",
 													"host": [
 														"{{baseUrl}}"
 													],
@@ -10174,7 +10174,7 @@
 														},
 														{
 															"key": "isParentCategory",
-															"value": "true",
+															"value": "false",
 															"description": "(Required) "
 														}
 													]
