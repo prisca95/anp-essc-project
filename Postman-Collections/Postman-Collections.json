@@ -1174,7 +1174,7 @@
 										],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n    //\"email\": \"{{email}}\",\n  \"userName\":  \"varun@yopmail.com\",//\"varun@yopmail.com\",//\"yinka@yopmail.com\",\n  // \"userName\":\"cesaltino.babo@anp.tl\", //initiator\n //  \"userName\": \"abel.saldanha@anp.tl\", //1st approver\n  // \"userName\": \"jaime.ximenes@anp.tl\", //2nd approver\n  \"password\": \"Password12@@\"\n}",
+											"raw": "{\n    //\"email\": \"{{email}}\",\n  \"userName\":  \"milo@yopmail.com\",//\"varun@yopmail.com\",//\"yinka@yopmail.com\",\n  // \"userName\":\"cesaltino.babo@anp.tl\", //initiator\n //  \"userName\": \"abel.saldanha@anp.tl\", //1st approver\n  // \"userName\": \"jaime.ximenes@anp.tl\", //2nd approver\n  \"password\": \"Password12@@\"\n}",
 											"options": {
 												"raw": {
 													"headerFamily": "json",
@@ -37859,7 +37859,7 @@
 										],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n  //\"serviceInformationId\": \"<string>\",\n  \"title\":\"{{$randomProduct}}\",\n  \"bidStartDate\": \"2025-01-25\",\n  \"bidEndDate\": \"2025-01-30\",\n  \"description\": \"Oil minning\",\n  \"businessType\": \"Sole proprietorship\",\n  \"bidRequirement\": \"3 contracts executed\",\n  \"prerequisite\": \"CAC\",\n  \"workReference\": \"<string>\",\n  \"additionalInformation\": \"<string>\",\n  \"industryId\": \"{{industryId}}\",\n  \"status\": 4\n}",
+											"raw": "{\n  //\"serviceInformationId\": \"<string>\",\n  \"title\":\"{{$randomProduct}}\",\n  \"bidStartDate\": \"2025-01-28\",\n  \"bidEndDate\": \"2025-01-30\",\n  \"description\": \"Export\",\n  \"businessType\": \"Sole proprietorship\",\n  \"bidRequirement\": \"3 contracts executed\",\n  \"prerequisite\": \"NIN\",\n  \"workReference\": \"<string>\",\n  \"additionalInformation\": \"<string>\",\n  \"industryId\": \"{{industryId}}\",\n  \"status\": 4\n}",
 											"options": {
 												"raw": {
 													"headerFamily": "json",
@@ -38703,7 +38703,7 @@
 												],
 												"body": {
 													"mode": "raw",
-													"raw": "{\n // \"tenderGoodsServicesId\": \"<string>\",\n  \"itemName\": \"Gold\",\n  \"description\": \"Gold minning\",\n  \"quantity\": \"10\",\n  \"estimatedCost\": \"50000\",\n  \"procurementMethod\": \"Request for proposal\",\n  \"warrantyDuration\": \"5\",\n  \"warrantyType\": \"Standard\",\n  \"serviceInformationId\": \"85218a2b-83c4-464a-3cd6-08dd3c7c59fc\"\n}",
+													"raw": "{\n // \"tenderGoodsServicesId\": \"<string>\",\n  \"itemName\": \"Gold\",\n  \"description\": \"Gold mining\",\n  \"quantity\": \"10\",\n  \"estimatedCost\": \"50000\",\n  \"procurementMethod\": \"Request for proposal\",\n  \"warrantyDuration\": \"5\",\n  \"warrantyType\": \"Standard\",\n  \"serviceInformationId\": \"85218a2b-83c4-464a-3cd6-08dd3c7c59fc\"//\"{{serviceInformationId}}\"\n}",
 													"options": {
 														"raw": {
 															"headerFamily": "json",
@@ -39381,7 +39381,7 @@
 														],
 														"body": {
 															"mode": "raw",
-															"raw": "{\n // \"tenderDetailId\": \"<string>\",\n  \"startdate\": \"2025-01-25T14:09:39.906Z\",\n  \"endDate\": \"2025-01-30T14:09:39.906Z\",\n  \"tenderType\": \"TechnicalInformation\",//\"ExpressionOfInterest\",//\"Commercials\",\n  \"serviceInformationId\": \"{{serviceInformationId}}\",//\"85218a2b-83c4-464a-3cd6-08dd3c7c59fc\",\n  \"tenderDocuments\": [\n    {\n     // \"tenderDocumentId\": \"<string>\",\n      \"documentName\": \"CAC\",\n      \"assignPoint\": \"30\"\n    }\n    // {\n    //   \"tenderDocumentId\": \"<string>\",\n    //   \"documentName\": \"<string>\",\n    //   \"assignPoint\": \"<integer>\"\n    // }\n  ]\n}",
+															"raw": "{\n // \"tenderDetailId\": \"<string>\",\n  \"startdate\": \"2025-01-28T00:00:00.906Z\",\n  \"endDate\": \"2025-01-30T00:00:00.906Z\",\n  \"tenderType\": \"TechnicalInformation\",//\"ExpressionOfInterest\",//\"Commercials\",\n  \"serviceInformationId\": \"{{serviceInformationId}}\",//\"85218a2b-83c4-464a-3cd6-08dd3c7c59fc\",\n  \"tenderDocuments\": [\n    {\n     // \"tenderDocumentId\": \"<string>\",\n      \"documentName\": \"CAC\",\n      \"assignPoint\": \"500\"\n    },\n    {\n   //   \"tenderDocumentId\": \"<string>\",\n      \"documentName\": \"TIN\",\n      \"assignPoint\": \"50\"\n    }\n  ]\n}",
 															"options": {
 																"raw": {
 																	"headerFamily": "json",
@@ -40628,7 +40628,7 @@
 												],
 												"body": {
 													"mode": "raw",
-													"raw": "// {\n//   \"tenderDetailId\": \"<string>\",\n//   \"startdate\": \"<dateTime>\",\n//   \"endDate\": \"<dateTime>\",\n//   \"tenderType\": \"Commercials\",\n//   \"serviceInformationId\": \"<string>\",\n//   \"tenderDocuments\": [\n//     {\n//       \"tenderDocumentId\": \"<string>\",\n//       \"documentName\": \"<string>\",\n//       \"assignPoint\": \"<integer>\"\n//     },\n//     {\n//       \"tenderDocumentId\": \"<string>\",\n//       \"documentName\": \"<string>\",\n//       \"assignPoint\": \"<integer>\"\n//     }\n//   ]\n// }\n\n{\n \"tenderDetailId\": \"{{tenderDetailId}}\",//\"3ddc6a60-c611-46d5-90ea-08dd3d4d6e53\",\n  \"startdate\": \"2025-01-25T14:09:39.906Z\",\n  \"endDate\": \"2025-01-30T14:09:39.906Z\",\n  \"tenderType\": \"TechnicalInformation\",//\"ExpressionOfInterest\",//\"Commercials\",\n  \"serviceInformationId\": \"{{serviceInformationId}}\",//\"85218a2b-83c4-464a-3cd6-08dd3c7c59fc\",\n  \"tenderDocuments\": [\n    {\n      \"tenderDocumentId\": \"{{tenderDocumentId}}\",//\"4c121b45-cb83-440b-c468-08dd3d4d6e57\",\n      \"documentName\": \"NIN\",\n      \"assignPoint\": \"20\"\n    }\n    // {\n    //   \"tenderDocumentId\": \"<string>\",\n    //   \"documentName\": \"<string>\",\n    //   \"assignPoint\": \"<integer>\"\n    // }\n  ]\n}",
+													"raw": "// {\n//   \"tenderDetailId\": \"<string>\",\n//   \"startdate\": \"<dateTime>\",\n//   \"endDate\": \"<dateTime>\",\n//   \"tenderType\": \"Commercials\",\n//   \"serviceInformationId\": \"<string>\",\n//   \"tenderDocuments\": [\n//     {\n//       \"tenderDocumentId\": \"<string>\",\n//       \"documentName\": \"<string>\",\n//       \"assignPoint\": \"<integer>\"\n//     },\n//     {\n//       \"tenderDocumentId\": \"<string>\",\n//       \"documentName\": \"<string>\",\n//       \"assignPoint\": \"<integer>\"\n//     }\n//   ]\n// }\n\n{\n \"tenderDetailId\": \"e725e242-522f-4ebb-13e3-08dd3f98e265\",//\"{{tenderDetailId}}\",//\"3ddc6a60-c611-46d5-90ea-08dd3d4d6e53\",\n  \"startdate\": \"2025-01-28T00:00:00.906Z\",\n  \"endDate\": \"2025-01-30T00:00:00.906Z\",\n  \"tenderType\": \"TechnicalInformation\",//\"ExpressionOfInterest\",//\"Commercials\",\n  \"serviceInformationId\": \"{{serviceInformationId}}\",//\"85218a2b-83c4-464a-3cd6-08dd3c7c59fc\",\n  \"tenderDocuments\": [\n    {\n      \"tenderDocumentId\": \"{{tenderDocumentId}}\",//\"4c121b45-cb83-440b-c468-08dd3d4d6e57\",\n      \"documentName\": \"CAC\",\n      \"assignPoint\": \"50\"\n    },\n    {\n      \"tenderDocumentId\": \"0ec21743-2582-4b75-0a7a-08dd3f98e267\",\n      \"documentName\": \"TIN\",\n      \"assignPoint\": \"50\"\n    }\n  ]\n}",
 													"options": {
 														"raw": {
 															"headerFamily": "json",
@@ -46216,6 +46216,33 @@
 							"item": [
 								{
 									"name": "Anp Procurement Features Bids Create Tender Access Endpoint",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "e14b0025-6f8c-4498-a7b2-246434f1f77a",
+												"exec": [
+													"pm.collectionVariables.set(\"tenderAccessId\", pm.response.json().data.tenderAccessId);\r",
+													"\r",
+													"pm.test(\"Status code is 200\", function () {\r",
+													"    pm.response.to.have.status(200);\r",
+													"});\r",
+													"\r",
+													"var responseJSON = pm.response.json(); \r",
+													"\r",
+													"pm.test(\"Verify that Service Information is returned successfully\", function () {\r",
+													"\r",
+													"    // pm.expect(responseJSON.isSuccess).to.be.a(\"boolean\");\r",
+													"    // pm.expect(responseJSON.data.id).to.be.a(\"string\").and.not.empty;\r",
+													"    pm.expect(responseJSON.data[0]).to.be.an(\"object\").and.not.empty;\r",
+													"\r",
+													"});"
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
 									"id": "47c22ecc-9333-4c6f-8ad5-3ad123553da2",
 									"protocolProfileBehavior": {
 										"disableBodyPruning": true
@@ -46236,7 +46263,7 @@
 										],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n  \"serviceInformationId\": \"<string>\",\n  \"supplierId\": \"<string>\",\n  \"requestAccess\": \"<boolean>\",\n  \"isFavorite\": \"<boolean>\"\n}",
+											"raw": "{\n  \"serviceInformationId\": \"{{serviceInformationId}}\",\n  \"supplierId\": \"30460e5d-a6cf-4ab4-2124-08dd3c8d3fbf\",//milo@yopmail.com//\"{{supplierId}}\",\n  \"requestAccess\": true,\n  \"isFavorite\": false\n}",
 											"options": {
 												"raw": {
 													"headerFamily": "json",
