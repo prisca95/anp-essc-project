@@ -45662,6 +45662,183 @@
 											]
 										},
 										{
+											"name": "No tenderDocumentId - Delete Tender Document Endpoint",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"id": "8df232ce-2d1e-4989-9e30-9f34b0827038",
+														"exec": [
+															"pm.test(\"Status code is 400\", function () {\r",
+															"    pm.response.to.have.status(400);\r",
+															"});\r",
+															"\r",
+															"var responseJSON = pm.response.json(); \r",
+															"\r",
+															"pm.test(\"Verify that Service Information Id is required \", function () {\r",
+															"\r",
+															"   pm.expect(responseJSON.errors[0].name).to.be.a(\"string\").and.not.empty;\r",
+															"        pm.expect(responseJSON.errors[0].reason).to.be.a(\"string\").and.not.empty;\r",
+															"\r",
+															"\r",
+															"});"
+														],
+														"type": "text/javascript",
+														"packages": {}
+													}
+												}
+											],
+											"id": "bd2a868a-fca4-4762-b92d-a7e4c236e71c",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": {
+														"token": "{{approverBearerToken}}"
+													}
+												},
+												"method": "DELETE",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/procurement/deleteTenderDocument/:tenderDocumentId",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"procurement",
+														"deleteTenderDocument",
+														":tenderDocumentId"
+													],
+													"variable": [
+														{
+															"key": "tenderDocumentId",
+															"value": "",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"response": [
+												{
+													"id": "fe429bf0-e92a-4329-8159-9db30a0f91c2",
+													"name": "Success",
+													"originalRequest": {
+														"method": "DELETE",
+														"header": [
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/procurement/deleteTenderDocument/:tenderDocumentId",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"procurement",
+																"deleteTenderDocument",
+																":tenderDocumentId"
+															],
+															"variable": [
+																{
+																	"key": "tenderDocumentId"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												},
+												{
+													"id": "c1c79dd9-124f-46f6-b9c3-9297a055c095",
+													"name": "Unauthorized",
+													"originalRequest": {
+														"method": "DELETE",
+														"header": [
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/procurement/deleteTenderDocument/:tenderDocumentId",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"procurement",
+																"deleteTenderDocument",
+																":tenderDocumentId"
+															],
+															"variable": [
+																{
+																	"key": "tenderDocumentId"
+																}
+															]
+														}
+													},
+													"status": "Unauthorized",
+													"code": 401,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												},
+												{
+													"id": "a43d8470-580e-4800-94ce-32ac582eba56",
+													"name": "Forbidden",
+													"originalRequest": {
+														"method": "DELETE",
+														"header": [
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/procurement/deleteTenderDocument/:tenderDocumentId",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"procurement",
+																"deleteTenderDocument",
+																":tenderDocumentId"
+															],
+															"variable": [
+																{
+																	"key": "tenderDocumentId"
+																}
+															]
+														}
+													},
+													"status": "Forbidden",
+													"code": 403,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												}
+											]
+										},
+										{
 											"name": "No Auth - Delete Tender Document",
 											"event": [
 												{
