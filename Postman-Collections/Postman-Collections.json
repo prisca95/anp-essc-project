@@ -41450,7 +41450,7 @@
 													"variable": [
 														{
 															"key": "serviceInformationId",
-															"value": "056c9951-15e5-42e0-7c60-08dd3c8ae4f9",
+															"value": "{{serviceInformationId}}",
 															"description": "(Required) "
 														}
 													]
@@ -42344,7 +42344,7 @@
 													"variable": [
 														{
 															"key": "tenderGoodsServicesId",
-															"value": "61702bda-7363-4553-c353-08dd3c7d3efd",
+															"value": "{{tenderGoodsServiceId}}",
 															"description": "(Required) "
 														}
 													]
@@ -52627,6 +52627,10 @@
 		},
 		{
 			"key": "tenderGoodsServiceId",
+			"value": ""
+		},
+		{
+			"key": "tenderDetailId",
 			"value": ""
 		}
 	]
