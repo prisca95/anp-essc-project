@@ -52624,6 +52624,10 @@
 		{
 			"key": "tenderDocumentId",
 			"value": ""
+		},
+		{
+			"key": "tenderGoodsServiceId",
+			"value": ""
 		}
 	]
 }
