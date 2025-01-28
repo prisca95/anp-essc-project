@@ -30463,7 +30463,7 @@
 										"auth": {
 											"type": "bearer",
 											"bearer": {
-												"token": "{{initiatorBearerToken}}"
+												"token": "{{approverBearerToken}}"
 											}
 										},
 										"method": "POST",
@@ -30475,7 +30475,7 @@
 										],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n  \"entityId\": \"{{supplierId}}\",\n  \"entityName\": \"Supplier\",\n  \"workflowDescription\": \"Supplier verification for sly@yopmail.com\",\n  \"parameters\": [\n    {\n      \"parameterName\": \"SupplierId\",\n      \"parameterValue\": \"{{supplierId}}\"  //from login\n    },\n    {\n      \"parameterName\": \"baseurl\",\n      \"parameterValue\": \"{{baseUrl}}\"\n    },\n      {\n      \"parameterName\": \"RoleId\",\n      \"parameterValue\": \"{{roleId}}\"//\"b53300b8-5f92-40c8-bf66-08dcf4682678\" \n    },\n     {\n      \"parameterName\": \"UserId\",\n      \"parameterValue\": \"{{supplierUserId}}\"//\"3d7d0b63-17e9-4d94-8afd-08dd23248f67\"  //from suppliers\n    }\n  ],\n  \"selectedWorkflowType\": \"Supplier\"\n}",
+											"raw": "// {\n//   \"entityId\": \"{{supplierId}}\",//procurementId\n//   \"entityName\": \"Supplier\",//Procurement\n//   \"workflowDescription\": \"Supplier verification for sly@yopmail.com\",\n//   \"parameters\": [\n//     {\n//       \"parameterName\": \"SupplierId\",\n//       \"parameterValue\": \"{{supplierId}}\"  //from login\n//     },\n//     {\n//       \"parameterName\": \"baseurl\",\n//       \"parameterValue\": \"{{baseUrl}}\"\n//     },\n//       {\n//       \"parameterName\": \"RoleId\",\n//       \"parameterValue\": \"{{roleId}}\"//\"b53300b8-5f92-40c8-bf66-08dcf4682678\" \n//     },\n//      {\n//       \"parameterName\": \"UserId\",\n//       \"parameterValue\": \"{{supplierUserId}}\"//\"3d7d0b63-17e9-4d94-8afd-08dd23248f67\"  //from suppliers\n//     }\n//   ],\n//   \"selectedWorkflowType\": \"Supplier\"\n// }\n\n{\n  \"entityId\": \"{{serviceInformationId}}\", //procurementId\n  \"entityName\": \"Procurement\",\n  \"workflowDescription\": \"Procurement verification for chair\",\n  \"parameters\": [\n    {\n      \"parameterName\": \"procurement\", \n      \"parameterValue\": \"{{serviceInformationId}}\"  //procurementId\n    },\n    {\n      \"parameterName\": \"baseurl\",\n      \"parameterValue\": \"{{baseUrl}}\"\n    }\n \n  ],\n  \"selectedWorkflowType\": \"Procurement\"\n}\n\n",
 											"options": {
 												"raw": {
 													"headerFamily": "json",
