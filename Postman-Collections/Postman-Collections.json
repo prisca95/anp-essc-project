@@ -45510,6 +45510,31 @@
 									"item": [
 										{
 											"name": "Anp Procurement Features Service Information Delete Tender Document Endpoint",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"id": "c776c8a7-c770-43c5-80a6-b26928720f77",
+														"exec": [
+															"pm.test(\"Status code is 200\", function () {\r",
+															"    pm.response.to.have.status(200);\r",
+															"});\r",
+															"\r",
+															"var responseJSON = pm.response.json(); \r",
+															"\r",
+															"pm.test(\"Verify that tender document is already deleted \", function () {\r",
+															"\r",
+															"    pm.expect(responseJSON.isSuccess).to.be.a(\"boolean\");\r",
+															"    pm.expect(responseJSON.data).to.be.null;\r",
+															"    pm.expect(responseJSON.errorMessage).to.be.a(\"string\").and.not.empty;\r",
+															"\r",
+															"});"
+														],
+														"type": "text/javascript",
+														"packages": {}
+													}
+												}
+											],
 											"id": "5e227169-7545-4952-a96e-caadc198fb42",
 											"protocolProfileBehavior": {
 												"disableBodyPruning": true
@@ -45518,7 +45543,7 @@
 												"auth": {
 													"type": "bearer",
 													"bearer": {
-														"token": "{{bearerToken}}"
+														"token": "{{approverBearerToken}}"
 													}
 												},
 												"method": "DELETE",
@@ -45536,9 +45561,8 @@
 													],
 													"variable": [
 														{
-															"id": "60c221fd-6118-4cac-94b6-996a972e263a",
 															"key": "tenderDocumentId",
-															"value": "<string>",
+															"value": "4c121b45-cb83-440b-c468-08dd3d4d6e57",
 															"description": "(Required) "
 														}
 													]
