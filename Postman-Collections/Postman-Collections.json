@@ -39676,6 +39676,8 @@
 																"id": "681f9a4d-2f01-4516-8309-f04a5fa478a3",
 																"exec": [
 																	"pm.collectionVariables.set(\"tenderDocumentId\", pm.response.json().data[0].tenderDocumentId);\r",
+																	"pm.collectionVariables.set(\"tenderDocumentId2\", pm.response.json().data[1].tenderDocumentId);\r",
+																	"\r",
 																	"pm.collectionVariables.set(\"tenderDetailId\", pm.response.json().data.tenderDetailId);\r",
 																	"\r",
 																	"pm.test(\"Status code is 200\", function () {\r",
@@ -52631,6 +52633,10 @@
 		},
 		{
 			"key": "tenderDetailId",
+			"value": ""
+		},
+		{
+			"key": "tenderDocumentId2",
 			"value": ""
 		}
 	]
