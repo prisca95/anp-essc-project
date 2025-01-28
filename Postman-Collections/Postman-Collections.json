@@ -41419,7 +41419,7 @@
 												"auth": {
 													"type": "bearer",
 													"bearer": {
-														"token": "{{bearerToken}}"
+														"token": "{{approverBearerToken}}"
 													}
 												},
 												"method": "GET",
@@ -41450,7 +41450,7 @@
 													"variable": [
 														{
 															"key": "serviceInformationId",
-															"value": "85218a2b-83c4-464a-3cd6-08dd3c7c59fc",
+															"value": "056c9951-15e5-42e0-7c60-08dd3c8ae4f9",
 															"description": "(Required) "
 														}
 													]
