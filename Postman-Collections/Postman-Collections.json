@@ -1174,7 +1174,7 @@
 										],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n    //\"email\": \"{{email}}\",\n  \"userName\":  \"milo@yopmail.com\",//\"varun@yopmail.com\",//\"yinka@yopmail.com\",\n  // \"userName\":\"cesaltino.babo@anp.tl\", //initiator\n //  \"userName\": \"abel.saldanha@anp.tl\", //1st approver\n  // \"userName\": \"jaime.ximenes@anp.tl\", //2nd approver\n  \"password\": \"Password12@@\"\n}",
+											"raw": "{\n    //\"email\": \"{{email}}\",\n  \"userName\":  \"varun@yopmail.com\",//\"milo@yopmail.com\",//\"yinka@yopmail.com\",\n  // \"userName\":\"cesaltino.babo@anp.tl\", //initiator\n //  \"userName\": \"abel.saldanha@anp.tl\", //1st approver\n  // \"userName\": \"jaime.ximenes@anp.tl\", //2nd approver\n  \"password\": \"Password12@@\"\n}",
 											"options": {
 												"raw": {
 													"headerFamily": "json",
@@ -47063,7 +47063,7 @@
 										],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n  \"serviceInformationId\": \"{{serviceInformationId}}\",\n  \"supplierId\": \"30460e5d-a6cf-4ab4-2124-08dd3c8d3fbf\",//milo@yopmail.com//\"{{supplierId}}\",\n  \"requestAccess\": true,\n  \"isFavorite\": false\n}",
+											"raw": "{\n  \"serviceInformationId\": \"{{serviceInformationId}}\",\n  \"supplierId\": \"{{supplierId}}\",\n  \"requestAccess\": true,\n  \"isFavorite\": false\n}",
 											"options": {
 												"raw": {
 													"headerFamily": "json",
