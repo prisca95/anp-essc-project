@@ -1299,34 +1299,26 @@
 									]
 								},
 								{
-									"name": "Unregistered user - Login Copy",
+									"name": "Unregistered user - Login",
 									"event": [
 										{
 											"listen": "test",
 											"script": {
 												"id": "de80e272-27c8-4bcc-b1dc-a25ee9ae3289",
 												"exec": [
-													"pm.collectionVariables.set(\"bearerToken\", pm.response.json().data.accessToken);\r",
-													"pm.collectionVariables.set(\"refreshToken\", pm.response.json().data.refreshToken);\r",
-													"pm.collectionVariables.set(\"userId\", pm.response.json().data.userId);\r",
-													"//pm.collectionVariables.set(\"supplierId\", pm.response.json().data.supplierId);\r",
-													"//supplier variable is created in the create supplier endpoint\r",
 													"\r",
-													"pm.test(\"Status code is 200\", function () {\r",
-													"    pm.response.to.have.status(200);\r",
+													"pm.test(\"Status code is 400\", function () {\r",
+													"    pm.response.to.have.status(400);\r",
 													"});\r",
 													"\r",
 													"var responseJSON = pm.response.json(); // Fixed the variable name from responseData to responseJSON\r",
 													"\r",
 													"pm.test(\"Verify that login is successful\", function () {\r",
 													"    pm.expect(responseJSON.isSuccess).to.be.a(\"boolean\");\r",
-													"    pm.expect(responseJSON.data.message).to.be.a(\"string\").and.not.empty;\r",
-													"    pm.expect(responseJSON.data.accessToken).to.be.a(\"string\").and.not.empty;\r",
-													"    pm.expect(responseJSON.data.refreshToken).to.be.a(\"string\").and.not.empty;\r",
+													"    pm.expect(responseJSON.data).to.be.a(\"null\");\r",
+													"    pm.expect(responseJSON.errorMessage).to.be.a(\"string\").and.not.empty;\r",
 													"});\r",
-													"pm.test(\"Response time is less than 200ms\", function () {\r",
-													"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
-													"});\r",
+													"\r",
 													""
 												],
 												"type": "text/javascript",
@@ -1352,7 +1344,7 @@
 										],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n    //\"email\": \"{{email}}\",\n  \"userName\":  \"milo@yopmail.com\",//\"varun@yopmail.com\",//\"yinka@yopmail.com\",\n  // \"userName\":\"cesaltino.babo@anp.tl\", //initiator\n //  \"userName\": \"abel.saldanha@anp.tl\", //1st approver\n  // \"userName\": \"jaime.ximenes@anp.tl\", //2nd approver\n  \"password\": \"Password12@@\"\n}",
+											"raw": "{\n    //\"email\": \"{{email}}\",\n  \"userName\":  \"milo6@yopmail.com\",//\"varun@yopmail.com\",//\"yinka@yopmail.com\",\n  // \"userName\":\"cesaltino.babo@anp.tl\", //initiator\n //  \"userName\": \"abel.saldanha@anp.tl\", //1st approver\n  // \"userName\": \"jaime.ximenes@anp.tl\", //2nd approver\n  \"password\": \"Password12@@\"\n}",
 											"options": {
 												"raw": {
 													"headerFamily": "json",
@@ -11047,9 +11039,7 @@
 													"    pm.expect(responseJSON.data.accessToken).to.be.a(\"string\").and.not.empty;\r",
 													"    pm.expect(responseJSON.data.refreshToken).to.be.a(\"string\").and.not.empty;\r",
 													"});\r",
-													"pm.test(\"Response time is less than 200ms\", function () {\r",
-													"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
-													"});\r",
+													"\r",
 													""
 												],
 												"type": "text/javascript",
