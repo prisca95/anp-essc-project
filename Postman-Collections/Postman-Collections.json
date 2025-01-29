@@ -30631,7 +30631,7 @@
 										"auth": {
 											"type": "bearer",
 											"bearer": {
-												"token": "{{approverBearerToken}}"
+												"token": "{{initiatorBearerToken}}"
 											}
 										},
 										"method": "POST",
@@ -30643,7 +30643,7 @@
 										],
 										"body": {
 											"mode": "raw",
-											"raw": "// {\n//   \"entityId\": \"{{supplierId}}\",//procurementId\n//   \"entityName\": \"Supplier\",//Procurement\n//   \"workflowDescription\": \"Supplier verification for sly@yopmail.com\",\n//   \"parameters\": [\n//     {\n//       \"parameterName\": \"SupplierId\",\n//       \"parameterValue\": \"{{supplierId}}\"  //from login\n//     },\n//     {\n//       \"parameterName\": \"baseurl\",\n//       \"parameterValue\": \"{{baseUrl}}\"\n//     },\n//       {\n//       \"parameterName\": \"RoleId\",\n//       \"parameterValue\": \"{{roleId}}\"//\"b53300b8-5f92-40c8-bf66-08dcf4682678\" \n//     },\n//      {\n//       \"parameterName\": \"UserId\",\n//       \"parameterValue\": \"{{supplierUserId}}\"//\"3d7d0b63-17e9-4d94-8afd-08dd23248f67\"  //from suppliers\n//     }\n//   ],\n//   \"selectedWorkflowType\": \"Supplier\"\n// }\n\n{\n  \"entityId\": \"{{serviceInformationId}}\", //procurementId\n  \"entityName\": \"Procurement\",\n  \"workflowDescription\": \"Procurement verification for chair\",\n  \"parameters\": [\n    {\n      \"parameterName\": \"procurement\", \n      \"parameterValue\": \"{{serviceInformationId}}\"  //procurementId\n    },\n    {\n      \"parameterName\": \"baseurl\",\n      \"parameterValue\": \"{{baseUrl}}\"\n    }\n \n  ],\n  \"selectedWorkflowType\": \"Procurement\"\n}\n\n",
+											"raw": "{\n  \"entityId\": \"{{supplierId}}\",//procurementId\n  \"entityName\": \"Supplier\",//Procurement\n  \"workflowDescription\": \"Supplier verification for suru@yopmail.com\",\n  \"parameters\": [\n    {\n      \"parameterName\": \"SupplierId\",\n      \"parameterValue\": \"{{supplierId}}\"  //from login\n    },\n    {\n      \"parameterName\": \"baseurl\",\n      \"parameterValue\": \"{{baseUrl}}\"\n    },\n      {\n      \"parameterName\": \"RoleId\",\n      \"parameterValue\": \"{{roleId}}\"//\"b53300b8-5f92-40c8-bf66-08dcf4682678\" \n    },\n     {\n      \"parameterName\": \"UserId\",\n      \"parameterValue\": \"{{supplierUserId}}\"//\"3d7d0b63-17e9-4d94-8afd-08dd23248f67\"  //from suppliers\n    }\n  ],\n  \"selectedWorkflowType\": \"Supplier\"\n}\n",
 											"options": {
 												"raw": {
 													"headerFamily": "json",
@@ -30928,6 +30928,140 @@
 										},
 										{
 											"id": "61903011-66d0-41dd-bb7f-e9b2df3ef9e1",
+											"name": "Unauthorized",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"description": "Added as a part of security scheme: bearer",
+														"key": "Authorization",
+														"value": "Bearer <token>"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"requestId\": \"<string>\",\n  \"entityId\": \"<string>\",\n  \"entityName\": \"<string>\",\n  \"comment\": \"<string>\",\n  \"workflowAction\": 0,\n  \"approverId\": \"<string>\",\n  \"descriptions\": \"<string>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl}}/api/workflow/processTask"
+											},
+											"status": "Unauthorized",
+											"code": 401,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"responseTime": null,
+											"body": ""
+										}
+									]
+								},
+								{
+									"name": "2nd Approver Workflow Task",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "9cc1bd8f-6db4-4d13-a292-e8fafc9ff2b4",
+												"exec": [
+													"//pm.collectionVariables.set(\"requestId\", pm.response.json().data.id);\r",
+													"\r",
+													"pm.test(\"Status code is 200\", function () {\r",
+													"    pm.response.to.have.status(200);\r",
+													"});\r",
+													"\r",
+													"var responseJSON = pm.response.json(); // Fixed the variable name from responseData to responseJSON\r",
+													"\r",
+													"pm.test(\"Verify that Workflow is processed successfully\", function () {\r",
+													"    pm.expect(responseJSON.isSuccess).to.be.a(\"boolean\");\r",
+													"    pm.expect(responseJSON.data.id).to.be.a(\"string\").and.not.empty;\r",
+													"    pm.expect(responseJSON.data.message).to.be.a(\"string\").and.not.empty;\r",
+													"});\r",
+													"\r",
+													""
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
+									"id": "c531816b-4fe8-493b-8709-f4ddc350f332",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": {
+												"token": "{{secondApproverBearerToken}}"
+											}
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"requestId\":  \"{{requestId}}\",//\"fa087b2a-e880-47ac-bb83-08dd341c5bcc\",\n  \"entityId\": \"{{supplierId}}\", //procurementId\n  \"entityName\": \"Supplier\",\n  \"comment\": \"<string>\",\n  \"workflowAction\": \"Approved\",\n  \"approverId\": \"{{secondApproverUserId}}\",//login user id\n  \"descriptions\": \"Supplier verification for sly@yopmail.com\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{baseUrl}}/api/workflow/processTask"
+									},
+									"response": [
+										{
+											"id": "41f9d480-7030-4756-9c2e-4c61ba9e5496",
+											"name": "Success",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"description": "Added as a part of security scheme: bearer",
+														"key": "Authorization",
+														"value": "Bearer <token>"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"requestId\": \"<string>\",\n  \"entityId\": \"<string>\",\n  \"entityName\": \"<string>\",\n  \"comment\": \"<string>\",\n  \"workflowAction\": 0,\n  \"approverId\": \"<string>\",\n  \"descriptions\": \"<string>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl}}/api/workflow/processTask"
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"responseTime": null,
+											"body": ""
+										},
+										{
+											"id": "54b7426e-2317-4f77-b59b-e2ab8e3a265d",
 											"name": "Unauthorized",
 											"originalRequest": {
 												"method": "POST",
