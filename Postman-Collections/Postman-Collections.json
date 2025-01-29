@@ -89,7 +89,7 @@
 										],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n  \"userName\": \"{{signedUpEmail}}\",\n  \"password\": \"Password12@@\",\n  \"confirmPassword\": \"Password12@@\",\n  \"email\": \"{{signedUpEmail}}\",\n  \"phoneNumber\": \"+234{{phonenumber}}\",\n  \"firstName\": \"{{$randomFirstName}}\",\n  \"lastName\":  \"{{$randomLastName}}\"\n}",
+											"raw": "{\n  \"userName\":\"suru@yopmail.com\", //\"{{signedUpEmail}}\",\n  \"password\": \"Password12@@\",\n  \"confirmPassword\": \"Password12@@\",\n  \"email\": \"suru@yopmail.com\",//\"{{signedUpEmail}}\",\n  \"phoneNumber\": \"+234{{phonenumber}}\",\n  \"firstName\": \"{{$randomFirstName}}\",\n  \"lastName\":  \"{{$randomLastName}}\"\n}",
 											"options": {
 												"raw": {
 													"headerFamily": "json",
@@ -990,7 +990,7 @@
 										],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n  \"email\": \"sly@yopmail.com\",//\"{{signedUpEmail}}\",//\"ola@yopmail.com\",\n  \"code\": \"539399\"\n}",
+											"raw": "{\n  \"email\": \"suru@yopmail.com\",//\"sly@yopmail.com\",//\"{{signedUpEmail}}\",//\"ola@yopmail.com\",\n  \"code\": \"774006\"\n}",
 											"options": {
 												"raw": {
 													"headerFamily": "json",
@@ -10883,7 +10883,7 @@
 										],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n  \"businessName\": \"Sly Industries\",\n  \"dateOfEstablishment\": \"2024-12-20\",\n  \"streetName\": \"Joebin\",\n  \"region\": \"East\",\n  \"city\": \"Abia\",\n  \"registrationNumber\": \"7847888w\",\n  \"town\": \"Okpa\",\n  \"phoneNumber\": \"09054889955\",\n  \"website\": \"https://www.slyindustries.com\",\n  \"email\": \"july@yopmail.com\",\n  \"supplierCategory\": \"5f7398c2-9307-49e5-7205-08dd0935660a\",\n // \"companyId\": \"<string>\", //not required\n  \"activate\": false,\n  \"businessType\": \"Hospitality\",\n  \"country\": \"Nigeria\",\n  \"parentCompanyId\": null,\n  \"industryId\": \"513f3a56-83ec-47cc-8010-08dcff87fbf6\",\n  \"tags\": [\n    {\n     // \"tagId\": \"<string>\",\n      \"tagName\": \"Equipments\" //lookup endpoint\n     // \"companyId\": \"<string>\"\n    },\n    {\n     // \"tagId\": \"<string>\",\n      \"tagName\": \"Maintenance\"\n     // \"companyId\": \"<string>\"\n    }\n  ]\n}",
+											"raw": "{\n  \"businessName\": \"Suru Industries\",\n  \"dateOfEstablishment\": \"2024-12-20\",\n  \"streetName\": \"Joebin\",\n  \"region\": \"East\",\n  \"city\": \"Abia\",\n  \"registrationNumber\": \"7847888w\",\n  \"town\": \"Okpa\",\n  \"phoneNumber\": \"09054889955\",\n  \"website\": \"https://www.slyindustries.com\",\n  \"email\": \"july@yopmail.com\",\n  \"supplierCategory\": \"5f7398c2-9307-49e5-7205-08dd0935660a\",\n // \"companyId\": \"<string>\", //not required\n  \"activate\": false,\n  \"businessType\": \"Hospitality\",\n  \"country\": \"Nigeria\",\n  \"parentCompanyId\": null,\n  \"industryId\": \"513f3a56-83ec-47cc-8010-08dcff87fbf6\",\n  \"tags\": [\n    {\n     // \"tagId\": \"<string>\",\n      \"tagName\": \"Equipments\" //lookup endpoint\n     // \"companyId\": \"<string>\"\n    },\n    {\n     // \"tagId\": \"<string>\",\n      \"tagName\": \"Maintenance\"\n     // \"companyId\": \"<string>\"\n    }\n  ]\n}",
 											"options": {
 												"raw": {
 													"headerFamily": "json",
@@ -11065,7 +11065,7 @@
 										],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n    \"email\": \"celo@yopmail.com\",//\"{{email}}\",\n  \"userName\": \"celo@yopmail.com\",\n  // \"userName\":\"cesaltino.babo@anp.tl\", //initiator\n  // \"userName\": \"abel.saldanha@anp.tl\", //1st approver\n   //\"userName\": \"jaime.ximenes@anp.tl\", //2nd approver\n  \"password\": \"Password12@@\"\n}",
+											"raw": "{\n    \"email\": \"suru@yopmail.com\",//\"{{email}}\",\n  \"userName\": \"suru@yopmail.com\",\n  // \"userName\":\"cesaltino.babo@anp.tl\", //initiator\n  // \"userName\": \"abel.saldanha@anp.tl\", //1st approver\n   //\"userName\": \"jaime.ximenes@anp.tl\", //2nd approver\n  \"password\": \"Password12@@\"\n}",
 											"options": {
 												"raw": {
 													"headerFamily": "json",
