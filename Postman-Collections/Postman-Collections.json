@@ -11014,7 +11014,7 @@
 									]
 								},
 								{
-									"name": "Success - Login to get supplierId",
+									"name": "Login to get supplierId",
 									"event": [
 										{
 											"listen": "test",
