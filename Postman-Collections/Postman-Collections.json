@@ -43168,7 +43168,7 @@
 							"id": "83c38eeb-a001-475a-aa4d-10053d7a11e6"
 						},
 						{
-							"name": "Workflow",
+							"name": "E-procurement Workflow",
 							"item": [
 								{
 									"name": "Initiate Workflow",
@@ -43443,7 +43443,7 @@
 										],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n  \"requestId\":  \"{{requestId}}\",//\"fa087b2a-e880-47ac-bb83-08dd341c5bcc\",\n  \"entityId\": \"{{serviceInformationId}}\",\n  \"entityName\": \"Procurement\",\n  \"comment\": \"<string>\",\n  \"workflowAction\": \"Approved\",\n  \"approverId\": \"{{secondApproverUserId}}\",//login user id\n  \"descriptions\": \"E-procurement verification for\"\n}",
+											"raw": "{\n  \"requestId\":  \"{{requestId}}\",//\"fa087b2a-e880-47ac-bb83-08dd341c5bcc\",\n  \"entityId\": \"{{serviceInformationId}}\", //procurementId\n  \"entityName\": \"Procurement\",\n  \"comment\": \"<string>\",\n  \"workflowAction\": \"Approved\",\n  \"approverId\": \"{{secondApproverUserId}}\",//login user id\n  \"descriptions\": \"E-procurement verification for\"\n}",
 											"options": {
 												"raw": {
 													"headerFamily": "json",
@@ -43565,7 +43565,7 @@
 										"auth": {
 											"type": "bearer",
 											"bearer": {
-												"token": "{{secondApproverBearerToken}}"
+												"token": "{{initiatorBearerToken}}"
 											}
 										},
 										"method": "POST",
@@ -43577,7 +43577,7 @@
 										],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n  \"requestId\":  \"{{requestId}}\",//\"fa087b2a-e880-47ac-bb83-08dd341c5bcc\",\n  \"entityId\": \"{{supplierId}}\", //procurementId\n  \"entityName\": \"Supplier\",\n  \"comment\": \"<string>\",\n  \"workflowAction\": \"Approved\",\n  \"approverId\": \"{{secondApproverUserId}}\",//login user id\n  \"descriptions\": \"Supplier verification for sly@yopmail.com\"\n}",
+											"raw": "{\n  \"requestId\":  \"{{requestId}}\",//\"fa087b2a-e880-47ac-bb83-08dd341c5bcc\",\n  \"entityId\": \"{{serviceInformationId}}\",//procurementId\n  \"entityName\": \"Procurement\",\n  \"comment\": \"<string>\",\n  \"workflowAction\": \"Approved\",\n  \"approverId\": \"{{initiatorUserId}}\",//login user id\n  \"descriptions\": \"E-procurement verification for \"\n}",
 											"options": {
 												"raw": {
 													"headerFamily": "json",
