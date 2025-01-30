@@ -30965,6 +30965,96 @@
 									]
 								},
 								{
+									"name": "Anp Workflow Features Manage Task Get Assigned Task Endpoint Copy",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "432c7712-fd58-498c-beba-616abb6f09fe",
+												"exec": [
+													"pm.collectionVariables.set(\"requestId\", pm.response.json().data[0].workflowRequestId);\r",
+													"\r",
+													"pm.test(\"Status code is 200\", function () {\r",
+													"    pm.response.to.have.status(200);\r",
+													"});\r",
+													"\r",
+													"var responseJSON = pm.response.json();\r",
+													"\r",
+													"pm.test(\"Verify that assignedtask is returned\", function () {\r",
+													"    pm.expect(responseJSON.data[0].workflowRequestId).to.be.a(\"string\").and.not.be.empty;\r",
+													"        pm.expect(responseJSON.data[0].descriptions).to.be.a(\"string\").and.not.be.empty;\r",
+													"         pm.expect(responseJSON.data[0].lastProcessor).to.be.a(\"string\").and.not.be.empty;\r",
+													"          pm.expect(responseJSON.data[0].preparedBy).to.be.a(\"string\").and.not.be.empty;\r",
+													"});"
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
+									"id": "81973e92-c37d-4c2e-b1e8-1000b657bb30",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": {
+												"token": "{{approverBearerToken}}"
+											}
+										},
+										"method": "GET",
+										"header": [],
+										"url": "{{baseUrl}}/api/workflow/assignedTask"
+									},
+									"response": [
+										{
+											"id": "cf5afb79-448f-4e07-a149-3ee689f901b7",
+											"name": "Success",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"description": "Added as a part of security scheme: bearer",
+														"key": "Authorization",
+														"value": "Bearer <token>"
+													}
+												],
+												"url": "{{baseUrl}}/api/workflow/assignedTask"
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"responseTime": null,
+											"body": ""
+										},
+										{
+											"id": "5af24ad9-9d3a-4825-932e-a9dcf7f1ea3d",
+											"name": "Unauthorized",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"description": "Added as a part of security scheme: bearer",
+														"key": "Authorization",
+														"value": "Bearer <token>"
+													}
+												],
+												"url": "{{baseUrl}}/api/workflow/assignedTask"
+											},
+											"status": "Unauthorized",
+											"code": 401,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"responseTime": null,
+											"body": ""
+										}
+									]
+								},
+								{
 									"name": "2nd Approver Workflow Task",
 									"event": [
 										{
