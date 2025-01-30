@@ -47358,25 +47358,19 @@
 									]
 								},
 								{
-									"name": "Anp Procurement Features Bids Create Tender Access Endpoint Copy 2",
+									"name": "No Auth - Create Tender Access",
 									"event": [
 										{
 											"listen": "test",
 											"script": {
 												"id": "db0589f3-fae6-48e4-be1f-8191bcb3cebf",
 												"exec": [
-													"pm.test(\"Status code is 400\", function () {\r",
-													"    pm.response.to.have.status(400);\r",
+													"pm.test(\"Status code is 401\", function () {\r",
+													"    pm.response.to.have.status(401);\r",
 													"});\r",
 													"\r",
-													"var responseJSON = pm.response.json(); \r",
-													"\r",
-													"pm.test(\"Verify that tenderAccessId is required \", function () {\r",
-													"\r",
-													"   pm.expect(responseJSON.errors[0].name).to.be.a(\"string\").and.not.empty;\r",
-													"        pm.expect(responseJSON.errors[0].reason).to.be.a(\"string\").and.not.empty;\r",
-													"\r",
-													"\r",
+													"pm.test(\"Status code name has 'Unauthorized'\", function () {\r",
+													"    pm.response.to.have.status(\"Unauthorized\");\r",
 													"});"
 												],
 												"type": "text/javascript",
@@ -47390,10 +47384,7 @@
 									},
 									"request": {
 										"auth": {
-											"type": "bearer",
-											"bearer": {
-												"token": "{{bearerToken}}"
-											}
+											"type": "noauth"
 										},
 										"method": "POST",
 										"header": [
