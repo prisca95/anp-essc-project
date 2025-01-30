@@ -36032,7 +36032,7 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "{{baseUrl}}/api/goods/list?sortOrder=0&productType=0&pageNumber=1&pageSize=10&loc",
+											"raw": "{{baseUrl}}/api/goods/list?sortOrder=0&productType=1&pageNumber=1&pageSize=10&loc",
 											"host": [
 												"{{baseUrl}}"
 											],
@@ -36088,7 +36088,7 @@
 												},
 												{
 													"key": "productType",
-													"value": "0",
+													"value": "1",
 													"description": "Working"
 												},
 												{
@@ -36115,8 +36115,7 @@
 												},
 												{
 													"key": "loc",
-													"value": null,
-													"type": "text"
+													"value": null
 												}
 											]
 										}
