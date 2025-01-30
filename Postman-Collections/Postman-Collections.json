@@ -49769,6 +49769,174 @@
 													]
 												},
 												{
+													"name": "No ServiceInformationId - Create Bid Expression",
+													"event": [
+														{
+															"listen": "test",
+															"script": {
+																"id": "6f9152be-ce3e-4929-a6a1-95d4703b0950",
+																"exec": [
+																	"pm.test(\"Status code is 400\", function () {\r",
+																	"    pm.response.to.have.status(400);\r",
+																	"});\r",
+																	"\r",
+																	"var responseJSON = pm.response.json(); \r",
+																	"\r",
+																	"pm.test(\"Verify that serviceInformationId is required \", function () {\r",
+																	"\r",
+																	"   pm.expect(responseJSON.errors[0].name).to.be.a(\"string\").and.not.empty;\r",
+																	"        pm.expect(responseJSON.errors[0].reason).to.be.a(\"string\").and.not.empty;\r",
+																	"\r",
+																	"\r",
+																	"});"
+																],
+																"type": "text/javascript",
+																"packages": {}
+															}
+														}
+													],
+													"id": "afb05aed-8f1f-440a-a4b1-e6c527edd9a5",
+													"protocolProfileBehavior": {
+														"disableBodyPruning": true
+													},
+													"request": {
+														"auth": {
+															"type": "bearer",
+															"bearer": {
+																"token": "{{bearerToken}}"
+															}
+														},
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"createdDate\": \"2025-01-28\",\n  \"serviceInformationId\": \"\",\n  \"address\": \"Lagos\",\n  \"longitude\": \"{{$randomLongitude}}\",\n  \"latitude\": \"{{$randomLatitude}}\",\n  \"state\": \"Lagos\",\n  \"location\": \"Lagos\",\n  \"estimatedCost\": \"55000\",\n  \"estimatedStartDate\": \"2025-02-05\",\n  \"estimatedEndDate\": \"2025-02-10\",\n  \"purpose\": \"<string>\",\n  \"declaration\": true,\n  \"companyId\": \"{{supplierId}}\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl}}/api/procurement/bids/expression/create"
+													},
+													"response": [
+														{
+															"id": "aea1a76f-6509-40f3-8690-67ae685c73b1",
+															"name": "Success",
+															"originalRequest": {
+																"method": "POST",
+																"header": [
+																	{
+																		"key": "Content-Type",
+																		"value": "application/json"
+																	},
+																	{
+																		"description": "Added as a part of security scheme: bearer",
+																		"key": "Authorization",
+																		"value": "Bearer <token>"
+																	}
+																],
+																"body": {
+																	"mode": "raw",
+																	"raw": "{\n  \"createdDate\": \"<dateTime>\",\n  \"serviceInformationId\": \"<string>\",\n  \"address\": \"<string>\",\n  \"longitude\": \"<double>\",\n  \"latitude\": \"<double>\",\n  \"state\": \"<string>\",\n  \"location\": \"<string>\",\n  \"estimatedCost\": \"<number>\",\n  \"estimatedStartDate\": \"<dateTime>\",\n  \"estimatedEndDate\": \"<dateTime>\",\n  \"purpose\": \"<string>\",\n  \"declaration\": \"<boolean>\",\n  \"companyId\": \"<string>\"\n}",
+																	"options": {
+																		"raw": {
+																			"headerFamily": "json",
+																			"language": "json"
+																		}
+																	}
+																},
+																"url": "{{baseUrl}}/api/procurement/bids/expression/create"
+															},
+															"status": "OK",
+															"code": 200,
+															"_postman_previewlanguage": "text",
+															"header": [],
+															"cookie": [],
+															"responseTime": null,
+															"body": ""
+														},
+														{
+															"id": "10cad846-8df9-4b6a-b606-482c418ee90f",
+															"name": "Unauthorized",
+															"originalRequest": {
+																"method": "POST",
+																"header": [
+																	{
+																		"key": "Content-Type",
+																		"value": "application/json"
+																	},
+																	{
+																		"description": "Added as a part of security scheme: bearer",
+																		"key": "Authorization",
+																		"value": "Bearer <token>"
+																	}
+																],
+																"body": {
+																	"mode": "raw",
+																	"raw": "{\n  \"createdDate\": \"<dateTime>\",\n  \"serviceInformationId\": \"<string>\",\n  \"address\": \"<string>\",\n  \"longitude\": \"<double>\",\n  \"latitude\": \"<double>\",\n  \"state\": \"<string>\",\n  \"location\": \"<string>\",\n  \"estimatedCost\": \"<number>\",\n  \"estimatedStartDate\": \"<dateTime>\",\n  \"estimatedEndDate\": \"<dateTime>\",\n  \"purpose\": \"<string>\",\n  \"declaration\": \"<boolean>\",\n  \"companyId\": \"<string>\"\n}",
+																	"options": {
+																		"raw": {
+																			"headerFamily": "json",
+																			"language": "json"
+																		}
+																	}
+																},
+																"url": "{{baseUrl}}/api/procurement/bids/expression/create"
+															},
+															"status": "Unauthorized",
+															"code": 401,
+															"_postman_previewlanguage": "text",
+															"header": [],
+															"cookie": [],
+															"responseTime": null,
+															"body": ""
+														},
+														{
+															"id": "569d0549-7125-4708-ad82-9aa1972475ed",
+															"name": "Forbidden",
+															"originalRequest": {
+																"method": "POST",
+																"header": [
+																	{
+																		"key": "Content-Type",
+																		"value": "application/json"
+																	},
+																	{
+																		"description": "Added as a part of security scheme: bearer",
+																		"key": "Authorization",
+																		"value": "Bearer <token>"
+																	}
+																],
+																"body": {
+																	"mode": "raw",
+																	"raw": "{\n  \"createdDate\": \"<dateTime>\",\n  \"serviceInformationId\": \"<string>\",\n  \"address\": \"<string>\",\n  \"longitude\": \"<double>\",\n  \"latitude\": \"<double>\",\n  \"state\": \"<string>\",\n  \"location\": \"<string>\",\n  \"estimatedCost\": \"<number>\",\n  \"estimatedStartDate\": \"<dateTime>\",\n  \"estimatedEndDate\": \"<dateTime>\",\n  \"purpose\": \"<string>\",\n  \"declaration\": \"<boolean>\",\n  \"companyId\": \"<string>\"\n}",
+																	"options": {
+																		"raw": {
+																			"headerFamily": "json",
+																			"language": "json"
+																		}
+																	}
+																},
+																"url": "{{baseUrl}}/api/procurement/bids/expression/create"
+															},
+															"status": "Forbidden",
+															"code": 403,
+															"_postman_previewlanguage": "text",
+															"header": [],
+															"cookie": [],
+															"responseTime": null,
+															"body": ""
+														}
+													]
+												},
+												{
 													"name": "No Auth - Create Bid Expression",
 													"event": [
 														{
@@ -50119,6 +50287,189 @@
 													]
 												},
 												{
+													"name": "No tenderBidId - Get A Bid Expression",
+													"event": [
+														{
+															"listen": "test",
+															"script": {
+																"id": "02c18d7a-f82c-4177-85b8-286a30b1ef6b",
+																"exec": [
+																	"pm.test(\"Status code is 400\", function () {\r",
+																	"    pm.response.to.have.status(400);\r",
+																	"});\r",
+																	"\r",
+																	"var responseJSON = pm.response.json(); \r",
+																	"\r",
+																	"pm.test(\"Verify that tenderBidId is required \", function () {\r",
+																	"\r",
+																	"   pm.expect(responseJSON.errors[0].name).to.be.a(\"string\").and.not.empty;\r",
+																	"        pm.expect(responseJSON.errors[0].reason).to.be.a(\"string\").and.not.empty;\r",
+																	"\r",
+																	"\r",
+																	"});"
+																],
+																"type": "text/javascript",
+																"packages": {}
+															}
+														}
+													],
+													"id": "9beee053-dacc-4789-b06b-9a54120787c6",
+													"protocolProfileBehavior": {
+														"disableBodyPruning": true
+													},
+													"request": {
+														"auth": {
+															"type": "bearer",
+															"bearer": {
+																"token": "{{bearerToken}}"
+															}
+														},
+														"method": "GET",
+														"header": [],
+														"url": {
+															"raw": "{{baseUrl}}/api/procurement/bids/expression?tenderBidId=43682d24-74e0-46d8-1245-08dd4145",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"procurement",
+																"bids",
+																"expression"
+															],
+															"query": [
+																{
+																	"key": "tenderBidId",
+																	"value": "43682d24-74e0-46d8-1245-08dd4145",
+																	"description": "(Required) "
+																}
+															]
+														}
+													},
+													"response": [
+														{
+															"id": "064adb7b-6f35-48aa-a0b8-4d34218306ad",
+															"name": "Success",
+															"originalRequest": {
+																"method": "GET",
+																"header": [
+																	{
+																		"description": "Added as a part of security scheme: bearer",
+																		"key": "Authorization",
+																		"value": "Bearer <token>"
+																	}
+																],
+																"url": {
+																	"raw": "{{baseUrl}}/api/procurement/bids/expression?tenderBidId=<string>",
+																	"host": [
+																		"{{baseUrl}}"
+																	],
+																	"path": [
+																		"api",
+																		"procurement",
+																		"bids",
+																		"expression"
+																	],
+																	"query": [
+																		{
+																			"description": "(Required) ",
+																			"key": "tenderBidId",
+																			"value": "<string>"
+																		}
+																	]
+																}
+															},
+															"status": "OK",
+															"code": 200,
+															"_postman_previewlanguage": "text",
+															"header": [],
+															"cookie": [],
+															"responseTime": null,
+															"body": ""
+														},
+														{
+															"id": "3d65d398-2c99-4ce5-bd9a-8f0d891585dc",
+															"name": "Unauthorized",
+															"originalRequest": {
+																"method": "GET",
+																"header": [
+																	{
+																		"description": "Added as a part of security scheme: bearer",
+																		"key": "Authorization",
+																		"value": "Bearer <token>"
+																	}
+																],
+																"url": {
+																	"raw": "{{baseUrl}}/api/procurement/bids/expression?tenderBidId=<string>",
+																	"host": [
+																		"{{baseUrl}}"
+																	],
+																	"path": [
+																		"api",
+																		"procurement",
+																		"bids",
+																		"expression"
+																	],
+																	"query": [
+																		{
+																			"description": "(Required) ",
+																			"key": "tenderBidId",
+																			"value": "<string>"
+																		}
+																	]
+																}
+															},
+															"status": "Unauthorized",
+															"code": 401,
+															"_postman_previewlanguage": "text",
+															"header": [],
+															"cookie": [],
+															"responseTime": null,
+															"body": ""
+														},
+														{
+															"id": "2eb0e4a9-1ab8-43a7-8ef9-70c16a20c72b",
+															"name": "Forbidden",
+															"originalRequest": {
+																"method": "GET",
+																"header": [
+																	{
+																		"description": "Added as a part of security scheme: bearer",
+																		"key": "Authorization",
+																		"value": "Bearer <token>"
+																	}
+																],
+																"url": {
+																	"raw": "{{baseUrl}}/api/procurement/bids/expression?tenderBidId=<string>",
+																	"host": [
+																		"{{baseUrl}}"
+																	],
+																	"path": [
+																		"api",
+																		"procurement",
+																		"bids",
+																		"expression"
+																	],
+																	"query": [
+																		{
+																			"description": "(Required) ",
+																			"key": "tenderBidId",
+																			"value": "<string>"
+																		}
+																	]
+																}
+															},
+															"status": "Forbidden",
+															"code": 403,
+															"_postman_previewlanguage": "text",
+															"header": [],
+															"cookie": [],
+															"responseTime": null,
+															"body": ""
+														}
+													]
+												},
+												{
 													"name": "No Auth -Get A Bid Expression Endpoint",
 													"event": [
 														{
@@ -50411,6 +50762,149 @@
 														},
 														{
 															"id": "334a3453-0464-4446-a6e6-41cd6db445ec",
+															"name": "Forbidden",
+															"originalRequest": {
+																"method": "POST",
+																"header": [
+																	{
+																		"key": "Content-Type",
+																		"value": "application/json"
+																	},
+																	{
+																		"description": "Added as a part of security scheme: bearer",
+																		"key": "Authorization",
+																		"value": "Bearer <token>"
+																	}
+																],
+																"body": {
+																	"mode": "raw",
+																	"raw": "{\n  \"declaration\": \"<boolean>\",\n  \"tenderBidId\": \"<string>\",\n  \"technicalEvaluationDelivarable\": [\n    {\n      \"delivarbles\": \"<string>\",\n      \"dueDate\": \"<dateTime>\",\n      \"amount\": \"<number>\",\n      \"technicalEvaluationId\": \"<string>\"\n    },\n    {\n      \"delivarbles\": \"<string>\",\n      \"dueDate\": \"<dateTime>\",\n      \"amount\": \"<number>\",\n      \"technicalEvaluationId\": \"<string>\"\n    }\n  ]\n}",
+																	"options": {
+																		"raw": {
+																			"headerFamily": "json",
+																			"language": "json"
+																		}
+																	}
+																},
+																"url": "{{baseUrl}}/api/procurement/bids/technical/create"
+															},
+															"status": "Forbidden",
+															"code": 403,
+															"_postman_previewlanguage": "text",
+															"header": [],
+															"cookie": [],
+															"responseTime": null,
+															"body": ""
+														}
+													]
+												},
+												{
+													"name": "Anp Procurement Features Bids Create Bid Technical Endpoint Copy",
+													"id": "99f84300-feaa-4aa2-a735-ea0387acadac",
+													"protocolProfileBehavior": {
+														"disableBodyPruning": true
+													},
+													"request": {
+														"auth": {
+															"type": "bearer",
+															"bearer": {
+																"token": "{{bearerToken}}"
+															}
+														},
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"declaration\": \"<boolean>\",\n  \"tenderBidId\": \"<string>\",\n  \"technicalEvaluationDelivarable\": [\n    {\n      \"delivarbles\": \"<string>\",\n      \"dueDate\": \"<dateTime>\",\n      \"amount\": \"<number>\",\n      \"technicalEvaluationId\": \"<string>\"\n    },\n    {\n      \"delivarbles\": \"<string>\",\n      \"dueDate\": \"<dateTime>\",\n      \"amount\": \"<number>\",\n      \"technicalEvaluationId\": \"<string>\"\n    }\n  ]\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl}}/api/procurement/bids/technical/create"
+													},
+													"response": [
+														{
+															"id": "3a962871-4e34-43c2-989f-8c22dc0c44ef",
+															"name": "Success",
+															"originalRequest": {
+																"method": "POST",
+																"header": [
+																	{
+																		"key": "Content-Type",
+																		"value": "application/json"
+																	},
+																	{
+																		"description": "Added as a part of security scheme: bearer",
+																		"key": "Authorization",
+																		"value": "Bearer <token>"
+																	}
+																],
+																"body": {
+																	"mode": "raw",
+																	"raw": "{\n  \"declaration\": \"<boolean>\",\n  \"tenderBidId\": \"<string>\",\n  \"technicalEvaluationDelivarable\": [\n    {\n      \"delivarbles\": \"<string>\",\n      \"dueDate\": \"<dateTime>\",\n      \"amount\": \"<number>\",\n      \"technicalEvaluationId\": \"<string>\"\n    },\n    {\n      \"delivarbles\": \"<string>\",\n      \"dueDate\": \"<dateTime>\",\n      \"amount\": \"<number>\",\n      \"technicalEvaluationId\": \"<string>\"\n    }\n  ]\n}",
+																	"options": {
+																		"raw": {
+																			"headerFamily": "json",
+																			"language": "json"
+																		}
+																	}
+																},
+																"url": "{{baseUrl}}/api/procurement/bids/technical/create"
+															},
+															"status": "OK",
+															"code": 200,
+															"_postman_previewlanguage": "text",
+															"header": [],
+															"cookie": [],
+															"responseTime": null,
+															"body": ""
+														},
+														{
+															"id": "6c21fb1e-bf06-4e3d-afab-31a662ed35eb",
+															"name": "Unauthorized",
+															"originalRequest": {
+																"method": "POST",
+																"header": [
+																	{
+																		"key": "Content-Type",
+																		"value": "application/json"
+																	},
+																	{
+																		"description": "Added as a part of security scheme: bearer",
+																		"key": "Authorization",
+																		"value": "Bearer <token>"
+																	}
+																],
+																"body": {
+																	"mode": "raw",
+																	"raw": "{\n  \"declaration\": \"<boolean>\",\n  \"tenderBidId\": \"<string>\",\n  \"technicalEvaluationDelivarable\": [\n    {\n      \"delivarbles\": \"<string>\",\n      \"dueDate\": \"<dateTime>\",\n      \"amount\": \"<number>\",\n      \"technicalEvaluationId\": \"<string>\"\n    },\n    {\n      \"delivarbles\": \"<string>\",\n      \"dueDate\": \"<dateTime>\",\n      \"amount\": \"<number>\",\n      \"technicalEvaluationId\": \"<string>\"\n    }\n  ]\n}",
+																	"options": {
+																		"raw": {
+																			"headerFamily": "json",
+																			"language": "json"
+																		}
+																	}
+																},
+																"url": "{{baseUrl}}/api/procurement/bids/technical/create"
+															},
+															"status": "Unauthorized",
+															"code": 401,
+															"_postman_previewlanguage": "text",
+															"header": [],
+															"cookie": [],
+															"responseTime": null,
+															"body": ""
+														},
+														{
+															"id": "d3595947-efd7-49ce-a1e9-41b3e5465488",
 															"name": "Forbidden",
 															"originalRequest": {
 																"method": "POST",
