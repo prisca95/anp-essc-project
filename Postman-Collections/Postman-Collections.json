@@ -47700,7 +47700,7 @@
 										"auth": {
 											"type": "bearer",
 											"bearer": {
-												"token": "{{approverBearerToken}}"
+												"token": "{{bearerToken}}"
 											}
 										},
 										"method": "POST",
@@ -47712,7 +47712,7 @@
 										],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n  \"tenderAccessId\": \"\"\n}",
+											"raw": "{\n  \"tenderAccessId\": \"dfggh5656\"\n}",
 											"options": {
 												"raw": {
 													"headerFamily": "json",
