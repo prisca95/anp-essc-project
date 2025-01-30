@@ -50799,7 +50799,32 @@
 													]
 												},
 												{
-													"name": "Anp Procurement Features Bids Create Bid Technical Endpoint Copy",
+													"name": "Empty fields - Create Bid Technical",
+													"event": [
+														{
+															"listen": "test",
+															"script": {
+																"id": "25855771-286e-4eba-9d31-8d424e6d1568",
+																"exec": [
+																	"pm.test(\"Status code is 400\", function () {\r",
+																	"    pm.response.to.have.status(400);\r",
+																	"});\r",
+																	"\r",
+																	"var responseJSON = pm.response.json(); \r",
+																	"\r",
+																	"pm.test(\"Verify that mandatory fields are required \", function () {\r",
+																	"\r",
+																	"   pm.expect(responseJSON.errors[0].name).to.be.a(\"string\").and.not.empty;\r",
+																	"        pm.expect(responseJSON.errors[0].reason).to.be.a(\"string\").and.not.empty;\r",
+																	"\r",
+																	"\r",
+																	"});"
+																],
+																"type": "text/javascript",
+																"packages": {}
+															}
+														}
+													],
 													"id": "99f84300-feaa-4aa2-a735-ea0387acadac",
 													"protocolProfileBehavior": {
 														"disableBodyPruning": true
@@ -51451,7 +51476,32 @@
 											"name": "create",
 											"item": [
 												{
-													"name": "Anp Procurement Features Bids Create Bid Financial Endpoint",
+													"name": "Empty fields - Create Bid Financial Endpoint",
+													"event": [
+														{
+															"listen": "test",
+															"script": {
+																"id": "1d3d757b-3825-4f1d-8702-a978d9c921c7",
+																"exec": [
+																	"pm.test(\"Status code is 400\", function () {\r",
+																	"    pm.response.to.have.status(400);\r",
+																	"});\r",
+																	"\r",
+																	"var responseJSON = pm.response.json(); \r",
+																	"\r",
+																	"pm.test(\"Verify that mandatory fields are required \", function () {\r",
+																	"\r",
+																	"   pm.expect(responseJSON.errors[0].name).to.be.a(\"string\").and.not.empty;\r",
+																	"        pm.expect(responseJSON.errors[0].reason).to.be.a(\"string\").and.not.empty;\r",
+																	"\r",
+																	"\r",
+																	"});"
+																],
+																"type": "text/javascript",
+																"packages": {}
+															}
+														}
+													],
 													"id": "eada363a-2034-4d12-9a52-5637da403b84",
 													"protocolProfileBehavior": {
 														"disableBodyPruning": true
