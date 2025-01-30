@@ -30643,7 +30643,7 @@
 										],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n  \"entityId\": \"{{supplierId}}\",//procurementId\n  \"entityName\": \"Supplier\",//Procurement\n  \"workflowDescription\": \"Supplier verification for suru@yopmail.com\",\n  \"parameters\": [\n    {\n      \"parameterName\": \"SupplierId\",\n      \"parameterValue\": \"{{supplierId}}\"  //from login\n    },\n    {\n      \"parameterName\": \"baseurl\",\n      \"parameterValue\": \"{{baseUrl}}\"\n    },\n      {\n      \"parameterName\": \"RoleId\",\n      \"parameterValue\": \"{{roleId}}\"//\"b53300b8-5f92-40c8-bf66-08dcf4682678\" \n    },\n     {\n      \"parameterName\": \"UserId\",\n      \"parameterValue\": \"{{supplierUserId}}\"//\"3d7d0b63-17e9-4d94-8afd-08dd23248f67\"  //from suppliers\n    }\n  ],\n  \"selectedWorkflowType\": \"Supplier\"\n}\n",
+											"raw": "{\n  \"entityId\": \"{{supplierId}}\",//procurementId\n  \"entityName\": \"Supplier\",//Procurement\n  \"workflowDescription\": \"Supplier verification for ojo@yopmail.com\",\n  \"parameters\": [\n    {\n      \"parameterName\": \"SupplierId\",\n      \"parameterValue\": \"{{supplierId}}\"  //from login\n    },\n    {\n      \"parameterName\": \"baseurl\",\n      \"parameterValue\": \"{{baseUrl}}\"\n    },\n      {\n      \"parameterName\": \"RoleId\",\n      \"parameterValue\": \"{{roleId}}\"//\"b53300b8-5f92-40c8-bf66-08dcf4682678\" \n    },\n     {\n      \"parameterName\": \"UserId\",\n      \"parameterValue\": \"{{supplierUserId}}\"//\"3d7d0b63-17e9-4d94-8afd-08dd23248f67\"  //from suppliers\n    }\n  ],\n  \"selectedWorkflowType\": \"Supplier\"\n}\n",
 											"options": {
 												"raw": {
 													"headerFamily": "json",
@@ -30879,7 +30879,7 @@
 										],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n  \"requestId\":  \"{{requestId}}\",//\"fa087b2a-e880-47ac-bb83-08dd341c5bcc\",\n  \"entityId\": \"{{supplierId}}\", //procurementId\n  \"entityName\": \"Supplier\",\n  \"comment\": \"<string>\",\n  \"workflowAction\": \"Approved\",\n  \"approverId\": \"{{approverUserId}}\",//login user id\n  \"descriptions\": \"Supplier verification for \"\n}\n\n{\n  \"requestId\":  \"{{requestId}}\",//\"fa087b2a-e880-47ac-bb83-08dd341c5bcc\",\n  \"entityId\": \"{{serviceInformationId}}\",//\"{{supplierId}}\", //procurementId\n  \"entityName\": \"Procurement\",\n  \"comment\": \"<string>\",\n  \"workflowAction\": \"Approved\",\n  \"approverId\": \"{{initiatorUserId}}\",//\"{{secondApproverUserId}}\",//login user id\n  \"descriptions\": \"E-procurement verification for Chair\"\n}",
+											"raw": "{\n  \"requestId\":  \"{{requestId}}\",//\"fa087b2a-e880-47ac-bb83-08dd341c5bcc\",\n  \"entityId\": \"{{supplierId}}\", //procurementId\n  \"entityName\": \"Supplier\",\n  \"comment\": \"<string>\",\n  \"workflowAction\": \"Approved\",\n  \"approverId\": \"{{approverUserId}}\",//login user id\n  \"descriptions\": \"Supplier verification for ojo@yopmail.com\"\n}\n",
 											"options": {
 												"raw": {
 													"headerFamily": "json",
