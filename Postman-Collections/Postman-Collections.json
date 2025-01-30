@@ -47356,6 +47356,174 @@
 											"body": ""
 										}
 									]
+								},
+								{
+									"name": "Anp Procurement Features Bids Create Tender Access Endpoint Copy 2",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "db0589f3-fae6-48e4-be1f-8191bcb3cebf",
+												"exec": [
+													"pm.test(\"Status code is 400\", function () {\r",
+													"    pm.response.to.have.status(400);\r",
+													"});\r",
+													"\r",
+													"var responseJSON = pm.response.json(); \r",
+													"\r",
+													"pm.test(\"Verify that tenderAccessId is required \", function () {\r",
+													"\r",
+													"   pm.expect(responseJSON.errors[0].name).to.be.a(\"string\").and.not.empty;\r",
+													"        pm.expect(responseJSON.errors[0].reason).to.be.a(\"string\").and.not.empty;\r",
+													"\r",
+													"\r",
+													"});"
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
+									"id": "25df1a70-45b5-448b-aeac-44bc234c24ca",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": {
+												"token": "{{bearerToken}}"
+											}
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"serviceInformationId\": \"{{serviceInformationId}}\",\n  \"supplierId\": \"{{supplierId}}\",\n  \"requestAccess\": \"<boolean>\",\n  \"isFavorite\": \"<boolean>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{baseUrl}}/api/procurement/requestForAccess"
+									},
+									"response": [
+										{
+											"id": "c0689ebd-a557-4b1e-a129-06822cadfcb1",
+											"name": "Success",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"description": "Added as a part of security scheme: bearer",
+														"key": "Authorization",
+														"value": "Bearer <token>"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"serviceInformationId\": \"<string>\",\n  \"supplierId\": \"<string>\",\n  \"requestAccess\": \"<boolean>\",\n  \"isFavorite\": \"<boolean>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl}}/api/procurement/requestForAccess"
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"responseTime": null,
+											"body": ""
+										},
+										{
+											"id": "f681296e-70f2-4f53-a94d-db18256b3601",
+											"name": "Unauthorized",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"description": "Added as a part of security scheme: bearer",
+														"key": "Authorization",
+														"value": "Bearer <token>"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"serviceInformationId\": \"<string>\",\n  \"supplierId\": \"<string>\",\n  \"requestAccess\": \"<boolean>\",\n  \"isFavorite\": \"<boolean>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl}}/api/procurement/requestForAccess"
+											},
+											"status": "Unauthorized",
+											"code": 401,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"responseTime": null,
+											"body": ""
+										},
+										{
+											"id": "08f30cd0-c973-43b1-972b-4663f0748307",
+											"name": "Forbidden",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"description": "Added as a part of security scheme: bearer",
+														"key": "Authorization",
+														"value": "Bearer <token>"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"serviceInformationId\": \"<string>\",\n  \"supplierId\": \"<string>\",\n  \"requestAccess\": \"<boolean>\",\n  \"isFavorite\": \"<boolean>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl}}/api/procurement/requestForAccess"
+											},
+											"status": "Forbidden",
+											"code": 403,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"responseTime": null,
+											"body": ""
+										}
+									]
 								}
 							],
 							"id": "2b49b24b-85aa-4ece-8a14-920e392e016d"
@@ -55037,17 +55205,33 @@
 									]
 								},
 								{
-									"name": "Update an IOC Operator Copy",
+									"name": "No Auth - Update an IOC Operator",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "06a5e7e3-0136-4553-96d9-6647d75cf9cb",
+												"exec": [
+													"pm.test(\"Status code is 401\", function () {\r",
+													"    pm.response.to.have.status(401);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Status code name has 'Unauthorized'\", function () {\r",
+													"    pm.response.to.have.status(\"Unauthorized\");\r",
+													"});"
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
 									"id": "5eba09b3-2380-4e3b-bb27-1cf0a71140bc",
 									"protocolProfileBehavior": {
 										"disableBodyPruning": true
 									},
 									"request": {
 										"auth": {
-											"type": "bearer",
-											"bearer": {
-												"token": "{{bearerToken}}"
-											}
+											"type": "noauth"
 										},
 										"method": "PUT",
 										"header": [
@@ -55386,6 +55570,210 @@
 											"body": ""
 										}
 									]
+								},
+								{
+									"name": "No Auth - Get All Operator Endpoint",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "9b571d52-cc5e-4353-8e40-fdb0d8214d55",
+												"exec": [
+													"pm.test(\"Status code is 401\", function () {\r",
+													"    pm.response.to.have.status(401);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Status code name has 'Unauthorized'\", function () {\r",
+													"    pm.response.to.have.status(\"Unauthorized\");\r",
+													"});"
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
+									"id": "d10089bb-f5f5-4d0b-8164-ddc680dd9fab",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"auth": {
+											"type": "noauth"
+										},
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/operator/list?pageNumber=<integer>&pageSize=<integer>",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"operator",
+												"list"
+											],
+											"query": [
+												{
+													"key": "pageNumber",
+													"value": "<integer>",
+													"description": "(Required) "
+												},
+												{
+													"key": "pageSize",
+													"value": "<integer>",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"id": "a85845c5-f954-45dd-8055-8d839321f6a1",
+											"name": "Success",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													},
+													{
+														"description": "Added as a part of security scheme: bearer",
+														"key": "Authorization",
+														"value": "Bearer <token>"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/operator/list?pageNumber=<integer>&pageSize=<integer>",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"operator",
+														"list"
+													],
+													"query": [
+														{
+															"description": "(Required) ",
+															"key": "pageNumber",
+															"value": "<integer>"
+														},
+														{
+															"description": "(Required) ",
+															"key": "pageSize",
+															"value": "<integer>"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"responseTime": null,
+											"body": "{\n  \"pageNumber\": \"<integer>\",\n  \"pageSize\": \"<integer>\",\n  \"totalRecords\": \"<integer>\",\n  \"data\": [\n    {\n      \"organizationId\": \"<string>\",\n      \"organizationName\": \"<string>\",\n      \"dateOfEstablishment\": \"<dateTime>\",\n      \"businessType\": \"<string>\",\n      \"country\": \"<string>\",\n      \"regNumber\": \"<string>\",\n      \"addressLine1\": \"<string>\",\n      \"addressLine2\": \"<string>\",\n      \"region\": \"<string>\",\n      \"city\": \"<string>\",\n      \"town\": \"<string>\",\n      \"phoneNumber\": \"<string>\",\n      \"website\": \"<string>\",\n      \"email\": \"<string>\"\n    },\n    {\n      \"organizationId\": \"<string>\",\n      \"organizationName\": \"<string>\",\n      \"dateOfEstablishment\": \"<dateTime>\",\n      \"businessType\": \"<string>\",\n      \"country\": \"<string>\",\n      \"regNumber\": \"<string>\",\n      \"addressLine1\": \"<string>\",\n      \"addressLine2\": \"<string>\",\n      \"region\": \"<string>\",\n      \"city\": \"<string>\",\n      \"town\": \"<string>\",\n      \"phoneNumber\": \"<string>\",\n      \"website\": \"<string>\",\n      \"email\": \"<string>\"\n    }\n  ]\n}"
+										},
+										{
+											"id": "de7a6a28-c58b-4507-9eec-77d55ed93023",
+											"name": "Unauthorized",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"description": "Added as a part of security scheme: bearer",
+														"key": "Authorization",
+														"value": "Bearer <token>"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/operator/list?pageNumber=<integer>&pageSize=<integer>",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"operator",
+														"list"
+													],
+													"query": [
+														{
+															"description": "(Required) ",
+															"key": "pageNumber",
+															"value": "<integer>"
+														},
+														{
+															"description": "(Required) ",
+															"key": "pageSize",
+															"value": "<integer>"
+														}
+													]
+												}
+											},
+											"status": "Unauthorized",
+											"code": 401,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"responseTime": null,
+											"body": ""
+										},
+										{
+											"id": "752263be-333a-428d-ab9a-265e5dc6183f",
+											"name": "Forbidden",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"description": "Added as a part of security scheme: bearer",
+														"key": "Authorization",
+														"value": "Bearer <token>"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/operator/list?pageNumber=<integer>&pageSize=<integer>",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"operator",
+														"list"
+													],
+													"query": [
+														{
+															"description": "(Required) ",
+															"key": "pageNumber",
+															"value": "<integer>"
+														},
+														{
+															"description": "(Required) ",
+															"key": "pageSize",
+															"value": "<integer>"
+														}
+													]
+												}
+											},
+											"status": "Forbidden",
+											"code": 403,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"responseTime": null,
+											"body": ""
+										}
+									]
 								}
 							],
 							"id": "8148878f-31c5-4e76-8751-68d4935d2aaf"
@@ -55529,6 +55917,195 @@
 												},
 												{
 													"id": "66d4aa47-1076-48af-a279-32f39d281d79",
+													"name": "Forbidden",
+													"originalRequest": {
+														"method": "GET",
+														"header": [
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/operator/Operator/GetAOperator?operatorId=<string>",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"operator",
+																"Operator",
+																"GetAOperator"
+															],
+															"query": [
+																{
+																	"description": "(Required) ",
+																	"key": "operatorId",
+																	"value": "<string>"
+																}
+															]
+														}
+													},
+													"status": "Forbidden",
+													"code": 403,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												}
+											]
+										},
+										{
+											"name": "No Auth - Get an Operator",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"id": "58c2cd68-55a9-4770-b25e-3dd6166773f2",
+														"exec": [
+															"pm.test(\"Status code is 401\", function () {\r",
+															"    pm.response.to.have.status(401);\r",
+															"});\r",
+															"\r",
+															"pm.test(\"Status code name has 'Unauthorized'\", function () {\r",
+															"    pm.response.to.have.status(\"Unauthorized\");\r",
+															"});"
+														],
+														"type": "text/javascript",
+														"packages": {}
+													}
+												}
+											],
+											"id": "e253efca-59d5-4902-a17a-736f606d59d9",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"auth": {
+													"type": "noauth"
+												},
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/operator/Operator/GetAOperator?operatorId=<string>",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"operator",
+														"Operator",
+														"GetAOperator"
+													],
+													"query": [
+														{
+															"key": "operatorId",
+															"value": "<string>",
+															"description": "(Required) "
+														}
+													]
+												},
+												"description": "Get an Operator"
+											},
+											"response": [
+												{
+													"id": "85969b91-e77d-47e5-b98a-0f81f04105ff",
+													"name": "Success",
+													"originalRequest": {
+														"method": "GET",
+														"header": [
+															{
+																"key": "Accept",
+																"value": "application/json"
+															},
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/operator/Operator/GetAOperator?operatorId=<string>",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"operator",
+																"Operator",
+																"GetAOperator"
+															],
+															"query": [
+																{
+																	"description": "(Required) ",
+																	"key": "operatorId",
+																	"value": "<string>"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"responseTime": null,
+													"body": "{\n  \"isSuccess\": \"<boolean>\",\n  \"data\": {\n    \"organizationId\": \"<string>\",\n    \"organizationName\": \"<string>\",\n    \"dateOfEstablishment\": \"<dateTime>\",\n    \"businessType\": \"<string>\",\n    \"country\": \"<string>\",\n    \"regNumber\": \"<string>\",\n    \"addressLine1\": \"<string>\",\n    \"addressLine2\": \"<string>\",\n    \"region\": \"<string>\",\n    \"city\": \"<string>\",\n    \"town\": \"<string>\",\n    \"phoneNumber\": \"<string>\",\n    \"website\": \"<string>\",\n    \"email\": \"<string>\"\n  },\n  \"errorMessage\": \"<string>\"\n}"
+												},
+												{
+													"id": "fc0a56ba-e773-4a54-8650-f52506732cfc",
+													"name": "Unauthorized",
+													"originalRequest": {
+														"method": "GET",
+														"header": [
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/operator/Operator/GetAOperator?operatorId=<string>",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"operator",
+																"Operator",
+																"GetAOperator"
+															],
+															"query": [
+																{
+																	"description": "(Required) ",
+																	"key": "operatorId",
+																	"value": "<string>"
+																}
+															]
+														}
+													},
+													"status": "Unauthorized",
+													"code": 401,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												},
+												{
+													"id": "774a5709-5d62-4da2-bd30-89362df8fc54",
 													"name": "Forbidden",
 													"originalRequest": {
 														"method": "GET",
