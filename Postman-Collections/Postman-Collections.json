@@ -30965,7 +30965,7 @@
 									]
 								},
 								{
-									"name": "Anp Workflow Features Manage Task Get Assigned Task Endpoint Copy",
+									"name": "2ns Assigned task Workflow",
 									"event": [
 										{
 											"listen": "test",
@@ -31000,7 +31000,7 @@
 										"auth": {
 											"type": "bearer",
 											"bearer": {
-												"token": "{{approverBearerToken}}"
+												"token": "{{secondApproverBearerToken}}"
 											}
 										},
 										"method": "GET",
