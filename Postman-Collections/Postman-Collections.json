@@ -49600,6 +49600,33 @@
 											"item": [
 												{
 													"name": "Anp Procurement Features Bids Create Bid Expression Endpoint",
+													"event": [
+														{
+															"listen": "test",
+															"script": {
+																"id": "6f9152be-ce3e-4929-a6a1-95d4703b0950",
+																"exec": [
+																	"//pm.collectionVariables.set(\"tenderAccessId\", pm.response.json().data.tenderAccessId);\r",
+																	"\r",
+																	"pm.test(\"Status code is 200\", function () {\r",
+																	"    pm.response.to.have.status(200);\r",
+																	"});\r",
+																	"\r",
+																	"var responseJSON = pm.response.json(); \r",
+																	"\r",
+																	"pm.test(\"Verify that Request for to view tender is Approved successfully\", function () {\r",
+																	"\r",
+																	"    // pm.expect(responseJSON.isSuccess).to.be.a(\"boolean\");\r",
+																	"    // pm.expect(responseJSON.data.id).to.be.a(\"string\").and.not.empty;\r",
+																	"    pm.expect(responseJSON.data[0]).to.be.an(\"object\").and.not.empty;\r",
+																	"\r",
+																	"});"
+																],
+																"type": "text/javascript",
+																"packages": {}
+															}
+														}
+													],
 													"id": "d82690a2-28ee-4576-8aad-305753edc778",
 													"protocolProfileBehavior": {
 														"disableBodyPruning": true
@@ -49620,7 +49647,7 @@
 														],
 														"body": {
 															"mode": "raw",
-															"raw": "{\n  \"createdDate\": \"<dateTime>\",\n  \"serviceInformationId\": \"<string>\",\n  \"address\": \"<string>\",\n  \"longitude\": \"<double>\",\n  \"latitude\": \"<double>\",\n  \"state\": \"<string>\",\n  \"location\": \"<string>\",\n  \"estimatedCost\": \"<number>\",\n  \"estimatedStartDate\": \"<dateTime>\",\n  \"estimatedEndDate\": \"<dateTime>\",\n  \"purpose\": \"<string>\",\n  \"declaration\": \"<boolean>\",\n  \"companyId\": \"<string>\"\n}",
+															"raw": "{\n  \"createdDate\": \"2025-01-28\",\n  \"serviceInformationId\": \"{{serviceInformationId}}\",\n  \"address\": \"Lagos\",\n  \"longitude\": \"{{$randomLongitude}}\",\n  \"latitude\": \"{{$randomLatitude}}\",\n  \"state\": \"Lagos\",\n  \"location\": \"Lagos\",\n  \"estimatedCost\": \"55000\",\n  \"estimatedStartDate\": \"2025-02-05\",\n  \"estimatedEndDate\": \"2025-02-10\",\n  \"purpose\": \"<string>\",\n  \"declaration\": true,\n  \"companyId\": \"{{supplierId}}\"\n}",
 															"options": {
 																"raw": {
 																	"headerFamily": "json",
