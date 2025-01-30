@@ -49935,6 +49935,33 @@
 											"item": [
 												{
 													"name": "Anp Procurement Features Bids Get A Bid Expression Endpoint",
+													"event": [
+														{
+															"listen": "test",
+															"script": {
+																"id": "02c18d7a-f82c-4177-85b8-286a30b1ef6b",
+																"exec": [
+																	"//pm.collectionVariables.set(\"serviceInformationId\", pm.response.json().data.id);\r",
+																	"\r",
+																	"pm.test(\"Status code is 200\", function () {\r",
+																	"    pm.response.to.have.status(200);\r",
+																	"});\r",
+																	"\r",
+																	"var responseJSON = pm.response.json(); \r",
+																	"\r",
+																	"pm.test(\"Verify that a bid is returned successfully\", function () {\r",
+																	"\r",
+																	"     pm.expect(responseJSON.isSuccess).to.be.a(\"boolean\");\r",
+																	"    // pm.expect(responseJSON.data.id).to.be.a(\"string\").and.not.empty;\r",
+																	"    pm.expect(responseJSON.data).to.be.an(\"object\").and.not.empty;\r",
+																	"\r",
+																	"});"
+																],
+																"type": "text/javascript",
+																"packages": {}
+															}
+														}
+													],
 													"id": "aeb9be90-1075-4f65-b7e4-689b60170911",
 													"protocolProfileBehavior": {
 														"disableBodyPruning": true
@@ -49949,7 +49976,7 @@
 														"method": "GET",
 														"header": [],
 														"url": {
-															"raw": "{{baseUrl}}/api/procurement/bids/expression?tenderBidId=<string>",
+															"raw": "{{baseUrl}}/api/procurement/bids/expression?tenderBidId=43682d24-74e0-46d8-1245-08dd4145509b",
 															"host": [
 																"{{baseUrl}}"
 															],
@@ -49962,7 +49989,7 @@
 															"query": [
 																{
 																	"key": "tenderBidId",
-																	"value": "<string>",
+																	"value": "43682d24-74e0-46d8-1245-08dd4145509b",
 																	"description": "(Required) "
 																}
 															]
