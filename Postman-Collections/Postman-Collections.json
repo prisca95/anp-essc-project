@@ -52160,13 +52160,13 @@
 												"auth": {
 													"type": "bearer",
 													"bearer": {
-														"token": "{{bearerToken}}"
+														"token": "{{approverBearerToken}}"
 													}
 												},
 												"method": "GET",
 												"header": [],
 												"url": {
-													"raw": "{{baseUrl}}/api/procurement/bids/applicants?serviceInformationId=<string>&pageNumber=<integer>&pageSize=<integer>",
+													"raw": "{{baseUrl}}/api/procurement/bids/applicants?serviceInformationId={{serviceInformationId}}&pageNumber=1&pageSize=10",
 													"host": [
 														"{{baseUrl}}"
 													],
@@ -52179,17 +52179,17 @@
 													"query": [
 														{
 															"key": "serviceInformationId",
-															"value": "<string>",
+															"value": "{{serviceInformationId}}",
 															"description": "(Required) "
 														},
 														{
 															"key": "pageNumber",
-															"value": "<integer>",
+															"value": "1",
 															"description": "(Required) "
 														},
 														{
 															"key": "pageSize",
-															"value": "<integer>",
+															"value": "10",
 															"description": "(Required) "
 														}
 													]
@@ -52584,7 +52584,7 @@
 												"method": "GET",
 												"header": [],
 												"url": {
-													"raw": "{{baseUrl}}/api/procurement/bids/detail?tenderBidId=<string>",
+													"raw": "{{baseUrl}}/api/procurement/bids/detail?tenderBidId={{tenderBidId}}",
 													"host": [
 														"{{baseUrl}}"
 													],
@@ -52597,7 +52597,7 @@
 													"query": [
 														{
 															"key": "tenderBidId",
-															"value": "<string>",
+															"value": "{{tenderBidId}}",
 															"description": "(Required) "
 														}
 													]
