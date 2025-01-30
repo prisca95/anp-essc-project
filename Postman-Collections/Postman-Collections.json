@@ -36032,7 +36032,7 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "{{baseUrl}}/api/goods/list?sortOrder=0&productType=0&pageNumber=1&pageSize=10",
+											"raw": "{{baseUrl}}/api/goods/list?sortOrder=0&productType=0&pageNumber=1&pageSize=10&loc",
 											"host": [
 												"{{baseUrl}}"
 											],
@@ -36093,7 +36093,8 @@
 												},
 												{
 													"key": "country",
-													"value": "New York",
+													"value": "San Francisco",
+													"description": "Not working",
 													"disabled": true
 												},
 												{
@@ -36111,6 +36112,11 @@
 													"key": "pageSize",
 													"value": "10",
 													"description": "(Required) "
+												},
+												{
+													"key": "loc",
+													"value": null,
+													"type": "text"
 												}
 											]
 										}
@@ -55072,7 +55078,7 @@
 											"formdata": [
 												{
 													"key": "entityId",
-													"value": "a151f408-ee5c-4142-a909-08dd3b014fd2",
+													"value": "{{productId}}",
 													"type": "text",
 													"description": "productId"
 												},
