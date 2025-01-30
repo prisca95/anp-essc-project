@@ -54002,6 +54002,190 @@
 													"body": ""
 												}
 											]
+										},
+										{
+											"name": "No Auth - Get A Contact",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"id": "a16be97e-38a2-46cc-bf6d-ccf9e76f577e",
+														"exec": [
+															"pm.test(\"Status code is 401\", function () {\r",
+															"    pm.response.to.have.status(401);\r",
+															"});\r",
+															"\r",
+															"pm.test(\"Status code name has 'Unauthorized'\", function () {\r",
+															"    pm.response.to.have.status(\"Unauthorized\");\r",
+															"});"
+														],
+														"type": "text/javascript",
+														"packages": {}
+													}
+												}
+											],
+											"id": "ac918cdf-1e09-4104-8ed8-779a31365aef",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"auth": {
+													"type": "noauth"
+												},
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/operator/contact?contactId=<string>",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"operator",
+														"contact"
+													],
+													"query": [
+														{
+															"key": "contactId",
+															"value": "<string>",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"response": [
+												{
+													"id": "c08a2491-2a74-429d-976d-b5c1367393d0",
+													"name": "Success",
+													"originalRequest": {
+														"method": "GET",
+														"header": [
+															{
+																"key": "Accept",
+																"value": "application/json"
+															},
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/operator/contact?contactId=<string>",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"operator",
+																"contact"
+															],
+															"query": [
+																{
+																	"description": "(Required) ",
+																	"key": "contactId",
+																	"value": "<string>"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"responseTime": null,
+													"body": "{\n  \"isSuccess\": \"<boolean>\",\n  \"data\": {\n    \"contactId\": \"<string>\",\n    \"firstName\": \"<string>\",\n    \"middleName\": \"<string>\",\n    \"lastName\": \"<string>\",\n    \"designation\": \"<string>\",\n    \"nationality\": \"<string>\",\n    \"phoneNumber\": \"<string>\",\n    \"organizationId\": \"<string>\"\n  },\n  \"errorMessage\": \"<string>\"\n}"
+												},
+												{
+													"id": "e5910ef6-70ee-4981-984e-d0b7e72b386e",
+													"name": "Unauthorized",
+													"originalRequest": {
+														"method": "GET",
+														"header": [
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/operator/contact?contactId=<string>",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"operator",
+																"contact"
+															],
+															"query": [
+																{
+																	"description": "(Required) ",
+																	"key": "contactId",
+																	"value": "<string>"
+																}
+															]
+														}
+													},
+													"status": "Unauthorized",
+													"code": 401,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												},
+												{
+													"id": "624fdf6c-228e-4921-88a4-bfd4209006e7",
+													"name": "Forbidden",
+													"originalRequest": {
+														"method": "GET",
+														"header": [
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/operator/contact?contactId=<string>",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"operator",
+																"contact"
+															],
+															"query": [
+																{
+																	"description": "(Required) ",
+																	"key": "contactId",
+																	"value": "<string>"
+																}
+															]
+														}
+													},
+													"status": "Forbidden",
+													"code": 403,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												}
+											]
 										}
 									],
 									"id": "357faa4f-b42c-48a3-9662-07dc23aa4d12"
@@ -54132,6 +54316,178 @@
 										},
 										{
 											"id": "c2998d01-3d93-4812-bf9a-ddc8c35e4718",
+											"name": "Forbidden",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"description": "Added as a part of security scheme: bearer",
+														"key": "Authorization",
+														"value": "Bearer <token>"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"operatorId\": \"<string>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl}}/api/operator/createuser"
+											},
+											"status": "Forbidden",
+											"code": 403,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"responseTime": null,
+											"body": ""
+										}
+									]
+								},
+								{
+									"name": "No Auth - Create Operator User",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "78a217fe-86df-430f-ac92-008cb8950d6a",
+												"exec": [
+													"pm.test(\"Status code is 401\", function () {\r",
+													"    pm.response.to.have.status(401);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Status code name has 'Unauthorized'\", function () {\r",
+													"    pm.response.to.have.status(\"Unauthorized\");\r",
+													"});"
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
+									"id": "10375f26-46ac-4378-b5a4-b6d3a3259a25",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"auth": {
+											"type": "noauth"
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"operatorId\": \"<string>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{baseUrl}}/api/operator/createuser"
+									},
+									"response": [
+										{
+											"id": "5da4f50f-270e-4e60-8c76-410a825dd17a",
+											"name": "Success",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													},
+													{
+														"description": "Added as a part of security scheme: bearer",
+														"key": "Authorization",
+														"value": "Bearer <token>"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"operatorId\": \"<string>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl}}/api/operator/createuser"
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"responseTime": null,
+											"body": "{\n  \"isSuccess\": \"<boolean>\",\n  \"data\": {\n    \"message\": \"<string>\"\n  },\n  \"errorMessage\": \"<string>\"\n}"
+										},
+										{
+											"id": "487d4e48-84d1-40f8-bb0c-46536bec227a",
+											"name": "Unauthorized",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"description": "Added as a part of security scheme: bearer",
+														"key": "Authorization",
+														"value": "Bearer <token>"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"operatorId\": \"<string>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl}}/api/operator/createuser"
+											},
+											"status": "Unauthorized",
+											"code": 401,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"responseTime": null,
+											"body": ""
+										},
+										{
+											"id": "b97b274b-0069-434b-8635-34c200dfe0f8",
 											"name": "Forbidden",
 											"originalRequest": {
 												"method": "POST",
@@ -54337,6 +54693,185 @@
 											"body": ""
 										}
 									]
+								},
+								{
+									"name": "No Auth - Delete Operator",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "de7db8e9-1c78-4fae-9b85-fcbbfa7d86e1",
+												"exec": [
+													"pm.test(\"Status code is 401\", function () {\r",
+													"    pm.response.to.have.status(401);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Status code name has 'Unauthorized'\", function () {\r",
+													"    pm.response.to.have.status(\"Unauthorized\");\r",
+													"});"
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
+									"id": "4287ce98-3508-4007-a848-e742317218df",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"auth": {
+											"type": "noauth"
+										},
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/operator/:operatorId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"operator",
+												":operatorId"
+											],
+											"variable": [
+												{
+													"key": "operatorId",
+													"value": "<string>",
+													"description": "(Required) "
+												}
+											]
+										},
+										"description": "Delete and IOC Operator"
+									},
+									"response": [
+										{
+											"id": "d6412e0c-c78a-471e-8987-2a959d29e02d",
+											"name": "Success",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													},
+													{
+														"description": "Added as a part of security scheme: bearer",
+														"key": "Authorization",
+														"value": "Bearer <token>"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/operator/:operatorId",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"operator",
+														":operatorId"
+													],
+													"variable": [
+														{
+															"key": "operatorId"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"responseTime": null,
+											"body": "{\n  \"isSuccess\": \"<boolean>\",\n  \"data\": {\n    \"message\": \"<string>\"\n  },\n  \"errorMessage\": \"<string>\"\n}"
+										},
+										{
+											"id": "075b141c-e5ce-4a71-81f8-3991bf71c7cd",
+											"name": "Unauthorized",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [
+													{
+														"description": "Added as a part of security scheme: bearer",
+														"key": "Authorization",
+														"value": "Bearer <token>"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/operator/:operatorId",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"operator",
+														":operatorId"
+													],
+													"variable": [
+														{
+															"key": "operatorId"
+														}
+													]
+												}
+											},
+											"status": "Unauthorized",
+											"code": 401,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"responseTime": null,
+											"body": ""
+										},
+										{
+											"id": "877525d6-db77-47fa-9d21-502cdc2c1f0f",
+											"name": "Forbidden",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [
+													{
+														"description": "Added as a part of security scheme: bearer",
+														"key": "Authorization",
+														"value": "Bearer <token>"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/operator/:operatorId",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"operator",
+														":operatorId"
+													],
+													"variable": [
+														{
+															"key": "operatorId"
+														}
+													]
+												}
+											},
+											"status": "Forbidden",
+											"code": 403,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"responseTime": null,
+											"body": ""
+										}
+									]
 								}
 							],
 							"id": "2a661644-a5c6-4277-991a-0bfa738ecdb6"
@@ -54465,6 +55000,163 @@
 										},
 										{
 											"id": "a10c8f03-0798-43fb-849a-16d153a51325",
+											"name": "Forbidden",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"description": "Added as a part of security scheme: bearer",
+														"key": "Authorization",
+														"value": "Bearer <token>"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"organizationId\": \"<string>\",\n  \"organizationName\": \"<string>\",\n  \"dateOfEstablishment\": \"<dateTime>\",\n  \"businessType\": \"<string>\",\n  \"country\": \"<string>\",\n  \"regNumber\": \"<string>\",\n  \"addressLine1\": \"<string>\",\n  \"addressLine2\": \"<string>\",\n  \"region\": \"<string>\",\n  \"city\": \"<string>\",\n  \"town\": \"<string>\",\n  \"phoneNumber\": \"<string>\",\n  \"website\": \"<string>\",\n  \"email\": \"<string>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl}}/api/operator/edit"
+											},
+											"status": "Forbidden",
+											"code": 403,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"responseTime": null,
+											"body": ""
+										}
+									]
+								},
+								{
+									"name": "Update an IOC Operator Copy",
+									"id": "5eba09b3-2380-4e3b-bb27-1cf0a71140bc",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": {
+												"token": "{{bearerToken}}"
+											}
+										},
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"organizationId\": \"<string>\",\n  \"organizationName\": \"<string>\",\n  \"dateOfEstablishment\": \"<dateTime>\",\n  \"businessType\": \"<string>\",\n  \"country\": \"<string>\",\n  \"regNumber\": \"<string>\",\n  \"addressLine1\": \"<string>\",\n  \"addressLine2\": \"<string>\",\n  \"region\": \"<string>\",\n  \"city\": \"<string>\",\n  \"town\": \"<string>\",\n  \"phoneNumber\": \"<string>\",\n  \"website\": \"<string>\",\n  \"email\": \"<string>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{baseUrl}}/api/operator/edit",
+										"description": "Update an IOC Operator"
+									},
+									"response": [
+										{
+											"id": "47f9c8b7-5103-4c54-a7f6-0274ec45f9dd",
+											"name": "Success",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													},
+													{
+														"description": "Added as a part of security scheme: bearer",
+														"key": "Authorization",
+														"value": "Bearer <token>"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"organizationId\": \"<string>\",\n  \"organizationName\": \"<string>\",\n  \"dateOfEstablishment\": \"<dateTime>\",\n  \"businessType\": \"<string>\",\n  \"country\": \"<string>\",\n  \"regNumber\": \"<string>\",\n  \"addressLine1\": \"<string>\",\n  \"addressLine2\": \"<string>\",\n  \"region\": \"<string>\",\n  \"city\": \"<string>\",\n  \"town\": \"<string>\",\n  \"phoneNumber\": \"<string>\",\n  \"website\": \"<string>\",\n  \"email\": \"<string>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl}}/api/operator/edit"
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"responseTime": null,
+											"body": "{\n  \"isSuccess\": \"<boolean>\",\n  \"data\": {\n    \"message\": \"<string>\"\n  },\n  \"errorMessage\": \"<string>\"\n}"
+										},
+										{
+											"id": "4918293d-1b85-45b4-b625-dac2737c0662",
+											"name": "Unauthorized",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"description": "Added as a part of security scheme: bearer",
+														"key": "Authorization",
+														"value": "Bearer <token>"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"organizationId\": \"<string>\",\n  \"organizationName\": \"<string>\",\n  \"dateOfEstablishment\": \"<dateTime>\",\n  \"businessType\": \"<string>\",\n  \"country\": \"<string>\",\n  \"regNumber\": \"<string>\",\n  \"addressLine1\": \"<string>\",\n  \"addressLine2\": \"<string>\",\n  \"region\": \"<string>\",\n  \"city\": \"<string>\",\n  \"town\": \"<string>\",\n  \"phoneNumber\": \"<string>\",\n  \"website\": \"<string>\",\n  \"email\": \"<string>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl}}/api/operator/edit"
+											},
+											"status": "Unauthorized",
+											"code": 401,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"responseTime": null,
+											"body": ""
+										},
+										{
+											"id": "a38219e3-4afe-4998-bc0c-326ef22840a2",
 											"name": "Forbidden",
 											"originalRequest": {
 												"method": "PUT",
