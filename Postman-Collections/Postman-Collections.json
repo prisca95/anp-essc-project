@@ -89,7 +89,7 @@
 										],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n  \"userName\":\"suru@yopmail.com\", //\"{{signedUpEmail}}\",\n  \"password\": \"Password12@@\",\n  \"confirmPassword\": \"Password12@@\",\n  \"email\": \"suru@yopmail.com\",//\"{{signedUpEmail}}\",\n  \"phoneNumber\": \"+234{{phonenumber}}\",\n  \"firstName\": \"{{$randomFirstName}}\",\n  \"lastName\":  \"{{$randomLastName}}\"\n}",
+											"raw": "{\n  \"userName\":\"ojo@yopmail.com\", //\"{{signedUpEmail}}\",\n  \"password\": \"Password12@@\",\n  \"confirmPassword\": \"Password12@@\",\n  \"email\": \"ojo@yopmail.com\",//\"{{signedUpEmail}}\",\n  \"phoneNumber\": \"+234{{phonenumber}}\",\n  \"firstName\": \"{{$randomFirstName}}\",\n  \"lastName\":  \"{{$randomLastName}}\"\n}",
 											"options": {
 												"raw": {
 													"headerFamily": "json",
@@ -1174,7 +1174,7 @@
 										],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n    //\"email\": \"{{email}}\",\n  \"userName\":  \"varun@yopmail.com\",//\"milo@yopmail.com\",//\"yinka@yopmail.com\",\n  // \"userName\":\"cesaltino.babo@anp.tl\", //initiator\n //  \"userName\": \"abel.saldanha@anp.tl\", //1st approver\n  // \"userName\": \"jaime.ximenes@anp.tl\", //2nd approver\n  \"password\": \"Password12@@\"\n}",
+											"raw": "{\n    //\"email\": \"{{email}}\",\n  \"userName\":  \"ojo@yopmail.com\",//\"milo@yopmail.com\",//\"yinka@yopmail.com\",\n  // \"userName\":\"cesaltino.babo@anp.tl\", //initiator\n //  \"userName\": \"abel.saldanha@anp.tl\", //1st approver\n  // \"userName\": \"jaime.ximenes@anp.tl\", //2nd approver\n  \"password\": \"Password12@@\"\n}",
 											"options": {
 												"raw": {
 													"headerFamily": "json",
@@ -11065,7 +11065,7 @@
 										],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n    \"email\": \"suru@yopmail.com\",//\"{{email}}\",\n  \"userName\": \"suru@yopmail.com\",\n  // \"userName\":\"cesaltino.babo@anp.tl\", //initiator\n  // \"userName\": \"abel.saldanha@anp.tl\", //1st approver\n   //\"userName\": \"jaime.ximenes@anp.tl\", //2nd approver\n  \"password\": \"Password12@@\"\n}",
+											"raw": "{\n    \"email\": \"ojo@yopmail.com\",//\"{{email}}\",\n  \"userName\": \"ojo@yopmail.com\",\n  // \"userName\":\"cesaltino.babo@anp.tl\", //initiator\n  // \"userName\": \"abel.saldanha@anp.tl\", //1st approver\n   //\"userName\": \"jaime.ximenes@anp.tl\", //2nd approver\n  \"password\": \"Password12@@\"\n}",
 											"options": {
 												"raw": {
 													"headerFamily": "json",
@@ -48097,6 +48097,33 @@
 							"item": [
 								{
 									"name": "Anp Procurement Features Bids Apply For Rfp Endpoint",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "b63f4aed-efa0-4686-99d5-ab3c7b8067e9",
+												"exec": [
+													"//pm.collectionVariables.set(\"tenderAccessId\", pm.response.json().data.tenderAccessId);\r",
+													"\r",
+													"pm.test(\"Status code is 200\", function () {\r",
+													"    pm.response.to.have.status(200);\r",
+													"});\r",
+													"\r",
+													"var responseJSON = pm.response.json(); \r",
+													"\r",
+													"pm.test(\"Verify that Service Information is returned successfully\", function () {\r",
+													"\r",
+													"    // pm.expect(responseJSON.isSuccess).to.be.a(\"boolean\");\r",
+													"    // pm.expect(responseJSON.data.id).to.be.a(\"string\").and.not.empty;\r",
+													"    pm.expect(responseJSON.data[0]).to.be.an(\"object\").and.not.empty;\r",
+													"\r",
+													"});"
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
 									"id": "6b5d792c-423a-4cc1-b7e4-41dedfd659ed",
 									"protocolProfileBehavior": {
 										"disableBodyPruning": true
@@ -48117,7 +48144,7 @@
 										],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n  \"tenderAccessId\": \"<string>\"\n}",
+											"raw": "{\n  \"tenderAccessId\": \"a1df535a-0d5d-483d-1555-08dd4016c889\"\n}",
 											"options": {
 												"raw": {
 													"headerFamily": "json",
@@ -48611,7 +48638,7 @@
 												"auth": {
 													"type": "bearer",
 													"bearer": {
-														"token": "{{bearerToken}}"
+														"token": "{{approverBearerToken}}"
 													}
 												},
 												"method": "POST",
@@ -53385,6 +53412,33 @@
 							"item": [
 								{
 									"name": "Anp Procurement Features Bids Get Tender Access Endpoint",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "c14f35de-80a3-4436-97d7-449d3865a4f1",
+												"exec": [
+													"//pm.collectionVariables.set(\"serviceInformationId\", pm.response.json().data.id);\r",
+													"\r",
+													"pm.test(\"Status code is 200\", function () {\r",
+													"    pm.response.to.have.status(200);\r",
+													"});\r",
+													"\r",
+													"var responseJSON = pm.response.json(); \r",
+													"\r",
+													"pm.test(\"Verify that tenders are returned successfully\", function () {\r",
+													"\r",
+													"    // pm.expect(responseJSON.isSuccess).to.be.a(\"boolean\");\r",
+													"    // pm.expect(responseJSON.data.id).to.be.a(\"string\").and.not.empty;\r",
+													"    pm.expect(responseJSON.data[0]).to.be.an(\"object\").and.not.empty;\r",
+													"\r",
+													"});"
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
 									"id": "963f0c69-b8c2-47ee-b86d-197d6e4d74ec",
 									"protocolProfileBehavior": {
 										"disableBodyPruning": true
@@ -53399,7 +53453,7 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "{{baseUrl}}/api/procurement/proposals?pageNumber=<integer>&pageSize=<integer>",
+											"raw": "{{baseUrl}}/api/procurement/proposals?pageNumber=1&pageSize=10",
 											"host": [
 												"{{baseUrl}}"
 											],
@@ -53411,12 +53465,12 @@
 											"query": [
 												{
 													"key": "pageNumber",
-													"value": "<integer>",
+													"value": "1",
 													"description": "(Required) "
 												},
 												{
 													"key": "pageSize",
-													"value": "<integer>",
+													"value": "10",
 													"description": "(Required) "
 												}
 											]
