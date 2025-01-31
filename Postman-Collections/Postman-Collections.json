@@ -16746,7 +16746,7 @@
 												],
 												"body": {
 													"mode": "raw",
-													"raw": "{\n // \"personalId\": \"<string>\",\n  \"fullName\": \"{{$randomFullName}}\",\n  \"country\": \"Nigeria\",\n  \"address\": \"1 jojo lane\",\n  \"stateOfOrigin\": \"Ondo\",\n  \"maritalStatus\": \"married\",\n  \"companyId\": \"{{supplierId}}\",\n  \"phoneNumber\": \"<string>\",\n  \"email\": \"malvika@yopmail.com\",\n  \"designation\": \"PA\",\n  \"educationInformations\": [\n    {\n     // \"educationInformationId\": \"<string>\",\n      \"schoolName\": \"Oklahoma\",\n      \"startYear\": \"1998-09-08\",\n      \"endYear\": \"2002-09-08\",\n      \"certificateAwarded\": \"Bsc\",\n     // \"personalId\": \"<string>\",\n      \"educationLevel\": \"bachelors\",\n      \"major\": \"Science\"\n    }\n    // {\n    //  // \"educationInformationId\": \"<string>\",\n    //   \"schoolName\": \"<string>\",\n    //   \"startYear\": \"<dateTime>\",\n    //   \"endYear\": \"<dateTime>\",\n    //   \"certificateAwarded\": \"<string>\",\n    //   \"personalId\": \"<string>\",\n    //   \"educationLevel\": \"<string>\",\n    //   \"major\": \"<string>\"\n    // }\n  ],\n  \"workExperiences\": [\n    {\n    //  \"workExperienceId\": \"<string>\",\n      \"companyName\": \"OJ refinery\",\n      \"appointmentDate\": \"2004-09-08\",\n      \"disengagementDate\": \"2007-09-08\",\n      \"jobTitle\": \"Engineer\",\n     // \"personalId\": \"<string>\",\n      \"country\": \"Nigeria\",\n      \"descriptions\": \"<string>\",\n      \"isCurrentJob\": false\n    },\n    {\n     // \"workExperienceId\": \"<string>\",\n      \"companyName\": \"AP\",\n      \"appointmentDate\": \"2008-09-08\",\n      \"disengagementDate\": \"2025-09-08\",\n      \"jobTitle\": \"Engineer\",\n    //  \"personalId\": \"<string>\",\n      \"country\": \"Nigeria\",\n      \"descriptions\": \"<string>\",\n      \"isCurrentJob\": true\n    }\n  ]\n}",
+													"raw": "{\n // \"personalId\": \"<string>\",\n  \"fullName\": \"{{$randomFullName}}\",\n  \"country\": \"Nigeria\",\n  \"address\": \"{{$randomStreetAddress}}\",\n  \"stateOfOrigin\": \"Ondo\",\n  \"maritalStatus\": \"married\",\n  \"companyId\": \"{{supplierId}}\",\n  \"phoneNumber\": \"<string>\",\n  \"email\": \"{{$randomEmail}}\",\n  \"designation\": \"PA\",\n  \"educationInformations\": [\n    {\n     // \"educationInformationId\": \"<string>\",\n      \"schoolName\": \"Jason International\",\n      \"startYear\": \"1998-09-08\",\n      \"endYear\": \"2002-09-08\",\n      \"certificateAwarded\": \"Bsc\",\n     // \"personalId\": \"<string>\",\n      \"educationLevel\": \"bachelors\",\n      \"major\": \"Science\"\n    }\n    // {\n    //  // \"educationInformationId\": \"<string>\",\n    //   \"schoolName\": \"<string>\",\n    //   \"startYear\": \"<dateTime>\",\n    //   \"endYear\": \"<dateTime>\",\n    //   \"certificateAwarded\": \"<string>\",\n    //   \"personalId\": \"<string>\",\n    //   \"educationLevel\": \"<string>\",\n    //   \"major\": \"<string>\"\n    // }\n  ],\n  \"workExperiences\": [\n    {\n    //  \"workExperienceId\": \"<string>\",\n      \"companyName\": \"OJ refinery\",\n      \"appointmentDate\": \"2004-09-08\",\n      \"disengagementDate\": \"2007-09-08\",\n      \"jobTitle\": \"Engineer\",\n     // \"personalId\": \"<string>\",\n      \"country\": \"Nigeria\",\n      \"descriptions\": \"<string>\",\n      \"isCurrentJob\": false\n    },\n    {\n     // \"workExperienceId\": \"<string>\",\n      \"companyName\": \"AP\",\n      \"appointmentDate\": \"2008-09-08\",\n      \"disengagementDate\": \"2025-09-08\",\n      \"jobTitle\": \"Engineer\",\n    //  \"personalId\": \"<string>\",\n      \"country\": \"Nigeria\",\n      \"descriptions\": \"<string>\",\n      \"isCurrentJob\": true\n    }\n  ]\n}",
 													"options": {
 														"raw": {
 															"headerFamily": "json",
@@ -19296,2175 +19296,6 @@
 								}
 							],
 							"id": "9f0ebdd8-45e7-42a8-9a25-26d9a7163fe0"
-						},
-						{
-							"name": "checkSetup",
-							"item": [
-								{
-									"name": "Anp Supplier Api Features Onboarding Check Supplier Setup Endpoint",
-									"event": [
-										{
-											"listen": "test",
-											"script": {
-												"id": "91bfe0e0-33a1-4308-a553-160fba6270ee",
-												"exec": [
-													"pm.collectionVariables.set(\"roleId\", pm.response.json().data.roleId);\r",
-													"\r",
-													"\r",
-													"pm.test(\"Status code is 200\", function () {\r",
-													"    pm.response.to.have.status(200);\r",
-													"});\r",
-													"\r",
-													"var responseJSON = pm.response.json();\r",
-													"var data = responseJSON.data;\r",
-													"\r",
-													"pm.test(\"Verify that project is returned successfully\", function () {\r",
-													"    pm.expect(responseJSON.isSuccess).to.be.a(\"boolean\");\r",
-													"    pm.expect(data.message).to.be.a(\"string\").and.not.empty;\r",
-													"    pm.expect(data.roleId).to.be.a(\"string\").and.not.empty;\r",
-													"       });\r",
-													""
-												],
-												"type": "text/javascript",
-												"packages": {}
-											}
-										}
-									],
-									"id": "e7ecab8e-f51e-4ee7-81e6-21f86e426b6b",
-									"protocolProfileBehavior": {
-										"disableBodyPruning": true
-									},
-									"request": {
-										"auth": {
-											"type": "bearer",
-											"bearer": {
-												"token": "{{bearerToken}}"
-											}
-										},
-										"method": "GET",
-										"header": [],
-										"url": "{{baseUrl}}/api/supplier/checkSetup"
-									},
-									"response": [
-										{
-											"id": "9cf255bf-d28e-49c3-a687-39ea49d037e6",
-											"name": "Success",
-											"originalRequest": {
-												"method": "GET",
-												"header": [
-													{
-														"description": "Added as a part of security scheme: bearer",
-														"key": "Authorization",
-														"value": "Bearer <token>"
-													}
-												],
-												"url": "{{baseUrl}}/api/supplier/checkSetup"
-											},
-											"status": "OK",
-											"code": 200,
-											"_postman_previewlanguage": "text",
-											"header": [],
-											"cookie": [],
-											"responseTime": null,
-											"body": ""
-										},
-										{
-											"id": "25022c81-6fc0-4d21-a95e-0d8bb74f8402",
-											"name": "Unauthorized",
-											"originalRequest": {
-												"method": "GET",
-												"header": [
-													{
-														"description": "Added as a part of security scheme: bearer",
-														"key": "Authorization",
-														"value": "Bearer <token>"
-													}
-												],
-												"url": "{{baseUrl}}/api/supplier/checkSetup"
-											},
-											"status": "Unauthorized",
-											"code": 401,
-											"_postman_previewlanguage": "text",
-											"header": [],
-											"cookie": [],
-											"responseTime": null,
-											"body": ""
-										}
-									]
-								}
-							],
-							"id": "6e49c7bf-e500-4e69-ac54-9fffd082cb05"
-						},
-						{
-							"name": "tags",
-							"item": [
-								{
-									"name": "Success - Get Supplier Tags",
-									"event": [
-										{
-											"listen": "test",
-											"script": {
-												"id": "49dabeaa-23e2-42c4-b5a3-1b1e7cc5f573",
-												"exec": [
-													"pm.test(\"Status code is 200\", function () {\r",
-													"    pm.response.to.have.status(200);\r",
-													"});\r",
-													"\r",
-													"var responseJSON = pm.response.json();\r",
-													"var data = responseJSON.data;\r",
-													"\r",
-													"pm.test(\"Verify that tags are returned\", function () {\r",
-													"    pm.expect(responseJSON.isSuccess).to.be.a(\"boolean\");\r",
-													"    pm.expect(data[0].tagName).to.be.a(\"string\").and.not.empty;\r",
-													"});\r",
-													""
-												],
-												"type": "text/javascript",
-												"packages": {}
-											}
-										}
-									],
-									"id": "3224a5f8-55b0-4cdf-936e-1aa8814c243b",
-									"protocolProfileBehavior": {
-										"disableBodyPruning": true
-									},
-									"request": {
-										"auth": {
-											"type": "bearer",
-											"bearer": {
-												"token": "{{bearerToken}}"
-											}
-										},
-										"method": "GET",
-										"header": [],
-										"url": "{{baseUrl}}/api/supplier/tags"
-									},
-									"response": [
-										{
-											"id": "c3229b56-2cd7-4b10-a01f-6fefe519abf0",
-											"name": "Success",
-											"originalRequest": {
-												"method": "GET",
-												"header": [
-													{
-														"description": "Added as a part of security scheme: bearer",
-														"key": "Authorization",
-														"value": "Bearer <token>"
-													}
-												],
-												"url": "{{baseUrl}}/api/supplier/tags"
-											},
-											"status": "OK",
-											"code": 200,
-											"_postman_previewlanguage": "text",
-											"header": [],
-											"cookie": [],
-											"responseTime": null,
-											"body": ""
-										},
-										{
-											"id": "e05e0855-5218-47f6-b135-60a29f1b75de",
-											"name": "Unauthorized",
-											"originalRequest": {
-												"method": "GET",
-												"header": [
-													{
-														"description": "Added as a part of security scheme: bearer",
-														"key": "Authorization",
-														"value": "Bearer <token>"
-													}
-												],
-												"url": "{{baseUrl}}/api/supplier/tags"
-											},
-											"status": "Unauthorized",
-											"code": 401,
-											"_postman_previewlanguage": "text",
-											"header": [],
-											"cookie": [],
-											"responseTime": null,
-											"body": ""
-										}
-									]
-								},
-								{
-									"name": "No auth - Get Supplier Tags",
-									"event": [
-										{
-											"listen": "test",
-											"script": {
-												"id": "979c6e65-c3dc-4dd7-a381-c2c8257f516a",
-												"exec": [
-													"pm.test(\"Status code is 401\", function () {\r",
-													"    pm.response.to.have.status(401);\r",
-													"});\r",
-													"\r",
-													"pm.test(\"Status code name has 'Unauthorized'\", function () {\r",
-													"    pm.response.to.have.status(\"Unauthorized\");\r",
-													"});"
-												],
-												"type": "text/javascript",
-												"packages": {}
-											}
-										}
-									],
-									"id": "c67f7637-c08e-4bae-b945-8fade53d86d6",
-									"protocolProfileBehavior": {
-										"disableBodyPruning": true
-									},
-									"request": {
-										"auth": {
-											"type": "noauth"
-										},
-										"method": "GET",
-										"header": [],
-										"url": "{{baseUrl}}/api/supplier/tags"
-									},
-									"response": [
-										{
-											"id": "d385f7b1-3945-44a3-8656-225f0cc634b1",
-											"name": "Success",
-											"originalRequest": {
-												"method": "GET",
-												"header": [
-													{
-														"description": "Added as a part of security scheme: bearer",
-														"key": "Authorization",
-														"value": "Bearer <token>"
-													}
-												],
-												"url": "{{baseUrl}}/api/supplier/tags"
-											},
-											"status": "OK",
-											"code": 200,
-											"_postman_previewlanguage": "text",
-											"header": [],
-											"cookie": [],
-											"responseTime": null,
-											"body": ""
-										},
-										{
-											"id": "f49c39ca-4f32-4e79-94f9-1abc238bdc43",
-											"name": "Unauthorized",
-											"originalRequest": {
-												"method": "GET",
-												"header": [
-													{
-														"description": "Added as a part of security scheme: bearer",
-														"key": "Authorization",
-														"value": "Bearer <token>"
-													}
-												],
-												"url": "{{baseUrl}}/api/supplier/tags"
-											},
-											"status": "Unauthorized",
-											"code": 401,
-											"_postman_previewlanguage": "text",
-											"header": [],
-											"cookie": [],
-											"responseTime": null,
-											"body": ""
-										}
-									]
-								}
-							],
-							"id": "12fcae61-de4a-4f0f-a511-6ab069f4cdd5"
-						},
-						{
-							"name": "setstatus",
-							"item": [
-								{
-									"name": "Anp Supplier Api Features Onboarding Set Status Endpoint",
-									"event": [
-										{
-											"listen": "test",
-											"script": {
-												"id": "ce9bd093-b1b5-41a1-ba45-b93606952134",
-												"exec": [
-													"pm.test(\"Status code is 200\", function () {\r",
-													"    pm.response.to.have.status(200);\r",
-													"});\r",
-													"\r",
-													"var responseJSON = pm.response.json();\r",
-													"\r",
-													"pm.test(\"Verify that setstatus is successful\", function () {\r",
-													"    pm.expect(responseJSON.isSuccess).to.be.a(\"boolean\");\r",
-													"    pm.expect(responseJSON.data.message).to.be.a(\"string\").and.not.empty;\r",
-													"});"
-												],
-												"type": "text/javascript",
-												"packages": {}
-											}
-										}
-									],
-									"id": "5cf4f402-fc91-4400-aef1-888fbdf91901",
-									"protocolProfileBehavior": {
-										"disableBodyPruning": true
-									},
-									"request": {
-										"auth": {
-											"type": "bearer",
-											"bearer": {
-												"token": "{{bearerToken}}"
-											}
-										},
-										"method": "PATCH",
-										"header": [
-											{
-												"key": "Content-Type",
-												"value": "application/json"
-											}
-										],
-										"body": {
-											"mode": "raw",
-											"raw": "{\n  \"supplierId\": \"{{supplierId}}\",\n  \"onboardingStatus\": 1\n}",
-											"options": {
-												"raw": {
-													"headerFamily": "json",
-													"language": "json"
-												}
-											}
-										},
-										"url": "{{baseUrl}}/api/supplier/setstatus"
-									},
-									"response": [
-										{
-											"id": "d76a0007-b3ce-41f7-9dc4-0ba638a214eb",
-											"name": "Success",
-											"originalRequest": {
-												"method": "PATCH",
-												"header": [
-													{
-														"key": "Content-Type",
-														"value": "application/json"
-													},
-													{
-														"description": "Added as a part of security scheme: bearer",
-														"key": "Authorization",
-														"value": "Bearer <token>"
-													}
-												],
-												"body": {
-													"mode": "raw",
-													"raw": "{\n  \"supplierId\": \"<string>\",\n  \"onboardingStatus\": 1\n}",
-													"options": {
-														"raw": {
-															"headerFamily": "json",
-															"language": "json"
-														}
-													}
-												},
-												"url": "{{baseUrl}}/api/supplier/setstatus"
-											},
-											"status": "OK",
-											"code": 200,
-											"_postman_previewlanguage": "text",
-											"header": [],
-											"cookie": [],
-											"responseTime": null,
-											"body": ""
-										},
-										{
-											"id": "9220458a-db05-48a8-9433-741562f4a1a0",
-											"name": "Unauthorized",
-											"originalRequest": {
-												"method": "PATCH",
-												"header": [
-													{
-														"key": "Content-Type",
-														"value": "application/json"
-													},
-													{
-														"description": "Added as a part of security scheme: bearer",
-														"key": "Authorization",
-														"value": "Bearer <token>"
-													}
-												],
-												"body": {
-													"mode": "raw",
-													"raw": "{\n  \"supplierId\": \"<string>\",\n  \"onboardingStatus\": 1\n}",
-													"options": {
-														"raw": {
-															"headerFamily": "json",
-															"language": "json"
-														}
-													}
-												},
-												"url": "{{baseUrl}}/api/supplier/setstatus"
-											},
-											"status": "Unauthorized",
-											"code": 401,
-											"_postman_previewlanguage": "text",
-											"header": [],
-											"cookie": [],
-											"responseTime": null,
-											"body": ""
-										}
-									]
-								}
-							],
-							"id": "7c7f9a15-88f5-4c88-8505-89145b076bbf"
-						},
-						{
-							"name": "history",
-							"item": [
-								{
-									"name": "Success - Get Onboarding History",
-									"event": [
-										{
-											"listen": "test",
-											"script": {
-												"id": "043ef0b4-e06c-4ee8-96fa-da28341111b6",
-												"exec": [
-													"pm.test(\"Status code is 200\", function () {\r",
-													"    pm.response.to.have.status(200);\r",
-													"});\r",
-													"\r",
-													"var responseJSON = pm.response.json();\r",
-													"var data = responseJSON.data;\r",
-													"\r",
-													"pm.test(\"Verify that supplier's history ia returned\", function () {\r",
-													"    pm.expect(responseJSON.isSuccess).to.be.a(\"boolean\");\r",
-													"    pm.expect(data.currentStage).to.be.a(\"number\");\r",
-													"        pm.expect(data.totalStage).to.be.a(\"number\");\r",
-													"\r",
-													"});\r",
-													""
-												],
-												"type": "text/javascript",
-												"packages": {}
-											}
-										}
-									],
-									"id": "7a6cdfb4-cace-4a3b-a03e-f1aacdd44054",
-									"protocolProfileBehavior": {
-										"disableBodyPruning": true
-									},
-									"request": {
-										"auth": {
-											"type": "bearer",
-											"bearer": {
-												"token": "{{bearerToken}}"
-											}
-										},
-										"method": "GET",
-										"header": [],
-										"url": {
-											"raw": "{{baseUrl}}/api/supplier/history?supplierId={{supplierId}}",
-											"host": [
-												"{{baseUrl}}"
-											],
-											"path": [
-												"api",
-												"supplier",
-												"history"
-											],
-											"query": [
-												{
-													"key": "supplierId",
-													"value": "{{supplierId}}",
-													"description": "(Required) "
-												}
-											]
-										}
-									},
-									"response": [
-										{
-											"id": "6775d6ac-dc54-4b48-9c1e-d32f2aa5ac56",
-											"name": "Success",
-											"originalRequest": {
-												"method": "GET",
-												"header": [
-													{
-														"description": "Added as a part of security scheme: bearer",
-														"key": "Authorization",
-														"value": "Bearer <token>"
-													}
-												],
-												"url": {
-													"raw": "{{baseUrl}}/api/supplier/history?supplierId=<string>",
-													"host": [
-														"{{baseUrl}}"
-													],
-													"path": [
-														"api",
-														"supplier",
-														"history"
-													],
-													"query": [
-														{
-															"description": "(Required) ",
-															"key": "supplierId",
-															"value": "<string>"
-														}
-													]
-												}
-											},
-											"status": "OK",
-											"code": 200,
-											"_postman_previewlanguage": "text",
-											"header": [],
-											"cookie": [],
-											"responseTime": null,
-											"body": ""
-										},
-										{
-											"id": "404f45b1-254a-49af-bab0-dad4715cee7c",
-											"name": "Unauthorized",
-											"originalRequest": {
-												"method": "GET",
-												"header": [
-													{
-														"description": "Added as a part of security scheme: bearer",
-														"key": "Authorization",
-														"value": "Bearer <token>"
-													}
-												],
-												"url": {
-													"raw": "{{baseUrl}}/api/supplier/history?supplierId=<string>",
-													"host": [
-														"{{baseUrl}}"
-													],
-													"path": [
-														"api",
-														"supplier",
-														"history"
-													],
-													"query": [
-														{
-															"description": "(Required) ",
-															"key": "supplierId",
-															"value": "<string>"
-														}
-													]
-												}
-											},
-											"status": "Unauthorized",
-											"code": 401,
-											"_postman_previewlanguage": "text",
-											"header": [],
-											"cookie": [],
-											"responseTime": null,
-											"body": ""
-										}
-									]
-								},
-								{
-									"name": "Invalid Id - Get Onboarding History",
-									"event": [
-										{
-											"listen": "test",
-											"script": {
-												"id": "043ef0b4-e06c-4ee8-96fa-da28341111b6",
-												"exec": [
-													"pm.test(\"Status code is 400\", function () {\r",
-													"    pm.response.to.have.status(400);\r",
-													"});\r",
-													"\r",
-													"var responseJSON = pm.response.json();\r",
-													"var errors = responseJSON.errors;\r",
-													"\r",
-													"pm.test(\"Verify that supplier Id is invalid\", function () {\r",
-													"    pm.expect(errors[0].name).to.be.a(\"string\").and.not.be.empty;\r",
-													"    pm.expect(errors[0].reason).to.be.a(\"string\").and.not.be.empty;\r",
-													"});\r",
-													""
-												],
-												"type": "text/javascript",
-												"packages": {}
-											}
-										}
-									],
-									"id": "8b8522bf-9493-475b-9993-7bdf592509e7",
-									"protocolProfileBehavior": {
-										"disableBodyPruning": true
-									},
-									"request": {
-										"auth": {
-											"type": "bearer",
-											"bearer": {
-												"token": "{{bearerToken}}"
-											}
-										},
-										"method": "GET",
-										"header": [],
-										"url": {
-											"raw": "{{baseUrl}}/api/supplier/history?supplierId=6586d903-203f-4819-3a1b-08dd",
-											"host": [
-												"{{baseUrl}}"
-											],
-											"path": [
-												"api",
-												"supplier",
-												"history"
-											],
-											"query": [
-												{
-													"key": "supplierId",
-													"value": "6586d903-203f-4819-3a1b-08dd",
-													"description": "(Required) "
-												}
-											]
-										}
-									},
-									"response": [
-										{
-											"id": "8897c6c5-091c-4233-b2a1-5a7265674aee",
-											"name": "Success",
-											"originalRequest": {
-												"method": "GET",
-												"header": [
-													{
-														"description": "Added as a part of security scheme: bearer",
-														"key": "Authorization",
-														"value": "Bearer <token>"
-													}
-												],
-												"url": {
-													"raw": "{{baseUrl}}/api/supplier/history?supplierId=<string>",
-													"host": [
-														"{{baseUrl}}"
-													],
-													"path": [
-														"api",
-														"supplier",
-														"history"
-													],
-													"query": [
-														{
-															"description": "(Required) ",
-															"key": "supplierId",
-															"value": "<string>"
-														}
-													]
-												}
-											},
-											"status": "OK",
-											"code": 200,
-											"_postman_previewlanguage": "text",
-											"header": [],
-											"cookie": [],
-											"responseTime": null,
-											"body": ""
-										},
-										{
-											"id": "046b88cf-dbf4-42e9-8088-01a3ca9b6001",
-											"name": "Unauthorized",
-											"originalRequest": {
-												"method": "GET",
-												"header": [
-													{
-														"description": "Added as a part of security scheme: bearer",
-														"key": "Authorization",
-														"value": "Bearer <token>"
-													}
-												],
-												"url": {
-													"raw": "{{baseUrl}}/api/supplier/history?supplierId=<string>",
-													"host": [
-														"{{baseUrl}}"
-													],
-													"path": [
-														"api",
-														"supplier",
-														"history"
-													],
-													"query": [
-														{
-															"description": "(Required) ",
-															"key": "supplierId",
-															"value": "<string>"
-														}
-													]
-												}
-											},
-											"status": "Unauthorized",
-											"code": 401,
-											"_postman_previewlanguage": "text",
-											"header": [],
-											"cookie": [],
-											"responseTime": null,
-											"body": ""
-										}
-									]
-								},
-								{
-									"name": "No Id - Get Onboarding History",
-									"event": [
-										{
-											"listen": "test",
-											"script": {
-												"id": "043ef0b4-e06c-4ee8-96fa-da28341111b6",
-												"exec": [
-													"pm.test(\"Status code is 400\", function () {\r",
-													"    pm.response.to.have.status(400);\r",
-													"});\r",
-													"\r",
-													"var responseJSON = pm.response.json();\r",
-													"var errors = responseJSON.errors;\r",
-													"\r",
-													"pm.test(\"Verify that supplier Id is required\", function () {\r",
-													"    pm.expect(errors[0].name).to.be.a(\"string\").and.not.be.empty;\r",
-													"    pm.expect(errors[0].reason).to.be.a(\"string\").and.not.be.empty;\r",
-													"});\r",
-													""
-												],
-												"type": "text/javascript",
-												"packages": {}
-											}
-										}
-									],
-									"id": "751b0ef9-9743-47ce-a489-1eaf9d395d5c",
-									"protocolProfileBehavior": {
-										"disableBodyPruning": true
-									},
-									"request": {
-										"auth": {
-											"type": "bearer",
-											"bearer": {
-												"token": "{{bearerToken}}"
-											}
-										},
-										"method": "GET",
-										"header": [],
-										"url": {
-											"raw": "{{baseUrl}}/api/supplier/history?supplierId=",
-											"host": [
-												"{{baseUrl}}"
-											],
-											"path": [
-												"api",
-												"supplier",
-												"history"
-											],
-											"query": [
-												{
-													"key": "supplierId",
-													"value": "",
-													"description": "(Required) "
-												}
-											]
-										}
-									},
-									"response": [
-										{
-											"id": "a2b2177e-d4e1-4957-972f-43266ff8b275",
-											"name": "Success",
-											"originalRequest": {
-												"method": "GET",
-												"header": [
-													{
-														"description": "Added as a part of security scheme: bearer",
-														"key": "Authorization",
-														"value": "Bearer <token>"
-													}
-												],
-												"url": {
-													"raw": "{{baseUrl}}/api/supplier/history?supplierId=<string>",
-													"host": [
-														"{{baseUrl}}"
-													],
-													"path": [
-														"api",
-														"supplier",
-														"history"
-													],
-													"query": [
-														{
-															"description": "(Required) ",
-															"key": "supplierId",
-															"value": "<string>"
-														}
-													]
-												}
-											},
-											"status": "OK",
-											"code": 200,
-											"_postman_previewlanguage": "text",
-											"header": [],
-											"cookie": [],
-											"responseTime": null,
-											"body": ""
-										},
-										{
-											"id": "c76104c9-8010-4068-afa5-0b6a9518c61a",
-											"name": "Unauthorized",
-											"originalRequest": {
-												"method": "GET",
-												"header": [
-													{
-														"description": "Added as a part of security scheme: bearer",
-														"key": "Authorization",
-														"value": "Bearer <token>"
-													}
-												],
-												"url": {
-													"raw": "{{baseUrl}}/api/supplier/history?supplierId=<string>",
-													"host": [
-														"{{baseUrl}}"
-													],
-													"path": [
-														"api",
-														"supplier",
-														"history"
-													],
-													"query": [
-														{
-															"description": "(Required) ",
-															"key": "supplierId",
-															"value": "<string>"
-														}
-													]
-												}
-											},
-											"status": "Unauthorized",
-											"code": 401,
-											"_postman_previewlanguage": "text",
-											"header": [],
-											"cookie": [],
-											"responseTime": null,
-											"body": ""
-										}
-									]
-								},
-								{
-									"name": "No auth - Get Onboarding History",
-									"event": [
-										{
-											"listen": "test",
-											"script": {
-												"id": "705631c0-8f32-41e1-b929-59f04196a50e",
-												"exec": [
-													"pm.test(\"Status code is 401\", function () {\r",
-													"    pm.response.to.have.status(401);\r",
-													"});\r",
-													"\r",
-													"pm.test(\"Status code name has 'Unauthorized'\", function () {\r",
-													"    pm.response.to.have.status(\"Unauthorized\");\r",
-													"});"
-												],
-												"type": "text/javascript",
-												"packages": {}
-											}
-										}
-									],
-									"id": "01d78378-60f6-4e76-8a76-6318b7bea8cf",
-									"protocolProfileBehavior": {
-										"disableBodyPruning": true
-									},
-									"request": {
-										"auth": {
-											"type": "noauth"
-										},
-										"method": "GET",
-										"header": [],
-										"url": {
-											"raw": "{{baseUrl}}/api/supplier/history?supplierId=<string>",
-											"host": [
-												"{{baseUrl}}"
-											],
-											"path": [
-												"api",
-												"supplier",
-												"history"
-											],
-											"query": [
-												{
-													"key": "supplierId",
-													"value": "<string>",
-													"description": "(Required) "
-												}
-											]
-										}
-									},
-									"response": [
-										{
-											"id": "81d54207-21f4-4d9c-82e2-6c153b34fc2c",
-											"name": "Success",
-											"originalRequest": {
-												"method": "GET",
-												"header": [
-													{
-														"description": "Added as a part of security scheme: bearer",
-														"key": "Authorization",
-														"value": "Bearer <token>"
-													}
-												],
-												"url": {
-													"raw": "{{baseUrl}}/api/supplier/history?supplierId=<string>",
-													"host": [
-														"{{baseUrl}}"
-													],
-													"path": [
-														"api",
-														"supplier",
-														"history"
-													],
-													"query": [
-														{
-															"description": "(Required) ",
-															"key": "supplierId",
-															"value": "<string>"
-														}
-													]
-												}
-											},
-											"status": "OK",
-											"code": 200,
-											"_postman_previewlanguage": "text",
-											"header": [],
-											"cookie": [],
-											"responseTime": null,
-											"body": ""
-										},
-										{
-											"id": "f87702a1-0541-47c8-afe3-5b8b8907eb0b",
-											"name": "Unauthorized",
-											"originalRequest": {
-												"method": "GET",
-												"header": [
-													{
-														"description": "Added as a part of security scheme: bearer",
-														"key": "Authorization",
-														"value": "Bearer <token>"
-													}
-												],
-												"url": {
-													"raw": "{{baseUrl}}/api/supplier/history?supplierId=<string>",
-													"host": [
-														"{{baseUrl}}"
-													],
-													"path": [
-														"api",
-														"supplier",
-														"history"
-													],
-													"query": [
-														{
-															"description": "(Required) ",
-															"key": "supplierId",
-															"value": "<string>"
-														}
-													]
-												}
-											},
-											"status": "Unauthorized",
-											"code": 401,
-											"_postman_previewlanguage": "text",
-											"header": [],
-											"cookie": [],
-											"responseTime": null,
-											"body": ""
-										}
-									]
-								}
-							],
-							"id": "58ae2e8a-2d15-4937-aedc-63f4b470cd5a"
-						},
-						{
-							"name": "progress",
-							"item": [
-								{
-									"name": "Success - Get Onboarding Progress",
-									"event": [
-										{
-											"listen": "test",
-											"script": {
-												"id": "4beb8540-f80f-47df-874f-4ae2a9a2d7d8",
-												"exec": [
-													"pm.test(\"Status code is 200\", function () {\r",
-													"    pm.response.to.have.status(200);\r",
-													"});\r",
-													"\r",
-													"var responseJSON = pm.response.json();\r",
-													"var data = responseJSON.data;\r",
-													"\r",
-													"pm.test(\"Verify that supplier's progress ia returned\", function () {\r",
-													"    pm.expect(responseJSON.isSuccess).to.be.a(\"boolean\");\r",
-													"        pm.expect(data.totalStage).to.be.a(\"number\");\r",
-													"        pm.expect(data.status).to.be.a(\"string\").and.not.be.empty;\r",
-													"\r",
-													"});\r",
-													""
-												],
-												"type": "text/javascript",
-												"packages": {}
-											}
-										}
-									],
-									"id": "454952fe-43ef-459e-aa97-45afd5bd21c6",
-									"protocolProfileBehavior": {
-										"disableBodyPruning": true
-									},
-									"request": {
-										"auth": {
-											"type": "bearer",
-											"bearer": {
-												"token": "{{bearerToken}}"
-											}
-										},
-										"method": "GET",
-										"header": [],
-										"url": {
-											"raw": "{{baseUrl}}/api/supplier/progress?supplierId={{supplierId}}",
-											"host": [
-												"{{baseUrl}}"
-											],
-											"path": [
-												"api",
-												"supplier",
-												"progress"
-											],
-											"query": [
-												{
-													"key": "supplierId",
-													"value": "{{supplierId}}",
-													"description": "(Required) "
-												}
-											]
-										}
-									},
-									"response": [
-										{
-											"id": "d0788e00-56c4-4c95-a541-c17bfd25e538",
-											"name": "Success",
-											"originalRequest": {
-												"method": "GET",
-												"header": [
-													{
-														"description": "Added as a part of security scheme: bearer",
-														"key": "Authorization",
-														"value": "Bearer <token>"
-													}
-												],
-												"url": {
-													"raw": "{{baseUrl}}/api/supplier/progress?supplierId=<string>",
-													"host": [
-														"{{baseUrl}}"
-													],
-													"path": [
-														"api",
-														"supplier",
-														"progress"
-													],
-													"query": [
-														{
-															"description": "(Required) ",
-															"key": "supplierId",
-															"value": "<string>"
-														}
-													]
-												}
-											},
-											"status": "OK",
-											"code": 200,
-											"_postman_previewlanguage": "text",
-											"header": [],
-											"cookie": [],
-											"responseTime": null,
-											"body": ""
-										},
-										{
-											"id": "c2badfdd-c8d3-4f17-8d90-229478e99003",
-											"name": "Unauthorized",
-											"originalRequest": {
-												"method": "GET",
-												"header": [
-													{
-														"description": "Added as a part of security scheme: bearer",
-														"key": "Authorization",
-														"value": "Bearer <token>"
-													}
-												],
-												"url": {
-													"raw": "{{baseUrl}}/api/supplier/progress?supplierId=<string>",
-													"host": [
-														"{{baseUrl}}"
-													],
-													"path": [
-														"api",
-														"supplier",
-														"progress"
-													],
-													"query": [
-														{
-															"description": "(Required) ",
-															"key": "supplierId",
-															"value": "<string>"
-														}
-													]
-												}
-											},
-											"status": "Unauthorized",
-											"code": 401,
-											"_postman_previewlanguage": "text",
-											"header": [],
-											"cookie": [],
-											"responseTime": null,
-											"body": ""
-										}
-									]
-								},
-								{
-									"name": "No Id - Get Onboarding Progress",
-									"event": [
-										{
-											"listen": "test",
-											"script": {
-												"id": "4beb8540-f80f-47df-874f-4ae2a9a2d7d8",
-												"exec": [
-													"pm.test(\"Status code is 400\", function () {\r",
-													"    pm.response.to.have.status(400);\r",
-													"});\r",
-													"\r",
-													"var responseJSON = pm.response.json();\r",
-													"var errors = responseJSON.errors;\r",
-													"\r",
-													"pm.test(\"Verify that tags are returned\", function () {\r",
-													"    pm.expect(errors[0].name).to.be.a(\"string\").and.not.be.empty;\r",
-													"    pm.expect(errors[0].reason).to.be.a(\"string\").and.not.be.empty;\r",
-													"});\r",
-													""
-												],
-												"type": "text/javascript",
-												"packages": {}
-											}
-										}
-									],
-									"id": "8fb00125-9484-4575-91be-ce1fec6e4ed5",
-									"protocolProfileBehavior": {
-										"disableBodyPruning": true
-									},
-									"request": {
-										"auth": {
-											"type": "bearer",
-											"bearer": {
-												"token": "{{bearerToken}}"
-											}
-										},
-										"method": "GET",
-										"header": [],
-										"url": {
-											"raw": "{{baseUrl}}/api/supplier/progress?supplierId=",
-											"host": [
-												"{{baseUrl}}"
-											],
-											"path": [
-												"api",
-												"supplier",
-												"progress"
-											],
-											"query": [
-												{
-													"key": "supplierId",
-													"value": "",
-													"description": "(Required) "
-												}
-											]
-										}
-									},
-									"response": [
-										{
-											"id": "7a446a55-e37e-4327-af13-34ab02d68fbb",
-											"name": "Success",
-											"originalRequest": {
-												"method": "GET",
-												"header": [
-													{
-														"description": "Added as a part of security scheme: bearer",
-														"key": "Authorization",
-														"value": "Bearer <token>"
-													}
-												],
-												"url": {
-													"raw": "{{baseUrl}}/api/supplier/progress?supplierId=<string>",
-													"host": [
-														"{{baseUrl}}"
-													],
-													"path": [
-														"api",
-														"supplier",
-														"progress"
-													],
-													"query": [
-														{
-															"description": "(Required) ",
-															"key": "supplierId",
-															"value": "<string>"
-														}
-													]
-												}
-											},
-											"status": "OK",
-											"code": 200,
-											"_postman_previewlanguage": "text",
-											"header": [],
-											"cookie": [],
-											"responseTime": null,
-											"body": ""
-										},
-										{
-											"id": "adcd9de0-0e11-4b0e-9df4-9369bf523163",
-											"name": "Unauthorized",
-											"originalRequest": {
-												"method": "GET",
-												"header": [
-													{
-														"description": "Added as a part of security scheme: bearer",
-														"key": "Authorization",
-														"value": "Bearer <token>"
-													}
-												],
-												"url": {
-													"raw": "{{baseUrl}}/api/supplier/progress?supplierId=<string>",
-													"host": [
-														"{{baseUrl}}"
-													],
-													"path": [
-														"api",
-														"supplier",
-														"progress"
-													],
-													"query": [
-														{
-															"description": "(Required) ",
-															"key": "supplierId",
-															"value": "<string>"
-														}
-													]
-												}
-											},
-											"status": "Unauthorized",
-											"code": 401,
-											"_postman_previewlanguage": "text",
-											"header": [],
-											"cookie": [],
-											"responseTime": null,
-											"body": ""
-										}
-									]
-								},
-								{
-									"name": "Invalid Id - Get Onboarding Progress",
-									"event": [
-										{
-											"listen": "test",
-											"script": {
-												"id": "4beb8540-f80f-47df-874f-4ae2a9a2d7d8",
-												"exec": [
-													"pm.test(\"Status code is 400\", function () {\r",
-													"    pm.response.to.have.status(400);\r",
-													"});\r",
-													"\r",
-													"var responseJSON = pm.response.json();\r",
-													"var errors = responseJSON.errors;\r",
-													"\r",
-													"pm.test(\"Verify that tags are returned\", function () {\r",
-													"    pm.expect(errors[0].name).to.be.a(\"string\").and.not.be.empty;\r",
-													"    pm.expect(errors[0].reason).to.be.a(\"string\").and.not.be.empty;\r",
-													"});\r",
-													""
-												],
-												"type": "text/javascript",
-												"packages": {}
-											}
-										}
-									],
-									"id": "be119537-0705-4aac-91df-807a757d3c57",
-									"protocolProfileBehavior": {
-										"disableBodyPruning": true
-									},
-									"request": {
-										"auth": {
-											"type": "bearer",
-											"bearer": {
-												"token": "{{bearerToken}}"
-											}
-										},
-										"method": "GET",
-										"header": [],
-										"url": {
-											"raw": "{{baseUrl}}/api/supplier/progress?supplierId=6586d903-203f-4819-3",
-											"host": [
-												"{{baseUrl}}"
-											],
-											"path": [
-												"api",
-												"supplier",
-												"progress"
-											],
-											"query": [
-												{
-													"key": "supplierId",
-													"value": "6586d903-203f-4819-3",
-													"description": "(Required) "
-												}
-											]
-										}
-									},
-									"response": [
-										{
-											"id": "fc51f574-490f-45a9-82e7-ed86962c9330",
-											"name": "Success",
-											"originalRequest": {
-												"method": "GET",
-												"header": [
-													{
-														"description": "Added as a part of security scheme: bearer",
-														"key": "Authorization",
-														"value": "Bearer <token>"
-													}
-												],
-												"url": {
-													"raw": "{{baseUrl}}/api/supplier/progress?supplierId=<string>",
-													"host": [
-														"{{baseUrl}}"
-													],
-													"path": [
-														"api",
-														"supplier",
-														"progress"
-													],
-													"query": [
-														{
-															"description": "(Required) ",
-															"key": "supplierId",
-															"value": "<string>"
-														}
-													]
-												}
-											},
-											"status": "OK",
-											"code": 200,
-											"_postman_previewlanguage": "text",
-											"header": [],
-											"cookie": [],
-											"responseTime": null,
-											"body": ""
-										},
-										{
-											"id": "ac2e082f-70c6-4289-aef7-50ad7d273770",
-											"name": "Unauthorized",
-											"originalRequest": {
-												"method": "GET",
-												"header": [
-													{
-														"description": "Added as a part of security scheme: bearer",
-														"key": "Authorization",
-														"value": "Bearer <token>"
-													}
-												],
-												"url": {
-													"raw": "{{baseUrl}}/api/supplier/progress?supplierId=<string>",
-													"host": [
-														"{{baseUrl}}"
-													],
-													"path": [
-														"api",
-														"supplier",
-														"progress"
-													],
-													"query": [
-														{
-															"description": "(Required) ",
-															"key": "supplierId",
-															"value": "<string>"
-														}
-													]
-												}
-											},
-											"status": "Unauthorized",
-											"code": 401,
-											"_postman_previewlanguage": "text",
-											"header": [],
-											"cookie": [],
-											"responseTime": null,
-											"body": ""
-										}
-									]
-								},
-								{
-									"name": "No auth -  Get Onboarding Progress",
-									"event": [
-										{
-											"listen": "test",
-											"script": {
-												"id": "8eb6ea6d-d14a-42b6-8634-cba34ed7185c",
-												"exec": [
-													"pm.test(\"Status code is 401\", function () {\r",
-													"    pm.response.to.have.status(401);\r",
-													"});\r",
-													"\r",
-													"pm.test(\"Status code name has 'Unauthorized'\", function () {\r",
-													"    pm.response.to.have.status(\"Unauthorized\");\r",
-													"});"
-												],
-												"type": "text/javascript",
-												"packages": {}
-											}
-										}
-									],
-									"id": "0c98a300-02e2-4f31-b28b-d406480237a2",
-									"protocolProfileBehavior": {
-										"disableBodyPruning": true
-									},
-									"request": {
-										"auth": {
-											"type": "noauth"
-										},
-										"method": "GET",
-										"header": [],
-										"url": {
-											"raw": "{{baseUrl}}/api/supplier/progress?supplierId=<string>",
-											"host": [
-												"{{baseUrl}}"
-											],
-											"path": [
-												"api",
-												"supplier",
-												"progress"
-											],
-											"query": [
-												{
-													"key": "supplierId",
-													"value": "<string>",
-													"description": "(Required) "
-												}
-											]
-										}
-									},
-									"response": [
-										{
-											"id": "b6f1cb8c-1482-499b-8819-a943714f6535",
-											"name": "Success",
-											"originalRequest": {
-												"method": "GET",
-												"header": [
-													{
-														"description": "Added as a part of security scheme: bearer",
-														"key": "Authorization",
-														"value": "Bearer <token>"
-													}
-												],
-												"url": {
-													"raw": "{{baseUrl}}/api/supplier/progress?supplierId=<string>",
-													"host": [
-														"{{baseUrl}}"
-													],
-													"path": [
-														"api",
-														"supplier",
-														"progress"
-													],
-													"query": [
-														{
-															"description": "(Required) ",
-															"key": "supplierId",
-															"value": "<string>"
-														}
-													]
-												}
-											},
-											"status": "OK",
-											"code": 200,
-											"_postman_previewlanguage": "text",
-											"header": [],
-											"cookie": [],
-											"responseTime": null,
-											"body": ""
-										},
-										{
-											"id": "74a0c278-df3f-4dfa-8fcc-fb958941b288",
-											"name": "Unauthorized",
-											"originalRequest": {
-												"method": "GET",
-												"header": [
-													{
-														"description": "Added as a part of security scheme: bearer",
-														"key": "Authorization",
-														"value": "Bearer <token>"
-													}
-												],
-												"url": {
-													"raw": "{{baseUrl}}/api/supplier/progress?supplierId=<string>",
-													"host": [
-														"{{baseUrl}}"
-													],
-													"path": [
-														"api",
-														"supplier",
-														"progress"
-													],
-													"query": [
-														{
-															"description": "(Required) ",
-															"key": "supplierId",
-															"value": "<string>"
-														}
-													]
-												}
-											},
-											"status": "Unauthorized",
-											"code": 401,
-											"_postman_previewlanguage": "text",
-											"header": [],
-											"cookie": [],
-											"responseTime": null,
-											"body": ""
-										}
-									]
-								}
-							],
-							"id": "29bb4465-765c-4f62-b572-8336da9faf20"
-						},
-						{
-							"name": "subsidiaries",
-							"item": [
-								{
-									"name": "Anp Supplier Api Features Get Suppliers Get Subsidiaries Endpoint",
-									"id": "65b97b59-8bf9-4e4b-9aca-13c070cd3b16",
-									"protocolProfileBehavior": {
-										"disableBodyPruning": true
-									},
-									"request": {
-										"auth": {
-											"type": "bearer",
-											"bearer": {
-												"token": "{{bearerToken}}"
-											}
-										},
-										"method": "GET",
-										"header": [],
-										"url": {
-											"raw": "{{baseUrl}}/api/supplier/subsidiaries?companyId=<string>&pageNumber=<integer>&pageSize=<integer>",
-											"host": [
-												"{{baseUrl}}"
-											],
-											"path": [
-												"api",
-												"supplier",
-												"subsidiaries"
-											],
-											"query": [
-												{
-													"key": "companyId",
-													"value": "<string>",
-													"description": "(Required) "
-												},
-												{
-													"key": "pageNumber",
-													"value": "<integer>",
-													"description": "(Required) "
-												},
-												{
-													"key": "pageSize",
-													"value": "<integer>",
-													"description": "(Required) "
-												}
-											]
-										}
-									},
-									"response": [
-										{
-											"id": "ca14ac64-e3ee-4b97-b2ce-bcb3ecf438c4",
-											"name": "Success",
-											"originalRequest": {
-												"method": "GET",
-												"header": [
-													{
-														"description": "Added as a part of security scheme: bearer",
-														"key": "Authorization",
-														"value": "Bearer <token>"
-													}
-												],
-												"url": {
-													"raw": "{{baseUrl}}/api/supplier/subsidiaries?companyId=<string>&pageNumber=<integer>&pageSize=<integer>",
-													"host": [
-														"{{baseUrl}}"
-													],
-													"path": [
-														"api",
-														"supplier",
-														"subsidiaries"
-													],
-													"query": [
-														{
-															"description": "(Required) ",
-															"key": "companyId",
-															"value": "<string>"
-														},
-														{
-															"description": "(Required) ",
-															"key": "pageNumber",
-															"value": "<integer>"
-														},
-														{
-															"description": "(Required) ",
-															"key": "pageSize",
-															"value": "<integer>"
-														}
-													]
-												}
-											},
-											"status": "OK",
-											"code": 200,
-											"_postman_previewlanguage": "text",
-											"header": [],
-											"cookie": [],
-											"responseTime": null,
-											"body": ""
-										},
-										{
-											"id": "f2db73fd-a074-4b50-af1e-c8d7e165d01f",
-											"name": "Unauthorized",
-											"originalRequest": {
-												"method": "GET",
-												"header": [
-													{
-														"description": "Added as a part of security scheme: bearer",
-														"key": "Authorization",
-														"value": "Bearer <token>"
-													}
-												],
-												"url": {
-													"raw": "{{baseUrl}}/api/supplier/subsidiaries?companyId=<string>&pageNumber=<integer>&pageSize=<integer>",
-													"host": [
-														"{{baseUrl}}"
-													],
-													"path": [
-														"api",
-														"supplier",
-														"subsidiaries"
-													],
-													"query": [
-														{
-															"description": "(Required) ",
-															"key": "companyId",
-															"value": "<string>"
-														},
-														{
-															"description": "(Required) ",
-															"key": "pageNumber",
-															"value": "<integer>"
-														},
-														{
-															"description": "(Required) ",
-															"key": "pageSize",
-															"value": "<integer>"
-														}
-													]
-												}
-											},
-											"status": "Unauthorized",
-											"code": 401,
-											"_postman_previewlanguage": "text",
-											"header": [],
-											"cookie": [],
-											"responseTime": null,
-											"body": ""
-										}
-									]
-								},
-								{
-									"name": "No companyId - Get Subsidiaries",
-									"event": [
-										{
-											"listen": "test",
-											"script": {
-												"id": "56530489-830a-4179-a812-bcea1420d858",
-												"exec": [
-													"pm.test(\"Status code is 400\", function () {\r",
-													"    pm.response.to.have.status(400);\r",
-													"});\r",
-													"\r",
-													"var responseJSON = pm.response.json();\r",
-													"var errors = responseJSON.errors;\r",
-													"\r",
-													"pm.test(\"Verify that company Id is required\", function () {\r",
-													"    pm.expect(errors[0].name).to.be.a(\"string\").and.not.be.empty;\r",
-													"    pm.expect(errors[0].reason).to.be.a(\"string\").and.not.be.empty;\r",
-													"});\r",
-													""
-												],
-												"type": "text/javascript",
-												"packages": {}
-											}
-										}
-									],
-									"id": "c38ad15d-6383-4dc6-a7af-d561a328a46a",
-									"protocolProfileBehavior": {
-										"disableBodyPruning": true
-									},
-									"request": {
-										"auth": {
-											"type": "bearer",
-											"bearer": {
-												"token": "{{bearerToken}}"
-											}
-										},
-										"method": "GET",
-										"header": [],
-										"url": {
-											"raw": "{{baseUrl}}/api/supplier/subsidiaries?companyId=&pageNumber=1&pageSize=10",
-											"host": [
-												"{{baseUrl}}"
-											],
-											"path": [
-												"api",
-												"supplier",
-												"subsidiaries"
-											],
-											"query": [
-												{
-													"key": "companyId",
-													"value": "",
-													"description": "(Required) "
-												},
-												{
-													"key": "pageNumber",
-													"value": "1",
-													"description": "(Required) "
-												},
-												{
-													"key": "pageSize",
-													"value": "10",
-													"description": "(Required) "
-												}
-											]
-										}
-									},
-									"response": [
-										{
-											"id": "2625d2d4-533a-4c9e-9848-21ec3a1ca712",
-											"name": "Success",
-											"originalRequest": {
-												"method": "GET",
-												"header": [
-													{
-														"description": "Added as a part of security scheme: bearer",
-														"key": "Authorization",
-														"value": "Bearer <token>"
-													}
-												],
-												"url": {
-													"raw": "{{baseUrl}}/api/supplier/subsidiaries?companyId=<string>&pageNumber=<integer>&pageSize=<integer>",
-													"host": [
-														"{{baseUrl}}"
-													],
-													"path": [
-														"api",
-														"supplier",
-														"subsidiaries"
-													],
-													"query": [
-														{
-															"description": "(Required) ",
-															"key": "companyId",
-															"value": "<string>"
-														},
-														{
-															"description": "(Required) ",
-															"key": "pageNumber",
-															"value": "<integer>"
-														},
-														{
-															"description": "(Required) ",
-															"key": "pageSize",
-															"value": "<integer>"
-														}
-													]
-												}
-											},
-											"status": "OK",
-											"code": 200,
-											"_postman_previewlanguage": "text",
-											"header": [],
-											"cookie": [],
-											"responseTime": null,
-											"body": ""
-										},
-										{
-											"id": "8c1013f9-93c7-439a-8e63-487a19532a0c",
-											"name": "Unauthorized",
-											"originalRequest": {
-												"method": "GET",
-												"header": [
-													{
-														"description": "Added as a part of security scheme: bearer",
-														"key": "Authorization",
-														"value": "Bearer <token>"
-													}
-												],
-												"url": {
-													"raw": "{{baseUrl}}/api/supplier/subsidiaries?companyId=<string>&pageNumber=<integer>&pageSize=<integer>",
-													"host": [
-														"{{baseUrl}}"
-													],
-													"path": [
-														"api",
-														"supplier",
-														"subsidiaries"
-													],
-													"query": [
-														{
-															"description": "(Required) ",
-															"key": "companyId",
-															"value": "<string>"
-														},
-														{
-															"description": "(Required) ",
-															"key": "pageNumber",
-															"value": "<integer>"
-														},
-														{
-															"description": "(Required) ",
-															"key": "pageSize",
-															"value": "<integer>"
-														}
-													]
-												}
-											},
-											"status": "Unauthorized",
-											"code": 401,
-											"_postman_previewlanguage": "text",
-											"header": [],
-											"cookie": [],
-											"responseTime": null,
-											"body": ""
-										}
-									]
-								},
-								{
-									"name": "Invalid companyId - Get Subsidiaries",
-									"event": [
-										{
-											"listen": "test",
-											"script": {
-												"id": "56530489-830a-4179-a812-bcea1420d858",
-												"exec": [
-													"pm.test(\"Status code is 400\", function () {\r",
-													"    pm.response.to.have.status(400);\r",
-													"});\r",
-													"\r",
-													"var responseJSON = pm.response.json();\r",
-													"var errors = responseJSON.errors;\r",
-													"\r",
-													"pm.test(\"Verify that company Id is invalid\", function () {\r",
-													"    pm.expect(errors[0].name).to.be.a(\"string\").and.not.be.empty;\r",
-													"    pm.expect(errors[0].reason).to.be.a(\"string\").and.not.be.empty;\r",
-													"});\r",
-													""
-												],
-												"type": "text/javascript",
-												"packages": {}
-											}
-										}
-									],
-									"id": "2d9fe95c-7ca3-4b04-83ae-c371b2a27d00",
-									"protocolProfileBehavior": {
-										"disableBodyPruning": true
-									},
-									"request": {
-										"auth": {
-											"type": "bearer",
-											"bearer": {
-												"token": "{{bearerToken}}"
-											}
-										},
-										"method": "GET",
-										"header": [],
-										"url": {
-											"raw": "{{baseUrl}}/api/supplier/subsidiaries?companyId=d903-203f-4819-3a1b-08dd2661c275&pageNumber=1&pageSize=10",
-											"host": [
-												"{{baseUrl}}"
-											],
-											"path": [
-												"api",
-												"supplier",
-												"subsidiaries"
-											],
-											"query": [
-												{
-													"key": "companyId",
-													"value": "d903-203f-4819-3a1b-08dd2661c275",
-													"description": "(Required) "
-												},
-												{
-													"key": "pageNumber",
-													"value": "1",
-													"description": "(Required) "
-												},
-												{
-													"key": "pageSize",
-													"value": "10",
-													"description": "(Required) "
-												}
-											]
-										}
-									},
-									"response": [
-										{
-											"id": "32467ef7-979c-48a3-bac9-22f942e9b87a",
-											"name": "Success",
-											"originalRequest": {
-												"method": "GET",
-												"header": [
-													{
-														"description": "Added as a part of security scheme: bearer",
-														"key": "Authorization",
-														"value": "Bearer <token>"
-													}
-												],
-												"url": {
-													"raw": "{{baseUrl}}/api/supplier/subsidiaries?companyId=<string>&pageNumber=<integer>&pageSize=<integer>",
-													"host": [
-														"{{baseUrl}}"
-													],
-													"path": [
-														"api",
-														"supplier",
-														"subsidiaries"
-													],
-													"query": [
-														{
-															"description": "(Required) ",
-															"key": "companyId",
-															"value": "<string>"
-														},
-														{
-															"description": "(Required) ",
-															"key": "pageNumber",
-															"value": "<integer>"
-														},
-														{
-															"description": "(Required) ",
-															"key": "pageSize",
-															"value": "<integer>"
-														}
-													]
-												}
-											},
-											"status": "OK",
-											"code": 200,
-											"_postman_previewlanguage": "text",
-											"header": [],
-											"cookie": [],
-											"responseTime": null,
-											"body": ""
-										},
-										{
-											"id": "78d4cc4a-f2cf-4767-8009-61ba112e539c",
-											"name": "Unauthorized",
-											"originalRequest": {
-												"method": "GET",
-												"header": [
-													{
-														"description": "Added as a part of security scheme: bearer",
-														"key": "Authorization",
-														"value": "Bearer <token>"
-													}
-												],
-												"url": {
-													"raw": "{{baseUrl}}/api/supplier/subsidiaries?companyId=<string>&pageNumber=<integer>&pageSize=<integer>",
-													"host": [
-														"{{baseUrl}}"
-													],
-													"path": [
-														"api",
-														"supplier",
-														"subsidiaries"
-													],
-													"query": [
-														{
-															"description": "(Required) ",
-															"key": "companyId",
-															"value": "<string>"
-														},
-														{
-															"description": "(Required) ",
-															"key": "pageNumber",
-															"value": "<integer>"
-														},
-														{
-															"description": "(Required) ",
-															"key": "pageSize",
-															"value": "<integer>"
-														}
-													]
-												}
-											},
-											"status": "Unauthorized",
-											"code": 401,
-											"_postman_previewlanguage": "text",
-											"header": [],
-											"cookie": [],
-											"responseTime": null,
-											"body": ""
-										}
-									]
-								},
-								{
-									"name": "No auth - Get Subsidiaries",
-									"event": [
-										{
-											"listen": "test",
-											"script": {
-												"id": "2a843e18-3f86-4312-a776-55784b988b0f",
-												"exec": [
-													"pm.test(\"Status code is 401\", function () {\r",
-													"    pm.response.to.have.status(401);\r",
-													"});\r",
-													"\r",
-													"pm.test(\"Status code name has 'Unauthorized'\", function () {\r",
-													"    pm.response.to.have.status(\"Unauthorized\");\r",
-													"});"
-												],
-												"type": "text/javascript",
-												"packages": {}
-											}
-										}
-									],
-									"id": "1ebf2086-b0e5-410f-a048-6fdcc1ec1f15",
-									"protocolProfileBehavior": {
-										"disableBodyPruning": true
-									},
-									"request": {
-										"auth": {
-											"type": "noauth"
-										},
-										"method": "GET",
-										"header": [],
-										"url": {
-											"raw": "{{baseUrl}}/api/supplier/subsidiaries?companyId=<string>&pageNumber=<integer>&pageSize=<integer>",
-											"host": [
-												"{{baseUrl}}"
-											],
-											"path": [
-												"api",
-												"supplier",
-												"subsidiaries"
-											],
-											"query": [
-												{
-													"key": "companyId",
-													"value": "<string>",
-													"description": "(Required) "
-												},
-												{
-													"key": "pageNumber",
-													"value": "<integer>",
-													"description": "(Required) "
-												},
-												{
-													"key": "pageSize",
-													"value": "<integer>",
-													"description": "(Required) "
-												}
-											]
-										}
-									},
-									"response": [
-										{
-											"id": "9ff807e7-8e68-49ef-a7e0-e7c8d7831c69",
-											"name": "Success",
-											"originalRequest": {
-												"method": "GET",
-												"header": [
-													{
-														"description": "Added as a part of security scheme: bearer",
-														"key": "Authorization",
-														"value": "Bearer <token>"
-													}
-												],
-												"url": {
-													"raw": "{{baseUrl}}/api/supplier/subsidiaries?companyId=<string>&pageNumber=<integer>&pageSize=<integer>",
-													"host": [
-														"{{baseUrl}}"
-													],
-													"path": [
-														"api",
-														"supplier",
-														"subsidiaries"
-													],
-													"query": [
-														{
-															"description": "(Required) ",
-															"key": "companyId",
-															"value": "<string>"
-														},
-														{
-															"description": "(Required) ",
-															"key": "pageNumber",
-															"value": "<integer>"
-														},
-														{
-															"description": "(Required) ",
-															"key": "pageSize",
-															"value": "<integer>"
-														}
-													]
-												}
-											},
-											"status": "OK",
-											"code": 200,
-											"_postman_previewlanguage": "text",
-											"header": [],
-											"cookie": [],
-											"responseTime": null,
-											"body": ""
-										},
-										{
-											"id": "9065d39c-2f1d-43e4-b6ef-d3fa6684e260",
-											"name": "Unauthorized",
-											"originalRequest": {
-												"method": "GET",
-												"header": [
-													{
-														"description": "Added as a part of security scheme: bearer",
-														"key": "Authorization",
-														"value": "Bearer <token>"
-													}
-												],
-												"url": {
-													"raw": "{{baseUrl}}/api/supplier/subsidiaries?companyId=<string>&pageNumber=<integer>&pageSize=<integer>",
-													"host": [
-														"{{baseUrl}}"
-													],
-													"path": [
-														"api",
-														"supplier",
-														"subsidiaries"
-													],
-													"query": [
-														{
-															"description": "(Required) ",
-															"key": "companyId",
-															"value": "<string>"
-														},
-														{
-															"description": "(Required) ",
-															"key": "pageNumber",
-															"value": "<integer>"
-														},
-														{
-															"description": "(Required) ",
-															"key": "pageSize",
-															"value": "<integer>"
-														}
-													]
-												}
-											},
-											"status": "Unauthorized",
-											"code": 401,
-											"_postman_previewlanguage": "text",
-											"header": [],
-											"cookie": [],
-											"responseTime": null,
-											"body": ""
-										}
-									]
-								}
-							],
-							"id": "7f10e68b-da59-4cbf-a147-99ce7648c973"
 						},
 						{
 							"name": "contact",
@@ -26607,6 +24438,2175 @@
 								}
 							],
 							"id": "7344bfa0-3020-4934-95be-c1630046f7b1"
+						},
+						{
+							"name": "checkSetup",
+							"item": [
+								{
+									"name": "Anp Supplier Api Features Onboarding Check Supplier Setup Endpoint",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "91bfe0e0-33a1-4308-a553-160fba6270ee",
+												"exec": [
+													"pm.collectionVariables.set(\"roleId\", pm.response.json().data.roleId);\r",
+													"\r",
+													"\r",
+													"pm.test(\"Status code is 200\", function () {\r",
+													"    pm.response.to.have.status(200);\r",
+													"});\r",
+													"\r",
+													"var responseJSON = pm.response.json();\r",
+													"var data = responseJSON.data;\r",
+													"\r",
+													"pm.test(\"Verify that project is returned successfully\", function () {\r",
+													"    pm.expect(responseJSON.isSuccess).to.be.a(\"boolean\");\r",
+													"    pm.expect(data.message).to.be.a(\"string\").and.not.empty;\r",
+													"    pm.expect(data.roleId).to.be.a(\"string\").and.not.empty;\r",
+													"       });\r",
+													""
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
+									"id": "e7ecab8e-f51e-4ee7-81e6-21f86e426b6b",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": {
+												"token": "{{bearerToken}}"
+											}
+										},
+										"method": "GET",
+										"header": [],
+										"url": "{{baseUrl}}/api/supplier/checkSetup"
+									},
+									"response": [
+										{
+											"id": "9cf255bf-d28e-49c3-a687-39ea49d037e6",
+											"name": "Success",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"description": "Added as a part of security scheme: bearer",
+														"key": "Authorization",
+														"value": "Bearer <token>"
+													}
+												],
+												"url": "{{baseUrl}}/api/supplier/checkSetup"
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"responseTime": null,
+											"body": ""
+										},
+										{
+											"id": "25022c81-6fc0-4d21-a95e-0d8bb74f8402",
+											"name": "Unauthorized",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"description": "Added as a part of security scheme: bearer",
+														"key": "Authorization",
+														"value": "Bearer <token>"
+													}
+												],
+												"url": "{{baseUrl}}/api/supplier/checkSetup"
+											},
+											"status": "Unauthorized",
+											"code": 401,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"responseTime": null,
+											"body": ""
+										}
+									]
+								}
+							],
+							"id": "6e49c7bf-e500-4e69-ac54-9fffd082cb05"
+						},
+						{
+							"name": "tags",
+							"item": [
+								{
+									"name": "Success - Get Supplier Tags",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "49dabeaa-23e2-42c4-b5a3-1b1e7cc5f573",
+												"exec": [
+													"pm.test(\"Status code is 200\", function () {\r",
+													"    pm.response.to.have.status(200);\r",
+													"});\r",
+													"\r",
+													"var responseJSON = pm.response.json();\r",
+													"var data = responseJSON.data;\r",
+													"\r",
+													"pm.test(\"Verify that tags are returned\", function () {\r",
+													"    pm.expect(responseJSON.isSuccess).to.be.a(\"boolean\");\r",
+													"    pm.expect(data[0].tagName).to.be.a(\"string\").and.not.empty;\r",
+													"});\r",
+													""
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
+									"id": "3224a5f8-55b0-4cdf-936e-1aa8814c243b",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": {
+												"token": "{{bearerToken}}"
+											}
+										},
+										"method": "GET",
+										"header": [],
+										"url": "{{baseUrl}}/api/supplier/tags"
+									},
+									"response": [
+										{
+											"id": "c3229b56-2cd7-4b10-a01f-6fefe519abf0",
+											"name": "Success",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"description": "Added as a part of security scheme: bearer",
+														"key": "Authorization",
+														"value": "Bearer <token>"
+													}
+												],
+												"url": "{{baseUrl}}/api/supplier/tags"
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"responseTime": null,
+											"body": ""
+										},
+										{
+											"id": "e05e0855-5218-47f6-b135-60a29f1b75de",
+											"name": "Unauthorized",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"description": "Added as a part of security scheme: bearer",
+														"key": "Authorization",
+														"value": "Bearer <token>"
+													}
+												],
+												"url": "{{baseUrl}}/api/supplier/tags"
+											},
+											"status": "Unauthorized",
+											"code": 401,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"responseTime": null,
+											"body": ""
+										}
+									]
+								},
+								{
+									"name": "No auth - Get Supplier Tags",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "979c6e65-c3dc-4dd7-a381-c2c8257f516a",
+												"exec": [
+													"pm.test(\"Status code is 401\", function () {\r",
+													"    pm.response.to.have.status(401);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Status code name has 'Unauthorized'\", function () {\r",
+													"    pm.response.to.have.status(\"Unauthorized\");\r",
+													"});"
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
+									"id": "c67f7637-c08e-4bae-b945-8fade53d86d6",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"auth": {
+											"type": "noauth"
+										},
+										"method": "GET",
+										"header": [],
+										"url": "{{baseUrl}}/api/supplier/tags"
+									},
+									"response": [
+										{
+											"id": "d385f7b1-3945-44a3-8656-225f0cc634b1",
+											"name": "Success",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"description": "Added as a part of security scheme: bearer",
+														"key": "Authorization",
+														"value": "Bearer <token>"
+													}
+												],
+												"url": "{{baseUrl}}/api/supplier/tags"
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"responseTime": null,
+											"body": ""
+										},
+										{
+											"id": "f49c39ca-4f32-4e79-94f9-1abc238bdc43",
+											"name": "Unauthorized",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"description": "Added as a part of security scheme: bearer",
+														"key": "Authorization",
+														"value": "Bearer <token>"
+													}
+												],
+												"url": "{{baseUrl}}/api/supplier/tags"
+											},
+											"status": "Unauthorized",
+											"code": 401,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"responseTime": null,
+											"body": ""
+										}
+									]
+								}
+							],
+							"id": "12fcae61-de4a-4f0f-a511-6ab069f4cdd5"
+						},
+						{
+							"name": "setstatus",
+							"item": [
+								{
+									"name": "Anp Supplier Api Features Onboarding Set Status Endpoint",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "ce9bd093-b1b5-41a1-ba45-b93606952134",
+												"exec": [
+													"pm.test(\"Status code is 200\", function () {\r",
+													"    pm.response.to.have.status(200);\r",
+													"});\r",
+													"\r",
+													"var responseJSON = pm.response.json();\r",
+													"\r",
+													"pm.test(\"Verify that setstatus is successful\", function () {\r",
+													"    pm.expect(responseJSON.isSuccess).to.be.a(\"boolean\");\r",
+													"    pm.expect(responseJSON.data.message).to.be.a(\"string\").and.not.empty;\r",
+													"});"
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
+									"id": "5cf4f402-fc91-4400-aef1-888fbdf91901",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": {
+												"token": "{{bearerToken}}"
+											}
+										},
+										"method": "PATCH",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"supplierId\": \"{{supplierId}}\",\n  \"onboardingStatus\": 1\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{baseUrl}}/api/supplier/setstatus"
+									},
+									"response": [
+										{
+											"id": "d76a0007-b3ce-41f7-9dc4-0ba638a214eb",
+											"name": "Success",
+											"originalRequest": {
+												"method": "PATCH",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"description": "Added as a part of security scheme: bearer",
+														"key": "Authorization",
+														"value": "Bearer <token>"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"supplierId\": \"<string>\",\n  \"onboardingStatus\": 1\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl}}/api/supplier/setstatus"
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"responseTime": null,
+											"body": ""
+										},
+										{
+											"id": "9220458a-db05-48a8-9433-741562f4a1a0",
+											"name": "Unauthorized",
+											"originalRequest": {
+												"method": "PATCH",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"description": "Added as a part of security scheme: bearer",
+														"key": "Authorization",
+														"value": "Bearer <token>"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"supplierId\": \"<string>\",\n  \"onboardingStatus\": 1\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl}}/api/supplier/setstatus"
+											},
+											"status": "Unauthorized",
+											"code": 401,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"responseTime": null,
+											"body": ""
+										}
+									]
+								}
+							],
+							"id": "7c7f9a15-88f5-4c88-8505-89145b076bbf"
+						},
+						{
+							"name": "history",
+							"item": [
+								{
+									"name": "Success - Get Onboarding History",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "043ef0b4-e06c-4ee8-96fa-da28341111b6",
+												"exec": [
+													"pm.test(\"Status code is 200\", function () {\r",
+													"    pm.response.to.have.status(200);\r",
+													"});\r",
+													"\r",
+													"var responseJSON = pm.response.json();\r",
+													"var data = responseJSON.data;\r",
+													"\r",
+													"pm.test(\"Verify that supplier's history ia returned\", function () {\r",
+													"    pm.expect(responseJSON.isSuccess).to.be.a(\"boolean\");\r",
+													"    pm.expect(data.currentStage).to.be.a(\"number\");\r",
+													"        pm.expect(data.totalStage).to.be.a(\"number\");\r",
+													"\r",
+													"});\r",
+													""
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
+									"id": "7a6cdfb4-cace-4a3b-a03e-f1aacdd44054",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": {
+												"token": "{{bearerToken}}"
+											}
+										},
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/supplier/history?supplierId={{supplierId}}",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"supplier",
+												"history"
+											],
+											"query": [
+												{
+													"key": "supplierId",
+													"value": "{{supplierId}}",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"id": "6775d6ac-dc54-4b48-9c1e-d32f2aa5ac56",
+											"name": "Success",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"description": "Added as a part of security scheme: bearer",
+														"key": "Authorization",
+														"value": "Bearer <token>"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/supplier/history?supplierId=<string>",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"supplier",
+														"history"
+													],
+													"query": [
+														{
+															"description": "(Required) ",
+															"key": "supplierId",
+															"value": "<string>"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"responseTime": null,
+											"body": ""
+										},
+										{
+											"id": "404f45b1-254a-49af-bab0-dad4715cee7c",
+											"name": "Unauthorized",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"description": "Added as a part of security scheme: bearer",
+														"key": "Authorization",
+														"value": "Bearer <token>"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/supplier/history?supplierId=<string>",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"supplier",
+														"history"
+													],
+													"query": [
+														{
+															"description": "(Required) ",
+															"key": "supplierId",
+															"value": "<string>"
+														}
+													]
+												}
+											},
+											"status": "Unauthorized",
+											"code": 401,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"responseTime": null,
+											"body": ""
+										}
+									]
+								},
+								{
+									"name": "Invalid Id - Get Onboarding History",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "043ef0b4-e06c-4ee8-96fa-da28341111b6",
+												"exec": [
+													"pm.test(\"Status code is 400\", function () {\r",
+													"    pm.response.to.have.status(400);\r",
+													"});\r",
+													"\r",
+													"var responseJSON = pm.response.json();\r",
+													"var errors = responseJSON.errors;\r",
+													"\r",
+													"pm.test(\"Verify that supplier Id is invalid\", function () {\r",
+													"    pm.expect(errors[0].name).to.be.a(\"string\").and.not.be.empty;\r",
+													"    pm.expect(errors[0].reason).to.be.a(\"string\").and.not.be.empty;\r",
+													"});\r",
+													""
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
+									"id": "8b8522bf-9493-475b-9993-7bdf592509e7",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": {
+												"token": "{{bearerToken}}"
+											}
+										},
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/supplier/history?supplierId=6586d903-203f-4819-3a1b-08dd",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"supplier",
+												"history"
+											],
+											"query": [
+												{
+													"key": "supplierId",
+													"value": "6586d903-203f-4819-3a1b-08dd",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"id": "8897c6c5-091c-4233-b2a1-5a7265674aee",
+											"name": "Success",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"description": "Added as a part of security scheme: bearer",
+														"key": "Authorization",
+														"value": "Bearer <token>"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/supplier/history?supplierId=<string>",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"supplier",
+														"history"
+													],
+													"query": [
+														{
+															"description": "(Required) ",
+															"key": "supplierId",
+															"value": "<string>"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"responseTime": null,
+											"body": ""
+										},
+										{
+											"id": "046b88cf-dbf4-42e9-8088-01a3ca9b6001",
+											"name": "Unauthorized",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"description": "Added as a part of security scheme: bearer",
+														"key": "Authorization",
+														"value": "Bearer <token>"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/supplier/history?supplierId=<string>",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"supplier",
+														"history"
+													],
+													"query": [
+														{
+															"description": "(Required) ",
+															"key": "supplierId",
+															"value": "<string>"
+														}
+													]
+												}
+											},
+											"status": "Unauthorized",
+											"code": 401,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"responseTime": null,
+											"body": ""
+										}
+									]
+								},
+								{
+									"name": "No Id - Get Onboarding History",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "043ef0b4-e06c-4ee8-96fa-da28341111b6",
+												"exec": [
+													"pm.test(\"Status code is 400\", function () {\r",
+													"    pm.response.to.have.status(400);\r",
+													"});\r",
+													"\r",
+													"var responseJSON = pm.response.json();\r",
+													"var errors = responseJSON.errors;\r",
+													"\r",
+													"pm.test(\"Verify that supplier Id is required\", function () {\r",
+													"    pm.expect(errors[0].name).to.be.a(\"string\").and.not.be.empty;\r",
+													"    pm.expect(errors[0].reason).to.be.a(\"string\").and.not.be.empty;\r",
+													"});\r",
+													""
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
+									"id": "751b0ef9-9743-47ce-a489-1eaf9d395d5c",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": {
+												"token": "{{bearerToken}}"
+											}
+										},
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/supplier/history?supplierId=",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"supplier",
+												"history"
+											],
+											"query": [
+												{
+													"key": "supplierId",
+													"value": "",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"id": "a2b2177e-d4e1-4957-972f-43266ff8b275",
+											"name": "Success",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"description": "Added as a part of security scheme: bearer",
+														"key": "Authorization",
+														"value": "Bearer <token>"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/supplier/history?supplierId=<string>",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"supplier",
+														"history"
+													],
+													"query": [
+														{
+															"description": "(Required) ",
+															"key": "supplierId",
+															"value": "<string>"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"responseTime": null,
+											"body": ""
+										},
+										{
+											"id": "c76104c9-8010-4068-afa5-0b6a9518c61a",
+											"name": "Unauthorized",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"description": "Added as a part of security scheme: bearer",
+														"key": "Authorization",
+														"value": "Bearer <token>"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/supplier/history?supplierId=<string>",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"supplier",
+														"history"
+													],
+													"query": [
+														{
+															"description": "(Required) ",
+															"key": "supplierId",
+															"value": "<string>"
+														}
+													]
+												}
+											},
+											"status": "Unauthorized",
+											"code": 401,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"responseTime": null,
+											"body": ""
+										}
+									]
+								},
+								{
+									"name": "No auth - Get Onboarding History",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "705631c0-8f32-41e1-b929-59f04196a50e",
+												"exec": [
+													"pm.test(\"Status code is 401\", function () {\r",
+													"    pm.response.to.have.status(401);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Status code name has 'Unauthorized'\", function () {\r",
+													"    pm.response.to.have.status(\"Unauthorized\");\r",
+													"});"
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
+									"id": "01d78378-60f6-4e76-8a76-6318b7bea8cf",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"auth": {
+											"type": "noauth"
+										},
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/supplier/history?supplierId=<string>",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"supplier",
+												"history"
+											],
+											"query": [
+												{
+													"key": "supplierId",
+													"value": "<string>",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"id": "81d54207-21f4-4d9c-82e2-6c153b34fc2c",
+											"name": "Success",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"description": "Added as a part of security scheme: bearer",
+														"key": "Authorization",
+														"value": "Bearer <token>"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/supplier/history?supplierId=<string>",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"supplier",
+														"history"
+													],
+													"query": [
+														{
+															"description": "(Required) ",
+															"key": "supplierId",
+															"value": "<string>"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"responseTime": null,
+											"body": ""
+										},
+										{
+											"id": "f87702a1-0541-47c8-afe3-5b8b8907eb0b",
+											"name": "Unauthorized",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"description": "Added as a part of security scheme: bearer",
+														"key": "Authorization",
+														"value": "Bearer <token>"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/supplier/history?supplierId=<string>",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"supplier",
+														"history"
+													],
+													"query": [
+														{
+															"description": "(Required) ",
+															"key": "supplierId",
+															"value": "<string>"
+														}
+													]
+												}
+											},
+											"status": "Unauthorized",
+											"code": 401,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"responseTime": null,
+											"body": ""
+										}
+									]
+								}
+							],
+							"id": "58ae2e8a-2d15-4937-aedc-63f4b470cd5a"
+						},
+						{
+							"name": "progress",
+							"item": [
+								{
+									"name": "Success - Get Onboarding Progress",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "4beb8540-f80f-47df-874f-4ae2a9a2d7d8",
+												"exec": [
+													"pm.test(\"Status code is 200\", function () {\r",
+													"    pm.response.to.have.status(200);\r",
+													"});\r",
+													"\r",
+													"var responseJSON = pm.response.json();\r",
+													"var data = responseJSON.data;\r",
+													"\r",
+													"pm.test(\"Verify that supplier's progress ia returned\", function () {\r",
+													"    pm.expect(responseJSON.isSuccess).to.be.a(\"boolean\");\r",
+													"        pm.expect(data.totalStage).to.be.a(\"number\");\r",
+													"        pm.expect(data.status).to.be.a(\"string\").and.not.be.empty;\r",
+													"\r",
+													"});\r",
+													""
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
+									"id": "454952fe-43ef-459e-aa97-45afd5bd21c6",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": {
+												"token": "{{bearerToken}}"
+											}
+										},
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/supplier/progress?supplierId={{supplierId}}",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"supplier",
+												"progress"
+											],
+											"query": [
+												{
+													"key": "supplierId",
+													"value": "{{supplierId}}",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"id": "d0788e00-56c4-4c95-a541-c17bfd25e538",
+											"name": "Success",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"description": "Added as a part of security scheme: bearer",
+														"key": "Authorization",
+														"value": "Bearer <token>"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/supplier/progress?supplierId=<string>",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"supplier",
+														"progress"
+													],
+													"query": [
+														{
+															"description": "(Required) ",
+															"key": "supplierId",
+															"value": "<string>"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"responseTime": null,
+											"body": ""
+										},
+										{
+											"id": "c2badfdd-c8d3-4f17-8d90-229478e99003",
+											"name": "Unauthorized",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"description": "Added as a part of security scheme: bearer",
+														"key": "Authorization",
+														"value": "Bearer <token>"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/supplier/progress?supplierId=<string>",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"supplier",
+														"progress"
+													],
+													"query": [
+														{
+															"description": "(Required) ",
+															"key": "supplierId",
+															"value": "<string>"
+														}
+													]
+												}
+											},
+											"status": "Unauthorized",
+											"code": 401,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"responseTime": null,
+											"body": ""
+										}
+									]
+								},
+								{
+									"name": "No Id - Get Onboarding Progress",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "4beb8540-f80f-47df-874f-4ae2a9a2d7d8",
+												"exec": [
+													"pm.test(\"Status code is 400\", function () {\r",
+													"    pm.response.to.have.status(400);\r",
+													"});\r",
+													"\r",
+													"var responseJSON = pm.response.json();\r",
+													"var errors = responseJSON.errors;\r",
+													"\r",
+													"pm.test(\"Verify that tags are returned\", function () {\r",
+													"    pm.expect(errors[0].name).to.be.a(\"string\").and.not.be.empty;\r",
+													"    pm.expect(errors[0].reason).to.be.a(\"string\").and.not.be.empty;\r",
+													"});\r",
+													""
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
+									"id": "8fb00125-9484-4575-91be-ce1fec6e4ed5",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": {
+												"token": "{{bearerToken}}"
+											}
+										},
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/supplier/progress?supplierId=",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"supplier",
+												"progress"
+											],
+											"query": [
+												{
+													"key": "supplierId",
+													"value": "",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"id": "7a446a55-e37e-4327-af13-34ab02d68fbb",
+											"name": "Success",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"description": "Added as a part of security scheme: bearer",
+														"key": "Authorization",
+														"value": "Bearer <token>"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/supplier/progress?supplierId=<string>",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"supplier",
+														"progress"
+													],
+													"query": [
+														{
+															"description": "(Required) ",
+															"key": "supplierId",
+															"value": "<string>"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"responseTime": null,
+											"body": ""
+										},
+										{
+											"id": "adcd9de0-0e11-4b0e-9df4-9369bf523163",
+											"name": "Unauthorized",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"description": "Added as a part of security scheme: bearer",
+														"key": "Authorization",
+														"value": "Bearer <token>"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/supplier/progress?supplierId=<string>",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"supplier",
+														"progress"
+													],
+													"query": [
+														{
+															"description": "(Required) ",
+															"key": "supplierId",
+															"value": "<string>"
+														}
+													]
+												}
+											},
+											"status": "Unauthorized",
+											"code": 401,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"responseTime": null,
+											"body": ""
+										}
+									]
+								},
+								{
+									"name": "Invalid Id - Get Onboarding Progress",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "4beb8540-f80f-47df-874f-4ae2a9a2d7d8",
+												"exec": [
+													"pm.test(\"Status code is 400\", function () {\r",
+													"    pm.response.to.have.status(400);\r",
+													"});\r",
+													"\r",
+													"var responseJSON = pm.response.json();\r",
+													"var errors = responseJSON.errors;\r",
+													"\r",
+													"pm.test(\"Verify that tags are returned\", function () {\r",
+													"    pm.expect(errors[0].name).to.be.a(\"string\").and.not.be.empty;\r",
+													"    pm.expect(errors[0].reason).to.be.a(\"string\").and.not.be.empty;\r",
+													"});\r",
+													""
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
+									"id": "be119537-0705-4aac-91df-807a757d3c57",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": {
+												"token": "{{bearerToken}}"
+											}
+										},
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/supplier/progress?supplierId=6586d903-203f-4819-3",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"supplier",
+												"progress"
+											],
+											"query": [
+												{
+													"key": "supplierId",
+													"value": "6586d903-203f-4819-3",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"id": "fc51f574-490f-45a9-82e7-ed86962c9330",
+											"name": "Success",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"description": "Added as a part of security scheme: bearer",
+														"key": "Authorization",
+														"value": "Bearer <token>"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/supplier/progress?supplierId=<string>",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"supplier",
+														"progress"
+													],
+													"query": [
+														{
+															"description": "(Required) ",
+															"key": "supplierId",
+															"value": "<string>"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"responseTime": null,
+											"body": ""
+										},
+										{
+											"id": "ac2e082f-70c6-4289-aef7-50ad7d273770",
+											"name": "Unauthorized",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"description": "Added as a part of security scheme: bearer",
+														"key": "Authorization",
+														"value": "Bearer <token>"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/supplier/progress?supplierId=<string>",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"supplier",
+														"progress"
+													],
+													"query": [
+														{
+															"description": "(Required) ",
+															"key": "supplierId",
+															"value": "<string>"
+														}
+													]
+												}
+											},
+											"status": "Unauthorized",
+											"code": 401,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"responseTime": null,
+											"body": ""
+										}
+									]
+								},
+								{
+									"name": "No auth -  Get Onboarding Progress",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "8eb6ea6d-d14a-42b6-8634-cba34ed7185c",
+												"exec": [
+													"pm.test(\"Status code is 401\", function () {\r",
+													"    pm.response.to.have.status(401);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Status code name has 'Unauthorized'\", function () {\r",
+													"    pm.response.to.have.status(\"Unauthorized\");\r",
+													"});"
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
+									"id": "0c98a300-02e2-4f31-b28b-d406480237a2",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"auth": {
+											"type": "noauth"
+										},
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/supplier/progress?supplierId=<string>",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"supplier",
+												"progress"
+											],
+											"query": [
+												{
+													"key": "supplierId",
+													"value": "<string>",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"id": "b6f1cb8c-1482-499b-8819-a943714f6535",
+											"name": "Success",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"description": "Added as a part of security scheme: bearer",
+														"key": "Authorization",
+														"value": "Bearer <token>"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/supplier/progress?supplierId=<string>",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"supplier",
+														"progress"
+													],
+													"query": [
+														{
+															"description": "(Required) ",
+															"key": "supplierId",
+															"value": "<string>"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"responseTime": null,
+											"body": ""
+										},
+										{
+											"id": "74a0c278-df3f-4dfa-8fcc-fb958941b288",
+											"name": "Unauthorized",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"description": "Added as a part of security scheme: bearer",
+														"key": "Authorization",
+														"value": "Bearer <token>"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/supplier/progress?supplierId=<string>",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"supplier",
+														"progress"
+													],
+													"query": [
+														{
+															"description": "(Required) ",
+															"key": "supplierId",
+															"value": "<string>"
+														}
+													]
+												}
+											},
+											"status": "Unauthorized",
+											"code": 401,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"responseTime": null,
+											"body": ""
+										}
+									]
+								}
+							],
+							"id": "29bb4465-765c-4f62-b572-8336da9faf20"
+						},
+						{
+							"name": "subsidiaries",
+							"item": [
+								{
+									"name": "Anp Supplier Api Features Get Suppliers Get Subsidiaries Endpoint",
+									"id": "65b97b59-8bf9-4e4b-9aca-13c070cd3b16",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": {
+												"token": "{{bearerToken}}"
+											}
+										},
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/supplier/subsidiaries?companyId=<string>&pageNumber=<integer>&pageSize=<integer>",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"supplier",
+												"subsidiaries"
+											],
+											"query": [
+												{
+													"key": "companyId",
+													"value": "<string>",
+													"description": "(Required) "
+												},
+												{
+													"key": "pageNumber",
+													"value": "<integer>",
+													"description": "(Required) "
+												},
+												{
+													"key": "pageSize",
+													"value": "<integer>",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"id": "ca14ac64-e3ee-4b97-b2ce-bcb3ecf438c4",
+											"name": "Success",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"description": "Added as a part of security scheme: bearer",
+														"key": "Authorization",
+														"value": "Bearer <token>"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/supplier/subsidiaries?companyId=<string>&pageNumber=<integer>&pageSize=<integer>",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"supplier",
+														"subsidiaries"
+													],
+													"query": [
+														{
+															"description": "(Required) ",
+															"key": "companyId",
+															"value": "<string>"
+														},
+														{
+															"description": "(Required) ",
+															"key": "pageNumber",
+															"value": "<integer>"
+														},
+														{
+															"description": "(Required) ",
+															"key": "pageSize",
+															"value": "<integer>"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"responseTime": null,
+											"body": ""
+										},
+										{
+											"id": "f2db73fd-a074-4b50-af1e-c8d7e165d01f",
+											"name": "Unauthorized",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"description": "Added as a part of security scheme: bearer",
+														"key": "Authorization",
+														"value": "Bearer <token>"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/supplier/subsidiaries?companyId=<string>&pageNumber=<integer>&pageSize=<integer>",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"supplier",
+														"subsidiaries"
+													],
+													"query": [
+														{
+															"description": "(Required) ",
+															"key": "companyId",
+															"value": "<string>"
+														},
+														{
+															"description": "(Required) ",
+															"key": "pageNumber",
+															"value": "<integer>"
+														},
+														{
+															"description": "(Required) ",
+															"key": "pageSize",
+															"value": "<integer>"
+														}
+													]
+												}
+											},
+											"status": "Unauthorized",
+											"code": 401,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"responseTime": null,
+											"body": ""
+										}
+									]
+								},
+								{
+									"name": "No companyId - Get Subsidiaries",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "56530489-830a-4179-a812-bcea1420d858",
+												"exec": [
+													"pm.test(\"Status code is 400\", function () {\r",
+													"    pm.response.to.have.status(400);\r",
+													"});\r",
+													"\r",
+													"var responseJSON = pm.response.json();\r",
+													"var errors = responseJSON.errors;\r",
+													"\r",
+													"pm.test(\"Verify that company Id is required\", function () {\r",
+													"    pm.expect(errors[0].name).to.be.a(\"string\").and.not.be.empty;\r",
+													"    pm.expect(errors[0].reason).to.be.a(\"string\").and.not.be.empty;\r",
+													"});\r",
+													""
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
+									"id": "c38ad15d-6383-4dc6-a7af-d561a328a46a",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": {
+												"token": "{{bearerToken}}"
+											}
+										},
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/supplier/subsidiaries?companyId=&pageNumber=1&pageSize=10",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"supplier",
+												"subsidiaries"
+											],
+											"query": [
+												{
+													"key": "companyId",
+													"value": "",
+													"description": "(Required) "
+												},
+												{
+													"key": "pageNumber",
+													"value": "1",
+													"description": "(Required) "
+												},
+												{
+													"key": "pageSize",
+													"value": "10",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"id": "2625d2d4-533a-4c9e-9848-21ec3a1ca712",
+											"name": "Success",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"description": "Added as a part of security scheme: bearer",
+														"key": "Authorization",
+														"value": "Bearer <token>"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/supplier/subsidiaries?companyId=<string>&pageNumber=<integer>&pageSize=<integer>",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"supplier",
+														"subsidiaries"
+													],
+													"query": [
+														{
+															"description": "(Required) ",
+															"key": "companyId",
+															"value": "<string>"
+														},
+														{
+															"description": "(Required) ",
+															"key": "pageNumber",
+															"value": "<integer>"
+														},
+														{
+															"description": "(Required) ",
+															"key": "pageSize",
+															"value": "<integer>"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"responseTime": null,
+											"body": ""
+										},
+										{
+											"id": "8c1013f9-93c7-439a-8e63-487a19532a0c",
+											"name": "Unauthorized",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"description": "Added as a part of security scheme: bearer",
+														"key": "Authorization",
+														"value": "Bearer <token>"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/supplier/subsidiaries?companyId=<string>&pageNumber=<integer>&pageSize=<integer>",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"supplier",
+														"subsidiaries"
+													],
+													"query": [
+														{
+															"description": "(Required) ",
+															"key": "companyId",
+															"value": "<string>"
+														},
+														{
+															"description": "(Required) ",
+															"key": "pageNumber",
+															"value": "<integer>"
+														},
+														{
+															"description": "(Required) ",
+															"key": "pageSize",
+															"value": "<integer>"
+														}
+													]
+												}
+											},
+											"status": "Unauthorized",
+											"code": 401,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"responseTime": null,
+											"body": ""
+										}
+									]
+								},
+								{
+									"name": "Invalid companyId - Get Subsidiaries",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "56530489-830a-4179-a812-bcea1420d858",
+												"exec": [
+													"pm.test(\"Status code is 400\", function () {\r",
+													"    pm.response.to.have.status(400);\r",
+													"});\r",
+													"\r",
+													"var responseJSON = pm.response.json();\r",
+													"var errors = responseJSON.errors;\r",
+													"\r",
+													"pm.test(\"Verify that company Id is invalid\", function () {\r",
+													"    pm.expect(errors[0].name).to.be.a(\"string\").and.not.be.empty;\r",
+													"    pm.expect(errors[0].reason).to.be.a(\"string\").and.not.be.empty;\r",
+													"});\r",
+													""
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
+									"id": "2d9fe95c-7ca3-4b04-83ae-c371b2a27d00",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": {
+												"token": "{{bearerToken}}"
+											}
+										},
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/supplier/subsidiaries?companyId=d903-203f-4819-3a1b-08dd2661c275&pageNumber=1&pageSize=10",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"supplier",
+												"subsidiaries"
+											],
+											"query": [
+												{
+													"key": "companyId",
+													"value": "d903-203f-4819-3a1b-08dd2661c275",
+													"description": "(Required) "
+												},
+												{
+													"key": "pageNumber",
+													"value": "1",
+													"description": "(Required) "
+												},
+												{
+													"key": "pageSize",
+													"value": "10",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"id": "32467ef7-979c-48a3-bac9-22f942e9b87a",
+											"name": "Success",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"description": "Added as a part of security scheme: bearer",
+														"key": "Authorization",
+														"value": "Bearer <token>"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/supplier/subsidiaries?companyId=<string>&pageNumber=<integer>&pageSize=<integer>",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"supplier",
+														"subsidiaries"
+													],
+													"query": [
+														{
+															"description": "(Required) ",
+															"key": "companyId",
+															"value": "<string>"
+														},
+														{
+															"description": "(Required) ",
+															"key": "pageNumber",
+															"value": "<integer>"
+														},
+														{
+															"description": "(Required) ",
+															"key": "pageSize",
+															"value": "<integer>"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"responseTime": null,
+											"body": ""
+										},
+										{
+											"id": "78d4cc4a-f2cf-4767-8009-61ba112e539c",
+											"name": "Unauthorized",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"description": "Added as a part of security scheme: bearer",
+														"key": "Authorization",
+														"value": "Bearer <token>"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/supplier/subsidiaries?companyId=<string>&pageNumber=<integer>&pageSize=<integer>",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"supplier",
+														"subsidiaries"
+													],
+													"query": [
+														{
+															"description": "(Required) ",
+															"key": "companyId",
+															"value": "<string>"
+														},
+														{
+															"description": "(Required) ",
+															"key": "pageNumber",
+															"value": "<integer>"
+														},
+														{
+															"description": "(Required) ",
+															"key": "pageSize",
+															"value": "<integer>"
+														}
+													]
+												}
+											},
+											"status": "Unauthorized",
+											"code": 401,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"responseTime": null,
+											"body": ""
+										}
+									]
+								},
+								{
+									"name": "No auth - Get Subsidiaries",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "2a843e18-3f86-4312-a776-55784b988b0f",
+												"exec": [
+													"pm.test(\"Status code is 401\", function () {\r",
+													"    pm.response.to.have.status(401);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Status code name has 'Unauthorized'\", function () {\r",
+													"    pm.response.to.have.status(\"Unauthorized\");\r",
+													"});"
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
+									"id": "1ebf2086-b0e5-410f-a048-6fdcc1ec1f15",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"auth": {
+											"type": "noauth"
+										},
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/supplier/subsidiaries?companyId=<string>&pageNumber=<integer>&pageSize=<integer>",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"supplier",
+												"subsidiaries"
+											],
+											"query": [
+												{
+													"key": "companyId",
+													"value": "<string>",
+													"description": "(Required) "
+												},
+												{
+													"key": "pageNumber",
+													"value": "<integer>",
+													"description": "(Required) "
+												},
+												{
+													"key": "pageSize",
+													"value": "<integer>",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"id": "9ff807e7-8e68-49ef-a7e0-e7c8d7831c69",
+											"name": "Success",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"description": "Added as a part of security scheme: bearer",
+														"key": "Authorization",
+														"value": "Bearer <token>"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/supplier/subsidiaries?companyId=<string>&pageNumber=<integer>&pageSize=<integer>",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"supplier",
+														"subsidiaries"
+													],
+													"query": [
+														{
+															"description": "(Required) ",
+															"key": "companyId",
+															"value": "<string>"
+														},
+														{
+															"description": "(Required) ",
+															"key": "pageNumber",
+															"value": "<integer>"
+														},
+														{
+															"description": "(Required) ",
+															"key": "pageSize",
+															"value": "<integer>"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"responseTime": null,
+											"body": ""
+										},
+										{
+											"id": "9065d39c-2f1d-43e4-b6ef-d3fa6684e260",
+											"name": "Unauthorized",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"description": "Added as a part of security scheme: bearer",
+														"key": "Authorization",
+														"value": "Bearer <token>"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/supplier/subsidiaries?companyId=<string>&pageNumber=<integer>&pageSize=<integer>",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"supplier",
+														"subsidiaries"
+													],
+													"query": [
+														{
+															"description": "(Required) ",
+															"key": "companyId",
+															"value": "<string>"
+														},
+														{
+															"description": "(Required) ",
+															"key": "pageNumber",
+															"value": "<integer>"
+														},
+														{
+															"description": "(Required) ",
+															"key": "pageSize",
+															"value": "<integer>"
+														}
+													]
+												}
+											},
+											"status": "Unauthorized",
+											"code": 401,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"responseTime": null,
+											"body": ""
+										}
+									]
+								}
+							],
+							"id": "7f10e68b-da59-4cbf-a147-99ce7648c973"
 						},
 						{
 							"name": "suppliers",
