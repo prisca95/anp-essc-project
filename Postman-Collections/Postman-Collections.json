@@ -43624,96 +43624,6 @@
 									]
 								},
 								{
-									"name": "Get Assigned Task Copy",
-									"event": [
-										{
-											"listen": "test",
-											"script": {
-												"id": "432c7712-fd58-498c-beba-616abb6f09fe",
-												"exec": [
-													"pm.collectionVariables.set(\"requestId\", pm.response.json().data[0].workflowRequestId);\r",
-													"\r",
-													"pm.test(\"Status code is 200\", function () {\r",
-													"    pm.response.to.have.status(200);\r",
-													"});\r",
-													"\r",
-													"var responseJSON = pm.response.json();\r",
-													"\r",
-													"pm.test(\"Verify that assignedtask is returned\", function () {\r",
-													"    pm.expect(responseJSON.data[0].workflowRequestId).to.be.a(\"string\").and.not.be.empty;\r",
-													"        pm.expect(responseJSON.data[0].descriptions).to.be.a(\"string\").and.not.be.empty;\r",
-													"         pm.expect(responseJSON.data[0].lastProcessor).to.be.a(\"string\").and.not.be.empty;\r",
-													"          pm.expect(responseJSON.data[0].preparedBy).to.be.a(\"string\").and.not.be.empty;\r",
-													"});"
-												],
-												"type": "text/javascript",
-												"packages": {}
-											}
-										}
-									],
-									"id": "0afc1b8b-3e66-40fe-bab1-d39efa192d7f",
-									"protocolProfileBehavior": {
-										"disableBodyPruning": true
-									},
-									"request": {
-										"auth": {
-											"type": "bearer",
-											"bearer": {
-												"token": "{{secondApproverBearerToken}}"
-											}
-										},
-										"method": "GET",
-										"header": [],
-										"url": "{{baseUrl}}/api/workflow/assignedTask"
-									},
-									"response": [
-										{
-											"id": "4ec30635-a9ba-4ad8-adc8-544d9d53d477",
-											"name": "Success",
-											"originalRequest": {
-												"method": "GET",
-												"header": [
-													{
-														"description": "Added as a part of security scheme: bearer",
-														"key": "Authorization",
-														"value": "Bearer <token>"
-													}
-												],
-												"url": "{{baseUrl}}/api/workflow/assignedTask"
-											},
-											"status": "OK",
-											"code": 200,
-											"_postman_previewlanguage": "text",
-											"header": [],
-											"cookie": [],
-											"responseTime": null,
-											"body": ""
-										},
-										{
-											"id": "db657b37-f58d-4b5e-95f3-570f9946fdce",
-											"name": "Unauthorized",
-											"originalRequest": {
-												"method": "GET",
-												"header": [
-													{
-														"description": "Added as a part of security scheme: bearer",
-														"key": "Authorization",
-														"value": "Bearer <token>"
-													}
-												],
-												"url": "{{baseUrl}}/api/workflow/assignedTask"
-											},
-											"status": "Unauthorized",
-											"code": 401,
-											"_postman_previewlanguage": "text",
-											"header": [],
-											"cookie": [],
-											"responseTime": null,
-											"body": ""
-										}
-									]
-								},
-								{
 									"name": "1st Approver Workflow Task",
 									"event": [
 										{
@@ -43836,6 +43746,96 @@
 													}
 												},
 												"url": "{{baseUrl}}/api/workflow/processTask"
+											},
+											"status": "Unauthorized",
+											"code": 401,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"responseTime": null,
+											"body": ""
+										}
+									]
+								},
+								{
+									"name": "2nd Approver - Get Assigned Task",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "432c7712-fd58-498c-beba-616abb6f09fe",
+												"exec": [
+													"pm.collectionVariables.set(\"requestId\", pm.response.json().data[0].workflowRequestId);\r",
+													"\r",
+													"pm.test(\"Status code is 200\", function () {\r",
+													"    pm.response.to.have.status(200);\r",
+													"});\r",
+													"\r",
+													"var responseJSON = pm.response.json();\r",
+													"\r",
+													"pm.test(\"Verify that assignedtask is returned\", function () {\r",
+													"    pm.expect(responseJSON.data[0].workflowRequestId).to.be.a(\"string\").and.not.be.empty;\r",
+													"        pm.expect(responseJSON.data[0].descriptions).to.be.a(\"string\").and.not.be.empty;\r",
+													"         pm.expect(responseJSON.data[0].lastProcessor).to.be.a(\"string\").and.not.be.empty;\r",
+													"          pm.expect(responseJSON.data[0].preparedBy).to.be.a(\"string\").and.not.be.empty;\r",
+													"});"
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
+									"id": "0afc1b8b-3e66-40fe-bab1-d39efa192d7f",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": {
+												"token": "{{initiatorBearerToken}}"
+											}
+										},
+										"method": "GET",
+										"header": [],
+										"url": "{{baseUrl}}/api/workflow/assignedTask"
+									},
+									"response": [
+										{
+											"id": "4ec30635-a9ba-4ad8-adc8-544d9d53d477",
+											"name": "Success",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"description": "Added as a part of security scheme: bearer",
+														"key": "Authorization",
+														"value": "Bearer <token>"
+													}
+												],
+												"url": "{{baseUrl}}/api/workflow/assignedTask"
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"responseTime": null,
+											"body": ""
+										},
+										{
+											"id": "db657b37-f58d-4b5e-95f3-570f9946fdce",
+											"name": "Unauthorized",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"description": "Added as a part of security scheme: bearer",
+														"key": "Authorization",
+														"value": "Bearer <token>"
+													}
+												],
+												"url": "{{baseUrl}}/api/workflow/assignedTask"
 											},
 											"status": "Unauthorized",
 											"code": 401,
