@@ -38256,7 +38256,7 @@
 										],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n  //\"serviceInformationId\": \"<string>\",\n  \"title\":\"{{$randomProductAdjective}}\",\n  \"bidStartDate\": \"2025-01-31\",\n  \"bidEndDate\": \"2025-02-10\",\n  \"description\": \"Export\",\n  \"businessType\": \"Sole proprietorship\",\n  \"bidRequirement\": \"3 contracts executed\",\n  \"prerequisite\": \"CAC\",\n  \"workReference\": \"<string>\",\n  \"additionalInformation\": \"<string>\",\n  \"industryId\": \"{{industryId}}\",\n  \"status\": 4\n}",
+											"raw": "{\n  //\"serviceInformationId\": \"<string>\",\n  \"title\":\"{{$randomProductAdjective}}\",\n  \"bidStartDate\": \"2025-01-31\",\n  \"bidEndDate\": \"2025-02-10\",\n  \"description\": \"Export\",\n  \"businessType\": \"Sole proprietorship\",\n  \"bidRequirement\": \"3 contracts executed\",\n  \"prerequisite\": \"CAC\",\n  \"workReference\": \"<string>\",\n  \"additionalInformation\": \"<string>\",\n  \"industryId\": \"{{industryId}}\",\n  \"status\": 0\n}",
 											"options": {
 												"raw": {
 													"headerFamily": "json",
@@ -47612,7 +47612,7 @@
 													"\r",
 													"    // pm.expect(responseJSON.isSuccess).to.be.a(\"boolean\");\r",
 													"    // pm.expect(responseJSON.data.id).to.be.a(\"string\").and.not.empty;\r",
-													"    pm.expect(responseJSON.data[0]).to.be.an(\"object\").and.not.empty;\r",
+													"    pm.expect(responseJSON.data).to.be.an(\"object\").and.not.empty;\r",
 													"\r",
 													"});"
 												],
