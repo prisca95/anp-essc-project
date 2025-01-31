@@ -43448,7 +43448,7 @@
 										],
 										"body": {
 											"mode": "raw",
-											"raw": "\n{\n  \"entityId\": \"{{serviceInformationId}}\", //procurementId\n  \"entityName\": \"Procurement\",\n  \"workflowDescription\": \"Procurement verification for Awesome\",\n  \"parameters\": [\n    {\n      \"parameterName\": \"procurementId\", \n      \"parameterValue\": \"{{serviceInformationId}}\"  //procurementId\n    },\n    {\n      \"parameterName\": \"baseurl\",\n      \"parameterValue\": \"{{baseUrl}}\"\n    }\n \n  ],\n  \"selectedWorkflowType\": \"Procurement\"\n}\n\n",
+											"raw": "\n{\n  \"entityId\": \"{{serviceInformationId}}\", //procurementId\n  \"entityName\": \"Procurement\",\n  \"workflowDescription\": \"Procurement verification for Small\",\n  \"parameters\": [\n    {\n      \"parameterName\": \"procurementId\", \n      \"parameterValue\": \"{{serviceInformationId}}\"  //procurementId\n    },\n    {\n      \"parameterName\": \"baseurl\",\n      \"parameterValue\": \"{{baseUrl}}\"\n    }\n \n  ],\n  \"selectedWorkflowType\": \"Procurement\"\n}\n\n",
 											"options": {
 												"raw": {
 													"headerFamily": "json",
@@ -43672,7 +43672,7 @@
 										],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n  \"requestId\":  \"{{procurementRequestId}}\",//\"fa087b2a-e880-47ac-bb83-08dd341c5bcc\",\n  \"entityId\": \"{{serviceInformationId}}\", //procurementId\n  \"entityName\": \"Procurement\",\n  \"comment\": \"<string>\",\n  \"workflowAction\": \"Approved\",\n  \"approverId\": \"{{secondApproverUserId}}\",//login user id\n  \"descriptions\": \"E-procurement verification for practical\"\n}",
+											"raw": "{\n  \"requestId\":  \"{{procurementRequestId}}\",//\"fa087b2a-e880-47ac-bb83-08dd341c5bcc\",\n  \"entityId\": \"{{serviceInformationId}}\", //procurementId\n  \"entityName\": \"Procurement\",\n  \"comment\": \"<string>\",\n  \"workflowAction\": \"Approved\",\n  \"approverId\": \"{{secondApproverUserId}}\",//login user id\n  \"descriptions\": \"E-procurement verification for small\"\n}",
 											"options": {
 												"raw": {
 													"headerFamily": "json",
@@ -43896,7 +43896,7 @@
 										],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n  \"requestId\": \"{{procurementRequestId}}\", //\"{{requestId}}\", \"fa087b2a-e880-47ac-bb83-08dd341c5bcc\",\n  \"entityId\": \"{{serviceInformationId}}\",//procurementId\n  \"entityName\": \"Procurement\",\n  \"comment\": \"<string>\",\n  \"workflowAction\": \"Approved\",\n  \"approverId\": \"{{initiatorUserId}}\",//login user id\n  \"descriptions\": \"E-procurement verification for practical\"\n}",
+											"raw": "{\n  \"requestId\": \"{{procurementRequestId}}\", //\"{{requestId}}\", \"fa087b2a-e880-47ac-bb83-08dd341c5bcc\",\n  \"entityId\": \"{{serviceInformationId}}\",//procurementId\n  \"entityName\": \"Procurement\",\n  \"comment\": \"<string>\",\n  \"workflowAction\": \"Rejected\",\n  \"approverId\": \"{{initiatorUserId}}\",//login user id\n  \"descriptions\": \"E-procurement verification for Small\"\n}",
 											"options": {
 												"raw": {
 													"headerFamily": "json",
@@ -48234,7 +48234,7 @@
 										],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n  \"tenderAccessId\": \"a1df535a-0d5d-483d-1555-08dd4016c889\"\n}",
+											"raw": "{\n  \"tenderAccessId\": \"{{tenderAccessId}}\"//\"a1df535a-0d5d-483d-1555-08dd4016c889\"\n}",
 											"options": {
 												"raw": {
 													"headerFamily": "json",
@@ -49075,7 +49075,7 @@
 												],
 												"body": {
 													"mode": "raw",
-													"raw": "{\n  \"tenderAccessId\": \"a1df535a-0d5d-483d-1555-08dd4016c889\"\n}",
+													"raw": "{\n  \"tenderAccessId\": \"{{tenderAccessId}}\",//\"a1df535a-0d5d-483d-1555-08dd4016c889\",\n     \"allow\": true\n}",
 													"options": {
 														"raw": {
 															"headerFamily": "json",
@@ -49418,7 +49418,7 @@
 														],
 														"body": {
 															"mode": "raw",
-															"raw": "{\n  \"createdDate\": \"2025-01-28\",\n  \"serviceInformationId\": \"{{serviceInformationId}}\",\n  \"address\": \"Lagos\",\n  \"longitude\": \"{{$randomLongitude}}\",\n  \"latitude\": \"{{$randomLatitude}}\",\n  \"state\": \"Lagos\",\n  \"location\": \"Lagos\",\n  \"estimatedCost\": \"55000\",\n  \"estimatedStartDate\": \"2025-02-05\",\n  \"estimatedEndDate\": \"2025-02-10\",\n  \"purpose\": \"<string>\",\n  \"declaration\": true,\n  \"companyId\": \"{{supplierId}}\"\n}",
+															"raw": "{\n  \"createdDate\": \"2025-01-28\",\n  \"serviceInformationId\": \"{{serviceInformationId}}\",\n  \"address\": \"Lagos\",\n  \"longitude\": \"{{$randomLongitude}}\",\n  \"latitude\": \"{{$randomLatitude}}\",\n  \"state\": \"Lagos\",\n  \"location\": \"Lagos\",\n  \"estimatedCost\": \"55000\",\n  \"estimatedStartDate\": \"2025-02-05\",\n  \"estimatedEndDate\": \"2025-02-10\",\n  \"purpose\": \"Expression of interest for Awesome\",\n  \"declaration\": true,\n  \"companyId\": \"{{supplierId}}\"\n}",
 															"options": {
 																"raw": {
 																	"headerFamily": "json",
