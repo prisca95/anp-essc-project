@@ -53929,7 +53929,7 @@
 										],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n  \"organizationName\": \"Slot\",\n  \"dateOfEstablishment\": \"2025-01-01\",\n  \"businessType\": \"Sole Proprietorship\",\n  \"country\": \"USA\",\n  \"regNumber\": \"234564\",\n  \"addressLine1\": \"1, high lane\",\n  \"addressLine2\": \"<string>\",\n  \"region\": \"Lagos\",\n  \"city\": \"Lagos\",\n  \"town\": \"Lagos\",\n  \"phoneNumber\": \"2348077882233\",\n  \"website\": \"www.website.com\",\n  \"email\": \"berry@yopmail.com\",\n  \"domain\": \"@yopmail.com.com\",\n  \"opertorType\": \"<string>\"\n}",
+											"raw": "{\n  \"organizationName\": \"Slot\",\n  \"dateOfEstablishment\": \"2025-01-01\",\n  \"businessType\": \"Sole Proprietorship\",\n  \"country\": \"USA\",\n  \"regNumber\": \"234564\",\n  \"addressLine1\": \"1, high lane\",\n  \"addressLine2\": \"<string>\",\n  \"region\": \"Lagos\",\n  \"city\": \"Lagos\",\n  \"town\": \"Lagos\",\n  \"phoneNumber\": \"2348077882233\",\n  \"website\": \"www.website.com\",\n  \"domain\": \"@yopmail.com.com\",\n  \"opertorType\": \"<string>\"\n}\n\n",
 											"options": {
 												"raw": {
 													"headerFamily": "json",
@@ -54266,7 +54266,7 @@
 												],
 												"body": {
 													"mode": "raw",
-													"raw": "{\n  \"contactId\": \"<string>\",\n  \"firstName\": \"<string>\",\n  \"middleName\": \"<string>\",\n  \"lastName\": \"<string>\",\n  \"designation\": \"<string>\",\n  \"nationality\": \"<string>\",\n  \"phoneNumber\": \"<string>\",\n  \"organizationId\": \"<string>\"\n}",
+													"raw": "{\n  \"contactId\": \"string\",\n  \"firstName\": \"string\",\n  \"middleName\": \"string\",\n  \"lastName\": \"string\",\n  \"designation\": \"string\",\n  \"nationality\": \"string\",\n  \"phoneNumber\": \"string\",\n  \"email\": \"string\",\n  \"organizationId\": \"string\"\n}",
 													"options": {
 														"raw": {
 															"headerFamily": "json",
