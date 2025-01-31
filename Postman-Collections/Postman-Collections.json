@@ -43448,7 +43448,7 @@
 										],
 										"body": {
 											"mode": "raw",
-											"raw": "\n{\n  \"entityId\": \"{{serviceInformationId}}\", //procurementId\n  \"entityName\": \"Procurement\",\n  \"workflowDescription\": \"Procurement verification for Gorgeous\",\n  \"parameters\": [\n    {\n      \"parameterName\": \"procurementId\", \n      \"parameterValue\": \"{{serviceInformationId}}\"  //procurementId\n    },\n    {\n      \"parameterName\": \"baseurl\",\n      \"parameterValue\": \"{{baseUrl}}\"\n    }\n \n  ],\n  \"selectedWorkflowType\": \"Procurement\"\n}\n\n",
+											"raw": "\n{\n  \"entityId\": \"{{serviceInformationId}}\", //procurementId\n  \"entityName\": \"Procurement\",\n  \"workflowDescription\": \"Procurement verification for Awesome\",\n  \"parameters\": [\n    {\n      \"parameterName\": \"procurementId\", \n      \"parameterValue\": \"{{serviceInformationId}}\"  //procurementId\n    },\n    {\n      \"parameterName\": \"baseurl\",\n      \"parameterValue\": \"{{baseUrl}}\"\n    }\n \n  ],\n  \"selectedWorkflowType\": \"Procurement\"\n}\n\n",
 											"options": {
 												"raw": {
 													"headerFamily": "json",
@@ -43672,7 +43672,7 @@
 										],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n  \"requestId\":  \"{{requestId}}\",//\"fa087b2a-e880-47ac-bb83-08dd341c5bcc\",\n  \"entityId\": \"{{serviceInformationId}}\", //procurementId\n  \"entityName\": \"Procurement\",\n  \"comment\": \"<string>\",\n  \"workflowAction\": \"Approved\",\n  \"approverId\": \"{{secondApproverUserId}}\",//login user id\n  \"descriptions\": \"E-procurement verification for\"\n}",
+											"raw": "{\n  \"requestId\":  \"{{procurementRequestId}}\",//\"fa087b2a-e880-47ac-bb83-08dd341c5bcc\",\n  \"entityId\": \"{{serviceInformationId}}\", //procurementId\n  \"entityName\": \"Procurement\",\n  \"comment\": \"<string>\",\n  \"workflowAction\": \"Approved\",\n  \"approverId\": \"{{secondApproverUserId}}\",//login user id\n  \"descriptions\": \"E-procurement verification for practical\"\n}",
 											"options": {
 												"raw": {
 													"headerFamily": "json",
@@ -43896,7 +43896,7 @@
 										],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n  \"requestId\":  \"{{requestId}}\",//\"fa087b2a-e880-47ac-bb83-08dd341c5bcc\",\n  \"entityId\": \"{{serviceInformationId}}\",//procurementId\n  \"entityName\": \"Procurement\",\n  \"comment\": \"<string>\",\n  \"workflowAction\": \"Approved\",\n  \"approverId\": \"{{initiatorUserId}}\",//login user id\n  \"descriptions\": \"E-procurement verification for \"\n}",
+											"raw": "{\n  \"requestId\": \"{{procurementRequestId}}\", //\"{{requestId}}\", \"fa087b2a-e880-47ac-bb83-08dd341c5bcc\",\n  \"entityId\": \"{{serviceInformationId}}\",//procurementId\n  \"entityName\": \"Procurement\",\n  \"comment\": \"<string>\",\n  \"workflowAction\": \"Approved\",\n  \"approverId\": \"{{initiatorUserId}}\",//login user id\n  \"descriptions\": \"E-procurement verification for practical\"\n}",
 											"options": {
 												"raw": {
 													"headerFamily": "json",
