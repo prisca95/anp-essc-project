@@ -41357,7 +41357,7 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "{{baseUrl}}/api/procurement/listServiceInformation?pageNumber=1&pageSize=20",
+											"raw": "{{baseUrl}}/api/procurement/listServiceInformation?status=New&pageNumber=1&pageSize=20",
 											"host": [
 												"{{baseUrl}}"
 											],
@@ -41374,8 +41374,8 @@
 												},
 												{
 													"key": "status",
-													"value": "0",
-													"disabled": true
+													"value": "New",
+													"description": "New, Processing, Rejected, Approved, Draft"
 												},
 												{
 													"key": "pageNumber",
