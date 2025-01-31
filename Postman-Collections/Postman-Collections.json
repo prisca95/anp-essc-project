@@ -43541,7 +43541,7 @@
 											"script": {
 												"id": "432c7712-fd58-498c-beba-616abb6f09fe",
 												"exec": [
-													"pm.collectionVariables.set(\"requestId\", pm.response.json().data[0].workflowRequestId);\r",
+													"//pm.collectionVariables.set(\"requestId\", pm.response.json().data[0].workflowRequestId);\r",
 													"\r",
 													"pm.test(\"Status code is 200\", function () {\r",
 													"    pm.response.to.have.status(200);\r",
@@ -43765,7 +43765,7 @@
 											"script": {
 												"id": "432c7712-fd58-498c-beba-616abb6f09fe",
 												"exec": [
-													"pm.collectionVariables.set(\"requestId\", pm.response.json().data[0].workflowRequestId);\r",
+													"//pm.collectionVariables.set(\"requestId\", pm.response.json().data[0].workflowRequestId);\r",
 													"\r",
 													"pm.test(\"Status code is 200\", function () {\r",
 													"    pm.response.to.have.status(200);\r",
@@ -59697,6 +59697,10 @@
 		},
 		{
 			"key": "tenderBidId",
+			"value": ""
+		},
+		{
+			"key": "procurementRequestId",
 			"value": ""
 		}
 	]
