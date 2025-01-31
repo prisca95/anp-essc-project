@@ -39100,7 +39100,7 @@
 												],
 												"body": {
 													"mode": "raw",
-													"raw": "{\n // \"tenderGoodsServicesId\": \"<string>\",\n  \"itemName\": \"Gold\",\n  \"description\": \"Gold mining\",\n  \"quantity\": \"10\",\n  \"estimatedCost\": \"50000\",\n  \"procurementMethod\": \"Request for proposal\",\n  \"warrantyDuration\": \"5\",\n  \"warrantyType\": \"Standard\",\n  \"serviceInformationId\": \"85218a2b-83c4-464a-3cd6-08dd3c7c59fc\"//\"{{serviceInformationId}}\"\n}",
+													"raw": "{\n // \"tenderGoodsServicesId\": \"<string>\",\n  \"itemName\": \"{{$randomProductName}}\",\n  \"description\": \"Procurement of product\",\n  \"quantity\": 10,\n  \"estimatedCost\": 70000,\n  \"procurementMethod\": \"Request for proposal\",\n  \"warrantyDuration\": 5,\n  \"warrantyType\": \"Standard\",\n  \"serviceInformationId\": \"{{serviceInformationId}}\"\n}",
 													"options": {
 														"raw": {
 															"headerFamily": "json",
@@ -39778,7 +39778,7 @@
 														],
 														"body": {
 															"mode": "raw",
-															"raw": "{\n // \"tenderDetailId\": \"<string>\",\n  \"startdate\": \"2025-01-28T00:00:00.906Z\",\n  \"endDate\": \"2025-01-30T00:00:00.906Z\",\n  \"tenderType\": \"TechnicalInformation\",//\"ExpressionOfInterest\",//\"Commercials\",\n  \"serviceInformationId\": \"{{serviceInformationId}}\",//\"85218a2b-83c4-464a-3cd6-08dd3c7c59fc\",\n  \"tenderDocuments\": [\n    {\n     // \"tenderDocumentId\": \"<string>\",\n      \"documentName\": \"CAC\",\n      \"assignPoint\": \"500\"\n    },\n    {\n   //   \"tenderDocumentId\": \"<string>\",\n      \"documentName\": \"TIN\",\n      \"assignPoint\": \"50\"\n    }\n  ]\n}",
+															"raw": "{\n // \"tenderDetailId\": \"<string>\",\n  \"startdate\": \"2025-01-28T00:00:00.906Z\",\n  \"endDate\": \"2025-01-30T00:00:00.906Z\",\n  \"tenderType\": \"TechnicalInformation\",//\"ExpressionOfInterest\",//\"Commercials\",\n  \"serviceInformationId\": \"{{serviceInformationId}}\",//\"85218a2b-83c4-464a-3cd6-08dd3c7c59fc\",\n  \"tenderDocuments\": [\n    {\n     // \"tenderDocumentId\": \"<string>\",\n      \"documentName\": \"CAC\",\n      \"assignPoint\": \"50\"\n    }\n//     {\n//    //   \"tenderDocumentId\": \"<string>\",\n//     //   \"documentName\": \"TIN\",\n//     //   \"assignPoint\": \"50\"\n//     }\n  ]\n}",
 															"options": {
 																"raw": {
 																	"headerFamily": "json",
