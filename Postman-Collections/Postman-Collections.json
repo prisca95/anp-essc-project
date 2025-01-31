@@ -39778,7 +39778,7 @@
 														],
 														"body": {
 															"mode": "raw",
-															"raw": "{\n // \"tenderDetailId\": \"<string>\",\n  \"startdate\": \"2025-01-28T00:00:00.906Z\",\n  \"endDate\": \"2025-01-30T00:00:00.906Z\",\n  \"tenderType\": \"TechnicalInformation\",//\"ExpressionOfInterest\",//\"Commercials\",\n  \"serviceInformationId\": \"{{serviceInformationId}}\",//\"85218a2b-83c4-464a-3cd6-08dd3c7c59fc\",\n  \"tenderDocuments\": [\n    {\n     // \"tenderDocumentId\": \"<string>\",\n      \"documentName\": \"CAC\",\n      \"assignPoint\": \"50\"\n    }\n//     {\n//    //   \"tenderDocumentId\": \"<string>\",\n//     //   \"documentName\": \"TIN\",\n//     //   \"assignPoint\": \"50\"\n//     }\n  ]\n}",
+															"raw": "{\n // \"tenderDetailId\": \"<string>\",\n  \"startdate\": \"2025-01-31T00:00:00.906Z\",\n  \"endDate\": \"2025-02-10T00:00:00.906Z\",\n  \"tenderType\": \"TechnicalInformation\",//\"ExpressionOfInterest\",//\"Commercials\",\n  \"serviceInformationId\": \"{{serviceInformationId}}\",//\"85218a2b-83c4-464a-3cd6-08dd3c7c59fc\",\n  \"tenderDocuments\": [\n    {\n     // \"tenderDocumentId\": \"<string>\",\n      \"documentName\": \"CAC\",\n      \"assignPoint\": \"50\"\n    }\n//     {\n//    //   \"tenderDocumentId\": \"<string>\",\n//     //   \"documentName\": \"TIN\",\n//     //   \"assignPoint\": \"50\"\n//     }\n  ]\n}",
 															"options": {
 																"raw": {
 																	"headerFamily": "json",
