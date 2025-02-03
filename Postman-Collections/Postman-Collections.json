@@ -55926,6 +55926,33 @@
 									"item": [
 										{
 											"name": "ANP Web Api Features Operator Get A Contact Endpoint",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"id": "1374fb81-bcd7-4185-83b2-d16ea6833291",
+														"exec": [
+															"//pm.collectionVariables.set(\"contactId\", pm.response.json().id);\r",
+															"\r",
+															"pm.test(\"Status code is 200\", function () {\r",
+															"    pm.response.to.have.status(200);\r",
+															"});\r",
+															"\r",
+															"var responseJSON = pm.response.json(); // Fixed the variable name from responseData to responseJSON\r",
+															"\r",
+															"pm.test(\"Verify that contact is created successfully\", function () {\r",
+															"    pm.expect(responseJSON.isSuccess).to.be.a(\"boolean\");\r",
+															"    pm.expect(responseJSON.data).to.be.an(\"object\").and.not.empty;\r",
+															"   // pm.expect(responseJSON.data.message).to.be.a(\"string\").and.not.empty;\r",
+															"});\r",
+															"\r",
+															""
+														],
+														"type": "text/javascript",
+														"packages": {}
+													}
+												}
+											],
 											"id": "7478126b-d06b-4f6b-9cd8-cf38c6577411",
 											"protocolProfileBehavior": {
 												"disableBodyPruning": true
@@ -55934,7 +55961,7 @@
 												"auth": {
 													"type": "bearer",
 													"bearer": {
-														"token": "{{bearerToken}}"
+														"token": "{{approverBearerToken}}"
 													}
 												},
 												"method": "GET",
@@ -55945,7 +55972,7 @@
 													}
 												],
 												"url": {
-													"raw": "{{baseUrl}}/api/operator/contact?contactId=<string>",
+													"raw": "{{baseUrl}}/api/operator/contact?contactId=9cc35038-b2f0-4452-f99d-08dd446d1915",
 													"host": [
 														"{{baseUrl}}"
 													],
@@ -55957,7 +55984,7 @@
 													"query": [
 														{
 															"key": "contactId",
-															"value": "<string>",
+															"value": "9cc35038-b2f0-4452-f99d-08dd446d1915",
 															"description": "(Required) "
 														}
 													]
