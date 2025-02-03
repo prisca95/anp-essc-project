@@ -89,7 +89,7 @@
 										],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n  \"userName\":\"ojo@yopmail.com\", //\"{{signedUpEmail}}\",\n  \"password\": \"Password12@@\",\n  \"confirmPassword\": \"Password12@@\",\n  \"email\": \"ojo@yopmail.com\",//\"{{signedUpEmail}}\",\n  \"phoneNumber\": \"+234{{phonenumber}}\",\n  \"firstName\": \"{{$randomFirstName}}\",\n  \"lastName\":  \"{{$randomLastName}}\"\n}",
+											"raw": "{\n  \"userName\":\"omo@yopmail.com\", //\"{{signedUpEmail}}\",\n  \"password\": \"Password12@@\",\n  \"confirmPassword\": \"Password12@@\",\n  \"email\": \"omo@yopmail.com\",//\"{{signedUpEmail}}\",\n  \"phoneNumber\": \"+234{{phonenumber}}\",\n  \"firstName\": \"{{$randomFirstName}}\",\n  \"lastName\":  \"{{$randomLastName}}\"\n}",
 											"options": {
 												"raw": {
 													"headerFamily": "json",
@@ -990,7 +990,7 @@
 										],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n  \"email\": \"ojo@yopmail.com\",//\"sly@yopmail.com\",//\"{{signedUpEmail}}\",//\"ola@yopmail.com\",\n  \"code\": \"104020\"\n}",
+											"raw": "{\n  \"email\": \"omo@yopmail.com\",//\"sly@yopmail.com\",//\"{{signedUpEmail}}\",//\"ola@yopmail.com\",\n  \"code\": \"184055\"\n}",
 											"options": {
 												"raw": {
 													"headerFamily": "json",
@@ -1174,7 +1174,7 @@
 										],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n    //\"email\": \"{{email}}\",\n  \"userName\":  \"ojo@yopmail.com\",//\"milo@yopmail.com\",//\"yinka@yopmail.com\",\n  // \"userName\":\"cesaltino.babo@anp.tl\", //initiator\n //  \"userName\": \"abel.saldanha@anp.tl\", //1st approver\n  // \"userName\": \"jaime.ximenes@anp.tl\", //2nd approver\n  \"password\": \"Password12@@\"\n}",
+											"raw": "{\n    //\"email\": \"{{email}}\",\n  \"userName\":  \"varun@yopmail.com\",//\"milo@yopmail.com\",//\"yinka@yopmail.com\",\n  // \"userName\":\"cesaltino.babo@anp.tl\", //initiator\n //  \"userName\": \"abel.saldanha@anp.tl\", //1st approver\n  // \"userName\": \"jaime.ximenes@anp.tl\", //2nd approver\n  \"password\": \"Password12@@\"\n}",
 											"options": {
 												"raw": {
 													"headerFamily": "json",
@@ -11065,7 +11065,7 @@
 										],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n    \"email\": \"ojo@yopmail.com\",//\"{{email}}\",\n  \"userName\": \"ojo@yopmail.com\",\n  // \"userName\":\"cesaltino.babo@anp.tl\", //initiator\n  // \"userName\": \"abel.saldanha@anp.tl\", //1st approver\n   //\"userName\": \"jaime.ximenes@anp.tl\", //2nd approver\n  \"password\": \"Password12@@\"\n}",
+											"raw": "{\n   // \"email\": \"chitnis@yopmail.com\",//\"{{email}}\",\n  \"userName\": \"omo@yopmail.com\",\n  // \"userName\":\"cesaltino.babo@anp.tl\", //initiator\n  // \"userName\": \"abel.saldanha@anp.tl\", //1st approver\n   //\"userName\": \"jaime.ximenes@anp.tl\", //2nd approver\n  \"password\": \"Password12@@\"\n}",
 											"options": {
 												"raw": {
 													"headerFamily": "json",
@@ -56314,6 +56314,33 @@
 							"item": [
 								{
 									"name": "ANP Web Api Features Operator Create Operator User Endpoint",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "cbbf3644-8301-4312-afdb-a9cb50c5eb6f",
+												"exec": [
+													"//pm.collectionVariables.set(\"contactId\", pm.response.json().id);\r",
+													"\r",
+													"pm.test(\"Status code is 200\", function () {\r",
+													"    pm.response.to.have.status(200);\r",
+													"});\r",
+													"\r",
+													"var responseJSON = pm.response.json(); // Fixed the variable name from responseData to responseJSON\r",
+													"\r",
+													"pm.test(\"Verify that contact is created successfully\", function () {\r",
+													"    pm.expect(responseJSON.isSuccess).to.be.a(\"boolean\");\r",
+													"    pm.expect(responseJSON.data).to.be.an(\"object\").and.not.empty;\r",
+													"   // pm.expect(responseJSON.data.message).to.be.a(\"string\").and.not.empty;\r",
+													"});\r",
+													"\r",
+													""
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
 									"id": "bc1020a3-3d5e-49c9-bacc-578cda7feac8",
 									"protocolProfileBehavior": {
 										"disableBodyPruning": true
@@ -56322,7 +56349,7 @@
 										"auth": {
 											"type": "bearer",
 											"bearer": {
-												"token": "{{bearerToken}}"
+												"token": "{{approverBearerToken}}"
 											}
 										},
 										"method": "POST",
@@ -56338,7 +56365,7 @@
 										],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n  \"operatorId\": \"<string>\"\n}",
+											"raw": "{\n  \"operatorId\": \"1c3d4921-412b-4cc5-e887-08dd446a062e\"\n}",
 											"options": {
 												"raw": {
 													"headerFamily": "json",
@@ -57892,7 +57919,7 @@
 										"auth": {
 											"type": "bearer",
 											"bearer": {
-												"token": "{{bearerToken}}"
+												"token": "{{approverBearerToken}}"
 											}
 										},
 										"method": "GET",
@@ -57903,7 +57930,7 @@
 											}
 										],
 										"url": {
-											"raw": "{{baseUrl}}/api/operator/list?pageNumber=<integer>&pageSize=<integer>",
+											"raw": "{{baseUrl}}/api/operator/list?pageNumber=1&pageSize=20",
 											"host": [
 												"{{baseUrl}}"
 											],
@@ -57915,12 +57942,12 @@
 											"query": [
 												{
 													"key": "pageNumber",
-													"value": "<integer>",
+													"value": "1",
 													"description": "(Required) "
 												},
 												{
 													"key": "pageSize",
-													"value": "<integer>",
+													"value": "20",
 													"description": "(Required) "
 												}
 											]
