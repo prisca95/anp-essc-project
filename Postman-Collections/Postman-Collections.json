@@ -38544,7 +38544,7 @@
 											"script": {
 												"id": "e90c1f36-be54-434a-8a22-748bb3d24f2e",
 												"exec": [
-													"pm.collectionVariables.set(\"serviceInformationId\", pm.response.json().data.id);\r",
+													"//pm.collectionVariables.set(\"serviceInformationId\", pm.response.json().data.id);\r",
 													"\r",
 													"pm.test(\"Status code is 200\", function () {\r",
 													"    pm.response.to.have.status(200);\r",
@@ -54506,28 +54506,26 @@
 									]
 								},
 								{
-									"name": "Create a new Operator",
+									"name": "Empty fields - Create a new Operator",
 									"event": [
 										{
 											"listen": "test",
 											"script": {
 												"id": "2f5ecb9b-b0ed-4c7a-830e-730740a207b1",
 												"exec": [
-													"//pm.collectionVariables.set(\"requestId\", pm.response.json().data.id);\r",
-													"\r",
-													"pm.test(\"Status code is 200\", function () {\r",
-													"    pm.response.to.have.status(200);\r",
+													"pm.test(\"Status code is 400\", function () {\r",
+													"    pm.response.to.have.status(400);\r",
 													"});\r",
 													"\r",
-													"var responseJSON = pm.response.json(); // Fixed the variable name from responseData to responseJSON\r",
+													"var responseJSON = pm.response.json(); \r",
 													"\r",
-													"pm.test(\"Verify that Workflow is processed successfully\", function () {\r",
-													"    pm.expect(responseJSON.isSuccess).to.be.a(\"boolean\");\r",
-													"    pm.expect(responseJSON.data.id).to.be.a(\"string\").and.not.empty;\r",
-													"    pm.expect(responseJSON.data.message).to.be.a(\"string\").and.not.empty;\r",
-													"});\r",
+													"pm.test(\"Verify that tserviceInformationId is required \", function () {\r",
 													"\r",
-													""
+													"   pm.expect(responseJSON.errors[0].name).to.be.a(\"string\").and.not.empty;\r",
+													"        pm.expect(responseJSON.errors[0].reason).to.be.a(\"string\").and.not.empty;\r",
+													"\r",
+													"\r",
+													"});"
 												],
 												"type": "text/javascript",
 												"packages": {}
@@ -54558,7 +54556,7 @@
 										],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n  \"organizationName\": \"Slot\",\n  \"dateOfEstablishment\": \"2025-01-01\",\n  \"businessType\": \"Sole Proprietorship\",\n  \"country\": \"USA\",\n  \"regNumber\": \"234564\",\n  \"addressLine1\": \"1, high lane\",\n  \"addressLine2\": \"<string>\",\n  \"region\": \"Lagos\",\n  \"city\": \"Lagos\",\n  \"town\": \"Lagos\",\n  \"phoneNumber\": \"2348077882233\",\n  \"website\": \"www.website.com\",\n  \"domain\": \"@yopmail.com.com\",\n  \"opertorType\": \"Banker\"\n}",
+											"raw": "{\n  \"organizationName\": \"\",\n  \"dateOfEstablishment\": \"2025-01-01\",\n  \"businessType\": \"Sole Proprietorship\",\n  \"country\": \"USA\",\n  \"regNumber\": \"234564\",\n  \"addressLine1\": \"1, high lane\",\n  \"addressLine2\": \"<string>\",\n  \"region\": \"Lagos\",\n  \"city\": \"Lagos\",\n  \"town\": \"Lagos\",\n  \"phoneNumber\": \"2348077882233\",\n  \"website\": \"www.website.com\",\n  \"domain\": \"@yopmail.com.com\",\n  \"opertorType\": \"Banker\"\n}",
 											"options": {
 												"raw": {
 													"headerFamily": "json",
