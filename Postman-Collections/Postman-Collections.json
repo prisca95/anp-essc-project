@@ -55566,7 +55566,32 @@
 											]
 										},
 										{
-											"name": "ANP Web Api Features Operator Create Contact Endpoint2 Copy",
+											"name": "No contactId - Edit Contact",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"id": "4a59f7b0-1068-4cc5-b407-3222a16e7722",
+														"exec": [
+															"pm.test(\"Status code is 400\", function () {\r",
+															"    pm.response.to.have.status(400);\r",
+															"});\r",
+															"\r",
+															"var responseJSON = pm.response.json(); \r",
+															"\r",
+															"pm.test(\"Verify that contactId is required \", function () {\r",
+															"\r",
+															"   pm.expect(responseJSON.errors[0].name).to.be.a(\"string\").and.not.empty;\r",
+															"        pm.expect(responseJSON.errors[0].reason).to.be.a(\"string\").and.not.empty;\r",
+															"\r",
+															"\r",
+															"});"
+														],
+														"type": "text/javascript",
+														"packages": {}
+													}
+												}
+											],
 											"id": "e3655f53-9422-48a1-9bcd-e7cdb561f7fd",
 											"protocolProfileBehavior": {
 												"disableBodyPruning": true
@@ -55591,7 +55616,7 @@
 												],
 												"body": {
 													"mode": "raw",
-													"raw": "{\n  \"contactId\": \"<string>\",\n  \"firstName\": \"<string>\",\n  \"middleName\": \"<string>\",\n  \"lastName\": \"<string>\",\n  \"designation\": \"<string>\",\n  \"nationality\": \"<string>\",\n  \"phoneNumber\": \"<string>\",\n  \"organizationId\": \"<string>\"\n}",
+													"raw": "{\n//  \"contactId\": \"<string>\",\n  \"firstName\": \"<string>\",\n  \"middleName\": \"<string>\",\n  \"lastName\": \"<string>\",\n  \"designation\": \"<string>\",\n  \"nationality\": \"<string>\",\n  \"phoneNumber\": \"<string>\",\n  \"organizationId\": \"<string>\"\n}",
 													"options": {
 														"raw": {
 															"headerFamily": "json",
@@ -56417,6 +56442,187 @@
 									]
 								},
 								{
+									"name": "No operatorId - Create Operator User Endpoint",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "3df33d5e-3007-41ff-bc95-6cb5cd8c93d9",
+												"exec": [
+													"pm.test(\"Status code is 400\", function () {\r",
+													"    pm.response.to.have.status(400);\r",
+													"});\r",
+													"\r",
+													"var responseJSON = pm.response.json(); \r",
+													"\r",
+													"pm.test(\"Verify that operatorId is required \", function () {\r",
+													"\r",
+													"   pm.expect(responseJSON.errors[0].name).to.be.a(\"string\").and.not.empty;\r",
+													"        pm.expect(responseJSON.errors[0].reason).to.be.a(\"string\").and.not.empty;\r",
+													"\r",
+													"\r",
+													"});"
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
+									"id": "90fb03be-0870-4c26-a1ac-7208ed968069",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": {
+												"token": "{{bearerToken}}"
+											}
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"operatorId\": \"\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{baseUrl}}/api/operator/createuser"
+									},
+									"response": [
+										{
+											"id": "3b7b8fbd-271f-42bc-a35f-1799a597298d",
+											"name": "Success",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													},
+													{
+														"description": "Added as a part of security scheme: bearer",
+														"key": "Authorization",
+														"value": "Bearer <token>"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"operatorId\": \"<string>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl}}/api/operator/createuser"
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"responseTime": null,
+											"body": "{\n  \"isSuccess\": \"<boolean>\",\n  \"data\": {\n    \"message\": \"<string>\"\n  },\n  \"errorMessage\": \"<string>\"\n}"
+										},
+										{
+											"id": "1381b9e5-c280-42a2-a53f-be01d8bcb941",
+											"name": "Unauthorized",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"description": "Added as a part of security scheme: bearer",
+														"key": "Authorization",
+														"value": "Bearer <token>"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"operatorId\": \"<string>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl}}/api/operator/createuser"
+											},
+											"status": "Unauthorized",
+											"code": 401,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"responseTime": null,
+											"body": ""
+										},
+										{
+											"id": "f1dc6528-9cbb-4583-92f5-6dca20f9f715",
+											"name": "Forbidden",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"description": "Added as a part of security scheme: bearer",
+														"key": "Authorization",
+														"value": "Bearer <token>"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"operatorId\": \"<string>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl}}/api/operator/createuser"
+											},
+											"status": "Forbidden",
+											"code": 403,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"responseTime": null,
+											"body": ""
+										}
+									]
+								},
+								{
 									"name": "No Auth - Create Operator User",
 									"event": [
 										{
@@ -56721,6 +56927,170 @@
 										},
 										{
 											"id": "b31bd373-29db-40ca-8789-a214770dac1b",
+											"name": "Forbidden",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [
+													{
+														"description": "Added as a part of security scheme: bearer",
+														"key": "Authorization",
+														"value": "Bearer <token>"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/operator/:operatorId",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"operator",
+														":operatorId"
+													],
+													"variable": [
+														{
+															"key": "operatorId"
+														}
+													]
+												}
+											},
+											"status": "Forbidden",
+											"code": 403,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"responseTime": null,
+											"body": ""
+										}
+									]
+								},
+								{
+									"name": "Delete Operator Copy",
+									"id": "d3ec4131-6a10-47f9-a30c-4dc5c0c0482a",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": {
+												"token": "{{bearerToken}}"
+											}
+										},
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/operator/:operatorId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"operator",
+												":operatorId"
+											],
+											"variable": [
+												{
+													"id": "0140b353-66f1-4094-b01c-8de75d270c09",
+													"key": "operatorId",
+													"value": "<string>",
+													"description": "(Required) "
+												}
+											]
+										},
+										"description": "Delete and IOC Operator"
+									},
+									"response": [
+										{
+											"id": "5ead08b0-a046-419c-bf1c-c0cb75ade2f4",
+											"name": "Success",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													},
+													{
+														"description": "Added as a part of security scheme: bearer",
+														"key": "Authorization",
+														"value": "Bearer <token>"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/operator/:operatorId",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"operator",
+														":operatorId"
+													],
+													"variable": [
+														{
+															"key": "operatorId"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"responseTime": null,
+											"body": "{\n  \"isSuccess\": \"<boolean>\",\n  \"data\": {\n    \"message\": \"<string>\"\n  },\n  \"errorMessage\": \"<string>\"\n}"
+										},
+										{
+											"id": "9a49b978-61b3-4090-81de-2c642deaa7ff",
+											"name": "Unauthorized",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [
+													{
+														"description": "Added as a part of security scheme: bearer",
+														"key": "Authorization",
+														"value": "Bearer <token>"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/operator/:operatorId",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"operator",
+														":operatorId"
+													],
+													"variable": [
+														{
+															"key": "operatorId"
+														}
+													]
+												}
+											},
+											"status": "Unauthorized",
+											"code": 401,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"responseTime": null,
+											"body": ""
+										},
+										{
+											"id": "b5854d06-0877-4750-a81b-a867066b08c2",
 											"name": "Forbidden",
 											"originalRequest": {
 												"method": "DELETE",
