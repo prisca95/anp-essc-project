@@ -54869,6 +54869,33 @@
 									"item": [
 										{
 											"name": "ANP Web Api Features Operator Create Contact Endpoint1",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"id": "5948634c-65f2-4eef-a938-5e0e188dd006",
+														"exec": [
+															"//pm.collectionVariables.set(\"requestId\", pm.response.json().data.id);\r",
+															"\r",
+															"pm.test(\"Status code is 200\", function () {\r",
+															"    pm.response.to.have.status(200);\r",
+															"});\r",
+															"\r",
+															"var responseJSON = pm.response.json(); // Fixed the variable name from responseData to responseJSON\r",
+															"\r",
+															"pm.test(\"Verify that contact is created successfully\", function () {\r",
+															"    pm.expect(responseJSON.isSuccess).to.be.a(\"boolean\");\r",
+															"    pm.expect(responseJSON.data.id).to.be.a(\"string\").and.not.empty;\r",
+															"    pm.expect(responseJSON.data.message).to.be.a(\"string\").and.not.empty;\r",
+															"});\r",
+															"\r",
+															""
+														],
+														"type": "text/javascript",
+														"packages": {}
+													}
+												}
+											],
 											"id": "adf1760a-0bc9-4575-abbe-b4fd3ba1ba1f",
 											"protocolProfileBehavior": {
 												"disableBodyPruning": true
@@ -54877,7 +54904,7 @@
 												"auth": {
 													"type": "bearer",
 													"bearer": {
-														"token": "{{bearerToken}}"
+														"token": "{{approverBearerToken}}"
 													}
 												},
 												"method": "POST",
@@ -54893,7 +54920,7 @@
 												],
 												"body": {
 													"mode": "raw",
-													"raw": "{\n  \"contactId\": \"string\",\n  \"firstName\": \"string\",\n  \"middleName\": \"string\",\n  \"lastName\": \"string\",\n  \"designation\": \"string\",\n  \"nationality\": \"string\",\n  \"phoneNumber\": \"string\",\n  \"email\": \"string\",\n  \"organizationId\": \"string\"\n}",
+													"raw": "{\n // \"contactId\": \"string\",\n  \"firstName\": \"{{$randomFirstName}}\",\n  \"middleName\": \"Jerry\",\n  \"lastName\": \"{{$randomLastName}}\",\n  \"designation\": \"{{$randomJobTitle}}\",\n  \"nationality\": \"Nigeria\",\n  \"phoneNumber\": \"string\",\n  \"email\": \"string\",\n  \"organizationId\": \"string\"\n}",
 													"options": {
 														"raw": {
 															"headerFamily": "json",
@@ -54987,6 +55014,187 @@
 												},
 												{
 													"id": "f1b05513-bd35-4428-874f-2d99d3acc6a9",
+													"name": "Forbidden",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"contactId\": \"<string>\",\n  \"firstName\": \"<string>\",\n  \"middleName\": \"<string>\",\n  \"lastName\": \"<string>\",\n  \"designation\": \"<string>\",\n  \"nationality\": \"<string>\",\n  \"phoneNumber\": \"<string>\",\n  \"organizationId\": \"<string>\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl}}/api/operator/contact/create"
+													},
+													"status": "Forbidden",
+													"code": 403,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												}
+											]
+										},
+										{
+											"name": "No contactId - Create Contact Endpoint1",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"id": "5948634c-65f2-4eef-a938-5e0e188dd006",
+														"exec": [
+															"pm.test(\"Status code is 400\", function () {\r",
+															"    pm.response.to.have.status(400);\r",
+															"});\r",
+															"\r",
+															"var responseJSON = pm.response.json(); \r",
+															"\r",
+															"pm.test(\"Verify that organizationId is required \", function () {\r",
+															"\r",
+															"   pm.expect(responseJSON.errors[0].name).to.be.a(\"string\").and.not.empty;\r",
+															"        pm.expect(responseJSON.errors[0].reason).to.be.a(\"string\").and.not.empty;\r",
+															"\r",
+															"\r",
+															"});"
+														],
+														"type": "text/javascript",
+														"packages": {}
+													}
+												}
+											],
+											"id": "498587e3-2a05-4556-a854-24652529f379",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": {
+														"token": "{{approverBearerToken}}"
+													}
+												},
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n // \"contactId\": \"string\",\n  \"firstName\": \"{{$randomFirstName}}\",\n  \"middleName\": \"Jerry\",\n  \"lastName\": \"{{$randomLastName}}\",\n  \"designation\": \"{{$randomJobTitle}}\",\n  \"nationality\": \"Nigeria\",\n  \"phoneNumber\": \"string\",\n  \"email\": \"string\",\n // \"organizationId\": \"string\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl}}/api/operator/contact/create"
+											},
+											"response": [
+												{
+													"id": "4686b5d6-6fcd-4280-938f-b4468a9c6d36",
+													"name": "Success",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"key": "Accept",
+																"value": "application/json"
+															},
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"contactId\": \"<string>\",\n  \"firstName\": \"<string>\",\n  \"middleName\": \"<string>\",\n  \"lastName\": \"<string>\",\n  \"designation\": \"<string>\",\n  \"nationality\": \"<string>\",\n  \"phoneNumber\": \"<string>\",\n  \"organizationId\": \"<string>\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl}}/api/operator/contact/create"
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"responseTime": null,
+													"body": "{\n  \"isSuccess\": \"<boolean>\",\n  \"data\": {\n    \"id\": \"<string>\",\n    \"message\": \"<string>\"\n  },\n  \"errorMessage\": \"<string>\"\n}"
+												},
+												{
+													"id": "1404bc38-8417-4796-b418-e1a7dbdeb75c",
+													"name": "Unauthorized",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"contactId\": \"<string>\",\n  \"firstName\": \"<string>\",\n  \"middleName\": \"<string>\",\n  \"lastName\": \"<string>\",\n  \"designation\": \"<string>\",\n  \"nationality\": \"<string>\",\n  \"phoneNumber\": \"<string>\",\n  \"organizationId\": \"<string>\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl}}/api/operator/contact/create"
+													},
+													"status": "Unauthorized",
+													"code": 401,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												},
+												{
+													"id": "15842c8b-d3e4-4e04-b686-5c003d2c6b8c",
 													"name": "Forbidden",
 													"originalRequest": {
 														"method": "POST",
@@ -55321,6 +55529,162 @@
 												},
 												{
 													"id": "d07cc190-b3dc-42cb-a1fa-e0ea515f92a7",
+													"name": "Forbidden",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"contactId\": \"<string>\",\n  \"firstName\": \"<string>\",\n  \"middleName\": \"<string>\",\n  \"lastName\": \"<string>\",\n  \"designation\": \"<string>\",\n  \"nationality\": \"<string>\",\n  \"phoneNumber\": \"<string>\",\n  \"organizationId\": \"<string>\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl}}/api/operator/contact/edit"
+													},
+													"status": "Forbidden",
+													"code": 403,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												}
+											]
+										},
+										{
+											"name": "ANP Web Api Features Operator Create Contact Endpoint2 Copy",
+											"id": "e3655f53-9422-48a1-9bcd-e7cdb561f7fd",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": {
+														"token": "{{bearerToken}}"
+													}
+												},
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"contactId\": \"<string>\",\n  \"firstName\": \"<string>\",\n  \"middleName\": \"<string>\",\n  \"lastName\": \"<string>\",\n  \"designation\": \"<string>\",\n  \"nationality\": \"<string>\",\n  \"phoneNumber\": \"<string>\",\n  \"organizationId\": \"<string>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl}}/api/operator/contact/edit"
+											},
+											"response": [
+												{
+													"id": "c2964a38-6591-4d6a-8571-c255f517329c",
+													"name": "Success",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"key": "Accept",
+																"value": "application/json"
+															},
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"contactId\": \"<string>\",\n  \"firstName\": \"<string>\",\n  \"middleName\": \"<string>\",\n  \"lastName\": \"<string>\",\n  \"designation\": \"<string>\",\n  \"nationality\": \"<string>\",\n  \"phoneNumber\": \"<string>\",\n  \"organizationId\": \"<string>\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl}}/api/operator/contact/edit"
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"responseTime": null,
+													"body": "{\n  \"isSuccess\": \"<boolean>\",\n  \"data\": {\n    \"id\": \"<string>\",\n    \"message\": \"<string>\"\n  },\n  \"errorMessage\": \"<string>\"\n}"
+												},
+												{
+													"id": "49bfac49-5429-401f-aed5-65b619ff2c15",
+													"name": "Unauthorized",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"contactId\": \"<string>\",\n  \"firstName\": \"<string>\",\n  \"middleName\": \"<string>\",\n  \"lastName\": \"<string>\",\n  \"designation\": \"<string>\",\n  \"nationality\": \"<string>\",\n  \"phoneNumber\": \"<string>\",\n  \"organizationId\": \"<string>\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl}}/api/operator/contact/edit"
+													},
+													"status": "Unauthorized",
+													"code": 401,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												},
+												{
+													"id": "f3cc54e0-c8cc-4fea-844e-ccaed10748fb",
 													"name": "Forbidden",
 													"originalRequest": {
 														"method": "POST",
