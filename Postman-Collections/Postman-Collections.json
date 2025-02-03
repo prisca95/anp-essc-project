@@ -54330,7 +54330,7 @@
 											"script": {
 												"id": "2f5ecb9b-b0ed-4c7a-830e-730740a207b1",
 												"exec": [
-													"//pm.collectionVariables.set(\"requestId\", pm.response.json().data.id);\r",
+													"pm.collectionVariables.set(\"operatorId\", pm.response.json().id);\r",
 													"\r",
 													"pm.test(\"Status code is 200\", function () {\r",
 													"    pm.response.to.have.status(200);\r",
@@ -54338,7 +54338,7 @@
 													"\r",
 													"var responseJSON = pm.response.json(); // Fixed the variable name from responseData to responseJSON\r",
 													"\r",
-													"pm.test(\"Verify that Workflow is processed successfully\", function () {\r",
+													"pm.test(\"Verify that operator is created successfully\", function () {\r",
 													"    pm.expect(responseJSON.isSuccess).to.be.a(\"boolean\");\r",
 													"    pm.expect(responseJSON.data.id).to.be.a(\"string\").and.not.empty;\r",
 													"    pm.expect(responseJSON.data.message).to.be.a(\"string\").and.not.empty;\r",
