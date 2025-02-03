@@ -52411,7 +52411,32 @@
 													]
 												},
 												{
-													"name": "Anp Procurement Features Bids Get A Bid Financial Endpoint Copy",
+													"name": "No tenderBidId - Get A Bid Financial",
+													"event": [
+														{
+															"listen": "test",
+															"script": {
+																"id": "90bec3f4-ce5d-49b0-bd6e-1d96b6ff9ede",
+																"exec": [
+																	"pm.test(\"Status code is 400\", function () {\r",
+																	"    pm.response.to.have.status(400);\r",
+																	"});\r",
+																	"\r",
+																	"var responseJSON = pm.response.json(); \r",
+																	"\r",
+																	"pm.test(\"Verify that serviceInformationId is required \", function () {\r",
+																	"\r",
+																	"   pm.expect(responseJSON.errors[0].name).to.be.a(\"string\").and.not.empty;\r",
+																	"        pm.expect(responseJSON.errors[0].reason).to.be.a(\"string\").and.not.empty;\r",
+																	"\r",
+																	"\r",
+																	"});"
+																],
+																"type": "text/javascript",
+																"packages": {}
+															}
+														}
+													],
 													"id": "e3f17599-9475-4116-a7f1-44c3b656d6cc",
 													"protocolProfileBehavior": {
 														"disableBodyPruning": true
