@@ -54375,7 +54375,7 @@
 										],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n  \"organizationName\": \"Slot\",\n  \"dateOfEstablishment\": \"2025-01-01\",\n  \"businessType\": \"Sole Proprietorship\",\n  \"country\": \"USA\",\n  \"regNumber\": \"234564\",\n  \"addressLine1\": \"1, high lane\",\n  \"addressLine2\": \"<string>\",\n  \"region\": \"Lagos\",\n  \"city\": \"Lagos\",\n  \"town\": \"Lagos\",\n  \"phoneNumber\": \"2348077882233\",\n  \"website\": \"www.website.com\",\n  \"domain\": \"@yopmail.com.com\",\n  \"opertorType\": \"Banker\"\n}",
+											"raw": "{\n  \"organizationName\": \"Slot\",\n  \"dateOfEstablishment\": \"2025-02-03T15:41:14.152Z\",\n  \"businessType\": \"Sole Proprietorship\",\n  \"country\": \"USA\",\n  \"addressLine1\": \"1, high lane\",\n  \"addressLine2\": \"1, high lane\",\n  \"region\": \"Lagos\",\n  \"city\": \"Lagos\",\n  \"town\": \"Lagos\",\n  \"phoneNumber\": \"2348077882233\",\n  \"website\": \"www.website.com\",\n  \"domain\": \"@yopmail.com.com\",\n  \"operatorType\": \"Banker\"\n}",
 											"options": {
 												"raw": {
 													"headerFamily": "json",
