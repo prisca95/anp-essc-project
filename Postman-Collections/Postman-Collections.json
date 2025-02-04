@@ -60919,6 +60919,33 @@
 									"item": [
 										{
 											"name": "Get an Operator",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"id": "37927c9e-d57e-4c2c-8503-e0abd9be1090",
+														"exec": [
+															"//pm.collectionVariables.set(\"contactId\", pm.response.json().id);\r",
+															"\r",
+															"pm.test(\"Status code is 200\", function () {\r",
+															"    pm.response.to.have.status(200);\r",
+															"});\r",
+															"\r",
+															"var responseJSON = pm.response.json(); // Fixed the variable name from responseData to responseJSON\r",
+															"\r",
+															"pm.test(\"Verify that an operator is returned successfully\", function () {\r",
+															"   // pm.expect(responseJSON.isSuccess).to.be.a(\"boolean\");\r",
+															"    pm.expect(responseJSON.data).to.be.an(\"object\").and.not.empty;\r",
+															"   // pm.expect(responseJSON.data.message).to.be.a(\"string\").and.not.empty;\r",
+															"});\r",
+															"\r",
+															""
+														],
+														"type": "text/javascript",
+														"packages": {}
+													}
+												}
+											],
 											"id": "53fbb557-0900-4267-a3e0-38bf43fd4ebd",
 											"protocolProfileBehavior": {
 												"disableBodyPruning": true
@@ -60927,7 +60954,7 @@
 												"auth": {
 													"type": "bearer",
 													"bearer": {
-														"token": "{{bearerToken}}"
+														"token": "{{approverBearerToken}}"
 													}
 												},
 												"method": "GET",
@@ -60938,7 +60965,7 @@
 													}
 												],
 												"url": {
-													"raw": "{{baseUrl}}/api/operator/Operator/GetAOperator?operatorId=<string>",
+													"raw": "{{baseUrl}}/api/operator/Operator/GetAOperator?operatorId={{operatorId}}",
 													"host": [
 														"{{baseUrl}}"
 													],
@@ -60951,7 +60978,7 @@
 													"query": [
 														{
 															"key": "operatorId",
-															"value": "<string>",
+															"value": "{{operatorId}}",
 															"description": "(Required) "
 														}
 													]
