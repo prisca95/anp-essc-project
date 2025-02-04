@@ -57500,7 +57500,7 @@
 												],
 												"body": {
 													"mode": "raw",
-													"raw": "{\n // \"contactId\": \"string\",\n  \"firstName\": \"{{$randomFirstName}}\",\n  \"middleName\": \"Jerry\",\n  \"lastName\": \"{{$randomLastName}}\",\n  \"designation\": \"{{$randomJobTitle}}\",\n  \"nationality\": \"Nigeria\",\n  \"phoneNumber\": \"2348079665544\",\n  \"email\": \"ilot@yopmail.com\",\n  \"organizationId\": \"1c3d4921-412b-4cc5-e887-08dd446a062e\"\n}",
+													"raw": "{\n // \"contactId\": \"string\",\n  \"firstName\": \"{{$randomFirstName}}\",\n  \"middleName\": \"Jerry\",\n  \"lastName\": \"{{$randomLastName}}\",\n  \"designation\": \"{{$randomJobTitle}}\",\n  \"nationality\": \"Nigeria\",\n  \"phoneNumber\": \"2348079665544\",\n  \"email\": \"payworth@yopmail.com\",\n  \"organizationId\": \"{{operatorId}}\"\n}",
 													"options": {
 														"raw": {
 															"headerFamily": "json",
@@ -58945,7 +58945,7 @@
 										],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n  \"operatorId\": \"1c3d4921-412b-4cc5-e887-08dd446a062e\"\n}",
+											"raw": "{\n  \"operatorId\": \"{{operatorId}}\"\n}",
 											"options": {
 												"raw": {
 													"headerFamily": "json",
