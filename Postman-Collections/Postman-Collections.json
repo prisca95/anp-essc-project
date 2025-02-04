@@ -60249,7 +60249,7 @@
 							"id": "19b05bcc-25eb-445b-bf90-125156aa56b9"
 						},
 						{
-							"name": "{operatorId}",
+							"name": "Delete {operatorId}",
 							"item": [
 								{
 									"name": "Delete Operator",
