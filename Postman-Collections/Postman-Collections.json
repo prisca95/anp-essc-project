@@ -35074,6 +35074,34 @@
 							"item": [
 								{
 									"name": "ANP Web Api Features Lookup Get All Lookup Endpoint",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "b6996566-3f45-45d5-bfd4-410966fb8e3c",
+												"exec": [
+													"//pm.collectionVariables.set(\"supplierId\", pm.response.json().data.supplierId);\r",
+													"//supplier variable is created in the create supplier endpoint\r",
+													"\r",
+													"pm.test(\"Status code is 200\", function () {\r",
+													"    pm.response.to.have.status(200);\r",
+													"});\r",
+													"\r",
+													"var responseJSON = pm.response.json(); // Fixed the variable name from responseData to responseJSON\r",
+													"\r",
+													"pm.test(\"Verify that lookups are returned\", function () {\r",
+													"   // pm.expect(responseJSON.isSuccess).to.be.a(\"boolean\");\r",
+													"    pm.expect(responseJSON.data).to.be.an(\"array\").and.not.empty;\r",
+													"   \r",
+													"});\r",
+													"\r",
+													""
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
 									"id": "9d99fcf8-993c-4310-bc60-ae6c28d3b4c7",
 									"protocolProfileBehavior": {
 										"disableBodyPruning": true
@@ -35390,6 +35418,34 @@
 							"item": [
 								{
 									"name": "ANP Web Api Features Lookup Get Lookup By Type",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "6fc9b308-f9f6-4ef2-aa76-6a41b54d29e0",
+												"exec": [
+													"//pm.collectionVariables.set(\"supplierId\", pm.response.json().data.supplierId);\r",
+													"//supplier variable is created in the create supplier endpoint\r",
+													"\r",
+													"pm.test(\"Status code is 200\", function () {\r",
+													"    pm.response.to.have.status(200);\r",
+													"});\r",
+													"\r",
+													"var responseJSON = pm.response.json(); // Fixed the variable name from responseData to responseJSON\r",
+													"\r",
+													"pm.test(\"Verify that lookuptypes are returned\", function () {\r",
+													"    pm.expect(responseJSON.isSuccess).to.be.a(\"boolean\");\r",
+													"    pm.expect(responseJSON.data).to.be.an(\"array\").and.not.empty;\r",
+													"   \r",
+													"});\r",
+													"\r",
+													""
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
 									"id": "598572cd-30a6-4181-81e3-ac05e206e0c3",
 									"protocolProfileBehavior": {
 										"disableBodyPruning": true
@@ -35398,7 +35454,7 @@
 										"auth": {
 											"type": "bearer",
 											"bearer": {
-												"token": "{{bearerToken}}"
+												"token": "{{approverBearerToken}}"
 											}
 										},
 										"method": "GET",
@@ -35420,9 +35476,8 @@
 											],
 											"variable": [
 												{
-													"id": "a9da1c8b-0515-44cf-af97-18c79cbaed81",
 													"key": "lookupType",
-													"value": "<string>",
+													"value": "operator-admin",
 													"description": "(Required) "
 												}
 											]
