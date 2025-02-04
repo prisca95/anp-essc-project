@@ -60008,6 +60008,33 @@
 							"item": [
 								{
 									"name": "Delete Operator",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "e7e6d183-0eb7-4191-9be8-db4f9561bd8e",
+												"exec": [
+													"//pm.collectionVariables.set(\"contactId\", pm.response.json().id);\r",
+													"\r",
+													"pm.test(\"Status code is 200\", function () {\r",
+													"    pm.response.to.have.status(200);\r",
+													"});\r",
+													"\r",
+													"var responseJSON = pm.response.json(); // Fixed the variable name from responseData to responseJSON\r",
+													"\r",
+													"pm.test(\"Verify that an operator is deleted successfully\", function () {\r",
+													"    pm.expect(responseJSON.isSuccess).to.be.a(\"boolean\");\r",
+													"    pm.expect(responseJSON.data.message).to.be.an(\"string\").and.not.empty;\r",
+													"   // pm.expect(responseJSON.data.message).to.be.a(\"string\").and.not.empty;\r",
+													"});\r",
+													"\r",
+													""
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
 									"id": "76e0894a-694c-4a09-ae90-aeb2361bca73",
 									"protocolProfileBehavior": {
 										"disableBodyPruning": true
@@ -60016,7 +60043,7 @@
 										"auth": {
 											"type": "bearer",
 											"bearer": {
-												"token": "{{bearerToken}}"
+												"token": "{{approverBearerToken}}"
 											}
 										},
 										"method": "DELETE",
@@ -60038,9 +60065,8 @@
 											],
 											"variable": [
 												{
-													"id": "0140b353-66f1-4094-b01c-8de75d270c09",
 													"key": "operatorId",
-													"value": "<string>",
+													"value": "{{operatorId}}",
 													"description": "(Required) "
 												}
 											]
