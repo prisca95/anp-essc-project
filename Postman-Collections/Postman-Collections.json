@@ -57991,6 +57991,33 @@
 									"item": [
 										{
 											"name": "ANP Web Api Features Operator Create Contact Endpoint2",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"id": "973c47f0-eeb1-4d16-9763-a3cbebbdd0d5",
+														"exec": [
+															"//pm.collectionVariables.set(\"contactId\", pm.response.json().id);\r",
+															"\r",
+															"pm.test(\"Status code is 200\", function () {\r",
+															"    pm.response.to.have.status(200);\r",
+															"});\r",
+															"\r",
+															"var responseJSON = pm.response.json(); // Fixed the variable name from responseData to responseJSON\r",
+															"\r",
+															"pm.test(\"Verify that operator is updated successfully\", function () {\r",
+															"   // pm.expect(responseJSON.isSuccess).to.be.a(\"boolean\");\r",
+															"    pm.expect(responseJSON.data.id).to.be.a(\"string\").and.not.empty;\r",
+															"    pm.expect(responseJSON.data.message).to.be.a(\"string\").and.not.empty;\r",
+															"});\r",
+															"\r",
+															""
+														],
+														"type": "text/javascript",
+														"packages": {}
+													}
+												}
+											],
 											"id": "ce438ab6-2e77-4a23-a3a2-9e810e779fe3",
 											"protocolProfileBehavior": {
 												"disableBodyPruning": true
@@ -57999,7 +58026,7 @@
 												"auth": {
 													"type": "bearer",
 													"bearer": {
-														"token": "{{bearerToken}}"
+														"token": "{{approverBearerToken}}"
 													}
 												},
 												"method": "POST",
@@ -58015,7 +58042,7 @@
 												],
 												"body": {
 													"mode": "raw",
-													"raw": "{\n  \"contactId\": \"<string>\",\n  \"firstName\": \"<string>\",\n  \"middleName\": \"<string>\",\n  \"lastName\": \"<string>\",\n  \"designation\": \"<string>\",\n  \"nationality\": \"<string>\",\n  \"phoneNumber\": \"<string>\",\n  \"organizationId\": \"<string>\"\n}",
+													"raw": "{\n  \"contactId\": \"d62d0108-c583-449e-e00d-08dd4511e01d\", //\"{{contactId}}\",\n  \"firstName\": \"{{$randomFirstName}}\",\n  \"middleName\": \"Jerry\",\n  \"lastName\": \"{{$randomLastName}}\",\n  \"designation\": \"{{$randomJobTitle}}\",\n  \"nationality\": \"Nigeria\",\n  \"phoneNumber\": \"2348079665544\",\n  \"email\": \"payworth@yopmail.com\",\n  \"organizationId\": \"{{operatorId}}\"\n}\n",
 													"options": {
 														"raw": {
 															"headerFamily": "json",
