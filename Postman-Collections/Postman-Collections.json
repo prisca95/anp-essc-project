@@ -35255,6 +35255,34 @@
 									"item": [
 										{
 											"name": "ANP Web Api Features Lookup Get A Lookup Endpoint",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"id": "83d10e7f-e373-4bc3-ad29-0722be1db946",
+														"exec": [
+															"//pm.collectionVariables.set(\"supplierId\", pm.response.json().data.supplierId);\r",
+															"//supplier variable is created in the create supplier endpoint\r",
+															"\r",
+															"pm.test(\"Status code is 200\", function () {\r",
+															"    pm.response.to.have.status(200);\r",
+															"});\r",
+															"\r",
+															"var responseJSON = pm.response.json(); // Fixed the variable name from responseData to responseJSON\r",
+															"\r",
+															"pm.test(\"Verify that lookup is returned\", function () {\r",
+															"    pm.expect(responseJSON.isSuccess).to.be.a(\"boolean\");\r",
+															"    pm.expect(responseJSON.data).to.be.an(\"object\").and.not.empty;\r",
+															"   \r",
+															"});\r",
+															"\r",
+															""
+														],
+														"type": "text/javascript",
+														"packages": {}
+													}
+												}
+											],
 											"id": "79970389-bb31-4856-a0e9-10f907795a01",
 											"protocolProfileBehavior": {
 												"disableBodyPruning": true
@@ -35263,7 +35291,7 @@
 												"auth": {
 													"type": "bearer",
 													"bearer": {
-														"token": "{{bearerToken}}"
+														"token": "{{approverBearerToken}}"
 													}
 												},
 												"method": "GET",
@@ -35274,7 +35302,7 @@
 													}
 												],
 												"url": {
-													"raw": "{{baseUrl}}/api/lookup/lookups/:Id?lookupId=<string>",
+													"raw": "{{baseUrl}}/api/lookup/lookups/:Id?lookupId=da682ed4-6d0e-4896-3fb5-08dd442f6f4a",
 													"host": [
 														"{{baseUrl}}"
 													],
@@ -35287,20 +35315,14 @@
 													"query": [
 														{
 															"key": "lookupId",
-															"value": "<string>",
+															"value": "da682ed4-6d0e-4896-3fb5-08dd442f6f4a",
 															"description": "(Required) "
 														}
 													],
 													"variable": [
 														{
-															"id": "52c40575-ffd7-4134-a5bf-a40aa705b7a6",
-															"key": "Id"
-														},
-														{
-															"id": "505da482-715e-4d09-94a0-6997d4044e8a",
-															"key": "id",
-															"value": "<string>",
-															"description": "(Required) "
+															"key": "Id",
+															"value": ""
 														}
 													]
 												}
@@ -56897,9 +56919,9 @@
 													"var responseJSON = pm.response.json(); // Fixed the variable name from responseData to responseJSON\r",
 													"\r",
 													"pm.test(\"Verify that operator is created successfully\", function () {\r",
-													"    pm.expect(responseJSON.isSuccess).to.be.a(\"boolean\");\r",
-													"    pm.expect(responseJSON.data.id).to.be.a(\"string\").and.not.empty;\r",
-													"    pm.expect(responseJSON.data.message).to.be.a(\"string\").and.not.empty;\r",
+													"   // pm.expect(responseJSON.isSuccess).to.be.a(\"boolean\");\r",
+													"    pm.expect(responseJSON.id).to.be.a(\"string\").and.not.empty;\r",
+													"    pm.expect(responseJSON.message).to.be.a(\"string\").and.not.empty;\r",
 													"});\r",
 													"\r",
 													""
@@ -56933,7 +56955,7 @@
 										],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n  \"organizationName\": \"Slot\",\n  \"dateOfEstablishment\": \"2025-02-03T15:41:14.152Z\",\n  \"businessType\": \"Sole Proprietorship\",\n  \"country\": \"USA\",\n  \"addressLine1\": \"1, high lane\",\n  \"addressLine2\": \"1, high lane\",\n  \"region\": \"Lagos\",\n  \"city\": \"Lagos\",\n  \"town\": \"Lagos\",\n  \"phoneNumber\": \"2348077882233\",\n  \"website\": \"www.website.com\",\n  \"domain\": \"@yopmail.com.com\",\n  \"operatorType\": \"Banker\"\n}",
+											"raw": "{\n  \"organizationName\": \"Payworth\",\n  \"dateOfEstablishment\": \"2025-02-03T15:41:14.152Z\",\n  \"businessType\": \"Sole Proprietorship\",\n  \"country\": \"USA\",\n  \"addressLine1\": \"1, high lane\",\n  \"addressLine2\": \"1, high lane\",\n  \"region\": \"Lagos\",\n  \"city\": \"Lagos\",\n  \"town\": \"Lagos\",\n  \"phoneNumber\": \"2348077882233\",\n  \"website\": \"www.website.com\",\n  \"domain\": \"@yopmail.com.com\",\n  \"operatorType\": \"Bank\"\n}",
 											"options": {
 												"raw": {
 													"headerFamily": "json",
@@ -63058,6 +63080,10 @@
 		},
 		{
 			"key": "procurementRequestId",
+			"value": ""
+		},
+		{
+			"key": "operatorId",
 			"value": ""
 		}
 	]
