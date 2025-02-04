@@ -57455,7 +57455,7 @@
 													"script": {
 														"id": "5948634c-65f2-4eef-a938-5e0e188dd006",
 														"exec": [
-															"pm.collectionVariables.set(\"contactId\", pm.response.json().id);\r",
+															"pm.collectionVariables.set(\"contactId\", pm.response.json().data.id);\r",
 															"\r",
 															"pm.test(\"Status code is 200\", function () {\r",
 															"    pm.response.to.have.status(200);\r",
@@ -57500,7 +57500,7 @@
 												],
 												"body": {
 													"mode": "raw",
-													"raw": "{\n // \"contactId\": \"string\",\n  \"firstName\": \"{{$randomFirstName}}\",\n  \"middleName\": \"Jerry\",\n  \"lastName\": \"{{$randomLastName}}\",\n  \"designation\": \"{{$randomJobTitle}}\",\n  \"nationality\": \"Nigeria\",\n  \"phoneNumber\": \"2348079665544\",\n  \"email\": \"payworth@yopmail.com\",\n  \"organizationId\": \"{{operatorId}}\"\n}",
+													"raw": "{\n // \"contactId\": \"string\",\n  \"firstName\": \"{{$randomFirstName}}\",\n  \"middleName\": \"Jerry\",\n  \"lastName\": \"{{$randomLastName}}\",\n  \"designation\": \"{{$randomJobTitle}}\",\n  \"nationality\": \"Nigeria\",\n  \"phoneNumber\": \"2348079665544\",\n  \"email\": \"payworth@yopmail.com\",\n  \"organizationId\": \"{{operatorId}}\"\n}\n",
 													"options": {
 														"raw": {
 															"headerFamily": "json",
