@@ -59459,6 +59459,551 @@
 							"id": "a32789ee-fe0b-438e-a5d9-c8f8bceb7ed0"
 						},
 						{
+							"name": "edit",
+							"item": [
+								{
+									"name": "Update an IOC Operator",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "69b8b48d-a94d-4f0c-b8c2-debfbfe3245b",
+												"exec": [
+													"//pm.collectionVariables.set(\"contactId\", pm.response.json().id);\r",
+													"\r",
+													"pm.test(\"Status code is 200\", function () {\r",
+													"    pm.response.to.have.status(200);\r",
+													"});\r",
+													"\r",
+													"var responseJSON = pm.response.json(); // Fixed the variable name from responseData to responseJSON\r",
+													"\r",
+													"pm.test(\"Verify that operators are updated successfully\", function () {\r",
+													"    pm.expect(responseJSON.isSuccess).to.be.a(\"boolean\");\r",
+													"    pm.expect(responseJSON.data.message).to.be.an(\"string\").and.not.empty;\r",
+													"   // pm.expect(responseJSON.data.message).to.be.a(\"string\").and.not.empty;\r",
+													"});\r",
+													"\r",
+													""
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
+									"id": "29da4e09-6838-4ceb-857a-852f3726322f",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": {
+												"token": "{{approverBearerToken}}"
+											}
+										},
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "// {\n//   \"organizationId\": \"<string>\",\n//   \"organizationName\": \"<string>\",\n//   \"dateOfEstablishment\": \"<dateTime>\",\n//   \"businessType\": \"<string>\",\n//   \"country\": \"<string>\",\n//   \"regNumber\": \"<string>\",\n//   \"addressLine1\": \"<string>\",\n//   \"addressLine2\": \"<string>\",\n//   \"region\": \"<string>\",\n//   \"city\": \"<string>\",\n//   \"town\": \"<string>\",\n//   \"phoneNumber\": \"<string>\",\n//   \"website\": \"<string>\",\n//   \"email\": \"<string>\"\n// }\n{\n      \"organizationId\": \"{{operatorId}}\",\n  \"organizationName\": \"Payworth Int\",\n  \"dateOfEstablishment\": \"2025-02-03T15:41:14.152Z\",\n  \"businessType\": \"Sole Proprietorship\",\n  \"country\": \"USA\",\n  \"addressLine1\": \"{{$randomStreetAddress}}\",\n  \"addressLine2\": \"1, high lane\",\n  \"region\": \"Lagos\",\n  \"city\": \"Lagos\",\n  \"town\": \"Lagos\",\n  \"phoneNumber\": \"2348077882233\",\n  \"website\": \"www.website.com\",\n  \"domain\": \"@yopmail.com.com\",\n  \"operatorType\": \"Bank\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{baseUrl}}/api/operator/edit",
+										"description": "Update an IOC Operator"
+									},
+									"response": [
+										{
+											"id": "27e97541-9a97-44a4-a106-30b9c24679ea",
+											"name": "Success",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													},
+													{
+														"description": "Added as a part of security scheme: bearer",
+														"key": "Authorization",
+														"value": "Bearer <token>"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"organizationId\": \"<string>\",\n  \"organizationName\": \"<string>\",\n  \"dateOfEstablishment\": \"<dateTime>\",\n  \"businessType\": \"<string>\",\n  \"country\": \"<string>\",\n  \"regNumber\": \"<string>\",\n  \"addressLine1\": \"<string>\",\n  \"addressLine2\": \"<string>\",\n  \"region\": \"<string>\",\n  \"city\": \"<string>\",\n  \"town\": \"<string>\",\n  \"phoneNumber\": \"<string>\",\n  \"website\": \"<string>\",\n  \"email\": \"<string>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl}}/api/operator/edit"
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"responseTime": null,
+											"body": "{\n  \"isSuccess\": \"<boolean>\",\n  \"data\": {\n    \"message\": \"<string>\"\n  },\n  \"errorMessage\": \"<string>\"\n}"
+										},
+										{
+											"id": "69fb0e2f-d97f-4a63-a1db-37a1399725b3",
+											"name": "Unauthorized",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"description": "Added as a part of security scheme: bearer",
+														"key": "Authorization",
+														"value": "Bearer <token>"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"organizationId\": \"<string>\",\n  \"organizationName\": \"<string>\",\n  \"dateOfEstablishment\": \"<dateTime>\",\n  \"businessType\": \"<string>\",\n  \"country\": \"<string>\",\n  \"regNumber\": \"<string>\",\n  \"addressLine1\": \"<string>\",\n  \"addressLine2\": \"<string>\",\n  \"region\": \"<string>\",\n  \"city\": \"<string>\",\n  \"town\": \"<string>\",\n  \"phoneNumber\": \"<string>\",\n  \"website\": \"<string>\",\n  \"email\": \"<string>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl}}/api/operator/edit"
+											},
+											"status": "Unauthorized",
+											"code": 401,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"responseTime": null,
+											"body": ""
+										},
+										{
+											"id": "a10c8f03-0798-43fb-849a-16d153a51325",
+											"name": "Forbidden",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"description": "Added as a part of security scheme: bearer",
+														"key": "Authorization",
+														"value": "Bearer <token>"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"organizationId\": \"<string>\",\n  \"organizationName\": \"<string>\",\n  \"dateOfEstablishment\": \"<dateTime>\",\n  \"businessType\": \"<string>\",\n  \"country\": \"<string>\",\n  \"regNumber\": \"<string>\",\n  \"addressLine1\": \"<string>\",\n  \"addressLine2\": \"<string>\",\n  \"region\": \"<string>\",\n  \"city\": \"<string>\",\n  \"town\": \"<string>\",\n  \"phoneNumber\": \"<string>\",\n  \"website\": \"<string>\",\n  \"email\": \"<string>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl}}/api/operator/edit"
+											},
+											"status": "Forbidden",
+											"code": 403,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"responseTime": null,
+											"body": ""
+										}
+									]
+								},
+								{
+									"name": "No organizationId - Update an IOC Operator",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "5277025b-f95a-4aa3-865b-ba4f65398326",
+												"exec": [
+													"pm.test(\"Status code is 400\", function () {\r",
+													"    pm.response.to.have.status(400);\r",
+													"});\r",
+													"\r",
+													"var responseJSON = pm.response.json(); \r",
+													"\r",
+													"pm.test(\"Verify that organizationId is required \", function () {\r",
+													"\r",
+													"   pm.expect(responseJSON.errors[0].name).to.be.a(\"string\").and.not.empty;\r",
+													"        pm.expect(responseJSON.errors[0].reason).to.be.a(\"string\").and.not.empty;\r",
+													"\r",
+													"\r",
+													"});"
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
+									"id": "79c6d4b2-a9ed-4323-9f89-320157b1c47c",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": {
+												"token": "{{approverBearerToken}}"
+											}
+										},
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"organizationId\": \"<string>\",\n  \"organizationName\": \"<string>\",\n  \"dateOfEstablishment\": \"<dateTime>\",\n  \"businessType\": \"<string>\",\n  \"country\": \"<string>\",\n  \"regNumber\": \"<string>\",\n  \"addressLine1\": \"<string>\",\n  \"addressLine2\": \"<string>\",\n  \"region\": \"<string>\",\n  \"city\": \"<string>\",\n  \"town\": \"<string>\",\n  \"phoneNumber\": \"<string>\",\n  \"website\": \"<string>\",\n  \"email\": \"<string>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{baseUrl}}/api/operator/edit",
+										"description": "Update an IOC Operator"
+									},
+									"response": [
+										{
+											"id": "a174c42e-f304-4fe0-a43e-0cfcdfc20f7e",
+											"name": "Success",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													},
+													{
+														"description": "Added as a part of security scheme: bearer",
+														"key": "Authorization",
+														"value": "Bearer <token>"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"organizationId\": \"<string>\",\n  \"organizationName\": \"<string>\",\n  \"dateOfEstablishment\": \"<dateTime>\",\n  \"businessType\": \"<string>\",\n  \"country\": \"<string>\",\n  \"regNumber\": \"<string>\",\n  \"addressLine1\": \"<string>\",\n  \"addressLine2\": \"<string>\",\n  \"region\": \"<string>\",\n  \"city\": \"<string>\",\n  \"town\": \"<string>\",\n  \"phoneNumber\": \"<string>\",\n  \"website\": \"<string>\",\n  \"email\": \"<string>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl}}/api/operator/edit"
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"responseTime": null,
+											"body": "{\n  \"isSuccess\": \"<boolean>\",\n  \"data\": {\n    \"message\": \"<string>\"\n  },\n  \"errorMessage\": \"<string>\"\n}"
+										},
+										{
+											"id": "623d16bd-4671-4f9e-a55c-26c2a1722035",
+											"name": "Unauthorized",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"description": "Added as a part of security scheme: bearer",
+														"key": "Authorization",
+														"value": "Bearer <token>"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"organizationId\": \"<string>\",\n  \"organizationName\": \"<string>\",\n  \"dateOfEstablishment\": \"<dateTime>\",\n  \"businessType\": \"<string>\",\n  \"country\": \"<string>\",\n  \"regNumber\": \"<string>\",\n  \"addressLine1\": \"<string>\",\n  \"addressLine2\": \"<string>\",\n  \"region\": \"<string>\",\n  \"city\": \"<string>\",\n  \"town\": \"<string>\",\n  \"phoneNumber\": \"<string>\",\n  \"website\": \"<string>\",\n  \"email\": \"<string>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl}}/api/operator/edit"
+											},
+											"status": "Unauthorized",
+											"code": 401,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"responseTime": null,
+											"body": ""
+										},
+										{
+											"id": "9a9492ba-262d-4123-a3de-8045ae81e366",
+											"name": "Forbidden",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"description": "Added as a part of security scheme: bearer",
+														"key": "Authorization",
+														"value": "Bearer <token>"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"organizationId\": \"<string>\",\n  \"organizationName\": \"<string>\",\n  \"dateOfEstablishment\": \"<dateTime>\",\n  \"businessType\": \"<string>\",\n  \"country\": \"<string>\",\n  \"regNumber\": \"<string>\",\n  \"addressLine1\": \"<string>\",\n  \"addressLine2\": \"<string>\",\n  \"region\": \"<string>\",\n  \"city\": \"<string>\",\n  \"town\": \"<string>\",\n  \"phoneNumber\": \"<string>\",\n  \"website\": \"<string>\",\n  \"email\": \"<string>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl}}/api/operator/edit"
+											},
+											"status": "Forbidden",
+											"code": 403,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"responseTime": null,
+											"body": ""
+										}
+									]
+								},
+								{
+									"name": "No Auth - Update an IOC Operator",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "06a5e7e3-0136-4553-96d9-6647d75cf9cb",
+												"exec": [
+													"pm.test(\"Status code is 401\", function () {\r",
+													"    pm.response.to.have.status(401);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Status code name has 'Unauthorized'\", function () {\r",
+													"    pm.response.to.have.status(\"Unauthorized\");\r",
+													"});"
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
+									"id": "5eba09b3-2380-4e3b-bb27-1cf0a71140bc",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"auth": {
+											"type": "noauth"
+										},
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"organizationId\": \"<string>\",\n  \"organizationName\": \"<string>\",\n  \"dateOfEstablishment\": \"<dateTime>\",\n  \"businessType\": \"<string>\",\n  \"country\": \"<string>\",\n  \"regNumber\": \"<string>\",\n  \"addressLine1\": \"<string>\",\n  \"addressLine2\": \"<string>\",\n  \"region\": \"<string>\",\n  \"city\": \"<string>\",\n  \"town\": \"<string>\",\n  \"phoneNumber\": \"<string>\",\n  \"website\": \"<string>\",\n  \"email\": \"<string>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{baseUrl}}/api/operator/edit",
+										"description": "Update an IOC Operator"
+									},
+									"response": [
+										{
+											"id": "47f9c8b7-5103-4c54-a7f6-0274ec45f9dd",
+											"name": "Success",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													},
+													{
+														"description": "Added as a part of security scheme: bearer",
+														"key": "Authorization",
+														"value": "Bearer <token>"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"organizationId\": \"<string>\",\n  \"organizationName\": \"<string>\",\n  \"dateOfEstablishment\": \"<dateTime>\",\n  \"businessType\": \"<string>\",\n  \"country\": \"<string>\",\n  \"regNumber\": \"<string>\",\n  \"addressLine1\": \"<string>\",\n  \"addressLine2\": \"<string>\",\n  \"region\": \"<string>\",\n  \"city\": \"<string>\",\n  \"town\": \"<string>\",\n  \"phoneNumber\": \"<string>\",\n  \"website\": \"<string>\",\n  \"email\": \"<string>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl}}/api/operator/edit"
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"responseTime": null,
+											"body": "{\n  \"isSuccess\": \"<boolean>\",\n  \"data\": {\n    \"message\": \"<string>\"\n  },\n  \"errorMessage\": \"<string>\"\n}"
+										},
+										{
+											"id": "4918293d-1b85-45b4-b625-dac2737c0662",
+											"name": "Unauthorized",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"description": "Added as a part of security scheme: bearer",
+														"key": "Authorization",
+														"value": "Bearer <token>"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"organizationId\": \"<string>\",\n  \"organizationName\": \"<string>\",\n  \"dateOfEstablishment\": \"<dateTime>\",\n  \"businessType\": \"<string>\",\n  \"country\": \"<string>\",\n  \"regNumber\": \"<string>\",\n  \"addressLine1\": \"<string>\",\n  \"addressLine2\": \"<string>\",\n  \"region\": \"<string>\",\n  \"city\": \"<string>\",\n  \"town\": \"<string>\",\n  \"phoneNumber\": \"<string>\",\n  \"website\": \"<string>\",\n  \"email\": \"<string>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl}}/api/operator/edit"
+											},
+											"status": "Unauthorized",
+											"code": 401,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"responseTime": null,
+											"body": ""
+										},
+										{
+											"id": "a38219e3-4afe-4998-bc0c-326ef22840a2",
+											"name": "Forbidden",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"description": "Added as a part of security scheme: bearer",
+														"key": "Authorization",
+														"value": "Bearer <token>"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"organizationId\": \"<string>\",\n  \"organizationName\": \"<string>\",\n  \"dateOfEstablishment\": \"<dateTime>\",\n  \"businessType\": \"<string>\",\n  \"country\": \"<string>\",\n  \"regNumber\": \"<string>\",\n  \"addressLine1\": \"<string>\",\n  \"addressLine2\": \"<string>\",\n  \"region\": \"<string>\",\n  \"city\": \"<string>\",\n  \"town\": \"<string>\",\n  \"phoneNumber\": \"<string>\",\n  \"website\": \"<string>\",\n  \"email\": \"<string>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl}}/api/operator/edit"
+											},
+											"status": "Forbidden",
+											"code": 403,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"responseTime": null,
+											"body": ""
+										}
+									]
+								}
+							],
+							"id": "19b05bcc-25eb-445b-bf90-125156aa56b9"
+						},
+						{
 							"name": "{operatorId}",
 							"item": [
 								{
@@ -59994,524 +60539,6 @@
 								}
 							],
 							"id": "2a661644-a5c6-4277-991a-0bfa738ecdb6"
-						},
-						{
-							"name": "edit",
-							"item": [
-								{
-									"name": "Update an IOC Operator",
-									"id": "29da4e09-6838-4ceb-857a-852f3726322f",
-									"protocolProfileBehavior": {
-										"disableBodyPruning": true
-									},
-									"request": {
-										"auth": {
-											"type": "bearer",
-											"bearer": {
-												"token": "{{bearerToken}}"
-											}
-										},
-										"method": "PUT",
-										"header": [
-											{
-												"key": "Content-Type",
-												"value": "application/json"
-											},
-											{
-												"key": "Accept",
-												"value": "application/json"
-											}
-										],
-										"body": {
-											"mode": "raw",
-											"raw": "{\n  \"organizationId\": \"<string>\",\n  \"organizationName\": \"<string>\",\n  \"dateOfEstablishment\": \"<dateTime>\",\n  \"businessType\": \"<string>\",\n  \"country\": \"<string>\",\n  \"regNumber\": \"<string>\",\n  \"addressLine1\": \"<string>\",\n  \"addressLine2\": \"<string>\",\n  \"region\": \"<string>\",\n  \"city\": \"<string>\",\n  \"town\": \"<string>\",\n  \"phoneNumber\": \"<string>\",\n  \"website\": \"<string>\",\n  \"email\": \"<string>\"\n}",
-											"options": {
-												"raw": {
-													"headerFamily": "json",
-													"language": "json"
-												}
-											}
-										},
-										"url": "{{baseUrl}}/api/operator/edit",
-										"description": "Update an IOC Operator"
-									},
-									"response": [
-										{
-											"id": "27e97541-9a97-44a4-a106-30b9c24679ea",
-											"name": "Success",
-											"originalRequest": {
-												"method": "PUT",
-												"header": [
-													{
-														"key": "Content-Type",
-														"value": "application/json"
-													},
-													{
-														"key": "Accept",
-														"value": "application/json"
-													},
-													{
-														"description": "Added as a part of security scheme: bearer",
-														"key": "Authorization",
-														"value": "Bearer <token>"
-													}
-												],
-												"body": {
-													"mode": "raw",
-													"raw": "{\n  \"organizationId\": \"<string>\",\n  \"organizationName\": \"<string>\",\n  \"dateOfEstablishment\": \"<dateTime>\",\n  \"businessType\": \"<string>\",\n  \"country\": \"<string>\",\n  \"regNumber\": \"<string>\",\n  \"addressLine1\": \"<string>\",\n  \"addressLine2\": \"<string>\",\n  \"region\": \"<string>\",\n  \"city\": \"<string>\",\n  \"town\": \"<string>\",\n  \"phoneNumber\": \"<string>\",\n  \"website\": \"<string>\",\n  \"email\": \"<string>\"\n}",
-													"options": {
-														"raw": {
-															"headerFamily": "json",
-															"language": "json"
-														}
-													}
-												},
-												"url": "{{baseUrl}}/api/operator/edit"
-											},
-											"status": "OK",
-											"code": 200,
-											"_postman_previewlanguage": "json",
-											"header": [
-												{
-													"key": "Content-Type",
-													"value": "application/json"
-												}
-											],
-											"cookie": [],
-											"responseTime": null,
-											"body": "{\n  \"isSuccess\": \"<boolean>\",\n  \"data\": {\n    \"message\": \"<string>\"\n  },\n  \"errorMessage\": \"<string>\"\n}"
-										},
-										{
-											"id": "69fb0e2f-d97f-4a63-a1db-37a1399725b3",
-											"name": "Unauthorized",
-											"originalRequest": {
-												"method": "PUT",
-												"header": [
-													{
-														"key": "Content-Type",
-														"value": "application/json"
-													},
-													{
-														"description": "Added as a part of security scheme: bearer",
-														"key": "Authorization",
-														"value": "Bearer <token>"
-													}
-												],
-												"body": {
-													"mode": "raw",
-													"raw": "{\n  \"organizationId\": \"<string>\",\n  \"organizationName\": \"<string>\",\n  \"dateOfEstablishment\": \"<dateTime>\",\n  \"businessType\": \"<string>\",\n  \"country\": \"<string>\",\n  \"regNumber\": \"<string>\",\n  \"addressLine1\": \"<string>\",\n  \"addressLine2\": \"<string>\",\n  \"region\": \"<string>\",\n  \"city\": \"<string>\",\n  \"town\": \"<string>\",\n  \"phoneNumber\": \"<string>\",\n  \"website\": \"<string>\",\n  \"email\": \"<string>\"\n}",
-													"options": {
-														"raw": {
-															"headerFamily": "json",
-															"language": "json"
-														}
-													}
-												},
-												"url": "{{baseUrl}}/api/operator/edit"
-											},
-											"status": "Unauthorized",
-											"code": 401,
-											"_postman_previewlanguage": "text",
-											"header": [],
-											"cookie": [],
-											"responseTime": null,
-											"body": ""
-										},
-										{
-											"id": "a10c8f03-0798-43fb-849a-16d153a51325",
-											"name": "Forbidden",
-											"originalRequest": {
-												"method": "PUT",
-												"header": [
-													{
-														"key": "Content-Type",
-														"value": "application/json"
-													},
-													{
-														"description": "Added as a part of security scheme: bearer",
-														"key": "Authorization",
-														"value": "Bearer <token>"
-													}
-												],
-												"body": {
-													"mode": "raw",
-													"raw": "{\n  \"organizationId\": \"<string>\",\n  \"organizationName\": \"<string>\",\n  \"dateOfEstablishment\": \"<dateTime>\",\n  \"businessType\": \"<string>\",\n  \"country\": \"<string>\",\n  \"regNumber\": \"<string>\",\n  \"addressLine1\": \"<string>\",\n  \"addressLine2\": \"<string>\",\n  \"region\": \"<string>\",\n  \"city\": \"<string>\",\n  \"town\": \"<string>\",\n  \"phoneNumber\": \"<string>\",\n  \"website\": \"<string>\",\n  \"email\": \"<string>\"\n}",
-													"options": {
-														"raw": {
-															"headerFamily": "json",
-															"language": "json"
-														}
-													}
-												},
-												"url": "{{baseUrl}}/api/operator/edit"
-											},
-											"status": "Forbidden",
-											"code": 403,
-											"_postman_previewlanguage": "text",
-											"header": [],
-											"cookie": [],
-											"responseTime": null,
-											"body": ""
-										}
-									]
-								},
-								{
-									"name": "No organizationId - Update an IOC Operator",
-									"event": [
-										{
-											"listen": "test",
-											"script": {
-												"id": "5277025b-f95a-4aa3-865b-ba4f65398326",
-												"exec": [
-													"pm.test(\"Status code is 400\", function () {\r",
-													"    pm.response.to.have.status(400);\r",
-													"});\r",
-													"\r",
-													"var responseJSON = pm.response.json(); \r",
-													"\r",
-													"pm.test(\"Verify that organizationId is required \", function () {\r",
-													"\r",
-													"   pm.expect(responseJSON.errors[0].name).to.be.a(\"string\").and.not.empty;\r",
-													"        pm.expect(responseJSON.errors[0].reason).to.be.a(\"string\").and.not.empty;\r",
-													"\r",
-													"\r",
-													"});"
-												],
-												"type": "text/javascript",
-												"packages": {}
-											}
-										}
-									],
-									"id": "79c6d4b2-a9ed-4323-9f89-320157b1c47c",
-									"protocolProfileBehavior": {
-										"disableBodyPruning": true
-									},
-									"request": {
-										"auth": {
-											"type": "bearer",
-											"bearer": {
-												"token": "{{approverBearerToken}}"
-											}
-										},
-										"method": "PUT",
-										"header": [
-											{
-												"key": "Content-Type",
-												"value": "application/json"
-											},
-											{
-												"key": "Accept",
-												"value": "application/json"
-											}
-										],
-										"body": {
-											"mode": "raw",
-											"raw": "{\n  \"organizationId\": \"<string>\",\n  \"organizationName\": \"<string>\",\n  \"dateOfEstablishment\": \"<dateTime>\",\n  \"businessType\": \"<string>\",\n  \"country\": \"<string>\",\n  \"regNumber\": \"<string>\",\n  \"addressLine1\": \"<string>\",\n  \"addressLine2\": \"<string>\",\n  \"region\": \"<string>\",\n  \"city\": \"<string>\",\n  \"town\": \"<string>\",\n  \"phoneNumber\": \"<string>\",\n  \"website\": \"<string>\",\n  \"email\": \"<string>\"\n}",
-											"options": {
-												"raw": {
-													"headerFamily": "json",
-													"language": "json"
-												}
-											}
-										},
-										"url": "{{baseUrl}}/api/operator/edit",
-										"description": "Update an IOC Operator"
-									},
-									"response": [
-										{
-											"id": "a174c42e-f304-4fe0-a43e-0cfcdfc20f7e",
-											"name": "Success",
-											"originalRequest": {
-												"method": "PUT",
-												"header": [
-													{
-														"key": "Content-Type",
-														"value": "application/json"
-													},
-													{
-														"key": "Accept",
-														"value": "application/json"
-													},
-													{
-														"description": "Added as a part of security scheme: bearer",
-														"key": "Authorization",
-														"value": "Bearer <token>"
-													}
-												],
-												"body": {
-													"mode": "raw",
-													"raw": "{\n  \"organizationId\": \"<string>\",\n  \"organizationName\": \"<string>\",\n  \"dateOfEstablishment\": \"<dateTime>\",\n  \"businessType\": \"<string>\",\n  \"country\": \"<string>\",\n  \"regNumber\": \"<string>\",\n  \"addressLine1\": \"<string>\",\n  \"addressLine2\": \"<string>\",\n  \"region\": \"<string>\",\n  \"city\": \"<string>\",\n  \"town\": \"<string>\",\n  \"phoneNumber\": \"<string>\",\n  \"website\": \"<string>\",\n  \"email\": \"<string>\"\n}",
-													"options": {
-														"raw": {
-															"headerFamily": "json",
-															"language": "json"
-														}
-													}
-												},
-												"url": "{{baseUrl}}/api/operator/edit"
-											},
-											"status": "OK",
-											"code": 200,
-											"_postman_previewlanguage": "json",
-											"header": [
-												{
-													"key": "Content-Type",
-													"value": "application/json"
-												}
-											],
-											"cookie": [],
-											"responseTime": null,
-											"body": "{\n  \"isSuccess\": \"<boolean>\",\n  \"data\": {\n    \"message\": \"<string>\"\n  },\n  \"errorMessage\": \"<string>\"\n}"
-										},
-										{
-											"id": "623d16bd-4671-4f9e-a55c-26c2a1722035",
-											"name": "Unauthorized",
-											"originalRequest": {
-												"method": "PUT",
-												"header": [
-													{
-														"key": "Content-Type",
-														"value": "application/json"
-													},
-													{
-														"description": "Added as a part of security scheme: bearer",
-														"key": "Authorization",
-														"value": "Bearer <token>"
-													}
-												],
-												"body": {
-													"mode": "raw",
-													"raw": "{\n  \"organizationId\": \"<string>\",\n  \"organizationName\": \"<string>\",\n  \"dateOfEstablishment\": \"<dateTime>\",\n  \"businessType\": \"<string>\",\n  \"country\": \"<string>\",\n  \"regNumber\": \"<string>\",\n  \"addressLine1\": \"<string>\",\n  \"addressLine2\": \"<string>\",\n  \"region\": \"<string>\",\n  \"city\": \"<string>\",\n  \"town\": \"<string>\",\n  \"phoneNumber\": \"<string>\",\n  \"website\": \"<string>\",\n  \"email\": \"<string>\"\n}",
-													"options": {
-														"raw": {
-															"headerFamily": "json",
-															"language": "json"
-														}
-													}
-												},
-												"url": "{{baseUrl}}/api/operator/edit"
-											},
-											"status": "Unauthorized",
-											"code": 401,
-											"_postman_previewlanguage": "text",
-											"header": [],
-											"cookie": [],
-											"responseTime": null,
-											"body": ""
-										},
-										{
-											"id": "9a9492ba-262d-4123-a3de-8045ae81e366",
-											"name": "Forbidden",
-											"originalRequest": {
-												"method": "PUT",
-												"header": [
-													{
-														"key": "Content-Type",
-														"value": "application/json"
-													},
-													{
-														"description": "Added as a part of security scheme: bearer",
-														"key": "Authorization",
-														"value": "Bearer <token>"
-													}
-												],
-												"body": {
-													"mode": "raw",
-													"raw": "{\n  \"organizationId\": \"<string>\",\n  \"organizationName\": \"<string>\",\n  \"dateOfEstablishment\": \"<dateTime>\",\n  \"businessType\": \"<string>\",\n  \"country\": \"<string>\",\n  \"regNumber\": \"<string>\",\n  \"addressLine1\": \"<string>\",\n  \"addressLine2\": \"<string>\",\n  \"region\": \"<string>\",\n  \"city\": \"<string>\",\n  \"town\": \"<string>\",\n  \"phoneNumber\": \"<string>\",\n  \"website\": \"<string>\",\n  \"email\": \"<string>\"\n}",
-													"options": {
-														"raw": {
-															"headerFamily": "json",
-															"language": "json"
-														}
-													}
-												},
-												"url": "{{baseUrl}}/api/operator/edit"
-											},
-											"status": "Forbidden",
-											"code": 403,
-											"_postman_previewlanguage": "text",
-											"header": [],
-											"cookie": [],
-											"responseTime": null,
-											"body": ""
-										}
-									]
-								},
-								{
-									"name": "No Auth - Update an IOC Operator",
-									"event": [
-										{
-											"listen": "test",
-											"script": {
-												"id": "06a5e7e3-0136-4553-96d9-6647d75cf9cb",
-												"exec": [
-													"pm.test(\"Status code is 401\", function () {\r",
-													"    pm.response.to.have.status(401);\r",
-													"});\r",
-													"\r",
-													"pm.test(\"Status code name has 'Unauthorized'\", function () {\r",
-													"    pm.response.to.have.status(\"Unauthorized\");\r",
-													"});"
-												],
-												"type": "text/javascript",
-												"packages": {}
-											}
-										}
-									],
-									"id": "5eba09b3-2380-4e3b-bb27-1cf0a71140bc",
-									"protocolProfileBehavior": {
-										"disableBodyPruning": true
-									},
-									"request": {
-										"auth": {
-											"type": "noauth"
-										},
-										"method": "PUT",
-										"header": [
-											{
-												"key": "Content-Type",
-												"value": "application/json"
-											},
-											{
-												"key": "Accept",
-												"value": "application/json"
-											}
-										],
-										"body": {
-											"mode": "raw",
-											"raw": "{\n  \"organizationId\": \"<string>\",\n  \"organizationName\": \"<string>\",\n  \"dateOfEstablishment\": \"<dateTime>\",\n  \"businessType\": \"<string>\",\n  \"country\": \"<string>\",\n  \"regNumber\": \"<string>\",\n  \"addressLine1\": \"<string>\",\n  \"addressLine2\": \"<string>\",\n  \"region\": \"<string>\",\n  \"city\": \"<string>\",\n  \"town\": \"<string>\",\n  \"phoneNumber\": \"<string>\",\n  \"website\": \"<string>\",\n  \"email\": \"<string>\"\n}",
-											"options": {
-												"raw": {
-													"headerFamily": "json",
-													"language": "json"
-												}
-											}
-										},
-										"url": "{{baseUrl}}/api/operator/edit",
-										"description": "Update an IOC Operator"
-									},
-									"response": [
-										{
-											"id": "47f9c8b7-5103-4c54-a7f6-0274ec45f9dd",
-											"name": "Success",
-											"originalRequest": {
-												"method": "PUT",
-												"header": [
-													{
-														"key": "Content-Type",
-														"value": "application/json"
-													},
-													{
-														"key": "Accept",
-														"value": "application/json"
-													},
-													{
-														"description": "Added as a part of security scheme: bearer",
-														"key": "Authorization",
-														"value": "Bearer <token>"
-													}
-												],
-												"body": {
-													"mode": "raw",
-													"raw": "{\n  \"organizationId\": \"<string>\",\n  \"organizationName\": \"<string>\",\n  \"dateOfEstablishment\": \"<dateTime>\",\n  \"businessType\": \"<string>\",\n  \"country\": \"<string>\",\n  \"regNumber\": \"<string>\",\n  \"addressLine1\": \"<string>\",\n  \"addressLine2\": \"<string>\",\n  \"region\": \"<string>\",\n  \"city\": \"<string>\",\n  \"town\": \"<string>\",\n  \"phoneNumber\": \"<string>\",\n  \"website\": \"<string>\",\n  \"email\": \"<string>\"\n}",
-													"options": {
-														"raw": {
-															"headerFamily": "json",
-															"language": "json"
-														}
-													}
-												},
-												"url": "{{baseUrl}}/api/operator/edit"
-											},
-											"status": "OK",
-											"code": 200,
-											"_postman_previewlanguage": "json",
-											"header": [
-												{
-													"key": "Content-Type",
-													"value": "application/json"
-												}
-											],
-											"cookie": [],
-											"responseTime": null,
-											"body": "{\n  \"isSuccess\": \"<boolean>\",\n  \"data\": {\n    \"message\": \"<string>\"\n  },\n  \"errorMessage\": \"<string>\"\n}"
-										},
-										{
-											"id": "4918293d-1b85-45b4-b625-dac2737c0662",
-											"name": "Unauthorized",
-											"originalRequest": {
-												"method": "PUT",
-												"header": [
-													{
-														"key": "Content-Type",
-														"value": "application/json"
-													},
-													{
-														"description": "Added as a part of security scheme: bearer",
-														"key": "Authorization",
-														"value": "Bearer <token>"
-													}
-												],
-												"body": {
-													"mode": "raw",
-													"raw": "{\n  \"organizationId\": \"<string>\",\n  \"organizationName\": \"<string>\",\n  \"dateOfEstablishment\": \"<dateTime>\",\n  \"businessType\": \"<string>\",\n  \"country\": \"<string>\",\n  \"regNumber\": \"<string>\",\n  \"addressLine1\": \"<string>\",\n  \"addressLine2\": \"<string>\",\n  \"region\": \"<string>\",\n  \"city\": \"<string>\",\n  \"town\": \"<string>\",\n  \"phoneNumber\": \"<string>\",\n  \"website\": \"<string>\",\n  \"email\": \"<string>\"\n}",
-													"options": {
-														"raw": {
-															"headerFamily": "json",
-															"language": "json"
-														}
-													}
-												},
-												"url": "{{baseUrl}}/api/operator/edit"
-											},
-											"status": "Unauthorized",
-											"code": 401,
-											"_postman_previewlanguage": "text",
-											"header": [],
-											"cookie": [],
-											"responseTime": null,
-											"body": ""
-										},
-										{
-											"id": "a38219e3-4afe-4998-bc0c-326ef22840a2",
-											"name": "Forbidden",
-											"originalRequest": {
-												"method": "PUT",
-												"header": [
-													{
-														"key": "Content-Type",
-														"value": "application/json"
-													},
-													{
-														"description": "Added as a part of security scheme: bearer",
-														"key": "Authorization",
-														"value": "Bearer <token>"
-													}
-												],
-												"body": {
-													"mode": "raw",
-													"raw": "{\n  \"organizationId\": \"<string>\",\n  \"organizationName\": \"<string>\",\n  \"dateOfEstablishment\": \"<dateTime>\",\n  \"businessType\": \"<string>\",\n  \"country\": \"<string>\",\n  \"regNumber\": \"<string>\",\n  \"addressLine1\": \"<string>\",\n  \"addressLine2\": \"<string>\",\n  \"region\": \"<string>\",\n  \"city\": \"<string>\",\n  \"town\": \"<string>\",\n  \"phoneNumber\": \"<string>\",\n  \"website\": \"<string>\",\n  \"email\": \"<string>\"\n}",
-													"options": {
-														"raw": {
-															"headerFamily": "json",
-															"language": "json"
-														}
-													}
-												},
-												"url": "{{baseUrl}}/api/operator/edit"
-											},
-											"status": "Forbidden",
-											"code": 403,
-											"_postman_previewlanguage": "text",
-											"header": [],
-											"cookie": [],
-											"responseTime": null,
-											"body": ""
-										}
-									]
-								}
-							],
-							"id": "19b05bcc-25eb-445b-bf90-125156aa56b9"
 						},
 						{
 							"name": "list",
