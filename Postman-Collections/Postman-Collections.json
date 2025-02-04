@@ -57631,7 +57631,7 @@
 											]
 										},
 										{
-											"name": "No contactId - Create Contact Endpoint1",
+											"name": "No organizationId - Create Contact Endpoint1",
 											"event": [
 												{
 													"listen": "test",
@@ -57681,7 +57681,7 @@
 												],
 												"body": {
 													"mode": "raw",
-													"raw": "{\n // \"contactId\": \"string\",\n  \"firstName\": \"{{$randomFirstName}}\",\n  \"middleName\": \"Jerry\",\n  \"lastName\": \"{{$randomLastName}}\",\n  \"designation\": \"{{$randomJobTitle}}\",\n  \"nationality\": \"Nigeria\",\n  \"phoneNumber\": \"string\",\n  \"email\": \"string\",\n // \"organizationId\": \"string\"\n}",
+													"raw": "{\n // \"contactId\": \"string\",\n  \"firstName\": \"{{$randomFirstName}}\",\n  \"middleName\": \"Jerry\",\n  \"lastName\": \"{{$randomLastName}}\",\n  \"designation\": \"{{$randomJobTitle}}\",\n  \"nationality\": \"Nigeria\",\n  \"phoneNumber\": \"string\",\n  \"email\": \"string\",\n  \"organizationId\": \"string\"\n}",
 													"options": {
 														"raw": {
 															"headerFamily": "json",
@@ -58207,7 +58207,7 @@
 												"auth": {
 													"type": "bearer",
 													"bearer": {
-														"token": "{{bearerToken}}"
+														"token": "{{approverBearerToken}}"
 													}
 												},
 												"method": "POST",
@@ -58223,7 +58223,7 @@
 												],
 												"body": {
 													"mode": "raw",
-													"raw": "{\n//  \"contactId\": \"<string>\",\n  \"firstName\": \"<string>\",\n  \"middleName\": \"<string>\",\n  \"lastName\": \"<string>\",\n  \"designation\": \"<string>\",\n  \"nationality\": \"<string>\",\n  \"phoneNumber\": \"<string>\",\n  \"organizationId\": \"<string>\"\n}",
+													"raw": "{\n \"contactId\": \"<string>\",\n  \"firstName\": \"<string>\",\n  \"middleName\": \"<string>\",\n  \"lastName\": \"<string>\",\n  \"designation\": \"<string>\",\n  \"nationality\": \"<string>\",\n  \"phoneNumber\": \"<string>\",\n  \"organizationId\": \"<string>\"\n}",
 													"options": {
 														"raw": {
 															"headerFamily": "json",
