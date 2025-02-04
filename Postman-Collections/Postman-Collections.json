@@ -57987,10 +57987,37 @@
 									"id": "4a4b654b-98ce-4629-b829-fa42242c5f24"
 								},
 								{
-									"name": "list Copy",
+									"name": "Get all operator contacts",
 									"item": [
 										{
 											"name": "Get all operator contacts",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"id": "9fc2b50d-f575-4a66-a827-42041e525537",
+														"exec": [
+															"//pm.collectionVariables.set(\"contactId\", pm.response.json().id);\r",
+															"\r",
+															"pm.test(\"Status code is 200\", function () {\r",
+															"    pm.response.to.have.status(200);\r",
+															"});\r",
+															"\r",
+															"var responseJSON = pm.response.json(); // Fixed the variable name from responseData to responseJSON\r",
+															"\r",
+															"pm.test(\"Verify that operator contacts are returned successfully\", function () {\r",
+															"   // pm.expect(responseJSON.isSuccess).to.be.a(\"boolean\");\r",
+															"    pm.expect(responseJSON.data).to.be.an(\"array\").and.not.empty;\r",
+															"   // pm.expect(responseJSON.data.message).to.be.a(\"string\").and.not.empty;\r",
+															"});\r",
+															"\r",
+															""
+														],
+														"type": "text/javascript",
+														"packages": {}
+													}
+												}
+											],
 											"id": "d8f14a05-6290-4c6d-9529-5c30babf82c1",
 											"protocolProfileBehavior": {
 												"disableBodyPruning": true
@@ -57999,7 +58026,7 @@
 												"auth": {
 													"type": "bearer",
 													"bearer": {
-														"token": "{{bearerToken}}"
+														"token": "{{approverBearerToken}}"
 													}
 												},
 												"method": "GET",
@@ -58010,7 +58037,7 @@
 													}
 												],
 												"url": {
-													"raw": "{{baseUrl}}/api/operator/contacts/list?operatorId=<string>&pageNumber=<integer>&pageSize=<integer>",
+													"raw": "{{baseUrl}}/api/operator/contacts/list?operatorId={{operatorId}}&pageNumber=1&pageSize=10",
 													"host": [
 														"{{baseUrl}}"
 													],
@@ -58023,17 +58050,17 @@
 													"query": [
 														{
 															"key": "operatorId",
-															"value": "<string>",
+															"value": "{{operatorId}}",
 															"description": "(Required) "
 														},
 														{
 															"key": "pageNumber",
-															"value": "<integer>",
+															"value": "1",
 															"description": "(Required) "
 														},
 														{
 															"key": "pageSize",
-															"value": "<integer>",
+															"value": "10",
 															"description": "(Required) "
 														}
 													]
