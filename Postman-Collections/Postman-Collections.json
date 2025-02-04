@@ -57987,6 +57987,224 @@
 									"id": "4a4b654b-98ce-4629-b829-fa42242c5f24"
 								},
 								{
+									"name": "list Copy",
+									"item": [
+										{
+											"name": "Get all operator contacts",
+											"id": "d8f14a05-6290-4c6d-9529-5c30babf82c1",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": {
+														"token": "{{bearerToken}}"
+													}
+												},
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/operator/contacts/list?operatorId=<string>&pageNumber=<integer>&pageSize=<integer>",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"operator",
+														"contacts",
+														"list"
+													],
+													"query": [
+														{
+															"key": "operatorId",
+															"value": "<string>",
+															"description": "(Required) "
+														},
+														{
+															"key": "pageNumber",
+															"value": "<integer>",
+															"description": "(Required) "
+														},
+														{
+															"key": "pageSize",
+															"value": "<integer>",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"response": [
+												{
+													"id": "341607f1-de1f-486b-b6d8-a4a3d425d7c0",
+													"name": "Success",
+													"originalRequest": {
+														"method": "GET",
+														"header": [
+															{
+																"key": "Accept",
+																"value": "application/json"
+															},
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/operator/contacts/list?operatorId=<string>&pageNumber=<integer>&pageSize=<integer>",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"operator",
+																"contacts",
+																"list"
+															],
+															"query": [
+																{
+																	"description": "(Required) ",
+																	"key": "operatorId",
+																	"value": "<string>"
+																},
+																{
+																	"description": "(Required) ",
+																	"key": "pageNumber",
+																	"value": "<integer>"
+																},
+																{
+																	"description": "(Required) ",
+																	"key": "pageSize",
+																	"value": "<integer>"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"responseTime": null,
+													"body": "{\n  \"pageNumber\": \"<integer>\",\n  \"pageSize\": \"<integer>\",\n  \"totalRecords\": \"<integer>\",\n  \"data\": [\n    {\n      \"contactId\": \"<string>\",\n      \"firstName\": \"<string>\",\n      \"middleName\": \"<string>\",\n      \"lastName\": \"<string>\",\n      \"designation\": \"<string>\",\n      \"nationality\": \"<string>\",\n      \"phoneNumber\": \"<string>\",\n      \"email\": \"<string>\",\n      \"organizationId\": \"<string>\"\n    },\n    {\n      \"contactId\": \"<string>\",\n      \"firstName\": \"<string>\",\n      \"middleName\": \"<string>\",\n      \"lastName\": \"<string>\",\n      \"designation\": \"<string>\",\n      \"nationality\": \"<string>\",\n      \"phoneNumber\": \"<string>\",\n      \"email\": \"<string>\",\n      \"organizationId\": \"<string>\"\n    }\n  ]\n}"
+												},
+												{
+													"id": "eeceff76-4c21-4a11-b1ed-0f02aa2431da",
+													"name": "Unauthorized",
+													"originalRequest": {
+														"method": "GET",
+														"header": [
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/operator/contacts/list?operatorId=<string>&pageNumber=<integer>&pageSize=<integer>",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"operator",
+																"contacts",
+																"list"
+															],
+															"query": [
+																{
+																	"description": "(Required) ",
+																	"key": "operatorId",
+																	"value": "<string>"
+																},
+																{
+																	"description": "(Required) ",
+																	"key": "pageNumber",
+																	"value": "<integer>"
+																},
+																{
+																	"description": "(Required) ",
+																	"key": "pageSize",
+																	"value": "<integer>"
+																}
+															]
+														}
+													},
+													"status": "Unauthorized",
+													"code": 401,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												},
+												{
+													"id": "74423479-b0be-446f-9f06-31b14b1d033a",
+													"name": "Forbidden",
+													"originalRequest": {
+														"method": "GET",
+														"header": [
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/operator/contacts/list?operatorId=<string>&pageNumber=<integer>&pageSize=<integer>",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"operator",
+																"contacts",
+																"list"
+															],
+															"query": [
+																{
+																	"description": "(Required) ",
+																	"key": "operatorId",
+																	"value": "<string>"
+																},
+																{
+																	"description": "(Required) ",
+																	"key": "pageNumber",
+																	"value": "<integer>"
+																},
+																{
+																	"description": "(Required) ",
+																	"key": "pageSize",
+																	"value": "<integer>"
+																}
+															]
+														}
+													},
+													"status": "Forbidden",
+													"code": 403,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												}
+											]
+										}
+									],
+									"id": "2540d82a-31cb-4939-b61a-48f25acff659"
+								},
+								{
 									"name": "edit",
 									"item": [
 										{
@@ -60567,7 +60785,7 @@
 							"id": "2a661644-a5c6-4277-991a-0bfa738ecdb6"
 						},
 						{
-							"name": "list",
+							"name": "list operators",
 							"item": [
 								{
 									"name": "ANP Web Api Features Operator Get All Operator Endpoint",
@@ -60992,7 +61210,7 @@
 							"id": "8148878f-31c5-4e76-8751-68d4935d2aaf"
 						},
 						{
-							"name": "Operator",
+							"name": "Get an Operator",
 							"item": [
 								{
 									"name": "GetAOperator",
