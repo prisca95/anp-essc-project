@@ -36199,7 +36199,7 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "{{baseUrl}}/api/goods/list?sortOrder=0&productType=1&pageNumber=1&pageSize=10&loc",
+											"raw": "{{baseUrl}}/api/goods/list?sortOrder=0&productType=0&pageNumber=1&pageSize=20&loc",
 											"host": [
 												"{{baseUrl}}"
 											],
@@ -36255,7 +36255,7 @@
 												},
 												{
 													"key": "productType",
-													"value": "1",
+													"value": "0",
 													"description": "Working"
 												},
 												{
@@ -36277,7 +36277,7 @@
 												},
 												{
 													"key": "pageSize",
-													"value": "10",
+													"value": "20",
 													"description": "(Required) "
 												},
 												{
