@@ -53642,7 +53642,7 @@
 												],
 												"body": {
 													"mode": "raw",
-													"raw": "{\n  \"tenderBidId\": \"<string>\",\n  \"status\": \"Active\",\n  \"tenderType\": \"Commercials\"\n}",
+													"raw": "{\n  \"tenderBidId\": \"<string>\",\n  \"status\": \"Active\", //Active,Processing, Denied, New, Approved\n  \"tenderType\": \"Commercials\"\n}",
 													"options": {
 														"raw": {
 															"headerFamily": "json",
