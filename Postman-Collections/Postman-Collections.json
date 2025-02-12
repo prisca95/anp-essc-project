@@ -39177,7 +39177,7 @@
 												],
 												"body": {
 													"mode": "raw",
-													"raw": "{\n // \"tenderGoodsServicesId\": \"<string>\",\n  \"itemName\": \"{{$randomProductName}}\",\n  \"description\": \"Procurement of product\",\n  \"quantity\": 8,\n  \"estimatedCost\": 80000,\n  \"procurementMethod\": \"Request for proposal\",\n  \"warrantyDuration\": 5,\n  \"warrantyType\": \"Standard\",\n  \"serviceInformationId\": \"{{serviceInformationId}}\"\n}",
+													"raw": "{\n // \"tenderGoodsServicesId\": \"<string>\",\n  \"itemName\": \"{{$randomProductName}}\",\n  \"description\": \"Procurement of product\",\n  \"quantity\": 5,\n  \"estimatedCost\": 100000,\n  \"procurementMethod\": \"Request for proposal\",\n  \"warrantyDuration\": 5,\n  \"warrantyType\": \"Standard\",\n  \"serviceInformationId\": \"{{serviceInformationId}}\"\n}",
 													"options": {
 														"raw": {
 															"headerFamily": "json",
