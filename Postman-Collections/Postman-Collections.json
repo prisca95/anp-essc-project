@@ -32918,7 +32918,7 @@
 												],
 												"body": {
 													"mode": "raw",
-													"raw": "{\n  \"parameterName\": \"\",\n  \"parameterType\": 3,\n  \"workflowId\": \"<string>\"\n}",
+													"raw": "{\n  \"parameterName\": \"\",\n  \"parameterType\": 3,\n  \"workflowId\": \"879f417d-23af-4cd0-586a-08dce3c79c32\"\n}",
 													"options": {
 														"raw": {
 															"headerFamily": "json",
