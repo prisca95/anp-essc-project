@@ -53270,6 +53270,200 @@
 									"id": "ee5c5514-111e-416a-8bbe-aae9d2333a30"
 								},
 								{
+									"name": "document",
+									"item": [
+										{
+											"name": "type",
+											"item": [
+												{
+													"name": "Anp Procurement Features Bids Get Bid Document Type Endpoint",
+													"id": "00877147-f776-4499-83e7-da5f9f7560bf",
+													"protocolProfileBehavior": {
+														"disableBodyPruning": true
+													},
+													"request": {
+														"auth": {
+															"type": "bearer",
+															"bearer": {
+																"token": "{{bearerToken}}"
+															}
+														},
+														"method": "GET",
+														"header": [],
+														"url": {
+															"raw": "{{baseUrl}}/api/procurement/bids/document/type?serviceInformationId=<string>&tenderType=TechnicalInformation",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"procurement",
+																"bids",
+																"document",
+																"type"
+															],
+															"query": [
+																{
+																	"key": "serviceInformationId",
+																	"value": "<string>",
+																	"description": "(Required) "
+																},
+																{
+																	"key": "tenderType",
+																	"value": "TechnicalInformation",
+																	"description": "(Required) "
+																}
+															]
+														}
+													},
+													"response": [
+														{
+															"id": "62341ce6-6c76-47c0-8d35-2727f9465403",
+															"name": "Success",
+															"originalRequest": {
+																"method": "GET",
+																"header": [
+																	{
+																		"description": "Added as a part of security scheme: bearer",
+																		"key": "Authorization",
+																		"value": "Bearer <token>"
+																	}
+																],
+																"url": {
+																	"raw": "{{baseUrl}}/api/procurement/bids/document/type?serviceInformationId=<string>&tenderType=TechnicalInformation",
+																	"host": [
+																		"{{baseUrl}}"
+																	],
+																	"path": [
+																		"api",
+																		"procurement",
+																		"bids",
+																		"document",
+																		"type"
+																	],
+																	"query": [
+																		{
+																			"description": "(Required) ",
+																			"key": "serviceInformationId",
+																			"value": "<string>"
+																		},
+																		{
+																			"description": "(Required) ",
+																			"key": "tenderType",
+																			"value": "TechnicalInformation"
+																		}
+																	]
+																}
+															},
+															"status": "OK",
+															"code": 200,
+															"_postman_previewlanguage": "text",
+															"header": [],
+															"cookie": [],
+															"responseTime": null,
+															"body": ""
+														},
+														{
+															"id": "ee27c9b6-e27f-4ddc-a528-0f93b55b0616",
+															"name": "Unauthorized",
+															"originalRequest": {
+																"method": "GET",
+																"header": [
+																	{
+																		"description": "Added as a part of security scheme: bearer",
+																		"key": "Authorization",
+																		"value": "Bearer <token>"
+																	}
+																],
+																"url": {
+																	"raw": "{{baseUrl}}/api/procurement/bids/document/type?serviceInformationId=<string>&tenderType=TechnicalInformation",
+																	"host": [
+																		"{{baseUrl}}"
+																	],
+																	"path": [
+																		"api",
+																		"procurement",
+																		"bids",
+																		"document",
+																		"type"
+																	],
+																	"query": [
+																		{
+																			"description": "(Required) ",
+																			"key": "serviceInformationId",
+																			"value": "<string>"
+																		},
+																		{
+																			"description": "(Required) ",
+																			"key": "tenderType",
+																			"value": "TechnicalInformation"
+																		}
+																	]
+																}
+															},
+															"status": "Unauthorized",
+															"code": 401,
+															"_postman_previewlanguage": "text",
+															"header": [],
+															"cookie": [],
+															"responseTime": null,
+															"body": ""
+														},
+														{
+															"id": "e9d2929f-ed0b-4b23-abaa-4c7909718c05",
+															"name": "Forbidden",
+															"originalRequest": {
+																"method": "GET",
+																"header": [
+																	{
+																		"description": "Added as a part of security scheme: bearer",
+																		"key": "Authorization",
+																		"value": "Bearer <token>"
+																	}
+																],
+																"url": {
+																	"raw": "{{baseUrl}}/api/procurement/bids/document/type?serviceInformationId=<string>&tenderType=TechnicalInformation",
+																	"host": [
+																		"{{baseUrl}}"
+																	],
+																	"path": [
+																		"api",
+																		"procurement",
+																		"bids",
+																		"document",
+																		"type"
+																	],
+																	"query": [
+																		{
+																			"description": "(Required) ",
+																			"key": "serviceInformationId",
+																			"value": "<string>"
+																		},
+																		{
+																			"description": "(Required) ",
+																			"key": "tenderType",
+																			"value": "TechnicalInformation"
+																		}
+																	]
+																}
+															},
+															"status": "Forbidden",
+															"code": 403,
+															"_postman_previewlanguage": "text",
+															"header": [],
+															"cookie": [],
+															"responseTime": null,
+															"body": ""
+														}
+													]
+												}
+											],
+											"id": "4c0b04a4-44a1-4adf-b114-fd1d7000dad0"
+										}
+									],
+									"id": "1ee74511-23ef-43b0-99c4-4f17215764eb"
+								},
+								{
 									"name": "detail",
 									"item": [
 										{
@@ -56481,200 +56675,6 @@
 										}
 									],
 									"id": "8f6d7454-7960-4267-87ff-78ad0010a5c4"
-								},
-								{
-									"name": "document",
-									"item": [
-										{
-											"name": "type",
-											"item": [
-												{
-													"name": "Anp Procurement Features Bids Get Bid Document Type Endpoint",
-													"id": "00877147-f776-4499-83e7-da5f9f7560bf",
-													"protocolProfileBehavior": {
-														"disableBodyPruning": true
-													},
-													"request": {
-														"auth": {
-															"type": "bearer",
-															"bearer": {
-																"token": "{{bearerToken}}"
-															}
-														},
-														"method": "GET",
-														"header": [],
-														"url": {
-															"raw": "{{baseUrl}}/api/procurement/bids/document/type?serviceInformationId=<string>&tenderType=TechnicalInformation",
-															"host": [
-																"{{baseUrl}}"
-															],
-															"path": [
-																"api",
-																"procurement",
-																"bids",
-																"document",
-																"type"
-															],
-															"query": [
-																{
-																	"key": "serviceInformationId",
-																	"value": "<string>",
-																	"description": "(Required) "
-																},
-																{
-																	"key": "tenderType",
-																	"value": "TechnicalInformation",
-																	"description": "(Required) "
-																}
-															]
-														}
-													},
-													"response": [
-														{
-															"id": "62341ce6-6c76-47c0-8d35-2727f9465403",
-															"name": "Success",
-															"originalRequest": {
-																"method": "GET",
-																"header": [
-																	{
-																		"description": "Added as a part of security scheme: bearer",
-																		"key": "Authorization",
-																		"value": "Bearer <token>"
-																	}
-																],
-																"url": {
-																	"raw": "{{baseUrl}}/api/procurement/bids/document/type?serviceInformationId=<string>&tenderType=TechnicalInformation",
-																	"host": [
-																		"{{baseUrl}}"
-																	],
-																	"path": [
-																		"api",
-																		"procurement",
-																		"bids",
-																		"document",
-																		"type"
-																	],
-																	"query": [
-																		{
-																			"description": "(Required) ",
-																			"key": "serviceInformationId",
-																			"value": "<string>"
-																		},
-																		{
-																			"description": "(Required) ",
-																			"key": "tenderType",
-																			"value": "TechnicalInformation"
-																		}
-																	]
-																}
-															},
-															"status": "OK",
-															"code": 200,
-															"_postman_previewlanguage": "text",
-															"header": [],
-															"cookie": [],
-															"responseTime": null,
-															"body": ""
-														},
-														{
-															"id": "ee27c9b6-e27f-4ddc-a528-0f93b55b0616",
-															"name": "Unauthorized",
-															"originalRequest": {
-																"method": "GET",
-																"header": [
-																	{
-																		"description": "Added as a part of security scheme: bearer",
-																		"key": "Authorization",
-																		"value": "Bearer <token>"
-																	}
-																],
-																"url": {
-																	"raw": "{{baseUrl}}/api/procurement/bids/document/type?serviceInformationId=<string>&tenderType=TechnicalInformation",
-																	"host": [
-																		"{{baseUrl}}"
-																	],
-																	"path": [
-																		"api",
-																		"procurement",
-																		"bids",
-																		"document",
-																		"type"
-																	],
-																	"query": [
-																		{
-																			"description": "(Required) ",
-																			"key": "serviceInformationId",
-																			"value": "<string>"
-																		},
-																		{
-																			"description": "(Required) ",
-																			"key": "tenderType",
-																			"value": "TechnicalInformation"
-																		}
-																	]
-																}
-															},
-															"status": "Unauthorized",
-															"code": 401,
-															"_postman_previewlanguage": "text",
-															"header": [],
-															"cookie": [],
-															"responseTime": null,
-															"body": ""
-														},
-														{
-															"id": "e9d2929f-ed0b-4b23-abaa-4c7909718c05",
-															"name": "Forbidden",
-															"originalRequest": {
-																"method": "GET",
-																"header": [
-																	{
-																		"description": "Added as a part of security scheme: bearer",
-																		"key": "Authorization",
-																		"value": "Bearer <token>"
-																	}
-																],
-																"url": {
-																	"raw": "{{baseUrl}}/api/procurement/bids/document/type?serviceInformationId=<string>&tenderType=TechnicalInformation",
-																	"host": [
-																		"{{baseUrl}}"
-																	],
-																	"path": [
-																		"api",
-																		"procurement",
-																		"bids",
-																		"document",
-																		"type"
-																	],
-																	"query": [
-																		{
-																			"description": "(Required) ",
-																			"key": "serviceInformationId",
-																			"value": "<string>"
-																		},
-																		{
-																			"description": "(Required) ",
-																			"key": "tenderType",
-																			"value": "TechnicalInformation"
-																		}
-																	]
-																}
-															},
-															"status": "Forbidden",
-															"code": 403,
-															"_postman_previewlanguage": "text",
-															"header": [],
-															"cookie": [],
-															"responseTime": null,
-															"body": ""
-														}
-													]
-												}
-											],
-											"id": "4c0b04a4-44a1-4adf-b114-fd1d7000dad0"
-										}
-									],
-									"id": "1ee74511-23ef-43b0-99c4-4f17215764eb"
 								}
 							],
 							"id": "d069146c-2b40-4fc8-88a8-e166f221e660"
