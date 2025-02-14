@@ -89,7 +89,7 @@
 										],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n  \"userName\":\"omo@yopmail.com\", //\"{{signedUpEmail}}\",\n  \"password\": \"Password12@@\",\n  \"confirmPassword\": \"Password12@@\",\n  \"email\": \"omo@yopmail.com\",//\"{{signedUpEmail}}\",\n  \"phoneNumber\": \"+234{{phonenumber}}\",\n  \"firstName\": \"{{$randomFirstName}}\",\n  \"lastName\":  \"{{$randomLastName}}\"\n}",
+											"raw": "{\n  \"userName\":\"{{signedUpEmail}}\",\n  \"password\": \"Password12@@\",\n  \"confirmPassword\": \"Password12@@\",\n  \"email\": \"{{signedUpEmail}}\",\n  \"phoneNumber\": \"+234{{phonenumber}}\",\n  \"firstName\": \"{{$randomFirstName}}\",\n  \"lastName\":  \"{{$randomLastName}}\"\n}",
 											"options": {
 												"raw": {
 													"headerFamily": "json",
@@ -3146,7 +3146,7 @@
 													"pm.test(\"Verify that password complexity is met\", function () {\r",
 													"\r",
 													"    pm.expect(responseJSON.isSuccess).to.be.a(\"boolean\");\r",
-													"    pm.expect(responseJSON.data.message).to.be.a(\"string\").and.not.empty;\r",
+													"    pm.expect(responseJSON.errorMessage).to.be.a(\"string\").and.not.empty;\r",
 													"    \r",
 													"});"
 												],
