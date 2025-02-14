@@ -4226,7 +4226,7 @@
 													"pm.test(\"Verify that token is invalid\", function () {\r",
 													"\r",
 													"    pm.expect(responseJSON.isSuccess).to.be.a(\"boolean\");\r",
-													"    pm.expect(responseJSON.data.message).to.be.a(\"string\").and.not.empty;\r",
+													"    pm.expect(responseJSON.errorMessage).to.be.a(\"string\").and.not.empty;\r",
 													"    \r",
 													"});"
 												],
