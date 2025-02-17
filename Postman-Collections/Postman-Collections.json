@@ -51998,7 +51998,7 @@
 											"name": "create",
 											"item": [
 												{
-													"name": "Empty fields - Create Bid Financial Endpoint",
+													"name": "Create Bid Financial Endpoint",
 													"event": [
 														{
 															"listen": "test",
@@ -52129,6 +52129,174 @@
 														},
 														{
 															"id": "0b550425-ebc6-472e-9590-63a039823130",
+															"name": "Forbidden",
+															"originalRequest": {
+																"method": "POST",
+																"header": [
+																	{
+																		"key": "Content-Type",
+																		"value": "application/json"
+																	},
+																	{
+																		"description": "Added as a part of security scheme: bearer",
+																		"key": "Authorization",
+																		"value": "Bearer <token>"
+																	}
+																],
+																"body": {
+																	"mode": "raw",
+																	"raw": "{\n  \"cost\": \"<number>\",\n  \"totalCost\": \"<number>\",\n  \"quotedCost\": \"<number>\",\n  \"discount\": \"<number>\",\n  \"declaration\": \"<boolean>\",\n  \"tenderBidId\": \"<string>\"\n}",
+																	"options": {
+																		"raw": {
+																			"headerFamily": "json",
+																			"language": "json"
+																		}
+																	}
+																},
+																"url": "{{baseUrl}}/api/procurement/bids/financial/create"
+															},
+															"status": "Forbidden",
+															"code": 403,
+															"_postman_previewlanguage": "text",
+															"header": [],
+															"cookie": [],
+															"responseTime": null,
+															"body": ""
+														}
+													]
+												},
+												{
+													"name": "Empty fields - Create Bid Financial Endpoint",
+													"event": [
+														{
+															"listen": "test",
+															"script": {
+																"id": "1d3d757b-3825-4f1d-8702-a978d9c921c7",
+																"exec": [
+																	"pm.test(\"Status code is 400\", function () {\r",
+																	"    pm.response.to.have.status(400);\r",
+																	"});\r",
+																	"\r",
+																	"var responseJSON = pm.response.json(); \r",
+																	"\r",
+																	"pm.test(\"Verify that mandatory fields are required \", function () {\r",
+																	"\r",
+																	"   pm.expect(responseJSON.errors[0].name).to.be.a(\"string\").and.not.empty;\r",
+																	"        pm.expect(responseJSON.errors[0].reason).to.be.a(\"string\").and.not.empty;\r",
+																	"\r",
+																	"\r",
+																	"});"
+																],
+																"type": "text/javascript",
+																"packages": {}
+															}
+														}
+													],
+													"id": "afad88ec-4397-4f51-8f06-57c09841de0d",
+													"protocolProfileBehavior": {
+														"disableBodyPruning": true
+													},
+													"request": {
+														"auth": {
+															"type": "bearer",
+															"bearer": {
+																"token": "{{bearerToken}}"
+															}
+														},
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"cost\": \"<number>\",\n  \"totalCost\": \"<number>\",\n  \"quotedCost\": \"<number>\",\n  \"discount\": \"<number>\",\n  \"declaration\": \"<boolean>\",\n  \"tenderBidId\": \"<string>\"\n}\n//AFter financial have been approved the supplier should get an email",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl}}/api/procurement/bids/financial/create"
+													},
+													"response": [
+														{
+															"id": "2fa20c47-f222-4a79-87d9-e53f361389da",
+															"name": "Success",
+															"originalRequest": {
+																"method": "POST",
+																"header": [
+																	{
+																		"key": "Content-Type",
+																		"value": "application/json"
+																	},
+																	{
+																		"description": "Added as a part of security scheme: bearer",
+																		"key": "Authorization",
+																		"value": "Bearer <token>"
+																	}
+																],
+																"body": {
+																	"mode": "raw",
+																	"raw": "{\n  \"cost\": \"<number>\",\n  \"totalCost\": \"<number>\",\n  \"quotedCost\": \"<number>\",\n  \"discount\": \"<number>\",\n  \"declaration\": \"<boolean>\",\n  \"tenderBidId\": \"<string>\"\n}",
+																	"options": {
+																		"raw": {
+																			"headerFamily": "json",
+																			"language": "json"
+																		}
+																	}
+																},
+																"url": "{{baseUrl}}/api/procurement/bids/financial/create"
+															},
+															"status": "OK",
+															"code": 200,
+															"_postman_previewlanguage": "text",
+															"header": [],
+															"cookie": [],
+															"responseTime": null,
+															"body": ""
+														},
+														{
+															"id": "efaa3303-2cc2-4b65-b758-de3db77f7ac0",
+															"name": "Unauthorized",
+															"originalRequest": {
+																"method": "POST",
+																"header": [
+																	{
+																		"key": "Content-Type",
+																		"value": "application/json"
+																	},
+																	{
+																		"description": "Added as a part of security scheme: bearer",
+																		"key": "Authorization",
+																		"value": "Bearer <token>"
+																	}
+																],
+																"body": {
+																	"mode": "raw",
+																	"raw": "{\n  \"cost\": \"<number>\",\n  \"totalCost\": \"<number>\",\n  \"quotedCost\": \"<number>\",\n  \"discount\": \"<number>\",\n  \"declaration\": \"<boolean>\",\n  \"tenderBidId\": \"<string>\"\n}",
+																	"options": {
+																		"raw": {
+																			"headerFamily": "json",
+																			"language": "json"
+																		}
+																	}
+																},
+																"url": "{{baseUrl}}/api/procurement/bids/financial/create"
+															},
+															"status": "Unauthorized",
+															"code": 401,
+															"_postman_previewlanguage": "text",
+															"header": [],
+															"cookie": [],
+															"responseTime": null,
+															"body": ""
+														},
+														{
+															"id": "a6426330-b307-4af5-9268-87996fa1c382",
 															"name": "Forbidden",
 															"originalRequest": {
 																"method": "POST",
@@ -52856,6 +53024,32 @@
 									"item": [
 										{
 											"name": "Anp Procurement Features Bids Get Bid Applicants Endpoint",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"id": "aea86d4b-2904-4aef-b050-4b78a40010ae",
+														"exec": [
+															"\r",
+															"pm.test(\"Status code is 200\", function () {\r",
+															"    pm.response.to.have.status(200);\r",
+															"});\r",
+															"\r",
+															"var responseJSON = pm.response.json(); \r",
+															"\r",
+															"pm.test(\"Verify that applicants are returned\", function () {\r",
+															"\r",
+															"    pm.expect(responseJSON.data[0]).to.be.an(\"object\").and.not.empty;\r",
+															"    // pm.expect(responseJSON.data.userName).to.be.a(\"string\").and.not.empty;\r",
+															"    //     pm.expect(responseJSON.data.phoneNumber).to.be.a(\"string\").and.not.empty;\r",
+															"\r",
+															"});"
+														],
+														"type": "text/javascript",
+														"packages": {}
+													}
+												}
+											],
 											"id": "3d3e8625-5076-4bd4-8003-61a11c3a7279",
 											"protocolProfileBehavior": {
 												"disableBodyPruning": true
@@ -52870,7 +53064,7 @@
 												"method": "GET",
 												"header": [],
 												"url": {
-													"raw": "{{baseUrl}}/api/procurement/bids/applicants?serviceInformationId={{serviceInformationId}}&pageNumber=1&pageSize=10",
+													"raw": "{{baseUrl}}/api/procurement/bids/applicants?serviceInformationId=5a8e5352-ff73-4a14-9a61-08dd4f42006e&pageNumber=1&pageSize=10",
 													"host": [
 														"{{baseUrl}}"
 													],
@@ -52883,7 +53077,7 @@
 													"query": [
 														{
 															"key": "serviceInformationId",
-															"value": "{{serviceInformationId}}",
+															"value": "5a8e5352-ff73-4a14-9a61-08dd4f42006e",
 															"description": "(Required) "
 														},
 														{
