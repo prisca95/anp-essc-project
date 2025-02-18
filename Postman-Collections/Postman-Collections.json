@@ -54068,6 +54068,32 @@
 											"item": [
 												{
 													"name": "Anp Procurement Features Bids Get Bid Document Type Endpoint",
+													"event": [
+														{
+															"listen": "test",
+															"script": {
+																"id": "df3c2d5f-fbc4-4e2d-943c-3e346a4621a7",
+																"exec": [
+																	"\r",
+																	"pm.test(\"Status code is 200\", function () {\r",
+																	"    pm.response.to.have.status(200);\r",
+																	"});\r",
+																	"\r",
+																	"var responseJSON = pm.response.json(); \r",
+																	"\r",
+																	"pm.test(\"Verify that applicants are returned\", function () {\r",
+																	"\r",
+																	"    pm.expect(responseJSON.data[0]).to.be.an(\"object\").and.not.empty;\r",
+																	"    // pm.expect(responseJSON.data.userName).to.be.a(\"string\").and.not.empty;\r",
+																	"    //     pm.expect(responseJSON.data.phoneNumber).to.be.a(\"string\").and.not.empty;\r",
+																	"\r",
+																	"});"
+																],
+																"type": "text/javascript",
+																"packages": {}
+															}
+														}
+													],
 													"id": "00877147-f776-4499-83e7-da5f9f7560bf",
 													"protocolProfileBehavior": {
 														"disableBodyPruning": true
@@ -54082,7 +54108,7 @@
 														"method": "GET",
 														"header": [],
 														"url": {
-															"raw": "{{baseUrl}}/api/procurement/bids/document/type?serviceInformationId=<string>&tenderType=TechnicalInformation",
+															"raw": "{{baseUrl}}/api/procurement/bids/document/type?serviceInformationId=44c39cce-70ee-443b-a825-08dd50273ac8&tenderType=TechnicalInformation",
 															"host": [
 																"{{baseUrl}}"
 															],
@@ -54096,7 +54122,7 @@
 															"query": [
 																{
 																	"key": "serviceInformationId",
-																	"value": "<string>",
+																	"value": "44c39cce-70ee-443b-a825-08dd50273ac8",
 																	"description": "(Required) "
 																},
 																{
@@ -54259,6 +54285,32 @@
 									"item": [
 										{
 											"name": "Anp Procurement Features Bids Get Bid Detail Endpoint",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"id": "e22b7ea7-888e-4875-8ad9-7c0e4fff2eac",
+														"exec": [
+															"\r",
+															"pm.test(\"Status code is 200\", function () {\r",
+															"    pm.response.to.have.status(200);\r",
+															"});\r",
+															"\r",
+															"var responseJSON = pm.response.json(); \r",
+															"\r",
+															"pm.test(\"Verify that bid detail is returned\", function () {\r",
+															"\r",
+															"    pm.expect(responseJSON.data[0]).to.be.an(\"object\").and.not.empty;\r",
+															"    // pm.expect(responseJSON.data.userName).to.be.a(\"string\").and.not.empty;\r",
+															"    //     pm.expect(responseJSON.data.phoneNumber).to.be.a(\"string\").and.not.empty;\r",
+															"\r",
+															"});"
+														],
+														"type": "text/javascript",
+														"packages": {}
+													}
+												}
+											],
 											"id": "2abbf890-43ac-4868-9a8c-4af359a09c15",
 											"protocolProfileBehavior": {
 												"disableBodyPruning": true
