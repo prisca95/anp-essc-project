@@ -49462,7 +49462,7 @@
 															"script": {
 																"id": "6f9152be-ce3e-4929-a6a1-95d4703b0950",
 																"exec": [
-																	"\r",
+																	"pm.collectionVariables.set(\"tenderBidId\", \"pm.response.json().data.id\");\r",
 																	"pm.test(\"Status code is 200\", function () {\r",
 																	"    pm.response.to.have.status(200);\r",
 																	"});\r",
@@ -49502,7 +49502,7 @@
 														],
 														"body": {
 															"mode": "raw",
-															"raw": "{\n  \"createdDate\": \"2025-01-28\",\n  \"serviceInformationId\": \"{{serviceInformationId}}\",\n  \"address\": \"Lagos\",\n  \"longitude\": \"{{$randomLongitude}}\",\n  \"latitude\": \"{{$randomLatitude}}\",\n  \"state\": \"Lagos\",\n  \"location\": \"Lagos\",\n  \"estimatedCost\": \"55000\",\n  \"estimatedStartDate\": \"2025-02-05\",\n  \"estimatedEndDate\": \"2025-02-10\",\n  \"purpose\": \"Expression of interest for Awesome\",\n  \"declaration\": true,\n  \"companyId\": \"{{supplierId}}\"\n}",
+															"raw": "{\n  \"createdDate\": \"2025-02-18\",\n  \"serviceInformationId\": \"44c39cce-70ee-443b-a825-08dd50273ac8\",//\"{{serviceInformationId}}\",\n  \"address\": \"Lagos\",\n  \"longitude\": \"{{$randomLongitude}}\",\n  \"latitude\": \"{{$randomLatitude}}\",\n  \"state\": \"Lagos\",\n  \"location\": \"Lagos\",\n  \"estimatedCost\": \"1100000\",\n  \"estimatedStartDate\": \"2025-02-18\",\n  \"estimatedEndDate\": \"2025-02-19\",\n  \"purpose\": \"Expression of interest for Steel\",\n  \"declaration\": true,\n  \"companyId\": \"{{supplierId}}\"\n}",
 															"options": {
 																"raw": {
 																	"headerFamily": "json",
@@ -57590,14 +57590,14 @@
 													"script": {
 														"id": "5948634c-65f2-4eef-a938-5e0e188dd006",
 														"exec": [
-															"// Generate a random email address\r",
-															"const randomString = Math.random().toString(36).substring(2, 10); // Generate a random string\r",
-															"const domain = \"yopmail.com\"; // Define a domain\r",
-															"const email = `${randomString}@${domain}`;\r",
+															"// // Generate a random email address\r",
+															"// const randomString = Math.random().toString(36).substring(2, 10); // Generate a random string\r",
+															"// const domain = \"yopmail.com\"; // Define a domain\r",
+															"// const email = `${randomString}@${domain}`;\r",
 															"\r",
-															"// Set the email as an environment variable\r",
-															"pm.collectionVariables.set(\"contactEmail\", email);\r",
-															"console.log(email);\r",
+															"// // Set the email as an environment variable\r",
+															"// pm.collectionVariables.set(\"contactEmail\", email);\r",
+															"// console.log(email);\r",
 															"\r",
 															"pm.collectionVariables.set(\"contactId\", pm.response.json().data.id);\r",
 															"\r",
@@ -57644,7 +57644,7 @@
 												],
 												"body": {
 													"mode": "raw",
-													"raw": "{\n // \"contactId\": \"string\",\n  \"firstName\": \"{{$randomFirstName}}\",\n  \"middleName\": \"Jerry\",\n  \"lastName\": \"{{$randomLastName}}\",\n  \"designation\": \"{{$randomJobTitle}}\",\n  \"nationality\": \"Nigeria\",\n  \"phoneNumber\": \"2348079665569\",\n  \"email\": \"{{contactEmail}\",\n  \"organizationId\": \"{{operatorId}}\"\n}\n",
+													"raw": "{\n // \"contactId\": \"string\",\n  \"firstName\": \"{{$randomFirstName}}\",\n  \"middleName\": \"Jerry\",\n  \"lastName\": \"{{$randomLastName}}\",\n  \"designation\": \"{{$randomJobTitle}}\",\n  \"nationality\": \"Nigeria\",\n  \"phoneNumber\": \"2348079665569\",\n  \"email\": \"viva@yopmail.com\",\n  \"organizationId\": \"{{operatorId}}\"\n}\n",
 													"options": {
 														"raw": {
 															"headerFamily": "json",
