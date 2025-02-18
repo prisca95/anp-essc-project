@@ -54780,6 +54780,1516 @@
 							"id": "c36ca546-bf58-4f52-9082-a48641921120"
 						},
 						{
+							"name": "contracts Copy",
+							"item": [
+								{
+									"name": "deliverables",
+									"item": [
+										{
+											"name": "Anp Procurement Features Contract Contract Management Endpoint",
+											"id": "071d0c7e-5314-4357-a003-4e3d5738f022",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": {
+														"token": "{{bearerToken}}"
+													}
+												},
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/procurement/contracts/deliverables?contractId=<string>",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"procurement",
+														"contracts",
+														"deliverables"
+													],
+													"query": [
+														{
+															"key": "contractId",
+															"value": "<string>",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"response": [
+												{
+													"id": "1d0107d9-f589-45e3-a24e-3124d91bf210",
+													"name": "Success",
+													"originalRequest": {
+														"method": "GET",
+														"header": [
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/procurement/contracts/deliverables?contractId=<string>",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"procurement",
+																"contracts",
+																"deliverables"
+															],
+															"query": [
+																{
+																	"description": "(Required) ",
+																	"key": "contractId",
+																	"value": "<string>"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												},
+												{
+													"id": "f4f8cd8a-e551-477a-a34c-d8d95a89b515",
+													"name": "Unauthorized",
+													"originalRequest": {
+														"method": "GET",
+														"header": [
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/procurement/contracts/deliverables?contractId=<string>",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"procurement",
+																"contracts",
+																"deliverables"
+															],
+															"query": [
+																{
+																	"description": "(Required) ",
+																	"key": "contractId",
+																	"value": "<string>"
+																}
+															]
+														}
+													},
+													"status": "Unauthorized",
+													"code": 401,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												},
+												{
+													"id": "11b94d52-5707-42a5-9276-c7883b4bac0d",
+													"name": "Forbidden",
+													"originalRequest": {
+														"method": "GET",
+														"header": [
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/procurement/contracts/deliverables?contractId=<string>",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"procurement",
+																"contracts",
+																"deliverables"
+															],
+															"query": [
+																{
+																	"description": "(Required) ",
+																	"key": "contractId",
+																	"value": "<string>"
+																}
+															]
+														}
+													},
+													"status": "Forbidden",
+													"code": 403,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												}
+											]
+										}
+									],
+									"id": "c94ef8d8-114d-4c72-818c-640e9b6691b4"
+								},
+								{
+									"name": "renew",
+									"item": [
+										{
+											"name": "request",
+											"item": [
+												{
+													"name": "Anp Procurement Features Contract Supplier Contract Renewal Endpoint",
+													"id": "f1f98bdd-9182-434a-a377-220ffa6fe959",
+													"protocolProfileBehavior": {
+														"disableBodyPruning": true
+													},
+													"request": {
+														"auth": {
+															"type": "bearer",
+															"bearer": {
+																"token": "{{bearerToken}}"
+															}
+														},
+														"method": "GET",
+														"header": [],
+														"url": {
+															"raw": "{{baseUrl}}/api/procurement/contracts/renew/request?contractId=<string>",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"procurement",
+																"contracts",
+																"renew",
+																"request"
+															],
+															"query": [
+																{
+																	"key": "contractId",
+																	"value": "<string>",
+																	"description": "(Required) "
+																}
+															]
+														}
+													},
+													"response": [
+														{
+															"id": "f44f1b57-6b55-4581-ad26-e928b9e83f4a",
+															"name": "Success",
+															"originalRequest": {
+																"method": "GET",
+																"header": [
+																	{
+																		"description": "Added as a part of security scheme: bearer",
+																		"key": "Authorization",
+																		"value": "Bearer <token>"
+																	}
+																],
+																"url": {
+																	"raw": "{{baseUrl}}/api/procurement/contracts/renew/request?contractId=<string>",
+																	"host": [
+																		"{{baseUrl}}"
+																	],
+																	"path": [
+																		"api",
+																		"procurement",
+																		"contracts",
+																		"renew",
+																		"request"
+																	],
+																	"query": [
+																		{
+																			"description": "(Required) ",
+																			"key": "contractId",
+																			"value": "<string>"
+																		}
+																	]
+																}
+															},
+															"status": "OK",
+															"code": 200,
+															"_postman_previewlanguage": "text",
+															"header": [],
+															"cookie": [],
+															"responseTime": null,
+															"body": ""
+														},
+														{
+															"id": "fbc88ab2-6437-4449-8bd8-d24e4e3bce9c",
+															"name": "Unauthorized",
+															"originalRequest": {
+																"method": "GET",
+																"header": [
+																	{
+																		"description": "Added as a part of security scheme: bearer",
+																		"key": "Authorization",
+																		"value": "Bearer <token>"
+																	}
+																],
+																"url": {
+																	"raw": "{{baseUrl}}/api/procurement/contracts/renew/request?contractId=<string>",
+																	"host": [
+																		"{{baseUrl}}"
+																	],
+																	"path": [
+																		"api",
+																		"procurement",
+																		"contracts",
+																		"renew",
+																		"request"
+																	],
+																	"query": [
+																		{
+																			"description": "(Required) ",
+																			"key": "contractId",
+																			"value": "<string>"
+																		}
+																	]
+																}
+															},
+															"status": "Unauthorized",
+															"code": 401,
+															"_postman_previewlanguage": "text",
+															"header": [],
+															"cookie": [],
+															"responseTime": null,
+															"body": ""
+														},
+														{
+															"id": "44e5e6dd-2981-4ee4-8557-871247d4b020",
+															"name": "Forbidden",
+															"originalRequest": {
+																"method": "GET",
+																"header": [
+																	{
+																		"description": "Added as a part of security scheme: bearer",
+																		"key": "Authorization",
+																		"value": "Bearer <token>"
+																	}
+																],
+																"url": {
+																	"raw": "{{baseUrl}}/api/procurement/contracts/renew/request?contractId=<string>",
+																	"host": [
+																		"{{baseUrl}}"
+																	],
+																	"path": [
+																		"api",
+																		"procurement",
+																		"contracts",
+																		"renew",
+																		"request"
+																	],
+																	"query": [
+																		{
+																			"description": "(Required) ",
+																			"key": "contractId",
+																			"value": "<string>"
+																		}
+																	]
+																}
+															},
+															"status": "Forbidden",
+															"code": 403,
+															"_postman_previewlanguage": "text",
+															"header": [],
+															"cookie": [],
+															"responseTime": null,
+															"body": ""
+														}
+													]
+												}
+											],
+											"id": "37cffe66-714e-405a-9b88-18d34dc47d35"
+										},
+										{
+											"name": "Anp Procurement Features Contract Contract Renewal Endpoint",
+											"id": "3f0227b2-5f23-426c-9506-a3ce53c48d2c",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": {
+														"token": "{{bearerToken}}"
+													}
+												},
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/procurement/contracts/renew?contractId=<string>&contractStatus=Rejected",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"procurement",
+														"contracts",
+														"renew"
+													],
+													"query": [
+														{
+															"key": "contractId",
+															"value": "<string>",
+															"description": "(Required) "
+														},
+														{
+															"key": "contractStatus",
+															"value": "Rejected",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"response": [
+												{
+													"id": "995b0696-bdf8-48de-b7cb-2a2a6bb1c1b3",
+													"name": "Success",
+													"originalRequest": {
+														"method": "GET",
+														"header": [
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/procurement/contracts/renew?contractId=<string>&contractStatus=Rejected",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"procurement",
+																"contracts",
+																"renew"
+															],
+															"query": [
+																{
+																	"description": "(Required) ",
+																	"key": "contractId",
+																	"value": "<string>"
+																},
+																{
+																	"description": "(Required) ",
+																	"key": "contractStatus",
+																	"value": "Rejected"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												},
+												{
+													"id": "767bee63-5541-43c8-9f6e-0e09eb3c4b42",
+													"name": "Unauthorized",
+													"originalRequest": {
+														"method": "GET",
+														"header": [
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/procurement/contracts/renew?contractId=<string>&contractStatus=Rejected",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"procurement",
+																"contracts",
+																"renew"
+															],
+															"query": [
+																{
+																	"description": "(Required) ",
+																	"key": "contractId",
+																	"value": "<string>"
+																},
+																{
+																	"description": "(Required) ",
+																	"key": "contractStatus",
+																	"value": "Rejected"
+																}
+															]
+														}
+													},
+													"status": "Unauthorized",
+													"code": 401,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												},
+												{
+													"id": "dea58250-98e6-4255-95da-03d5aeddcbbd",
+													"name": "Forbidden",
+													"originalRequest": {
+														"method": "GET",
+														"header": [
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/procurement/contracts/renew?contractId=<string>&contractStatus=Rejected",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"procurement",
+																"contracts",
+																"renew"
+															],
+															"query": [
+																{
+																	"description": "(Required) ",
+																	"key": "contractId",
+																	"value": "<string>"
+																},
+																{
+																	"description": "(Required) ",
+																	"key": "contractStatus",
+																	"value": "Rejected"
+																}
+															]
+														}
+													},
+													"status": "Forbidden",
+													"code": 403,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												}
+											]
+										}
+									],
+									"id": "ead82acd-86aa-4c78-96f7-5226458f9269"
+								},
+								{
+									"name": "create",
+									"item": [
+										{
+											"name": "Create a new Contract Offer",
+											"id": "dc18fa03-117e-4da9-965c-c15bb330fc32",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": {
+														"token": "{{bearerToken}}"
+													}
+												},
+												"method": "POST",
+												"header": [
+													{
+														"key": "accept-Language",
+														"value": "<string>",
+														"description": "(Required) "
+													},
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"tenderBidId\": \"<string>\",\n  \"status\": \"Active\",\n  \"tenderType\": \"ExpressionOfInterest\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl}}/api/procurement/contracts/create",
+												"description": "Create a new Contract Offer for the winning bid"
+											},
+											"response": [
+												{
+													"id": "85f222ed-cc54-4cff-b808-c06a1d9c13ef",
+													"name": "Success",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"description": "(Required) ",
+																"key": "accept-Language",
+																"value": "<string>"
+															},
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"tenderBidId\": \"<string>\",\n  \"status\": \"Active\",\n  \"tenderType\": \"ExpressionOfInterest\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl}}/api/procurement/contracts/create"
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												},
+												{
+													"id": "a8509277-b3aa-4afb-a524-a1c1b5ba6516",
+													"name": "Unauthorized",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"description": "(Required) ",
+																"key": "accept-Language",
+																"value": "<string>"
+															},
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"tenderBidId\": \"<string>\",\n  \"status\": \"Active\",\n  \"tenderType\": \"ExpressionOfInterest\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl}}/api/procurement/contracts/create"
+													},
+													"status": "Unauthorized",
+													"code": 401,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												},
+												{
+													"id": "0e9a114d-e7e3-4062-9b55-f9babc96e996",
+													"name": "Forbidden",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"description": "(Required) ",
+																"key": "accept-Language",
+																"value": "<string>"
+															},
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"tenderBidId\": \"<string>\",\n  \"status\": \"Active\",\n  \"tenderType\": \"ExpressionOfInterest\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl}}/api/procurement/contracts/create"
+													},
+													"status": "Forbidden",
+													"code": 403,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												}
+											]
+										}
+									],
+									"id": "a4db70bb-06a8-4619-b32b-22cc63a253bb"
+								},
+								{
+									"name": "offer",
+									"item": [
+										{
+											"name": "Anp Procurement Features Contract Create Contract Offer Endpoint",
+											"id": "2fce484d-3a73-4b34-b85e-a54ee40a4c5c",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": {
+														"token": "{{bearerToken}}"
+													}
+												},
+												"method": "PATCH",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "multipart/form-data"
+													}
+												],
+												"body": {
+													"mode": "formdata",
+													"formdata": [
+														{
+															"key": "contractId",
+															"value": "<string>",
+															"type": "text"
+														},
+														{
+															"description": " (This can only be one of Pending,Active,Rejected,Accepted)",
+															"key": "status",
+															"value": "Rejected",
+															"type": "text"
+														},
+														{
+															"key": "comment",
+															"value": "<string>",
+															"type": "text"
+														},
+														{
+															"key": "attachment",
+															"type": "file",
+															"value": null
+														}
+													]
+												},
+												"url": "{{baseUrl}}/api/procurement/contracts/offer"
+											},
+											"response": [
+												{
+													"id": "3134a345-0bd5-4665-ad59-faa3a12463a4",
+													"name": "Success",
+													"originalRequest": {
+														"method": "PATCH",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "multipart/form-data"
+															},
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"body": {
+															"mode": "formdata",
+															"formdata": [
+																{
+																	"key": "contractId",
+																	"value": "<string>",
+																	"type": "text"
+																},
+																{
+																	"description": " (This can only be one of Pending,Active,Rejected,Accepted)",
+																	"key": "status",
+																	"value": "Rejected",
+																	"type": "text"
+																},
+																{
+																	"key": "comment",
+																	"value": "<string>",
+																	"type": "text"
+																},
+																{
+																	"key": "attachment",
+																	"type": "file",
+																	"src": []
+																}
+															]
+														},
+														"url": "{{baseUrl}}/api/procurement/contracts/offer"
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												},
+												{
+													"id": "678bcc77-e90f-4559-874f-8da342d35518",
+													"name": "Unauthorized",
+													"originalRequest": {
+														"method": "PATCH",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "multipart/form-data"
+															},
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"body": {
+															"mode": "formdata",
+															"formdata": [
+																{
+																	"key": "contractId",
+																	"value": "<string>",
+																	"type": "text"
+																},
+																{
+																	"description": " (This can only be one of Pending,Active,Rejected,Accepted)",
+																	"key": "status",
+																	"value": "Rejected",
+																	"type": "text"
+																},
+																{
+																	"key": "comment",
+																	"value": "<string>",
+																	"type": "text"
+																},
+																{
+																	"key": "attachment",
+																	"type": "file",
+																	"src": []
+																}
+															]
+														},
+														"url": "{{baseUrl}}/api/procurement/contracts/offer"
+													},
+													"status": "Unauthorized",
+													"code": 401,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												},
+												{
+													"id": "f5a565e1-abd1-4fbe-bbb0-2ee7c2a19731",
+													"name": "Forbidden",
+													"originalRequest": {
+														"method": "PATCH",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "multipart/form-data"
+															},
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"body": {
+															"mode": "formdata",
+															"formdata": [
+																{
+																	"key": "contractId",
+																	"value": "<string>",
+																	"type": "text"
+																},
+																{
+																	"description": " (This can only be one of Pending,Active,Rejected,Accepted)",
+																	"key": "status",
+																	"value": "Rejected",
+																	"type": "text"
+																},
+																{
+																	"key": "comment",
+																	"value": "<string>",
+																	"type": "text"
+																},
+																{
+																	"key": "attachment",
+																	"type": "file",
+																	"src": []
+																}
+															]
+														},
+														"url": "{{baseUrl}}/api/procurement/contracts/offer"
+													},
+													"status": "Forbidden",
+													"code": 403,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												}
+											]
+										}
+									],
+									"id": "386960b9-a5ed-4c8d-bd48-758e7d82b8dd"
+								},
+								{
+									"name": "{contractId}",
+									"item": [
+										{
+											"name": "Anp Procurement Features Contract Get A Contract Endpoint",
+											"id": "13d7eede-e671-4bdd-a04b-a3252d53ee5e",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": {
+														"token": "{{bearerToken}}"
+													}
+												},
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/procurement/contracts/:contractId",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"procurement",
+														"contracts",
+														":contractId"
+													],
+													"variable": [
+														{
+															"id": "8e82fce7-6718-4c9e-952e-9575369fafc8",
+															"key": "contractId",
+															"value": "<string>",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"response": [
+												{
+													"id": "538266cd-ef77-4805-9794-5ca5d64437e9",
+													"name": "Success",
+													"originalRequest": {
+														"method": "GET",
+														"header": [
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/procurement/contracts/:contractId",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"procurement",
+																"contracts",
+																":contractId"
+															],
+															"variable": [
+																{
+																	"key": "contractId"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												},
+												{
+													"id": "0df7e3d7-9a80-4488-b349-0073fb50d7f9",
+													"name": "Unauthorized",
+													"originalRequest": {
+														"method": "GET",
+														"header": [
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/procurement/contracts/:contractId",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"procurement",
+																"contracts",
+																":contractId"
+															],
+															"variable": [
+																{
+																	"key": "contractId"
+																}
+															]
+														}
+													},
+													"status": "Unauthorized",
+													"code": 401,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												},
+												{
+													"id": "8667e543-d0b8-4231-b15f-c21b6b846b14",
+													"name": "Forbidden",
+													"originalRequest": {
+														"method": "GET",
+														"header": [
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/procurement/contracts/:contractId",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"procurement",
+																"contracts",
+																":contractId"
+															],
+															"variable": [
+																{
+																	"key": "contractId"
+																}
+															]
+														}
+													},
+													"status": "Forbidden",
+													"code": 403,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												}
+											]
+										}
+									],
+									"id": "ee830995-ecba-48c6-a1a6-f78b4130eae5"
+								},
+								{
+									"name": "allcontracts",
+									"item": [
+										{
+											"name": "Anp Procurement Features Contract Get All Contracts Endpoint",
+											"id": "699e0007-670f-4959-b2a2-ced295ab6aef",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": {
+														"token": "{{bearerToken}}"
+													}
+												},
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/procurement/contracts/allcontracts?operatorId=<string>&status=Accepted&pageNumber=<integer>&pageSize=<integer>",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"procurement",
+														"contracts",
+														"allcontracts"
+													],
+													"query": [
+														{
+															"key": "operatorId",
+															"value": "<string>"
+														},
+														{
+															"key": "status",
+															"value": "Accepted"
+														},
+														{
+															"key": "pageNumber",
+															"value": "<integer>",
+															"description": "(Required) "
+														},
+														{
+															"key": "pageSize",
+															"value": "<integer>",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"response": [
+												{
+													"id": "97845450-906f-4cef-847d-2e10293bb2c0",
+													"name": "Success",
+													"originalRequest": {
+														"method": "GET",
+														"header": [
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/procurement/contracts/allcontracts?operatorId=<string>&status=Accepted&pageNumber=<integer>&pageSize=<integer>",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"procurement",
+																"contracts",
+																"allcontracts"
+															],
+															"query": [
+																{
+																	"key": "operatorId",
+																	"value": "<string>"
+																},
+																{
+																	"key": "status",
+																	"value": "Accepted"
+																},
+																{
+																	"description": "(Required) ",
+																	"key": "pageNumber",
+																	"value": "<integer>"
+																},
+																{
+																	"description": "(Required) ",
+																	"key": "pageSize",
+																	"value": "<integer>"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												},
+												{
+													"id": "ebde5a87-60f3-4208-b015-e9a2a78bf0c8",
+													"name": "Unauthorized",
+													"originalRequest": {
+														"method": "GET",
+														"header": [
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/procurement/contracts/allcontracts?operatorId=<string>&status=Accepted&pageNumber=<integer>&pageSize=<integer>",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"procurement",
+																"contracts",
+																"allcontracts"
+															],
+															"query": [
+																{
+																	"key": "operatorId",
+																	"value": "<string>"
+																},
+																{
+																	"key": "status",
+																	"value": "Accepted"
+																},
+																{
+																	"description": "(Required) ",
+																	"key": "pageNumber",
+																	"value": "<integer>"
+																},
+																{
+																	"description": "(Required) ",
+																	"key": "pageSize",
+																	"value": "<integer>"
+																}
+															]
+														}
+													},
+													"status": "Unauthorized",
+													"code": 401,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												},
+												{
+													"id": "304e14ef-77c0-4257-a23a-c854d7471aef",
+													"name": "Forbidden",
+													"originalRequest": {
+														"method": "GET",
+														"header": [
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/procurement/contracts/allcontracts?operatorId=<string>&status=Accepted&pageNumber=<integer>&pageSize=<integer>",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"procurement",
+																"contracts",
+																"allcontracts"
+															],
+															"query": [
+																{
+																	"key": "operatorId",
+																	"value": "<string>"
+																},
+																{
+																	"key": "status",
+																	"value": "Accepted"
+																},
+																{
+																	"description": "(Required) ",
+																	"key": "pageNumber",
+																	"value": "<integer>"
+																},
+																{
+																	"description": "(Required) ",
+																	"key": "pageSize",
+																	"value": "<integer>"
+																}
+															]
+														}
+													},
+													"status": "Forbidden",
+													"code": 403,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												}
+											]
+										}
+									],
+									"id": "9503bc17-c0af-4bc2-ab07-e0afb79f59c7"
+								},
+								{
+									"name": "supplier",
+									"item": [
+										{
+											"name": "contracts",
+											"item": [
+												{
+													"name": "Anp Procurement Features Contract Get All Supplier Contract Endpoint",
+													"id": "2b782dfb-b8c2-4fc4-b4cf-fbf0a4d9eba6",
+													"protocolProfileBehavior": {
+														"disableBodyPruning": true
+													},
+													"request": {
+														"auth": {
+															"type": "bearer",
+															"bearer": {
+																"token": "{{bearerToken}}"
+															}
+														},
+														"method": "GET",
+														"header": [],
+														"url": {
+															"raw": "{{baseUrl}}/api/procurement/contracts/supplier/contracts?supplierId=<string>&status=Accepted&pageNumber=<integer>&pageSize=<integer>",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"procurement",
+																"contracts",
+																"supplier",
+																"contracts"
+															],
+															"query": [
+																{
+																	"key": "supplierId",
+																	"value": "<string>",
+																	"description": "(Required) "
+																},
+																{
+																	"key": "status",
+																	"value": "Accepted"
+																},
+																{
+																	"key": "pageNumber",
+																	"value": "<integer>",
+																	"description": "(Required) "
+																},
+																{
+																	"key": "pageSize",
+																	"value": "<integer>",
+																	"description": "(Required) "
+																}
+															]
+														}
+													},
+													"response": [
+														{
+															"id": "fa0bd031-5360-4a6c-a3a9-e962270cff7f",
+															"name": "Success",
+															"originalRequest": {
+																"method": "GET",
+																"header": [
+																	{
+																		"description": "Added as a part of security scheme: bearer",
+																		"key": "Authorization",
+																		"value": "Bearer <token>"
+																	}
+																],
+																"url": {
+																	"raw": "{{baseUrl}}/api/procurement/contracts/supplier/contracts?supplierId=<string>&status=Accepted&pageNumber=<integer>&pageSize=<integer>",
+																	"host": [
+																		"{{baseUrl}}"
+																	],
+																	"path": [
+																		"api",
+																		"procurement",
+																		"contracts",
+																		"supplier",
+																		"contracts"
+																	],
+																	"query": [
+																		{
+																			"description": "(Required) ",
+																			"key": "supplierId",
+																			"value": "<string>"
+																		},
+																		{
+																			"key": "status",
+																			"value": "Accepted"
+																		},
+																		{
+																			"description": "(Required) ",
+																			"key": "pageNumber",
+																			"value": "<integer>"
+																		},
+																		{
+																			"description": "(Required) ",
+																			"key": "pageSize",
+																			"value": "<integer>"
+																		}
+																	]
+																}
+															},
+															"status": "OK",
+															"code": 200,
+															"_postman_previewlanguage": "text",
+															"header": [],
+															"cookie": [],
+															"responseTime": null,
+															"body": ""
+														},
+														{
+															"id": "cf9b7433-4005-4ccf-b1dd-d169e1d99660",
+															"name": "Unauthorized",
+															"originalRequest": {
+																"method": "GET",
+																"header": [
+																	{
+																		"description": "Added as a part of security scheme: bearer",
+																		"key": "Authorization",
+																		"value": "Bearer <token>"
+																	}
+																],
+																"url": {
+																	"raw": "{{baseUrl}}/api/procurement/contracts/supplier/contracts?supplierId=<string>&status=Accepted&pageNumber=<integer>&pageSize=<integer>",
+																	"host": [
+																		"{{baseUrl}}"
+																	],
+																	"path": [
+																		"api",
+																		"procurement",
+																		"contracts",
+																		"supplier",
+																		"contracts"
+																	],
+																	"query": [
+																		{
+																			"description": "(Required) ",
+																			"key": "supplierId",
+																			"value": "<string>"
+																		},
+																		{
+																			"key": "status",
+																			"value": "Accepted"
+																		},
+																		{
+																			"description": "(Required) ",
+																			"key": "pageNumber",
+																			"value": "<integer>"
+																		},
+																		{
+																			"description": "(Required) ",
+																			"key": "pageSize",
+																			"value": "<integer>"
+																		}
+																	]
+																}
+															},
+															"status": "Unauthorized",
+															"code": 401,
+															"_postman_previewlanguage": "text",
+															"header": [],
+															"cookie": [],
+															"responseTime": null,
+															"body": ""
+														},
+														{
+															"id": "d72efb09-0ba0-49f6-ae89-dc4aa8a66a72",
+															"name": "Forbidden",
+															"originalRequest": {
+																"method": "GET",
+																"header": [
+																	{
+																		"description": "Added as a part of security scheme: bearer",
+																		"key": "Authorization",
+																		"value": "Bearer <token>"
+																	}
+																],
+																"url": {
+																	"raw": "{{baseUrl}}/api/procurement/contracts/supplier/contracts?supplierId=<string>&status=Accepted&pageNumber=<integer>&pageSize=<integer>",
+																	"host": [
+																		"{{baseUrl}}"
+																	],
+																	"path": [
+																		"api",
+																		"procurement",
+																		"contracts",
+																		"supplier",
+																		"contracts"
+																	],
+																	"query": [
+																		{
+																			"description": "(Required) ",
+																			"key": "supplierId",
+																			"value": "<string>"
+																		},
+																		{
+																			"key": "status",
+																			"value": "Accepted"
+																		},
+																		{
+																			"description": "(Required) ",
+																			"key": "pageNumber",
+																			"value": "<integer>"
+																		},
+																		{
+																			"description": "(Required) ",
+																			"key": "pageSize",
+																			"value": "<integer>"
+																		}
+																	]
+																}
+															},
+															"status": "Forbidden",
+															"code": 403,
+															"_postman_previewlanguage": "text",
+															"header": [],
+															"cookie": [],
+															"responseTime": null,
+															"body": ""
+														}
+													]
+												}
+											],
+											"id": "60b8a5dd-1cb2-4528-b5fb-9753fb3b84a7"
+										}
+									],
+									"id": "bc4b2a10-2913-4b99-b32a-55e3944483b4"
+								}
+							],
+							"id": "93371b7e-6eb8-40ec-8da5-d88e5df2ca62"
+						},
+						{
 							"name": "proposal",
 							"item": [
 								{
