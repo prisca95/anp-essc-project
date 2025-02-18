@@ -52172,6 +52172,33 @@
 									"item": [
 										{
 											"name": "Create a new Contract Offer",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"id": "6bf2e4db-3de4-4ed1-8541-57d712bb0271",
+														"exec": [
+															"//pm.collectionVariables.set(\"serviceInformationId\", pm.response.json().data.id);\r",
+															"\r",
+															"pm.test(\"Status code is 200\", function () {\r",
+															"    pm.response.to.have.status(200);\r",
+															"});\r",
+															"\r",
+															"var responseJSON = pm.response.json(); \r",
+															"\r",
+															"pm.test(\"Verify that a technical information is created successfully\", function () {\r",
+															"\r",
+															"     pm.expect(responseJSON.isSuccess).to.be.a(\"boolean\");\r",
+															"    // pm.expect(responseJSON.data.id).to.be.a(\"string\").and.not.empty;\r",
+															"    pm.expect(responseJSON.data).to.be.an(\"object\").and.not.empty;\r",
+															"\r",
+															"});"
+														],
+														"type": "text/javascript",
+														"packages": {}
+													}
+												}
+											],
 											"id": "ec5d2f0b-5a7a-4a9f-bcd8-0458ee9b7efe",
 											"protocolProfileBehavior": {
 												"disableBodyPruning": true
@@ -52197,7 +52224,7 @@
 												],
 												"body": {
 													"mode": "raw",
-													"raw": "{\n  \"tenderBidId\": \"<string>\",\n  \"status\": \"Active\", //Active,Processing, Denied, New, Approved\n  \"tenderType\": \"Commercials\"\n}",
+													"raw": "{\n  \"tenderBidId\": \"{{tenderBidId}}\",\n  \"status\": \"Active\", //Active,Processing, Denied, New, Approved\n  \"tenderType\": \"TechnicalInformation\"\n}",
 													"options": {
 														"raw": {
 															"headerFamily": "json",
