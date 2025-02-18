@@ -52405,17 +52405,18 @@
 															"script": {
 																"id": "1d3d757b-3825-4f1d-8702-a978d9c921c7",
 																"exec": [
-																	"pm.test(\"Status code is 400\", function () {\r",
-																	"    pm.response.to.have.status(400);\r",
+																	"pm.test(\"Status code is 200\", function () {\r",
+																	"    pm.response.to.have.status(200);\r",
 																	"});\r",
 																	"\r",
 																	"var responseJSON = pm.response.json(); \r",
 																	"\r",
-																	"pm.test(\"Verify that mandatory fields are required \", function () {\r",
+																	"pm.test(\"Verify that commercial information is created successfully \", function () {\r",
 																	"\r",
-																	"   pm.expect(responseJSON.errors[0].name).to.be.a(\"string\").and.not.empty;\r",
-																	"        pm.expect(responseJSON.errors[0].reason).to.be.a(\"string\").and.not.empty;\r",
 																	"\r",
+																	"     pm.expect(responseJSON.isSuccess).to.be.a(\"boolean\");\r",
+																	"    // pm.expect(responseJSON.data.id).to.be.a(\"string\").and.not.empty;\r",
+																	"    pm.expect(responseJSON.data).to.be.an(\"object\").and.not.empty;\r",
 																	"\r",
 																	"});"
 																],
@@ -52444,7 +52445,7 @@
 														],
 														"body": {
 															"mode": "raw",
-															"raw": "{\n  \"cost\": \"<number>\",\n  \"totalCost\": \"<number>\",\n  \"quotedCost\": \"<number>\",\n  \"discount\": \"<number>\",\n  \"declaration\": \"<boolean>\",\n  \"tenderBidId\": \"<string>\"\n}\n//AFter financial have been approved the supplier should get an email",
+															"raw": "{\n  \"cost\": \"1100000\",\n  \"totalCost\": \"1100000\",\n  \"quotedCost\": \"1100000\",\n  \"discount\": \"0\",\n  \"declaration\": true,\n  \"tenderBidId\": \"{{tenderBidId}}\"\n}\n//AFter financial have been approved the supplier should get an email",
 															"options": {
 																"raw": {
 																	"headerFamily": "json",
@@ -52894,6 +52895,176 @@
 												}
 											],
 											"id": "8d783fb1-7c05-4a29-828d-94cd4897772e"
+										},
+										{
+											"name": "create",
+											"item": [
+												{
+													"name": "Create a new Contract Offer",
+													"id": "dc18fa03-117e-4da9-965c-c15bb330fc32",
+													"protocolProfileBehavior": {
+														"disableBodyPruning": true
+													},
+													"request": {
+														"auth": {
+															"type": "bearer",
+															"bearer": {
+																"token": "{{bearerToken}}"
+															}
+														},
+														"method": "POST",
+														"header": [
+															{
+																"key": "accept-Language",
+																"value": "<string>",
+																"description": "(Required) "
+															},
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"tenderBidId\": \"<string>\",\n  \"status\": \"Active\",\n  \"tenderType\": \"ExpressionOfInterest\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl}}/api/procurement/contracts/create",
+														"description": "Create a new Contract Offer for the winning bid"
+													},
+													"response": [
+														{
+															"id": "85f222ed-cc54-4cff-b808-c06a1d9c13ef",
+															"name": "Success",
+															"originalRequest": {
+																"method": "POST",
+																"header": [
+																	{
+																		"description": "(Required) ",
+																		"key": "accept-Language",
+																		"value": "<string>"
+																	},
+																	{
+																		"key": "Content-Type",
+																		"value": "application/json"
+																	},
+																	{
+																		"description": "Added as a part of security scheme: bearer",
+																		"key": "Authorization",
+																		"value": "Bearer <token>"
+																	}
+																],
+																"body": {
+																	"mode": "raw",
+																	"raw": "{\n  \"tenderBidId\": \"<string>\",\n  \"status\": \"Active\",\n  \"tenderType\": \"ExpressionOfInterest\"\n}",
+																	"options": {
+																		"raw": {
+																			"headerFamily": "json",
+																			"language": "json"
+																		}
+																	}
+																},
+																"url": "{{baseUrl}}/api/procurement/contracts/create"
+															},
+															"status": "OK",
+															"code": 200,
+															"_postman_previewlanguage": "text",
+															"header": [],
+															"cookie": [],
+															"responseTime": null,
+															"body": ""
+														},
+														{
+															"id": "a8509277-b3aa-4afb-a524-a1c1b5ba6516",
+															"name": "Unauthorized",
+															"originalRequest": {
+																"method": "POST",
+																"header": [
+																	{
+																		"description": "(Required) ",
+																		"key": "accept-Language",
+																		"value": "<string>"
+																	},
+																	{
+																		"key": "Content-Type",
+																		"value": "application/json"
+																	},
+																	{
+																		"description": "Added as a part of security scheme: bearer",
+																		"key": "Authorization",
+																		"value": "Bearer <token>"
+																	}
+																],
+																"body": {
+																	"mode": "raw",
+																	"raw": "{\n  \"tenderBidId\": \"<string>\",\n  \"status\": \"Active\",\n  \"tenderType\": \"ExpressionOfInterest\"\n}",
+																	"options": {
+																		"raw": {
+																			"headerFamily": "json",
+																			"language": "json"
+																		}
+																	}
+																},
+																"url": "{{baseUrl}}/api/procurement/contracts/create"
+															},
+															"status": "Unauthorized",
+															"code": 401,
+															"_postman_previewlanguage": "text",
+															"header": [],
+															"cookie": [],
+															"responseTime": null,
+															"body": ""
+														},
+														{
+															"id": "0e9a114d-e7e3-4062-9b55-f9babc96e996",
+															"name": "Forbidden",
+															"originalRequest": {
+																"method": "POST",
+																"header": [
+																	{
+																		"description": "(Required) ",
+																		"key": "accept-Language",
+																		"value": "<string>"
+																	},
+																	{
+																		"key": "Content-Type",
+																		"value": "application/json"
+																	},
+																	{
+																		"description": "Added as a part of security scheme: bearer",
+																		"key": "Authorization",
+																		"value": "Bearer <token>"
+																	}
+																],
+																"body": {
+																	"mode": "raw",
+																	"raw": "{\n  \"tenderBidId\": \"<string>\",\n  \"status\": \"Active\",\n  \"tenderType\": \"ExpressionOfInterest\"\n}",
+																	"options": {
+																		"raw": {
+																			"headerFamily": "json",
+																			"language": "json"
+																		}
+																	}
+																},
+																"url": "{{baseUrl}}/api/procurement/contracts/create"
+															},
+															"status": "Forbidden",
+															"code": 403,
+															"_postman_previewlanguage": "text",
+															"header": [],
+															"cookie": [],
+															"responseTime": null,
+															"body": ""
+														}
+													]
+												}
+											],
+											"id": "a4db70bb-06a8-4619-b32b-22cc63a253bb"
 										},
 										{
 											"name": "Get A Bid Financial",
@@ -54916,176 +55087,6 @@
 										}
 									],
 									"id": "ead82acd-86aa-4c78-96f7-5226458f9269"
-								},
-								{
-									"name": "create",
-									"item": [
-										{
-											"name": "Create a new Contract Offer",
-											"id": "dc18fa03-117e-4da9-965c-c15bb330fc32",
-											"protocolProfileBehavior": {
-												"disableBodyPruning": true
-											},
-											"request": {
-												"auth": {
-													"type": "bearer",
-													"bearer": {
-														"token": "{{bearerToken}}"
-													}
-												},
-												"method": "POST",
-												"header": [
-													{
-														"key": "accept-Language",
-														"value": "<string>",
-														"description": "(Required) "
-													},
-													{
-														"key": "Content-Type",
-														"value": "application/json"
-													}
-												],
-												"body": {
-													"mode": "raw",
-													"raw": "{\n  \"tenderBidId\": \"<string>\",\n  \"status\": \"Active\",\n  \"tenderType\": \"ExpressionOfInterest\"\n}",
-													"options": {
-														"raw": {
-															"headerFamily": "json",
-															"language": "json"
-														}
-													}
-												},
-												"url": "{{baseUrl}}/api/procurement/contracts/create",
-												"description": "Create a new Contract Offer for the winning bid"
-											},
-											"response": [
-												{
-													"id": "85f222ed-cc54-4cff-b808-c06a1d9c13ef",
-													"name": "Success",
-													"originalRequest": {
-														"method": "POST",
-														"header": [
-															{
-																"description": "(Required) ",
-																"key": "accept-Language",
-																"value": "<string>"
-															},
-															{
-																"key": "Content-Type",
-																"value": "application/json"
-															},
-															{
-																"description": "Added as a part of security scheme: bearer",
-																"key": "Authorization",
-																"value": "Bearer <token>"
-															}
-														],
-														"body": {
-															"mode": "raw",
-															"raw": "{\n  \"tenderBidId\": \"<string>\",\n  \"status\": \"Active\",\n  \"tenderType\": \"ExpressionOfInterest\"\n}",
-															"options": {
-																"raw": {
-																	"headerFamily": "json",
-																	"language": "json"
-																}
-															}
-														},
-														"url": "{{baseUrl}}/api/procurement/contracts/create"
-													},
-													"status": "OK",
-													"code": 200,
-													"_postman_previewlanguage": "text",
-													"header": [],
-													"cookie": [],
-													"responseTime": null,
-													"body": ""
-												},
-												{
-													"id": "a8509277-b3aa-4afb-a524-a1c1b5ba6516",
-													"name": "Unauthorized",
-													"originalRequest": {
-														"method": "POST",
-														"header": [
-															{
-																"description": "(Required) ",
-																"key": "accept-Language",
-																"value": "<string>"
-															},
-															{
-																"key": "Content-Type",
-																"value": "application/json"
-															},
-															{
-																"description": "Added as a part of security scheme: bearer",
-																"key": "Authorization",
-																"value": "Bearer <token>"
-															}
-														],
-														"body": {
-															"mode": "raw",
-															"raw": "{\n  \"tenderBidId\": \"<string>\",\n  \"status\": \"Active\",\n  \"tenderType\": \"ExpressionOfInterest\"\n}",
-															"options": {
-																"raw": {
-																	"headerFamily": "json",
-																	"language": "json"
-																}
-															}
-														},
-														"url": "{{baseUrl}}/api/procurement/contracts/create"
-													},
-													"status": "Unauthorized",
-													"code": 401,
-													"_postman_previewlanguage": "text",
-													"header": [],
-													"cookie": [],
-													"responseTime": null,
-													"body": ""
-												},
-												{
-													"id": "0e9a114d-e7e3-4062-9b55-f9babc96e996",
-													"name": "Forbidden",
-													"originalRequest": {
-														"method": "POST",
-														"header": [
-															{
-																"description": "(Required) ",
-																"key": "accept-Language",
-																"value": "<string>"
-															},
-															{
-																"key": "Content-Type",
-																"value": "application/json"
-															},
-															{
-																"description": "Added as a part of security scheme: bearer",
-																"key": "Authorization",
-																"value": "Bearer <token>"
-															}
-														],
-														"body": {
-															"mode": "raw",
-															"raw": "{\n  \"tenderBidId\": \"<string>\",\n  \"status\": \"Active\",\n  \"tenderType\": \"ExpressionOfInterest\"\n}",
-															"options": {
-																"raw": {
-																	"headerFamily": "json",
-																	"language": "json"
-																}
-															}
-														},
-														"url": "{{baseUrl}}/api/procurement/contracts/create"
-													},
-													"status": "Forbidden",
-													"code": 403,
-													"_postman_previewlanguage": "text",
-													"header": [],
-													"cookie": [],
-													"responseTime": null,
-													"body": ""
-												}
-											]
-										}
-									],
-									"id": "a4db70bb-06a8-4619-b32b-22cc63a253bb"
 								},
 								{
 									"name": "offer",
