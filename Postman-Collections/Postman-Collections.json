@@ -1174,7 +1174,7 @@
 										],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n    //\"email\": \"{{email}}\",\n  \"userName\":  \"varun@yopmail.com\",//\"milo@yopmail.com\",//\"yinka@yopmail.com\",\n  // \"userName\":\"cesaltino.babo@anp.tl\", //initiator\n //  \"userName\": \"abel.saldanha@anp.tl\", //1st approver\n  // \"userName\": \"jaime.ximenes@anp.tl\", //2nd approver\n  \"password\": \"Password12@@\"\n}",
+											"raw": "{\n    //\"email\": \"{{email}}\",\n  \"userName\":  \"bobby@yopmail.com\",//\"milo@yopmail.com\",//\"yinka@yopmail.com\",\n  // \"userName\":\"cesaltino.babo@anp.tl\", //initiator\n //  \"userName\": \"abel.saldanha@anp.tl\", //1st approver\n  // \"userName\": \"jaime.ximenes@anp.tl\", //2nd approver\n  \"password\": \"Password12@@\"\n}",
 											"options": {
 												"raw": {
 													"headerFamily": "json",
@@ -11065,7 +11065,7 @@
 										],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n   // \"email\": \"chitnis@yopmail.com\",//\"{{email}}\",\n  \"userName\": \"omo@yopmail.com\",\n  // \"userName\":\"cesaltino.babo@anp.tl\", //initiator\n  // \"userName\": \"abel.saldanha@anp.tl\", //1st approver\n   //\"userName\": \"jaime.ximenes@anp.tl\", //2nd approver\n  \"password\": \"Password12@@\"\n}",
+											"raw": "{\n   // \"email\": \"chitnis@yopmail.com\",//\"{{email}}\",\n  \"userName\": \"bobby@yopmail.com\",\n  // \"userName\":\"cesaltino.babo@anp.tl\", //initiator\n  // \"userName\": \"abel.saldanha@anp.tl\", //1st approver\n   //\"userName\": \"jaime.ximenes@anp.tl\", //2nd approver\n  \"password\": \"Password12@@\"\n}",
 											"options": {
 												"raw": {
 													"headerFamily": "json",
@@ -39855,7 +39855,7 @@
 														],
 														"body": {
 															"mode": "raw",
-															"raw": "{\n // \"tenderDetailId\": \"<string>\",\n  \"startdate\": \"2025-01-31T00:00:00.906Z\",\n  \"endDate\": \"2025-02-10T00:00:00.906Z\",\n  \"tenderType\": \"TechnicalInformation\",//\"ExpressionOfInterest\",//\"Commercials\",\n  \"serviceInformationId\": \"{{serviceInformationId}}\",//\"85218a2b-83c4-464a-3cd6-08dd3c7c59fc\",\n  \"tenderDocuments\": [\n    {\n     // \"tenderDocumentId\": \"<string>\",\n      \"documentName\": \"CAC\",\n      \"assignPoint\": \"50\"\n    }\n//     {\n//    //   \"tenderDocumentId\": \"<string>\",\n//     //   \"documentName\": \"TIN\",\n//     //   \"assignPoint\": \"50\"\n//     }\n  ]\n}",
+															"raw": "{\n // \"tenderDetailId\": \"<string>\",\n  \"startdate\": \"2025-02-18T00:00:00.906Z\",\n  \"endDate\": \"2025-02-19T00:00:00.906Z\",\n  \"tenderType\": \"TechnicalInformation\",//\"ExpressionOfInterest\",//\"Commercials\",\n  \"serviceInformationId\": \"{{serviceInformationId}}\",//\"85218a2b-83c4-464a-3cd6-08dd3c7c59fc\",\n  \"tenderDocuments\": [\n    {\n     // \"tenderDocumentId\": \"<string>\",\n      \"documentName\": \"CAC\",\n      \"assignPoint\": \"50\"\n    }\n//     {\n//    //   \"tenderDocumentId\": \"<string>\",\n//     //   \"documentName\": \"TIN\",\n//     //   \"assignPoint\": \"50\"\n //  }\n ]\n  }",
 															"options": {
 																"raw": {
 																	"headerFamily": "json",
@@ -47150,7 +47150,7 @@
 										],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n  \"serviceInformationId\": \"<string>\",\n  \"status\": 1\n}",
+											"raw": "{\n  \"serviceInformationId\": \"{{serviceInformationId}}\",\n  \"status\": \"Approved\"\n}",
 											"options": {
 												"raw": {
 													"headerFamily": "json",
@@ -47809,7 +47809,7 @@
 										],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n  \"serviceInformationId\": \"{{serviceInformationId}}\",\n  \"supplierId\": \"{{supplierId}}\",\n  \"requestAccess\": true,\n  \"isFavorite\": false\n}",
+											"raw": "{\n  \"serviceInformationId\": \"44c39cce-70ee-443b-a825-08dd50273ac8\",//\"{{serviceInformationId}}\",\n  \"supplierId\": \"{{supplierId}}\",\n  \"requestAccess\": true,\n  \"isFavorite\": false\n}",
 											"options": {
 												"raw": {
 													"headerFamily": "json",
@@ -50633,7 +50633,7 @@
 														"method": "GET",
 														"header": [],
 														"url": {
-															"raw": "{{baseUrl}}/api/procurement/bids/expression?tenderBidId=43682d24-74e0-46d8-1245-08dd4145509b",
+															"raw": "{{baseUrl}}/api/procurement/bids/expression?tenderBidId={{tenderBidId}}",
 															"host": [
 																"{{baseUrl}}"
 															],
@@ -50646,7 +50646,7 @@
 															"query": [
 																{
 																	"key": "tenderBidId",
-																	"value": "43682d24-74e0-46d8-1245-08dd4145509b",
+																	"value": "{{tenderBidId}}",
 																	"description": "(Required) "
 																}
 															]
@@ -52901,6 +52901,33 @@
 											"item": [
 												{
 													"name": "Create a new Contract Offer",
+													"event": [
+														{
+															"listen": "test",
+															"script": {
+																"id": "60a0eb93-72f7-4ae8-9631-407cb05c8ac7",
+																"exec": [
+																	"//pm.collectionVariables.set(\"serviceInformationId\", pm.response.json().data.id);\r",
+																	"\r",
+																	"pm.test(\"Status code is 200\", function () {\r",
+																	"    pm.response.to.have.status(200);\r",
+																	"});\r",
+																	"\r",
+																	"var responseJSON = pm.response.json(); \r",
+																	"\r",
+																	"pm.test(\"Verify that a financial is created successfully\", function () {\r",
+																	"\r",
+																	"     pm.expect(responseJSON.isSuccess).to.be.a(\"boolean\");\r",
+																	"    // pm.expect(responseJSON.data.id).to.be.a(\"string\").and.not.empty;\r",
+																	"    pm.expect(responseJSON.data).to.be.an(\"object\").and.not.empty;\r",
+																	"\r",
+																	"});"
+																],
+																"type": "text/javascript",
+																"packages": {}
+															}
+														}
+													],
 													"id": "dc18fa03-117e-4da9-965c-c15bb330fc32",
 													"protocolProfileBehavior": {
 														"disableBodyPruning": true
@@ -52909,7 +52936,7 @@
 														"auth": {
 															"type": "bearer",
 															"bearer": {
-																"token": "{{bearerToken}}"
+																"token": "{{approverBearerToken}}"
 															}
 														},
 														"method": "POST",
@@ -52926,7 +52953,7 @@
 														],
 														"body": {
 															"mode": "raw",
-															"raw": "{\n  \"tenderBidId\": \"<string>\",\n  \"status\": \"Active\",\n  \"tenderType\": \"ExpressionOfInterest\"\n}",
+															"raw": "{\n  \"tenderBidId\": \"{{tenderBidId}}\",\n  \"status\": \"Active\",\n  \"tenderType\": \"Commercials\"\n}",
 															"options": {
 																"raw": {
 																	"headerFamily": "json",
@@ -63309,7 +63336,7 @@
 											"formdata": [
 												{
 													"key": "entityId",
-													"value": "<string>",
+													"value": "{{supplierId}}",
 													"type": "text",
 													"description": "supplierid"
 												},
