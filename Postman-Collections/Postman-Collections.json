@@ -38333,7 +38333,7 @@
 										],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n  //\"serviceInformationId\": \"<string>\",\n  \"title\":\"{{$randomProductAdjective}}\",\n  \"bidStartDate\": \"2025-02-14\",\n  \"bidEndDate\": \"2025-02-15\",\n  \"description\": \"Export\",\n  \"businessType\": \"Sole proprietorship\",\n  \"bidRequirement\": \"3 contracts executed\",\n  \"prerequisite\": \"CAC\",\n  \"workReference\": \"<string>\",\n  \"additionalInformation\": \"<string>\",\n  \"industryId\": \"{{industryId}}\",\n  \"status\": 0\n}",
+											"raw": "{\n  //\"serviceInformationId\": \"<string>\",\n  \"title\":\"{{$randomProductMaterial}}\",\n  \"bidStartDate\": \"2025-02-18\",\n  \"bidEndDate\": \"2025-02-19\",\n  \"description\": \"Export\",\n  \"businessType\": \"Sole proprietorship\",\n  \"bidRequirement\": \"2 contracts executed\",\n  \"prerequisite\": \"CAC\",\n  \"workReference\": \"<string>\",\n  \"additionalInformation\": \"<string>\",\n  \"industryId\": \"{{industryId}}\",\n  \"status\": 0\n}",
 											"options": {
 												"raw": {
 													"headerFamily": "json",
