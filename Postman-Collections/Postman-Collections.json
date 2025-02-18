@@ -53071,6 +53071,32 @@
 											"item": [
 												{
 													"name": "Anp Procurement Features Bids Get A Bid Financial Endpoint",
+													"event": [
+														{
+															"listen": "test",
+															"script": {
+																"id": "fb5c7aff-0bf4-48cb-ab48-afd8ca5b7112",
+																"exec": [
+																	"pm.test(\"Status code is 200\", function () {\r",
+																	"    pm.response.to.have.status(200);\r",
+																	"});\r",
+																	"\r",
+																	"var responseJSON = pm.response.json(); \r",
+																	"\r",
+																	"pm.test(\"Verify that commercial information is created successfully \", function () {\r",
+																	"\r",
+																	"\r",
+																	"     pm.expect(responseJSON.isSuccess).to.be.a(\"boolean\");\r",
+																	"    // pm.expect(responseJSON.data.id).to.be.a(\"string\").and.not.empty;\r",
+																	"    pm.expect(responseJSON.data).to.be.an(\"object\").and.not.empty;\r",
+																	"\r",
+																	"});"
+																],
+																"type": "text/javascript",
+																"packages": {}
+															}
+														}
+													],
 													"id": "9af32d76-fc7b-454d-930c-3073fb0312f3",
 													"protocolProfileBehavior": {
 														"disableBodyPruning": true
@@ -53085,7 +53111,7 @@
 														"method": "GET",
 														"header": [],
 														"url": {
-															"raw": "{{baseUrl}}/api/procurement/bids/financial?tenderBidId=<string>",
+															"raw": "{{baseUrl}}/api/procurement/bids/financial?tenderBidId={{tenderBidId}}",
 															"host": [
 																"{{baseUrl}}"
 															],
@@ -53098,7 +53124,7 @@
 															"query": [
 																{
 																	"key": "tenderBidId",
-																	"value": "<string>",
+																	"value": "{{tenderBidId}}",
 																	"description": "(Required) "
 																}
 															]
@@ -53635,7 +53661,7 @@
 												"method": "GET",
 												"header": [],
 												"url": {
-													"raw": "{{baseUrl}}/api/procurement/bids/applicants?serviceInformationId=5a8e5352-ff73-4a14-9a61-08dd4f42006e&pageNumber=1&pageSize=10",
+													"raw": "{{baseUrl}}/api/procurement/bids/applicants?serviceInformationId=44c39cce-70ee-443b-a825-08dd50273ac8&pageNumber=1&pageSize=10",
 													"host": [
 														"{{baseUrl}}"
 													],
@@ -53648,7 +53674,7 @@
 													"query": [
 														{
 															"key": "serviceInformationId",
-															"value": "5a8e5352-ff73-4a14-9a61-08dd4f42006e",
+															"value": "44c39cce-70ee-443b-a825-08dd50273ac8",
 															"description": "(Required) "
 														},
 														{
