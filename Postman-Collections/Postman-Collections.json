@@ -50395,6 +50395,33 @@
 											"item": [
 												{
 													"name": "Create a new Contract Offer",
+													"event": [
+														{
+															"listen": "test",
+															"script": {
+																"id": "fe99ea56-5742-4115-a0b7-08001a7c0a0c",
+																"exec": [
+																	"//pm.collectionVariables.set(\"serviceInformationId\", pm.response.json().data.id);\r",
+																	"\r",
+																	"pm.test(\"Status code is 200\", function () {\r",
+																	"    pm.response.to.have.status(200);\r",
+																	"});\r",
+																	"\r",
+																	"var responseJSON = pm.response.json(); \r",
+																	"\r",
+																	"pm.test(\"Verify that a bid is returned successfully\", function () {\r",
+																	"\r",
+																	"     pm.expect(responseJSON.isSuccess).to.be.a(\"boolean\");\r",
+																	"    // pm.expect(responseJSON.data.id).to.be.a(\"string\").and.not.empty;\r",
+																	"    pm.expect(responseJSON.data).to.be.an(\"object\").and.not.empty;\r",
+																	"\r",
+																	"});"
+																],
+																"type": "text/javascript",
+																"packages": {}
+															}
+														}
+													],
 													"id": "dd69dad7-2c41-4422-98d9-36f16d9fd1bc",
 													"protocolProfileBehavior": {
 														"disableBodyPruning": true
@@ -50403,7 +50430,7 @@
 														"auth": {
 															"type": "bearer",
 															"bearer": {
-																"token": "{{bearerToken}}"
+																"token": "{{approverBearerToken}}"
 															}
 														},
 														"method": "POST",
@@ -50420,7 +50447,7 @@
 														],
 														"body": {
 															"mode": "raw",
-															"raw": "{\n  \"tenderBidId\": \"<string>\",\n  \"status\": \"Active\", //Active,Processing, Denied, New, Approved\n  \"tenderType\": \"Commercials\"\n}",
+															"raw": "{\n  \"tenderBidId\": \"70469aee-fdd8-44c0-f844-08dd502b0d27\",\n  \"status\": \"Approved\", //Active,Processing, Denied, New, Approved\n  \"tenderType\": \"ExpressionOfInterest\"\n}",
 															"options": {
 																"raw": {
 																	"headerFamily": "json",
