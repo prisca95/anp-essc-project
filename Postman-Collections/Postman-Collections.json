@@ -55995,6 +55995,33 @@
 									"item": [
 										{
 											"name": "Anp Procurement Features Bids Get Tender Access Detail Endpoint",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"id": "3c9f3545-016f-4025-b437-e6fc63b3893d",
+														"exec": [
+															"//pm.collectionVariables.set(\"serviceInformationId\", pm.response.json().data.id);\r",
+															"\r",
+															"pm.test(\"Status code is 200\", function () {\r",
+															"    pm.response.to.have.status(200);\r",
+															"});\r",
+															"\r",
+															"var responseJSON = pm.response.json(); \r",
+															"\r",
+															"pm.test(\"Verify that proposals are returned successfully\", function () {\r",
+															"\r",
+															"    // pm.expect(responseJSON.isSuccess).to.be.a(\"boolean\");\r",
+															"    // pm.expect(responseJSON.data).to.be.an(\"object\").and.not.empty;\r",
+															"    pm.expect(responseJSON.data).to.be.an(\"object\").and.not.empty;\r",
+															"\r",
+															"});"
+														],
+														"type": "text/javascript",
+														"packages": {}
+													}
+												}
+											],
 											"id": "0efcc478-eb33-4585-9e18-62a9faf8e34f",
 											"protocolProfileBehavior": {
 												"disableBodyPruning": true
@@ -56003,13 +56030,13 @@
 												"auth": {
 													"type": "bearer",
 													"bearer": {
-														"token": "{{bearerToken}}"
+														"token": "{{approverBearerToken}}"
 													}
 												},
 												"method": "GET",
 												"header": [],
 												"url": {
-													"raw": "{{baseUrl}}/api/procurement/proposal/detail?serviceInformationId=<string>&isView=<boolean>",
+													"raw": "{{baseUrl}}/api/procurement/proposal/detail?serviceInformationId=44c39cce-70ee-443b-a825-08dd50273ac8&isView=true",
 													"host": [
 														"{{baseUrl}}"
 													],
@@ -56022,12 +56049,12 @@
 													"query": [
 														{
 															"key": "serviceInformationId",
-															"value": "<string>",
+															"value": "44c39cce-70ee-443b-a825-08dd50273ac8",
 															"description": "(Required) "
 														},
 														{
 															"key": "isView",
-															"value": "<boolean>",
+															"value": "true",
 															"description": "(Required) "
 														}
 													]
@@ -56411,7 +56438,7 @@
 										"auth": {
 											"type": "bearer",
 											"bearer": {
-												"token": "{{bearerToken}}"
+												"token": "{{approverBearerToken}}"
 											}
 										},
 										"method": "GET",
