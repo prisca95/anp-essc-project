@@ -54682,6 +54682,32 @@
 									"item": [
 										{
 											"name": "Anp Procurement Features Contract Contract Management Endpoint",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"id": "af26b1b0-f266-4bb9-9d10-71bf9731e57a",
+														"exec": [
+															"\r",
+															"pm.test(\"Status code is 200\", function () {\r",
+															"    pm.response.to.have.status(200);\r",
+															"});\r",
+															"\r",
+															"var responseJSON = pm.response.json(); \r",
+															"\r",
+															"pm.test(\"Verify that applicants are returned\", function () {\r",
+															"\r",
+															"    pm.expect(responseJSON.data[0]).to.be.an(\"object\").and.not.empty;\r",
+															"    // pm.expect(responseJSON.data.userName).to.be.a(\"string\").and.not.empty;\r",
+															"    //     pm.expect(responseJSON.data.phoneNumber).to.be.a(\"string\").and.not.empty;\r",
+															"\r",
+															"});"
+														],
+														"type": "text/javascript",
+														"packages": {}
+													}
+												}
+											],
 											"id": "071d0c7e-5314-4357-a003-4e3d5738f022",
 											"protocolProfileBehavior": {
 												"disableBodyPruning": true
