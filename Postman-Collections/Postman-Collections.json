@@ -57090,7 +57090,7 @@
 										],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n  \"organizationName\": \"Payworth\",\n  \"dateOfEstablishment\": \"2025-02-03T15:41:14.152Z\",\n  \"businessType\": \"Sole Proprietorship\",\n  \"country\": \"USA\",\n  \"addressLine1\": \"1, high lane\",\n  \"addressLine2\": \"1, high lane\",\n  \"region\": \"Lagos\",\n  \"city\": \"Lagos\",\n  \"town\": \"Lagos\",\n  \"phoneNumber\": \"2348077882233\",\n  \"website\": \"www.website.com\",\n  \"domain\": \"@yopmail.com.com\",\n  \"operatorType\": \"Bank\"\n}",
+											"raw": "{\n  \"organizationName\": \"{{$randomCompanyName}}\",\n  \"dateOfEstablishment\": \"2025-02-03T15:41:14.152Z\",\n  \"businessType\": \"Sole Proprietorship\",\n  \"country\": \"USA\",\n  \"addressLine1\": \"1, high lane\",\n  \"addressLine2\": \"1, high lane\",\n  \"region\": \"Lagos\",\n  \"city\": \"Lagos\",\n  \"town\": \"Lagos\",\n  \"phoneNumber\": \"2348077882233\",\n  \"website\": \"www.website.com\",\n  \"domain\": \"@yopmail.com.com\",\n  \"operatorType\": \"IOC\"\n}",
 											"options": {
 												"raw": {
 													"headerFamily": "json",
