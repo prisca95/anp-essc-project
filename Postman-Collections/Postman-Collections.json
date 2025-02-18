@@ -56803,6 +56803,33 @@
 									"item": [
 										{
 											"name": "Anp Procurement Features Bids Get All Bids Endpoint",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"id": "09d0e6e7-abbd-4fd7-ac17-08770e34c19f",
+														"exec": [
+															"//pm.collectionVariables.set(\"serviceInformationId\", pm.response.json().data.id);\r",
+															"\r",
+															"pm.test(\"Status code is 200\", function () {\r",
+															"    pm.response.to.have.status(200);\r",
+															"});\r",
+															"\r",
+															"var responseJSON = pm.response.json(); \r",
+															"\r",
+															"pm.test(\"Verify that supplier bids are returned successfully\", function () {\r",
+															"\r",
+															"    // pm.expect(responseJSON.isSuccess).to.be.a(\"boolean\");\r",
+															"    // pm.expect(responseJSON.data).to.be.an(\"object\").and.not.empty;\r",
+															"    pm.expect(responseJSON.data[0]).to.be.an(\"object\").and.not.empty;\r",
+															"\r",
+															"});"
+														],
+														"type": "text/javascript",
+														"packages": {}
+													}
+												}
+											],
 											"id": "7d174648-e72a-45ce-8d2c-4072ef224156",
 											"protocolProfileBehavior": {
 												"disableBodyPruning": true
@@ -56817,7 +56844,7 @@
 												"method": "GET",
 												"header": [],
 												"url": {
-													"raw": "{{baseUrl}}/api/procurement/supplier/bids?supplierId=<string>&pageNumber=<integer>&pageSize=<integer>",
+													"raw": "{{baseUrl}}/api/procurement/supplier/bids?supplierId={{supplierId}}&pageNumber=1&pageSize=20",
 													"host": [
 														"{{baseUrl}}"
 													],
@@ -56830,16 +56857,16 @@
 													"query": [
 														{
 															"key": "supplierId",
-															"value": "<string>"
+															"value": "{{supplierId}}"
 														},
 														{
 															"key": "pageNumber",
-															"value": "<integer>",
+															"value": "1",
 															"description": "(Required) "
 														},
 														{
 															"key": "pageSize",
-															"value": "<integer>",
+															"value": "20",
 															"description": "(Required) "
 														}
 													]
@@ -56997,226 +57024,6 @@
 										}
 									],
 									"id": "bc53d501-11db-4e42-9ec1-98924f08f9f9"
-								},
-								{
-									"name": "tenders",
-									"item": [
-										{
-											"name": "Anp Procurement Features Bids Get Supplier Tenders Endpoint",
-											"id": "1de8245d-a4c1-4c51-897e-731ad563fc84",
-											"protocolProfileBehavior": {
-												"disableBodyPruning": true
-											},
-											"request": {
-												"auth": {
-													"type": "bearer",
-													"bearer": {
-														"token": "{{bearerToken}}"
-													}
-												},
-												"method": "GET",
-												"header": [],
-												"url": {
-													"raw": "{{baseUrl}}/api/procurement/supplier/tenders?supplierId=<string>&sort=Saved&pageNumber=<integer>&pageSize=<integer>",
-													"host": [
-														"{{baseUrl}}"
-													],
-													"path": [
-														"api",
-														"procurement",
-														"supplier",
-														"tenders"
-													],
-													"query": [
-														{
-															"key": "supplierId",
-															"value": "<string>"
-														},
-														{
-															"key": "sort",
-															"value": "Saved",
-															"description": "(Required) "
-														},
-														{
-															"key": "pageNumber",
-															"value": "<integer>",
-															"description": "(Required) "
-														},
-														{
-															"key": "pageSize",
-															"value": "<integer>",
-															"description": "(Required) "
-														}
-													]
-												}
-											},
-											"response": [
-												{
-													"id": "36f678f6-a6e3-4fd1-9d53-c56e204c0083",
-													"name": "Success",
-													"originalRequest": {
-														"method": "GET",
-														"header": [
-															{
-																"description": "Added as a part of security scheme: bearer",
-																"key": "Authorization",
-																"value": "Bearer <token>"
-															}
-														],
-														"url": {
-															"raw": "{{baseUrl}}/api/procurement/supplier/tenders?supplierId=<string>&sort=Saved&pageNumber=<integer>&pageSize=<integer>",
-															"host": [
-																"{{baseUrl}}"
-															],
-															"path": [
-																"api",
-																"procurement",
-																"supplier",
-																"tenders"
-															],
-															"query": [
-																{
-																	"key": "supplierId",
-																	"value": "<string>"
-																},
-																{
-																	"description": "(Required) ",
-																	"key": "sort",
-																	"value": "Saved"
-																},
-																{
-																	"description": "(Required) ",
-																	"key": "pageNumber",
-																	"value": "<integer>"
-																},
-																{
-																	"description": "(Required) ",
-																	"key": "pageSize",
-																	"value": "<integer>"
-																}
-															]
-														}
-													},
-													"status": "OK",
-													"code": 200,
-													"_postman_previewlanguage": "text",
-													"header": [],
-													"cookie": [],
-													"responseTime": null,
-													"body": ""
-												},
-												{
-													"id": "b0926a7c-d0fc-40ba-9d4c-a100ca0ea1d2",
-													"name": "Unauthorized",
-													"originalRequest": {
-														"method": "GET",
-														"header": [
-															{
-																"description": "Added as a part of security scheme: bearer",
-																"key": "Authorization",
-																"value": "Bearer <token>"
-															}
-														],
-														"url": {
-															"raw": "{{baseUrl}}/api/procurement/supplier/tenders?supplierId=<string>&sort=Saved&pageNumber=<integer>&pageSize=<integer>",
-															"host": [
-																"{{baseUrl}}"
-															],
-															"path": [
-																"api",
-																"procurement",
-																"supplier",
-																"tenders"
-															],
-															"query": [
-																{
-																	"key": "supplierId",
-																	"value": "<string>"
-																},
-																{
-																	"description": "(Required) ",
-																	"key": "sort",
-																	"value": "Saved"
-																},
-																{
-																	"description": "(Required) ",
-																	"key": "pageNumber",
-																	"value": "<integer>"
-																},
-																{
-																	"description": "(Required) ",
-																	"key": "pageSize",
-																	"value": "<integer>"
-																}
-															]
-														}
-													},
-													"status": "Unauthorized",
-													"code": 401,
-													"_postman_previewlanguage": "text",
-													"header": [],
-													"cookie": [],
-													"responseTime": null,
-													"body": ""
-												},
-												{
-													"id": "cf508690-b153-4c5e-975f-427bea9d7d16",
-													"name": "Forbidden",
-													"originalRequest": {
-														"method": "GET",
-														"header": [
-															{
-																"description": "Added as a part of security scheme: bearer",
-																"key": "Authorization",
-																"value": "Bearer <token>"
-															}
-														],
-														"url": {
-															"raw": "{{baseUrl}}/api/procurement/supplier/tenders?supplierId=<string>&sort=Saved&pageNumber=<integer>&pageSize=<integer>",
-															"host": [
-																"{{baseUrl}}"
-															],
-															"path": [
-																"api",
-																"procurement",
-																"supplier",
-																"tenders"
-															],
-															"query": [
-																{
-																	"key": "supplierId",
-																	"value": "<string>"
-																},
-																{
-																	"description": "(Required) ",
-																	"key": "sort",
-																	"value": "Saved"
-																},
-																{
-																	"description": "(Required) ",
-																	"key": "pageNumber",
-																	"value": "<integer>"
-																},
-																{
-																	"description": "(Required) ",
-																	"key": "pageSize",
-																	"value": "<integer>"
-																}
-															]
-														}
-													},
-													"status": "Forbidden",
-													"code": 403,
-													"_postman_previewlanguage": "text",
-													"header": [],
-													"cookie": [],
-													"responseTime": null,
-													"body": ""
-												}
-											]
-										}
-									],
-									"id": "929ca191-804e-4d77-898d-11d83ff503c4"
 								}
 							],
 							"id": "ad21356b-6165-40dc-b571-13f3c25a15c8"
