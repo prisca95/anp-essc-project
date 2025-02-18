@@ -51165,7 +51165,7 @@
 														],
 														"body": {
 															"mode": "raw",
-															"raw": "{\n  \"declaration\": \"<boolean>\",\n  \"tenderBidId\": \"<string>\",\n  \"technicalEvaluationDelivarable\": [\n    {\n      \"delivarbles\": \"<string>\",\n      \"dueDate\": \"<dateTime>\",\n      \"amount\": \"<number>\",\n      \"technicalEvaluationId\": \"<string>\"\n    },\n    {\n      \"delivarbles\": \"<string>\",\n      \"dueDate\": \"<dateTime>\",\n      \"amount\": \"<number>\",\n      \"technicalEvaluationId\": \"<string>\"\n    }\n  ]\n}",
+															"raw": "{\n  \"declaration\": true,\n  \"tenderBidId\": \"{{tenderBidId}}\",\n  \"technicalEvaluationDelivarable\": [\n    {\n      \"delivarbles\": \"First review\",\n      \"dueDate\": \"2025-02-22\",\n      \"amount\": \"500000\"\n     // \"technicalEvaluationId\": \"<string>\"\n    },\n    {\n      \"delivarbles\": \"Second review\",\n      \"dueDate\": \"2025-02-23\",\n      \"amount\": \"600000\"\n    //  \"technicalEvaluationId\": \"<string>\"\n    }\n  ]\n}",
 															"options": {
 																"raw": {
 																	"headerFamily": "json",
@@ -51635,9 +51635,9 @@
 																	"\r",
 																	"var responseJSON = pm.response.json(); \r",
 																	"\r",
-																	"pm.test(\"Verify that bids are returned\", function () {\r",
+																	"pm.test(\"Verify that tenderbid is returned\", function () {\r",
 																	"\r",
-																	"    pm.expect(responseJSON.data[0]).to.be.an(\"object\").and.not.empty;\r",
+																	"    pm.expect(responseJSON.data).to.be.an(\"object\").and.not.empty;\r",
 																	"    // pm.expect(responseJSON.data.userName).to.be.a(\"string\").and.not.empty;\r",
 																	"    //     pm.expect(responseJSON.data.phoneNumber).to.be.a(\"string\").and.not.empty;\r",
 																	"\r",
@@ -51662,7 +51662,7 @@
 														"method": "GET",
 														"header": [],
 														"url": {
-															"raw": "{{baseUrl}}/api/procurement/bids/technical?tenderBidId=<string>",
+															"raw": "{{baseUrl}}/api/procurement/bids/technical?tenderBidId={{tenderBidId}}",
 															"host": [
 																"{{baseUrl}}"
 															],
@@ -51675,7 +51675,7 @@
 															"query": [
 																{
 																	"key": "tenderBidId",
-																	"value": "<string>",
+																	"value": "{{tenderBidId}}",
 																	"description": "(Required) "
 																}
 															]
@@ -52166,6 +52166,176 @@
 										}
 									],
 									"id": "d5a104b5-fc93-4573-ab1a-f84725cb900e"
+								},
+								{
+									"name": "Create a new Contract Offer Copy",
+									"item": [
+										{
+											"name": "Create a new Contract Offer",
+											"id": "ec5d2f0b-5a7a-4a9f-bcd8-0458ee9b7efe",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": {
+														"token": "{{bearerToken}}"
+													}
+												},
+												"method": "POST",
+												"header": [
+													{
+														"key": "accept-Language",
+														"value": "<string>",
+														"description": "(Required) "
+													},
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"tenderBidId\": \"<string>\",\n  \"status\": \"Active\", //Active,Processing, Denied, New, Approved\n  \"tenderType\": \"Commercials\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl}}/api/procurement/contracts/create",
+												"description": "Create a new Contract Offer for the winning bid"
+											},
+											"response": [
+												{
+													"id": "5ee1798e-6f47-4f1c-ac28-76c0855e1e79",
+													"name": "Success",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"description": "(Required) ",
+																"key": "accept-Language",
+																"value": "<string>"
+															},
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"tenderBidId\": \"<string>\",\n  \"status\": \"Active\",\n  \"tenderType\": \"Commercials\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl}}/api/procurement/contracts/create"
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												},
+												{
+													"id": "b67088c9-ea55-4fec-8044-ee18f752c295",
+													"name": "Unauthorized",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"description": "(Required) ",
+																"key": "accept-Language",
+																"value": "<string>"
+															},
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"tenderBidId\": \"<string>\",\n  \"status\": \"Active\",\n  \"tenderType\": \"Commercials\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl}}/api/procurement/contracts/create"
+													},
+													"status": "Unauthorized",
+													"code": 401,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												},
+												{
+													"id": "63457f6a-9dd7-49d4-aea4-e0ea7f4819f9",
+													"name": "Forbidden",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"description": "(Required) ",
+																"key": "accept-Language",
+																"value": "<string>"
+															},
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"tenderBidId\": \"<string>\",\n  \"status\": \"Active\",\n  \"tenderType\": \"Commercials\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl}}/api/procurement/contracts/create"
+													},
+													"status": "Forbidden",
+													"code": 403,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												}
+											]
+										}
+									],
+									"id": "ac6aea5e-3ebb-4587-b190-dba66e20d2b1"
 								},
 								{
 									"name": "financial",
