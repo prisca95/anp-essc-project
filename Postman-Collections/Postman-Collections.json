@@ -1174,7 +1174,7 @@
 										],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n    //\"email\": \"{{email}}\",\n  \"userName\":  \"bobby@yopmail.com\",//\"milo@yopmail.com\",//\"yinka@yopmail.com\",\n  // \"userName\":\"cesaltino.babo@anp.tl\", //initiator\n //  \"userName\": \"abel.saldanha@anp.tl\", //1st approver\n  // \"userName\": \"jaime.ximenes@anp.tl\", //2nd approver\n  \"password\": \"Password12@@\"\n}",
+											"raw": "{\n    //\"email\": \"{{email}}\",\n  \"userName\":  \"varun@yopmail.com\",//\"milo@yopmail.com\",//\"yinka@yopmail.com\",\n  // \"userName\":\"cesaltino.babo@anp.tl\", //initiator\n //  \"userName\": \"abel.saldanha@anp.tl\", //1st approver\n  // \"userName\": \"jaime.ximenes@anp.tl\", //2nd approver\n  \"password\": \"Password12@@\"\n}",
 											"options": {
 												"raw": {
 													"headerFamily": "json",
@@ -11423,7 +11423,7 @@
 										],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n  \"businessName\": \"Omo Industries\",\n  \"dateOfEstablishment\": \"2024-12-20\",\n  \"streetName\": \"{{$randomStreetName}}\",\n  \"region\": \"East\",\n  \"city\": \"Abia\",\n  \"registrationNumber\": \"7847888w\",\n  \"town\": \"Okpa\",\n  \"phoneNumber\": \"09054889955\",\n  \"website\": \"https://www.slyindustries.com\",\n  \"email\": \"july@yopmail.com\",\n  \"supplierCategory\": \"5f7398c2-9307-49e5-7205-08dd0935660a\",\n // \"companyId\": \"<string>\", //not required\n  \"activate\": false,\n  \"businessType\": \"Hospitality\",\n  \"country\": \"Nigeria\",\n  \"parentCompanyId\": null,\n  \"industryId\": \"513f3a56-83ec-47cc-8010-08dcff87fbf6\",\n  \"tags\": [\n    {\n     // \"tagId\": \"<string>\",\n      \"tagName\": \"Equipments\" //lookup endpoint\n     // \"companyId\": \"<string>\"\n    },\n    {\n     // \"tagId\": \"<string>\",\n      \"tagName\": \"Maintenance\"\n     // \"companyId\": \"<string>\"\n    }\n  ]\n}",
+											"raw": "{\n  \"businessName\": \"Omo Industries\",\n  \"dateOfEstablishment\": \"2024-12-20\",\n  \"streetName\": \"{{$randomStreetName}}\",\n  \"region\": \"East\",\n  \"city\": \"Abia\",\n  \"registrationNumber\": \"7847888w\",\n  \"town\": \"Okpa\",\n  \"phoneNumber\": \"09054889955\",\n  \"website\": \"httpswwwslyindustries.com\",\n  \"email\": \"july@yopmail.com\",\n  \"supplierCategory\": \"5f7398c2-9307-49e5-7205-08dd0935660a\",\n // \"companyId\": \"<string>\", //not required\n  \"activate\": false,\n  \"businessType\": \"Hospitality\",\n  \"country\": \"Nigeria\",\n  \"parentCompanyId\": null,\n  \"industryId\": \"513f3a56-83ec-47cc-8010-08dcff87fbf6\",\n  \"tags\": [\n    {\n     // \"tagId\": \"<string>\",\n      \"tagName\": \"Equipments\" //lookup endpoint\n     // \"companyId\": \"<string>\"\n    },\n    {\n     // \"tagId\": \"<string>\",\n      \"tagName\": \"Maintenance\"\n     // \"companyId\": \"<string>\"\n    }\n  ]\n}",
 											"options": {
 												"raw": {
 													"headerFamily": "json",
@@ -49502,7 +49502,7 @@
 														],
 														"body": {
 															"mode": "raw",
-															"raw": "{\n  \"createdDate\": \"2025-02-18\",\n  \"serviceInformationId\": \"44c39cce-70ee-443b-a825-08dd50273ac8\",//\"{{serviceInformationId}}\",\n  \"address\": \"Lagos\",\n  \"longitude\": \"{{$randomLongitude}}\",\n  \"latitude\": \"{{$randomLatitude}}\",\n  \"state\": \"Lagos\",\n  \"location\": \"Lagos\",\n  \"estimatedCost\": \"1100000\",\n  \"estimatedStartDate\": \"2025-02-18\",\n  \"estimatedEndDate\": \"2025-02-19\",\n  \"purpose\": \"Expression of interest for Steel\",\n  \"declaration\": true,\n  \"companyId\": \"{{supplierId}}\"\n}",
+															"raw": "{\n  \"createdDate\": \"2025-02-18\",\n  \"serviceInformationId\": \"{{serviceInformationId}}\",\n  \"address\": \"Lagos\",\n  \"longitude\": \"{{$randomLongitude}}\",\n  \"latitude\": \"{{$randomLatitude}}\",\n  \"state\": \"Lagos\",\n  \"location\": \"Lagos\",\n  \"estimatedCost\": \"1300000\",\n  \"estimatedStartDate\": \"2025-02-18\",\n  \"estimatedEndDate\": \"2025-02-19\",\n  \"purpose\": \"Expression of interest for Steel\",\n  \"declaration\": true,\n  \"companyId\": \"{{supplierId}}\"\n}",
 															"options": {
 																"raw": {
 																	"headerFamily": "json",
@@ -50447,7 +50447,7 @@
 														],
 														"body": {
 															"mode": "raw",
-															"raw": "{\n  \"tenderBidId\": \"70469aee-fdd8-44c0-f844-08dd502b0d27\",\n  \"status\": \"Approved\", //Active,Processing, Denied, New, Approved\n  \"tenderType\": \"ExpressionOfInterest\"\n}",
+															"raw": "{\n  \"tenderBidId\": \"d162d3c5-8131-42a1-eebb-08dd50f4391d\",\n  \"status\": \"Approved\", //Active,Processing, Denied, New, Approved\n  \"tenderType\": \"ExpressionOfInterest\"\n}",
 															"options": {
 																"raw": {
 																	"headerFamily": "json",
@@ -50633,7 +50633,7 @@
 														"method": "GET",
 														"header": [],
 														"url": {
-															"raw": "{{baseUrl}}/api/procurement/bids/expression?tenderBidId={{tenderBidId}}",
+															"raw": "{{baseUrl}}/api/procurement/bids/expression?tenderBidId=d162d3c5-8131-42a1-eebb-08dd50f4391d",
 															"host": [
 																"{{baseUrl}}"
 															],
@@ -50646,7 +50646,7 @@
 															"query": [
 																{
 																	"key": "tenderBidId",
-																	"value": "{{tenderBidId}}",
+																	"value": "d162d3c5-8131-42a1-eebb-08dd50f4391d",
 																	"description": "(Required) "
 																}
 															]
@@ -51192,7 +51192,7 @@
 														],
 														"body": {
 															"mode": "raw",
-															"raw": "{\n  \"declaration\": true,\n  \"tenderBidId\": \"{{tenderBidId}}\",\n  \"technicalEvaluationDelivarable\": [\n    {\n      \"delivarbles\": \"First review\",\n      \"dueDate\": \"2025-02-22\",\n      \"amount\": \"500000\"\n     // \"technicalEvaluationId\": \"<string>\"\n    },\n    {\n      \"delivarbles\": \"Second review\",\n      \"dueDate\": \"2025-02-23\",\n      \"amount\": \"600000\"\n    //  \"technicalEvaluationId\": \"<string>\"\n    }\n  ]\n}",
+															"raw": "{\n  \"declaration\": true,\n  \"tenderBidId\": \"d162d3c5-8131-42a1-eebb-08dd50f4391d\",\n  \"technicalEvaluationDelivarable\": [\n    {\n      \"delivarbles\": \"First review\",\n      \"dueDate\": \"2025-02-22\",\n      \"amount\": \"700000\"\n     // \"technicalEvaluationId\": \"<string>\"\n    },\n    {\n      \"delivarbles\": \"Second review\",\n      \"dueDate\": \"2025-02-23\",\n      \"amount\": \"600000\"\n    //  \"technicalEvaluationId\": \"<string>\"\n    }\n  ]\n}",
 															"options": {
 																"raw": {
 																	"headerFamily": "json",
@@ -51683,7 +51683,7 @@
 														"auth": {
 															"type": "bearer",
 															"bearer": {
-																"token": "{{bearerToken}}"
+																"token": "{{approverBearerToken}}"
 															}
 														},
 														"method": "POST",
@@ -51700,7 +51700,7 @@
 														],
 														"body": {
 															"mode": "raw",
-															"raw": "{\n  \"tenderBidId\": \"{{tenderBidId}}\",\n  \"status\": \"Active\", //Active,Processing, Denied, New, Approved\n  \"tenderType\": \"TechnicalInformation\"\n}",
+															"raw": "{\n  \"tenderBidId\": \"d162d3c5-8131-42a1-eebb-08dd50f4391d\",\n  \"status\": \"Approved\", //Active,Processing, Denied, New, Approved\n  \"tenderType\": \"TechnicalInformation\"\n}",
 															"options": {
 																"raw": {
 																	"headerFamily": "json",
@@ -51886,7 +51886,7 @@
 														"method": "GET",
 														"header": [],
 														"url": {
-															"raw": "{{baseUrl}}/api/procurement/bids/technical?tenderBidId={{tenderBidId}}",
+															"raw": "{{baseUrl}}/api/procurement/bids/technical?tenderBidId=d162d3c5-8131-42a1-eebb-08dd50f4391d",
 															"host": [
 																"{{baseUrl}}"
 															],
@@ -51899,7 +51899,7 @@
 															"query": [
 																{
 																	"key": "tenderBidId",
-																	"value": "{{tenderBidId}}",
+																	"value": "d162d3c5-8131-42a1-eebb-08dd50f4391d",
 																	"description": "(Required) "
 																}
 															]
@@ -52433,7 +52433,7 @@
 														"auth": {
 															"type": "bearer",
 															"bearer": {
-																"token": "{{bearerToken}}"
+																"token": "{{approverBearerToken}}"
 															}
 														},
 														"method": "POST",
@@ -52445,7 +52445,7 @@
 														],
 														"body": {
 															"mode": "raw",
-															"raw": "{\n  \"cost\": \"1100000\",\n  \"totalCost\": \"1100000\",\n  \"quotedCost\": \"1100000\",\n  \"discount\": \"0\",\n  \"declaration\": true,\n  \"tenderBidId\": \"{{tenderBidId}}\"\n}\n//AFter financial have been approved the supplier should get an email",
+															"raw": "{\n  \"cost\": \"1300000\",\n  \"totalCost\": \"1100000\",\n  \"quotedCost\": \"1100000\",\n  \"discount\": \"0\",\n  \"declaration\": true,\n  \"tenderBidId\": \"d162d3c5-8131-42a1-eebb-08dd50f4391d\"\n}\n//AFter financial have been approved the supplier should get an email",
 															"options": {
 																"raw": {
 																	"headerFamily": "json",
@@ -53138,7 +53138,7 @@
 														"method": "GET",
 														"header": [],
 														"url": {
-															"raw": "{{baseUrl}}/api/procurement/bids/financial?tenderBidId={{tenderBidId}}",
+															"raw": "{{baseUrl}}/api/procurement/bids/financial?tenderBidId=d162d3c5-8131-42a1-eebb-08dd50f4391d",
 															"host": [
 																"{{baseUrl}}"
 															],
@@ -53151,7 +53151,7 @@
 															"query": [
 																{
 																	"key": "tenderBidId",
-																	"value": "{{tenderBidId}}",
+																	"value": "d162d3c5-8131-42a1-eebb-08dd50f4391d",
 																	"description": "(Required) "
 																}
 															]
@@ -54352,7 +54352,7 @@
 												"method": "GET",
 												"header": [],
 												"url": {
-													"raw": "{{baseUrl}}/api/procurement/bids/detail?tenderBidId={{tenderBidId}}",
+													"raw": "{{baseUrl}}/api/procurement/bids/detail?tenderBidId=d162d3c5-8131-42a1-eebb-08dd50f4391d",
 													"host": [
 														"{{baseUrl}}"
 													],
@@ -54365,7 +54365,7 @@
 													"query": [
 														{
 															"key": "tenderBidId",
-															"value": "{{tenderBidId}}",
+															"value": "d162d3c5-8131-42a1-eebb-08dd50f4391d",
 															"description": "(Required) "
 														}
 													]
@@ -54716,13 +54716,13 @@
 												"auth": {
 													"type": "bearer",
 													"bearer": {
-														"token": "{{bearerToken}}"
+														"token": "{{approverBearerToken}}"
 													}
 												},
 												"method": "GET",
 												"header": [],
 												"url": {
-													"raw": "{{baseUrl}}/api/procurement/contracts/deliverables?contractId=<string>",
+													"raw": "{{baseUrl}}/api/procurement/contracts/deliverables?contractId=4c63d783-3500-476d-6c65-08dd50f59b0a",
 													"host": [
 														"{{baseUrl}}"
 													],
@@ -54735,7 +54735,7 @@
 													"query": [
 														{
 															"key": "contractId",
-															"value": "<string>",
+															"value": "4c63d783-3500-476d-6c65-08dd50f59b0a",
 															"description": "(Required) "
 														}
 													]
@@ -54872,6 +54872,32 @@
 									"item": [
 										{
 											"name": "Anp Procurement Features Contract Create Contract Offer Endpoint",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"id": "9eb50ed9-f2a3-415f-845f-047d0268494a",
+														"exec": [
+															"\r",
+															"pm.test(\"Status code is 200\", function () {\r",
+															"    pm.response.to.have.status(200);\r",
+															"});\r",
+															"\r",
+															"var responseJSON = pm.response.json(); \r",
+															"\r",
+															"pm.test(\"Verify that applicants are returned\", function () {\r",
+															"\r",
+															"    pm.expect(responseJSON.data[0]).to.be.an(\"object\").and.not.empty;\r",
+															"    // pm.expect(responseJSON.data.userName).to.be.a(\"string\").and.not.empty;\r",
+															"    //     pm.expect(responseJSON.data.phoneNumber).to.be.a(\"string\").and.not.empty;\r",
+															"\r",
+															"});"
+														],
+														"type": "text/javascript",
+														"packages": {}
+													}
+												}
+											],
 											"id": "2fce484d-3a73-4b34-b85e-a54ee40a4c5c",
 											"protocolProfileBehavior": {
 												"disableBodyPruning": true
@@ -54895,24 +54921,24 @@
 													"formdata": [
 														{
 															"key": "contractId",
-															"value": "<string>",
+															"value": "4c63d783-3500-476d-6c65-08dd50f59b0a",
 															"type": "text"
 														},
 														{
 															"description": " (This can only be one of Pending,Active,Rejected,Accepted)",
 															"key": "status",
-															"value": "Rejected",
+															"value": "Accepted",
 															"type": "text"
 														},
 														{
 															"key": "comment",
-															"value": "<string>",
+															"value": "Thank you",
 															"type": "text"
 														},
 														{
 															"key": "attachment",
 															"type": "file",
-															"value": null
+															"src": "Screenshots/Screenshot (2).png"
 														}
 													]
 												},
@@ -55463,9 +55489,8 @@
 													],
 													"variable": [
 														{
-															"id": "8e82fce7-6718-4c9e-952e-9575369fafc8",
 															"key": "contractId",
-															"value": "<string>",
+															"value": "4c63d783-3500-476d-6c65-08dd50f59b0a",
 															"description": "(Required) "
 														}
 													]
@@ -55610,7 +55635,7 @@
 												"method": "GET",
 												"header": [],
 												"url": {
-													"raw": "{{baseUrl}}/api/procurement/contracts/allcontracts?operatorId=<string>&status=Accepted&pageNumber=<integer>&pageSize=<integer>",
+													"raw": "{{baseUrl}}/api/procurement/contracts/allcontracts?pageNumber=1&pageSize=20",
 													"host": [
 														"{{baseUrl}}"
 													],
@@ -55623,20 +55648,22 @@
 													"query": [
 														{
 															"key": "operatorId",
-															"value": "<string>"
+															"value": "<string>",
+															"disabled": true
 														},
 														{
 															"key": "status",
-															"value": "Accepted"
+															"value": "Pending",
+															"disabled": true
 														},
 														{
 															"key": "pageNumber",
-															"value": "<integer>",
+															"value": "1",
 															"description": "(Required) "
 														},
 														{
 															"key": "pageSize",
-															"value": "<integer>",
+															"value": "20",
 															"description": "(Required) "
 														}
 													]
@@ -57697,7 +57724,7 @@
 												],
 												"body": {
 													"mode": "raw",
-													"raw": "{\n // \"contactId\": \"string\",\n  \"firstName\": \"{{$randomFirstName}}\",\n  \"middleName\": \"Jerry\",\n  \"lastName\": \"{{$randomLastName}}\",\n  \"designation\": \"{{$randomJobTitle}}\",\n  \"nationality\": \"Nigeria\",\n  \"phoneNumber\": \"2348079665569\",\n  \"email\": \"viva@yopmail.com\",\n  \"organizationId\": \"{{operatorId}}\"\n}\n",
+													"raw": "{\n // \"contactId\": \"string\",\n  \"firstName\": \"{{$randomFirstName}}\",\n  \"middleName\": \"Jerry\",\n  \"lastName\": \"{{$randomLastName}}\",\n  \"designation\": \"{{$randomJobTitle}}\",\n  \"nationality\": \"Nigeria\",\n  \"phoneNumber\": \"2348079665569\",\n  \"email\": \"vira@yopmail.com\",\n  \"organizationId\": \"{{operatorId}}\"\n}\n",
 													"options": {
 														"raw": {
 															"headerFamily": "json",
