@@ -38787,341 +38787,6 @@
 							"id": "c2c79b69-bb24-46ae-a492-106f72effe12"
 						},
 						{
-							"name": "edit",
-							"item": [
-								{
-									"name": "Anp Procurement Features Service Information Create Endpoint2",
-									"event": [
-										{
-											"listen": "test",
-											"script": {
-												"id": "090993b6-34c5-4eaa-a7bf-0a9e176e90b6",
-												"exec": [
-													"//pm.collectionVariables.set(\"serviceInformationId\", pm.response.json().data.id);\r",
-													"\r",
-													"pm.test(\"Status code is 200\", function () {\r",
-													"    pm.response.to.have.status(200);\r",
-													"});\r",
-													"\r",
-													"var responseJSON = pm.response.json(); \r",
-													"\r",
-													"pm.test(\"Verify that Service Information is updated successfully\", function () {\r",
-													"\r",
-													"    pm.expect(responseJSON.isSuccess).to.be.a(\"boolean\");\r",
-													"    pm.expect(responseJSON.data.id).to.be.a(\"string\").and.not.empty;\r",
-													"    pm.expect(responseJSON.data.message).to.be.a(\"string\").and.not.empty;\r",
-													"\r",
-													"});"
-												],
-												"type": "text/javascript",
-												"packages": {}
-											}
-										}
-									],
-									"id": "adcc6098-167a-416f-af51-9c913bb0e60d",
-									"protocolProfileBehavior": {
-										"disableBodyPruning": true
-									},
-									"request": {
-										"auth": {
-											"type": "bearer",
-											"bearer": {
-												"token": "{{approverBearerToken}}"
-											}
-										},
-										"method": "POST",
-										"header": [
-											{
-												"key": "Content-Type",
-												"value": "application/json"
-											}
-										],
-										"body": {
-											"mode": "raw",
-											"raw": "// {\n//   \"serviceInformationId\": \"<string>\",\n//   \"title\": \"<string>\",\n//   \"bidStartDate\": \"<dateTime>\",\n//   \"bidEndDate\": \"<dateTime>\",\n//   \"description\": \"<string>\",\n//   \"businessType\": \"<string>\",\n//   \"bidRequirement\": \"<string>\",\n//   \"prerequisite\": \"<string>\",\n//   \"workReference\": \"<string>\",\n//   \"additionalInformation\": \"<string>\",\n//   \"industryId\": \"<string>\",\n//   \"status\": 3\n// }\n\n{\"serviceInformationId\": \"{{serviceInformationId}}\",//\"056c9951-15e5-42e0-7c60-08dd3c8ae4f9\",\n            \"title\": \"Chair\",//\"{{$randomProduct}}\",\n  \"bidStartDate\": \"2025-01-28\",\n  \"bidEndDate\": \"2025-01-30\",\n  \"description\": \"Export\",\n  \"businessType\": \"Sole proprietorship\",\n  \"bidRequirement\": \"3 contracts executed\",\n  \"prerequisite\": \"NIN\",\n  \"workReference\": \"<string>\",\n  \"additionalInformation\": \"<string>\",\n  \"industryId\": \"{{industryId}}\",\n  \"status\": 3\n\n            }",
-											"options": {
-												"raw": {
-													"headerFamily": "json",
-													"language": "json"
-												}
-											}
-										},
-										"url": "{{baseUrl}}/api/procurement/edit"
-									},
-									"response": [
-										{
-											"id": "b3f3bfd8-7535-4217-81da-f5ad72c07eb2",
-											"name": "Success",
-											"originalRequest": {
-												"method": "POST",
-												"header": [
-													{
-														"key": "Content-Type",
-														"value": "application/json"
-													},
-													{
-														"description": "Added as a part of security scheme: bearer",
-														"key": "Authorization",
-														"value": "Bearer <token>"
-													}
-												],
-												"body": {
-													"mode": "raw",
-													"raw": "{\n  \"serviceInformationId\": \"<string>\",\n  \"title\": \"<string>\",\n  \"bidStartDate\": \"<dateTime>\",\n  \"bidEndDate\": \"<dateTime>\",\n  \"description\": \"<string>\",\n  \"businessType\": \"<string>\",\n  \"bidRequirement\": \"<string>\",\n  \"prerequisite\": \"<string>\",\n  \"workReference\": \"<string>\",\n  \"additionalInformation\": \"<string>\",\n  \"industryId\": \"<string>\",\n  \"status\": 3\n}",
-													"options": {
-														"raw": {
-															"headerFamily": "json",
-															"language": "json"
-														}
-													}
-												},
-												"url": "{{baseUrl}}/api/procurement/edit"
-											},
-											"status": "OK",
-											"code": 200,
-											"_postman_previewlanguage": "text",
-											"header": [],
-											"cookie": [],
-											"responseTime": null,
-											"body": ""
-										},
-										{
-											"id": "3e594cad-e83d-4cae-ad48-bb9b9ac3f2d7",
-											"name": "Unauthorized",
-											"originalRequest": {
-												"method": "POST",
-												"header": [
-													{
-														"key": "Content-Type",
-														"value": "application/json"
-													},
-													{
-														"description": "Added as a part of security scheme: bearer",
-														"key": "Authorization",
-														"value": "Bearer <token>"
-													}
-												],
-												"body": {
-													"mode": "raw",
-													"raw": "{\n  \"serviceInformationId\": \"<string>\",\n  \"title\": \"<string>\",\n  \"bidStartDate\": \"<dateTime>\",\n  \"bidEndDate\": \"<dateTime>\",\n  \"description\": \"<string>\",\n  \"businessType\": \"<string>\",\n  \"bidRequirement\": \"<string>\",\n  \"prerequisite\": \"<string>\",\n  \"workReference\": \"<string>\",\n  \"additionalInformation\": \"<string>\",\n  \"industryId\": \"<string>\",\n  \"status\": 3\n}",
-													"options": {
-														"raw": {
-															"headerFamily": "json",
-															"language": "json"
-														}
-													}
-												},
-												"url": "{{baseUrl}}/api/procurement/edit"
-											},
-											"status": "Unauthorized",
-											"code": 401,
-											"_postman_previewlanguage": "text",
-											"header": [],
-											"cookie": [],
-											"responseTime": null,
-											"body": ""
-										},
-										{
-											"id": "091dda84-49e8-4e13-92f5-2d196025917c",
-											"name": "Forbidden",
-											"originalRequest": {
-												"method": "POST",
-												"header": [
-													{
-														"key": "Content-Type",
-														"value": "application/json"
-													},
-													{
-														"description": "Added as a part of security scheme: bearer",
-														"key": "Authorization",
-														"value": "Bearer <token>"
-													}
-												],
-												"body": {
-													"mode": "raw",
-													"raw": "{\n  \"serviceInformationId\": \"<string>\",\n  \"title\": \"<string>\",\n  \"bidStartDate\": \"<dateTime>\",\n  \"bidEndDate\": \"<dateTime>\",\n  \"description\": \"<string>\",\n  \"businessType\": \"<string>\",\n  \"bidRequirement\": \"<string>\",\n  \"prerequisite\": \"<string>\",\n  \"workReference\": \"<string>\",\n  \"additionalInformation\": \"<string>\",\n  \"industryId\": \"<string>\",\n  \"status\": 3\n}",
-													"options": {
-														"raw": {
-															"headerFamily": "json",
-															"language": "json"
-														}
-													}
-												},
-												"url": "{{baseUrl}}/api/procurement/edit"
-											},
-											"status": "Forbidden",
-											"code": 403,
-											"_postman_previewlanguage": "text",
-											"header": [],
-											"cookie": [],
-											"responseTime": null,
-											"body": ""
-										}
-									]
-								},
-								{
-									"name": "No Auth - Service Information Edit",
-									"event": [
-										{
-											"listen": "test",
-											"script": {
-												"id": "e26fe15b-e159-40de-97aa-8c6d6683f9e1",
-												"exec": [
-													"pm.test(\"Status code is 401\", function () {\r",
-													"    pm.response.to.have.status(401);\r",
-													"});\r",
-													"\r",
-													"pm.test(\"Status code name has 'Unauthorized'\", function () {\r",
-													"    pm.response.to.have.status(\"Unauthorized\");\r",
-													"});"
-												],
-												"type": "text/javascript",
-												"packages": {}
-											}
-										}
-									],
-									"id": "2838e5b5-492c-4c6b-b938-5e5b3d782d25",
-									"protocolProfileBehavior": {
-										"disableBodyPruning": true
-									},
-									"request": {
-										"auth": {
-											"type": "noauth"
-										},
-										"method": "POST",
-										"header": [
-											{
-												"key": "Content-Type",
-												"value": "application/json"
-											}
-										],
-										"body": {
-											"mode": "raw",
-											"raw": "{\n  \"serviceInformationId\": \"<string>\",\n  \"title\": \"<string>\",\n  \"bidStartDate\": \"<dateTime>\",\n  \"bidEndDate\": \"<dateTime>\",\n  \"description\": \"<string>\",\n  \"businessType\": \"<string>\",\n  \"bidRequirement\": \"<string>\",\n  \"prerequisite\": \"<string>\",\n  \"workReference\": \"<string>\",\n  \"additionalInformation\": \"<string>\",\n  \"industryId\": \"<string>\",\n  \"status\": 3\n}",
-											"options": {
-												"raw": {
-													"headerFamily": "json",
-													"language": "json"
-												}
-											}
-										},
-										"url": "{{baseUrl}}/api/procurement/edit"
-									},
-									"response": [
-										{
-											"id": "f7671ee4-85b3-4abc-a001-0d06dca3dc4b",
-											"name": "Success",
-											"originalRequest": {
-												"method": "POST",
-												"header": [
-													{
-														"key": "Content-Type",
-														"value": "application/json"
-													},
-													{
-														"description": "Added as a part of security scheme: bearer",
-														"key": "Authorization",
-														"value": "Bearer <token>"
-													}
-												],
-												"body": {
-													"mode": "raw",
-													"raw": "{\n  \"serviceInformationId\": \"<string>\",\n  \"title\": \"<string>\",\n  \"bidStartDate\": \"<dateTime>\",\n  \"bidEndDate\": \"<dateTime>\",\n  \"description\": \"<string>\",\n  \"businessType\": \"<string>\",\n  \"bidRequirement\": \"<string>\",\n  \"prerequisite\": \"<string>\",\n  \"workReference\": \"<string>\",\n  \"additionalInformation\": \"<string>\",\n  \"industryId\": \"<string>\",\n  \"status\": 3\n}",
-													"options": {
-														"raw": {
-															"headerFamily": "json",
-															"language": "json"
-														}
-													}
-												},
-												"url": "{{baseUrl}}/api/procurement/edit"
-											},
-											"status": "OK",
-											"code": 200,
-											"_postman_previewlanguage": "text",
-											"header": [],
-											"cookie": [],
-											"responseTime": null,
-											"body": ""
-										},
-										{
-											"id": "9d29e4d8-48b4-4751-931f-822cc3e9a273",
-											"name": "Unauthorized",
-											"originalRequest": {
-												"method": "POST",
-												"header": [
-													{
-														"key": "Content-Type",
-														"value": "application/json"
-													},
-													{
-														"description": "Added as a part of security scheme: bearer",
-														"key": "Authorization",
-														"value": "Bearer <token>"
-													}
-												],
-												"body": {
-													"mode": "raw",
-													"raw": "{\n  \"serviceInformationId\": \"<string>\",\n  \"title\": \"<string>\",\n  \"bidStartDate\": \"<dateTime>\",\n  \"bidEndDate\": \"<dateTime>\",\n  \"description\": \"<string>\",\n  \"businessType\": \"<string>\",\n  \"bidRequirement\": \"<string>\",\n  \"prerequisite\": \"<string>\",\n  \"workReference\": \"<string>\",\n  \"additionalInformation\": \"<string>\",\n  \"industryId\": \"<string>\",\n  \"status\": 3\n}",
-													"options": {
-														"raw": {
-															"headerFamily": "json",
-															"language": "json"
-														}
-													}
-												},
-												"url": "{{baseUrl}}/api/procurement/edit"
-											},
-											"status": "Unauthorized",
-											"code": 401,
-											"_postman_previewlanguage": "text",
-											"header": [],
-											"cookie": [],
-											"responseTime": null,
-											"body": ""
-										},
-										{
-											"id": "0614954a-aec3-47e4-87e1-8dddf19949bf",
-											"name": "Forbidden",
-											"originalRequest": {
-												"method": "POST",
-												"header": [
-													{
-														"key": "Content-Type",
-														"value": "application/json"
-													},
-													{
-														"description": "Added as a part of security scheme: bearer",
-														"key": "Authorization",
-														"value": "Bearer <token>"
-													}
-												],
-												"body": {
-													"mode": "raw",
-													"raw": "{\n  \"serviceInformationId\": \"<string>\",\n  \"title\": \"<string>\",\n  \"bidStartDate\": \"<dateTime>\",\n  \"bidEndDate\": \"<dateTime>\",\n  \"description\": \"<string>\",\n  \"businessType\": \"<string>\",\n  \"bidRequirement\": \"<string>\",\n  \"prerequisite\": \"<string>\",\n  \"workReference\": \"<string>\",\n  \"additionalInformation\": \"<string>\",\n  \"industryId\": \"<string>\",\n  \"status\": 3\n}",
-													"options": {
-														"raw": {
-															"headerFamily": "json",
-															"language": "json"
-														}
-													}
-												},
-												"url": "{{baseUrl}}/api/procurement/edit"
-											},
-											"status": "Forbidden",
-											"code": 403,
-											"_postman_previewlanguage": "text",
-											"header": [],
-											"cookie": [],
-											"responseTime": null,
-											"body": ""
-										}
-									]
-								}
-							],
-							"id": "050f8717-99e2-4bfa-b0b3-ad638e708edd"
-						},
-						{
 							"name": "listServiceInformation",
 							"item": [
 								{
@@ -39132,7 +38797,7 @@
 											"script": {
 												"id": "012053ec-52e5-437a-8498-28be4d66fe5e",
 												"exec": [
-													"pm.collectionVariables.set(\"serviceInformationId\", pm.response.json().data[0].id);\r",
+													"pm.collectionVariables.set(\"serviceInformationId\", pm.response.json().data[0].serviceInformationId);\r",
 													"\r",
 													"pm.test(\"Status code is 200\", function () {\r",
 													"    pm.response.to.have.status(200);\r",
@@ -39586,6 +39251,341 @@
 								}
 							],
 							"id": "91f461e9-d0e2-44e4-90fa-d11992ff1eb1"
+						},
+						{
+							"name": "edit",
+							"item": [
+								{
+									"name": "Anp Procurement Features Service Information Create Endpoint2",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "090993b6-34c5-4eaa-a7bf-0a9e176e90b6",
+												"exec": [
+													"//pm.collectionVariables.set(\"serviceInformationId\", pm.response.json().data.id);\r",
+													"\r",
+													"pm.test(\"Status code is 200\", function () {\r",
+													"    pm.response.to.have.status(200);\r",
+													"});\r",
+													"\r",
+													"var responseJSON = pm.response.json(); \r",
+													"\r",
+													"pm.test(\"Verify that Service Information is updated successfully\", function () {\r",
+													"\r",
+													"    pm.expect(responseJSON.isSuccess).to.be.a(\"boolean\");\r",
+													"    pm.expect(responseJSON.data.id).to.be.a(\"string\").and.not.empty;\r",
+													"    pm.expect(responseJSON.data.message).to.be.a(\"string\").and.not.empty;\r",
+													"\r",
+													"});"
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
+									"id": "adcc6098-167a-416f-af51-9c913bb0e60d",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": {
+												"token": "{{approverBearerToken}}"
+											}
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "// {\n//   \"serviceInformationId\": \"<string>\",\n//   \"title\": \"<string>\",\n//   \"bidStartDate\": \"<dateTime>\",\n//   \"bidEndDate\": \"<dateTime>\",\n//   \"description\": \"<string>\",\n//   \"businessType\": \"<string>\",\n//   \"bidRequirement\": \"<string>\",\n//   \"prerequisite\": \"<string>\",\n//   \"workReference\": \"<string>\",\n//   \"additionalInformation\": \"<string>\",\n//   \"industryId\": \"<string>\",\n//   \"status\": 3\n// }\n\n{\"serviceInformationId\": \"{{serviceInformationId}}\",//\"056c9951-15e5-42e0-7c60-08dd3c8ae4f9\",\n            \"title\": \"Chair\",//\"{{$randomProduct}}\",\n  \"bidStartDate\": \"2025-01-28\",\n  \"bidEndDate\": \"2025-01-30\",\n  \"description\": \"Export\",\n  \"businessType\": \"Sole proprietorship\",\n  \"bidRequirement\": \"3 contracts executed\",\n  \"prerequisite\": \"NIN\",\n  \"workReference\": \"<string>\",\n  \"additionalInformation\": \"<string>\",\n  \"industryId\": \"{{industryId}}\",\n  \"status\": 3\n\n            }",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{baseUrl}}/api/procurement/edit"
+									},
+									"response": [
+										{
+											"id": "b3f3bfd8-7535-4217-81da-f5ad72c07eb2",
+											"name": "Success",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"description": "Added as a part of security scheme: bearer",
+														"key": "Authorization",
+														"value": "Bearer <token>"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"serviceInformationId\": \"<string>\",\n  \"title\": \"<string>\",\n  \"bidStartDate\": \"<dateTime>\",\n  \"bidEndDate\": \"<dateTime>\",\n  \"description\": \"<string>\",\n  \"businessType\": \"<string>\",\n  \"bidRequirement\": \"<string>\",\n  \"prerequisite\": \"<string>\",\n  \"workReference\": \"<string>\",\n  \"additionalInformation\": \"<string>\",\n  \"industryId\": \"<string>\",\n  \"status\": 3\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl}}/api/procurement/edit"
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"responseTime": null,
+											"body": ""
+										},
+										{
+											"id": "3e594cad-e83d-4cae-ad48-bb9b9ac3f2d7",
+											"name": "Unauthorized",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"description": "Added as a part of security scheme: bearer",
+														"key": "Authorization",
+														"value": "Bearer <token>"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"serviceInformationId\": \"<string>\",\n  \"title\": \"<string>\",\n  \"bidStartDate\": \"<dateTime>\",\n  \"bidEndDate\": \"<dateTime>\",\n  \"description\": \"<string>\",\n  \"businessType\": \"<string>\",\n  \"bidRequirement\": \"<string>\",\n  \"prerequisite\": \"<string>\",\n  \"workReference\": \"<string>\",\n  \"additionalInformation\": \"<string>\",\n  \"industryId\": \"<string>\",\n  \"status\": 3\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl}}/api/procurement/edit"
+											},
+											"status": "Unauthorized",
+											"code": 401,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"responseTime": null,
+											"body": ""
+										},
+										{
+											"id": "091dda84-49e8-4e13-92f5-2d196025917c",
+											"name": "Forbidden",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"description": "Added as a part of security scheme: bearer",
+														"key": "Authorization",
+														"value": "Bearer <token>"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"serviceInformationId\": \"<string>\",\n  \"title\": \"<string>\",\n  \"bidStartDate\": \"<dateTime>\",\n  \"bidEndDate\": \"<dateTime>\",\n  \"description\": \"<string>\",\n  \"businessType\": \"<string>\",\n  \"bidRequirement\": \"<string>\",\n  \"prerequisite\": \"<string>\",\n  \"workReference\": \"<string>\",\n  \"additionalInformation\": \"<string>\",\n  \"industryId\": \"<string>\",\n  \"status\": 3\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl}}/api/procurement/edit"
+											},
+											"status": "Forbidden",
+											"code": 403,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"responseTime": null,
+											"body": ""
+										}
+									]
+								},
+								{
+									"name": "No Auth - Service Information Edit",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "e26fe15b-e159-40de-97aa-8c6d6683f9e1",
+												"exec": [
+													"pm.test(\"Status code is 401\", function () {\r",
+													"    pm.response.to.have.status(401);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Status code name has 'Unauthorized'\", function () {\r",
+													"    pm.response.to.have.status(\"Unauthorized\");\r",
+													"});"
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
+									"id": "2838e5b5-492c-4c6b-b938-5e5b3d782d25",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"auth": {
+											"type": "noauth"
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"serviceInformationId\": \"<string>\",\n  \"title\": \"<string>\",\n  \"bidStartDate\": \"<dateTime>\",\n  \"bidEndDate\": \"<dateTime>\",\n  \"description\": \"<string>\",\n  \"businessType\": \"<string>\",\n  \"bidRequirement\": \"<string>\",\n  \"prerequisite\": \"<string>\",\n  \"workReference\": \"<string>\",\n  \"additionalInformation\": \"<string>\",\n  \"industryId\": \"<string>\",\n  \"status\": 3\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{baseUrl}}/api/procurement/edit"
+									},
+									"response": [
+										{
+											"id": "f7671ee4-85b3-4abc-a001-0d06dca3dc4b",
+											"name": "Success",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"description": "Added as a part of security scheme: bearer",
+														"key": "Authorization",
+														"value": "Bearer <token>"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"serviceInformationId\": \"<string>\",\n  \"title\": \"<string>\",\n  \"bidStartDate\": \"<dateTime>\",\n  \"bidEndDate\": \"<dateTime>\",\n  \"description\": \"<string>\",\n  \"businessType\": \"<string>\",\n  \"bidRequirement\": \"<string>\",\n  \"prerequisite\": \"<string>\",\n  \"workReference\": \"<string>\",\n  \"additionalInformation\": \"<string>\",\n  \"industryId\": \"<string>\",\n  \"status\": 3\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl}}/api/procurement/edit"
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"responseTime": null,
+											"body": ""
+										},
+										{
+											"id": "9d29e4d8-48b4-4751-931f-822cc3e9a273",
+											"name": "Unauthorized",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"description": "Added as a part of security scheme: bearer",
+														"key": "Authorization",
+														"value": "Bearer <token>"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"serviceInformationId\": \"<string>\",\n  \"title\": \"<string>\",\n  \"bidStartDate\": \"<dateTime>\",\n  \"bidEndDate\": \"<dateTime>\",\n  \"description\": \"<string>\",\n  \"businessType\": \"<string>\",\n  \"bidRequirement\": \"<string>\",\n  \"prerequisite\": \"<string>\",\n  \"workReference\": \"<string>\",\n  \"additionalInformation\": \"<string>\",\n  \"industryId\": \"<string>\",\n  \"status\": 3\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl}}/api/procurement/edit"
+											},
+											"status": "Unauthorized",
+											"code": 401,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"responseTime": null,
+											"body": ""
+										},
+										{
+											"id": "0614954a-aec3-47e4-87e1-8dddf19949bf",
+											"name": "Forbidden",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"description": "Added as a part of security scheme: bearer",
+														"key": "Authorization",
+														"value": "Bearer <token>"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"serviceInformationId\": \"<string>\",\n  \"title\": \"<string>\",\n  \"bidStartDate\": \"<dateTime>\",\n  \"bidEndDate\": \"<dateTime>\",\n  \"description\": \"<string>\",\n  \"businessType\": \"<string>\",\n  \"bidRequirement\": \"<string>\",\n  \"prerequisite\": \"<string>\",\n  \"workReference\": \"<string>\",\n  \"additionalInformation\": \"<string>\",\n  \"industryId\": \"<string>\",\n  \"status\": 3\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl}}/api/procurement/edit"
+											},
+											"status": "Forbidden",
+											"code": 403,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"responseTime": null,
+											"body": ""
+										}
+									]
+								}
+							],
+							"id": "050f8717-99e2-4bfa-b0b3-ad638e708edd"
 						},
 						{
 							"name": "TenderGoodsService",
@@ -47809,7 +47809,7 @@
 										],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n  \"serviceInformationId\": \"44c39cce-70ee-443b-a825-08dd50273ac8\",//\"{{serviceInformationId}}\",\n  \"supplierId\": \"{{supplierId}}\",\n  \"requestAccess\": true,\n  \"isFavorite\": false\n}",
+											"raw": "{\n  \"serviceInformationId\": \"{{serviceInformationId}}\",\n  \"supplierId\": \"{{supplierId}}\",\n  \"requestAccess\": true,\n  \"isFavorite\": false\n}",
 											"options": {
 												"raw": {
 													"headerFamily": "json",
