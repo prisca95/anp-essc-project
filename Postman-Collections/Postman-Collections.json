@@ -54868,6 +54868,219 @@
 									"id": "c94ef8d8-114d-4c72-818c-640e9b6691b4"
 								},
 								{
+									"name": "offer",
+									"item": [
+										{
+											"name": "Anp Procurement Features Contract Create Contract Offer Endpoint",
+											"id": "2fce484d-3a73-4b34-b85e-a54ee40a4c5c",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": {
+														"token": "{{bearerToken}}"
+													}
+												},
+												"method": "PATCH",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "multipart/form-data"
+													}
+												],
+												"body": {
+													"mode": "formdata",
+													"formdata": [
+														{
+															"key": "contractId",
+															"value": "<string>",
+															"type": "text"
+														},
+														{
+															"description": " (This can only be one of Pending,Active,Rejected,Accepted)",
+															"key": "status",
+															"value": "Rejected",
+															"type": "text"
+														},
+														{
+															"key": "comment",
+															"value": "<string>",
+															"type": "text"
+														},
+														{
+															"key": "attachment",
+															"type": "file",
+															"value": null
+														}
+													]
+												},
+												"url": "{{baseUrl}}/api/procurement/contracts/offer"
+											},
+											"response": [
+												{
+													"id": "3134a345-0bd5-4665-ad59-faa3a12463a4",
+													"name": "Success",
+													"originalRequest": {
+														"method": "PATCH",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "multipart/form-data"
+															},
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"body": {
+															"mode": "formdata",
+															"formdata": [
+																{
+																	"key": "contractId",
+																	"value": "<string>",
+																	"type": "text"
+																},
+																{
+																	"description": " (This can only be one of Pending,Active,Rejected,Accepted)",
+																	"key": "status",
+																	"value": "Rejected",
+																	"type": "text"
+																},
+																{
+																	"key": "comment",
+																	"value": "<string>",
+																	"type": "text"
+																},
+																{
+																	"key": "attachment",
+																	"type": "file",
+																	"src": []
+																}
+															]
+														},
+														"url": "{{baseUrl}}/api/procurement/contracts/offer"
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												},
+												{
+													"id": "678bcc77-e90f-4559-874f-8da342d35518",
+													"name": "Unauthorized",
+													"originalRequest": {
+														"method": "PATCH",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "multipart/form-data"
+															},
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"body": {
+															"mode": "formdata",
+															"formdata": [
+																{
+																	"key": "contractId",
+																	"value": "<string>",
+																	"type": "text"
+																},
+																{
+																	"description": " (This can only be one of Pending,Active,Rejected,Accepted)",
+																	"key": "status",
+																	"value": "Rejected",
+																	"type": "text"
+																},
+																{
+																	"key": "comment",
+																	"value": "<string>",
+																	"type": "text"
+																},
+																{
+																	"key": "attachment",
+																	"type": "file",
+																	"src": []
+																}
+															]
+														},
+														"url": "{{baseUrl}}/api/procurement/contracts/offer"
+													},
+													"status": "Unauthorized",
+													"code": 401,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												},
+												{
+													"id": "f5a565e1-abd1-4fbe-bbb0-2ee7c2a19731",
+													"name": "Forbidden",
+													"originalRequest": {
+														"method": "PATCH",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "multipart/form-data"
+															},
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"body": {
+															"mode": "formdata",
+															"formdata": [
+																{
+																	"key": "contractId",
+																	"value": "<string>",
+																	"type": "text"
+																},
+																{
+																	"description": " (This can only be one of Pending,Active,Rejected,Accepted)",
+																	"key": "status",
+																	"value": "Rejected",
+																	"type": "text"
+																},
+																{
+																	"key": "comment",
+																	"value": "<string>",
+																	"type": "text"
+																},
+																{
+																	"key": "attachment",
+																	"type": "file",
+																	"src": []
+																}
+															]
+														},
+														"url": "{{baseUrl}}/api/procurement/contracts/offer"
+													},
+													"status": "Forbidden",
+													"code": 403,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												}
+											]
+										}
+									],
+									"id": "386960b9-a5ed-4c8d-bd48-758e7d82b8dd"
+								},
+								{
 									"name": "renew",
 									"item": [
 										{
@@ -55218,219 +55431,6 @@
 										}
 									],
 									"id": "ead82acd-86aa-4c78-96f7-5226458f9269"
-								},
-								{
-									"name": "offer",
-									"item": [
-										{
-											"name": "Anp Procurement Features Contract Create Contract Offer Endpoint",
-											"id": "2fce484d-3a73-4b34-b85e-a54ee40a4c5c",
-											"protocolProfileBehavior": {
-												"disableBodyPruning": true
-											},
-											"request": {
-												"auth": {
-													"type": "bearer",
-													"bearer": {
-														"token": "{{bearerToken}}"
-													}
-												},
-												"method": "PATCH",
-												"header": [
-													{
-														"key": "Content-Type",
-														"value": "multipart/form-data"
-													}
-												],
-												"body": {
-													"mode": "formdata",
-													"formdata": [
-														{
-															"key": "contractId",
-															"value": "<string>",
-															"type": "text"
-														},
-														{
-															"description": " (This can only be one of Pending,Active,Rejected,Accepted)",
-															"key": "status",
-															"value": "Rejected",
-															"type": "text"
-														},
-														{
-															"key": "comment",
-															"value": "<string>",
-															"type": "text"
-														},
-														{
-															"key": "attachment",
-															"type": "file",
-															"value": null
-														}
-													]
-												},
-												"url": "{{baseUrl}}/api/procurement/contracts/offer"
-											},
-											"response": [
-												{
-													"id": "3134a345-0bd5-4665-ad59-faa3a12463a4",
-													"name": "Success",
-													"originalRequest": {
-														"method": "PATCH",
-														"header": [
-															{
-																"key": "Content-Type",
-																"value": "multipart/form-data"
-															},
-															{
-																"description": "Added as a part of security scheme: bearer",
-																"key": "Authorization",
-																"value": "Bearer <token>"
-															}
-														],
-														"body": {
-															"mode": "formdata",
-															"formdata": [
-																{
-																	"key": "contractId",
-																	"value": "<string>",
-																	"type": "text"
-																},
-																{
-																	"description": " (This can only be one of Pending,Active,Rejected,Accepted)",
-																	"key": "status",
-																	"value": "Rejected",
-																	"type": "text"
-																},
-																{
-																	"key": "comment",
-																	"value": "<string>",
-																	"type": "text"
-																},
-																{
-																	"key": "attachment",
-																	"type": "file",
-																	"src": []
-																}
-															]
-														},
-														"url": "{{baseUrl}}/api/procurement/contracts/offer"
-													},
-													"status": "OK",
-													"code": 200,
-													"_postman_previewlanguage": "text",
-													"header": [],
-													"cookie": [],
-													"responseTime": null,
-													"body": ""
-												},
-												{
-													"id": "678bcc77-e90f-4559-874f-8da342d35518",
-													"name": "Unauthorized",
-													"originalRequest": {
-														"method": "PATCH",
-														"header": [
-															{
-																"key": "Content-Type",
-																"value": "multipart/form-data"
-															},
-															{
-																"description": "Added as a part of security scheme: bearer",
-																"key": "Authorization",
-																"value": "Bearer <token>"
-															}
-														],
-														"body": {
-															"mode": "formdata",
-															"formdata": [
-																{
-																	"key": "contractId",
-																	"value": "<string>",
-																	"type": "text"
-																},
-																{
-																	"description": " (This can only be one of Pending,Active,Rejected,Accepted)",
-																	"key": "status",
-																	"value": "Rejected",
-																	"type": "text"
-																},
-																{
-																	"key": "comment",
-																	"value": "<string>",
-																	"type": "text"
-																},
-																{
-																	"key": "attachment",
-																	"type": "file",
-																	"src": []
-																}
-															]
-														},
-														"url": "{{baseUrl}}/api/procurement/contracts/offer"
-													},
-													"status": "Unauthorized",
-													"code": 401,
-													"_postman_previewlanguage": "text",
-													"header": [],
-													"cookie": [],
-													"responseTime": null,
-													"body": ""
-												},
-												{
-													"id": "f5a565e1-abd1-4fbe-bbb0-2ee7c2a19731",
-													"name": "Forbidden",
-													"originalRequest": {
-														"method": "PATCH",
-														"header": [
-															{
-																"key": "Content-Type",
-																"value": "multipart/form-data"
-															},
-															{
-																"description": "Added as a part of security scheme: bearer",
-																"key": "Authorization",
-																"value": "Bearer <token>"
-															}
-														],
-														"body": {
-															"mode": "formdata",
-															"formdata": [
-																{
-																	"key": "contractId",
-																	"value": "<string>",
-																	"type": "text"
-																},
-																{
-																	"description": " (This can only be one of Pending,Active,Rejected,Accepted)",
-																	"key": "status",
-																	"value": "Rejected",
-																	"type": "text"
-																},
-																{
-																	"key": "comment",
-																	"value": "<string>",
-																	"type": "text"
-																},
-																{
-																	"key": "attachment",
-																	"type": "file",
-																	"src": []
-																}
-															]
-														},
-														"url": "{{baseUrl}}/api/procurement/contracts/offer"
-													},
-													"status": "Forbidden",
-													"code": 403,
-													"_postman_previewlanguage": "text",
-													"header": [],
-													"cookie": [],
-													"responseTime": null,
-													"body": ""
-												}
-											]
-										}
-									],
-									"id": "386960b9-a5ed-4c8d-bd48-758e7d82b8dd"
 								},
 								{
 									"name": "{contractId}",
