@@ -39132,7 +39132,7 @@
 											"script": {
 												"id": "012053ec-52e5-437a-8498-28be4d66fe5e",
 												"exec": [
-													"pm.collectionVariables.set(\"serviceInformationId\", pm.response.json().data.id);\r",
+													"pm.collectionVariables.set(\"serviceInformationId\", pm.response.json().data[0].id);\r",
 													"\r",
 													"pm.test(\"Status code is 200\", function () {\r",
 													"    pm.response.to.have.status(200);\r",
