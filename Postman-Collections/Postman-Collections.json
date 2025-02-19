@@ -52907,7 +52907,7 @@
 															"script": {
 																"id": "60a0eb93-72f7-4ae8-9631-407cb05c8ac7",
 																"exec": [
-																	"//pm.collectionVariables.set(\"serviceInformationId\", pm.response.json().data.id);\r",
+																	"pm.collectionVariables.set(\"contractId\", pm.response.json().data.id);\r",
 																	"\r",
 																	"pm.test(\"Status code is 200\", function () {\r",
 																	"    pm.response.to.have.status(200);\r",
@@ -52943,7 +52943,7 @@
 														"header": [
 															{
 																"key": "accept-Language",
-																"value": "accept-Language",
+																"value": "en-US",
 																"description": "(Required) "
 															},
 															{
