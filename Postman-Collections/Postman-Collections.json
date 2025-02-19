@@ -53688,7 +53688,7 @@
 												"method": "GET",
 												"header": [],
 												"url": {
-													"raw": "{{baseUrl}}/api/procurement/bids/applicants?serviceInformationId=44c39cce-70ee-443b-a825-08dd50273ac8&pageNumber=1&pageSize=10",
+													"raw": "{{baseUrl}}/api/procurement/bids/applicants?serviceInformationId={{serviceInformationId}}&pageNumber=1&pageSize=10",
 													"host": [
 														"{{baseUrl}}"
 													],
@@ -53701,7 +53701,7 @@
 													"query": [
 														{
 															"key": "serviceInformationId",
-															"value": "44c39cce-70ee-443b-a825-08dd50273ac8",
+															"value": "{{serviceInformationId}}",
 															"description": "(Required) "
 														},
 														{
