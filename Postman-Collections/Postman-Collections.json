@@ -54135,7 +54135,7 @@
 														"method": "GET",
 														"header": [],
 														"url": {
-															"raw": "{{baseUrl}}/api/procurement/bids/document/type?serviceInformationId=44c39cce-70ee-443b-a825-08dd50273ac8&tenderType=TechnicalInformation",
+															"raw": "{{baseUrl}}/api/procurement/bids/document/type?serviceInformationId=33587081-a945-4d3c-159c-08dd515ff99c&tenderType=TechnicalInformation",
 															"host": [
 																"{{baseUrl}}"
 															],
@@ -54149,7 +54149,7 @@
 															"query": [
 																{
 																	"key": "serviceInformationId",
-																	"value": "44c39cce-70ee-443b-a825-08dd50273ac8",
+																	"value": "33587081-a945-4d3c-159c-08dd515ff99c",
 																	"description": "(Required) "
 																},
 																{
