@@ -63726,22 +63726,26 @@
 												{
 													"key": "entityId",
 													"value": "<string>",
-													"type": "text"
+													"type": "text",
+													"description": "tenderbidid"
 												},
 												{
 													"key": "module",
 													"value": "<string>",
-													"type": "text"
+													"type": "text",
+													"description": "procurement"
 												},
 												{
 													"key": "subModule",
 													"value": "<string>",
-													"type": "text"
+													"type": "text",
+													"description": "tendertype"
 												},
 												{
 													"key": "documentTypeName",
 													"value": "<string>",
-													"type": "text"
+													"type": "text",
+													"description": "AAA"
 												},
 												{
 													"key": "file",
