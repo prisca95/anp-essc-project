@@ -63061,6 +63061,979 @@
 					"id": "90d3ea8f-a9f5-4303-ac6a-757c41c9f500"
 				},
 				{
+					"name": "edms Copy",
+					"item": [
+						{
+							"name": "document",
+							"item": [
+								{
+									"name": "view",
+									"item": [
+										{
+											"name": "Anp Edms Features Get Documents Endpoint",
+											"id": "dfc38be3-18c7-48db-a77f-4297e505dc2a",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/edms/document/view?documentId=<string>&module=<string>",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"edms",
+														"document",
+														"view"
+													],
+													"query": [
+														{
+															"key": "documentId",
+															"value": "<string>",
+															"description": "(Required) "
+														},
+														{
+															"key": "module",
+															"value": "<string>"
+														}
+													]
+												}
+											},
+											"response": [
+												{
+													"id": "d3754d09-fc62-4bf3-8290-355de875cf8a",
+													"name": "Success",
+													"originalRequest": {
+														"method": "GET",
+														"header": [],
+														"url": {
+															"raw": "{{baseUrl}}/api/edms/document/view?documentId=<string>&module=<string>",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"edms",
+																"document",
+																"view"
+															],
+															"query": [
+																{
+																	"description": "(Required) ",
+																	"key": "documentId",
+																	"value": "<string>"
+																},
+																{
+																	"key": "module",
+																	"value": "<string>"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												},
+												{
+													"id": "b7d85b9f-09ab-46e6-8023-610f69b179c3",
+													"name": "Forbidden",
+													"originalRequest": {
+														"method": "GET",
+														"header": [],
+														"url": {
+															"raw": "{{baseUrl}}/api/edms/document/view?documentId=<string>&module=<string>",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"edms",
+																"document",
+																"view"
+															],
+															"query": [
+																{
+																	"description": "(Required) ",
+																	"key": "documentId",
+																	"value": "<string>"
+																},
+																{
+																	"key": "module",
+																	"value": "<string>"
+																}
+															]
+														}
+													},
+													"status": "Forbidden",
+													"code": 403,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												}
+											]
+										}
+									],
+									"id": "3046d035-37ad-4ae1-9e74-fba913030144"
+								},
+								{
+									"name": "Anp Edms Features Delete Document Endpoint",
+									"id": "aaf06893-1e72-4d03-aad8-61e5f4867cfd",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"documentId\": \"<string>\",\n  \"module\": \"<string>\",\n  \"subModule\": \"<string>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{baseUrl}}/api/edms/document"
+									},
+									"response": [
+										{
+											"id": "7d28fda9-2830-457f-8ad0-828175d18ddb",
+											"name": "Success",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"documentId\": \"<string>\",\n  \"module\": \"<string>\",\n  \"subModule\": \"<string>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl}}/api/edms/document"
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"responseTime": null,
+											"body": ""
+										},
+										{
+											"id": "fb828afa-74a1-4fa1-a1b6-6c53f4ea342d",
+											"name": "Forbidden",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"documentId\": \"<string>\",\n  \"module\": \"<string>\",\n  \"subModule\": \"<string>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl}}/api/edms/document"
+											},
+											"status": "Forbidden",
+											"code": 403,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"responseTime": null,
+											"body": ""
+										}
+									]
+								}
+							],
+							"id": "71b5b6fc-b310-46d5-aa17-f607c71dd3a9"
+						},
+						{
+							"name": "image",
+							"item": [
+								{
+									"name": "{documentId}",
+									"item": [
+										{
+											"name": "Anp Edms Features Delete Image Endpoint",
+											"id": "1709b73f-e44c-4ece-98f5-002dfac07209",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"method": "DELETE",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/edms/image/:documentId",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"edms",
+														"image",
+														":documentId"
+													],
+													"variable": [
+														{
+															"id": "0e2cd50c-ed70-45ab-8e8b-4cd135d7c04c",
+															"key": "documentId",
+															"value": "<string>",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"response": [
+												{
+													"id": "0e3d5c0f-bf95-4627-81d3-cbadf9e56da0",
+													"name": "Success",
+													"originalRequest": {
+														"method": "DELETE",
+														"header": [],
+														"url": {
+															"raw": "{{baseUrl}}/api/edms/image/:documentId",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"edms",
+																"image",
+																":documentId"
+															],
+															"variable": [
+																{
+																	"key": "documentId"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												},
+												{
+													"id": "ed51a9bb-97f9-4a6a-a50e-3515dd853e9a",
+													"name": "Forbidden",
+													"originalRequest": {
+														"method": "DELETE",
+														"header": [],
+														"url": {
+															"raw": "{{baseUrl}}/api/edms/image/:documentId",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"edms",
+																"image",
+																":documentId"
+															],
+															"variable": [
+																{
+																	"key": "documentId"
+																}
+															]
+														}
+													},
+													"status": "Forbidden",
+													"code": 403,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												}
+											]
+										}
+									],
+									"id": "8bdac1a5-0103-40ca-8268-617c3ee4687c"
+								}
+							],
+							"id": "29e1d084-e446-4a49-98f2-c94d8bfcc311"
+						},
+						{
+							"name": "imageUpload",
+							"item": [
+								{
+									"name": "Anp Edms Features Image Upload Endpoint",
+									"id": "3cdc4e15-1fa7-4cd3-8fa1-b74351d0be43",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "multipart/form-data"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "entityId",
+													"value": "<string>",
+													"type": "text"
+												},
+												{
+													"description": " (This can only be one of Supplier,Bid,Procurement,Contract,Project)",
+													"key": "module",
+													"value": "Supplier",
+													"type": "text"
+												},
+												{
+													"key": "documentTypeName",
+													"value": "<string>",
+													"type": "text"
+												}
+											]
+										},
+										"url": "{{baseUrl}}/api/edms/imageUpload"
+									},
+									"response": [
+										{
+											"id": "913ba85c-636f-47b4-8116-4aef2b5ab6ef",
+											"name": "Success",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "multipart/form-data"
+													}
+												],
+												"body": {
+													"mode": "formdata",
+													"formdata": [
+														{
+															"key": "entityId",
+															"value": "<string>",
+															"type": "text"
+														},
+														{
+															"description": " (This can only be one of Supplier,Bid,Procurement,Contract,Project)",
+															"key": "module",
+															"value": "Supplier",
+															"type": "text"
+														},
+														{
+															"key": "documentTypeName",
+															"value": "<string>",
+															"type": "text"
+														}
+													]
+												},
+												"url": "{{baseUrl}}/api/edms/imageUpload"
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"responseTime": null,
+											"body": ""
+										},
+										{
+											"id": "25b2a18a-2b18-4b8d-996d-65f902375284",
+											"name": "Forbidden",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "multipart/form-data"
+													}
+												],
+												"body": {
+													"mode": "formdata",
+													"formdata": [
+														{
+															"key": "entityId",
+															"value": "<string>",
+															"type": "text"
+														},
+														{
+															"description": " (This can only be one of Supplier,Bid,Procurement,Contract,Project)",
+															"key": "module",
+															"value": "Supplier",
+															"type": "text"
+														},
+														{
+															"key": "documentTypeName",
+															"value": "<string>",
+															"type": "text"
+														}
+													]
+												},
+												"url": "{{baseUrl}}/api/edms/imageUpload"
+											},
+											"status": "Forbidden",
+											"code": 403,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"responseTime": null,
+											"body": ""
+										}
+									]
+								}
+							],
+							"id": "a8825073-d19f-4508-90fe-4fe50784bd18"
+						},
+						{
+							"name": "procurement",
+							"item": [
+								{
+									"name": "documents",
+									"item": [
+										{
+											"name": "Anp Edms Features Get Procurement Documents Endpoint",
+											"id": "104dd6c0-2e85-4954-a1a0-1934b1b3ca4c",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": {
+														"token": "{{bearerToken}}"
+													}
+												},
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/edms/procurement/documents?entityId=<string>&subModule=ExpressionOfInterest",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"edms",
+														"procurement",
+														"documents"
+													],
+													"query": [
+														{
+															"key": "entityId",
+															"value": "<string>",
+															"description": "(Required) "
+														},
+														{
+															"key": "subModule",
+															"value": "ExpressionOfInterest"
+														}
+													]
+												}
+											},
+											"response": [
+												{
+													"id": "952eab66-0e73-4283-825a-6d53e11f97c2",
+													"name": "Success",
+													"originalRequest": {
+														"method": "GET",
+														"header": [
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/edms/procurement/documents?entityId=<string>&subModule=ExpressionOfInterest",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"edms",
+																"procurement",
+																"documents"
+															],
+															"query": [
+																{
+																	"description": "(Required) ",
+																	"key": "entityId",
+																	"value": "<string>"
+																},
+																{
+																	"key": "subModule",
+																	"value": "ExpressionOfInterest"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												},
+												{
+													"id": "e828cfb3-02ee-4db2-b295-9b285bf5d7bb",
+													"name": "Unauthorized",
+													"originalRequest": {
+														"method": "GET",
+														"header": [
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/edms/procurement/documents?entityId=<string>&subModule=ExpressionOfInterest",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"edms",
+																"procurement",
+																"documents"
+															],
+															"query": [
+																{
+																	"description": "(Required) ",
+																	"key": "entityId",
+																	"value": "<string>"
+																},
+																{
+																	"key": "subModule",
+																	"value": "ExpressionOfInterest"
+																}
+															]
+														}
+													},
+													"status": "Unauthorized",
+													"code": 401,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												},
+												{
+													"id": "2d7e4d1e-c82a-4c54-9404-e7d0b51211ac",
+													"name": "Forbidden",
+													"originalRequest": {
+														"method": "GET",
+														"header": [
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/edms/procurement/documents?entityId=<string>&subModule=ExpressionOfInterest",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"edms",
+																"procurement",
+																"documents"
+															],
+															"query": [
+																{
+																	"description": "(Required) ",
+																	"key": "entityId",
+																	"value": "<string>"
+																},
+																{
+																	"key": "subModule",
+																	"value": "ExpressionOfInterest"
+																}
+															]
+														}
+													},
+													"status": "Forbidden",
+													"code": 403,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												}
+											]
+										}
+									],
+									"id": "aa9755c9-5d7a-4cf6-8448-97557648d374"
+								}
+							],
+							"id": "f015c21c-16bb-4e4d-ba3a-44cebb044f4d"
+						},
+						{
+							"name": "uploadDocument",
+							"item": [
+								{
+									"name": "Anp Edms Features Upload Document Endpoint",
+									"id": "fd7b5dae-f3e1-49cc-991a-24cc7b5c1ba5",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "multipart/form-data"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "entityId",
+													"value": "<string>",
+													"type": "text"
+												},
+												{
+													"key": "module",
+													"value": "<string>",
+													"type": "text"
+												},
+												{
+													"key": "subModule",
+													"value": "<string>",
+													"type": "text"
+												},
+												{
+													"key": "documentTypeName",
+													"value": "<string>",
+													"type": "text"
+												},
+												{
+													"key": "file",
+													"type": "file",
+													"value": null
+												}
+											]
+										},
+										"url": "{{baseUrl}}/api/edms/uploadDocument"
+									},
+									"response": [
+										{
+											"id": "582db29f-c76b-4908-968a-8779d5ce1320",
+											"name": "Success",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "multipart/form-data"
+													}
+												],
+												"body": {
+													"mode": "formdata",
+													"formdata": [
+														{
+															"key": "entityId",
+															"value": "<string>",
+															"type": "text"
+														},
+														{
+															"key": "module",
+															"value": "<string>",
+															"type": "text"
+														},
+														{
+															"key": "subModule",
+															"value": "<string>",
+															"type": "text"
+														},
+														{
+															"key": "documentTypeName",
+															"value": "<string>",
+															"type": "text"
+														},
+														{
+															"key": "file",
+															"type": "file",
+															"src": []
+														}
+													]
+												},
+												"url": "{{baseUrl}}/api/edms/uploadDocument"
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"responseTime": null,
+											"body": ""
+										},
+										{
+											"id": "57611656-800d-4934-a547-90ade28a3c1a",
+											"name": "Forbidden",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "multipart/form-data"
+													}
+												],
+												"body": {
+													"mode": "formdata",
+													"formdata": [
+														{
+															"key": "entityId",
+															"value": "<string>",
+															"type": "text"
+														},
+														{
+															"key": "module",
+															"value": "<string>",
+															"type": "text"
+														},
+														{
+															"key": "subModule",
+															"value": "<string>",
+															"type": "text"
+														},
+														{
+															"key": "documentTypeName",
+															"value": "<string>",
+															"type": "text"
+														},
+														{
+															"key": "file",
+															"type": "file",
+															"src": []
+														}
+													]
+												},
+												"url": "{{baseUrl}}/api/edms/uploadDocument"
+											},
+											"status": "Forbidden",
+											"code": 403,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"responseTime": null,
+											"body": ""
+										}
+									]
+								}
+							],
+							"id": "0e173310-d6f9-46a5-ae38-90bac1c5c1f2"
+						},
+						{
+							"name": "supplier",
+							"item": [
+								{
+									"name": "documents",
+									"item": [
+										{
+											"name": "Anp Edms Features Supplier Get Supplier Documents Endpoint",
+											"id": "93bce28a-5341-4f52-8849-178f9e2dbb2d",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": {
+														"token": "{{bearerToken}}"
+													}
+												},
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/edms/supplier/documents?supplierId=<string>",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"edms",
+														"supplier",
+														"documents"
+													],
+													"query": [
+														{
+															"key": "supplierId",
+															"value": "<string>",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"response": [
+												{
+													"id": "84ea421c-faba-4ac9-a02d-44cf82fb0b70",
+													"name": "Success",
+													"originalRequest": {
+														"method": "GET",
+														"header": [
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/edms/supplier/documents?supplierId=<string>",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"edms",
+																"supplier",
+																"documents"
+															],
+															"query": [
+																{
+																	"description": "(Required) ",
+																	"key": "supplierId",
+																	"value": "<string>"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												},
+												{
+													"id": "b34d9a08-c947-4b7e-9884-4ef556a23731",
+													"name": "Unauthorized",
+													"originalRequest": {
+														"method": "GET",
+														"header": [
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/edms/supplier/documents?supplierId=<string>",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"edms",
+																"supplier",
+																"documents"
+															],
+															"query": [
+																{
+																	"description": "(Required) ",
+																	"key": "supplierId",
+																	"value": "<string>"
+																}
+															]
+														}
+													},
+													"status": "Unauthorized",
+													"code": 401,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												},
+												{
+													"id": "e311a1e6-28b8-44ac-83e1-20d2925ad8ff",
+													"name": "Forbidden",
+													"originalRequest": {
+														"method": "GET",
+														"header": [
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/edms/supplier/documents?supplierId=<string>",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"edms",
+																"supplier",
+																"documents"
+															],
+															"query": [
+																{
+																	"description": "(Required) ",
+																	"key": "supplierId",
+																	"value": "<string>"
+																}
+															]
+														}
+													},
+													"status": "Forbidden",
+													"code": 403,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												}
+											]
+										}
+									],
+									"id": "342284fe-4f17-45e3-87f8-712154a61b4c"
+								}
+							],
+							"id": "028bb21b-b62f-45bf-88c0-159703a430ed"
+						}
+					],
+					"id": "c08c43c8-0557-49db-8d93-5844c3143c97"
+				},
+				{
 					"name": "edms",
 					"item": [
 						{
@@ -63267,7 +64240,7 @@
 							"id": "ef07a7e2-d80d-40be-93f2-e748938a255d"
 						},
 						{
-							"name": "getDocuments Copy",
+							"name": "getProcurementDocuments",
 							"item": [
 								{
 									"name": "Anp Edms Features Get Documents Endpoint",
