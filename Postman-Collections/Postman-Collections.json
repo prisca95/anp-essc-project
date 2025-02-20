@@ -63410,7 +63410,8 @@
 												{
 													"key": "entityId",
 													"value": "<string>",
-													"type": "text"
+													"type": "text",
+													"description": "productId"
 												},
 												{
 													"description": " (This can only be one of Supplier,Bid,Procurement,Contract,Project)",
@@ -63420,7 +63421,7 @@
 												},
 												{
 													"key": "documentTypeName",
-													"value": "<string>",
+													"value": "ProductImages",
 													"type": "text"
 												}
 											]
@@ -63539,7 +63540,7 @@
 												"method": "GET",
 												"header": [],
 												"url": {
-													"raw": "{{baseUrl}}/api/edms/procurement/documents?entityId=<string>&subModule=ExpressionOfInterest",
+													"raw": "{{baseUrl}}/api/edms/procurement/documents?entityId=0713c6cf-cf5e-4e7e-34bc-08dd5196b4b2&subModule=ExpressionOfInterest",
 													"host": [
 														"{{baseUrl}}"
 													],
@@ -63552,7 +63553,7 @@
 													"query": [
 														{
 															"key": "entityId",
-															"value": "<string>",
+															"value": "0713c6cf-cf5e-4e7e-34bc-08dd5196b4b2",
 															"description": "(Required) "
 														},
 														{
@@ -64242,132 +64243,6 @@
 								}
 							],
 							"id": "ef07a7e2-d80d-40be-93f2-e748938a255d"
-						},
-						{
-							"name": "getProcurementDocuments",
-							"item": [
-								{
-									"name": "Anp Edms Features Get Documents Endpoint",
-									"id": "9cb850d2-6633-4ced-8595-d7979b70d2e2",
-									"protocolProfileBehavior": {
-										"disableBodyPruning": true
-									},
-									"request": {
-										"auth": {
-											"type": "bearer",
-											"bearer": {
-												"token": "{{bearerToken}}"
-											}
-										},
-										"method": "GET",
-										"header": [],
-										"url": {
-											"raw": "{{baseUrl}}/api/edms/getDocuments?fileNames=<string>&fileNames=<string>",
-											"host": [
-												"{{baseUrl}}"
-											],
-											"path": [
-												"api",
-												"edms",
-												"getDocuments"
-											],
-											"query": [
-												{
-													"key": "fileNames",
-													"value": "<string>",
-													"description": "(Required) "
-												},
-												{
-													"key": "fileNames",
-													"value": "<string>",
-													"description": "(Required) "
-												}
-											]
-										}
-									},
-									"response": [
-										{
-											"id": "24835dca-59b9-447e-98ab-566a11a8cdbd",
-											"name": "Success",
-											"originalRequest": {
-												"method": "GET",
-												"header": [
-													{
-														"description": "Added as a part of security scheme: bearer",
-														"key": "Authorization",
-														"value": "Bearer <token>"
-													}
-												],
-												"url": {
-													"raw": "{{baseUrl}}/api/edms/getDocuments?fileNames=<string>",
-													"host": [
-														"{{baseUrl}}"
-													],
-													"path": [
-														"api",
-														"edms",
-														"getDocuments"
-													],
-													"query": [
-														{
-															"description": "(Required) ",
-															"key": "fileNames",
-															"value": "<string>"
-														}
-													]
-												}
-											},
-											"status": "OK",
-											"code": 200,
-											"_postman_previewlanguage": "text",
-											"header": [],
-											"cookie": [],
-											"responseTime": null,
-											"body": ""
-										},
-										{
-											"id": "2d5e00bc-392a-4dd9-843d-e63e2491fc07",
-											"name": "Unauthorized",
-											"originalRequest": {
-												"method": "GET",
-												"header": [
-													{
-														"description": "Added as a part of security scheme: bearer",
-														"key": "Authorization",
-														"value": "Bearer <token>"
-													}
-												],
-												"url": {
-													"raw": "{{baseUrl}}/api/edms/getDocuments?fileNames=<string>",
-													"host": [
-														"{{baseUrl}}"
-													],
-													"path": [
-														"api",
-														"edms",
-														"getDocuments"
-													],
-													"query": [
-														{
-															"description": "(Required) ",
-															"key": "fileNames",
-															"value": "<string>"
-														}
-													]
-												}
-											},
-											"status": "Unauthorized",
-											"code": 401,
-											"_postman_previewlanguage": "text",
-											"header": [],
-											"cookie": [],
-											"responseTime": null,
-											"body": ""
-										}
-									]
-								}
-							],
-							"id": "7b44770b-d13c-4a46-9661-9011e8240c8f"
 						},
 						{
 							"name": "imageUpload",
