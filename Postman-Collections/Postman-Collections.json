@@ -63714,11 +63714,43 @@
 							"item": [
 								{
 									"name": "Anp Edms Features Upload Document Endpoint",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "484f91bd-840d-4698-9cf9-7fc06c57dd91",
+												"exec": [
+													"\r",
+													"pm.test(\"Status code is 200\", function () {\r",
+													"    pm.response.to.have.status(200);\r",
+													"});\r",
+													"\r",
+													"var responseJSON = pm.response.json(); \r",
+													"\r",
+													"pm.test(\"Verify that Document is Uploaded Successfulld\", function () {\r",
+													"\r",
+													"    pm.expect(responseJSON.data).to.be.an(\"object\").and.not.empty;\r",
+													"    // pm.expect(responseJSON.data.userName).to.be.a(\"string\").and.not.empty;\r",
+													"    //     pm.expect(responseJSON.data.phoneNumber).to.be.a(\"string\").and.not.empty;\r",
+													"\r",
+													"});"
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
 									"id": "fd7b5dae-f3e1-49cc-991a-24cc7b5c1ba5",
 									"protocolProfileBehavior": {
 										"disableBodyPruning": true
 									},
 									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": {
+												"token": "{{bearerToken}}"
+											}
+										},
 										"method": "POST",
 										"header": [
 											{
@@ -63731,32 +63763,32 @@
 											"formdata": [
 												{
 													"key": "entityId",
-													"value": "<string>",
+													"value": "{{tenderBidId}}",
 													"type": "text",
 													"description": "tenderbidid"
 												},
 												{
 													"key": "module",
-													"value": "<string>",
+													"value": "procurement",
 													"type": "text",
 													"description": "procurement"
 												},
 												{
 													"key": "subModule",
-													"value": "<string>",
+													"value": "ExpressionOfInterest",
 													"type": "text",
 													"description": "tendertype"
 												},
 												{
 													"key": "documentTypeName",
-													"value": "<string>",
+													"value": "XXX",
 													"type": "text",
 													"description": "AAA"
 												},
 												{
 													"key": "file",
 													"type": "file",
-													"value": null
+													"src": "postman-cloud:///1efdd93a-2efc-4bd0-a828-f97ca76a067f"
 												}
 											]
 										},
