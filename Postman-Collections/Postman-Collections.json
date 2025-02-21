@@ -54135,7 +54135,7 @@
 														"method": "GET",
 														"header": [],
 														"url": {
-															"raw": "{{baseUrl}}/api/procurement/bids/document/type?serviceInformationId=33587081-a945-4d3c-159c-08dd515ff99c&tenderType=TechnicalInformation",
+															"raw": "{{baseUrl}}/api/procurement/bids/document/type?serviceInformationId={{serviceInformationId}}&tenderType=ExpressionOfInterest&",
 															"host": [
 																"{{baseUrl}}"
 															],
@@ -54149,13 +54149,19 @@
 															"query": [
 																{
 																	"key": "serviceInformationId",
-																	"value": "33587081-a945-4d3c-159c-08dd515ff99c",
+																	"value": "{{serviceInformationId}}",
 																	"description": "(Required) "
 																},
 																{
 																	"key": "tenderType",
-																	"value": "TechnicalInformation",
-																	"description": "(Required) "
+																	"value": "ExpressionOfInterest",
+																	"description": "(Required) TechnicalInformation"
+																},
+																{
+																	"key": null,
+																	"value": null,
+																	"description": "ExpressionOfInterest",
+																	"type": "text"
 																}
 															]
 														}
