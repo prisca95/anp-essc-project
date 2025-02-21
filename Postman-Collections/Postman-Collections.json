@@ -51699,7 +51699,7 @@
 														],
 														"body": {
 															"mode": "raw",
-															"raw": "{\n  \"tenderBidId\": \"d162d3c5-8131-42a1-eebb-08dd50f4391d\",\n  \"status\": \"Approved\", //Active,Processing, Denied, New, Approved\n  \"tenderType\": \"TechnicalInformation\"\n}",
+															"raw": "{\n  \"tenderBidId\": \"{{tenderBidId}}\",\n  \"status\": \"Approved\", //Active,Processing, Denied, New, Approved\n  \"tenderType\": \"TechnicalInformation\"\n}",
 															"options": {
 																"raw": {
 																	"headerFamily": "json",
@@ -52444,7 +52444,7 @@
 														],
 														"body": {
 															"mode": "raw",
-															"raw": "{\n  \"cost\": \"1300000\",\n  \"totalCost\": \"1100000\",\n  \"quotedCost\": \"1100000\",\n  \"discount\": \"0\",\n  \"declaration\": true,\n  \"tenderBidId\": \"d162d3c5-8131-42a1-eebb-08dd50f4391d\"\n}\n//AFter financial have been approved the supplier should get an email",
+															"raw": "{\n  \"cost\": \"2000000\",\n  \"totalCost\": \"2000000\",\n  \"quotedCost\": \"2000000\",\n  \"discount\": \"0\",\n  \"declaration\": true,\n  \"tenderBidId\": \"{{tenderBidId}}\"\n}\n//AFter financial have been approved the supplier should get an email",
 															"options": {
 																"raw": {
 																	"headerFamily": "json",
@@ -53137,7 +53137,7 @@
 														"method": "GET",
 														"header": [],
 														"url": {
-															"raw": "{{baseUrl}}/api/procurement/bids/financial?tenderBidId=d162d3c5-8131-42a1-eebb-08dd50f4391d",
+															"raw": "{{baseUrl}}/api/procurement/bids/financial?tenderBidId={{tenderBidId}}",
 															"host": [
 																"{{baseUrl}}"
 															],
@@ -53150,7 +53150,7 @@
 															"query": [
 																{
 																	"key": "tenderBidId",
-																	"value": "d162d3c5-8131-42a1-eebb-08dd50f4391d",
+																	"value": "{{tenderBidId}}",
 																	"description": "(Required) "
 																}
 															]
