@@ -55634,7 +55634,7 @@
 												"auth": {
 													"type": "bearer",
 													"bearer": {
-														"token": "{{bearerToken}}"
+														"token": "{{approverBearerToken}}"
 													}
 												},
 												"method": "GET",
@@ -55658,7 +55658,7 @@
 														},
 														{
 															"key": "status",
-															"value": "Pending",
+															"value": "Approved",
 															"disabled": true
 														},
 														{
