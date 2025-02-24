@@ -55021,6 +55021,33 @@
 									"item": [
 										{
 											"name": "Anp Procurement Features Contract Get All Contracts Endpoint",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"id": "35f32e30-22e6-4c09-b6b6-29f32d65f8fe",
+														"exec": [
+															"//pm.collectionVariables.set(\"contractId\", pm.response.json().data.id);\r",
+															"\r",
+															"pm.test(\"Status code is 200\", function () {\r",
+															"    pm.response.to.have.status(200);\r",
+															"});\r",
+															"\r",
+															"var responseJSON = pm.response.json(); \r",
+															"\r",
+															"pm.test(\"Verify that a contracts are returned successfully\", function () {\r",
+															"\r",
+															"     pm.expect(responseJSON.isSuccess).to.be.a(\"boolean\");\r",
+															"    // pm.expect(responseJSON.data.id).to.be.a(\"string\").and.not.empty;\r",
+															"    pm.expect(responseJSON.data).to.be.an(\"object\").and.not.empty;\r",
+															"\r",
+															"});"
+														],
+														"type": "text/javascript",
+														"packages": {}
+													}
+												}
+											],
 											"id": "699e0007-670f-4959-b2a2-ced295ab6aef",
 											"protocolProfileBehavior": {
 												"disableBodyPruning": true
@@ -55035,7 +55062,7 @@
 												"method": "GET",
 												"header": [],
 												"url": {
-													"raw": "{{baseUrl}}/api/procurement/contracts/allcontracts?pageNumber=1&pageSize=20",
+													"raw": "{{baseUrl}}/api/procurement/contracts/allcontracts?status=Pending&pageNumber=1&pageSize=20",
 													"host": [
 														"{{baseUrl}}"
 													],
@@ -55053,8 +55080,8 @@
 														},
 														{
 															"key": "status",
-															"value": "Approved",
-															"disabled": true
+															"value": "Pending",
+															"description": "Accepted"
 														},
 														{
 															"key": "pageNumber",
