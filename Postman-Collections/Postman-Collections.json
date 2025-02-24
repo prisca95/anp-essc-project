@@ -54691,7 +54691,7 @@
 												"method": "GET",
 												"header": [],
 												"url": {
-													"raw": "{{baseUrl}}/api/procurement/bids/detail?tenderBidId=d162d3c5-8131-42a1-eebb-08dd50f4391d",
+													"raw": "{{baseUrl}}/api/procurement/bids/detail?tenderBidId={{tenderBidId}}",
 													"host": [
 														"{{baseUrl}}"
 													],
@@ -54704,7 +54704,7 @@
 													"query": [
 														{
 															"key": "tenderBidId",
-															"value": "d162d3c5-8131-42a1-eebb-08dd50f4391d",
+															"value": "{{tenderBidId}}",
 															"description": "(Required) "
 														}
 													]
