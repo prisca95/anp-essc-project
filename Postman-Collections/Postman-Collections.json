@@ -1174,7 +1174,7 @@
 										],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n    //\"email\": \"{{email}}\",\n  \"userName\":  \"bobby@yopmail.com\",//\"milo@yopmail.com\",//\"yinka@yopmail.com\",\n  // \"userName\":\"cesaltino.babo@anp.tl\", //initiator\n //  \"userName\": \"abel.saldanha@anp.tl\", //1st approver\n  // \"userName\": \"jaime.ximenes@anp.tl\", //2nd approver\n  \"password\": \"Password12@@\"\n}",
+											"raw": "{\n    //\"email\": \"{{email}}\",\n  \"userName\":  \"{{email}}\",//\"bobby@yopmail.com\",//\"milo@yopmail.com\",//\"yinka@yopmail.com\",\n  // \"userName\":\"cesaltino.babo@anp.tl\", //initiator\n //  \"userName\": \"abel.saldanha@anp.tl\", //1st approver\n  // \"userName\": \"jaime.ximenes@anp.tl\", //2nd approver\n  \"password\": \"Password12@@\"\n}",
 											"options": {
 												"raw": {
 													"headerFamily": "json",
@@ -1979,546 +1979,6 @@
 								}
 							],
 							"id": "d0a96331-088d-49a3-a0cc-784153ffe4a7"
-						},
-						{
-							"name": "Regulator login",
-							"item": [
-								{
-									"name": "Initiator - Login",
-									"event": [
-										{
-											"listen": "test",
-											"script": {
-												"id": "de80e272-27c8-4bcc-b1dc-a25ee9ae3289",
-												"exec": [
-													"pm.collectionVariables.set(\"initiatorBearerToken\", pm.response.json().data.accessToken);\r",
-													"pm.collectionVariables.set(\"initiatorRefreshToken\", pm.response.json().data.refreshToken);\r",
-													"pm.collectionVariables.set(\"initiatorUserId\", pm.response.json().data.userId);\r",
-													"//pm.collectionVariables.set(\"supplierId\", pm.response.json().data.supplierId);\r",
-													"//supplier variable is created in the create supplier endpoint\r",
-													"\r",
-													"pm.test(\"Status code is 200\", function () {\r",
-													"    pm.response.to.have.status(200);\r",
-													"});\r",
-													"\r",
-													"var responseJSON = pm.response.json(); // Fixed the variable name from responseData to responseJSON\r",
-													"\r",
-													"pm.test(\"Verify that login is successful\", function () {\r",
-													"    pm.expect(responseJSON.isSuccess).to.be.a(\"boolean\");\r",
-													"    pm.expect(responseJSON.data.message).to.be.a(\"string\").and.not.empty;\r",
-													"    pm.expect(responseJSON.data.accessToken).to.be.a(\"string\").and.not.empty;\r",
-													"    pm.expect(responseJSON.data.refreshToken).to.be.a(\"string\").and.not.empty;\r",
-													"});\r",
-													"pm.test(\"Response time is less than 200ms\", function () {\r",
-													"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
-													"});\r",
-													""
-												],
-												"type": "text/javascript",
-												"packages": {}
-											}
-										}
-									],
-									"id": "381a97cf-47d4-4ba0-82c1-e08754853bdf",
-									"protocolProfileBehavior": {
-										"disableBodyPruning": true
-									},
-									"request": {
-										"method": "POST",
-										"header": [
-											{
-												"key": "Content-Type",
-												"value": "application/json"
-											},
-											{
-												"key": "Accept",
-												"value": "application/json"
-											}
-										],
-										"body": {
-											"mode": "raw",
-											"raw": "{\n    //\"email\": \"{{email}}\",\n // \"userName\": \"bailey@yopmail.com\",//\"yinka@yopmail.com\",\n   \"userName\":\"cesaltino.babo@anp.tl\", //initiator\n  // \"userName\": \"abel.saldanha@anp.tl\", //1st approver\n  // \"userName\": \"jaime.ximenes@anp.tl\", //2nd approver\n  \"password\": \"Password12@@\"\n}",
-											"options": {
-												"raw": {
-													"headerFamily": "json",
-													"language": "json"
-												}
-											}
-										},
-										"url": "{{baseUrl}}/api/account/login"
-									},
-									"response": [
-										{
-											"id": "872c6621-8dfe-4264-8551-d77543781c0e",
-											"name": "Success",
-											"originalRequest": {
-												"method": "POST",
-												"header": [
-													{
-														"key": "Content-Type",
-														"value": "application/json"
-													},
-													{
-														"key": "Accept",
-														"value": "application/json"
-													}
-												],
-												"body": {
-													"mode": "raw",
-													"raw": "{\n  \"userName\": \"<string>\",\n  \"password\": \"<string>\"\n}",
-													"options": {
-														"raw": {
-															"headerFamily": "json",
-															"language": "json"
-														}
-													}
-												},
-												"url": "{{baseUrl}}/api/account/login"
-											},
-											"status": "OK",
-											"code": 200,
-											"_postman_previewlanguage": "json",
-											"header": [
-												{
-													"key": "Content-Type",
-													"value": "application/json"
-												}
-											],
-											"cookie": [],
-											"responseTime": null,
-											"body": "{\n  \"isSuccess\": \"<boolean>\",\n  \"data\": {\n    \"message\": \"<string>\",\n    \"accessToken\": \"<string>\",\n    \"refreshToken\": \"<string>\",\n    \"role\": \"<string>\",\n    \"userId\": \"<string>\",\n    \"supplierId\": \"<string>\"\n  },\n  \"errorMessage\": \"<string>\"\n}"
-										},
-										{
-											"id": "251f0295-3e9c-4193-9348-262d655a35fe",
-											"name": "Bad Request",
-											"originalRequest": {
-												"method": "POST",
-												"header": [
-													{
-														"key": "Content-Type",
-														"value": "application/json"
-													},
-													{
-														"key": "Accept",
-														"value": "application/problem+json"
-													}
-												],
-												"body": {
-													"mode": "raw",
-													"raw": "{\n  \"userName\": \"<string>\",\n  \"password\": \"<string>\"\n}",
-													"options": {
-														"raw": {
-															"headerFamily": "json",
-															"language": "json"
-														}
-													}
-												},
-												"url": "{{baseUrl}}/api/account/login"
-											},
-											"status": "Bad Request",
-											"code": 400,
-											"_postman_previewlanguage": "json",
-											"header": [
-												{
-													"key": "Content-Type",
-													"value": "application/problem+json"
-												}
-											],
-											"cookie": [],
-											"responseTime": null,
-											"body": "{\n  \"type\": \"https://www.rfc-editor.org/rfc/rfc7231#section-6.5.1\",\n  \"title\": \"One or more validation errors occurred.\",\n  \"status\": 400,\n  \"instance\": \"/api/route\",\n  \"traceId\": \"0HMPNHL0JHL76:00000001\",\n  \"detail\": \"<string>\",\n  \"errors\": [\n    {\n      \"name\": \"Error or field name\",\n      \"reason\": \"Error reason\",\n      \"code\": \"<string>\",\n      \"severity\": \"<string>\"\n    },\n    {\n      \"name\": \"Error or field name\",\n      \"reason\": \"Error reason\",\n      \"code\": \"<string>\",\n      \"severity\": \"<string>\"\n    }\n  ]\n}"
-										},
-										{
-											"id": "a11c59b5-2fa2-43e7-9933-31b4181ad2df",
-											"name": "Unauthorized",
-											"originalRequest": {
-												"method": "POST",
-												"header": [
-													{
-														"key": "Content-Type",
-														"value": "application/json"
-													}
-												],
-												"body": {
-													"mode": "raw",
-													"raw": "{\n  \"userName\": \"<string>\",\n  \"password\": \"<string>\"\n}",
-													"options": {
-														"raw": {
-															"headerFamily": "json",
-															"language": "json"
-														}
-													}
-												},
-												"url": "{{baseUrl}}/api/account/login"
-											},
-											"status": "Unauthorized",
-											"code": 401,
-											"_postman_previewlanguage": "text",
-											"header": [],
-											"cookie": [],
-											"responseTime": null,
-											"body": ""
-										}
-									]
-								},
-								{
-									"name": "Approver - Login",
-									"event": [
-										{
-											"listen": "test",
-											"script": {
-												"id": "de80e272-27c8-4bcc-b1dc-a25ee9ae3289",
-												"exec": [
-													"pm.collectionVariables.set(\"approverBearerToken\", pm.response.json().data.accessToken);\r",
-													"pm.collectionVariables.set(\"approverRefreshToken\", pm.response.json().data.refreshToken);\r",
-													"pm.collectionVariables.set(\"approverUserId\", pm.response.json().data.userId);\r",
-													"//pm.collectionVariables.set(\"supplierId\", pm.response.json().data.supplierId);\r",
-													"//supplier variable is created in the create supplier endpoint\r",
-													"\r",
-													"pm.test(\"Status code is 200\", function () {\r",
-													"    pm.response.to.have.status(200);\r",
-													"});\r",
-													"\r",
-													"var responseJSON = pm.response.json(); // Fixed the variable name from responseData to responseJSON\r",
-													"\r",
-													"pm.test(\"Verify that login is successful\", function () {\r",
-													"    pm.expect(responseJSON.isSuccess).to.be.a(\"boolean\");\r",
-													"    pm.expect(responseJSON.data.message).to.be.a(\"string\").and.not.empty;\r",
-													"    pm.expect(responseJSON.data.accessToken).to.be.a(\"string\").and.not.empty;\r",
-													"    pm.expect(responseJSON.data.refreshToken).to.be.a(\"string\").and.not.empty;\r",
-													"});\r",
-													"pm.test(\"Response time is less than 200ms\", function () {\r",
-													"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
-													"});\r",
-													""
-												],
-												"type": "text/javascript",
-												"packages": {}
-											}
-										}
-									],
-									"id": "ec268ffb-3d58-4254-9908-d9fc4edad4a6",
-									"protocolProfileBehavior": {
-										"disableBodyPruning": true
-									},
-									"request": {
-										"method": "POST",
-										"header": [
-											{
-												"key": "Content-Type",
-												"value": "application/json"
-											},
-											{
-												"key": "Accept",
-												"value": "application/json"
-											}
-										],
-										"body": {
-											"mode": "raw",
-											"raw": "{\n    //\"email\": \"{{email}}\",\n // \"userName\": \"bailey@yopmail.com\",//\"yinka@yopmail.com\",\n  // \"userName\":\"cesaltino.babo@anp.tl\", //initiator\n   \"userName\": \"abel.saldanha@anp.tl\", //1st approver\n  // \"userName\": \"jaime.ximenes@anp.tl\", //2nd approver\n  \"password\": \"Password12@@\"\n}",
-											"options": {
-												"raw": {
-													"headerFamily": "json",
-													"language": "json"
-												}
-											}
-										},
-										"url": "{{baseUrl}}/api/account/login"
-									},
-									"response": [
-										{
-											"id": "50446b4b-670b-44b0-89cf-daee2a2f7164",
-											"name": "Success",
-											"originalRequest": {
-												"method": "POST",
-												"header": [
-													{
-														"key": "Content-Type",
-														"value": "application/json"
-													},
-													{
-														"key": "Accept",
-														"value": "application/json"
-													}
-												],
-												"body": {
-													"mode": "raw",
-													"raw": "{\n  \"userName\": \"<string>\",\n  \"password\": \"<string>\"\n}",
-													"options": {
-														"raw": {
-															"headerFamily": "json",
-															"language": "json"
-														}
-													}
-												},
-												"url": "{{baseUrl}}/api/account/login"
-											},
-											"status": "OK",
-											"code": 200,
-											"_postman_previewlanguage": "json",
-											"header": [
-												{
-													"key": "Content-Type",
-													"value": "application/json"
-												}
-											],
-											"cookie": [],
-											"responseTime": null,
-											"body": "{\n  \"isSuccess\": \"<boolean>\",\n  \"data\": {\n    \"message\": \"<string>\",\n    \"accessToken\": \"<string>\",\n    \"refreshToken\": \"<string>\",\n    \"role\": \"<string>\",\n    \"userId\": \"<string>\",\n    \"supplierId\": \"<string>\"\n  },\n  \"errorMessage\": \"<string>\"\n}"
-										},
-										{
-											"id": "c1338b41-1b0a-4533-ac0f-a332ff3abe2d",
-											"name": "Bad Request",
-											"originalRequest": {
-												"method": "POST",
-												"header": [
-													{
-														"key": "Content-Type",
-														"value": "application/json"
-													},
-													{
-														"key": "Accept",
-														"value": "application/problem+json"
-													}
-												],
-												"body": {
-													"mode": "raw",
-													"raw": "{\n  \"userName\": \"<string>\",\n  \"password\": \"<string>\"\n}",
-													"options": {
-														"raw": {
-															"headerFamily": "json",
-															"language": "json"
-														}
-													}
-												},
-												"url": "{{baseUrl}}/api/account/login"
-											},
-											"status": "Bad Request",
-											"code": 400,
-											"_postman_previewlanguage": "json",
-											"header": [
-												{
-													"key": "Content-Type",
-													"value": "application/problem+json"
-												}
-											],
-											"cookie": [],
-											"responseTime": null,
-											"body": "{\n  \"type\": \"https://www.rfc-editor.org/rfc/rfc7231#section-6.5.1\",\n  \"title\": \"One or more validation errors occurred.\",\n  \"status\": 400,\n  \"instance\": \"/api/route\",\n  \"traceId\": \"0HMPNHL0JHL76:00000001\",\n  \"detail\": \"<string>\",\n  \"errors\": [\n    {\n      \"name\": \"Error or field name\",\n      \"reason\": \"Error reason\",\n      \"code\": \"<string>\",\n      \"severity\": \"<string>\"\n    },\n    {\n      \"name\": \"Error or field name\",\n      \"reason\": \"Error reason\",\n      \"code\": \"<string>\",\n      \"severity\": \"<string>\"\n    }\n  ]\n}"
-										},
-										{
-											"id": "43701300-ce23-431d-b829-f61a25d44769",
-											"name": "Unauthorized",
-											"originalRequest": {
-												"method": "POST",
-												"header": [
-													{
-														"key": "Content-Type",
-														"value": "application/json"
-													}
-												],
-												"body": {
-													"mode": "raw",
-													"raw": "{\n  \"userName\": \"<string>\",\n  \"password\": \"<string>\"\n}",
-													"options": {
-														"raw": {
-															"headerFamily": "json",
-															"language": "json"
-														}
-													}
-												},
-												"url": "{{baseUrl}}/api/account/login"
-											},
-											"status": "Unauthorized",
-											"code": 401,
-											"_postman_previewlanguage": "text",
-											"header": [],
-											"cookie": [],
-											"responseTime": null,
-											"body": ""
-										}
-									]
-								},
-								{
-									"name": "secondApprover - Login",
-									"event": [
-										{
-											"listen": "test",
-											"script": {
-												"id": "de80e272-27c8-4bcc-b1dc-a25ee9ae3289",
-												"exec": [
-													"pm.collectionVariables.set(\"secondApproverBearerToken\", pm.response.json().data.accessToken);\r",
-													"pm.collectionVariables.set(\"secondApproverRefreshToken\", pm.response.json().data.refreshToken);\r",
-													"pm.collectionVariables.set(\"secondApproverUserId\", pm.response.json().data.userId);\r",
-													"//pm.collectionVariables.set(\"supplierId\", pm.response.json().data.supplierId);\r",
-													"//supplier variable is created in the create supplier endpoint\r",
-													"\r",
-													"pm.test(\"Status code is 200\", function () {\r",
-													"    pm.response.to.have.status(200);\r",
-													"});\r",
-													"\r",
-													"var responseJSON = pm.response.json(); // Fixed the variable name from responseData to responseJSON\r",
-													"\r",
-													"pm.test(\"Verify that login is successful\", function () {\r",
-													"    pm.expect(responseJSON.isSuccess).to.be.a(\"boolean\");\r",
-													"    pm.expect(responseJSON.data.message).to.be.a(\"string\").and.not.empty;\r",
-													"    pm.expect(responseJSON.data.accessToken).to.be.a(\"string\").and.not.empty;\r",
-													"    pm.expect(responseJSON.data.refreshToken).to.be.a(\"string\").and.not.empty;\r",
-													"});\r",
-													"pm.test(\"Response time is less than 200ms\", function () {\r",
-													"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
-													"});\r",
-													""
-												],
-												"type": "text/javascript",
-												"packages": {}
-											}
-										}
-									],
-									"id": "1a09e751-d30e-4925-bbf5-03cc900f7d0a",
-									"protocolProfileBehavior": {
-										"disableBodyPruning": true
-									},
-									"request": {
-										"method": "POST",
-										"header": [
-											{
-												"key": "Content-Type",
-												"value": "application/json"
-											},
-											{
-												"key": "Accept",
-												"value": "application/json"
-											}
-										],
-										"body": {
-											"mode": "raw",
-											"raw": "{\n    //\"email\": \"{{email}}\",\n // \"userName\": \"bailey@yopmail.com\",//\"yinka@yopmail.com\",\n  // \"userName\":\"cesaltino.babo@anp.tl\", //initiator\n //  \"userName\": \"abel.saldanha@anp.tl\", //1st approver\n   \"userName\": \"jaime.ximenes@anp.tl\", //2nd approver\n  \"password\": \"Password12@@\"\n}",
-											"options": {
-												"raw": {
-													"headerFamily": "json",
-													"language": "json"
-												}
-											}
-										},
-										"url": "{{baseUrl}}/api/account/login"
-									},
-									"response": [
-										{
-											"id": "69ba000e-d45e-4e04-a288-83c0d1d1fe53",
-											"name": "Success",
-											"originalRequest": {
-												"method": "POST",
-												"header": [
-													{
-														"key": "Content-Type",
-														"value": "application/json"
-													},
-													{
-														"key": "Accept",
-														"value": "application/json"
-													}
-												],
-												"body": {
-													"mode": "raw",
-													"raw": "{\n  \"userName\": \"<string>\",\n  \"password\": \"<string>\"\n}",
-													"options": {
-														"raw": {
-															"headerFamily": "json",
-															"language": "json"
-														}
-													}
-												},
-												"url": "{{baseUrl}}/api/account/login"
-											},
-											"status": "OK",
-											"code": 200,
-											"_postman_previewlanguage": "json",
-											"header": [
-												{
-													"key": "Content-Type",
-													"value": "application/json"
-												}
-											],
-											"cookie": [],
-											"responseTime": null,
-											"body": "{\n  \"isSuccess\": \"<boolean>\",\n  \"data\": {\n    \"message\": \"<string>\",\n    \"accessToken\": \"<string>\",\n    \"refreshToken\": \"<string>\",\n    \"role\": \"<string>\",\n    \"userId\": \"<string>\",\n    \"supplierId\": \"<string>\"\n  },\n  \"errorMessage\": \"<string>\"\n}"
-										},
-										{
-											"id": "48e4b4b3-f171-49ea-9683-6e90e89007be",
-											"name": "Bad Request",
-											"originalRequest": {
-												"method": "POST",
-												"header": [
-													{
-														"key": "Content-Type",
-														"value": "application/json"
-													},
-													{
-														"key": "Accept",
-														"value": "application/problem+json"
-													}
-												],
-												"body": {
-													"mode": "raw",
-													"raw": "{\n  \"userName\": \"<string>\",\n  \"password\": \"<string>\"\n}",
-													"options": {
-														"raw": {
-															"headerFamily": "json",
-															"language": "json"
-														}
-													}
-												},
-												"url": "{{baseUrl}}/api/account/login"
-											},
-											"status": "Bad Request",
-											"code": 400,
-											"_postman_previewlanguage": "json",
-											"header": [
-												{
-													"key": "Content-Type",
-													"value": "application/problem+json"
-												}
-											],
-											"cookie": [],
-											"responseTime": null,
-											"body": "{\n  \"type\": \"https://www.rfc-editor.org/rfc/rfc7231#section-6.5.1\",\n  \"title\": \"One or more validation errors occurred.\",\n  \"status\": 400,\n  \"instance\": \"/api/route\",\n  \"traceId\": \"0HMPNHL0JHL76:00000001\",\n  \"detail\": \"<string>\",\n  \"errors\": [\n    {\n      \"name\": \"Error or field name\",\n      \"reason\": \"Error reason\",\n      \"code\": \"<string>\",\n      \"severity\": \"<string>\"\n    },\n    {\n      \"name\": \"Error or field name\",\n      \"reason\": \"Error reason\",\n      \"code\": \"<string>\",\n      \"severity\": \"<string>\"\n    }\n  ]\n}"
-										},
-										{
-											"id": "ef41f937-9ab0-4d86-aabf-d40b349d32ab",
-											"name": "Unauthorized",
-											"originalRequest": {
-												"method": "POST",
-												"header": [
-													{
-														"key": "Content-Type",
-														"value": "application/json"
-													}
-												],
-												"body": {
-													"mode": "raw",
-													"raw": "{\n  \"userName\": \"<string>\",\n  \"password\": \"<string>\"\n}",
-													"options": {
-														"raw": {
-															"headerFamily": "json",
-															"language": "json"
-														}
-													}
-												},
-												"url": "{{baseUrl}}/api/account/login"
-											},
-											"status": "Unauthorized",
-											"code": 401,
-											"_postman_previewlanguage": "text",
-											"header": [],
-											"cookie": [],
-											"responseTime": null,
-											"body": ""
-										}
-									]
-								}
-							],
-							"id": "6abe42e6-ffbb-4d14-ae3d-4fd92a001f3f"
 						},
 						{
 							"name": "token",
@@ -28614,6 +28074,546 @@
 								}
 							],
 							"id": "d3dbe2f3-5a97-44a2-b80c-ede6b5dfa79c"
+						},
+						{
+							"name": "Regulator login",
+							"item": [
+								{
+									"name": "Initiator - Login",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "de80e272-27c8-4bcc-b1dc-a25ee9ae3289",
+												"exec": [
+													"pm.collectionVariables.set(\"initiatorBearerToken\", pm.response.json().data.accessToken);\r",
+													"pm.collectionVariables.set(\"initiatorRefreshToken\", pm.response.json().data.refreshToken);\r",
+													"pm.collectionVariables.set(\"initiatorUserId\", pm.response.json().data.userId);\r",
+													"//pm.collectionVariables.set(\"supplierId\", pm.response.json().data.supplierId);\r",
+													"//supplier variable is created in the create supplier endpoint\r",
+													"\r",
+													"pm.test(\"Status code is 200\", function () {\r",
+													"    pm.response.to.have.status(200);\r",
+													"});\r",
+													"\r",
+													"var responseJSON = pm.response.json(); // Fixed the variable name from responseData to responseJSON\r",
+													"\r",
+													"pm.test(\"Verify that login is successful\", function () {\r",
+													"    pm.expect(responseJSON.isSuccess).to.be.a(\"boolean\");\r",
+													"    pm.expect(responseJSON.data.message).to.be.a(\"string\").and.not.empty;\r",
+													"    pm.expect(responseJSON.data.accessToken).to.be.a(\"string\").and.not.empty;\r",
+													"    pm.expect(responseJSON.data.refreshToken).to.be.a(\"string\").and.not.empty;\r",
+													"});\r",
+													"pm.test(\"Response time is less than 200ms\", function () {\r",
+													"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+													"});\r",
+													""
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
+									"id": "381a97cf-47d4-4ba0-82c1-e08754853bdf",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    //\"email\": \"{{email}}\",\n // \"userName\": \"bailey@yopmail.com\",//\"yinka@yopmail.com\",\n   \"userName\":\"cesaltino.babo@anp.tl\", //initiator\n  // \"userName\": \"abel.saldanha@anp.tl\", //1st approver\n  // \"userName\": \"jaime.ximenes@anp.tl\", //2nd approver\n  \"password\": \"Password12@@\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{baseUrl}}/api/account/login"
+									},
+									"response": [
+										{
+											"id": "872c6621-8dfe-4264-8551-d77543781c0e",
+											"name": "Success",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"userName\": \"<string>\",\n  \"password\": \"<string>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl}}/api/account/login"
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"responseTime": null,
+											"body": "{\n  \"isSuccess\": \"<boolean>\",\n  \"data\": {\n    \"message\": \"<string>\",\n    \"accessToken\": \"<string>\",\n    \"refreshToken\": \"<string>\",\n    \"role\": \"<string>\",\n    \"userId\": \"<string>\",\n    \"supplierId\": \"<string>\"\n  },\n  \"errorMessage\": \"<string>\"\n}"
+										},
+										{
+											"id": "251f0295-3e9c-4193-9348-262d655a35fe",
+											"name": "Bad Request",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "application/problem+json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"userName\": \"<string>\",\n  \"password\": \"<string>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl}}/api/account/login"
+											},
+											"status": "Bad Request",
+											"code": 400,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/problem+json"
+												}
+											],
+											"cookie": [],
+											"responseTime": null,
+											"body": "{\n  \"type\": \"https://www.rfc-editor.org/rfc/rfc7231#section-6.5.1\",\n  \"title\": \"One or more validation errors occurred.\",\n  \"status\": 400,\n  \"instance\": \"/api/route\",\n  \"traceId\": \"0HMPNHL0JHL76:00000001\",\n  \"detail\": \"<string>\",\n  \"errors\": [\n    {\n      \"name\": \"Error or field name\",\n      \"reason\": \"Error reason\",\n      \"code\": \"<string>\",\n      \"severity\": \"<string>\"\n    },\n    {\n      \"name\": \"Error or field name\",\n      \"reason\": \"Error reason\",\n      \"code\": \"<string>\",\n      \"severity\": \"<string>\"\n    }\n  ]\n}"
+										},
+										{
+											"id": "a11c59b5-2fa2-43e7-9933-31b4181ad2df",
+											"name": "Unauthorized",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"userName\": \"<string>\",\n  \"password\": \"<string>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl}}/api/account/login"
+											},
+											"status": "Unauthorized",
+											"code": 401,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"responseTime": null,
+											"body": ""
+										}
+									]
+								},
+								{
+									"name": "Approver - Login",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "de80e272-27c8-4bcc-b1dc-a25ee9ae3289",
+												"exec": [
+													"pm.collectionVariables.set(\"approverBearerToken\", pm.response.json().data.accessToken);\r",
+													"pm.collectionVariables.set(\"approverRefreshToken\", pm.response.json().data.refreshToken);\r",
+													"pm.collectionVariables.set(\"approverUserId\", pm.response.json().data.userId);\r",
+													"//pm.collectionVariables.set(\"supplierId\", pm.response.json().data.supplierId);\r",
+													"//supplier variable is created in the create supplier endpoint\r",
+													"\r",
+													"pm.test(\"Status code is 200\", function () {\r",
+													"    pm.response.to.have.status(200);\r",
+													"});\r",
+													"\r",
+													"var responseJSON = pm.response.json(); // Fixed the variable name from responseData to responseJSON\r",
+													"\r",
+													"pm.test(\"Verify that login is successful\", function () {\r",
+													"    pm.expect(responseJSON.isSuccess).to.be.a(\"boolean\");\r",
+													"    pm.expect(responseJSON.data.message).to.be.a(\"string\").and.not.empty;\r",
+													"    pm.expect(responseJSON.data.accessToken).to.be.a(\"string\").and.not.empty;\r",
+													"    pm.expect(responseJSON.data.refreshToken).to.be.a(\"string\").and.not.empty;\r",
+													"});\r",
+													"pm.test(\"Response time is less than 200ms\", function () {\r",
+													"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+													"});\r",
+													""
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
+									"id": "ec268ffb-3d58-4254-9908-d9fc4edad4a6",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    //\"email\": \"{{email}}\",\n // \"userName\": \"bailey@yopmail.com\",//\"yinka@yopmail.com\",\n  // \"userName\":\"cesaltino.babo@anp.tl\", //initiator\n   \"userName\": \"abel.saldanha@anp.tl\", //1st approver\n  // \"userName\": \"jaime.ximenes@anp.tl\", //2nd approver\n  \"password\": \"Password12@@\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{baseUrl}}/api/account/login"
+									},
+									"response": [
+										{
+											"id": "50446b4b-670b-44b0-89cf-daee2a2f7164",
+											"name": "Success",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"userName\": \"<string>\",\n  \"password\": \"<string>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl}}/api/account/login"
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"responseTime": null,
+											"body": "{\n  \"isSuccess\": \"<boolean>\",\n  \"data\": {\n    \"message\": \"<string>\",\n    \"accessToken\": \"<string>\",\n    \"refreshToken\": \"<string>\",\n    \"role\": \"<string>\",\n    \"userId\": \"<string>\",\n    \"supplierId\": \"<string>\"\n  },\n  \"errorMessage\": \"<string>\"\n}"
+										},
+										{
+											"id": "c1338b41-1b0a-4533-ac0f-a332ff3abe2d",
+											"name": "Bad Request",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "application/problem+json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"userName\": \"<string>\",\n  \"password\": \"<string>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl}}/api/account/login"
+											},
+											"status": "Bad Request",
+											"code": 400,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/problem+json"
+												}
+											],
+											"cookie": [],
+											"responseTime": null,
+											"body": "{\n  \"type\": \"https://www.rfc-editor.org/rfc/rfc7231#section-6.5.1\",\n  \"title\": \"One or more validation errors occurred.\",\n  \"status\": 400,\n  \"instance\": \"/api/route\",\n  \"traceId\": \"0HMPNHL0JHL76:00000001\",\n  \"detail\": \"<string>\",\n  \"errors\": [\n    {\n      \"name\": \"Error or field name\",\n      \"reason\": \"Error reason\",\n      \"code\": \"<string>\",\n      \"severity\": \"<string>\"\n    },\n    {\n      \"name\": \"Error or field name\",\n      \"reason\": \"Error reason\",\n      \"code\": \"<string>\",\n      \"severity\": \"<string>\"\n    }\n  ]\n}"
+										},
+										{
+											"id": "43701300-ce23-431d-b829-f61a25d44769",
+											"name": "Unauthorized",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"userName\": \"<string>\",\n  \"password\": \"<string>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl}}/api/account/login"
+											},
+											"status": "Unauthorized",
+											"code": 401,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"responseTime": null,
+											"body": ""
+										}
+									]
+								},
+								{
+									"name": "secondApprover - Login",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "de80e272-27c8-4bcc-b1dc-a25ee9ae3289",
+												"exec": [
+													"pm.collectionVariables.set(\"secondApproverBearerToken\", pm.response.json().data.accessToken);\r",
+													"pm.collectionVariables.set(\"secondApproverRefreshToken\", pm.response.json().data.refreshToken);\r",
+													"pm.collectionVariables.set(\"secondApproverUserId\", pm.response.json().data.userId);\r",
+													"//pm.collectionVariables.set(\"supplierId\", pm.response.json().data.supplierId);\r",
+													"//supplier variable is created in the create supplier endpoint\r",
+													"\r",
+													"pm.test(\"Status code is 200\", function () {\r",
+													"    pm.response.to.have.status(200);\r",
+													"});\r",
+													"\r",
+													"var responseJSON = pm.response.json(); // Fixed the variable name from responseData to responseJSON\r",
+													"\r",
+													"pm.test(\"Verify that login is successful\", function () {\r",
+													"    pm.expect(responseJSON.isSuccess).to.be.a(\"boolean\");\r",
+													"    pm.expect(responseJSON.data.message).to.be.a(\"string\").and.not.empty;\r",
+													"    pm.expect(responseJSON.data.accessToken).to.be.a(\"string\").and.not.empty;\r",
+													"    pm.expect(responseJSON.data.refreshToken).to.be.a(\"string\").and.not.empty;\r",
+													"});\r",
+													"pm.test(\"Response time is less than 200ms\", function () {\r",
+													"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+													"});\r",
+													""
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
+									"id": "1a09e751-d30e-4925-bbf5-03cc900f7d0a",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    //\"email\": \"{{email}}\",\n // \"userName\": \"bailey@yopmail.com\",//\"yinka@yopmail.com\",\n  // \"userName\":\"cesaltino.babo@anp.tl\", //initiator\n //  \"userName\": \"abel.saldanha@anp.tl\", //1st approver\n   \"userName\": \"jaime.ximenes@anp.tl\", //2nd approver\n  \"password\": \"Password12@@\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{baseUrl}}/api/account/login"
+									},
+									"response": [
+										{
+											"id": "69ba000e-d45e-4e04-a288-83c0d1d1fe53",
+											"name": "Success",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"userName\": \"<string>\",\n  \"password\": \"<string>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl}}/api/account/login"
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"responseTime": null,
+											"body": "{\n  \"isSuccess\": \"<boolean>\",\n  \"data\": {\n    \"message\": \"<string>\",\n    \"accessToken\": \"<string>\",\n    \"refreshToken\": \"<string>\",\n    \"role\": \"<string>\",\n    \"userId\": \"<string>\",\n    \"supplierId\": \"<string>\"\n  },\n  \"errorMessage\": \"<string>\"\n}"
+										},
+										{
+											"id": "48e4b4b3-f171-49ea-9683-6e90e89007be",
+											"name": "Bad Request",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "application/problem+json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"userName\": \"<string>\",\n  \"password\": \"<string>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl}}/api/account/login"
+											},
+											"status": "Bad Request",
+											"code": 400,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/problem+json"
+												}
+											],
+											"cookie": [],
+											"responseTime": null,
+											"body": "{\n  \"type\": \"https://www.rfc-editor.org/rfc/rfc7231#section-6.5.1\",\n  \"title\": \"One or more validation errors occurred.\",\n  \"status\": 400,\n  \"instance\": \"/api/route\",\n  \"traceId\": \"0HMPNHL0JHL76:00000001\",\n  \"detail\": \"<string>\",\n  \"errors\": [\n    {\n      \"name\": \"Error or field name\",\n      \"reason\": \"Error reason\",\n      \"code\": \"<string>\",\n      \"severity\": \"<string>\"\n    },\n    {\n      \"name\": \"Error or field name\",\n      \"reason\": \"Error reason\",\n      \"code\": \"<string>\",\n      \"severity\": \"<string>\"\n    }\n  ]\n}"
+										},
+										{
+											"id": "ef41f937-9ab0-4d86-aabf-d40b349d32ab",
+											"name": "Unauthorized",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"userName\": \"<string>\",\n  \"password\": \"<string>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl}}/api/account/login"
+											},
+											"status": "Unauthorized",
+											"code": 401,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"responseTime": null,
+											"body": ""
+										}
+									]
+								}
+							],
+							"id": "6abe42e6-ffbb-4d14-ae3d-4fd92a001f3f"
 						}
 					],
 					"id": "8f3cf938-f7bd-4aa0-ae7d-1dba817b54df"
