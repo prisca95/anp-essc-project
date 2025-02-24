@@ -43970,7 +43970,7 @@
 										],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n  \"requestId\": \"{{procurementRequestId}}\", \n  \"entityId\": \"{{serviceInformationId}}\",//procurementId\n  \"entityName\": \"Procurement\",\n  \"comment\": \"<string>\",\n  \"workflowAction\": \"Rejected\",\n  \"approverId\": \"{{initiatorUserId}}\",//login user id\n  \"descriptions\": \"E-procurement verification for Concrete\"\n}",
+											"raw": "{\n  \"requestId\": \"{{procurementRequestId}}\", \n  \"entityId\": \"{{serviceInformationId}}\",//procurementId\n  \"entityName\": \"Procurement\",\n  \"comment\": \"<string>\",\n  \"workflowAction\": \"Approved\",\n  \"approverId\": \"{{initiatorUserId}}\",//login user id\n  \"descriptions\": \"E-procurement verification for Concrete\"\n}",
 											"options": {
 												"raw": {
 													"headerFamily": "json",
