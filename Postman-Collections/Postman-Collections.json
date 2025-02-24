@@ -54468,7 +54468,7 @@
 														"method": "GET",
 														"header": [],
 														"url": {
-															"raw": "{{baseUrl}}/api/procurement/bids/document/type?serviceInformationId={{serviceInformationId}}&tenderType=Commercials&",
+															"raw": "{{baseUrl}}/api/procurement/bids/document/type?serviceInformationId={{serviceInformationId}}&tenderType=ExpressionOfInterest",
 															"host": [
 																"{{baseUrl}}"
 															],
@@ -54487,12 +54487,14 @@
 																},
 																{
 																	"key": "tenderType",
-																	"value": "Commercials",
+																	"value": "ExpressionOfInterest",
 																	"description": "(Required) TechnicalInformation, ExpressionOfInterest"
 																},
 																{
 																	"key": "",
-																	"value": null
+																	"value": null,
+																	"description": "Commercials",
+																	"disabled": true
 																}
 															]
 														}
