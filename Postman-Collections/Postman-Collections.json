@@ -53286,7 +53286,7 @@
 														],
 														"body": {
 															"mode": "raw",
-															"raw": "{\n  \"tenderBidId\": \"d162d3c5-8131-42a1-eebb-08dd50f4391d\",\n  \"status\": \"Approved\",\n  \"tenderType\": \"Commercials\"\n}",
+															"raw": "{\n  \"tenderBidId\": \"{{tenderBidId}}\",\n  \"status\": \"Approved\",\n  \"tenderType\": \"Commercials\"\n}",
 															"options": {
 																"raw": {
 																	"headerFamily": "json",
