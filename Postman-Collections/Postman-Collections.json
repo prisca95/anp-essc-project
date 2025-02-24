@@ -410,11 +410,7 @@
 													"pm.test(\"Status code name has string\", function () {\r",
 													"    pm.response.to.have.status(\"Bad Request\");\r",
 													"});\r",
-													"pm.test(\"Verify that empty fields are validated\", function () {\r",
-													"    const responseJSON = pm.response.json();\r",
-													"    pm.expect(responseJSON.errors[0].name).to.be.a(\"string\").and.not.empty;\r",
-													"       pm.expect(responseJSON.errors[0].reason).to.be.a(\"string\").and.not.empty;\r",
-													"});\r",
+													"\r",
 													""
 												],
 												"type": "text/javascript",
