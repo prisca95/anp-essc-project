@@ -38329,7 +38329,7 @@
 										],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n  //\"serviceInformationId\": \"<string>\",\n  \"title\":\"{{$randomProductMaterial}}\",\n  \"bidStartDate\": \"2025-02-18\",\n  \"bidEndDate\": \"2025-02-19\",\n  \"description\": \"Export\",\n  \"businessType\": \"Sole proprietorship\",\n  \"bidRequirement\": \"2 contracts executed\",\n  \"prerequisite\": \"CAC\",\n  \"workReference\": \"<string>\",\n  \"additionalInformation\": \"<string>\",\n  \"industryId\": \"{{industryId}}\",\n  \"status\": 0\n}",
+											"raw": "{\n  //\"serviceInformationId\": \"<string>\",\n  \"title\":\"{{$randomProductMaterial}}\",\n  \"bidStartDate\": \"2025-02-18\",\n  \"bidEndDate\": \"2025-02-19\",\n  \"description\": \"Importation\",\n  \"businessType\": \"Sole proprietorship\",\n  \"bidRequirement\": \"Registered with 5 years experience\",\n  \"prerequisite\": \"CAC\",\n  \"workReference\": \"<string>\",\n  \"additionalInformation\": \"<string>\",\n  \"industryId\": \"{{industryId}}\",\n  \"status\": 0\n}",
 											"options": {
 												"raw": {
 													"headerFamily": "json",
@@ -40317,7 +40317,7 @@
 														],
 														"body": {
 															"mode": "raw",
-															"raw": "{\n // \"tenderDetailId\": \"<string>\",\n  \"startdate\": \"2025-02-18T00:00:00.906Z\",\n  \"endDate\": \"2025-02-19T00:00:00.906Z\",\n  \"tenderType\": \"TechnicalInformation\",//\"ExpressionOfInterest\",//\"Commercials\",\n  \"serviceInformationId\": \"{{serviceInformationId}}\",//\"85218a2b-83c4-464a-3cd6-08dd3c7c59fc\",\n  \"tenderDocuments\": [\n    {\n     // \"tenderDocumentId\": \"<string>\",\n      \"documentName\": \"CAC\",\n      \"assignPoint\": \"50\"\n    }\n//     {\n//    //   \"tenderDocumentId\": \"<string>\",\n//     //   \"documentName\": \"TIN\",\n//     //   \"assignPoint\": \"50\"\n //  }\n ]\n  }",
+															"raw": "{\n // \"tenderDetailId\": \"<string>\",\n  \"startdate\": \"2025-02-18T00:00:00.906Z\",\n  \"endDate\": \"2025-02-19T00:00:00.906Z\",\n  \"tenderType\": \"TechnicalInformation\",//\"ExpressionOfInterest\",////\"Commercials\",\n  \"serviceInformationId\": \"{{serviceInformationId}}\",//\"85218a2b-83c4-464a-3cd6-08dd3c7c59fc\",\n  \"tenderDocuments\": [\n    {\n     // \"tenderDocumentId\": \"<string>\",\n      \"documentName\": \"XXX\",\n      \"assignPoint\": \"50\"\n    }\n//     {\n//    //   \"tenderDocumentId\": \"<string>\",\n//     //   \"documentName\": \"TIN\",\n//     //   \"assignPoint\": \"50\"\n //  }\n ]\n  }",
 															"options": {
 																"raw": {
 																	"headerFamily": "json",
