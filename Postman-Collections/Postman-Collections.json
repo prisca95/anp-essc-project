@@ -40655,7 +40655,7 @@
 														],
 														"body": {
 															"mode": "raw",
-															"raw": "{\n // \"tenderDetailId\": \"<string>\",\n  \"startdate\": \"2025-02-18T00:00:00.906Z\",\n  \"endDate\": \"2025-02-19T00:00:00.906Z\",\n  \"tenderType\": \"Commercials\",//\"TechnicalInformation\",//\"Commercials\",\n  \"serviceInformationId\": \"{{serviceInformationId}}\",//\"85218a2b-83c4-464a-3cd6-08dd3c7c59fc\",\n  \"tenderDocuments\": [\n    {\n     // \"tenderDocumentId\": \"<string>\",\n      \"documentName\": \"PPP\",\n      \"assignPoint\": \"20\"\n    }\n//     {\n//    //   \"tenderDocumentId\": \"<string>\",\n//     //   \"documentName\": \"TIN\",\n//     //   \"assignPoint\": \"50\"\n //  }\n ]\n  }",
+															"raw": "{\n // \"tenderDetailId\": \"<string>\",\n  \"startdate\": \"2025-02-18T00:00:00.906Z\",\n  \"endDate\": \"2025-02-19T00:00:00.906Z\",\n  \"tenderType\": \"Commercials\",//\"TechnicalInformation\",//\"Commercials\",\n  \"serviceInformationId\": \"{{serviceInformationId}}\",//\"85218a2b-83c4-464a-3cd6-08dd3c7c59fc\",\n  \"tenderDocuments\": [\n    {\n     // \"tenderDocumentId\": \"<string>\",\n      \"documentName\": \"DDD\",\n      \"assignPoint\": \"20\"\n    }\n//     {\n//    //   \"tenderDocumentId\": \"<string>\",\n//     //   \"documentName\": \"TIN\",\n//     //   \"assignPoint\": \"50\"\n //  }\n ]\n  }",
 															"options": {
 																"raw": {
 																	"headerFamily": "json",
