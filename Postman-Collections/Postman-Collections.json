@@ -39639,7 +39639,7 @@
 												],
 												"body": {
 													"mode": "raw",
-													"raw": "{\n // \"tenderGoodsServicesId\": \"<string>\",\n  \"itemName\": \"{{$randomProductName}}\",\n  \"description\": \"Procurement of product\",\n  \"quantity\": 5,\n  \"estimatedCost\": 500000,\n  \"procurementMethod\": \"Request for proposal\",\n  \"warrantyDuration\": 5,\n  \"warrantyType\": \"Standard\",\n  \"serviceInformationId\": \"{{serviceInformationId}}\"\n}",
+													"raw": "{\n // \"tenderGoodsServicesId\": \"<string>\",\n  \"itemName\": \"{{$randomProductName}}\",\n  \"description\": \"Procurement of product\",\n  \"quantity\": 10,\n  \"estimatedCost\": 3000000,\n  \"procurementMethod\": \"Request for proposal\",\n  \"warrantyDuration\": 5,\n  \"warrantyType\": \"Standard\",\n  \"serviceInformationId\": \"{{serviceInformationId}}\"\n}",
 													"options": {
 														"raw": {
 															"headerFamily": "json",
@@ -49795,7 +49795,7 @@
 															"script": {
 																"id": "6f9152be-ce3e-4929-a6a1-95d4703b0950",
 																"exec": [
-																	"//pm.collectionVariables.set(\"tenderBidId\", pm.response.json().data.id);\r",
+																	"pm.collectionVariables.set(\"tenderBidId\", \"pm.response.json().data.id\");\r",
 																	"pm.test(\"Status code is 200\", function () {\r",
 																	"    pm.response.to.have.status(200);\r",
 																	"});\r",
@@ -49835,7 +49835,7 @@
 														],
 														"body": {
 															"mode": "raw",
-															"raw": "{\n  \"createdDate\": \"2025-02-18\",\n  \"serviceInformationId\": \"{{serviceInformationId}}\",\n  \"address\": \"Lagos\",\n  \"longitude\": \"{{$randomLongitude}}\",\n  \"latitude\": \"{{$randomLatitude}}\",\n  \"state\": \"Lagos\",\n  \"location\": \"Lagos\",\n  \"estimatedCost\": \"1300000\",\n  \"estimatedStartDate\": \"2025-02-18\",\n  \"estimatedEndDate\": \"2025-02-19\",\n  \"purpose\": \"Expression of interest for Plastic\",\n  \"declaration\": true,\n  \"companyId\": \"{{supplierId}}\"\n}",
+															"raw": "{\n  \"createdDate\": \"2025-02-18\",\n  \"serviceInformationId\": \"3a283903-9838-4b32-4c70-08dd52748831\",//{{serviceInformationId}}\",\n  \"address\": \"Lagos\",\n  \"longitude\": \"{{$randomLongitude}}\",\n  \"latitude\": \"{{$randomLatitude}}\",\n  \"state\": \"Lagos\",\n  \"location\": \"Lagos\",\n  \"estimatedCost\": \"3000000\",\n  \"estimatedStartDate\": \"2025-02-18\",\n  \"estimatedEndDate\": \"2025-02-19\",\n  \"purpose\": \"Expression of interest for Concrete\",\n  \"declaration\": true,\n  \"companyId\": \"{{supplierId}}\"\n}",
 															"options": {
 																"raw": {
 																	"headerFamily": "json",
@@ -51525,7 +51525,7 @@
 														],
 														"body": {
 															"mode": "raw",
-															"raw": "{\n  \"declaration\": true,\n  \"tenderBidId\": \"{{tenderBidId}}\",\n  \"technicalEvaluationDelivarable\": [\n    {\n      \"delivarbles\": \"First review\",\n      \"dueDate\": \"2025-02-22\",\n      \"amount\": \"700000\"\n     // \"technicalEvaluationId\": \"<string>\"\n    },\n    {\n      \"delivarbles\": \"Second review\",\n      \"dueDate\": \"2025-02-23\",\n      \"amount\": \"600000\"\n    //  \"technicalEvaluationId\": \"<string>\"\n    }\n  ]\n}",
+															"raw": "{\n  \"declaration\": true,\n  \"tenderBidId\": \"{{tenderBidId}}\",\n  \"technicalEvaluationDelivarable\": [\n    {\n      \"delivarbles\": \"First review\",\n      \"dueDate\": \"2025-02-22\",\n      \"amount\": \"1000000\"\n     // \"technicalEvaluationId\": \"<string>\"\n    },\n    {\n      \"delivarbles\": \"Second review\",\n      \"dueDate\": \"2025-02-23\",\n      \"amount\": \"1000000\"\n    //  \"technicalEvaluationId\": \"<string>\"\n    }\n  ]\n}",
 															"options": {
 																"raw": {
 																	"headerFamily": "json",
@@ -64083,13 +64083,13 @@
 												},
 												{
 													"key": "subModule",
-													"value": "ExpressionOfInterest",
+													"value": "TechnicalInformation",
 													"type": "text",
-													"description": "tendertype"
+													"description": "ExpressionOfInterest"
 												},
 												{
 													"key": "documentTypeName",
-													"value": "XXX",
+													"value": "YYY",
 													"type": "text",
 													"description": "AAA"
 												},
