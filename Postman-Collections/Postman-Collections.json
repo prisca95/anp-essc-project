@@ -43860,7 +43860,7 @@
 										],
 										"body": {
 											"mode": "raw",
-											"raw": "\n{\n  \"entityId\": \"{{serviceInformationId}}\", //procurementId\n  \"entityName\": \"Procurement\",\n  \"workflowDescription\": \"Procurement verification for Small\",\n  \"parameters\": [\n    {\n      \"parameterName\": \"procurementId\", \n      \"parameterValue\": \"{{serviceInformationId}}\"  //procurementId\n    },\n    {\n      \"parameterName\": \"baseurl\",\n      \"parameterValue\": \"{{baseUrl}}\"\n    }\n \n  ],\n  \"selectedWorkflowType\": \"Procurement\"\n}\n\n",
+											"raw": "\n{\n  \"entityId\": \"{{serviceInformationId}}\", //procurementId\n  \"entityName\": \"Procurement\",\n  \"workflowDescription\": \"Procurement verification for Soft\",\n  \"parameters\": [\n    {\n      \"parameterName\": \"procurementId\", \n      \"parameterValue\": \"{{serviceInformationId}}\"  //procurementId\n    },\n    {\n      \"parameterName\": \"baseurl\",\n      \"parameterValue\": \"{{baseUrl}}\"\n    }\n \n  ],\n  \"selectedWorkflowType\": \"Procurement\"\n}\n\n",
 											"options": {
 												"raw": {
 													"headerFamily": "json",
@@ -44084,7 +44084,7 @@
 										],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n  \"requestId\":  \"{{procurementRequestId}}\",//\"fa087b2a-e880-47ac-bb83-08dd341c5bcc\",\n  \"entityId\": \"{{serviceInformationId}}\", //procurementId\n  \"entityName\": \"Procurement\",\n  \"comment\": \"<string>\",\n  \"workflowAction\": \"Approved\",\n  \"approverId\": \"{{secondApproverUserId}}\",//login user id\n  \"descriptions\": \"E-procurement verification for small\"\n}",
+											"raw": "{\n  \"requestId\":  \"{{procurementRequestId}}\",//\"fa087b2a-e880-47ac-bb83-08dd341c5bcc\",\n  \"entityId\": \"{{serviceInformationId}}\", //procurementId\n  \"entityName\": \"Procurement\",\n  \"comment\": \"<string>\",\n  \"workflowAction\": \"Approved\",\n  \"approverId\": \"{{secondApproverUserId}}\",//login user id\n  \"descriptions\": \"E-procurement verification for Soft\"\n}",
 											"options": {
 												"raw": {
 													"headerFamily": "json",
@@ -44308,7 +44308,7 @@
 										],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n  \"requestId\": \"{{procurementRequestId}}\", \n  \"entityId\": \"{{serviceInformationId}}\",//procurementId\n  \"entityName\": \"Procurement\",\n  \"comment\": \"<string>\",\n  \"workflowAction\": \"Approved\",\n  \"approverId\": \"{{initiatorUserId}}\",//login user id\n  \"descriptions\": \"E-procurement verification for Concrete\"\n}",
+											"raw": "{\n  \"requestId\": \"{{procurementRequestId}}\", \n  \"entityId\": \"{{serviceInformationId}}\",//procurementId\n  \"entityName\": \"Procurement\",\n  \"comment\": \"<string>\",\n  \"workflowAction\": \"Approved\",\n  \"approverId\": \"{{initiatorUserId}}\",//login user id\n  \"descriptions\": \"E-procurement verification for soft\"\n}",
 											"options": {
 												"raw": {
 													"headerFamily": "json",
@@ -45890,7 +45890,7 @@
 													"variable": [
 														{
 															"key": "serviceInformationId",
-															"value": "265d9cde-e749-410d-4c6e-08dd52748831",
+															"value": "1e639d66-5be8-4dbf-4c6f-08dd52748831",
 															"description": "(Required) "
 														}
 													]
@@ -46958,7 +46958,7 @@
 													"variable": [
 														{
 															"key": "tenderDocumentId",
-															"value": "4c121b45-cb83-440b-c468-08dd3d4d6e57",
+															"value": "{{tenderDocumentId}}",
 															"description": "(Required) "
 														}
 													]
