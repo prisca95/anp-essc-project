@@ -54468,7 +54468,7 @@
 														"method": "GET",
 														"header": [],
 														"url": {
-															"raw": "{{baseUrl}}/api/procurement/bids/document/type?serviceInformationId={{serviceInformationId}}&tenderType=ExpressionOfInterest",
+															"raw": "{{baseUrl}}/api/procurement/bids/document/type?serviceInformationId={{serviceInformationId}}&tenderType=commercials",
 															"host": [
 																"{{baseUrl}}"
 															],
@@ -54487,12 +54487,12 @@
 																},
 																{
 																	"key": "tenderType",
-																	"value": "ExpressionOfInterest",
-																	"description": "(Required) TechnicalInformation, ExpressionOfInterest"
+																	"value": "commercials",
+																	"description": "(Required) TechnicalInformation, ExpressionOfInterest, commercials"
 																},
 																{
 																	"key": "",
-																	"value": null,
+																	"value": "",
 																	"description": "Commercials",
 																	"disabled": true
 																}
@@ -55081,7 +55081,7 @@
 														{
 															"key": "status",
 															"value": "Pending",
-															"description": "Accepted"
+															"description": "Accepted, Pending, Active"
 														},
 														{
 															"key": "pageNumber",
@@ -55266,33 +55266,6 @@
 									"item": [
 										{
 											"name": "Anp Procurement Features Contract Get A Contract Endpoint",
-											"event": [
-												{
-													"listen": "test",
-													"script": {
-														"id": "97d5f957-0002-4635-b3d9-20edb801f4ba",
-														"exec": [
-															"//pm.collectionVariables.set(\"contractId\", pm.response.json().data.id);\r",
-															"\r",
-															"pm.test(\"Status code is 200\", function () {\r",
-															"    pm.response.to.have.status(200);\r",
-															"});\r",
-															"\r",
-															"var responseJSON = pm.response.json(); \r",
-															"\r",
-															"pm.test(\"Verify that contract is returned successfully\", function () {\r",
-															"\r",
-															"     pm.expect(responseJSON.isSuccess).to.be.a(\"boolean\");\r",
-															"    // pm.expect(responseJSON.data.id).to.be.a(\"string\").and.not.empty;\r",
-															"    pm.expect(responseJSON.data).to.be.an(\"object\").and.not.empty;\r",
-															"\r",
-															"});"
-														],
-														"type": "text/javascript",
-														"packages": {}
-													}
-												}
-											],
 											"id": "13d7eede-e671-4bdd-a04b-a3252d53ee5e",
 											"protocolProfileBehavior": {
 												"disableBodyPruning": true
@@ -55301,13 +55274,13 @@
 												"auth": {
 													"type": "bearer",
 													"bearer": {
-														"token": "{{approverBearerToken}}"
+														"token": "{{bearerToken}}"
 													}
 												},
 												"method": "GET",
 												"header": [],
 												"url": {
-													"raw": "{{baseUrl}}/api/procurement/contracts/getContract?contractId={{contractId}}",
+													"raw": "{{baseUrl}}/api/procurement/contracts/:contractId",
 													"host": [
 														"{{baseUrl}}"
 													],
@@ -55315,13 +55288,13 @@
 														"api",
 														"procurement",
 														"contracts",
-														"getContract"
+														":contractId"
 													],
-													"query": [
+													"variable": [
 														{
 															"key": "contractId",
 															"value": "{{contractId}}",
-															"type": "text"
+															"description": "(Required) "
 														}
 													]
 												}
@@ -55500,8 +55473,9 @@
 													"formdata": [
 														{
 															"key": "contractId",
-															"value": "{{contractId}}",
-															"type": "text"
+															"value": "fa72afa9-e96f-4862-e91e-08dd55a53b55",
+															"type": "text",
+															"description": "fa72afa9-e96f-4862-e91e-08dd55a53b55"
 														},
 														{
 															"description": " (This can only be one of Pending,Active,Rejected,Accepted)",
