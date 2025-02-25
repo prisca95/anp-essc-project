@@ -56509,7 +56509,7 @@
 												"method": "GET",
 												"header": [],
 												"url": {
-													"raw": "{{baseUrl}}/api/procurement/proposal/detail?serviceInformationId=44c39cce-70ee-443b-a825-08dd50273ac8&isView=true",
+													"raw": "{{baseUrl}}/api/procurement/proposal/detail?serviceInformationId={{serviceInformationId}}&isView=true",
 													"host": [
 														"{{baseUrl}}"
 													],
@@ -56522,7 +56522,7 @@
 													"query": [
 														{
 															"key": "serviceInformationId",
-															"value": "44c39cce-70ee-443b-a825-08dd50273ac8",
+															"value": "{{serviceInformationId}}",
 															"description": "(Required) "
 														},
 														{
