@@ -55883,7 +55883,7 @@
 											"item": [
 												{
 													"name": "Anp Procurement Features Contract Supplier Contract Renewal Endpoint",
-													"id": "f1f98bdd-9182-434a-a377-220ffa6fe959",
+													"id": "5ef4991d-9b32-40ad-ad47-8d9dad376ddf",
 													"protocolProfileBehavior": {
 														"disableBodyPruning": true
 													},
@@ -55894,62 +55894,53 @@
 																"token": "{{bearerToken}}"
 															}
 														},
-														"method": "GET",
-														"header": [],
-														"url": {
-															"raw": "{{baseUrl}}/api/procurement/contracts/renew/request?contractId=<string>",
-															"host": [
-																"{{baseUrl}}"
-															],
-															"path": [
-																"api",
-																"procurement",
-																"contracts",
-																"renew",
-																"request"
-															],
-															"query": [
-																{
-																	"key": "contractId",
-																	"value": "<string>",
-																	"description": "(Required) "
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"contractId\": \"<string>\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
 																}
-															]
-														}
+															}
+														},
+														"url": "{{baseUrl}}/api/procurement/contracts/renew/request"
 													},
 													"response": [
 														{
-															"id": "f44f1b57-6b55-4581-ad26-e928b9e83f4a",
+															"id": "4429df59-3430-42c0-8e09-b82f065e7a0d",
 															"name": "Success",
 															"originalRequest": {
-																"method": "GET",
+																"method": "POST",
 																"header": [
+																	{
+																		"key": "Content-Type",
+																		"value": "application/json"
+																	},
 																	{
 																		"description": "Added as a part of security scheme: bearer",
 																		"key": "Authorization",
 																		"value": "Bearer <token>"
 																	}
 																],
-																"url": {
-																	"raw": "{{baseUrl}}/api/procurement/contracts/renew/request?contractId=<string>",
-																	"host": [
-																		"{{baseUrl}}"
-																	],
-																	"path": [
-																		"api",
-																		"procurement",
-																		"contracts",
-																		"renew",
-																		"request"
-																	],
-																	"query": [
-																		{
-																			"description": "(Required) ",
-																			"key": "contractId",
-																			"value": "<string>"
+																"body": {
+																	"mode": "raw",
+																	"raw": "{\n  \"contractId\": \"<string>\"\n}",
+																	"options": {
+																		"raw": {
+																			"headerFamily": "json",
+																			"language": "json"
 																		}
-																	]
-																}
+																	}
+																},
+																"url": "{{baseUrl}}/api/procurement/contracts/renew/request"
 															},
 															"status": "OK",
 															"code": 200,
@@ -55960,37 +55951,32 @@
 															"body": ""
 														},
 														{
-															"id": "fbc88ab2-6437-4449-8bd8-d24e4e3bce9c",
+															"id": "3f12d5c3-1dff-411a-9fef-9b335a13eb9c",
 															"name": "Unauthorized",
 															"originalRequest": {
-																"method": "GET",
+																"method": "POST",
 																"header": [
+																	{
+																		"key": "Content-Type",
+																		"value": "application/json"
+																	},
 																	{
 																		"description": "Added as a part of security scheme: bearer",
 																		"key": "Authorization",
 																		"value": "Bearer <token>"
 																	}
 																],
-																"url": {
-																	"raw": "{{baseUrl}}/api/procurement/contracts/renew/request?contractId=<string>",
-																	"host": [
-																		"{{baseUrl}}"
-																	],
-																	"path": [
-																		"api",
-																		"procurement",
-																		"contracts",
-																		"renew",
-																		"request"
-																	],
-																	"query": [
-																		{
-																			"description": "(Required) ",
-																			"key": "contractId",
-																			"value": "<string>"
+																"body": {
+																	"mode": "raw",
+																	"raw": "{\n  \"contractId\": \"<string>\"\n}",
+																	"options": {
+																		"raw": {
+																			"headerFamily": "json",
+																			"language": "json"
 																		}
-																	]
-																}
+																	}
+																},
+																"url": "{{baseUrl}}/api/procurement/contracts/renew/request"
 															},
 															"status": "Unauthorized",
 															"code": 401,
@@ -56001,37 +55987,32 @@
 															"body": ""
 														},
 														{
-															"id": "44e5e6dd-2981-4ee4-8557-871247d4b020",
+															"id": "d93c4dfc-d211-4010-9423-11131e3ebd65",
 															"name": "Forbidden",
 															"originalRequest": {
-																"method": "GET",
+																"method": "POST",
 																"header": [
+																	{
+																		"key": "Content-Type",
+																		"value": "application/json"
+																	},
 																	{
 																		"description": "Added as a part of security scheme: bearer",
 																		"key": "Authorization",
 																		"value": "Bearer <token>"
 																	}
 																],
-																"url": {
-																	"raw": "{{baseUrl}}/api/procurement/contracts/renew/request?contractId=<string>",
-																	"host": [
-																		"{{baseUrl}}"
-																	],
-																	"path": [
-																		"api",
-																		"procurement",
-																		"contracts",
-																		"renew",
-																		"request"
-																	],
-																	"query": [
-																		{
-																			"description": "(Required) ",
-																			"key": "contractId",
-																			"value": "<string>"
+																"body": {
+																	"mode": "raw",
+																	"raw": "{\n  \"contractId\": \"<string>\"\n}",
+																	"options": {
+																		"raw": {
+																			"headerFamily": "json",
+																			"language": "json"
 																		}
-																	]
-																}
+																	}
+																},
+																"url": "{{baseUrl}}/api/procurement/contracts/renew/request"
 															},
 															"status": "Forbidden",
 															"code": 403,
@@ -56044,11 +56025,11 @@
 													]
 												}
 											],
-											"id": "37cffe66-714e-405a-9b88-18d34dc47d35"
+											"id": "fa189d10-b337-411f-8a91-097b2db4bc55"
 										},
 										{
 											"name": "Anp Procurement Features Contract Contract Renewal Endpoint",
-											"id": "3f0227b2-5f23-426c-9506-a3ce53c48d2c",
+											"id": "ceff6f5c-8357-43fc-af47-74a0884c3c4d",
 											"protocolProfileBehavior": {
 												"disableBodyPruning": true
 											},
@@ -56059,70 +56040,53 @@
 														"token": "{{bearerToken}}"
 													}
 												},
-												"method": "GET",
-												"header": [],
-												"url": {
-													"raw": "{{baseUrl}}/api/procurement/contracts/renew?contractId=<string>&contractStatus=Rejected",
-													"host": [
-														"{{baseUrl}}"
-													],
-													"path": [
-														"api",
-														"procurement",
-														"contracts",
-														"renew"
-													],
-													"query": [
-														{
-															"key": "contractId",
-															"value": "<string>",
-															"description": "(Required) "
-														},
-														{
-															"key": "contractStatus",
-															"value": "Rejected",
-															"description": "(Required) "
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"contractId\": \"<string>\",\n  \"status\": \"Renewed\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
 														}
-													]
-												}
+													}
+												},
+												"url": "{{baseUrl}}/api/procurement/contracts/renew"
 											},
 											"response": [
 												{
-													"id": "995b0696-bdf8-48de-b7cb-2a2a6bb1c1b3",
+													"id": "1572e1be-a314-4771-b871-989054cc914a",
 													"name": "Success",
 													"originalRequest": {
-														"method": "GET",
+														"method": "POST",
 														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
 															{
 																"description": "Added as a part of security scheme: bearer",
 																"key": "Authorization",
 																"value": "Bearer <token>"
 															}
 														],
-														"url": {
-															"raw": "{{baseUrl}}/api/procurement/contracts/renew?contractId=<string>&contractStatus=Rejected",
-															"host": [
-																"{{baseUrl}}"
-															],
-															"path": [
-																"api",
-																"procurement",
-																"contracts",
-																"renew"
-															],
-															"query": [
-																{
-																	"description": "(Required) ",
-																	"key": "contractId",
-																	"value": "<string>"
-																},
-																{
-																	"description": "(Required) ",
-																	"key": "contractStatus",
-																	"value": "Rejected"
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"contractId\": \"<string>\",\n  \"status\": \"Renewed\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
 																}
-															]
-														}
+															}
+														},
+														"url": "{{baseUrl}}/api/procurement/contracts/renew"
 													},
 													"status": "OK",
 													"code": 200,
@@ -56133,41 +56097,32 @@
 													"body": ""
 												},
 												{
-													"id": "767bee63-5541-43c8-9f6e-0e09eb3c4b42",
+													"id": "425b9c08-161f-448a-a021-d1ba12798654",
 													"name": "Unauthorized",
 													"originalRequest": {
-														"method": "GET",
+														"method": "POST",
 														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
 															{
 																"description": "Added as a part of security scheme: bearer",
 																"key": "Authorization",
 																"value": "Bearer <token>"
 															}
 														],
-														"url": {
-															"raw": "{{baseUrl}}/api/procurement/contracts/renew?contractId=<string>&contractStatus=Rejected",
-															"host": [
-																"{{baseUrl}}"
-															],
-															"path": [
-																"api",
-																"procurement",
-																"contracts",
-																"renew"
-															],
-															"query": [
-																{
-																	"description": "(Required) ",
-																	"key": "contractId",
-																	"value": "<string>"
-																},
-																{
-																	"description": "(Required) ",
-																	"key": "contractStatus",
-																	"value": "Rejected"
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"contractId\": \"<string>\",\n  \"status\": \"Renewed\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
 																}
-															]
-														}
+															}
+														},
+														"url": "{{baseUrl}}/api/procurement/contracts/renew"
 													},
 													"status": "Unauthorized",
 													"code": 401,
@@ -56178,41 +56133,32 @@
 													"body": ""
 												},
 												{
-													"id": "dea58250-98e6-4255-95da-03d5aeddcbbd",
+													"id": "f2fd9b83-1d4b-4779-8a2d-e6113fc7aa54",
 													"name": "Forbidden",
 													"originalRequest": {
-														"method": "GET",
+														"method": "POST",
 														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
 															{
 																"description": "Added as a part of security scheme: bearer",
 																"key": "Authorization",
 																"value": "Bearer <token>"
 															}
 														],
-														"url": {
-															"raw": "{{baseUrl}}/api/procurement/contracts/renew?contractId=<string>&contractStatus=Rejected",
-															"host": [
-																"{{baseUrl}}"
-															],
-															"path": [
-																"api",
-																"procurement",
-																"contracts",
-																"renew"
-															],
-															"query": [
-																{
-																	"description": "(Required) ",
-																	"key": "contractId",
-																	"value": "<string>"
-																},
-																{
-																	"description": "(Required) ",
-																	"key": "contractStatus",
-																	"value": "Rejected"
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"contractId\": \"<string>\",\n  \"status\": \"Renewed\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
 																}
-															]
-														}
+															}
+														},
+														"url": "{{baseUrl}}/api/procurement/contracts/renew"
 													},
 													"status": "Forbidden",
 													"code": 403,
@@ -56225,7 +56171,7 @@
 											]
 										}
 									],
-									"id": "ead82acd-86aa-4c78-96f7-5226458f9269"
+									"id": "6de78858-ad82-4cd2-b88c-8c4c46c8ba79"
 								},
 								{
 									"name": "supplier",
