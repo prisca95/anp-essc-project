@@ -51525,7 +51525,7 @@
 														],
 														"body": {
 															"mode": "raw",
-															"raw": "{\n  \"declaration\": true,\n  \"tenderBidId\": \"{{tenderBidId}}\",\n  \"technicalEvaluationDelivarable\": [\n    {\n      \"delivarbles\": \"First review\",\n      \"dueDate\": \"2025-02-22\",\n      \"amount\": \"1000000\"\n     // \"technicalEvaluationId\": \"<string>\"\n    },\n    {\n      \"delivarbles\": \"Second review\",\n      \"dueDate\": \"2025-02-23\",\n      \"amount\": \"1000000\"\n    //  \"technicalEvaluationId\": \"<string>\"\n    }\n  ]\n}",
+															"raw": "{\n  \"declaration\": true,\n  \"tenderBidId\": \"{{tenderBidId}}\",\n  \"technicalEvaluationDelivarable\": [\n    {\n      \"delivarbles\": \"First review\",\n      \"dueDate\": \"2025-02-22\",\n      \"amount\": \"200000\"\n     // \"technicalEvaluationId\": \"<string>\"\n    },\n    {\n      \"delivarbles\": \"Second review\",\n      \"dueDate\": \"2025-02-23\",\n      \"amount\": \"100000\"\n    //  \"technicalEvaluationId\": \"<string>\"\n    }\n  ]\n}",
 															"options": {
 																"raw": {
 																	"headerFamily": "json",
@@ -52778,7 +52778,7 @@
 														],
 														"body": {
 															"mode": "raw",
-															"raw": "{\n  \"cost\": \"2000000\",\n  \"totalCost\": \"2000000\",\n  \"quotedCost\": \"2000000\",\n  \"discount\": \"0\",\n  \"declaration\": true,\n  \"tenderBidId\": \"{{tenderBidId}}\"\n}\n//AFter financial have been approved the supplier should get an email",
+															"raw": "{\n  \"cost\": \"300000\",\n  \"totalCost\": \"300000\",\n  \"quotedCost\": \"200000\",\n  \"discount\": \"0\",\n  \"declaration\": true,\n  \"tenderBidId\": \"{{tenderBidId}}\"\n}\n//AFter financial have been approved the supplier should get an email",
 															"options": {
 																"raw": {
 																	"headerFamily": "json",
