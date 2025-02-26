@@ -54468,7 +54468,7 @@
 														"method": "GET",
 														"header": [],
 														"url": {
-															"raw": "{{baseUrl}}/api/procurement/bids/document/type?serviceInformationId={{serviceInformationId}}&tenderType=commercials",
+															"raw": "{{baseUrl}}/api/procurement/bids/document/type?serviceInformationId={{serviceInformationId}}&tenderType=TechnicalInformation",
 															"host": [
 																"{{baseUrl}}"
 															],
@@ -54487,7 +54487,7 @@
 																},
 																{
 																	"key": "tenderType",
-																	"value": "commercials",
+																	"value": "TechnicalInformation",
 																	"description": "(Required) TechnicalInformation, ExpressionOfInterest, commercials"
 																},
 																{
