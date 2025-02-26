@@ -55266,6 +55266,33 @@
 									"item": [
 										{
 											"name": "Anp Procurement Features Contract Get A Contract Endpoint",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"id": "6db405b1-fe4d-4c98-bc6d-83ab44d6b920",
+														"exec": [
+															"//pm.collectionVariables.set(\"contractId\", pm.response.json().data.id);\r",
+															"\r",
+															"pm.test(\"Status code is 200\", function () {\r",
+															"    pm.response.to.have.status(200);\r",
+															"});\r",
+															"\r",
+															"var responseJSON = pm.response.json(); \r",
+															"\r",
+															"pm.test(\"Verify that a contract detail is returned successfully\", function () {\r",
+															"\r",
+															"     pm.expect(responseJSON.isSuccess).to.be.a(\"boolean\");\r",
+															"    // pm.expect(responseJSON.data.id).to.be.a(\"string\").and.not.empty;\r",
+															"    pm.expect(responseJSON.data).to.be.an(\"object\").and.not.empty;\r",
+															"\r",
+															"});"
+														],
+														"type": "text/javascript",
+														"packages": {}
+													}
+												}
+											],
 											"id": "13d7eede-e671-4bdd-a04b-a3252d53ee5e",
 											"protocolProfileBehavior": {
 												"disableBodyPruning": true
@@ -55280,7 +55307,7 @@
 												"method": "GET",
 												"header": [],
 												"url": {
-													"raw": "{{baseUrl}}/api/procurement/contracts/:contractId",
+													"raw": "{{baseUrl}}/api/procurement/contracts/getContract?contractId={{contractId}}",
 													"host": [
 														"{{baseUrl}}"
 													],
@@ -55288,13 +55315,12 @@
 														"api",
 														"procurement",
 														"contracts",
-														":contractId"
+														"getContract"
 													],
-													"variable": [
+													"query": [
 														{
 															"key": "contractId",
-															"value": "{{contractId}}",
-															"description": "(Required) "
+															"value": "{{contractId}}"
 														}
 													]
 												}
