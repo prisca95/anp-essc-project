@@ -55499,14 +55499,14 @@
 													"formdata": [
 														{
 															"key": "contractId",
-															"value": "fa72afa9-e96f-4862-e91e-08dd55a53b55",
+															"value": "{{contractId}}",
 															"type": "text",
 															"description": "fa72afa9-e96f-4862-e91e-08dd55a53b55"
 														},
 														{
 															"description": " (This can only be one of Pending,Active,Rejected,Accepted)",
 															"key": "status",
-															"value": "Rejected",
+															"value": "Accepted",
 															"type": "text"
 														},
 														{
@@ -55517,7 +55517,7 @@
 														{
 															"key": "attachment",
 															"type": "file",
-															"src": "Screenshots/Screenshot (2).png"
+															"src": "_q7SWMY0u/Screenshot (2).png"
 														}
 													]
 												},
