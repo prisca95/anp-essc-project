@@ -49835,7 +49835,7 @@
 														],
 														"body": {
 															"mode": "raw",
-															"raw": "{\n  \"createdDate\": \"2025-02-18\",\n  \"serviceInformationId\": \"3a283903-9838-4b32-4c70-08dd52748831\",//{{serviceInformationId}}\",\n  \"address\": \"Lagos\",\n  \"longitude\": \"{{$randomLongitude}}\",\n  \"latitude\": \"{{$randomLatitude}}\",\n  \"state\": \"Lagos\",\n  \"location\": \"Lagos\",\n  \"estimatedCost\": \"3000000\",\n  \"estimatedStartDate\": \"2025-02-18\",\n  \"estimatedEndDate\": \"2025-02-19\",\n  \"purpose\": \"Expression of interest for Concrete\",\n  \"declaration\": true,\n  \"companyId\": \"{{supplierId}}\"\n}",
+															"raw": "{\n  \"createdDate\": \"2025-02-18\",\n  \"serviceInformationId\": \"{{serviceInformationId}}\",\n  \"address\": \"Lagos\",\n  \"longitude\": \"{{$randomLongitude}}\",\n  \"latitude\": \"{{$randomLatitude}}\",\n  \"state\": \"Lagos\",\n  \"location\": \"Lagos\",\n  \"estimatedCost\": \"300000\",\n  \"estimatedStartDate\": \"2025-02-18\",\n  \"estimatedEndDate\": \"2025-02-19\",\n  \"purpose\": \"Expression of interest for Solar panel\",\n  \"declaration\": true,\n  \"companyId\": \"{{supplierId}}\"\n}",
 															"options": {
 																"raw": {
 																	"headerFamily": "json",
