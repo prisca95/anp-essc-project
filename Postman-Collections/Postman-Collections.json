@@ -56198,7 +56198,7 @@
 												],
 												"body": {
 													"mode": "raw",
-													"raw": "{\n  \"contractId\": \"<string>\",\n  \"status\": \"Renewed\"\n}",
+													"raw": "{\n  \"contractId\": \"<string>\",\n  \"status\": \"Renewed\" //Pending\n}",
 													"options": {
 														"raw": {
 															"headerFamily": "json",
