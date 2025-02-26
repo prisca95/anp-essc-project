@@ -55730,7 +55730,7 @@
 												"method": "GET",
 												"header": [],
 												"url": {
-													"raw": "{{baseUrl}}/api/procurement/contracts/deliverables?contractId=03ff98a6-7084-420a-2557-08dd552bf3cd",
+													"raw": "{{baseUrl}}/api/procurement/contracts/deliverables?contractId=cca3ba73-6b6e-449d-a34e-08dd56b1a239",
 													"host": [
 														"{{baseUrl}}"
 													],
@@ -55743,7 +55743,7 @@
 													"query": [
 														{
 															"key": "contractId",
-															"value": "03ff98a6-7084-420a-2557-08dd552bf3cd",
+															"value": "cca3ba73-6b6e-449d-a34e-08dd56b1a239",
 															"description": "(Required) "
 														}
 													]
@@ -56557,6 +56557,403 @@
 							"id": "93371b7e-6eb8-40ec-8da5-d88e5df2ca62"
 						},
 						{
+							"name": "proposals",
+							"item": [
+								{
+									"name": "Anp Procurement Features Bids Get Tender Access Endpoint",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "c14f35de-80a3-4436-97d7-449d3865a4f1",
+												"exec": [
+													"//pm.collectionVariables.set(\"serviceInformationId\", pm.response.json().data.id);\r",
+													"\r",
+													"pm.test(\"Status code is 200\", function () {\r",
+													"    pm.response.to.have.status(200);\r",
+													"});\r",
+													"\r",
+													"var responseJSON = pm.response.json(); \r",
+													"\r",
+													"pm.test(\"Verify that tenders are returned successfully\", function () {\r",
+													"\r",
+													"    // pm.expect(responseJSON.isSuccess).to.be.a(\"boolean\");\r",
+													"    // pm.expect(responseJSON.data.id).to.be.a(\"string\").and.not.empty;\r",
+													"    pm.expect(responseJSON.data[0]).to.be.an(\"object\").and.not.empty;\r",
+													"\r",
+													"});"
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
+									"id": "963f0c69-b8c2-47ee-b86d-197d6e4d74ec",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": {
+												"token": "{{approverBearerToken}}"
+											}
+										},
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/procurement/proposals?pageNumber=1&pageSize=10",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"procurement",
+												"proposals"
+											],
+											"query": [
+												{
+													"key": "pageNumber",
+													"value": "1",
+													"description": "(Required) "
+												},
+												{
+													"key": "pageSize",
+													"value": "10",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"id": "f9bfa08b-bafc-4ded-9b5a-0749c6dfe611",
+											"name": "Success",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"description": "Added as a part of security scheme: bearer",
+														"key": "Authorization",
+														"value": "Bearer <token>"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/procurement/proposals?pageNumber=<integer>&pageSize=<integer>",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"procurement",
+														"proposals"
+													],
+													"query": [
+														{
+															"description": "(Required) ",
+															"key": "pageNumber",
+															"value": "<integer>"
+														},
+														{
+															"description": "(Required) ",
+															"key": "pageSize",
+															"value": "<integer>"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"responseTime": null,
+											"body": ""
+										},
+										{
+											"id": "627286c4-5358-4d86-ac84-e54d4ad0f763",
+											"name": "Unauthorized",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"description": "Added as a part of security scheme: bearer",
+														"key": "Authorization",
+														"value": "Bearer <token>"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/procurement/proposals?pageNumber=<integer>&pageSize=<integer>",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"procurement",
+														"proposals"
+													],
+													"query": [
+														{
+															"description": "(Required) ",
+															"key": "pageNumber",
+															"value": "<integer>"
+														},
+														{
+															"description": "(Required) ",
+															"key": "pageSize",
+															"value": "<integer>"
+														}
+													]
+												}
+											},
+											"status": "Unauthorized",
+											"code": 401,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"responseTime": null,
+											"body": ""
+										},
+										{
+											"id": "7549ecdc-010c-42bc-8622-a90039a324a9",
+											"name": "Forbidden",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"description": "Added as a part of security scheme: bearer",
+														"key": "Authorization",
+														"value": "Bearer <token>"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/procurement/proposals?pageNumber=<integer>&pageSize=<integer>",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"procurement",
+														"proposals"
+													],
+													"query": [
+														{
+															"description": "(Required) ",
+															"key": "pageNumber",
+															"value": "<integer>"
+														},
+														{
+															"description": "(Required) ",
+															"key": "pageSize",
+															"value": "<integer>"
+														}
+													]
+												}
+											},
+											"status": "Forbidden",
+											"code": 403,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"responseTime": null,
+											"body": ""
+										}
+									]
+								},
+								{
+									"name": "No Auth - Get Tender Access Endpoint",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "3d02e734-38d9-4e11-b7ea-9a8934ca7662",
+												"exec": [
+													"pm.test(\"Status code is 401\", function () {\r",
+													"    pm.response.to.have.status(401);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Status code name has 'Unauthorized'\", function () {\r",
+													"    pm.response.to.have.status(\"Unauthorized\");\r",
+													"});"
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
+									"id": "40dd35c2-ab53-46a2-b68c-96c10318fcc9",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"auth": {
+											"type": "noauth"
+										},
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/procurement/proposals?pageNumber=<integer>&pageSize=<integer>",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"procurement",
+												"proposals"
+											],
+											"query": [
+												{
+													"key": "pageNumber",
+													"value": "<integer>",
+													"description": "(Required) "
+												},
+												{
+													"key": "pageSize",
+													"value": "<integer>",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"id": "bac7d091-cc51-49d0-b4f7-2b4ab0cb1cb8",
+											"name": "Success",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"description": "Added as a part of security scheme: bearer",
+														"key": "Authorization",
+														"value": "Bearer <token>"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/procurement/proposals?pageNumber=<integer>&pageSize=<integer>",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"procurement",
+														"proposals"
+													],
+													"query": [
+														{
+															"description": "(Required) ",
+															"key": "pageNumber",
+															"value": "<integer>"
+														},
+														{
+															"description": "(Required) ",
+															"key": "pageSize",
+															"value": "<integer>"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"responseTime": null,
+											"body": ""
+										},
+										{
+											"id": "4952a472-c371-479f-85bd-a93b2ddf5e19",
+											"name": "Unauthorized",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"description": "Added as a part of security scheme: bearer",
+														"key": "Authorization",
+														"value": "Bearer <token>"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/procurement/proposals?pageNumber=<integer>&pageSize=<integer>",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"procurement",
+														"proposals"
+													],
+													"query": [
+														{
+															"description": "(Required) ",
+															"key": "pageNumber",
+															"value": "<integer>"
+														},
+														{
+															"description": "(Required) ",
+															"key": "pageSize",
+															"value": "<integer>"
+														}
+													]
+												}
+											},
+											"status": "Unauthorized",
+											"code": 401,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"responseTime": null,
+											"body": ""
+										},
+										{
+											"id": "cf9430c0-2ebc-4244-89dc-157b64e46313",
+											"name": "Forbidden",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"description": "Added as a part of security scheme: bearer",
+														"key": "Authorization",
+														"value": "Bearer <token>"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/procurement/proposals?pageNumber=<integer>&pageSize=<integer>",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"procurement",
+														"proposals"
+													],
+													"query": [
+														{
+															"description": "(Required) ",
+															"key": "pageNumber",
+															"value": "<integer>"
+														},
+														{
+															"description": "(Required) ",
+															"key": "pageSize",
+															"value": "<integer>"
+														}
+													]
+												}
+											},
+											"status": "Forbidden",
+											"code": 403,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"responseTime": null,
+											"body": ""
+										}
+									]
+								}
+							],
+							"id": "94714cbb-1887-4657-aaef-3cd557735a6c"
+						},
+						{
 							"name": "proposal",
 							"item": [
 								{
@@ -56966,403 +57363,6 @@
 								}
 							],
 							"id": "9e9a849f-ca16-4256-88a7-f1a9d2059cb2"
-						},
-						{
-							"name": "proposals",
-							"item": [
-								{
-									"name": "Anp Procurement Features Bids Get Tender Access Endpoint",
-									"event": [
-										{
-											"listen": "test",
-											"script": {
-												"id": "c14f35de-80a3-4436-97d7-449d3865a4f1",
-												"exec": [
-													"//pm.collectionVariables.set(\"serviceInformationId\", pm.response.json().data.id);\r",
-													"\r",
-													"pm.test(\"Status code is 200\", function () {\r",
-													"    pm.response.to.have.status(200);\r",
-													"});\r",
-													"\r",
-													"var responseJSON = pm.response.json(); \r",
-													"\r",
-													"pm.test(\"Verify that tenders are returned successfully\", function () {\r",
-													"\r",
-													"    // pm.expect(responseJSON.isSuccess).to.be.a(\"boolean\");\r",
-													"    // pm.expect(responseJSON.data.id).to.be.a(\"string\").and.not.empty;\r",
-													"    pm.expect(responseJSON.data[0]).to.be.an(\"object\").and.not.empty;\r",
-													"\r",
-													"});"
-												],
-												"type": "text/javascript",
-												"packages": {}
-											}
-										}
-									],
-									"id": "963f0c69-b8c2-47ee-b86d-197d6e4d74ec",
-									"protocolProfileBehavior": {
-										"disableBodyPruning": true
-									},
-									"request": {
-										"auth": {
-											"type": "bearer",
-											"bearer": {
-												"token": "{{approverBearerToken}}"
-											}
-										},
-										"method": "GET",
-										"header": [],
-										"url": {
-											"raw": "{{baseUrl}}/api/procurement/proposals?pageNumber=1&pageSize=10",
-											"host": [
-												"{{baseUrl}}"
-											],
-											"path": [
-												"api",
-												"procurement",
-												"proposals"
-											],
-											"query": [
-												{
-													"key": "pageNumber",
-													"value": "1",
-													"description": "(Required) "
-												},
-												{
-													"key": "pageSize",
-													"value": "10",
-													"description": "(Required) "
-												}
-											]
-										}
-									},
-									"response": [
-										{
-											"id": "f9bfa08b-bafc-4ded-9b5a-0749c6dfe611",
-											"name": "Success",
-											"originalRequest": {
-												"method": "GET",
-												"header": [
-													{
-														"description": "Added as a part of security scheme: bearer",
-														"key": "Authorization",
-														"value": "Bearer <token>"
-													}
-												],
-												"url": {
-													"raw": "{{baseUrl}}/api/procurement/proposals?pageNumber=<integer>&pageSize=<integer>",
-													"host": [
-														"{{baseUrl}}"
-													],
-													"path": [
-														"api",
-														"procurement",
-														"proposals"
-													],
-													"query": [
-														{
-															"description": "(Required) ",
-															"key": "pageNumber",
-															"value": "<integer>"
-														},
-														{
-															"description": "(Required) ",
-															"key": "pageSize",
-															"value": "<integer>"
-														}
-													]
-												}
-											},
-											"status": "OK",
-											"code": 200,
-											"_postman_previewlanguage": "text",
-											"header": [],
-											"cookie": [],
-											"responseTime": null,
-											"body": ""
-										},
-										{
-											"id": "627286c4-5358-4d86-ac84-e54d4ad0f763",
-											"name": "Unauthorized",
-											"originalRequest": {
-												"method": "GET",
-												"header": [
-													{
-														"description": "Added as a part of security scheme: bearer",
-														"key": "Authorization",
-														"value": "Bearer <token>"
-													}
-												],
-												"url": {
-													"raw": "{{baseUrl}}/api/procurement/proposals?pageNumber=<integer>&pageSize=<integer>",
-													"host": [
-														"{{baseUrl}}"
-													],
-													"path": [
-														"api",
-														"procurement",
-														"proposals"
-													],
-													"query": [
-														{
-															"description": "(Required) ",
-															"key": "pageNumber",
-															"value": "<integer>"
-														},
-														{
-															"description": "(Required) ",
-															"key": "pageSize",
-															"value": "<integer>"
-														}
-													]
-												}
-											},
-											"status": "Unauthorized",
-											"code": 401,
-											"_postman_previewlanguage": "text",
-											"header": [],
-											"cookie": [],
-											"responseTime": null,
-											"body": ""
-										},
-										{
-											"id": "7549ecdc-010c-42bc-8622-a90039a324a9",
-											"name": "Forbidden",
-											"originalRequest": {
-												"method": "GET",
-												"header": [
-													{
-														"description": "Added as a part of security scheme: bearer",
-														"key": "Authorization",
-														"value": "Bearer <token>"
-													}
-												],
-												"url": {
-													"raw": "{{baseUrl}}/api/procurement/proposals?pageNumber=<integer>&pageSize=<integer>",
-													"host": [
-														"{{baseUrl}}"
-													],
-													"path": [
-														"api",
-														"procurement",
-														"proposals"
-													],
-													"query": [
-														{
-															"description": "(Required) ",
-															"key": "pageNumber",
-															"value": "<integer>"
-														},
-														{
-															"description": "(Required) ",
-															"key": "pageSize",
-															"value": "<integer>"
-														}
-													]
-												}
-											},
-											"status": "Forbidden",
-											"code": 403,
-											"_postman_previewlanguage": "text",
-											"header": [],
-											"cookie": [],
-											"responseTime": null,
-											"body": ""
-										}
-									]
-								},
-								{
-									"name": "No Auth - Get Tender Access Endpoint",
-									"event": [
-										{
-											"listen": "test",
-											"script": {
-												"id": "3d02e734-38d9-4e11-b7ea-9a8934ca7662",
-												"exec": [
-													"pm.test(\"Status code is 401\", function () {\r",
-													"    pm.response.to.have.status(401);\r",
-													"});\r",
-													"\r",
-													"pm.test(\"Status code name has 'Unauthorized'\", function () {\r",
-													"    pm.response.to.have.status(\"Unauthorized\");\r",
-													"});"
-												],
-												"type": "text/javascript",
-												"packages": {}
-											}
-										}
-									],
-									"id": "40dd35c2-ab53-46a2-b68c-96c10318fcc9",
-									"protocolProfileBehavior": {
-										"disableBodyPruning": true
-									},
-									"request": {
-										"auth": {
-											"type": "noauth"
-										},
-										"method": "GET",
-										"header": [],
-										"url": {
-											"raw": "{{baseUrl}}/api/procurement/proposals?pageNumber=<integer>&pageSize=<integer>",
-											"host": [
-												"{{baseUrl}}"
-											],
-											"path": [
-												"api",
-												"procurement",
-												"proposals"
-											],
-											"query": [
-												{
-													"key": "pageNumber",
-													"value": "<integer>",
-													"description": "(Required) "
-												},
-												{
-													"key": "pageSize",
-													"value": "<integer>",
-													"description": "(Required) "
-												}
-											]
-										}
-									},
-									"response": [
-										{
-											"id": "bac7d091-cc51-49d0-b4f7-2b4ab0cb1cb8",
-											"name": "Success",
-											"originalRequest": {
-												"method": "GET",
-												"header": [
-													{
-														"description": "Added as a part of security scheme: bearer",
-														"key": "Authorization",
-														"value": "Bearer <token>"
-													}
-												],
-												"url": {
-													"raw": "{{baseUrl}}/api/procurement/proposals?pageNumber=<integer>&pageSize=<integer>",
-													"host": [
-														"{{baseUrl}}"
-													],
-													"path": [
-														"api",
-														"procurement",
-														"proposals"
-													],
-													"query": [
-														{
-															"description": "(Required) ",
-															"key": "pageNumber",
-															"value": "<integer>"
-														},
-														{
-															"description": "(Required) ",
-															"key": "pageSize",
-															"value": "<integer>"
-														}
-													]
-												}
-											},
-											"status": "OK",
-											"code": 200,
-											"_postman_previewlanguage": "text",
-											"header": [],
-											"cookie": [],
-											"responseTime": null,
-											"body": ""
-										},
-										{
-											"id": "4952a472-c371-479f-85bd-a93b2ddf5e19",
-											"name": "Unauthorized",
-											"originalRequest": {
-												"method": "GET",
-												"header": [
-													{
-														"description": "Added as a part of security scheme: bearer",
-														"key": "Authorization",
-														"value": "Bearer <token>"
-													}
-												],
-												"url": {
-													"raw": "{{baseUrl}}/api/procurement/proposals?pageNumber=<integer>&pageSize=<integer>",
-													"host": [
-														"{{baseUrl}}"
-													],
-													"path": [
-														"api",
-														"procurement",
-														"proposals"
-													],
-													"query": [
-														{
-															"description": "(Required) ",
-															"key": "pageNumber",
-															"value": "<integer>"
-														},
-														{
-															"description": "(Required) ",
-															"key": "pageSize",
-															"value": "<integer>"
-														}
-													]
-												}
-											},
-											"status": "Unauthorized",
-											"code": 401,
-											"_postman_previewlanguage": "text",
-											"header": [],
-											"cookie": [],
-											"responseTime": null,
-											"body": ""
-										},
-										{
-											"id": "cf9430c0-2ebc-4244-89dc-157b64e46313",
-											"name": "Forbidden",
-											"originalRequest": {
-												"method": "GET",
-												"header": [
-													{
-														"description": "Added as a part of security scheme: bearer",
-														"key": "Authorization",
-														"value": "Bearer <token>"
-													}
-												],
-												"url": {
-													"raw": "{{baseUrl}}/api/procurement/proposals?pageNumber=<integer>&pageSize=<integer>",
-													"host": [
-														"{{baseUrl}}"
-													],
-													"path": [
-														"api",
-														"procurement",
-														"proposals"
-													],
-													"query": [
-														{
-															"description": "(Required) ",
-															"key": "pageNumber",
-															"value": "<integer>"
-														},
-														{
-															"description": "(Required) ",
-															"key": "pageSize",
-															"value": "<integer>"
-														}
-													]
-												}
-											},
-											"status": "Forbidden",
-											"code": 403,
-											"_postman_previewlanguage": "text",
-											"header": [],
-											"cookie": [],
-											"responseTime": null,
-											"body": ""
-										}
-									]
-								}
-							],
-							"id": "94714cbb-1887-4657-aaef-3cd557735a6c"
 						},
 						{
 							"name": "supplier Copy",
