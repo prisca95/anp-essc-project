@@ -55850,6 +55850,155 @@
 									"id": "c94ef8d8-114d-4c72-818c-640e9b6691b4"
 								},
 								{
+									"name": "setmilestone Copy",
+									"item": [
+										{
+											"name": "Anp Procurement Features Contract Set Milestone Endpoint",
+											"id": "ccf2e35f-5ca8-415c-897b-73a2a0f10a03",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": {
+														"token": "{{bearerToken}}"
+													}
+												},
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"deliverableId\": \"<string>\",\n  \"status\": \"Upcoming\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl}}/api/procurement/contracts/setmilestone"
+											},
+											"response": [
+												{
+													"id": "e529244a-b030-432c-8c18-6602290612aa",
+													"name": "Success",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"deliverableId\": \"<string>\",\n  \"status\": \"Upcoming\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl}}/api/procurement/contracts/setmilestone"
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												},
+												{
+													"id": "45bc3363-b051-4fab-81cb-9ae85c42a96e",
+													"name": "Unauthorized",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"deliverableId\": \"<string>\",\n  \"status\": \"Upcoming\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl}}/api/procurement/contracts/setmilestone"
+													},
+													"status": "Unauthorized",
+													"code": 401,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												},
+												{
+													"id": "5185edb5-e7f4-450b-88d1-c91217747cdc",
+													"name": "Forbidden",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"deliverableId\": \"<string>\",\n  \"status\": \"Upcoming\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl}}/api/procurement/contracts/setmilestone"
+													},
+													"status": "Forbidden",
+													"code": 403,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												}
+											]
+										}
+									],
+									"id": "9f7f1f9d-4b9e-4610-a0ab-8e175b084ae0"
+								},
+								{
 									"name": "renew",
 									"item": [
 										{
