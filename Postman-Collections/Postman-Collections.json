@@ -59925,7 +59925,7 @@
 											},
 											{
 												"key": "accept-Language",
-												"value": "application/json"
+												"value": "en-US"
 											}
 										],
 										"body": {
