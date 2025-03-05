@@ -57659,7 +57659,7 @@
 										],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n  \"organizationName\": \"{{$randomCompanyName}}\",\n  \"dateOfEstablishment\": \"2025-02-03T15:41:14.152Z\",\n  \"businessType\": \"Sole Proprietorship\",\n  \"country\": \"USA\",\n  \"addressLine1\": \"1, high lane\",\n  \"addressLine2\": \"1, high lane\",\n  \"region\": \"Lagos\",\n  \"city\": \"Lagos\",\n  \"town\": \"Lagos\",\n  \"phoneNumber\": \"23480778822io\",\n  \"website\": \"www.website.com\",\n  \"domain\": \"@yopmail.com\",\n  \"operatorType\": \"IOC\"\n}",
+											"raw": "{\n  \"organizationName\": \"{{$randomCompanyName}}\",\n  \"dateOfEstablishment\": \"2025-02-03T15:41:14.152Z\",\n  \"businessType\": \"Sole Proprietorship\",\n  \"country\": \"USA\",\n  \"addressLine1\": \"1, high lane\",\n  \"addressLine2\": \"1, high lane\",\n  \"region\": \"Lagos\",\n  \"city\": \"Lagos\",\n  \"town\": \"Lagos\",\n  \"phoneNumber\": \"2348077882278\",\n  \"website\": \"www.website.com\",\n  \"domain\": \"@yopmail.com\",\n  \"operatorType\": \"IOC\"\n}",
 											"options": {
 												"raw": {
 													"headerFamily": "json",
