@@ -34826,7 +34826,7 @@
 										"auth": {
 											"type": "bearer",
 											"bearer": {
-												"token": "{{bearerToken}}"
+												"token": "{{approverBearerToken}}"
 											}
 										},
 										"method": "POST",
@@ -34842,7 +34842,7 @@
 										],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n  \"lookupId\": \"<string>\",\n  \"lookupName\": \"<string>\",\n  \"lookupValue\": \"<string>\",\n  \"lookupType\": \"<string>\"\n}",
+											"raw": "{\n  \"lookupId\": \"e3865f74-2d51-4827-3fb6-08dd442f6f4a\",\n\"lookupName\": \"IOC\",\n            \"lookupValue\": \"IOC Admin\",\n            \"lookupType\": \"operator-admin\"\n} ",
 											"options": {
 												"raw": {
 													"headerFamily": "json",
