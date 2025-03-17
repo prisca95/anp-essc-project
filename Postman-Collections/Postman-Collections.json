@@ -38270,6 +38270,1821 @@
 								}
 							],
 							"id": "9b4c29cb-bd4f-4621-9e67-32e2fd524621"
+						},
+						{
+							"name": "order Copy",
+							"item": [
+								{
+									"name": "checkout",
+									"item": [
+										{
+											"name": "Anp Goods Services Features Order Create Order Endpoint",
+											"id": "2862919c-a224-4f0e-94e4-84cdc3622412",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": {
+														"token": "{{bearerToken}}"
+													}
+												},
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "multipart/form-data"
+													}
+												],
+												"body": {
+													"mode": "formdata",
+													"formdata": [
+														{
+															"key": "cartItemIds",
+															"value": "<string>,<string>",
+															"type": "text"
+														},
+														{
+															"key": "companyId",
+															"value": "<string>",
+															"type": "text"
+														},
+														{
+															"key": "shippingAddressId",
+															"value": "<string>",
+															"type": "text"
+														},
+														{
+															"description": " (This can only be one of Online,Offline)",
+															"key": "paymentMethod",
+															"value": "Offline",
+															"type": "text"
+														},
+														{
+															"key": "paymentProof",
+															"type": "file",
+															"value": null
+														}
+													]
+												},
+												"url": "{{baseUrl}}/api/goods/order/checkout"
+											},
+											"response": [
+												{
+													"id": "3cef8e31-462e-496e-b0f0-1a8252c23343",
+													"name": "Success",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "multipart/form-data"
+															},
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"body": {
+															"mode": "formdata",
+															"formdata": [
+																{
+																	"key": "cartItemIds",
+																	"value": "<string>,<string>",
+																	"type": "text"
+																},
+																{
+																	"key": "companyId",
+																	"value": "<string>",
+																	"type": "text"
+																},
+																{
+																	"key": "shippingAddressId",
+																	"value": "<string>",
+																	"type": "text"
+																},
+																{
+																	"description": " (This can only be one of Online,Offline)",
+																	"key": "paymentMethod",
+																	"value": "Offline",
+																	"type": "text"
+																},
+																{
+																	"key": "paymentProof",
+																	"type": "file",
+																	"src": []
+																}
+															]
+														},
+														"url": "{{baseUrl}}/api/goods/order/checkout"
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												},
+												{
+													"id": "7a20ccf6-d3d6-408c-9d5e-0698a3cb26bc",
+													"name": "Unauthorized",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "multipart/form-data"
+															},
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"body": {
+															"mode": "formdata",
+															"formdata": [
+																{
+																	"key": "cartItemIds",
+																	"value": "<string>,<string>",
+																	"type": "text"
+																},
+																{
+																	"key": "companyId",
+																	"value": "<string>",
+																	"type": "text"
+																},
+																{
+																	"key": "shippingAddressId",
+																	"value": "<string>",
+																	"type": "text"
+																},
+																{
+																	"description": " (This can only be one of Online,Offline)",
+																	"key": "paymentMethod",
+																	"value": "Offline",
+																	"type": "text"
+																},
+																{
+																	"key": "paymentProof",
+																	"type": "file",
+																	"src": []
+																}
+															]
+														},
+														"url": "{{baseUrl}}/api/goods/order/checkout"
+													},
+													"status": "Unauthorized",
+													"code": 401,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												},
+												{
+													"id": "3cf3b250-b792-49ad-ad81-05f8d7aa3e11",
+													"name": "Forbidden",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "multipart/form-data"
+															},
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"body": {
+															"mode": "formdata",
+															"formdata": [
+																{
+																	"key": "cartItemIds",
+																	"value": "<string>,<string>",
+																	"type": "text"
+																},
+																{
+																	"key": "companyId",
+																	"value": "<string>",
+																	"type": "text"
+																},
+																{
+																	"key": "shippingAddressId",
+																	"value": "<string>",
+																	"type": "text"
+																},
+																{
+																	"description": " (This can only be one of Online,Offline)",
+																	"key": "paymentMethod",
+																	"value": "Offline",
+																	"type": "text"
+																},
+																{
+																	"key": "paymentProof",
+																	"type": "file",
+																	"src": []
+																}
+															]
+														},
+														"url": "{{baseUrl}}/api/goods/order/checkout"
+													},
+													"status": "Forbidden",
+													"code": 403,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												}
+											]
+										}
+									],
+									"id": "c0b5950f-8eac-4a99-a027-febcf961a8ea"
+								},
+								{
+									"name": "shipping",
+									"item": [
+										{
+											"name": "Anp Goods Services Features Order Create Shipping Address Endpoint",
+											"id": "ae37a80c-2fe8-45af-827f-b3d0c70ba422",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": {
+														"token": "{{bearerToken}}"
+													}
+												},
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"contactEmail\": \"<string>\",\n  \"firstName\": \"<string>\",\n  \"lastName\": \"<string>\",\n  \"phoneNumber\": \"<string>\",\n  \"country\": \"<string>\",\n  \"addressLine1\": \"<string>\",\n  \"addressLine2\": \"<string>\",\n  \"region\": \"<string>\",\n  \"city\": \"<string>\",\n  \"town\": \"<string>\",\n  \"canReuse\": \"<boolean>\",\n  \"companyId\": \"<string>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl}}/api/goods/order/shipping"
+											},
+											"response": [
+												{
+													"id": "c44f4ad9-98eb-4d89-b1da-4eb23ad73b9c",
+													"name": "Success",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"contactEmail\": \"<string>\",\n  \"firstName\": \"<string>\",\n  \"lastName\": \"<string>\",\n  \"phoneNumber\": \"<string>\",\n  \"country\": \"<string>\",\n  \"addressLine1\": \"<string>\",\n  \"addressLine2\": \"<string>\",\n  \"region\": \"<string>\",\n  \"city\": \"<string>\",\n  \"town\": \"<string>\",\n  \"canReuse\": \"<boolean>\",\n  \"companyId\": \"<string>\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl}}/api/goods/order/shipping"
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												},
+												{
+													"id": "914a877e-4b12-4628-a81a-9aaad2bc212c",
+													"name": "Unauthorized",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"contactEmail\": \"<string>\",\n  \"firstName\": \"<string>\",\n  \"lastName\": \"<string>\",\n  \"phoneNumber\": \"<string>\",\n  \"country\": \"<string>\",\n  \"addressLine1\": \"<string>\",\n  \"addressLine2\": \"<string>\",\n  \"region\": \"<string>\",\n  \"city\": \"<string>\",\n  \"town\": \"<string>\",\n  \"canReuse\": \"<boolean>\",\n  \"companyId\": \"<string>\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl}}/api/goods/order/shipping"
+													},
+													"status": "Unauthorized",
+													"code": 401,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												},
+												{
+													"id": "b06bc6bd-c378-40e9-afe6-cdb2e974f5fe",
+													"name": "Forbidden",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"contactEmail\": \"<string>\",\n  \"firstName\": \"<string>\",\n  \"lastName\": \"<string>\",\n  \"phoneNumber\": \"<string>\",\n  \"country\": \"<string>\",\n  \"addressLine1\": \"<string>\",\n  \"addressLine2\": \"<string>\",\n  \"region\": \"<string>\",\n  \"city\": \"<string>\",\n  \"town\": \"<string>\",\n  \"canReuse\": \"<boolean>\",\n  \"companyId\": \"<string>\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl}}/api/goods/order/shipping"
+													},
+													"status": "Forbidden",
+													"code": 403,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												}
+											]
+										}
+									],
+									"id": "36dc0c8a-5c8b-46ed-9671-fc40399c8f26"
+								},
+								{
+									"name": "shippingAddress",
+									"item": [
+										{
+											"name": "Anp Goods Services Features Order Delete Shipping Address Endpoint",
+											"id": "1418f91a-8fdc-4987-8763-af0fe0b325ac",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": {
+														"token": "{{bearerToken}}"
+													}
+												},
+												"method": "DELETE",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"shippingAddressId\": \"<string>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl}}/api/goods/order/shippingAddress"
+											},
+											"response": [
+												{
+													"id": "d775870d-b341-4f3c-939e-a9792c48dbc5",
+													"name": "Success",
+													"originalRequest": {
+														"method": "DELETE",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"shippingAddressId\": \"<string>\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl}}/api/goods/order/shippingAddress"
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												},
+												{
+													"id": "204cc29a-7744-49f3-86cb-f27392f12f07",
+													"name": "Unauthorized",
+													"originalRequest": {
+														"method": "DELETE",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"shippingAddressId\": \"<string>\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl}}/api/goods/order/shippingAddress"
+													},
+													"status": "Unauthorized",
+													"code": 401,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												},
+												{
+													"id": "f75a6238-63d3-45b0-8ab0-eb58e55b0057",
+													"name": "Forbidden",
+													"originalRequest": {
+														"method": "DELETE",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"shippingAddressId\": \"<string>\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl}}/api/goods/order/shippingAddress"
+													},
+													"status": "Forbidden",
+													"code": 403,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												}
+											]
+										}
+									],
+									"id": "b1ce385b-1e63-48eb-aa86-04dd5e60a318"
+								},
+								{
+									"name": "shippingaddress",
+									"item": [
+										{
+											"name": "Anp Goods Services Features Order Get Shipping Address Endpoint",
+											"id": "8691224a-3da1-46b4-b1ce-640d399c9ba9",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": {
+														"token": "{{bearerToken}}"
+													}
+												},
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/goods/order/shippingaddress?supplierId=<string>",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"goods",
+														"order",
+														"shippingaddress"
+													],
+													"query": [
+														{
+															"key": "supplierId",
+															"value": "<string>",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"response": [
+												{
+													"id": "46f355f7-bb40-4c8b-b7c8-a9015b7326b5",
+													"name": "Success",
+													"originalRequest": {
+														"method": "GET",
+														"header": [
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/goods/order/shippingaddress?supplierId=<string>",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"goods",
+																"order",
+																"shippingaddress"
+															],
+															"query": [
+																{
+																	"description": "(Required) ",
+																	"key": "supplierId",
+																	"value": "<string>"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												},
+												{
+													"id": "a1380def-f5d7-4cbd-901a-42487a17751e",
+													"name": "Unauthorized",
+													"originalRequest": {
+														"method": "GET",
+														"header": [
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/goods/order/shippingaddress?supplierId=<string>",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"goods",
+																"order",
+																"shippingaddress"
+															],
+															"query": [
+																{
+																	"description": "(Required) ",
+																	"key": "supplierId",
+																	"value": "<string>"
+																}
+															]
+														}
+													},
+													"status": "Unauthorized",
+													"code": 401,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												},
+												{
+													"id": "68d9ee1b-1b0c-48ec-9e4b-e45d407dd3a4",
+													"name": "Forbidden",
+													"originalRequest": {
+														"method": "GET",
+														"header": [
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/goods/order/shippingaddress?supplierId=<string>",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"goods",
+																"order",
+																"shippingaddress"
+															],
+															"query": [
+																{
+																	"description": "(Required) ",
+																	"key": "supplierId",
+																	"value": "<string>"
+																}
+															]
+														}
+													},
+													"status": "Forbidden",
+													"code": 403,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												}
+											]
+										}
+									],
+									"id": "189cbd6b-bdfc-498f-8968-5a83bcc89bee"
+								}
+							],
+							"id": "70e6409b-3a69-41e4-8699-f71ff2399669"
+						},
+						{
+							"name": "review Copy",
+							"item": [
+								{
+									"name": "create",
+									"item": [
+										{
+											"name": "Anp Goods Services Features Create Create Product Review Endpoint1",
+											"id": "71d619bc-0c7a-449c-9b78-827efc6f2eda",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": {
+														"token": "{{bearerToken}}"
+													}
+												},
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"reviewId\": \"<string>\",\n  \"reviewerName\": \"<string>\",\n  \"comment\": \"<string>\",\n  \"rating\": \"Good\",\n  \"productId\": \"<string>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl}}/api/goods/review/create"
+											},
+											"response": [
+												{
+													"id": "5d8f9689-ff2e-40d8-ad9b-ff0658f53fd4",
+													"name": "Success",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"reviewId\": \"<string>\",\n  \"reviewerName\": \"<string>\",\n  \"comment\": \"<string>\",\n  \"rating\": \"Good\",\n  \"productId\": \"<string>\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl}}/api/goods/review/create"
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												},
+												{
+													"id": "fe982d72-65c4-492d-98d4-4bf4877a525e",
+													"name": "Unauthorized",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"reviewId\": \"<string>\",\n  \"reviewerName\": \"<string>\",\n  \"comment\": \"<string>\",\n  \"rating\": \"Good\",\n  \"productId\": \"<string>\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl}}/api/goods/review/create"
+													},
+													"status": "Unauthorized",
+													"code": 401,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												},
+												{
+													"id": "70e04c84-6703-4560-916a-606e141b0a3b",
+													"name": "Forbidden",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"reviewId\": \"<string>\",\n  \"reviewerName\": \"<string>\",\n  \"comment\": \"<string>\",\n  \"rating\": \"Good\",\n  \"productId\": \"<string>\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl}}/api/goods/review/create"
+													},
+													"status": "Forbidden",
+													"code": 403,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												}
+											]
+										}
+									],
+									"id": "caacd110-3f40-4053-b497-baca4caac2c3"
+								},
+								{
+									"name": "update",
+									"item": [
+										{
+											"name": "Anp Goods Services Features Create Create Product Review Endpoint2",
+											"id": "3e3c26a3-7779-4244-ad2a-1f51002cbb93",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": {
+														"token": "{{bearerToken}}"
+													}
+												},
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"reviewId\": \"<string>\",\n  \"reviewerName\": \"<string>\",\n  \"comment\": \"<string>\",\n  \"rating\": \"Good\",\n  \"productId\": \"<string>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl}}/api/goods/review/update"
+											},
+											"response": [
+												{
+													"id": "d10df8bc-57e3-49a3-bee4-272f96722740",
+													"name": "Success",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"reviewId\": \"<string>\",\n  \"reviewerName\": \"<string>\",\n  \"comment\": \"<string>\",\n  \"rating\": \"Good\",\n  \"productId\": \"<string>\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl}}/api/goods/review/update"
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												},
+												{
+													"id": "1e7d54bf-9afa-41c2-a039-0bcfe006cc5a",
+													"name": "Unauthorized",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"reviewId\": \"<string>\",\n  \"reviewerName\": \"<string>\",\n  \"comment\": \"<string>\",\n  \"rating\": \"Good\",\n  \"productId\": \"<string>\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl}}/api/goods/review/update"
+													},
+													"status": "Unauthorized",
+													"code": 401,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												},
+												{
+													"id": "1c63460d-e48e-4b47-9fad-567ca2f21bb5",
+													"name": "Forbidden",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"reviewId\": \"<string>\",\n  \"reviewerName\": \"<string>\",\n  \"comment\": \"<string>\",\n  \"rating\": \"Good\",\n  \"productId\": \"<string>\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl}}/api/goods/review/update"
+													},
+													"status": "Forbidden",
+													"code": 403,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												}
+											]
+										}
+									],
+									"id": "8b51f036-d81e-4e96-81a5-dd65cbd6555a"
+								},
+								{
+									"name": "GetReview",
+									"item": [
+										{
+											"name": "{reviewId}",
+											"item": [
+												{
+													"name": "Anp Goods Services Features Create Get A Product Review Endpoint",
+													"id": "147fa377-afb4-4cbb-98b1-59ea167ef4fe",
+													"protocolProfileBehavior": {
+														"disableBodyPruning": true
+													},
+													"request": {
+														"auth": {
+															"type": "bearer",
+															"bearer": {
+																"token": "{{bearerToken}}"
+															}
+														},
+														"method": "GET",
+														"header": [],
+														"url": {
+															"raw": "{{baseUrl}}/api/goods/review/GetReview/:reviewId",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"goods",
+																"review",
+																"GetReview",
+																":reviewId"
+															],
+															"variable": [
+																{
+																	"id": "d7832575-f1c6-4eb4-8fc6-f78456a37adf",
+																	"key": "reviewId",
+																	"value": "<string>",
+																	"description": "(Required) "
+																}
+															]
+														}
+													},
+													"response": [
+														{
+															"id": "e1bbb321-2370-4926-a025-4b6ad9bff33d",
+															"name": "Success",
+															"originalRequest": {
+																"method": "GET",
+																"header": [
+																	{
+																		"description": "Added as a part of security scheme: bearer",
+																		"key": "Authorization",
+																		"value": "Bearer <token>"
+																	}
+																],
+																"url": {
+																	"raw": "{{baseUrl}}/api/goods/review/GetReview/:reviewId",
+																	"host": [
+																		"{{baseUrl}}"
+																	],
+																	"path": [
+																		"api",
+																		"goods",
+																		"review",
+																		"GetReview",
+																		":reviewId"
+																	],
+																	"variable": [
+																		{
+																			"key": "reviewId"
+																		}
+																	]
+																}
+															},
+															"status": "OK",
+															"code": 200,
+															"_postman_previewlanguage": "text",
+															"header": [],
+															"cookie": [],
+															"responseTime": null,
+															"body": ""
+														},
+														{
+															"id": "96385389-bd55-436e-a3ab-9f6df33df82f",
+															"name": "Unauthorized",
+															"originalRequest": {
+																"method": "GET",
+																"header": [
+																	{
+																		"description": "Added as a part of security scheme: bearer",
+																		"key": "Authorization",
+																		"value": "Bearer <token>"
+																	}
+																],
+																"url": {
+																	"raw": "{{baseUrl}}/api/goods/review/GetReview/:reviewId",
+																	"host": [
+																		"{{baseUrl}}"
+																	],
+																	"path": [
+																		"api",
+																		"goods",
+																		"review",
+																		"GetReview",
+																		":reviewId"
+																	],
+																	"variable": [
+																		{
+																			"key": "reviewId"
+																		}
+																	]
+																}
+															},
+															"status": "Unauthorized",
+															"code": 401,
+															"_postman_previewlanguage": "text",
+															"header": [],
+															"cookie": [],
+															"responseTime": null,
+															"body": ""
+														},
+														{
+															"id": "8bc88da4-89dd-4317-be8b-1f1dae74933a",
+															"name": "Forbidden",
+															"originalRequest": {
+																"method": "GET",
+																"header": [
+																	{
+																		"description": "Added as a part of security scheme: bearer",
+																		"key": "Authorization",
+																		"value": "Bearer <token>"
+																	}
+																],
+																"url": {
+																	"raw": "{{baseUrl}}/api/goods/review/GetReview/:reviewId",
+																	"host": [
+																		"{{baseUrl}}"
+																	],
+																	"path": [
+																		"api",
+																		"goods",
+																		"review",
+																		"GetReview",
+																		":reviewId"
+																	],
+																	"variable": [
+																		{
+																			"key": "reviewId"
+																		}
+																	]
+																}
+															},
+															"status": "Forbidden",
+															"code": 403,
+															"_postman_previewlanguage": "text",
+															"header": [],
+															"cookie": [],
+															"responseTime": null,
+															"body": ""
+														}
+													]
+												}
+											],
+											"id": "ffa41329-7263-4da6-8a2e-24d43947b450"
+										}
+									],
+									"id": "85341be1-bdd8-423e-800b-ec089267895c"
+								},
+								{
+									"name": "getProductReviews",
+									"item": [
+										{
+											"name": "Anp Goods Services Features Create Get Product Reviews Endpoint",
+											"id": "3887e1e8-dec3-4263-9f92-e21a7f2bc073",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": {
+														"token": "{{bearerToken}}"
+													}
+												},
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/goods/review/getProductReviews?productId=<string>",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"goods",
+														"review",
+														"getProductReviews"
+													],
+													"query": [
+														{
+															"key": "productId",
+															"value": "<string>",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"response": [
+												{
+													"id": "4b293c17-5113-4640-8459-195a7f1fc28b",
+													"name": "Success",
+													"originalRequest": {
+														"method": "GET",
+														"header": [
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/goods/review/getProductReviews?productId=<string>",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"goods",
+																"review",
+																"getProductReviews"
+															],
+															"query": [
+																{
+																	"description": "(Required) ",
+																	"key": "productId",
+																	"value": "<string>"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												},
+												{
+													"id": "a07feee5-b502-421d-840a-489b5787fc2a",
+													"name": "Unauthorized",
+													"originalRequest": {
+														"method": "GET",
+														"header": [
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/goods/review/getProductReviews?productId=<string>",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"goods",
+																"review",
+																"getProductReviews"
+															],
+															"query": [
+																{
+																	"description": "(Required) ",
+																	"key": "productId",
+																	"value": "<string>"
+																}
+															]
+														}
+													},
+													"status": "Unauthorized",
+													"code": 401,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												},
+												{
+													"id": "38dbae18-2105-49c0-928e-876e3b6469a6",
+													"name": "Forbidden",
+													"originalRequest": {
+														"method": "GET",
+														"header": [
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/goods/review/getProductReviews?productId=<string>",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"goods",
+																"review",
+																"getProductReviews"
+															],
+															"query": [
+																{
+																	"description": "(Required) ",
+																	"key": "productId",
+																	"value": "<string>"
+																}
+															]
+														}
+													},
+													"status": "Forbidden",
+													"code": 403,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												}
+											]
+										}
+									],
+									"id": "b75613dd-f1a4-4b1d-8343-814f8af2e764"
+								},
+								{
+									"name": "getSupplierRating",
+									"item": [
+										{
+											"name": "Anp Goods Services Features Create Get Supplier Rating Endpoint",
+											"id": "a68d6964-facf-4754-900b-264e1f16f7c6",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": {
+														"token": "{{bearerToken}}"
+													}
+												},
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/goods/review/getSupplierRating?supplierId=<string>",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"goods",
+														"review",
+														"getSupplierRating"
+													],
+													"query": [
+														{
+															"key": "supplierId",
+															"value": "<string>",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"response": [
+												{
+													"id": "5b3ab142-3eac-47ae-8f70-2611544699aa",
+													"name": "Success",
+													"originalRequest": {
+														"method": "GET",
+														"header": [
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/goods/review/getSupplierRating?supplierId=<string>",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"goods",
+																"review",
+																"getSupplierRating"
+															],
+															"query": [
+																{
+																	"description": "(Required) ",
+																	"key": "supplierId",
+																	"value": "<string>"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												},
+												{
+													"id": "4e9ccc5a-f914-403c-bf08-08ea2513645f",
+													"name": "Unauthorized",
+													"originalRequest": {
+														"method": "GET",
+														"header": [
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/goods/review/getSupplierRating?supplierId=<string>",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"goods",
+																"review",
+																"getSupplierRating"
+															],
+															"query": [
+																{
+																	"description": "(Required) ",
+																	"key": "supplierId",
+																	"value": "<string>"
+																}
+															]
+														}
+													},
+													"status": "Unauthorized",
+													"code": 401,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												},
+												{
+													"id": "a5cc8183-ce21-4318-935b-484a1bfd2eb5",
+													"name": "Forbidden",
+													"originalRequest": {
+														"method": "GET",
+														"header": [
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/goods/review/getSupplierRating?supplierId=<string>",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"goods",
+																"review",
+																"getSupplierRating"
+															],
+															"query": [
+																{
+																	"description": "(Required) ",
+																	"key": "supplierId",
+																	"value": "<string>"
+																}
+															]
+														}
+													},
+													"status": "Forbidden",
+													"code": 403,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												}
+											]
+										}
+									],
+									"id": "faf5af01-058f-4ef1-9c42-a6e79ca88b20"
+								},
+								{
+									"name": "getSupplierReview",
+									"item": [
+										{
+											"name": "Anp Goods Services Features Create Get Supplier Review Endpoint",
+											"id": "447039ef-3dbd-4853-b3ec-d411291e8a31",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": {
+														"token": "{{bearerToken}}"
+													}
+												},
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/goods/review/getSupplierReview?supplierId=<string>",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"goods",
+														"review",
+														"getSupplierReview"
+													],
+													"query": [
+														{
+															"key": "supplierId",
+															"value": "<string>",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"response": [
+												{
+													"id": "75df51a2-10f5-4c01-8c01-71f2417aad49",
+													"name": "Success",
+													"originalRequest": {
+														"method": "GET",
+														"header": [
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/goods/review/getSupplierReview?supplierId=<string>",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"goods",
+																"review",
+																"getSupplierReview"
+															],
+															"query": [
+																{
+																	"description": "(Required) ",
+																	"key": "supplierId",
+																	"value": "<string>"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												},
+												{
+													"id": "594b72be-88a2-46d2-8f4f-9f506ec3c657",
+													"name": "Unauthorized",
+													"originalRequest": {
+														"method": "GET",
+														"header": [
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/goods/review/getSupplierReview?supplierId=<string>",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"goods",
+																"review",
+																"getSupplierReview"
+															],
+															"query": [
+																{
+																	"description": "(Required) ",
+																	"key": "supplierId",
+																	"value": "<string>"
+																}
+															]
+														}
+													},
+													"status": "Unauthorized",
+													"code": 401,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												},
+												{
+													"id": "e6fac120-e98d-4b6f-9a60-330d1c124480",
+													"name": "Forbidden",
+													"originalRequest": {
+														"method": "GET",
+														"header": [
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/goods/review/getSupplierReview?supplierId=<string>",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"goods",
+																"review",
+																"getSupplierReview"
+															],
+															"query": [
+																{
+																	"description": "(Required) ",
+																	"key": "supplierId",
+																	"value": "<string>"
+																}
+															]
+														}
+													},
+													"status": "Forbidden",
+													"code": 403,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												}
+											]
+										}
+									],
+									"id": "17f148d2-3e9e-47d3-90b0-9ae1004ad4b9"
+								}
+							],
+							"id": "9e14df5b-344e-4cbd-8d4f-51683f795719"
+						},
+						{
+							"name": "setGoodsServices Copy",
+							"item": [
+								{
+									"name": "Anp Goods Services Features Create Update Goods Services Endpoint",
+									"id": "4f6f619e-c4ae-465d-94dd-b1dc079b215e",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": {
+												"token": "{{bearerToken}}"
+											}
+										},
+										"method": "PATCH",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"productId\": \"<string>\",\n  \"status\": \"<string>\"\n}\n//to update orders",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{baseUrl}}/api/goods/setGoodsServices"
+									},
+									"response": [
+										{
+											"id": "fad6f32c-58ed-4589-bd70-12448e880596",
+											"name": "Success",
+											"originalRequest": {
+												"method": "PATCH",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"description": "Added as a part of security scheme: bearer",
+														"key": "Authorization",
+														"value": "Bearer <token>"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"productId\": \"<string>\",\n  \"status\": \"<string>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl}}/api/goods/setGoodsServices"
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"responseTime": null,
+											"body": ""
+										},
+										{
+											"id": "3b1203ee-daf7-40d9-b050-208330343c58",
+											"name": "Unauthorized",
+											"originalRequest": {
+												"method": "PATCH",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"description": "Added as a part of security scheme: bearer",
+														"key": "Authorization",
+														"value": "Bearer <token>"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"productId\": \"<string>\",\n  \"status\": \"<string>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl}}/api/goods/setGoodsServices"
+											},
+											"status": "Unauthorized",
+											"code": 401,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"responseTime": null,
+											"body": ""
+										},
+										{
+											"id": "4474ed7a-487d-487a-9aa8-e233b273f21f",
+											"name": "Forbidden",
+											"originalRequest": {
+												"method": "PATCH",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"description": "Added as a part of security scheme: bearer",
+														"key": "Authorization",
+														"value": "Bearer <token>"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"productId\": \"<string>\",\n  \"status\": \"<string>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl}}/api/goods/setGoodsServices"
+											},
+											"status": "Forbidden",
+											"code": 403,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"responseTime": null,
+											"body": ""
+										}
+									]
+								}
+							],
+							"id": "51893bdb-8930-42ba-98af-2b70459cc2dd"
 						}
 					],
 					"id": "d5e0db51-be4c-4d19-888b-ac38554471f5"
