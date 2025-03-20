@@ -37818,7 +37818,7 @@
 													"script": {
 														"id": "b9eee099-376a-4791-930e-ee4b64dc9783",
 														"exec": [
-															"pm.collectionVariables.set(\"orderId\", pm.response.json().data[0].orderId);\r",
+															"//pm.collectionVariables.set(\"orderId\", pm.response.json().data[0].orderId);\r",
 															"pm.collectionVariables.set(\"itemId\", pm.response.json().data[0].itemId);\r",
 															"\r",
 															"pm.test(\"Status code is 200\", function () {\r",
