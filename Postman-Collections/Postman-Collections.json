@@ -89,7 +89,7 @@
 										],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n  \"userName\":\"{{signedUpEmail}}\",\n  \"password\": \"Password12@@\",\n  \"confirmPassword\": \"Password12@@\",\n  \"email\": \"{{signedUpEmail}}\",\n  \"phoneNumber\": \"+234{{phonenumber}}\",\n  \"firstName\": \"{{$randomFirstName}}\",\n  \"lastName\":  \"{{$randomLastName}}\"\n}",
+											"raw": "{\n  \"userName\":\"dew_@yopmail.com\",//\"{{signedUpEmail}}\",\n  \"password\": \"Password12@@\",\n  \"confirmPassword\": \"Password12@@\",\n  \"email\": \"{{signedUpEmail}}\",\n  \"phoneNumber\": \"+234{{phonenumber}}\",\n  \"firstName\": \"{{$randomFirstName}}\",\n  \"lastName\":  \"{{$randomLastName}}\",\n  //  \"operatorRegNumber\": \"string\",\n  \"signupType\": \"Supplier\"\n}\n\n",
 											"options": {
 												"raw": {
 													"headerFamily": "json",
@@ -271,7 +271,7 @@
 										],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n  \"userName\": \"*}zWl8B@.>cndg.\",\n  \"password\": \"Password12@@\",\n  \"confirmPassword\": \"Password12@@\",\n  \"email\": \"*}zWl8B@.>cndg.\",\n  \"phoneNumber\": \"+234{{phonenumber}}\",\n  \"firstName\": \"{{$randomFirstName}}\",\n  \"lastName\": \"{{$randomLastName}}\"\n}",
+											"raw": "{\n  \"userName\": \"*}zWl8B@.>cndg.\",\n  \"password\": \"Password12@@\",\n  \"confirmPassword\": \"Password12@@\",\n  \"email\": \"*}zWl8B@.>cndg.\",\n  \"phoneNumber\": \"+234{{phonenumber}}\",\n  \"firstName\": \"{{$randomFirstName}}\",\n  \"lastName\": \"{{$randomLastName}}\",\n    //  \"operatorRegNumber\": \"string\",\n  \"signupType\": \"Supplier\"\n}",
 											"options": {
 												"raw": {
 													"headerFamily": "json",
