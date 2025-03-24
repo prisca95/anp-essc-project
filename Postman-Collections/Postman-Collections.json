@@ -450,7 +450,7 @@
 										],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n  \"userName\": \"\",\n  \"password\": \"\",\n  \"confirmPassword\": \"\",\n  \"email\": \"\",\n  \"phoneNumber\": \"\",\n  \"firstName\": \"\",\n  \"lastName\": \"\"\n}",
+											"raw": "{\n  \"userName\": \"\",\n  \"password\": \"\",\n  \"confirmPassword\": \"\",\n  \"email\": \"\",\n  \"phoneNumber\": \"\",\n  \"firstName\": \"\",\n  \"lastName\": \"\",\n    //  \"operatorRegNumber\": \"string\",\n  \"signupType\": \"\"\n}",
 											"options": {
 												"raw": {
 													"headerFamily": "json",
