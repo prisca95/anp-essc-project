@@ -27553,525 +27553,6 @@
 							"id": "5007fc33-0233-41c2-96fc-26ea898b3229"
 						},
 						{
-							"name": "additional",
-							"item": [
-								{
-									"name": "create",
-									"item": [
-										{
-											"name": "Anp Supplier Api Features Additional Info Create Addintional Info Endpoint",
-											"id": "006e901e-c1ee-425b-99a5-c31f7f1a2c38",
-											"protocolProfileBehavior": {
-												"disableBodyPruning": true
-											},
-											"request": {
-												"auth": {
-													"type": "bearer",
-													"bearer": {
-														"token": "{{bearerToken}}"
-													}
-												},
-												"method": "POST",
-												"header": [
-													{
-														"key": "Content-Type",
-														"value": "application/json"
-													}
-												],
-												"body": {
-													"mode": "raw",
-													"raw": "{\n  \"additionalInfoId\": \"<string>\",\n  \"documentTypes\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"comment\": \"<string>\",\n  \"companyId\": \"<string>\"\n}",
-													"options": {
-														"raw": {
-															"headerFamily": "json",
-															"language": "json"
-														}
-													}
-												},
-												"url": "{{baseUrl}}/api/supplier/additional/create"
-											},
-											"response": [
-												{
-													"id": "4be7f40f-8058-489d-84c2-55521800369b",
-													"name": "Success",
-													"originalRequest": {
-														"method": "POST",
-														"header": [
-															{
-																"key": "Content-Type",
-																"value": "application/json"
-															},
-															{
-																"description": "Added as a part of security scheme: bearer",
-																"key": "Authorization",
-																"value": "Bearer <token>"
-															}
-														],
-														"body": {
-															"mode": "raw",
-															"raw": "{\n  \"additionalInfoId\": \"<string>\",\n  \"documentTypes\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"comment\": \"<string>\",\n  \"companyId\": \"<string>\"\n}",
-															"options": {
-																"raw": {
-																	"headerFamily": "json",
-																	"language": "json"
-																}
-															}
-														},
-														"url": "{{baseUrl}}/api/supplier/additional/create"
-													},
-													"status": "OK",
-													"code": 200,
-													"_postman_previewlanguage": "text",
-													"header": [],
-													"cookie": [],
-													"responseTime": null,
-													"body": ""
-												},
-												{
-													"id": "39433016-0d09-4162-952a-99c9df634b95",
-													"name": "Unauthorized",
-													"originalRequest": {
-														"method": "POST",
-														"header": [
-															{
-																"key": "Content-Type",
-																"value": "application/json"
-															},
-															{
-																"description": "Added as a part of security scheme: bearer",
-																"key": "Authorization",
-																"value": "Bearer <token>"
-															}
-														],
-														"body": {
-															"mode": "raw",
-															"raw": "{\n  \"additionalInfoId\": \"<string>\",\n  \"documentTypes\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"comment\": \"<string>\",\n  \"companyId\": \"<string>\"\n}",
-															"options": {
-																"raw": {
-																	"headerFamily": "json",
-																	"language": "json"
-																}
-															}
-														},
-														"url": "{{baseUrl}}/api/supplier/additional/create"
-													},
-													"status": "Unauthorized",
-													"code": 401,
-													"_postman_previewlanguage": "text",
-													"header": [],
-													"cookie": [],
-													"responseTime": null,
-													"body": ""
-												}
-											]
-										}
-									],
-									"id": "3d256b49-56b4-4b44-a1eb-44afa36d50f7"
-								},
-								{
-									"name": "edit",
-									"item": [
-										{
-											"name": "Anp Supplier Api Features Additional Info Edit Additional Info Endpoint",
-											"id": "288aad35-6b91-45c1-b5c3-18dc704ce768",
-											"protocolProfileBehavior": {
-												"disableBodyPruning": true
-											},
-											"request": {
-												"auth": {
-													"type": "bearer",
-													"bearer": {
-														"token": "{{bearerToken}}"
-													}
-												},
-												"method": "POST",
-												"header": [
-													{
-														"key": "Content-Type",
-														"value": "application/json"
-													}
-												],
-												"body": {
-													"mode": "raw",
-													"raw": "{\n  \"additionalInfoId\": \"<string>\",\n  \"documentTypes\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"comment\": \"<string>\",\n  \"companyId\": \"<string>\"\n}",
-													"options": {
-														"raw": {
-															"headerFamily": "json",
-															"language": "json"
-														}
-													}
-												},
-												"url": "{{baseUrl}}/api/supplier/additional/edit"
-											},
-											"response": [
-												{
-													"id": "81bea82d-7e5b-40b1-a983-f8594c13e4ad",
-													"name": "Success",
-													"originalRequest": {
-														"method": "POST",
-														"header": [
-															{
-																"key": "Content-Type",
-																"value": "application/json"
-															},
-															{
-																"description": "Added as a part of security scheme: bearer",
-																"key": "Authorization",
-																"value": "Bearer <token>"
-															}
-														],
-														"body": {
-															"mode": "raw",
-															"raw": "{\n  \"additionalInfoId\": \"<string>\",\n  \"documentTypes\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"comment\": \"<string>\",\n  \"companyId\": \"<string>\"\n}",
-															"options": {
-																"raw": {
-																	"headerFamily": "json",
-																	"language": "json"
-																}
-															}
-														},
-														"url": "{{baseUrl}}/api/supplier/additional/edit"
-													},
-													"status": "OK",
-													"code": 200,
-													"_postman_previewlanguage": "text",
-													"header": [],
-													"cookie": [],
-													"responseTime": null,
-													"body": ""
-												},
-												{
-													"id": "f3052c95-339a-4261-bfdc-8ec41e7e7cc7",
-													"name": "Unauthorized",
-													"originalRequest": {
-														"method": "POST",
-														"header": [
-															{
-																"key": "Content-Type",
-																"value": "application/json"
-															},
-															{
-																"description": "Added as a part of security scheme: bearer",
-																"key": "Authorization",
-																"value": "Bearer <token>"
-															}
-														],
-														"body": {
-															"mode": "raw",
-															"raw": "{\n  \"additionalInfoId\": \"<string>\",\n  \"documentTypes\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"comment\": \"<string>\",\n  \"companyId\": \"<string>\"\n}",
-															"options": {
-																"raw": {
-																	"headerFamily": "json",
-																	"language": "json"
-																}
-															}
-														},
-														"url": "{{baseUrl}}/api/supplier/additional/edit"
-													},
-													"status": "Unauthorized",
-													"code": 401,
-													"_postman_previewlanguage": "text",
-													"header": [],
-													"cookie": [],
-													"responseTime": null,
-													"body": ""
-												}
-											]
-										}
-									],
-									"id": "f4e17d75-7369-4570-b611-17e31baac7fe"
-								},
-								{
-									"name": "list",
-									"item": [
-										{
-											"name": "{supplierId}",
-											"item": [
-												{
-													"name": "Anp Supplier Api Features Additional Info Get All Additional Infos Endpoint",
-													"id": "c78dc3b7-c9a1-4bf7-ac51-b24e590a9326",
-													"protocolProfileBehavior": {
-														"disableBodyPruning": true
-													},
-													"request": {
-														"auth": {
-															"type": "bearer",
-															"bearer": {
-																"token": "{{bearerToken}}"
-															}
-														},
-														"method": "GET",
-														"header": [],
-														"url": {
-															"raw": "{{baseUrl}}/api/supplier/additional/list/:supplierId?pageNumber=<integer>&pageSize=<integer>",
-															"host": [
-																"{{baseUrl}}"
-															],
-															"path": [
-																"api",
-																"supplier",
-																"additional",
-																"list",
-																":supplierId"
-															],
-															"query": [
-																{
-																	"key": "pageNumber",
-																	"value": "<integer>",
-																	"description": "(Required) "
-																},
-																{
-																	"key": "pageSize",
-																	"value": "<integer>",
-																	"description": "(Required) "
-																}
-															],
-															"variable": [
-																{
-																	"id": "9f8b6fc0-dcfc-47ae-9800-b3fa2fbe80bd",
-																	"key": "supplierId",
-																	"value": "<string>",
-																	"description": "(Required) "
-																}
-															]
-														}
-													},
-													"response": [
-														{
-															"id": "2ba68c2a-aae3-42de-9f6f-306b44c0fe8f",
-															"name": "Success",
-															"originalRequest": {
-																"method": "GET",
-																"header": [
-																	{
-																		"description": "Added as a part of security scheme: bearer",
-																		"key": "Authorization",
-																		"value": "Bearer <token>"
-																	}
-																],
-																"url": {
-																	"raw": "{{baseUrl}}/api/supplier/additional/list/:supplierId?pageNumber=<integer>&pageSize=<integer>",
-																	"host": [
-																		"{{baseUrl}}"
-																	],
-																	"path": [
-																		"api",
-																		"supplier",
-																		"additional",
-																		"list",
-																		":supplierId"
-																	],
-																	"query": [
-																		{
-																			"description": "(Required) ",
-																			"key": "pageNumber",
-																			"value": "<integer>"
-																		},
-																		{
-																			"description": "(Required) ",
-																			"key": "pageSize",
-																			"value": "<integer>"
-																		}
-																	],
-																	"variable": [
-																		{
-																			"key": "supplierId"
-																		}
-																	]
-																}
-															},
-															"status": "OK",
-															"code": 200,
-															"_postman_previewlanguage": "text",
-															"header": [],
-															"cookie": [],
-															"responseTime": null,
-															"body": ""
-														},
-														{
-															"id": "58df6580-9cda-47fe-a2c5-7cf03808f6bd",
-															"name": "Unauthorized",
-															"originalRequest": {
-																"method": "GET",
-																"header": [
-																	{
-																		"description": "Added as a part of security scheme: bearer",
-																		"key": "Authorization",
-																		"value": "Bearer <token>"
-																	}
-																],
-																"url": {
-																	"raw": "{{baseUrl}}/api/supplier/additional/list/:supplierId?pageNumber=<integer>&pageSize=<integer>",
-																	"host": [
-																		"{{baseUrl}}"
-																	],
-																	"path": [
-																		"api",
-																		"supplier",
-																		"additional",
-																		"list",
-																		":supplierId"
-																	],
-																	"query": [
-																		{
-																			"description": "(Required) ",
-																			"key": "pageNumber",
-																			"value": "<integer>"
-																		},
-																		{
-																			"description": "(Required) ",
-																			"key": "pageSize",
-																			"value": "<integer>"
-																		}
-																	],
-																	"variable": [
-																		{
-																			"key": "supplierId"
-																		}
-																	]
-																}
-															},
-															"status": "Unauthorized",
-															"code": 401,
-															"_postman_previewlanguage": "text",
-															"header": [],
-															"cookie": [],
-															"responseTime": null,
-															"body": ""
-														}
-													]
-												}
-											],
-											"id": "52c47cae-5857-4dbf-b2a4-dfb27cda2ef8"
-										}
-									],
-									"id": "c8c5326d-1e14-4185-a9f3-1638e68e3cf7"
-								},
-								{
-									"name": "{additionalInfoId}",
-									"item": [
-										{
-											"name": "Anp Supplier Api Features Additional Info Get An Additional Info Endpoint",
-											"id": "477bb4ff-9abc-40ce-96b8-d1da42b110a2",
-											"protocolProfileBehavior": {
-												"disableBodyPruning": true
-											},
-											"request": {
-												"auth": {
-													"type": "bearer",
-													"bearer": {
-														"token": "{{bearerToken}}"
-													}
-												},
-												"method": "GET",
-												"header": [],
-												"url": {
-													"raw": "{{baseUrl}}/api/supplier/additional/:additionalInfoId",
-													"host": [
-														"{{baseUrl}}"
-													],
-													"path": [
-														"api",
-														"supplier",
-														"additional",
-														":additionalInfoId"
-													],
-													"variable": [
-														{
-															"id": "c50f051b-2f1f-42a1-a8ec-fba6c307124d",
-															"key": "additionalInfoId",
-															"value": "<string>",
-															"description": "(Required) "
-														}
-													]
-												}
-											},
-											"response": [
-												{
-													"id": "20848c5d-0663-43c8-ba22-cd44a86554ad",
-													"name": "Success",
-													"originalRequest": {
-														"method": "GET",
-														"header": [
-															{
-																"description": "Added as a part of security scheme: bearer",
-																"key": "Authorization",
-																"value": "Bearer <token>"
-															}
-														],
-														"url": {
-															"raw": "{{baseUrl}}/api/supplier/additional/:additionalInfoId",
-															"host": [
-																"{{baseUrl}}"
-															],
-															"path": [
-																"api",
-																"supplier",
-																"additional",
-																":additionalInfoId"
-															],
-															"variable": [
-																{
-																	"key": "additionalInfoId"
-																}
-															]
-														}
-													},
-													"status": "OK",
-													"code": 200,
-													"_postman_previewlanguage": "text",
-													"header": [],
-													"cookie": [],
-													"responseTime": null,
-													"body": ""
-												},
-												{
-													"id": "5f497155-7295-48fc-9eb2-2d1994ba3ad5",
-													"name": "Unauthorized",
-													"originalRequest": {
-														"method": "GET",
-														"header": [
-															{
-																"description": "Added as a part of security scheme: bearer",
-																"key": "Authorization",
-																"value": "Bearer <token>"
-															}
-														],
-														"url": {
-															"raw": "{{baseUrl}}/api/supplier/additional/:additionalInfoId",
-															"host": [
-																"{{baseUrl}}"
-															],
-															"path": [
-																"api",
-																"supplier",
-																"additional",
-																":additionalInfoId"
-															],
-															"variable": [
-																{
-																	"key": "additionalInfoId"
-																}
-															]
-														}
-													},
-													"status": "Unauthorized",
-													"code": 401,
-													"_postman_previewlanguage": "text",
-													"header": [],
-													"cookie": [],
-													"responseTime": null,
-													"body": ""
-												}
-											]
-										}
-									],
-									"id": "32d2875e-37ba-4a13-a34c-22d0dca3c248"
-								}
-							],
-							"id": "d3dbe2f3-5a97-44a2-b80c-ede6b5dfa79c"
-						},
-						{
 							"name": "Regulator login",
 							"item": [
 								{
@@ -28610,6 +28091,525 @@
 								}
 							],
 							"id": "6abe42e6-ffbb-4d14-ae3d-4fd92a001f3f"
+						},
+						{
+							"name": "additional",
+							"item": [
+								{
+									"name": "create",
+									"item": [
+										{
+											"name": "Anp Supplier Api Features Additional Info Create Addintional Info Endpoint",
+											"id": "006e901e-c1ee-425b-99a5-c31f7f1a2c38",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": {
+														"token": "{{bearerToken}}"
+													}
+												},
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"additionalInfoId\": \"<string>\",\n  \"documentTypes\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"comment\": \"<string>\",\n  \"companyId\": \"<string>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl}}/api/supplier/additional/create"
+											},
+											"response": [
+												{
+													"id": "4be7f40f-8058-489d-84c2-55521800369b",
+													"name": "Success",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"additionalInfoId\": \"<string>\",\n  \"documentTypes\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"comment\": \"<string>\",\n  \"companyId\": \"<string>\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl}}/api/supplier/additional/create"
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												},
+												{
+													"id": "39433016-0d09-4162-952a-99c9df634b95",
+													"name": "Unauthorized",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"additionalInfoId\": \"<string>\",\n  \"documentTypes\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"comment\": \"<string>\",\n  \"companyId\": \"<string>\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl}}/api/supplier/additional/create"
+													},
+													"status": "Unauthorized",
+													"code": 401,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												}
+											]
+										}
+									],
+									"id": "3d256b49-56b4-4b44-a1eb-44afa36d50f7"
+								},
+								{
+									"name": "edit",
+									"item": [
+										{
+											"name": "Anp Supplier Api Features Additional Info Edit Additional Info Endpoint",
+											"id": "288aad35-6b91-45c1-b5c3-18dc704ce768",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": {
+														"token": "{{bearerToken}}"
+													}
+												},
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"additionalInfoId\": \"<string>\",\n  \"documentTypes\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"comment\": \"<string>\",\n  \"companyId\": \"<string>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl}}/api/supplier/additional/edit"
+											},
+											"response": [
+												{
+													"id": "81bea82d-7e5b-40b1-a983-f8594c13e4ad",
+													"name": "Success",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"additionalInfoId\": \"<string>\",\n  \"documentTypes\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"comment\": \"<string>\",\n  \"companyId\": \"<string>\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl}}/api/supplier/additional/edit"
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												},
+												{
+													"id": "f3052c95-339a-4261-bfdc-8ec41e7e7cc7",
+													"name": "Unauthorized",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"additionalInfoId\": \"<string>\",\n  \"documentTypes\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"comment\": \"<string>\",\n  \"companyId\": \"<string>\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl}}/api/supplier/additional/edit"
+													},
+													"status": "Unauthorized",
+													"code": 401,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												}
+											]
+										}
+									],
+									"id": "f4e17d75-7369-4570-b611-17e31baac7fe"
+								},
+								{
+									"name": "list",
+									"item": [
+										{
+											"name": "{supplierId}",
+											"item": [
+												{
+													"name": "Anp Supplier Api Features Additional Info Get All Additional Infos Endpoint",
+													"id": "c78dc3b7-c9a1-4bf7-ac51-b24e590a9326",
+													"protocolProfileBehavior": {
+														"disableBodyPruning": true
+													},
+													"request": {
+														"auth": {
+															"type": "bearer",
+															"bearer": {
+																"token": "{{bearerToken}}"
+															}
+														},
+														"method": "GET",
+														"header": [],
+														"url": {
+															"raw": "{{baseUrl}}/api/supplier/additional/list/:supplierId?pageNumber=<integer>&pageSize=<integer>",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"supplier",
+																"additional",
+																"list",
+																":supplierId"
+															],
+															"query": [
+																{
+																	"key": "pageNumber",
+																	"value": "<integer>",
+																	"description": "(Required) "
+																},
+																{
+																	"key": "pageSize",
+																	"value": "<integer>",
+																	"description": "(Required) "
+																}
+															],
+															"variable": [
+																{
+																	"id": "9f8b6fc0-dcfc-47ae-9800-b3fa2fbe80bd",
+																	"key": "supplierId",
+																	"value": "<string>",
+																	"description": "(Required) "
+																}
+															]
+														}
+													},
+													"response": [
+														{
+															"id": "2ba68c2a-aae3-42de-9f6f-306b44c0fe8f",
+															"name": "Success",
+															"originalRequest": {
+																"method": "GET",
+																"header": [
+																	{
+																		"description": "Added as a part of security scheme: bearer",
+																		"key": "Authorization",
+																		"value": "Bearer <token>"
+																	}
+																],
+																"url": {
+																	"raw": "{{baseUrl}}/api/supplier/additional/list/:supplierId?pageNumber=<integer>&pageSize=<integer>",
+																	"host": [
+																		"{{baseUrl}}"
+																	],
+																	"path": [
+																		"api",
+																		"supplier",
+																		"additional",
+																		"list",
+																		":supplierId"
+																	],
+																	"query": [
+																		{
+																			"description": "(Required) ",
+																			"key": "pageNumber",
+																			"value": "<integer>"
+																		},
+																		{
+																			"description": "(Required) ",
+																			"key": "pageSize",
+																			"value": "<integer>"
+																		}
+																	],
+																	"variable": [
+																		{
+																			"key": "supplierId"
+																		}
+																	]
+																}
+															},
+															"status": "OK",
+															"code": 200,
+															"_postman_previewlanguage": "text",
+															"header": [],
+															"cookie": [],
+															"responseTime": null,
+															"body": ""
+														},
+														{
+															"id": "58df6580-9cda-47fe-a2c5-7cf03808f6bd",
+															"name": "Unauthorized",
+															"originalRequest": {
+																"method": "GET",
+																"header": [
+																	{
+																		"description": "Added as a part of security scheme: bearer",
+																		"key": "Authorization",
+																		"value": "Bearer <token>"
+																	}
+																],
+																"url": {
+																	"raw": "{{baseUrl}}/api/supplier/additional/list/:supplierId?pageNumber=<integer>&pageSize=<integer>",
+																	"host": [
+																		"{{baseUrl}}"
+																	],
+																	"path": [
+																		"api",
+																		"supplier",
+																		"additional",
+																		"list",
+																		":supplierId"
+																	],
+																	"query": [
+																		{
+																			"description": "(Required) ",
+																			"key": "pageNumber",
+																			"value": "<integer>"
+																		},
+																		{
+																			"description": "(Required) ",
+																			"key": "pageSize",
+																			"value": "<integer>"
+																		}
+																	],
+																	"variable": [
+																		{
+																			"key": "supplierId"
+																		}
+																	]
+																}
+															},
+															"status": "Unauthorized",
+															"code": 401,
+															"_postman_previewlanguage": "text",
+															"header": [],
+															"cookie": [],
+															"responseTime": null,
+															"body": ""
+														}
+													]
+												}
+											],
+											"id": "52c47cae-5857-4dbf-b2a4-dfb27cda2ef8"
+										}
+									],
+									"id": "c8c5326d-1e14-4185-a9f3-1638e68e3cf7"
+								},
+								{
+									"name": "{additionalInfoId}",
+									"item": [
+										{
+											"name": "Anp Supplier Api Features Additional Info Get An Additional Info Endpoint",
+											"id": "477bb4ff-9abc-40ce-96b8-d1da42b110a2",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": {
+														"token": "{{bearerToken}}"
+													}
+												},
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/supplier/additional/:additionalInfoId",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"supplier",
+														"additional",
+														":additionalInfoId"
+													],
+													"variable": [
+														{
+															"id": "c50f051b-2f1f-42a1-a8ec-fba6c307124d",
+															"key": "additionalInfoId",
+															"value": "<string>",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"response": [
+												{
+													"id": "20848c5d-0663-43c8-ba22-cd44a86554ad",
+													"name": "Success",
+													"originalRequest": {
+														"method": "GET",
+														"header": [
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/supplier/additional/:additionalInfoId",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"supplier",
+																"additional",
+																":additionalInfoId"
+															],
+															"variable": [
+																{
+																	"key": "additionalInfoId"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												},
+												{
+													"id": "5f497155-7295-48fc-9eb2-2d1994ba3ad5",
+													"name": "Unauthorized",
+													"originalRequest": {
+														"method": "GET",
+														"header": [
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/supplier/additional/:additionalInfoId",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"supplier",
+																"additional",
+																":additionalInfoId"
+															],
+															"variable": [
+																{
+																	"key": "additionalInfoId"
+																}
+															]
+														}
+													},
+													"status": "Unauthorized",
+													"code": 401,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												}
+											]
+										}
+									],
+									"id": "32d2875e-37ba-4a13-a34c-22d0dca3c248"
+								}
+							],
+							"id": "d3dbe2f3-5a97-44a2-b80c-ede6b5dfa79c"
 						},
 						{
 							"name": "Verified suppliers",
