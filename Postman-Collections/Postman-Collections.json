@@ -26616,7 +26616,7 @@
 												"id": "06130ddd-a937-4a0d-87c4-1f6f5e566239",
 												"exec": [
 													"pm.collectionVariables.set(\"supplierUserId\", pm.response.json().supplierUserId);\r",
-													"// pm.collectionVariables.set(\"tagid1\", pm.response.json().tags[0].tagId);\r",
+													" pm.collectionVariables.set(\"companyId\", pm.response.json().companyId);\r",
 													"// pm.collectionVariables.set(\"tagid2\", pm.response.json().tags[1].tagId);\r",
 													"\r",
 													"pm.test(\"Status code is 200\", function () {\r",
@@ -67214,6 +67214,10 @@
 		},
 		{
 			"key": "contractId",
+			"value": ""
+		},
+		{
+			"key": "companyId",
 			"value": ""
 		}
 	]
