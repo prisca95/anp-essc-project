@@ -39121,7 +39121,7 @@
 												"method": "GET",
 												"header": [],
 												"url": {
-													"raw": "{{baseUrl}}/api/goods/order/catalogueOrder?orderStatus=Delivered&pageNumber=<integer>&pageSize=<integer>",
+													"raw": "{{baseUrl}}/api/goods/order/catalogueOrder?orderStatus=&pageNumber=1&pageSize=10",
 													"host": [
 														"{{baseUrl}}"
 													],
@@ -39134,16 +39134,17 @@
 													"query": [
 														{
 															"key": "orderStatus",
-															"value": "Delivered"
+															"value": "",
+															"description": "Delivered"
 														},
 														{
 															"key": "pageNumber",
-															"value": "<integer>",
+															"value": "1",
 															"description": "(Required) "
 														},
 														{
 															"key": "pageSize",
-															"value": "<integer>",
+															"value": "10",
 															"description": "(Required) "
 														}
 													]
