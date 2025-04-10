@@ -38744,6 +38744,15 @@
 														"id": "012517ce-9b44-419d-81d4-f43a8adda4f8",
 														"exec": [
 															"pm.collectionVariables.set(\"shippingAddressId\", pm.response.json().data[0].shippingAddressId);\r",
+															"\r",
+															"pm.test(\"Status code is 200\", function () {\r",
+															"    pm.response.to.have.status(200);\r",
+															"});\r",
+															"\r",
+															"pm.test(\"Verify that shipping address is returned\", function () {\r",
+															"    pm.expect(pm.response.json().data[0]).to.be.an(\"object\").and.not.empty;\r",
+															"   \r",
+															"});\r",
 															""
 														],
 														"type": "text/javascript",
