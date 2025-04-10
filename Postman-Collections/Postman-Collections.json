@@ -38737,6 +38737,20 @@
 									"item": [
 										{
 											"name": "Anp Goods Services Features Order Get Shipping Address Endpoint",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"id": "012517ce-9b44-419d-81d4-f43a8adda4f8",
+														"exec": [
+															"pm.collectionVariables.set(\"shippingAddressId\", pm.response.json().data[0].shippingAddressId);\r",
+															""
+														],
+														"type": "text/javascript",
+														"packages": {}
+													}
+												}
+											],
 											"id": "f3c1ecba-6d0f-4189-8701-22f430a1ad4b",
 											"protocolProfileBehavior": {
 												"disableBodyPruning": true
@@ -38751,7 +38765,7 @@
 												"method": "GET",
 												"header": [],
 												"url": {
-													"raw": "{{baseUrl}}/api/goods/order/shippingaddress?supplierId=<string>",
+													"raw": "{{baseUrl}}/api/goods/order/shippingaddress?supplierId={{supplierId}}",
 													"host": [
 														"{{baseUrl}}"
 													],
@@ -38764,7 +38778,7 @@
 													"query": [
 														{
 															"key": "supplierId",
-															"value": "<string>",
+															"value": "{{supplierId}}",
 															"description": "(Required) "
 														}
 													]
