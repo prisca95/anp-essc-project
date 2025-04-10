@@ -38947,17 +38947,17 @@
 													"formdata": [
 														{
 															"key": "cartItemIds",
-															"value": "<string>,<string>",
+															"value": "{{itemId}}",
 															"type": "text"
 														},
 														{
 															"key": "companyId",
-															"value": "<string>",
+															"value": "{{companyId}}",
 															"type": "text"
 														},
 														{
 															"key": "shippingAddressId",
-															"value": "<string>",
+															"value": "{{shippingAddressId}}",
 															"type": "text"
 														},
 														{
@@ -38969,7 +38969,7 @@
 														{
 															"key": "paymentProof",
 															"type": "file",
-															"value": null
+															"src": "HVsHd7m7n/Screenshot (2).png"
 														}
 													]
 												},
