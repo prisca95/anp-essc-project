@@ -38572,6 +38572,22 @@
 									"item": [
 										{
 											"name": "Anp Goods Services Features Order Create Shipping Address Endpoint",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"id": "abd6ca0b-198d-460c-94aa-dda68941986c",
+														"exec": [
+															"\r",
+															"pm.test(\"Status code is 200\", function () {\r",
+															"    pm.response.to.have.status(200);\r",
+															"});"
+														],
+														"type": "text/javascript",
+														"packages": {}
+													}
+												}
+											],
 											"id": "ffae38fb-b258-4c17-97e4-c57038d326e9",
 											"protocolProfileBehavior": {
 												"disableBodyPruning": true
@@ -38592,7 +38608,7 @@
 												],
 												"body": {
 													"mode": "raw",
-													"raw": "{\n  \"contactEmail\": \"<string>\",\n  \"firstName\": \"<string>\",\n  \"lastName\": \"<string>\",\n  \"phoneNumber\": \"<string>\",\n  \"country\": \"<string>\",\n  \"addressLine1\": \"<string>\",\n  \"addressLine2\": \"<string>\",\n  \"region\": \"<string>\",\n  \"city\": \"<string>\",\n  \"town\": \"<string>\",\n  \"canReuse\": \"<boolean>\",\n  \"companyId\": \"<string>\"\n}",
+													"raw": "{\n  \"contactEmail\": \"fido_@yopmail.com\",\n  \"firstName\": \"Fido\",\n  \"lastName\": \"Nunu\",\n  \"phoneNumber\": \"+2348099448899\",\n  \"country\": \"Nigeria\",\n  \"addressLine1\": \"higlane1 laogo\",\n  \"addressLine2\": \"higlane2 laogo\",\n  \"region\": \"Lagos\",\n  \"city\": \"Lagos\",\n  \"town\": \"Lagos\",\n  \"canReuse\": true,\n  \"companyId\": \"{{companyId}}\"\n}",
 													"options": {
 														"raw": {
 															"headerFamily": "json",
@@ -38715,6 +38731,170 @@
 										}
 									],
 									"id": "fbd97080-36a2-4628-945d-3398cc25d5bd"
+								},
+								{
+									"name": "shippingaddress",
+									"item": [
+										{
+											"name": "Anp Goods Services Features Order Get Shipping Address Endpoint",
+											"id": "f3c1ecba-6d0f-4189-8701-22f430a1ad4b",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": {
+														"token": "{{bearerToken}}"
+													}
+												},
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/goods/order/shippingaddress?supplierId=<string>",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"goods",
+														"order",
+														"shippingaddress"
+													],
+													"query": [
+														{
+															"key": "supplierId",
+															"value": "<string>",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"response": [
+												{
+													"id": "247b57c3-a956-46b5-a246-cb47e35fe66f",
+													"name": "Success",
+													"originalRequest": {
+														"method": "GET",
+														"header": [
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/goods/order/shippingaddress?supplierId=<string>",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"goods",
+																"order",
+																"shippingaddress"
+															],
+															"query": [
+																{
+																	"description": "(Required) ",
+																	"key": "supplierId",
+																	"value": "<string>"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												},
+												{
+													"id": "91901a86-4d8b-4b1a-8e24-2410c8be4b03",
+													"name": "Unauthorized",
+													"originalRequest": {
+														"method": "GET",
+														"header": [
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/goods/order/shippingaddress?supplierId=<string>",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"goods",
+																"order",
+																"shippingaddress"
+															],
+															"query": [
+																{
+																	"description": "(Required) ",
+																	"key": "supplierId",
+																	"value": "<string>"
+																}
+															]
+														}
+													},
+													"status": "Unauthorized",
+													"code": 401,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												},
+												{
+													"id": "41d21ef2-0acc-4e26-bec8-de28a9da18bd",
+													"name": "Forbidden",
+													"originalRequest": {
+														"method": "GET",
+														"header": [
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/goods/order/shippingaddress?supplierId=<string>",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"goods",
+																"order",
+																"shippingaddress"
+															],
+															"query": [
+																{
+																	"description": "(Required) ",
+																	"key": "supplierId",
+																	"value": "<string>"
+																}
+															]
+														}
+													},
+													"status": "Forbidden",
+													"code": 403,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												}
+											]
+										}
+									],
+									"id": "1d1bdbab-a1b4-4be8-8298-121d4b60b071"
 								},
 								{
 									"name": "checkout",
@@ -39476,170 +39656,6 @@
 										}
 									],
 									"id": "9e7006d0-17a5-41fe-8676-a1948bf42e4f"
-								},
-								{
-									"name": "shippingaddress",
-									"item": [
-										{
-											"name": "Anp Goods Services Features Order Get Shipping Address Endpoint",
-											"id": "f3c1ecba-6d0f-4189-8701-22f430a1ad4b",
-											"protocolProfileBehavior": {
-												"disableBodyPruning": true
-											},
-											"request": {
-												"auth": {
-													"type": "bearer",
-													"bearer": {
-														"token": "{{bearerToken}}"
-													}
-												},
-												"method": "GET",
-												"header": [],
-												"url": {
-													"raw": "{{baseUrl}}/api/goods/order/shippingaddress?supplierId=<string>",
-													"host": [
-														"{{baseUrl}}"
-													],
-													"path": [
-														"api",
-														"goods",
-														"order",
-														"shippingaddress"
-													],
-													"query": [
-														{
-															"key": "supplierId",
-															"value": "<string>",
-															"description": "(Required) "
-														}
-													]
-												}
-											},
-											"response": [
-												{
-													"id": "247b57c3-a956-46b5-a246-cb47e35fe66f",
-													"name": "Success",
-													"originalRequest": {
-														"method": "GET",
-														"header": [
-															{
-																"description": "Added as a part of security scheme: bearer",
-																"key": "Authorization",
-																"value": "Bearer <token>"
-															}
-														],
-														"url": {
-															"raw": "{{baseUrl}}/api/goods/order/shippingaddress?supplierId=<string>",
-															"host": [
-																"{{baseUrl}}"
-															],
-															"path": [
-																"api",
-																"goods",
-																"order",
-																"shippingaddress"
-															],
-															"query": [
-																{
-																	"description": "(Required) ",
-																	"key": "supplierId",
-																	"value": "<string>"
-																}
-															]
-														}
-													},
-													"status": "OK",
-													"code": 200,
-													"_postman_previewlanguage": "text",
-													"header": [],
-													"cookie": [],
-													"responseTime": null,
-													"body": ""
-												},
-												{
-													"id": "91901a86-4d8b-4b1a-8e24-2410c8be4b03",
-													"name": "Unauthorized",
-													"originalRequest": {
-														"method": "GET",
-														"header": [
-															{
-																"description": "Added as a part of security scheme: bearer",
-																"key": "Authorization",
-																"value": "Bearer <token>"
-															}
-														],
-														"url": {
-															"raw": "{{baseUrl}}/api/goods/order/shippingaddress?supplierId=<string>",
-															"host": [
-																"{{baseUrl}}"
-															],
-															"path": [
-																"api",
-																"goods",
-																"order",
-																"shippingaddress"
-															],
-															"query": [
-																{
-																	"description": "(Required) ",
-																	"key": "supplierId",
-																	"value": "<string>"
-																}
-															]
-														}
-													},
-													"status": "Unauthorized",
-													"code": 401,
-													"_postman_previewlanguage": "text",
-													"header": [],
-													"cookie": [],
-													"responseTime": null,
-													"body": ""
-												},
-												{
-													"id": "41d21ef2-0acc-4e26-bec8-de28a9da18bd",
-													"name": "Forbidden",
-													"originalRequest": {
-														"method": "GET",
-														"header": [
-															{
-																"description": "Added as a part of security scheme: bearer",
-																"key": "Authorization",
-																"value": "Bearer <token>"
-															}
-														],
-														"url": {
-															"raw": "{{baseUrl}}/api/goods/order/shippingaddress?supplierId=<string>",
-															"host": [
-																"{{baseUrl}}"
-															],
-															"path": [
-																"api",
-																"goods",
-																"order",
-																"shippingaddress"
-															],
-															"query": [
-																{
-																	"description": "(Required) ",
-																	"key": "supplierId",
-																	"value": "<string>"
-																}
-															]
-														}
-													},
-													"status": "Forbidden",
-													"code": 403,
-													"_postman_previewlanguage": "text",
-													"header": [],
-													"cookie": [],
-													"responseTime": null,
-													"body": ""
-												}
-											]
-										}
-									],
-									"id": "1d1bdbab-a1b4-4be8-8298-121d4b60b071"
 								}
 							],
 							"id": "81daf8a8-a812-40c2-a504-57dd627d5092"
@@ -67215,6 +67231,10 @@
 		},
 		{
 			"key": "companyId",
+			"value": ""
+		},
+		{
+			"key": "shippingAddressId",
 			"value": ""
 		}
 	]
