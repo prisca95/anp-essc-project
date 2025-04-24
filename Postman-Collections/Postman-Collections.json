@@ -36343,7 +36343,7 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "{{baseUrl}}/api/goods/list?sortOrder=0&productType=0&pageNumber=1&pageSize=20&loc",
+											"raw": "{{baseUrl}}/api/goods/list?productType=0&pageNumber=1&pageSize=50&loc&status=publish",
 											"host": [
 												"{{baseUrl}}"
 											],
@@ -36395,7 +36395,8 @@
 												{
 													"key": "sortOrder",
 													"value": "0",
-													"description": "01234"
+													"description": "01234",
+													"disabled": true
 												},
 												{
 													"key": "productType",
@@ -36421,12 +36422,17 @@
 												},
 												{
 													"key": "pageSize",
-													"value": "20",
+													"value": "50",
 													"description": "(Required) "
 												},
 												{
 													"key": "loc",
 													"value": null
+												},
+												{
+													"key": "status",
+													"value": "publish",
+													"type": "text"
 												}
 											]
 										}
