@@ -38253,170 +38253,6 @@
 										}
 									],
 									"id": "6ae4f97f-6180-4989-b5a8-26ed109f0f42"
-								},
-								{
-									"name": "myOrder",
-									"item": [
-										{
-											"name": "Anp Goods Services Features Cart Get My Order Endpoint",
-											"event": [
-												{
-													"listen": "test",
-													"script": {
-														"id": "ee524963-f041-4443-b21b-739be2978dbe",
-														"exec": [
-															"pm.test(\"Status code is 200\", function () {\r",
-															"    pm.response.to.have.status(200);\r",
-															"});\r",
-															"\r",
-															"pm.test(\"Verify that items in cart are returned\", function () {\r",
-															"    pm.expect(pm.response.json().data[0].orderId).to.be.a(\"string\").and.not.empty;\r",
-															"    pm.expect(pm.response.json().data[0].cost).to.be.a(\"number\");\r",
-															"        pm.expect(pm.response.json().data[0].quantity).to.be.a(\"number\");\r",
-															"                pm.expect(pm.response.json().data[0].itemId).to.be.a(\"string\").and.not.be.empty;\r",
-															"\r",
-															"\r",
-															"});\r",
-															""
-														],
-														"type": "text/javascript",
-														"packages": {}
-													}
-												}
-											],
-											"id": "564e446e-0f42-4537-825f-d5f75bc121b7",
-											"protocolProfileBehavior": {
-												"disableBodyPruning": true
-											},
-											"request": {
-												"auth": {
-													"type": "bearer",
-													"bearer": {
-														"token": "{{bearerToken}}"
-													}
-												},
-												"method": "GET",
-												"header": [],
-												"url": {
-													"raw": "{{baseUrl}}/api/goods/cart/myOrder?pageNumber=1&pageSize=10",
-													"host": [
-														"{{baseUrl}}"
-													],
-													"path": [
-														"api",
-														"goods",
-														"cart",
-														"myOrder"
-													],
-													"query": [
-														{
-															"key": "pageNumber",
-															"value": "1",
-															"description": "(Required) "
-														},
-														{
-															"key": "pageSize",
-															"value": "10",
-															"description": "(Required) "
-														}
-													]
-												}
-											},
-											"response": [
-												{
-													"id": "6030a8bf-d361-4c8c-b018-afed209e0576",
-													"name": "Success",
-													"originalRequest": {
-														"method": "GET",
-														"header": [
-															{
-																"description": "Added as a part of security scheme: bearer",
-																"key": "Authorization",
-																"value": "Bearer <token>"
-															}
-														],
-														"url": {
-															"raw": "{{baseUrl}}/api/goods/cart/myOrder?pageNumber=<integer>&pageSize=<integer>",
-															"host": [
-																"{{baseUrl}}"
-															],
-															"path": [
-																"api",
-																"goods",
-																"cart",
-																"myOrder"
-															],
-															"query": [
-																{
-																	"description": "(Required) ",
-																	"key": "pageNumber",
-																	"value": "<integer>"
-																},
-																{
-																	"description": "(Required) ",
-																	"key": "pageSize",
-																	"value": "<integer>"
-																}
-															]
-														}
-													},
-													"status": "OK",
-													"code": 200,
-													"_postman_previewlanguage": "text",
-													"header": [],
-													"cookie": [],
-													"responseTime": null,
-													"body": ""
-												},
-												{
-													"id": "b910113f-334a-45ed-8441-1a573cb6f3a6",
-													"name": "Unauthorized",
-													"originalRequest": {
-														"method": "GET",
-														"header": [
-															{
-																"description": "Added as a part of security scheme: bearer",
-																"key": "Authorization",
-																"value": "Bearer <token>"
-															}
-														],
-														"url": {
-															"raw": "{{baseUrl}}/api/goods/cart/myOrder?pageNumber=<integer>&pageSize=<integer>",
-															"host": [
-																"{{baseUrl}}"
-															],
-															"path": [
-																"api",
-																"goods",
-																"cart",
-																"myOrder"
-															],
-															"query": [
-																{
-																	"description": "(Required) ",
-																	"key": "pageNumber",
-																	"value": "<integer>"
-																},
-																{
-																	"description": "(Required) ",
-																	"key": "pageSize",
-																	"value": "<integer>"
-																}
-															]
-														}
-													},
-													"status": "Unauthorized",
-													"code": 401,
-													"_postman_previewlanguage": "text",
-													"header": [],
-													"cookie": [],
-													"responseTime": null,
-													"body": ""
-												}
-											]
-										}
-									],
-									"id": "dc4eff6a-2e2a-4884-84da-c3c569564687"
 								}
 							],
 							"id": "9b4c29cb-bd4f-4621-9e67-32e2fd524621"
@@ -39508,6 +39344,175 @@
 										}
 									],
 									"id": "2697c3b1-174c-49a9-bf9c-33189db9e255"
+								},
+								{
+									"name": "myOrder",
+									"item": [
+										{
+											"name": "Anp Goods Services Features Cart Get My Order Endpoint",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"id": "ee524963-f041-4443-b21b-739be2978dbe",
+														"exec": [
+															"pm.test(\"Status code is 200\", function () {\r",
+															"    pm.response.to.have.status(200);\r",
+															"});\r",
+															"\r",
+															"pm.test(\"Verify that items in cart are returned\", function () {\r",
+															"    pm.expect(pm.response.json().data[0].orderId).to.be.a(\"string\").and.not.empty;\r",
+															"    pm.expect(pm.response.json().data[0].cost).to.be.a(\"number\");\r",
+															"        pm.expect(pm.response.json().data[0].quantity).to.be.a(\"number\");\r",
+															"                pm.expect(pm.response.json().data[0].itemId).to.be.a(\"string\").and.not.be.empty;\r",
+															"\r",
+															"\r",
+															"});\r",
+															""
+														],
+														"type": "text/javascript",
+														"packages": {}
+													}
+												}
+											],
+											"id": "564e446e-0f42-4537-825f-d5f75bc121b7",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": {
+														"token": "{{bearerToken}}"
+													}
+												},
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/goods/cart/myOrder?pageNumber=1&pageSize=20&orderStatus=unpaid",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"goods",
+														"cart",
+														"myOrder"
+													],
+													"query": [
+														{
+															"key": "pageNumber",
+															"value": "1",
+															"description": "(Required) "
+														},
+														{
+															"key": "pageSize",
+															"value": "20",
+															"description": "(Required) "
+														},
+														{
+															"key": "orderStatus",
+															"value": "unpaid",
+															"type": "text"
+														}
+													]
+												}
+											},
+											"response": [
+												{
+													"id": "6030a8bf-d361-4c8c-b018-afed209e0576",
+													"name": "Success",
+													"originalRequest": {
+														"method": "GET",
+														"header": [
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/goods/cart/myOrder?pageNumber=<integer>&pageSize=<integer>",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"goods",
+																"cart",
+																"myOrder"
+															],
+															"query": [
+																{
+																	"description": "(Required) ",
+																	"key": "pageNumber",
+																	"value": "<integer>"
+																},
+																{
+																	"description": "(Required) ",
+																	"key": "pageSize",
+																	"value": "<integer>"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												},
+												{
+													"id": "b910113f-334a-45ed-8441-1a573cb6f3a6",
+													"name": "Unauthorized",
+													"originalRequest": {
+														"method": "GET",
+														"header": [
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/goods/cart/myOrder?pageNumber=<integer>&pageSize=<integer>",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"goods",
+																"cart",
+																"myOrder"
+															],
+															"query": [
+																{
+																	"description": "(Required) ",
+																	"key": "pageNumber",
+																	"value": "<integer>"
+																},
+																{
+																	"description": "(Required) ",
+																	"key": "pageSize",
+																	"value": "<integer>"
+																}
+															]
+														}
+													},
+													"status": "Unauthorized",
+													"code": 401,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												}
+											]
+										}
+									],
+									"id": "dc4eff6a-2e2a-4884-84da-c3c569564687"
 								},
 								{
 									"name": "order",
