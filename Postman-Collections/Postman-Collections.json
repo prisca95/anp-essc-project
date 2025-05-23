@@ -2352,7 +2352,7 @@
 												"token": "{{bearerToken}}"
 											}
 										},
-										"method": "POST",
+										"method": "GET",
 										"header": [
 											{
 												"key": "Accept",
