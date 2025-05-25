@@ -57651,6 +57651,176 @@
 									"id": "9503bc17-c0af-4bc2-ab07-e0afb79f59c7"
 								},
 								{
+									"name": "create Copy",
+									"item": [
+										{
+											"name": "Create a new Contract Offer",
+											"id": "7b721ad3-6884-4c1d-b365-709c6b1d75c4",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": {
+														"token": "{{bearerToken}}"
+													}
+												},
+												"method": "POST",
+												"header": [
+													{
+														"key": "accept-Language",
+														"value": "<string>",
+														"description": "(Required) "
+													},
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"tenderBidId\": \"<string>\",\n  \"status\": \"New\",\n  \"tenderType\": \"ExpressionOfInterest\",\n  \"paymentTerms\": [\n    {\n      \"description\": \"<string>\",\n      \"amount\": \"<number>\"\n    },\n    {\n      \"description\": \"<string>\",\n      \"amount\": \"<number>\"\n    }\n  ],\n  \"contractDeliverables\": [\n    {\n      \"deliverableId\": \"<string>\"\n    },\n    {\n      \"deliverableId\": \"<string>\"\n    }\n  ]\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl}}/api/procurement/contracts/create",
+												"description": "Create a new Contract Offer for the winning bid"
+											},
+											"response": [
+												{
+													"id": "97e70c2d-9f61-4ae0-8a53-8be41bedb83f",
+													"name": "Success",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"description": "(Required) ",
+																"key": "accept-Language",
+																"value": "<string>"
+															},
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"tenderBidId\": \"<string>\",\n  \"status\": \"New\",\n  \"tenderType\": \"ExpressionOfInterest\",\n  \"paymentTerms\": [\n    {\n      \"description\": \"<string>\",\n      \"amount\": \"<number>\"\n    },\n    {\n      \"description\": \"<string>\",\n      \"amount\": \"<number>\"\n    }\n  ],\n  \"contractDeliverables\": [\n    {\n      \"deliverableId\": \"<string>\"\n    },\n    {\n      \"deliverableId\": \"<string>\"\n    }\n  ]\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl}}/api/procurement/contracts/create"
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												},
+												{
+													"id": "f1a043dc-4497-421e-8718-410718f1e5d5",
+													"name": "Unauthorized",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"description": "(Required) ",
+																"key": "accept-Language",
+																"value": "<string>"
+															},
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"tenderBidId\": \"<string>\",\n  \"status\": \"New\",\n  \"tenderType\": \"ExpressionOfInterest\",\n  \"paymentTerms\": [\n    {\n      \"description\": \"<string>\",\n      \"amount\": \"<number>\"\n    },\n    {\n      \"description\": \"<string>\",\n      \"amount\": \"<number>\"\n    }\n  ],\n  \"contractDeliverables\": [\n    {\n      \"deliverableId\": \"<string>\"\n    },\n    {\n      \"deliverableId\": \"<string>\"\n    }\n  ]\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl}}/api/procurement/contracts/create"
+													},
+													"status": "Unauthorized",
+													"code": 401,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												},
+												{
+													"id": "b41817db-44e4-435f-b28f-794d38ebf9e2",
+													"name": "Forbidden",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"description": "(Required) ",
+																"key": "accept-Language",
+																"value": "<string>"
+															},
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"tenderBidId\": \"<string>\",\n  \"status\": \"New\",\n  \"tenderType\": \"ExpressionOfInterest\",\n  \"paymentTerms\": [\n    {\n      \"description\": \"<string>\",\n      \"amount\": \"<number>\"\n    },\n    {\n      \"description\": \"<string>\",\n      \"amount\": \"<number>\"\n    }\n  ],\n  \"contractDeliverables\": [\n    {\n      \"deliverableId\": \"<string>\"\n    },\n    {\n      \"deliverableId\": \"<string>\"\n    }\n  ]\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl}}/api/procurement/contracts/create"
+													},
+													"status": "Forbidden",
+													"code": 403,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												}
+											]
+										}
+									],
+									"id": "fc87e735-c129-4602-8292-7ce95a39544c"
+								},
+								{
 									"name": "{contractId}",
 									"item": [
 										{
