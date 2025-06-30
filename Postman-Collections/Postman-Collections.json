@@ -10289,6 +10289,8 @@
 													"script": {
 														"id": "7a66f114-3e60-4e83-9bb8-c7d161a2d357",
 														"exec": [
+															" pm.collectionVariables.set(\"categoryId\", pm.response.json().data[0].categorId);\r",
+															"\r",
 															"pm.test(\"Status code is 200\", function () {\r",
 															"    pm.response.to.have.status(200);\r",
 															"});\r",
