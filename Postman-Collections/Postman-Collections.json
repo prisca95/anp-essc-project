@@ -35747,6 +35747,347 @@
 					"name": "goods Copy",
 					"item": [
 						{
+							"name": "supplier",
+							"item": [
+								{
+									"name": "tags",
+									"item": [
+										{
+											"name": "{supplierId}",
+											"item": [
+												{
+													"name": "Anp Goods Services Features Create Get Supplier Tags Endpoint",
+													"event": [
+														{
+															"listen": "test",
+															"script": {
+																"id": "6b35e0c4-1879-46d7-a896-6f8c0349d8a6",
+																"exec": [
+																	"pm.collectionVariables.set(\"tagId1\", pm.response.json().data[0].tagId);\r",
+																	"pm.collectionVariables.set(\"tagId2\", pm.response.json().data[1].tagId);\r",
+																	"\r",
+																	"pm.test(\"Status code is 200\", function () {\r",
+																	"    pm.response.to.have.status(200);\r",
+																	"});"
+																],
+																"type": "text/javascript",
+																"packages": {}
+															}
+														}
+													],
+													"id": "2494c9ff-3f6a-47ed-853a-03427aac5cbc",
+													"protocolProfileBehavior": {
+														"disableBodyPruning": true
+													},
+													"request": {
+														"auth": {
+															"type": "bearer",
+															"bearer": {
+																"token": "{{bearerToken}}"
+															}
+														},
+														"method": "GET",
+														"header": [],
+														"url": {
+															"raw": "{{baseUrl}}/api/goods/supplier/tags/:supplierId",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"goods",
+																"supplier",
+																"tags",
+																":supplierId"
+															],
+															"variable": [
+																{
+																	"key": "supplierId",
+																	"value": "{{supplierId}}",
+																	"description": "(Required) "
+																}
+															]
+														}
+													},
+													"response": [
+														{
+															"id": "a4a65284-4f46-4050-bf53-c90a1f5a896a",
+															"name": "Success",
+															"originalRequest": {
+																"method": "GET",
+																"header": [
+																	{
+																		"description": "Added as a part of security scheme: bearer",
+																		"key": "Authorization",
+																		"value": "Bearer <token>"
+																	}
+																],
+																"url": {
+																	"raw": "{{baseUrl}}/api/goods/supplier/tags/:supplierId",
+																	"host": [
+																		"{{baseUrl}}"
+																	],
+																	"path": [
+																		"api",
+																		"goods",
+																		"supplier",
+																		"tags",
+																		":supplierId"
+																	],
+																	"variable": [
+																		{
+																			"key": "supplierId"
+																		}
+																	]
+																}
+															},
+															"status": "OK",
+															"code": 200,
+															"_postman_previewlanguage": "text",
+															"header": [],
+															"cookie": [],
+															"responseTime": null,
+															"body": ""
+														},
+														{
+															"id": "a012513a-eea9-4678-9045-12a0697e721e",
+															"name": "Unauthorized",
+															"originalRequest": {
+																"method": "GET",
+																"header": [
+																	{
+																		"description": "Added as a part of security scheme: bearer",
+																		"key": "Authorization",
+																		"value": "Bearer <token>"
+																	}
+																],
+																"url": {
+																	"raw": "{{baseUrl}}/api/goods/supplier/tags/:supplierId",
+																	"host": [
+																		"{{baseUrl}}"
+																	],
+																	"path": [
+																		"api",
+																		"goods",
+																		"supplier",
+																		"tags",
+																		":supplierId"
+																	],
+																	"variable": [
+																		{
+																			"key": "supplierId"
+																		}
+																	]
+																}
+															},
+															"status": "Unauthorized",
+															"code": 401,
+															"_postman_previewlanguage": "text",
+															"header": [],
+															"cookie": [],
+															"responseTime": null,
+															"body": ""
+														},
+														{
+															"id": "f7df1513-562b-4a7d-a22c-a92ac45b706c",
+															"name": "Forbidden",
+															"originalRequest": {
+																"method": "GET",
+																"header": [
+																	{
+																		"description": "Added as a part of security scheme: bearer",
+																		"key": "Authorization",
+																		"value": "Bearer <token>"
+																	}
+																],
+																"url": {
+																	"raw": "{{baseUrl}}/api/goods/supplier/tags/:supplierId",
+																	"host": [
+																		"{{baseUrl}}"
+																	],
+																	"path": [
+																		"api",
+																		"goods",
+																		"supplier",
+																		"tags",
+																		":supplierId"
+																	],
+																	"variable": [
+																		{
+																			"key": "supplierId"
+																		}
+																	]
+																}
+															},
+															"status": "Forbidden",
+															"code": 403,
+															"_postman_previewlanguage": "text",
+															"header": [],
+															"cookie": [],
+															"responseTime": null,
+															"body": ""
+														}
+													]
+												}
+											],
+											"id": "8f858f79-d218-4bbc-aa59-e6975231954d"
+										}
+									],
+									"id": "b80aada5-5194-4726-abe2-af23c18732d0"
+								}
+							],
+							"id": "a8393877-9f8f-489a-bef2-556888db4546"
+						},
+						{
+							"name": "create",
+							"item": [
+								{
+									"name": "Anp Goods Services Features Create Create Product Endpoint1",
+									"id": "db319d4e-28ec-4198-9989-77ea1469268e",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": {
+												"token": "{{bearerToken}}"
+											}
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"productId\": \"exercitation magna anim\",\n  \"description\": \"ut\",\n  \"productName\": \"ea nostrud veniam\",\n  \"dimension\": \"pariatur eu ut\",\n  \"serviceSource\": \"sit\",\n  \"price\": 52701847.64096969,\n  \"quantity\": 15450013,\n  \"companyId\": \"quis qui sint\",\n  \"categoryId\": \"dolore aute sunt\",\n  \"location\": \"nostrud\",\n  \"globalPrice\": 77992384.7262556,\n  \"status\": \"do culpa\",\n  \"productType\": \"Goods\",\n  \"brand\": \"commodo\",\n  \"serialNumber\": \"laborum\",\n  \"certification\": \"laboris sit\",\n  \"productLine\": \"irure dolor\",\n  \"warrantyDuration\": -97149622,\n  \"warrantType\": \"id in ut\",\n  \"availability\": -94253473,\n  \"distributionMechanism\": \"dolore\",\n  \"comment\": \"fugiat irure et Ut voluptate\",\n  \"model\": \"cillum ex pariatur\",\n  \"productionCountry\": \"ea minim exercitation\",\n  \"currency\": \"fugiat esse\",\n  \"tagIds\": [\n    \"mollit dolore pariatur\",\n    \"quis velit officia\"\n  ],\n  \"tax\": 14708377.54274416,\n  \"isTaxInclusive\": false,\n  \"serviceHistory\": \"est non dolore\",\n  \"workReference\": \"aliqua qui proident\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{baseUrl}}/api/goods/create"
+									},
+									"response": [
+										{
+											"id": "88e187aa-287d-479f-a481-9c8f422a9ed6",
+											"name": "Success",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"description": "Added as a part of security scheme: bearer",
+														"key": "Authorization",
+														"value": "Bearer <token>"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"productId\": \"exercitation magna anim\",\n  \"description\": \"ut\",\n  \"productName\": \"ea nostrud veniam\",\n  \"dimension\": \"pariatur eu ut\",\n  \"serviceSource\": \"sit\",\n  \"price\": 52701847.64096969,\n  \"quantity\": 15450013,\n  \"companyId\": \"quis qui sint\",\n  \"categoryId\": \"dolore aute sunt\",\n  \"location\": \"nostrud\",\n  \"globalPrice\": 77992384.7262556,\n  \"status\": \"do culpa\",\n  \"productType\": \"Goods\",\n  \"brand\": \"commodo\",\n  \"serialNumber\": \"laborum\",\n  \"certification\": \"laboris sit\",\n  \"productLine\": \"irure dolor\",\n  \"warrantyDuration\": -97149622,\n  \"warrantType\": \"id in ut\",\n  \"availability\": -94253473,\n  \"distributionMechanism\": \"dolore\",\n  \"comment\": \"fugiat irure et Ut voluptate\",\n  \"model\": \"cillum ex pariatur\",\n  \"productionCountry\": \"ea minim exercitation\",\n  \"currency\": \"fugiat esse\",\n  \"tagIds\": [\n    \"mollit dolore pariatur\",\n    \"quis velit officia\"\n  ],\n  \"tax\": 14708377.54274416,\n  \"isTaxInclusive\": false,\n  \"serviceHistory\": \"est non dolore\",\n  \"workReference\": \"aliqua qui proident\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl}}/api/goods/create"
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"responseTime": null,
+											"body": ""
+										},
+										{
+											"id": "1cdd2c2d-c147-4bb0-a461-89240f7fe5f5",
+											"name": "Unauthorized",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"description": "Added as a part of security scheme: bearer",
+														"key": "Authorization",
+														"value": "Bearer <token>"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"productId\": \"exercitation magna anim\",\n  \"description\": \"ut\",\n  \"productName\": \"ea nostrud veniam\",\n  \"dimension\": \"pariatur eu ut\",\n  \"serviceSource\": \"sit\",\n  \"price\": 52701847.64096969,\n  \"quantity\": 15450013,\n  \"companyId\": \"quis qui sint\",\n  \"categoryId\": \"dolore aute sunt\",\n  \"location\": \"nostrud\",\n  \"globalPrice\": 77992384.7262556,\n  \"status\": \"do culpa\",\n  \"productType\": \"Goods\",\n  \"brand\": \"commodo\",\n  \"serialNumber\": \"laborum\",\n  \"certification\": \"laboris sit\",\n  \"productLine\": \"irure dolor\",\n  \"warrantyDuration\": -97149622,\n  \"warrantType\": \"id in ut\",\n  \"availability\": -94253473,\n  \"distributionMechanism\": \"dolore\",\n  \"comment\": \"fugiat irure et Ut voluptate\",\n  \"model\": \"cillum ex pariatur\",\n  \"productionCountry\": \"ea minim exercitation\",\n  \"currency\": \"fugiat esse\",\n  \"tagIds\": [\n    \"mollit dolore pariatur\",\n    \"quis velit officia\"\n  ],\n  \"tax\": 14708377.54274416,\n  \"isTaxInclusive\": false,\n  \"serviceHistory\": \"est non dolore\",\n  \"workReference\": \"aliqua qui proident\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl}}/api/goods/create"
+											},
+											"status": "Unauthorized",
+											"code": 401,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"responseTime": null,
+											"body": ""
+										},
+										{
+											"id": "1ea96e91-0a95-49d9-b682-11039c2bf442",
+											"name": "Forbidden",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"description": "Added as a part of security scheme: bearer",
+														"key": "Authorization",
+														"value": "Bearer <token>"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"productId\": \"exercitation magna anim\",\n  \"description\": \"ut\",\n  \"productName\": \"ea nostrud veniam\",\n  \"dimension\": \"pariatur eu ut\",\n  \"serviceSource\": \"sit\",\n  \"price\": 52701847.64096969,\n  \"quantity\": 15450013,\n  \"companyId\": \"quis qui sint\",\n  \"categoryId\": \"dolore aute sunt\",\n  \"location\": \"nostrud\",\n  \"globalPrice\": 77992384.7262556,\n  \"status\": \"do culpa\",\n  \"productType\": \"Goods\",\n  \"brand\": \"commodo\",\n  \"serialNumber\": \"laborum\",\n  \"certification\": \"laboris sit\",\n  \"productLine\": \"irure dolor\",\n  \"warrantyDuration\": -97149622,\n  \"warrantType\": \"id in ut\",\n  \"availability\": -94253473,\n  \"distributionMechanism\": \"dolore\",\n  \"comment\": \"fugiat irure et Ut voluptate\",\n  \"model\": \"cillum ex pariatur\",\n  \"productionCountry\": \"ea minim exercitation\",\n  \"currency\": \"fugiat esse\",\n  \"tagIds\": [\n    \"mollit dolore pariatur\",\n    \"quis velit officia\"\n  ],\n  \"tax\": 14708377.54274416,\n  \"isTaxInclusive\": false,\n  \"serviceHistory\": \"est non dolore\",\n  \"workReference\": \"aliqua qui proident\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl}}/api/goods/create"
+											},
+											"status": "Forbidden",
+											"code": 403,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"responseTime": null,
+											"body": ""
+										}
+									]
+								}
+							],
+							"id": "89886c05-7eb5-4f4e-9ca5-56a97ab6a168"
+						},
+						{
 							"name": "order",
 							"item": [
 								{
@@ -37801,155 +38142,6 @@
 							"id": "3ebb606e-8f31-4225-b85b-671ba5371631"
 						},
 						{
-							"name": "create",
-							"item": [
-								{
-									"name": "Anp Goods Services Features Create Create Product Endpoint1",
-									"id": "db319d4e-28ec-4198-9989-77ea1469268e",
-									"protocolProfileBehavior": {
-										"disableBodyPruning": true
-									},
-									"request": {
-										"auth": {
-											"type": "bearer",
-											"bearer": {
-												"token": "{{bearerToken}}"
-											}
-										},
-										"method": "POST",
-										"header": [
-											{
-												"key": "Content-Type",
-												"value": "application/json"
-											}
-										],
-										"body": {
-											"mode": "raw",
-											"raw": "{\n  \"productId\": \"exercitation magna anim\",\n  \"description\": \"ut\",\n  \"productName\": \"ea nostrud veniam\",\n  \"dimension\": \"pariatur eu ut\",\n  \"serviceSource\": \"sit\",\n  \"price\": 52701847.64096969,\n  \"quantity\": 15450013,\n  \"companyId\": \"quis qui sint\",\n  \"categoryId\": \"dolore aute sunt\",\n  \"location\": \"nostrud\",\n  \"globalPrice\": 77992384.7262556,\n  \"status\": \"do culpa\",\n  \"productType\": \"Goods\",\n  \"brand\": \"commodo\",\n  \"serialNumber\": \"laborum\",\n  \"certification\": \"laboris sit\",\n  \"productLine\": \"irure dolor\",\n  \"warrantyDuration\": -97149622,\n  \"warrantType\": \"id in ut\",\n  \"availability\": -94253473,\n  \"distributionMechanism\": \"dolore\",\n  \"comment\": \"fugiat irure et Ut voluptate\",\n  \"model\": \"cillum ex pariatur\",\n  \"productionCountry\": \"ea minim exercitation\",\n  \"currency\": \"fugiat esse\",\n  \"tagIds\": [\n    \"mollit dolore pariatur\",\n    \"quis velit officia\"\n  ],\n  \"tax\": 14708377.54274416,\n  \"isTaxInclusive\": false,\n  \"serviceHistory\": \"est non dolore\",\n  \"workReference\": \"aliqua qui proident\"\n}",
-											"options": {
-												"raw": {
-													"headerFamily": "json",
-													"language": "json"
-												}
-											}
-										},
-										"url": "{{baseUrl}}/api/goods/create"
-									},
-									"response": [
-										{
-											"id": "88e187aa-287d-479f-a481-9c8f422a9ed6",
-											"name": "Success",
-											"originalRequest": {
-												"method": "POST",
-												"header": [
-													{
-														"key": "Content-Type",
-														"value": "application/json"
-													},
-													{
-														"description": "Added as a part of security scheme: bearer",
-														"key": "Authorization",
-														"value": "Bearer <token>"
-													}
-												],
-												"body": {
-													"mode": "raw",
-													"raw": "{\n  \"productId\": \"exercitation magna anim\",\n  \"description\": \"ut\",\n  \"productName\": \"ea nostrud veniam\",\n  \"dimension\": \"pariatur eu ut\",\n  \"serviceSource\": \"sit\",\n  \"price\": 52701847.64096969,\n  \"quantity\": 15450013,\n  \"companyId\": \"quis qui sint\",\n  \"categoryId\": \"dolore aute sunt\",\n  \"location\": \"nostrud\",\n  \"globalPrice\": 77992384.7262556,\n  \"status\": \"do culpa\",\n  \"productType\": \"Goods\",\n  \"brand\": \"commodo\",\n  \"serialNumber\": \"laborum\",\n  \"certification\": \"laboris sit\",\n  \"productLine\": \"irure dolor\",\n  \"warrantyDuration\": -97149622,\n  \"warrantType\": \"id in ut\",\n  \"availability\": -94253473,\n  \"distributionMechanism\": \"dolore\",\n  \"comment\": \"fugiat irure et Ut voluptate\",\n  \"model\": \"cillum ex pariatur\",\n  \"productionCountry\": \"ea minim exercitation\",\n  \"currency\": \"fugiat esse\",\n  \"tagIds\": [\n    \"mollit dolore pariatur\",\n    \"quis velit officia\"\n  ],\n  \"tax\": 14708377.54274416,\n  \"isTaxInclusive\": false,\n  \"serviceHistory\": \"est non dolore\",\n  \"workReference\": \"aliqua qui proident\"\n}",
-													"options": {
-														"raw": {
-															"headerFamily": "json",
-															"language": "json"
-														}
-													}
-												},
-												"url": "{{baseUrl}}/api/goods/create"
-											},
-											"status": "OK",
-											"code": 200,
-											"_postman_previewlanguage": "text",
-											"header": [],
-											"cookie": [],
-											"responseTime": null,
-											"body": ""
-										},
-										{
-											"id": "1cdd2c2d-c147-4bb0-a461-89240f7fe5f5",
-											"name": "Unauthorized",
-											"originalRequest": {
-												"method": "POST",
-												"header": [
-													{
-														"key": "Content-Type",
-														"value": "application/json"
-													},
-													{
-														"description": "Added as a part of security scheme: bearer",
-														"key": "Authorization",
-														"value": "Bearer <token>"
-													}
-												],
-												"body": {
-													"mode": "raw",
-													"raw": "{\n  \"productId\": \"exercitation magna anim\",\n  \"description\": \"ut\",\n  \"productName\": \"ea nostrud veniam\",\n  \"dimension\": \"pariatur eu ut\",\n  \"serviceSource\": \"sit\",\n  \"price\": 52701847.64096969,\n  \"quantity\": 15450013,\n  \"companyId\": \"quis qui sint\",\n  \"categoryId\": \"dolore aute sunt\",\n  \"location\": \"nostrud\",\n  \"globalPrice\": 77992384.7262556,\n  \"status\": \"do culpa\",\n  \"productType\": \"Goods\",\n  \"brand\": \"commodo\",\n  \"serialNumber\": \"laborum\",\n  \"certification\": \"laboris sit\",\n  \"productLine\": \"irure dolor\",\n  \"warrantyDuration\": -97149622,\n  \"warrantType\": \"id in ut\",\n  \"availability\": -94253473,\n  \"distributionMechanism\": \"dolore\",\n  \"comment\": \"fugiat irure et Ut voluptate\",\n  \"model\": \"cillum ex pariatur\",\n  \"productionCountry\": \"ea minim exercitation\",\n  \"currency\": \"fugiat esse\",\n  \"tagIds\": [\n    \"mollit dolore pariatur\",\n    \"quis velit officia\"\n  ],\n  \"tax\": 14708377.54274416,\n  \"isTaxInclusive\": false,\n  \"serviceHistory\": \"est non dolore\",\n  \"workReference\": \"aliqua qui proident\"\n}",
-													"options": {
-														"raw": {
-															"headerFamily": "json",
-															"language": "json"
-														}
-													}
-												},
-												"url": "{{baseUrl}}/api/goods/create"
-											},
-											"status": "Unauthorized",
-											"code": 401,
-											"_postman_previewlanguage": "text",
-											"header": [],
-											"cookie": [],
-											"responseTime": null,
-											"body": ""
-										},
-										{
-											"id": "1ea96e91-0a95-49d9-b682-11039c2bf442",
-											"name": "Forbidden",
-											"originalRequest": {
-												"method": "POST",
-												"header": [
-													{
-														"key": "Content-Type",
-														"value": "application/json"
-													},
-													{
-														"description": "Added as a part of security scheme: bearer",
-														"key": "Authorization",
-														"value": "Bearer <token>"
-													}
-												],
-												"body": {
-													"mode": "raw",
-													"raw": "{\n  \"productId\": \"exercitation magna anim\",\n  \"description\": \"ut\",\n  \"productName\": \"ea nostrud veniam\",\n  \"dimension\": \"pariatur eu ut\",\n  \"serviceSource\": \"sit\",\n  \"price\": 52701847.64096969,\n  \"quantity\": 15450013,\n  \"companyId\": \"quis qui sint\",\n  \"categoryId\": \"dolore aute sunt\",\n  \"location\": \"nostrud\",\n  \"globalPrice\": 77992384.7262556,\n  \"status\": \"do culpa\",\n  \"productType\": \"Goods\",\n  \"brand\": \"commodo\",\n  \"serialNumber\": \"laborum\",\n  \"certification\": \"laboris sit\",\n  \"productLine\": \"irure dolor\",\n  \"warrantyDuration\": -97149622,\n  \"warrantType\": \"id in ut\",\n  \"availability\": -94253473,\n  \"distributionMechanism\": \"dolore\",\n  \"comment\": \"fugiat irure et Ut voluptate\",\n  \"model\": \"cillum ex pariatur\",\n  \"productionCountry\": \"ea minim exercitation\",\n  \"currency\": \"fugiat esse\",\n  \"tagIds\": [\n    \"mollit dolore pariatur\",\n    \"quis velit officia\"\n  ],\n  \"tax\": 14708377.54274416,\n  \"isTaxInclusive\": false,\n  \"serviceHistory\": \"est non dolore\",\n  \"workReference\": \"aliqua qui proident\"\n}",
-													"options": {
-														"raw": {
-															"headerFamily": "json",
-															"language": "json"
-														}
-													}
-												},
-												"url": "{{baseUrl}}/api/goods/create"
-											},
-											"status": "Forbidden",
-											"code": 403,
-											"_postman_previewlanguage": "text",
-											"header": [],
-											"cookie": [],
-											"responseTime": null,
-											"body": ""
-										}
-									]
-								}
-							],
-							"id": "89886c05-7eb5-4f4e-9ca5-56a97ab6a168"
-						},
-						{
 							"name": "edit",
 							"item": [
 								{
@@ -39760,181 +39952,6 @@
 								}
 							],
 							"id": "14c69a4c-4602-465a-9776-47aa8949d9b4"
-						},
-						{
-							"name": "supplier",
-							"item": [
-								{
-									"name": "tags",
-									"item": [
-										{
-											"name": "{supplierId}",
-											"item": [
-												{
-													"name": "Anp Goods Services Features Create Get Supplier Tags Endpoint",
-													"id": "2494c9ff-3f6a-47ed-853a-03427aac5cbc",
-													"protocolProfileBehavior": {
-														"disableBodyPruning": true
-													},
-													"request": {
-														"auth": {
-															"type": "bearer",
-															"bearer": {
-																"token": "{{bearerToken}}"
-															}
-														},
-														"method": "GET",
-														"header": [],
-														"url": {
-															"raw": "{{baseUrl}}/api/goods/supplier/tags/:supplierId",
-															"host": [
-																"{{baseUrl}}"
-															],
-															"path": [
-																"api",
-																"goods",
-																"supplier",
-																"tags",
-																":supplierId"
-															],
-															"variable": [
-																{
-																	"id": "5f66641c-3bb3-4327-af03-1eab25561263",
-																	"key": "supplierId",
-																	"value": "sint aliquip Excepteur magna eiusmod",
-																	"description": "(Required) "
-																}
-															]
-														}
-													},
-													"response": [
-														{
-															"id": "a4a65284-4f46-4050-bf53-c90a1f5a896a",
-															"name": "Success",
-															"originalRequest": {
-																"method": "GET",
-																"header": [
-																	{
-																		"description": "Added as a part of security scheme: bearer",
-																		"key": "Authorization",
-																		"value": "Bearer <token>"
-																	}
-																],
-																"url": {
-																	"raw": "{{baseUrl}}/api/goods/supplier/tags/:supplierId",
-																	"host": [
-																		"{{baseUrl}}"
-																	],
-																	"path": [
-																		"api",
-																		"goods",
-																		"supplier",
-																		"tags",
-																		":supplierId"
-																	],
-																	"variable": [
-																		{
-																			"key": "supplierId"
-																		}
-																	]
-																}
-															},
-															"status": "OK",
-															"code": 200,
-															"_postman_previewlanguage": "text",
-															"header": [],
-															"cookie": [],
-															"responseTime": null,
-															"body": ""
-														},
-														{
-															"id": "a012513a-eea9-4678-9045-12a0697e721e",
-															"name": "Unauthorized",
-															"originalRequest": {
-																"method": "GET",
-																"header": [
-																	{
-																		"description": "Added as a part of security scheme: bearer",
-																		"key": "Authorization",
-																		"value": "Bearer <token>"
-																	}
-																],
-																"url": {
-																	"raw": "{{baseUrl}}/api/goods/supplier/tags/:supplierId",
-																	"host": [
-																		"{{baseUrl}}"
-																	],
-																	"path": [
-																		"api",
-																		"goods",
-																		"supplier",
-																		"tags",
-																		":supplierId"
-																	],
-																	"variable": [
-																		{
-																			"key": "supplierId"
-																		}
-																	]
-																}
-															},
-															"status": "Unauthorized",
-															"code": 401,
-															"_postman_previewlanguage": "text",
-															"header": [],
-															"cookie": [],
-															"responseTime": null,
-															"body": ""
-														},
-														{
-															"id": "f7df1513-562b-4a7d-a22c-a92ac45b706c",
-															"name": "Forbidden",
-															"originalRequest": {
-																"method": "GET",
-																"header": [
-																	{
-																		"description": "Added as a part of security scheme: bearer",
-																		"key": "Authorization",
-																		"value": "Bearer <token>"
-																	}
-																],
-																"url": {
-																	"raw": "{{baseUrl}}/api/goods/supplier/tags/:supplierId",
-																	"host": [
-																		"{{baseUrl}}"
-																	],
-																	"path": [
-																		"api",
-																		"goods",
-																		"supplier",
-																		"tags",
-																		":supplierId"
-																	],
-																	"variable": [
-																		{
-																			"key": "supplierId"
-																		}
-																	]
-																}
-															},
-															"status": "Forbidden",
-															"code": 403,
-															"_postman_previewlanguage": "text",
-															"header": [],
-															"cookie": [],
-															"responseTime": null,
-															"body": ""
-														}
-													]
-												}
-											],
-											"id": "8f858f79-d218-4bbc-aa59-e6975231954d"
-										}
-									],
-									"id": "b80aada5-5194-4726-abe2-af23c18732d0"
-								}
-							],
-							"id": "a8393877-9f8f-489a-bef2-556888db4546"
 						},
 						{
 							"name": "setGoodsServices",
