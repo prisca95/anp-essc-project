@@ -39245,7 +39245,7 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "{{baseUrl}}/api/goods/list?categoryId=qui sunt&supplierId=qui sunt&industryId=qui sunt&startDate=1947-07-13T18:06:38.282Z&endDate=1947-07-13T18:06:38.282Z&tagIds=minim enim magna&tagIds=ut ut sunt eu aliquip&sortOrder=PriceHighLow&productType=Goods&country=qui sunt&productName=qui sunt&status=qui sunt&pageNumber=-69839832&pageSize=-69839832",
+											"raw": "{{baseUrl}}/api/goods/list?startDate=1947-07-13T18:06:38.282Z&endDate=1947-07-13T18:06:38.282Z&productType=Goods&status=published&pageNumber=1&pageSize=20",
 											"host": [
 												"{{baseUrl}}"
 											],
@@ -39257,15 +39257,18 @@
 											"query": [
 												{
 													"key": "categoryId",
-													"value": "qui sunt"
+													"value": "{{categoryId}}",
+													"disabled": true
 												},
 												{
 													"key": "supplierId",
-													"value": "qui sunt"
+													"value": "{{supplierId}}",
+													"disabled": true
 												},
 												{
 													"key": "industryId",
-													"value": "qui sunt"
+													"value": "{{industryId}}",
+													"disabled": true
 												},
 												{
 													"key": "startDate",
@@ -39277,15 +39280,18 @@
 												},
 												{
 													"key": "tagIds",
-													"value": "minim enim magna"
+													"value": "{{tagId1}}",
+													"disabled": true
 												},
 												{
 													"key": "tagIds",
-													"value": "ut ut sunt eu aliquip"
+													"value": "{{tagId2}}",
+													"disabled": true
 												},
 												{
 													"key": "sortOrder",
-													"value": "PriceHighLow"
+													"value": "PriceHighLow",
+													"disabled": true
 												},
 												{
 													"key": "productType",
@@ -39293,24 +39299,26 @@
 												},
 												{
 													"key": "country",
-													"value": "qui sunt"
+													"value": "qui sunt",
+													"disabled": true
 												},
 												{
 													"key": "productName",
-													"value": "qui sunt"
+													"value": "qui sunt",
+													"disabled": true
 												},
 												{
 													"key": "status",
-													"value": "qui sunt"
+													"value": "published"
 												},
 												{
 													"key": "pageNumber",
-													"value": "-69839832",
+													"value": "1",
 													"description": "(Required) "
 												},
 												{
 													"key": "pageSize",
-													"value": "-69839832",
+													"value": "20",
 													"description": "(Required) "
 												}
 											]
