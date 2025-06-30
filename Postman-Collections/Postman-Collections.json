@@ -11063,7 +11063,7 @@
 										],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n   // \"email\": \"chitnis@yopmail.com\",//\"{{email}}\",\n  \"userName\": \"bahu@yopmail.com\",\n  // \"userName\":\"cesaltino.babo@anp.tl\", //initiator\n  // \"userName\": \"abel.saldanha@anp.tl\", //1st approver\n   //\"userName\": \"jaime.ximenes@anp.tl\", //2nd approver\n  \"password\": \"Password12@@\"\n}",
+											"raw": "{\n   // \"email\": \"chitnis@yopmail.com\",//\"{{email}}\",\n  \"userName\": \"bobby@yopmail.com\",\n  // \"userName\":\"cesaltino.babo@anp.tl\", //initiator\n  // \"userName\": \"abel.saldanha@anp.tl\", //1st approver\n   //\"userName\": \"jaime.ximenes@anp.tl\", //2nd approver\n  \"password\": \"Password12@@\"\n}",
 											"options": {
 												"raw": {
 													"headerFamily": "json",
@@ -36249,7 +36249,7 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "{{baseUrl}}/api/goods/list?productType=Goods&status=publish&pageNumber=1&pageSize=20",
+											"raw": "{{baseUrl}}/api/goods/list?productType=Goods&pageNumber=1&pageSize=20",
 											"host": [
 												"{{baseUrl}}"
 											],
@@ -36315,7 +36315,8 @@
 												},
 												{
 													"key": "status",
-													"value": "publish"
+													"value": "publish",
+													"disabled": true
 												},
 												{
 													"key": "pageNumber",
@@ -42183,8 +42184,9 @@
 											"formdata": [
 												{
 													"key": "entityId",
-													"value": "83001cef-afd3-47b2-8143-2f5e62f20b8c",
-													"type": "text"
+													"value": "d9b172cc-ed3d-40d1-50bf-08ddb82745de",
+													"type": "text",
+													"description": "productId"
 												},
 												{
 													"description": " (This can only be one of Supplier,Bid,Procurement,Contract,Project,General)",
@@ -42199,8 +42201,8 @@
 												},
 												{
 													"key": "files",
-													"value": "",
-													"type": "text"
+													"type": "file",
+													"src": "postman-cloud:///1efdd94f-8da7-4760-bd05-ca9bb60c305a"
 												}
 											]
 										},
