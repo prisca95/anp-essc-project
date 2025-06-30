@@ -36231,6 +36231,376 @@
 							"id": "89886c05-7eb5-4f4e-9ca5-56a97ab6a168"
 						},
 						{
+							"name": "list",
+							"item": [
+								{
+									"name": "Anp Goods Services Features Create Get All Products Endpoint",
+									"id": "64d8da12-4908-48b1-b6d0-7d82970552e3",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": {
+												"token": "{{bearerToken}}"
+											}
+										},
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/goods/list?productType=Goods&status=publish&pageNumber=1&pageSize=20",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"goods",
+												"list"
+											],
+											"query": [
+												{
+													"key": "categoryId",
+													"value": "{{categoryId}}",
+													"disabled": true
+												},
+												{
+													"key": "supplierId",
+													"value": "{{supplierId}}",
+													"disabled": true
+												},
+												{
+													"key": "industryId",
+													"value": "{{industryId}}",
+													"disabled": true
+												},
+												{
+													"key": "startDate",
+													"value": "1947-07-13T18:06:38.282Z",
+													"disabled": true
+												},
+												{
+													"key": "endDate",
+													"value": "1947-07-13T18:06:38.282Z",
+													"disabled": true
+												},
+												{
+													"key": "tagIds",
+													"value": "{{tagId1}}",
+													"disabled": true
+												},
+												{
+													"key": "tagIds",
+													"value": "{{tagId2}}",
+													"disabled": true
+												},
+												{
+													"key": "sortOrder",
+													"value": "PriceHighLow",
+													"disabled": true
+												},
+												{
+													"key": "productType",
+													"value": "Goods"
+												},
+												{
+													"key": "country",
+													"value": "qui sunt",
+													"disabled": true
+												},
+												{
+													"key": "productName",
+													"value": "qui sunt",
+													"disabled": true
+												},
+												{
+													"key": "status",
+													"value": "publish"
+												},
+												{
+													"key": "pageNumber",
+													"value": "1",
+													"description": "(Required) "
+												},
+												{
+													"key": "pageSize",
+													"value": "20",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"id": "7ee02ff6-72ec-4322-958f-5fe0bdd07fe4",
+											"name": "Success",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"description": "Added as a part of security scheme: bearer",
+														"key": "Authorization",
+														"value": "Bearer <token>"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/goods/list?categoryId=qui sunt&supplierId=qui sunt&industryId=qui sunt&startDate=1947-07-13T18:06:38.282Z&endDate=1947-07-13T18:06:38.282Z&tagIds=ut ut sunt eu aliquip&sortOrder=PriceHighLow&productType=Goods&country=qui sunt&productName=qui sunt&status=qui sunt&pageNumber=-69839832&pageSize=-69839832",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"goods",
+														"list"
+													],
+													"query": [
+														{
+															"key": "categoryId",
+															"value": "qui sunt"
+														},
+														{
+															"key": "supplierId",
+															"value": "qui sunt"
+														},
+														{
+															"key": "industryId",
+															"value": "qui sunt"
+														},
+														{
+															"key": "startDate",
+															"value": "1947-07-13T18:06:38.282Z"
+														},
+														{
+															"key": "endDate",
+															"value": "1947-07-13T18:06:38.282Z"
+														},
+														{
+															"key": "tagIds",
+															"value": "ut ut sunt eu aliquip"
+														},
+														{
+															"key": "sortOrder",
+															"value": "PriceHighLow"
+														},
+														{
+															"key": "productType",
+															"value": "Goods"
+														},
+														{
+															"key": "country",
+															"value": "qui sunt"
+														},
+														{
+															"key": "productName",
+															"value": "qui sunt"
+														},
+														{
+															"key": "status",
+															"value": "qui sunt"
+														},
+														{
+															"description": "(Required) ",
+															"key": "pageNumber",
+															"value": "-69839832"
+														},
+														{
+															"description": "(Required) ",
+															"key": "pageSize",
+															"value": "-69839832"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"responseTime": null,
+											"body": ""
+										},
+										{
+											"id": "76d2df7c-1e55-410d-b84b-86658c6f0141",
+											"name": "Unauthorized",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"description": "Added as a part of security scheme: bearer",
+														"key": "Authorization",
+														"value": "Bearer <token>"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/goods/list?categoryId=qui sunt&supplierId=qui sunt&industryId=qui sunt&startDate=1947-07-13T18:06:38.282Z&endDate=1947-07-13T18:06:38.282Z&tagIds=ut ut sunt eu aliquip&sortOrder=PriceHighLow&productType=Goods&country=qui sunt&productName=qui sunt&status=qui sunt&pageNumber=-69839832&pageSize=-69839832",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"goods",
+														"list"
+													],
+													"query": [
+														{
+															"key": "categoryId",
+															"value": "qui sunt"
+														},
+														{
+															"key": "supplierId",
+															"value": "qui sunt"
+														},
+														{
+															"key": "industryId",
+															"value": "qui sunt"
+														},
+														{
+															"key": "startDate",
+															"value": "1947-07-13T18:06:38.282Z"
+														},
+														{
+															"key": "endDate",
+															"value": "1947-07-13T18:06:38.282Z"
+														},
+														{
+															"key": "tagIds",
+															"value": "ut ut sunt eu aliquip"
+														},
+														{
+															"key": "sortOrder",
+															"value": "PriceHighLow"
+														},
+														{
+															"key": "productType",
+															"value": "Goods"
+														},
+														{
+															"key": "country",
+															"value": "qui sunt"
+														},
+														{
+															"key": "productName",
+															"value": "qui sunt"
+														},
+														{
+															"key": "status",
+															"value": "qui sunt"
+														},
+														{
+															"description": "(Required) ",
+															"key": "pageNumber",
+															"value": "-69839832"
+														},
+														{
+															"description": "(Required) ",
+															"key": "pageSize",
+															"value": "-69839832"
+														}
+													]
+												}
+											},
+											"status": "Unauthorized",
+											"code": 401,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"responseTime": null,
+											"body": ""
+										},
+										{
+											"id": "d4729cde-6d33-4247-8449-9a199b6a713b",
+											"name": "Forbidden",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"description": "Added as a part of security scheme: bearer",
+														"key": "Authorization",
+														"value": "Bearer <token>"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/goods/list?categoryId=qui sunt&supplierId=qui sunt&industryId=qui sunt&startDate=1947-07-13T18:06:38.282Z&endDate=1947-07-13T18:06:38.282Z&tagIds=ut ut sunt eu aliquip&sortOrder=PriceHighLow&productType=Goods&country=qui sunt&productName=qui sunt&status=qui sunt&pageNumber=-69839832&pageSize=-69839832",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"goods",
+														"list"
+													],
+													"query": [
+														{
+															"key": "categoryId",
+															"value": "qui sunt"
+														},
+														{
+															"key": "supplierId",
+															"value": "qui sunt"
+														},
+														{
+															"key": "industryId",
+															"value": "qui sunt"
+														},
+														{
+															"key": "startDate",
+															"value": "1947-07-13T18:06:38.282Z"
+														},
+														{
+															"key": "endDate",
+															"value": "1947-07-13T18:06:38.282Z"
+														},
+														{
+															"key": "tagIds",
+															"value": "ut ut sunt eu aliquip"
+														},
+														{
+															"key": "sortOrder",
+															"value": "PriceHighLow"
+														},
+														{
+															"key": "productType",
+															"value": "Goods"
+														},
+														{
+															"key": "country",
+															"value": "qui sunt"
+														},
+														{
+															"key": "productName",
+															"value": "qui sunt"
+														},
+														{
+															"key": "status",
+															"value": "qui sunt"
+														},
+														{
+															"description": "(Required) ",
+															"key": "pageNumber",
+															"value": "-69839832"
+														},
+														{
+															"description": "(Required) ",
+															"key": "pageSize",
+															"value": "-69839832"
+														}
+													]
+												}
+											},
+											"status": "Forbidden",
+											"code": 403,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"responseTime": null,
+											"body": ""
+										}
+									]
+								}
+							],
+							"id": "41869a24-ac17-413b-ba76-80557897e159"
+						},
+						{
 							"name": "order",
 							"item": [
 								{
@@ -39564,374 +39934,6 @@
 							"id": "aff52603-7969-4013-9580-193d9137d353"
 						},
 						{
-							"name": "list",
-							"item": [
-								{
-									"name": "Anp Goods Services Features Create Get All Products Endpoint",
-									"id": "64d8da12-4908-48b1-b6d0-7d82970552e3",
-									"protocolProfileBehavior": {
-										"disableBodyPruning": true
-									},
-									"request": {
-										"auth": {
-											"type": "bearer",
-											"bearer": {
-												"token": "{{bearerToken}}"
-											}
-										},
-										"method": "GET",
-										"header": [],
-										"url": {
-											"raw": "{{baseUrl}}/api/goods/list?startDate=1947-07-13T18:06:38.282Z&endDate=1947-07-13T18:06:38.282Z&productType=Goods&status=published&pageNumber=1&pageSize=20",
-											"host": [
-												"{{baseUrl}}"
-											],
-											"path": [
-												"api",
-												"goods",
-												"list"
-											],
-											"query": [
-												{
-													"key": "categoryId",
-													"value": "{{categoryId}}",
-													"disabled": true
-												},
-												{
-													"key": "supplierId",
-													"value": "{{supplierId}}",
-													"disabled": true
-												},
-												{
-													"key": "industryId",
-													"value": "{{industryId}}",
-													"disabled": true
-												},
-												{
-													"key": "startDate",
-													"value": "1947-07-13T18:06:38.282Z"
-												},
-												{
-													"key": "endDate",
-													"value": "1947-07-13T18:06:38.282Z"
-												},
-												{
-													"key": "tagIds",
-													"value": "{{tagId1}}",
-													"disabled": true
-												},
-												{
-													"key": "tagIds",
-													"value": "{{tagId2}}",
-													"disabled": true
-												},
-												{
-													"key": "sortOrder",
-													"value": "PriceHighLow",
-													"disabled": true
-												},
-												{
-													"key": "productType",
-													"value": "Goods"
-												},
-												{
-													"key": "country",
-													"value": "qui sunt",
-													"disabled": true
-												},
-												{
-													"key": "productName",
-													"value": "qui sunt",
-													"disabled": true
-												},
-												{
-													"key": "status",
-													"value": "published"
-												},
-												{
-													"key": "pageNumber",
-													"value": "1",
-													"description": "(Required) "
-												},
-												{
-													"key": "pageSize",
-													"value": "20",
-													"description": "(Required) "
-												}
-											]
-										}
-									},
-									"response": [
-										{
-											"id": "7ee02ff6-72ec-4322-958f-5fe0bdd07fe4",
-											"name": "Success",
-											"originalRequest": {
-												"method": "GET",
-												"header": [
-													{
-														"description": "Added as a part of security scheme: bearer",
-														"key": "Authorization",
-														"value": "Bearer <token>"
-													}
-												],
-												"url": {
-													"raw": "{{baseUrl}}/api/goods/list?categoryId=qui sunt&supplierId=qui sunt&industryId=qui sunt&startDate=1947-07-13T18:06:38.282Z&endDate=1947-07-13T18:06:38.282Z&tagIds=ut ut sunt eu aliquip&sortOrder=PriceHighLow&productType=Goods&country=qui sunt&productName=qui sunt&status=qui sunt&pageNumber=-69839832&pageSize=-69839832",
-													"host": [
-														"{{baseUrl}}"
-													],
-													"path": [
-														"api",
-														"goods",
-														"list"
-													],
-													"query": [
-														{
-															"key": "categoryId",
-															"value": "qui sunt"
-														},
-														{
-															"key": "supplierId",
-															"value": "qui sunt"
-														},
-														{
-															"key": "industryId",
-															"value": "qui sunt"
-														},
-														{
-															"key": "startDate",
-															"value": "1947-07-13T18:06:38.282Z"
-														},
-														{
-															"key": "endDate",
-															"value": "1947-07-13T18:06:38.282Z"
-														},
-														{
-															"key": "tagIds",
-															"value": "ut ut sunt eu aliquip"
-														},
-														{
-															"key": "sortOrder",
-															"value": "PriceHighLow"
-														},
-														{
-															"key": "productType",
-															"value": "Goods"
-														},
-														{
-															"key": "country",
-															"value": "qui sunt"
-														},
-														{
-															"key": "productName",
-															"value": "qui sunt"
-														},
-														{
-															"key": "status",
-															"value": "qui sunt"
-														},
-														{
-															"description": "(Required) ",
-															"key": "pageNumber",
-															"value": "-69839832"
-														},
-														{
-															"description": "(Required) ",
-															"key": "pageSize",
-															"value": "-69839832"
-														}
-													]
-												}
-											},
-											"status": "OK",
-											"code": 200,
-											"_postman_previewlanguage": "text",
-											"header": [],
-											"cookie": [],
-											"responseTime": null,
-											"body": ""
-										},
-										{
-											"id": "76d2df7c-1e55-410d-b84b-86658c6f0141",
-											"name": "Unauthorized",
-											"originalRequest": {
-												"method": "GET",
-												"header": [
-													{
-														"description": "Added as a part of security scheme: bearer",
-														"key": "Authorization",
-														"value": "Bearer <token>"
-													}
-												],
-												"url": {
-													"raw": "{{baseUrl}}/api/goods/list?categoryId=qui sunt&supplierId=qui sunt&industryId=qui sunt&startDate=1947-07-13T18:06:38.282Z&endDate=1947-07-13T18:06:38.282Z&tagIds=ut ut sunt eu aliquip&sortOrder=PriceHighLow&productType=Goods&country=qui sunt&productName=qui sunt&status=qui sunt&pageNumber=-69839832&pageSize=-69839832",
-													"host": [
-														"{{baseUrl}}"
-													],
-													"path": [
-														"api",
-														"goods",
-														"list"
-													],
-													"query": [
-														{
-															"key": "categoryId",
-															"value": "qui sunt"
-														},
-														{
-															"key": "supplierId",
-															"value": "qui sunt"
-														},
-														{
-															"key": "industryId",
-															"value": "qui sunt"
-														},
-														{
-															"key": "startDate",
-															"value": "1947-07-13T18:06:38.282Z"
-														},
-														{
-															"key": "endDate",
-															"value": "1947-07-13T18:06:38.282Z"
-														},
-														{
-															"key": "tagIds",
-															"value": "ut ut sunt eu aliquip"
-														},
-														{
-															"key": "sortOrder",
-															"value": "PriceHighLow"
-														},
-														{
-															"key": "productType",
-															"value": "Goods"
-														},
-														{
-															"key": "country",
-															"value": "qui sunt"
-														},
-														{
-															"key": "productName",
-															"value": "qui sunt"
-														},
-														{
-															"key": "status",
-															"value": "qui sunt"
-														},
-														{
-															"description": "(Required) ",
-															"key": "pageNumber",
-															"value": "-69839832"
-														},
-														{
-															"description": "(Required) ",
-															"key": "pageSize",
-															"value": "-69839832"
-														}
-													]
-												}
-											},
-											"status": "Unauthorized",
-											"code": 401,
-											"_postman_previewlanguage": "text",
-											"header": [],
-											"cookie": [],
-											"responseTime": null,
-											"body": ""
-										},
-										{
-											"id": "d4729cde-6d33-4247-8449-9a199b6a713b",
-											"name": "Forbidden",
-											"originalRequest": {
-												"method": "GET",
-												"header": [
-													{
-														"description": "Added as a part of security scheme: bearer",
-														"key": "Authorization",
-														"value": "Bearer <token>"
-													}
-												],
-												"url": {
-													"raw": "{{baseUrl}}/api/goods/list?categoryId=qui sunt&supplierId=qui sunt&industryId=qui sunt&startDate=1947-07-13T18:06:38.282Z&endDate=1947-07-13T18:06:38.282Z&tagIds=ut ut sunt eu aliquip&sortOrder=PriceHighLow&productType=Goods&country=qui sunt&productName=qui sunt&status=qui sunt&pageNumber=-69839832&pageSize=-69839832",
-													"host": [
-														"{{baseUrl}}"
-													],
-													"path": [
-														"api",
-														"goods",
-														"list"
-													],
-													"query": [
-														{
-															"key": "categoryId",
-															"value": "qui sunt"
-														},
-														{
-															"key": "supplierId",
-															"value": "qui sunt"
-														},
-														{
-															"key": "industryId",
-															"value": "qui sunt"
-														},
-														{
-															"key": "startDate",
-															"value": "1947-07-13T18:06:38.282Z"
-														},
-														{
-															"key": "endDate",
-															"value": "1947-07-13T18:06:38.282Z"
-														},
-														{
-															"key": "tagIds",
-															"value": "ut ut sunt eu aliquip"
-														},
-														{
-															"key": "sortOrder",
-															"value": "PriceHighLow"
-														},
-														{
-															"key": "productType",
-															"value": "Goods"
-														},
-														{
-															"key": "country",
-															"value": "qui sunt"
-														},
-														{
-															"key": "productName",
-															"value": "qui sunt"
-														},
-														{
-															"key": "status",
-															"value": "qui sunt"
-														},
-														{
-															"description": "(Required) ",
-															"key": "pageNumber",
-															"value": "-69839832"
-														},
-														{
-															"description": "(Required) ",
-															"key": "pageSize",
-															"value": "-69839832"
-														}
-													]
-												}
-											},
-											"status": "Forbidden",
-											"code": 403,
-											"_postman_previewlanguage": "text",
-											"header": [],
-											"cookie": [],
-											"responseTime": null,
-											"body": ""
-										}
-									]
-								}
-							],
-							"id": "41869a24-ac17-413b-ba76-80557897e159"
-						},
-						{
 							"name": "product",
 							"item": [
 								{
@@ -39965,9 +39967,8 @@
 													],
 													"variable": [
 														{
-															"id": "31c5be90-e635-45b4-b27a-f28c5b12fe02",
 															"key": "productId",
-															"value": "sint aliquip Excepteur magna eiusmod",
+															"value": "d9b172cc-ed3d-40d1-50bf-08ddb82745de",
 															"description": "(Required) "
 														}
 													]
@@ -41752,6 +41753,1301 @@
 						}
 					],
 					"id": "9313148e-cf23-40e4-9a72-c2f7bac1670c"
+				},
+				{
+					"name": "edms Copy",
+					"item": [
+						{
+							"name": "document",
+							"item": [
+								{
+									"name": "view",
+									"item": [
+										{
+											"name": "Anp Edms Features Get Documents Endpoint",
+											"id": "7380775e-4223-404b-ad17-63524cccb751",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/edms/document/view?documentId=sint aliquip Excepteur magna eiusmod&module=qui sunt&subModule=qui sunt",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"edms",
+														"document",
+														"view"
+													],
+													"query": [
+														{
+															"key": "documentId",
+															"value": "sint aliquip Excepteur magna eiusmod",
+															"description": "(Required) "
+														},
+														{
+															"key": "module",
+															"value": "qui sunt"
+														},
+														{
+															"key": "subModule",
+															"value": "qui sunt"
+														}
+													]
+												}
+											},
+											"response": [
+												{
+													"id": "97decb6e-f935-45a6-8456-c793ea7db14f",
+													"name": "Success",
+													"originalRequest": {
+														"method": "GET",
+														"header": [],
+														"url": {
+															"raw": "{{baseUrl}}/api/edms/document/view?documentId=sint aliquip Excepteur magna eiusmod&module=qui sunt&subModule=qui sunt",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"edms",
+																"document",
+																"view"
+															],
+															"query": [
+																{
+																	"description": "(Required) ",
+																	"key": "documentId",
+																	"value": "sint aliquip Excepteur magna eiusmod"
+																},
+																{
+																	"key": "module",
+																	"value": "qui sunt"
+																},
+																{
+																	"key": "subModule",
+																	"value": "qui sunt"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												},
+												{
+													"id": "859eb0df-cc2a-4eb6-8965-47debe0d234a",
+													"name": "Forbidden",
+													"originalRequest": {
+														"method": "GET",
+														"header": [],
+														"url": {
+															"raw": "{{baseUrl}}/api/edms/document/view?documentId=sint aliquip Excepteur magna eiusmod&module=qui sunt&subModule=qui sunt",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"edms",
+																"document",
+																"view"
+															],
+															"query": [
+																{
+																	"description": "(Required) ",
+																	"key": "documentId",
+																	"value": "sint aliquip Excepteur magna eiusmod"
+																},
+																{
+																	"key": "module",
+																	"value": "qui sunt"
+																},
+																{
+																	"key": "subModule",
+																	"value": "qui sunt"
+																}
+															]
+														}
+													},
+													"status": "Forbidden",
+													"code": 403,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												}
+											]
+										}
+									],
+									"id": "af3b55e2-2027-400f-a92f-dd14d6f71490"
+								},
+								{
+									"name": "Anp Edms Features Delete Document Endpoint",
+									"id": "98385167-4617-4334-8ac7-c360c3088a0b",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": {
+												"token": "{{bearerToken}}"
+											}
+										},
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"documentId\": \"ut sit\",\n  \"module\": \"non\",\n  \"subModule\": \"sint minim ex\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{baseUrl}}/api/edms/document"
+									},
+									"response": [
+										{
+											"id": "403db85d-f324-487b-a926-527d25700bc9",
+											"name": "Success",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"description": "Added as a part of security scheme: bearer",
+														"key": "Authorization",
+														"value": "Bearer <token>"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"documentId\": \"ut sit\",\n  \"module\": \"non\",\n  \"subModule\": \"sint minim ex\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl}}/api/edms/document"
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"responseTime": null,
+											"body": ""
+										},
+										{
+											"id": "b6f472fe-00a7-4f31-8562-13dce5826dc6",
+											"name": "Unauthorized",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"description": "Added as a part of security scheme: bearer",
+														"key": "Authorization",
+														"value": "Bearer <token>"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"documentId\": \"ut sit\",\n  \"module\": \"non\",\n  \"subModule\": \"sint minim ex\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl}}/api/edms/document"
+											},
+											"status": "Unauthorized",
+											"code": 401,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"responseTime": null,
+											"body": ""
+										},
+										{
+											"id": "b47f33c9-7b8e-4347-90da-f29a2f10a3fe",
+											"name": "Forbidden",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"description": "Added as a part of security scheme: bearer",
+														"key": "Authorization",
+														"value": "Bearer <token>"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"documentId\": \"ut sit\",\n  \"module\": \"non\",\n  \"subModule\": \"sint minim ex\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl}}/api/edms/document"
+											},
+											"status": "Forbidden",
+											"code": 403,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"responseTime": null,
+											"body": ""
+										}
+									]
+								}
+							],
+							"id": "0d5da6b6-b474-4565-9336-f697214d2a5f"
+						},
+						{
+							"name": "image",
+							"item": [
+								{
+									"name": "{documentId}",
+									"item": [
+										{
+											"name": "Anp Edms Features Delete Image Endpoint",
+											"id": "9341cb80-a710-42e2-a571-5bfb372e102b",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"method": "DELETE",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/edms/image/:documentId",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"edms",
+														"image",
+														":documentId"
+													],
+													"variable": [
+														{
+															"id": "86e0a541-d77b-4f92-a74b-2ae121ee20f8",
+															"key": "documentId",
+															"value": "sint aliquip Excepteur magna eiusmod",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"response": [
+												{
+													"id": "eaf28cd3-08c5-4384-802a-79e5bac278aa",
+													"name": "Success",
+													"originalRequest": {
+														"method": "DELETE",
+														"header": [],
+														"url": {
+															"raw": "{{baseUrl}}/api/edms/image/:documentId",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"edms",
+																"image",
+																":documentId"
+															],
+															"variable": [
+																{
+																	"key": "documentId"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												},
+												{
+													"id": "f82d794d-3ff9-4779-baf2-95a814f209d8",
+													"name": "Forbidden",
+													"originalRequest": {
+														"method": "DELETE",
+														"header": [],
+														"url": {
+															"raw": "{{baseUrl}}/api/edms/image/:documentId",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"edms",
+																"image",
+																":documentId"
+															],
+															"variable": [
+																{
+																	"key": "documentId"
+																}
+															]
+														}
+													},
+													"status": "Forbidden",
+													"code": 403,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												}
+											]
+										}
+									],
+									"id": "fc1e5bac-3b54-4cbd-a649-5f2f37dc4f95"
+								}
+							],
+							"id": "6609cdf5-b5ce-45f4-8adc-0f39ef10f805"
+						},
+						{
+							"name": "imageUpload",
+							"item": [
+								{
+									"name": "Upload Image",
+									"id": "94ffa3df-2dff-4a4c-b552-4b0784b37ce7",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "multipart/form-data"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "entityId",
+													"value": "83001cef-afd3-47b2-8143-2f5e62f20b8c",
+													"type": "text"
+												},
+												{
+													"description": " (This can only be one of Supplier,Bid,Procurement,Contract,Project,General)",
+													"key": "module",
+													"value": "General",
+													"type": "text"
+												},
+												{
+													"key": "documentTypeName",
+													"value": "ProductImage",
+													"type": "text"
+												},
+												{
+													"key": "files",
+													"value": "",
+													"type": "text"
+												}
+											]
+										},
+										"url": "{{baseUrl}}/api/edms/imageUpload",
+										"description": "Upload an image for a product or supplier logo"
+									},
+									"response": [
+										{
+											"id": "661ef023-057a-4430-a412-2b43d29ca8cf",
+											"name": "Success",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "multipart/form-data"
+													}
+												],
+												"body": {
+													"mode": "formdata",
+													"formdata": [
+														{
+															"key": "entityId",
+															"value": "83001cef-afd3-47b2-8143-2f5e62f20b8c",
+															"type": "text"
+														},
+														{
+															"description": " (This can only be one of Supplier,Bid,Procurement,Contract,Project,General)",
+															"key": "module",
+															"value": "General",
+															"type": "text"
+														},
+														{
+															"key": "documentTypeName",
+															"value": "ProductImage",
+															"type": "text"
+														},
+														{
+															"key": "files",
+															"value": "",
+															"type": "text"
+														}
+													]
+												},
+												"url": "{{baseUrl}}/api/edms/imageUpload"
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"responseTime": null,
+											"body": ""
+										},
+										{
+											"id": "73886d41-6289-4e12-8e38-3088053fbe4a",
+											"name": "Forbidden",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "multipart/form-data"
+													}
+												],
+												"body": {
+													"mode": "formdata",
+													"formdata": [
+														{
+															"key": "entityId",
+															"value": "83001cef-afd3-47b2-8143-2f5e62f20b8c",
+															"type": "text"
+														},
+														{
+															"description": " (This can only be one of Supplier,Bid,Procurement,Contract,Project,General)",
+															"key": "module",
+															"value": "General",
+															"type": "text"
+														},
+														{
+															"key": "documentTypeName",
+															"value": "ProductImage",
+															"type": "text"
+														},
+														{
+															"key": "files",
+															"value": "",
+															"type": "text"
+														}
+													]
+												},
+												"url": "{{baseUrl}}/api/edms/imageUpload"
+											},
+											"status": "Forbidden",
+											"code": 403,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"responseTime": null,
+											"body": ""
+										}
+									]
+								}
+							],
+							"id": "22075564-3578-4642-a099-9fe791cfc894"
+						},
+						{
+							"name": "procurement",
+							"item": [
+								{
+									"name": "documents",
+									"item": [
+										{
+											"name": "Anp Edms Features Get Procurement Documents Endpoint",
+											"id": "b28caaa6-63a4-4a86-b27a-f0c3fdc5a518",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": {
+														"token": "{{bearerToken}}"
+													}
+												},
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/edms/procurement/documents?entityId=sint aliquip Excepteur magna eiusmod&subModule=ExpressionOfInterest",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"edms",
+														"procurement",
+														"documents"
+													],
+													"query": [
+														{
+															"key": "entityId",
+															"value": "sint aliquip Excepteur magna eiusmod",
+															"description": "(Required) "
+														},
+														{
+															"key": "subModule",
+															"value": "ExpressionOfInterest"
+														}
+													]
+												}
+											},
+											"response": [
+												{
+													"id": "ba849e93-755d-4059-be5d-2d28aca6d25e",
+													"name": "Success",
+													"originalRequest": {
+														"method": "GET",
+														"header": [
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/edms/procurement/documents?entityId=sint aliquip Excepteur magna eiusmod&subModule=ExpressionOfInterest",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"edms",
+																"procurement",
+																"documents"
+															],
+															"query": [
+																{
+																	"description": "(Required) ",
+																	"key": "entityId",
+																	"value": "sint aliquip Excepteur magna eiusmod"
+																},
+																{
+																	"key": "subModule",
+																	"value": "ExpressionOfInterest"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												},
+												{
+													"id": "35b3386c-f62e-405f-ba81-b50ab95fd47f",
+													"name": "Unauthorized",
+													"originalRequest": {
+														"method": "GET",
+														"header": [
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/edms/procurement/documents?entityId=sint aliquip Excepteur magna eiusmod&subModule=ExpressionOfInterest",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"edms",
+																"procurement",
+																"documents"
+															],
+															"query": [
+																{
+																	"description": "(Required) ",
+																	"key": "entityId",
+																	"value": "sint aliquip Excepteur magna eiusmod"
+																},
+																{
+																	"key": "subModule",
+																	"value": "ExpressionOfInterest"
+																}
+															]
+														}
+													},
+													"status": "Unauthorized",
+													"code": 401,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												},
+												{
+													"id": "d3f85a38-6aef-4656-8d13-4a2cca66f0ec",
+													"name": "Forbidden",
+													"originalRequest": {
+														"method": "GET",
+														"header": [
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/edms/procurement/documents?entityId=sint aliquip Excepteur magna eiusmod&subModule=ExpressionOfInterest",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"edms",
+																"procurement",
+																"documents"
+															],
+															"query": [
+																{
+																	"description": "(Required) ",
+																	"key": "entityId",
+																	"value": "sint aliquip Excepteur magna eiusmod"
+																},
+																{
+																	"key": "subModule",
+																	"value": "ExpressionOfInterest"
+																}
+															]
+														}
+													},
+													"status": "Forbidden",
+													"code": 403,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												}
+											]
+										}
+									],
+									"id": "25e99dba-7077-4c38-8f5f-a93047645e38"
+								}
+							],
+							"id": "ca4006cc-b78f-4d9e-ba24-e2ff878b2024"
+						},
+						{
+							"name": "uploadDocument",
+							"item": [
+								{
+									"name": "Anp Edms Features Upload Document Endpoint",
+									"id": "a55ee686-8571-4afa-ae23-ea926c682d1a",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": {
+												"token": "{{bearerToken}}"
+											}
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "multipart/form-data"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "entityId",
+													"value": "nostrud est magna Duis",
+													"type": "text"
+												},
+												{
+													"key": "module",
+													"value": "in dolor sit reprehenderit",
+													"type": "text"
+												},
+												{
+													"key": "subModule",
+													"value": "adipisicing minim",
+													"type": "text"
+												},
+												{
+													"key": "documentTypeName",
+													"value": "veniam dolor aliqua adipisicing Duis",
+													"type": "text"
+												},
+												{
+													"key": "file",
+													"type": "file",
+													"value": null
+												}
+											]
+										},
+										"url": "{{baseUrl}}/api/edms/uploadDocument"
+									},
+									"response": [
+										{
+											"id": "53be021c-e653-42f1-aafb-0e257abefbea",
+											"name": "Success",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "multipart/form-data"
+													},
+													{
+														"description": "Added as a part of security scheme: bearer",
+														"key": "Authorization",
+														"value": "Bearer <token>"
+													}
+												],
+												"body": {
+													"mode": "formdata",
+													"formdata": [
+														{
+															"key": "entityId",
+															"value": "nostrud est magna Duis",
+															"type": "text"
+														},
+														{
+															"key": "module",
+															"value": "in dolor sit reprehenderit",
+															"type": "text"
+														},
+														{
+															"key": "subModule",
+															"value": "adipisicing minim",
+															"type": "text"
+														},
+														{
+															"key": "documentTypeName",
+															"value": "veniam dolor aliqua adipisicing Duis",
+															"type": "text"
+														},
+														{
+															"key": "file",
+															"type": "file",
+															"src": []
+														}
+													]
+												},
+												"url": "{{baseUrl}}/api/edms/uploadDocument"
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"responseTime": null,
+											"body": ""
+										},
+										{
+											"id": "61df9e87-204e-4b41-83ac-a1f5a2502aea",
+											"name": "Unauthorized",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "multipart/form-data"
+													},
+													{
+														"description": "Added as a part of security scheme: bearer",
+														"key": "Authorization",
+														"value": "Bearer <token>"
+													}
+												],
+												"body": {
+													"mode": "formdata",
+													"formdata": [
+														{
+															"key": "entityId",
+															"value": "nostrud est magna Duis",
+															"type": "text"
+														},
+														{
+															"key": "module",
+															"value": "in dolor sit reprehenderit",
+															"type": "text"
+														},
+														{
+															"key": "subModule",
+															"value": "adipisicing minim",
+															"type": "text"
+														},
+														{
+															"key": "documentTypeName",
+															"value": "veniam dolor aliqua adipisicing Duis",
+															"type": "text"
+														},
+														{
+															"key": "file",
+															"type": "file",
+															"src": []
+														}
+													]
+												},
+												"url": "{{baseUrl}}/api/edms/uploadDocument"
+											},
+											"status": "Unauthorized",
+											"code": 401,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"responseTime": null,
+											"body": ""
+										},
+										{
+											"id": "66d710d2-dea7-461d-8491-ac34364e4582",
+											"name": "Forbidden",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "multipart/form-data"
+													},
+													{
+														"description": "Added as a part of security scheme: bearer",
+														"key": "Authorization",
+														"value": "Bearer <token>"
+													}
+												],
+												"body": {
+													"mode": "formdata",
+													"formdata": [
+														{
+															"key": "entityId",
+															"value": "nostrud est magna Duis",
+															"type": "text"
+														},
+														{
+															"key": "module",
+															"value": "in dolor sit reprehenderit",
+															"type": "text"
+														},
+														{
+															"key": "subModule",
+															"value": "adipisicing minim",
+															"type": "text"
+														},
+														{
+															"key": "documentTypeName",
+															"value": "veniam dolor aliqua adipisicing Duis",
+															"type": "text"
+														},
+														{
+															"key": "file",
+															"type": "file",
+															"src": []
+														}
+													]
+												},
+												"url": "{{baseUrl}}/api/edms/uploadDocument"
+											},
+											"status": "Forbidden",
+											"code": 403,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"responseTime": null,
+											"body": ""
+										}
+									]
+								}
+							],
+							"id": "73d8d6c2-1bfd-4535-adb1-ab0bab9eacda"
+						},
+						{
+							"name": "supplier",
+							"item": [
+								{
+									"name": "documents",
+									"item": [
+										{
+											"name": "Anp Edms Features Supplier Get Supplier Documents Endpoint",
+											"id": "0423f803-8763-4ec1-a6ea-9042a0b6f70d",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": {
+														"token": "{{bearerToken}}"
+													}
+												},
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/edms/supplier/documents?supplierId=sint aliquip Excepteur magna eiusmod",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"edms",
+														"supplier",
+														"documents"
+													],
+													"query": [
+														{
+															"key": "supplierId",
+															"value": "sint aliquip Excepteur magna eiusmod",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"response": [
+												{
+													"id": "45dd0153-f44c-4910-a87a-22e3bda49c90",
+													"name": "Success",
+													"originalRequest": {
+														"method": "GET",
+														"header": [
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/edms/supplier/documents?supplierId=sint aliquip Excepteur magna eiusmod",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"edms",
+																"supplier",
+																"documents"
+															],
+															"query": [
+																{
+																	"description": "(Required) ",
+																	"key": "supplierId",
+																	"value": "sint aliquip Excepteur magna eiusmod"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												},
+												{
+													"id": "5466f55b-4cf5-4430-abd4-1ea182a1e8e3",
+													"name": "Unauthorized",
+													"originalRequest": {
+														"method": "GET",
+														"header": [
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/edms/supplier/documents?supplierId=sint aliquip Excepteur magna eiusmod",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"edms",
+																"supplier",
+																"documents"
+															],
+															"query": [
+																{
+																	"description": "(Required) ",
+																	"key": "supplierId",
+																	"value": "sint aliquip Excepteur magna eiusmod"
+																}
+															]
+														}
+													},
+													"status": "Unauthorized",
+													"code": 401,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												},
+												{
+													"id": "0ad890d8-55be-4121-9626-e54ab8208de7",
+													"name": "Forbidden",
+													"originalRequest": {
+														"method": "GET",
+														"header": [
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/edms/supplier/documents?supplierId=sint aliquip Excepteur magna eiusmod",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"edms",
+																"supplier",
+																"documents"
+															],
+															"query": [
+																{
+																	"description": "(Required) ",
+																	"key": "supplierId",
+																	"value": "sint aliquip Excepteur magna eiusmod"
+																}
+															]
+														}
+													},
+													"status": "Forbidden",
+													"code": 403,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												}
+											]
+										}
+									],
+									"id": "6688a7f6-073d-4a87-8e40-c281ca319609"
+								}
+							],
+							"id": "f39f06a4-0ba8-4965-9555-7cfacda91dd3"
+						},
+						{
+							"name": "payment",
+							"item": [
+								{
+									"name": "documents",
+									"item": [
+										{
+											"name": "Anp Edms Features General Get Payment Document Endpoint",
+											"id": "29fdc843-56bb-44b4-8883-19bbd334b76b",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": {
+														"token": "{{bearerToken}}"
+													}
+												},
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/edms/payment/documents?orderId=sint aliquip Excepteur magna eiusmod",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"edms",
+														"payment",
+														"documents"
+													],
+													"query": [
+														{
+															"key": "orderId",
+															"value": "sint aliquip Excepteur magna eiusmod",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"response": [
+												{
+													"id": "71fb61f4-4743-45e5-983c-df5d82be6251",
+													"name": "Success",
+													"originalRequest": {
+														"method": "GET",
+														"header": [
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/edms/payment/documents?orderId=sint aliquip Excepteur magna eiusmod",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"edms",
+																"payment",
+																"documents"
+															],
+															"query": [
+																{
+																	"description": "(Required) ",
+																	"key": "orderId",
+																	"value": "sint aliquip Excepteur magna eiusmod"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												},
+												{
+													"id": "a7b6af9b-ebeb-4556-bd97-b101a9dfc170",
+													"name": "Unauthorized",
+													"originalRequest": {
+														"method": "GET",
+														"header": [
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/edms/payment/documents?orderId=sint aliquip Excepteur magna eiusmod",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"edms",
+																"payment",
+																"documents"
+															],
+															"query": [
+																{
+																	"description": "(Required) ",
+																	"key": "orderId",
+																	"value": "sint aliquip Excepteur magna eiusmod"
+																}
+															]
+														}
+													},
+													"status": "Unauthorized",
+													"code": 401,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												},
+												{
+													"id": "4cc63a96-164d-4548-a51f-795800f5f7aa",
+													"name": "Forbidden",
+													"originalRequest": {
+														"method": "GET",
+														"header": [
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/edms/payment/documents?orderId=sint aliquip Excepteur magna eiusmod",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"edms",
+																"payment",
+																"documents"
+															],
+															"query": [
+																{
+																	"description": "(Required) ",
+																	"key": "orderId",
+																	"value": "sint aliquip Excepteur magna eiusmod"
+																}
+															]
+														}
+													},
+													"status": "Forbidden",
+													"code": 403,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												}
+											]
+										}
+									],
+									"id": "c9786003-7708-4ebd-aa9c-b6c67a887510"
+								}
+							],
+							"id": "3d52d01b-c2f0-4a16-8afa-cfc7f5d067b1"
+						}
+					],
+					"id": "b1be56f4-9814-4637-8705-1bd402fe95b7"
 				},
 				{
 					"name": "goods",
