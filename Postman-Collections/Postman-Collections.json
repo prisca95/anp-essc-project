@@ -35963,7 +35963,7 @@
 										],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n  //\"productId\": \"exercitation magna anim\",\n  \"description\": \"ut\",\n  \"productName\": \"ea nostrud veniam\",\n  \"dimension\": \"pariatur eu ut\",\n  \"serviceSource\": \"sit\",\n  \"price\": 52701847.64096969,\n  \"quantity\": 15,\n  \"companyId\": \"{{companyId}}\",\n  \"categoryId\": \"{{categoryId}}\",\n  \"location\": \"nostrud\",\n  \"globalPrice\": 77992384.7262556,\n  \"status\": \"do culpa\",\n  \"productType\": \"Goods\",\n  \"brand\": \"commodo\",\n  \"serialNumber\": \"laborum\",\n  \"certification\": \"laboris sit\",\n  \"productLine\": \"irure dolor\",\n  \"warrantyDuration\": -97149622,\n  \"warrantType\": \"id in ut\",\n  \"availability\": -94253473,\n  \"distributionMechanism\": \"dolore\",\n  \"comment\": \"fugiat irure et Ut voluptate\",\n  \"model\": \"cillum ex pariatur\",\n  \"productionCountry\": \"ea minim exercitation\",\n  \"currency\": \"fugiat esse\",\n  \"tagIds\": [\n    \"{{tagId1}}\",\n    \"{{tagId2}}\"\n  ],\n  \"tax\": 14708377.54274416,\n  \"isTaxInclusive\": false,\n  \"serviceHistory\": \"est non dolore\",\n  \"workReference\": \"aliqua qui proident\"\n}",
+											"raw": "{\n  //\"productId\": \"exercitation magna anim\",\n  \"description\": \"ut\",\n  \"productName\": \"ea nostrud veniam\",\n  \"dimension\": \"pariatur eu ut\",\n  \"serviceSource\": \"sit\",\n  \"price\": 52701847.64096969,\n  \"quantity\": 15,\n  \"companyId\": \"{{companyId}}\",\n  \"categoryId\": \"{{categoryId}}\",\n  \"location\": \"nostrud\",\n  \"globalPrice\": 77992384.7262556,\n  \"status\": \"do culpa\",\n  \"productType\": \"Goods\",\n  \"brand\": \"commodo\",\n  \"serialNumber\": \"laborum\",\n  \"certification\": \"laboris sit\",\n  \"productLine\": \"irure dolor\",\n  \"warrantyDuration\": -97149622,\n  \"warrantType\": \"id in ut\",\n  \"availability\": -94253473,\n  \"distributionMechanism\": \"dolore\",\n  \"comment\": \"fugiat irure et Ut voluptate\",\n  \"model\": \"cillum ex pariatur\",\n  \"productionCountry\": \"Nigeria\",\n  \"currency\": \"Naira\",\n  \"tagIds\": [\n    \"{{tagId1}}\",\n    \"{{tagId2}}\"\n  ],\n  \"tax\": 0,\n  \"isTaxInclusive\": false,\n  \"serviceHistory\": \"est non dolore\",\n  \"workReference\": \"aliqua qui proident\"\n}",
 											"options": {
 												"raw": {
 													"headerFamily": "json",
@@ -36106,7 +36106,7 @@
 										],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n  //\"productId\": \"exercitation magna anim\",\n  \"description\": \"ut\",\n  \"productName\": \"ea nostrud veniam\",\n  \"dimension\": \"pariatur eu ut\",\n  \"serviceSource\": \"sit\",\n  \"price\": 52701847.64096969,\n  \"quantity\": 15,\n  \"companyId\": \"{{companyId}}\",\n  \"categoryId\": \"{{categoryId}}\",\n  \"location\": \"nostrud\",\n  \"globalPrice\": 77992384.7262556,\n  \"status\": \"do culpa\",\n  \"productType\": \"Goods\",\n  \"brand\": \"commodo\",\n  \"serialNumber\": \"laborum\",\n  \"certification\": \"laboris sit\",\n  \"productLine\": \"irure dolor\",\n  \"warrantyDuration\": -97149622,\n  \"warrantType\": \"id in ut\",\n  \"availability\": -94253473,\n  \"distributionMechanism\": \"dolore\",\n  \"comment\": \"fugiat irure et Ut voluptate\",\n  \"model\": \"cillum ex pariatur\",\n  \"productionCountry\": \"ea minim exercitation\",\n  \"currency\": \"fugiat esse\",\n  \"tagIds\": [\n    \"{{tagId1}}\",\n    \"{{tagId2}}\"\n  ],\n  \"tax\": 14708377.54274416,\n  \"isTaxInclusive\": false,\n  \"serviceHistory\": \"est non dolore\",\n  \"workReference\": \"aliqua qui proident\"\n}",
+											"raw": "{\n  //\"productId\": \"exercitation magna anim\",\n  \"description\": \"ut\",\n  \"productName\": \"ea nostrud veniam\",\n  \"dimension\": \"pariatur eu ut\",\n  \"serviceSource\": \"sit\",\n  \"price\": 52701847.64096969,\n  \"quantity\": 15,\n  \"companyId\": \"{{companyId}}\",\n  \"categoryId\": \"{{categoryId}}\",\n  \"location\": \"nostrud\",\n  \"globalPrice\": 77992384.7262556,\n  \"status\": \"do culpa\",\n  \"productType\": \"Goods\",\n  \"brand\": \"commodo\",\n  \"serialNumber\": \"laborum\",\n  \"certification\": \"laboris sit\",\n  \"productLine\": \"irure dolor\",\n  \"warrantyDuration\": 1,\n  \"warrantType\": \"id in ut\",\n  \"availability\": 15,\n  \"distributionMechanism\": \"dolore\",\n  \"comment\": \"fugiat irure et Ut voluptate\",\n  \"model\": \"cillum ex pariatur\",\n  \"productionCountry\": \"ea minim exercitation\",\n  \"currency\": \"fugiat esse\",\n  \"tagIds\": [\n    \"{{tagId1}}\",\n    \"{{tagId2}}\"\n  ],\n  \"tax\": 0,\n  \"isTaxInclusive\": false,\n  \"serviceHistory\": \"est non dolore\",\n  \"workReference\": \"aliqua qui proident\"\n}",
 											"options": {
 												"raw": {
 													"headerFamily": "json",
@@ -40812,7 +40812,7 @@
 												"method": "GET",
 												"header": [],
 												"url": {
-													"raw": "{{baseUrl}}/api/goods/category/categories?categoryId=qui sunt&isParentCategory=false",
+													"raw": "{{baseUrl}}/api/goods/category/categories?isParentCategory=false",
 													"host": [
 														"{{baseUrl}}"
 													],
@@ -40825,7 +40825,8 @@
 													"query": [
 														{
 															"key": "categoryId",
-															"value": "qui sunt"
+															"value": "qui sunt",
+															"disabled": true
 														},
 														{
 															"key": "isParentCategory",
