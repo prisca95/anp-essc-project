@@ -36931,6 +36931,779 @@
 							"id": "32e752a1-aa65-4cd3-a5b6-3cb8b9ae395f"
 						},
 						{
+							"name": "cart",
+							"item": [
+								{
+									"name": "add",
+									"item": [
+										{
+											"name": "Anp Goods Services Features Cart Add Cart Item Endpoint",
+											"id": "124ecf7e-a283-4806-993a-5c19631110f8",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": {
+														"token": "{{bearerToken}}"
+													}
+												},
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "application/problem+json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"customerId\": \"occaecat deserunt\",\n  \"itemsList\": [\n    {\n      \"itemId\": \"non et anim sit\",\n      \"quantity\": 62076899,\n      \"cost\": 38457093.939313054,\n      \"productId\": \"aliquip anim\"\n    },\n    {\n      \"itemId\": \"amet ex id non nostrud\",\n      \"quantity\": 1780284,\n      \"cost\": 55600899.58293083,\n      \"productId\": \"fugiat ut ipsum sit\"\n    }\n  ],\n  \"orderId\": \"aliquip mollit minim ea voluptate\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl}}/api/goods/cart/add"
+											},
+											"response": [
+												{
+													"id": "9b557804-d057-4c59-97b9-dce9bd6e59de",
+													"name": "Success",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"customerId\": \"occaecat deserunt\",\n  \"itemsList\": [\n    {\n      \"itemId\": \"non et anim sit\",\n      \"quantity\": 62076899,\n      \"cost\": 38457093.939313054,\n      \"productId\": \"aliquip anim\"\n    },\n    {\n      \"itemId\": \"amet ex id non nostrud\",\n      \"quantity\": 1780284,\n      \"cost\": 55600899.58293083,\n      \"productId\": \"fugiat ut ipsum sit\"\n    }\n  ],\n  \"orderId\": \"aliquip mollit minim ea voluptate\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl}}/api/goods/cart/add"
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												},
+												{
+													"id": "9144d204-d868-490e-bb94-3dc60097accc",
+													"name": "Bad Request",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"key": "Accept",
+																"value": "application/problem+json"
+															},
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"customerId\": \"occaecat deserunt\",\n  \"itemsList\": [\n    {\n      \"itemId\": \"non et anim sit\",\n      \"quantity\": 62076899,\n      \"cost\": 38457093.939313054,\n      \"productId\": \"aliquip anim\"\n    },\n    {\n      \"itemId\": \"amet ex id non nostrud\",\n      \"quantity\": 1780284,\n      \"cost\": 55600899.58293083,\n      \"productId\": \"fugiat ut ipsum sit\"\n    }\n  ],\n  \"orderId\": \"aliquip mollit minim ea voluptate\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl}}/api/goods/cart/add"
+													},
+													"status": "Bad Request",
+													"code": 400,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/problem+json"
+														}
+													],
+													"cookie": [],
+													"responseTime": null,
+													"body": "{\n  \"type\": \"https://www.rfc-editor.org/rfc/rfc7231#section-6.5.1\",\n  \"title\": \"One or more validation errors occurred.\",\n  \"status\": 400,\n  \"instance\": \"/api/route\",\n  \"traceId\": \"0HMPNHL0JHL76:00000001\",\n  \"detail\": \"ut esse pariatur voluptate\",\n  \"errors\": [\n    {\n      \"name\": \"Error or field name\",\n      \"reason\": \"Error reason\",\n      \"code\": \"quis officia\",\n      \"severity\": \"Ut sunt\"\n    },\n    {\n      \"name\": \"Error or field name\",\n      \"reason\": \"Error reason\",\n      \"code\": \"elit eiusmod \",\n      \"severity\": \"reprehenderit dolore Excepteur mollit\"\n    }\n  ]\n}"
+												},
+												{
+													"id": "effdebd1-c8d8-4555-8d7c-a6a73ab96977",
+													"name": "Unauthorized",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"customerId\": \"occaecat deserunt\",\n  \"itemsList\": [\n    {\n      \"itemId\": \"non et anim sit\",\n      \"quantity\": 62076899,\n      \"cost\": 38457093.939313054,\n      \"productId\": \"aliquip anim\"\n    },\n    {\n      \"itemId\": \"amet ex id non nostrud\",\n      \"quantity\": 1780284,\n      \"cost\": 55600899.58293083,\n      \"productId\": \"fugiat ut ipsum sit\"\n    }\n  ],\n  \"orderId\": \"aliquip mollit minim ea voluptate\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl}}/api/goods/cart/add"
+													},
+													"status": "Unauthorized",
+													"code": 401,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												},
+												{
+													"id": "0e6add09-7058-474f-a095-183921766569",
+													"name": "Forbidden",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"customerId\": \"occaecat deserunt\",\n  \"itemsList\": [\n    {\n      \"itemId\": \"non et anim sit\",\n      \"quantity\": 62076899,\n      \"cost\": 38457093.939313054,\n      \"productId\": \"aliquip anim\"\n    },\n    {\n      \"itemId\": \"amet ex id non nostrud\",\n      \"quantity\": 1780284,\n      \"cost\": 55600899.58293083,\n      \"productId\": \"fugiat ut ipsum sit\"\n    }\n  ],\n  \"orderId\": \"aliquip mollit minim ea voluptate\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl}}/api/goods/cart/add"
+													},
+													"status": "Forbidden",
+													"code": 403,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												}
+											]
+										}
+									],
+									"id": "894e2609-1f3a-406f-a98c-6913bff95ae5"
+								},
+								{
+									"name": "list",
+									"item": [
+										{
+											"name": "Anp Goods Services Features Cart Get All Carts Endpoint",
+											"id": "d1b616e7-e989-4fb4-9458-91e386928d54",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": {
+														"token": "{{bearerToken}}"
+													}
+												},
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/goods/cart/list?customerId=sint aliquip Excepteur magna eiusmod&pageNumber=-69839832&pageSize=-69839832",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"goods",
+														"cart",
+														"list"
+													],
+													"query": [
+														{
+															"key": "customerId",
+															"value": "sint aliquip Excepteur magna eiusmod",
+															"description": "(Required) "
+														},
+														{
+															"key": "pageNumber",
+															"value": "-69839832",
+															"description": "(Required) "
+														},
+														{
+															"key": "pageSize",
+															"value": "-69839832",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"response": [
+												{
+													"id": "1e22585d-53de-464f-bcaf-7c263ab856df",
+													"name": "Success",
+													"originalRequest": {
+														"method": "GET",
+														"header": [
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/goods/cart/list?customerId=sint aliquip Excepteur magna eiusmod&pageNumber=-69839832&pageSize=-69839832",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"goods",
+																"cart",
+																"list"
+															],
+															"query": [
+																{
+																	"description": "(Required) ",
+																	"key": "customerId",
+																	"value": "sint aliquip Excepteur magna eiusmod"
+																},
+																{
+																	"description": "(Required) ",
+																	"key": "pageNumber",
+																	"value": "-69839832"
+																},
+																{
+																	"description": "(Required) ",
+																	"key": "pageSize",
+																	"value": "-69839832"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												},
+												{
+													"id": "380cd997-9e08-4cbc-8441-319bb2ca11d9",
+													"name": "Unauthorized",
+													"originalRequest": {
+														"method": "GET",
+														"header": [
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/goods/cart/list?customerId=sint aliquip Excepteur magna eiusmod&pageNumber=-69839832&pageSize=-69839832",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"goods",
+																"cart",
+																"list"
+															],
+															"query": [
+																{
+																	"description": "(Required) ",
+																	"key": "customerId",
+																	"value": "sint aliquip Excepteur magna eiusmod"
+																},
+																{
+																	"description": "(Required) ",
+																	"key": "pageNumber",
+																	"value": "-69839832"
+																},
+																{
+																	"description": "(Required) ",
+																	"key": "pageSize",
+																	"value": "-69839832"
+																}
+															]
+														}
+													},
+													"status": "Unauthorized",
+													"code": 401,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												},
+												{
+													"id": "236f515d-b84b-4d34-b065-617365ec8f2e",
+													"name": "Forbidden",
+													"originalRequest": {
+														"method": "GET",
+														"header": [
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/goods/cart/list?customerId=sint aliquip Excepteur magna eiusmod&pageNumber=-69839832&pageSize=-69839832",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"goods",
+																"cart",
+																"list"
+															],
+															"query": [
+																{
+																	"description": "(Required) ",
+																	"key": "customerId",
+																	"value": "sint aliquip Excepteur magna eiusmod"
+																},
+																{
+																	"description": "(Required) ",
+																	"key": "pageNumber",
+																	"value": "-69839832"
+																},
+																{
+																	"description": "(Required) ",
+																	"key": "pageSize",
+																	"value": "-69839832"
+																}
+															]
+														}
+													},
+													"status": "Forbidden",
+													"code": 403,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												}
+											]
+										}
+									],
+									"id": "aa29cb12-d3e7-4ea0-a191-30dc228b6606"
+								},
+								{
+									"name": "myOrder",
+									"item": [
+										{
+											"name": "Anp Goods Services Features Cart Get My Order Endpoint",
+											"id": "6e7da53d-7f2e-46f3-9378-506880a71de5",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": {
+														"token": "{{bearerToken}}"
+													}
+												},
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/goods/cart/myOrder?orderStatus=Shipped&searchValues=qui sunt&pageNumber=-69839832&pageSize=-69839832",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"goods",
+														"cart",
+														"myOrder"
+													],
+													"query": [
+														{
+															"key": "orderStatus",
+															"value": "Shipped"
+														},
+														{
+															"key": "searchValues",
+															"value": "qui sunt"
+														},
+														{
+															"key": "pageNumber",
+															"value": "-69839832",
+															"description": "(Required) "
+														},
+														{
+															"key": "pageSize",
+															"value": "-69839832",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"response": [
+												{
+													"id": "eb6afd8c-c78d-4295-8719-369117a7633d",
+													"name": "Success",
+													"originalRequest": {
+														"method": "GET",
+														"header": [
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/goods/cart/myOrder?orderStatus=Shipped&searchValues=qui sunt&pageNumber=-69839832&pageSize=-69839832",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"goods",
+																"cart",
+																"myOrder"
+															],
+															"query": [
+																{
+																	"key": "orderStatus",
+																	"value": "Shipped"
+																},
+																{
+																	"key": "searchValues",
+																	"value": "qui sunt"
+																},
+																{
+																	"description": "(Required) ",
+																	"key": "pageNumber",
+																	"value": "-69839832"
+																},
+																{
+																	"description": "(Required) ",
+																	"key": "pageSize",
+																	"value": "-69839832"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												},
+												{
+													"id": "aa80f2ee-169a-4894-a19a-06f8dba1365a",
+													"name": "Unauthorized",
+													"originalRequest": {
+														"method": "GET",
+														"header": [
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/goods/cart/myOrder?orderStatus=Shipped&searchValues=qui sunt&pageNumber=-69839832&pageSize=-69839832",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"goods",
+																"cart",
+																"myOrder"
+															],
+															"query": [
+																{
+																	"key": "orderStatus",
+																	"value": "Shipped"
+																},
+																{
+																	"key": "searchValues",
+																	"value": "qui sunt"
+																},
+																{
+																	"description": "(Required) ",
+																	"key": "pageNumber",
+																	"value": "-69839832"
+																},
+																{
+																	"description": "(Required) ",
+																	"key": "pageSize",
+																	"value": "-69839832"
+																}
+															]
+														}
+													},
+													"status": "Unauthorized",
+													"code": 401,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												},
+												{
+													"id": "5d875a43-7219-4007-8969-68dbe5285fd6",
+													"name": "Forbidden",
+													"originalRequest": {
+														"method": "GET",
+														"header": [
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/goods/cart/myOrder?orderStatus=Shipped&searchValues=qui sunt&pageNumber=-69839832&pageSize=-69839832",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"goods",
+																"cart",
+																"myOrder"
+															],
+															"query": [
+																{
+																	"key": "orderStatus",
+																	"value": "Shipped"
+																},
+																{
+																	"key": "searchValues",
+																	"value": "qui sunt"
+																},
+																{
+																	"description": "(Required) ",
+																	"key": "pageNumber",
+																	"value": "-69839832"
+																},
+																{
+																	"description": "(Required) ",
+																	"key": "pageSize",
+																	"value": "-69839832"
+																}
+															]
+														}
+													},
+													"status": "Forbidden",
+													"code": 403,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												}
+											]
+										}
+									],
+									"id": "375bf704-7500-488f-9024-a77ba91086d9"
+								},
+								{
+									"name": "remove",
+									"item": [
+										{
+											"name": "Anp Goods Services Features Cart Remove Cart Item Endpoint",
+											"id": "e10f7b87-cc89-459a-a1d0-d2d87e58e19d",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": {
+														"token": "{{bearerToken}}"
+													}
+												},
+												"method": "DELETE",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"itemId\": \"magna aliquip labore\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl}}/api/goods/cart/remove"
+											},
+											"response": [
+												{
+													"id": "80610dbf-5c49-4340-94c9-5437f2137ccd",
+													"name": "Success",
+													"originalRequest": {
+														"method": "DELETE",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"itemId\": \"magna aliquip labore\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl}}/api/goods/cart/remove"
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												},
+												{
+													"id": "9e0ad6e3-a2b7-4ad0-8323-6309f89baf7d",
+													"name": "Unauthorized",
+													"originalRequest": {
+														"method": "DELETE",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"itemId\": \"magna aliquip labore\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl}}/api/goods/cart/remove"
+													},
+													"status": "Unauthorized",
+													"code": 401,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												},
+												{
+													"id": "b2ed6507-a83c-4c23-93b3-b4d8d2baf7a9",
+													"name": "Forbidden",
+													"originalRequest": {
+														"method": "DELETE",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"itemId\": \"magna aliquip labore\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl}}/api/goods/cart/remove"
+													},
+													"status": "Forbidden",
+													"code": 403,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												}
+											]
+										}
+									],
+									"id": "4ea347f4-ed6f-401e-9d2d-9c18fe4d5d26"
+								}
+							],
+							"id": "751eb327-73fb-46ea-b667-4129580cd88d"
+						},
+						{
 							"name": "order",
 							"item": [
 								{
@@ -40994,779 +41767,6 @@
 								}
 							],
 							"id": "655467be-5ddc-48fe-9221-7d1fb6bce201"
-						},
-						{
-							"name": "cart",
-							"item": [
-								{
-									"name": "add",
-									"item": [
-										{
-											"name": "Anp Goods Services Features Cart Add Cart Item Endpoint",
-											"id": "124ecf7e-a283-4806-993a-5c19631110f8",
-											"protocolProfileBehavior": {
-												"disableBodyPruning": true
-											},
-											"request": {
-												"auth": {
-													"type": "bearer",
-													"bearer": {
-														"token": "{{bearerToken}}"
-													}
-												},
-												"method": "POST",
-												"header": [
-													{
-														"key": "Content-Type",
-														"value": "application/json"
-													},
-													{
-														"key": "Accept",
-														"value": "application/problem+json"
-													}
-												],
-												"body": {
-													"mode": "raw",
-													"raw": "{\n  \"customerId\": \"occaecat deserunt\",\n  \"itemsList\": [\n    {\n      \"itemId\": \"non et anim sit\",\n      \"quantity\": 62076899,\n      \"cost\": 38457093.939313054,\n      \"productId\": \"aliquip anim\"\n    },\n    {\n      \"itemId\": \"amet ex id non nostrud\",\n      \"quantity\": 1780284,\n      \"cost\": 55600899.58293083,\n      \"productId\": \"fugiat ut ipsum sit\"\n    }\n  ],\n  \"orderId\": \"aliquip mollit minim ea voluptate\"\n}",
-													"options": {
-														"raw": {
-															"headerFamily": "json",
-															"language": "json"
-														}
-													}
-												},
-												"url": "{{baseUrl}}/api/goods/cart/add"
-											},
-											"response": [
-												{
-													"id": "9b557804-d057-4c59-97b9-dce9bd6e59de",
-													"name": "Success",
-													"originalRequest": {
-														"method": "POST",
-														"header": [
-															{
-																"key": "Content-Type",
-																"value": "application/json"
-															},
-															{
-																"description": "Added as a part of security scheme: bearer",
-																"key": "Authorization",
-																"value": "Bearer <token>"
-															}
-														],
-														"body": {
-															"mode": "raw",
-															"raw": "{\n  \"customerId\": \"occaecat deserunt\",\n  \"itemsList\": [\n    {\n      \"itemId\": \"non et anim sit\",\n      \"quantity\": 62076899,\n      \"cost\": 38457093.939313054,\n      \"productId\": \"aliquip anim\"\n    },\n    {\n      \"itemId\": \"amet ex id non nostrud\",\n      \"quantity\": 1780284,\n      \"cost\": 55600899.58293083,\n      \"productId\": \"fugiat ut ipsum sit\"\n    }\n  ],\n  \"orderId\": \"aliquip mollit minim ea voluptate\"\n}",
-															"options": {
-																"raw": {
-																	"headerFamily": "json",
-																	"language": "json"
-																}
-															}
-														},
-														"url": "{{baseUrl}}/api/goods/cart/add"
-													},
-													"status": "OK",
-													"code": 200,
-													"_postman_previewlanguage": "text",
-													"header": [],
-													"cookie": [],
-													"responseTime": null,
-													"body": ""
-												},
-												{
-													"id": "9144d204-d868-490e-bb94-3dc60097accc",
-													"name": "Bad Request",
-													"originalRequest": {
-														"method": "POST",
-														"header": [
-															{
-																"key": "Content-Type",
-																"value": "application/json"
-															},
-															{
-																"key": "Accept",
-																"value": "application/problem+json"
-															},
-															{
-																"description": "Added as a part of security scheme: bearer",
-																"key": "Authorization",
-																"value": "Bearer <token>"
-															}
-														],
-														"body": {
-															"mode": "raw",
-															"raw": "{\n  \"customerId\": \"occaecat deserunt\",\n  \"itemsList\": [\n    {\n      \"itemId\": \"non et anim sit\",\n      \"quantity\": 62076899,\n      \"cost\": 38457093.939313054,\n      \"productId\": \"aliquip anim\"\n    },\n    {\n      \"itemId\": \"amet ex id non nostrud\",\n      \"quantity\": 1780284,\n      \"cost\": 55600899.58293083,\n      \"productId\": \"fugiat ut ipsum sit\"\n    }\n  ],\n  \"orderId\": \"aliquip mollit minim ea voluptate\"\n}",
-															"options": {
-																"raw": {
-																	"headerFamily": "json",
-																	"language": "json"
-																}
-															}
-														},
-														"url": "{{baseUrl}}/api/goods/cart/add"
-													},
-													"status": "Bad Request",
-													"code": 400,
-													"_postman_previewlanguage": "json",
-													"header": [
-														{
-															"key": "Content-Type",
-															"value": "application/problem+json"
-														}
-													],
-													"cookie": [],
-													"responseTime": null,
-													"body": "{\n  \"type\": \"https://www.rfc-editor.org/rfc/rfc7231#section-6.5.1\",\n  \"title\": \"One or more validation errors occurred.\",\n  \"status\": 400,\n  \"instance\": \"/api/route\",\n  \"traceId\": \"0HMPNHL0JHL76:00000001\",\n  \"detail\": \"ut esse pariatur voluptate\",\n  \"errors\": [\n    {\n      \"name\": \"Error or field name\",\n      \"reason\": \"Error reason\",\n      \"code\": \"quis officia\",\n      \"severity\": \"Ut sunt\"\n    },\n    {\n      \"name\": \"Error or field name\",\n      \"reason\": \"Error reason\",\n      \"code\": \"elit eiusmod \",\n      \"severity\": \"reprehenderit dolore Excepteur mollit\"\n    }\n  ]\n}"
-												},
-												{
-													"id": "effdebd1-c8d8-4555-8d7c-a6a73ab96977",
-													"name": "Unauthorized",
-													"originalRequest": {
-														"method": "POST",
-														"header": [
-															{
-																"key": "Content-Type",
-																"value": "application/json"
-															},
-															{
-																"description": "Added as a part of security scheme: bearer",
-																"key": "Authorization",
-																"value": "Bearer <token>"
-															}
-														],
-														"body": {
-															"mode": "raw",
-															"raw": "{\n  \"customerId\": \"occaecat deserunt\",\n  \"itemsList\": [\n    {\n      \"itemId\": \"non et anim sit\",\n      \"quantity\": 62076899,\n      \"cost\": 38457093.939313054,\n      \"productId\": \"aliquip anim\"\n    },\n    {\n      \"itemId\": \"amet ex id non nostrud\",\n      \"quantity\": 1780284,\n      \"cost\": 55600899.58293083,\n      \"productId\": \"fugiat ut ipsum sit\"\n    }\n  ],\n  \"orderId\": \"aliquip mollit minim ea voluptate\"\n}",
-															"options": {
-																"raw": {
-																	"headerFamily": "json",
-																	"language": "json"
-																}
-															}
-														},
-														"url": "{{baseUrl}}/api/goods/cart/add"
-													},
-													"status": "Unauthorized",
-													"code": 401,
-													"_postman_previewlanguage": "text",
-													"header": [],
-													"cookie": [],
-													"responseTime": null,
-													"body": ""
-												},
-												{
-													"id": "0e6add09-7058-474f-a095-183921766569",
-													"name": "Forbidden",
-													"originalRequest": {
-														"method": "POST",
-														"header": [
-															{
-																"key": "Content-Type",
-																"value": "application/json"
-															},
-															{
-																"description": "Added as a part of security scheme: bearer",
-																"key": "Authorization",
-																"value": "Bearer <token>"
-															}
-														],
-														"body": {
-															"mode": "raw",
-															"raw": "{\n  \"customerId\": \"occaecat deserunt\",\n  \"itemsList\": [\n    {\n      \"itemId\": \"non et anim sit\",\n      \"quantity\": 62076899,\n      \"cost\": 38457093.939313054,\n      \"productId\": \"aliquip anim\"\n    },\n    {\n      \"itemId\": \"amet ex id non nostrud\",\n      \"quantity\": 1780284,\n      \"cost\": 55600899.58293083,\n      \"productId\": \"fugiat ut ipsum sit\"\n    }\n  ],\n  \"orderId\": \"aliquip mollit minim ea voluptate\"\n}",
-															"options": {
-																"raw": {
-																	"headerFamily": "json",
-																	"language": "json"
-																}
-															}
-														},
-														"url": "{{baseUrl}}/api/goods/cart/add"
-													},
-													"status": "Forbidden",
-													"code": 403,
-													"_postman_previewlanguage": "text",
-													"header": [],
-													"cookie": [],
-													"responseTime": null,
-													"body": ""
-												}
-											]
-										}
-									],
-									"id": "894e2609-1f3a-406f-a98c-6913bff95ae5"
-								},
-								{
-									"name": "list",
-									"item": [
-										{
-											"name": "Anp Goods Services Features Cart Get All Carts Endpoint",
-											"id": "d1b616e7-e989-4fb4-9458-91e386928d54",
-											"protocolProfileBehavior": {
-												"disableBodyPruning": true
-											},
-											"request": {
-												"auth": {
-													"type": "bearer",
-													"bearer": {
-														"token": "{{bearerToken}}"
-													}
-												},
-												"method": "GET",
-												"header": [],
-												"url": {
-													"raw": "{{baseUrl}}/api/goods/cart/list?customerId=sint aliquip Excepteur magna eiusmod&pageNumber=-69839832&pageSize=-69839832",
-													"host": [
-														"{{baseUrl}}"
-													],
-													"path": [
-														"api",
-														"goods",
-														"cart",
-														"list"
-													],
-													"query": [
-														{
-															"key": "customerId",
-															"value": "sint aliquip Excepteur magna eiusmod",
-															"description": "(Required) "
-														},
-														{
-															"key": "pageNumber",
-															"value": "-69839832",
-															"description": "(Required) "
-														},
-														{
-															"key": "pageSize",
-															"value": "-69839832",
-															"description": "(Required) "
-														}
-													]
-												}
-											},
-											"response": [
-												{
-													"id": "1e22585d-53de-464f-bcaf-7c263ab856df",
-													"name": "Success",
-													"originalRequest": {
-														"method": "GET",
-														"header": [
-															{
-																"description": "Added as a part of security scheme: bearer",
-																"key": "Authorization",
-																"value": "Bearer <token>"
-															}
-														],
-														"url": {
-															"raw": "{{baseUrl}}/api/goods/cart/list?customerId=sint aliquip Excepteur magna eiusmod&pageNumber=-69839832&pageSize=-69839832",
-															"host": [
-																"{{baseUrl}}"
-															],
-															"path": [
-																"api",
-																"goods",
-																"cart",
-																"list"
-															],
-															"query": [
-																{
-																	"description": "(Required) ",
-																	"key": "customerId",
-																	"value": "sint aliquip Excepteur magna eiusmod"
-																},
-																{
-																	"description": "(Required) ",
-																	"key": "pageNumber",
-																	"value": "-69839832"
-																},
-																{
-																	"description": "(Required) ",
-																	"key": "pageSize",
-																	"value": "-69839832"
-																}
-															]
-														}
-													},
-													"status": "OK",
-													"code": 200,
-													"_postman_previewlanguage": "text",
-													"header": [],
-													"cookie": [],
-													"responseTime": null,
-													"body": ""
-												},
-												{
-													"id": "380cd997-9e08-4cbc-8441-319bb2ca11d9",
-													"name": "Unauthorized",
-													"originalRequest": {
-														"method": "GET",
-														"header": [
-															{
-																"description": "Added as a part of security scheme: bearer",
-																"key": "Authorization",
-																"value": "Bearer <token>"
-															}
-														],
-														"url": {
-															"raw": "{{baseUrl}}/api/goods/cart/list?customerId=sint aliquip Excepteur magna eiusmod&pageNumber=-69839832&pageSize=-69839832",
-															"host": [
-																"{{baseUrl}}"
-															],
-															"path": [
-																"api",
-																"goods",
-																"cart",
-																"list"
-															],
-															"query": [
-																{
-																	"description": "(Required) ",
-																	"key": "customerId",
-																	"value": "sint aliquip Excepteur magna eiusmod"
-																},
-																{
-																	"description": "(Required) ",
-																	"key": "pageNumber",
-																	"value": "-69839832"
-																},
-																{
-																	"description": "(Required) ",
-																	"key": "pageSize",
-																	"value": "-69839832"
-																}
-															]
-														}
-													},
-													"status": "Unauthorized",
-													"code": 401,
-													"_postman_previewlanguage": "text",
-													"header": [],
-													"cookie": [],
-													"responseTime": null,
-													"body": ""
-												},
-												{
-													"id": "236f515d-b84b-4d34-b065-617365ec8f2e",
-													"name": "Forbidden",
-													"originalRequest": {
-														"method": "GET",
-														"header": [
-															{
-																"description": "Added as a part of security scheme: bearer",
-																"key": "Authorization",
-																"value": "Bearer <token>"
-															}
-														],
-														"url": {
-															"raw": "{{baseUrl}}/api/goods/cart/list?customerId=sint aliquip Excepteur magna eiusmod&pageNumber=-69839832&pageSize=-69839832",
-															"host": [
-																"{{baseUrl}}"
-															],
-															"path": [
-																"api",
-																"goods",
-																"cart",
-																"list"
-															],
-															"query": [
-																{
-																	"description": "(Required) ",
-																	"key": "customerId",
-																	"value": "sint aliquip Excepteur magna eiusmod"
-																},
-																{
-																	"description": "(Required) ",
-																	"key": "pageNumber",
-																	"value": "-69839832"
-																},
-																{
-																	"description": "(Required) ",
-																	"key": "pageSize",
-																	"value": "-69839832"
-																}
-															]
-														}
-													},
-													"status": "Forbidden",
-													"code": 403,
-													"_postman_previewlanguage": "text",
-													"header": [],
-													"cookie": [],
-													"responseTime": null,
-													"body": ""
-												}
-											]
-										}
-									],
-									"id": "aa29cb12-d3e7-4ea0-a191-30dc228b6606"
-								},
-								{
-									"name": "myOrder",
-									"item": [
-										{
-											"name": "Anp Goods Services Features Cart Get My Order Endpoint",
-											"id": "6e7da53d-7f2e-46f3-9378-506880a71de5",
-											"protocolProfileBehavior": {
-												"disableBodyPruning": true
-											},
-											"request": {
-												"auth": {
-													"type": "bearer",
-													"bearer": {
-														"token": "{{bearerToken}}"
-													}
-												},
-												"method": "GET",
-												"header": [],
-												"url": {
-													"raw": "{{baseUrl}}/api/goods/cart/myOrder?orderStatus=Shipped&searchValues=qui sunt&pageNumber=-69839832&pageSize=-69839832",
-													"host": [
-														"{{baseUrl}}"
-													],
-													"path": [
-														"api",
-														"goods",
-														"cart",
-														"myOrder"
-													],
-													"query": [
-														{
-															"key": "orderStatus",
-															"value": "Shipped"
-														},
-														{
-															"key": "searchValues",
-															"value": "qui sunt"
-														},
-														{
-															"key": "pageNumber",
-															"value": "-69839832",
-															"description": "(Required) "
-														},
-														{
-															"key": "pageSize",
-															"value": "-69839832",
-															"description": "(Required) "
-														}
-													]
-												}
-											},
-											"response": [
-												{
-													"id": "eb6afd8c-c78d-4295-8719-369117a7633d",
-													"name": "Success",
-													"originalRequest": {
-														"method": "GET",
-														"header": [
-															{
-																"description": "Added as a part of security scheme: bearer",
-																"key": "Authorization",
-																"value": "Bearer <token>"
-															}
-														],
-														"url": {
-															"raw": "{{baseUrl}}/api/goods/cart/myOrder?orderStatus=Shipped&searchValues=qui sunt&pageNumber=-69839832&pageSize=-69839832",
-															"host": [
-																"{{baseUrl}}"
-															],
-															"path": [
-																"api",
-																"goods",
-																"cart",
-																"myOrder"
-															],
-															"query": [
-																{
-																	"key": "orderStatus",
-																	"value": "Shipped"
-																},
-																{
-																	"key": "searchValues",
-																	"value": "qui sunt"
-																},
-																{
-																	"description": "(Required) ",
-																	"key": "pageNumber",
-																	"value": "-69839832"
-																},
-																{
-																	"description": "(Required) ",
-																	"key": "pageSize",
-																	"value": "-69839832"
-																}
-															]
-														}
-													},
-													"status": "OK",
-													"code": 200,
-													"_postman_previewlanguage": "text",
-													"header": [],
-													"cookie": [],
-													"responseTime": null,
-													"body": ""
-												},
-												{
-													"id": "aa80f2ee-169a-4894-a19a-06f8dba1365a",
-													"name": "Unauthorized",
-													"originalRequest": {
-														"method": "GET",
-														"header": [
-															{
-																"description": "Added as a part of security scheme: bearer",
-																"key": "Authorization",
-																"value": "Bearer <token>"
-															}
-														],
-														"url": {
-															"raw": "{{baseUrl}}/api/goods/cart/myOrder?orderStatus=Shipped&searchValues=qui sunt&pageNumber=-69839832&pageSize=-69839832",
-															"host": [
-																"{{baseUrl}}"
-															],
-															"path": [
-																"api",
-																"goods",
-																"cart",
-																"myOrder"
-															],
-															"query": [
-																{
-																	"key": "orderStatus",
-																	"value": "Shipped"
-																},
-																{
-																	"key": "searchValues",
-																	"value": "qui sunt"
-																},
-																{
-																	"description": "(Required) ",
-																	"key": "pageNumber",
-																	"value": "-69839832"
-																},
-																{
-																	"description": "(Required) ",
-																	"key": "pageSize",
-																	"value": "-69839832"
-																}
-															]
-														}
-													},
-													"status": "Unauthorized",
-													"code": 401,
-													"_postman_previewlanguage": "text",
-													"header": [],
-													"cookie": [],
-													"responseTime": null,
-													"body": ""
-												},
-												{
-													"id": "5d875a43-7219-4007-8969-68dbe5285fd6",
-													"name": "Forbidden",
-													"originalRequest": {
-														"method": "GET",
-														"header": [
-															{
-																"description": "Added as a part of security scheme: bearer",
-																"key": "Authorization",
-																"value": "Bearer <token>"
-															}
-														],
-														"url": {
-															"raw": "{{baseUrl}}/api/goods/cart/myOrder?orderStatus=Shipped&searchValues=qui sunt&pageNumber=-69839832&pageSize=-69839832",
-															"host": [
-																"{{baseUrl}}"
-															],
-															"path": [
-																"api",
-																"goods",
-																"cart",
-																"myOrder"
-															],
-															"query": [
-																{
-																	"key": "orderStatus",
-																	"value": "Shipped"
-																},
-																{
-																	"key": "searchValues",
-																	"value": "qui sunt"
-																},
-																{
-																	"description": "(Required) ",
-																	"key": "pageNumber",
-																	"value": "-69839832"
-																},
-																{
-																	"description": "(Required) ",
-																	"key": "pageSize",
-																	"value": "-69839832"
-																}
-															]
-														}
-													},
-													"status": "Forbidden",
-													"code": 403,
-													"_postman_previewlanguage": "text",
-													"header": [],
-													"cookie": [],
-													"responseTime": null,
-													"body": ""
-												}
-											]
-										}
-									],
-									"id": "375bf704-7500-488f-9024-a77ba91086d9"
-								},
-								{
-									"name": "remove",
-									"item": [
-										{
-											"name": "Anp Goods Services Features Cart Remove Cart Item Endpoint",
-											"id": "e10f7b87-cc89-459a-a1d0-d2d87e58e19d",
-											"protocolProfileBehavior": {
-												"disableBodyPruning": true
-											},
-											"request": {
-												"auth": {
-													"type": "bearer",
-													"bearer": {
-														"token": "{{bearerToken}}"
-													}
-												},
-												"method": "DELETE",
-												"header": [
-													{
-														"key": "Content-Type",
-														"value": "application/json"
-													}
-												],
-												"body": {
-													"mode": "raw",
-													"raw": "{\n  \"itemId\": \"magna aliquip labore\"\n}",
-													"options": {
-														"raw": {
-															"headerFamily": "json",
-															"language": "json"
-														}
-													}
-												},
-												"url": "{{baseUrl}}/api/goods/cart/remove"
-											},
-											"response": [
-												{
-													"id": "80610dbf-5c49-4340-94c9-5437f2137ccd",
-													"name": "Success",
-													"originalRequest": {
-														"method": "DELETE",
-														"header": [
-															{
-																"key": "Content-Type",
-																"value": "application/json"
-															},
-															{
-																"description": "Added as a part of security scheme: bearer",
-																"key": "Authorization",
-																"value": "Bearer <token>"
-															}
-														],
-														"body": {
-															"mode": "raw",
-															"raw": "{\n  \"itemId\": \"magna aliquip labore\"\n}",
-															"options": {
-																"raw": {
-																	"headerFamily": "json",
-																	"language": "json"
-																}
-															}
-														},
-														"url": "{{baseUrl}}/api/goods/cart/remove"
-													},
-													"status": "OK",
-													"code": 200,
-													"_postman_previewlanguage": "text",
-													"header": [],
-													"cookie": [],
-													"responseTime": null,
-													"body": ""
-												},
-												{
-													"id": "9e0ad6e3-a2b7-4ad0-8323-6309f89baf7d",
-													"name": "Unauthorized",
-													"originalRequest": {
-														"method": "DELETE",
-														"header": [
-															{
-																"key": "Content-Type",
-																"value": "application/json"
-															},
-															{
-																"description": "Added as a part of security scheme: bearer",
-																"key": "Authorization",
-																"value": "Bearer <token>"
-															}
-														],
-														"body": {
-															"mode": "raw",
-															"raw": "{\n  \"itemId\": \"magna aliquip labore\"\n}",
-															"options": {
-																"raw": {
-																	"headerFamily": "json",
-																	"language": "json"
-																}
-															}
-														},
-														"url": "{{baseUrl}}/api/goods/cart/remove"
-													},
-													"status": "Unauthorized",
-													"code": 401,
-													"_postman_previewlanguage": "text",
-													"header": [],
-													"cookie": [],
-													"responseTime": null,
-													"body": ""
-												},
-												{
-													"id": "b2ed6507-a83c-4c23-93b3-b4d8d2baf7a9",
-													"name": "Forbidden",
-													"originalRequest": {
-														"method": "DELETE",
-														"header": [
-															{
-																"key": "Content-Type",
-																"value": "application/json"
-															},
-															{
-																"description": "Added as a part of security scheme: bearer",
-																"key": "Authorization",
-																"value": "Bearer <token>"
-															}
-														],
-														"body": {
-															"mode": "raw",
-															"raw": "{\n  \"itemId\": \"magna aliquip labore\"\n}",
-															"options": {
-																"raw": {
-																	"headerFamily": "json",
-																	"language": "json"
-																}
-															}
-														},
-														"url": "{{baseUrl}}/api/goods/cart/remove"
-													},
-													"status": "Forbidden",
-													"code": 403,
-													"_postman_previewlanguage": "text",
-													"header": [],
-													"cookie": [],
-													"responseTime": null,
-													"body": ""
-												}
-											]
-										}
-									],
-									"id": "4ea347f4-ed6f-401e-9d2d-9c18fe4d5d26"
-								}
-							],
-							"id": "751eb327-73fb-46ea-b667-4129580cd88d"
 						}
 					],
 					"id": "9313148e-cf23-40e4-9a72-c2f7bac1670c"
