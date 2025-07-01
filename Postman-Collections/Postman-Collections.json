@@ -37014,6 +37014,21 @@
 									"item": [
 										{
 											"name": "Anp Goods Services Features Cart Get All Carts Endpoint",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"id": "bbcfa9ff-d932-4fdd-882d-75d7cdf44291",
+														"exec": [
+															"pm.test(\"Status code is 200\", function () {\r",
+															"    pm.response.to.have.status(200);\r",
+															"});"
+														],
+														"type": "text/javascript",
+														"packages": {}
+													}
+												}
+											],
 											"id": "d1b616e7-e989-4fb4-9458-91e386928d54",
 											"protocolProfileBehavior": {
 												"disableBodyPruning": true
@@ -37028,7 +37043,7 @@
 												"method": "GET",
 												"header": [],
 												"url": {
-													"raw": "{{baseUrl}}/api/goods/cart/list?customerId=sint aliquip Excepteur magna eiusmod&pageNumber=-69839832&pageSize=-69839832",
+													"raw": "{{baseUrl}}/api/goods/cart/list?customerId={{supplierId}}&pageNumber=1&pageSize=10",
 													"host": [
 														"{{baseUrl}}"
 													],
@@ -37041,17 +37056,17 @@
 													"query": [
 														{
 															"key": "customerId",
-															"value": "sint aliquip Excepteur magna eiusmod",
+															"value": "{{supplierId}}",
 															"description": "(Required) "
 														},
 														{
 															"key": "pageNumber",
-															"value": "-69839832",
+															"value": "1",
 															"description": "(Required) "
 														},
 														{
 															"key": "pageSize",
-															"value": "-69839832",
+															"value": "10",
 															"description": "(Required) "
 														}
 													]
@@ -37232,7 +37247,7 @@
 												"method": "GET",
 												"header": [],
 												"url": {
-													"raw": "{{baseUrl}}/api/goods/cart/myOrder?orderStatus=Shipped&searchValues=qui sunt&pageNumber=-69839832&pageSize=-69839832",
+													"raw": "{{baseUrl}}/api/goods/cart/myOrder?orderStatus=Shipped&searchValues=qui sunt&pageNumber=1&pageSize=10",
 													"host": [
 														"{{baseUrl}}"
 													],
@@ -37253,12 +37268,12 @@
 														},
 														{
 															"key": "pageNumber",
-															"value": "-69839832",
+															"value": "1",
 															"description": "(Required) "
 														},
 														{
 															"key": "pageSize",
-															"value": "-69839832",
+															"value": "10",
 															"description": "(Required) "
 														}
 													]
