@@ -37948,8 +37948,8 @@
 															"type": "text"
 														},
 														{
-															"key": "companyId",
-															"value": "",
+															"key": "companyId ",
+															"value": "{{companyId}}",
 															"type": "text"
 														},
 														{
@@ -37960,7 +37960,7 @@
 														{
 															"description": " (This can only be one of Online,Offline)",
 															"key": "paymentMethod",
-															"value": "Online",
+															"value": "Offline",
 															"type": "text"
 														},
 														{
