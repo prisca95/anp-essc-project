@@ -36092,6 +36092,27 @@
 							"item": [
 								{
 									"name": "Anp Goods Services Features Create Get All Products Endpoint",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "36e3e94d-7e41-4cfd-8b35-63322ad25ab4",
+												"exec": [
+													"pm.collectionVariables.set(\"productId\", pm.response.json().data[0].productId);\r",
+													"pm.collectionVariables.set(\"productId2\", pm.response.json().data[1].productId);\r",
+													"\r",
+													"pm.collectionVariables.set(\"priceId\", pm.response.json().data[0].price);\r",
+													"pm.collectionVariables.set(\"priceId2\", pm.response.json().data[0].price);\r",
+													"\r",
+													"pm.test(\"Status code is 200\", function () {\r",
+													"    pm.response.to.have.status(200);\r",
+													"});"
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
 									"id": "64d8da12-4908-48b1-b6d0-7d82970552e3",
 									"protocolProfileBehavior": {
 										"disableBodyPruning": true
@@ -36167,7 +36188,7 @@
 												},
 												{
 													"key": "productName",
-													"value": "qui sunt",
+													"value": "",
 													"disabled": true
 												},
 												{
@@ -74627,6 +74648,18 @@
 		},
 		{
 			"key": "variable_key",
+			"value": ""
+		},
+		{
+			"key": "productId2",
+			"value": ""
+		},
+		{
+			"key": "priceId",
+			"value": ""
+		},
+		{
+			"key": "priceId2",
 			"value": ""
 		}
 	]
