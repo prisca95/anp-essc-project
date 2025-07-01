@@ -37604,6 +37604,319 @@
 							"name": "order",
 							"item": [
 								{
+									"name": "shipping",
+									"item": [
+										{
+											"name": "Anp Goods Services Features Order Create Shipping Address Endpoint",
+											"id": "416085bb-1051-4e63-9ceb-d32e5c387b87",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": {
+														"token": "{{bearerToken}}"
+													}
+												},
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"contactEmail\": \"{{contactEmail\",\n  \"firstName\": \"{{fullName}}\",\n  \"lastName\": \"{{fullName}}\",\n  \"phoneNumber\": \"6905433655\",\n  \"country\": \"Timor Leste\",\n  \"addressLine1\": \"elit proident aliquip\",\n  \"addressLine2\": \"aliquip in dolor incididunt\",\n  \"region\": \"consectetur fugiat\",\n  \"city\": \"sint ad commodo occaecat sed\",\n  \"town\": \"reprehenderit occaecat\",\n  \"canReuse\": true,\n  \"companyId\": \"{{companyId}}\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl}}/api/goods/order/shipping"
+											},
+											"response": [
+												{
+													"id": "fe3d1886-1635-43f9-af9d-122f294cfcb8",
+													"name": "Success",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"contactEmail\": \"voluptate enim officia\",\n  \"firstName\": \"fugia\",\n  \"lastName\": \"adipisicing sit anim reprehenderit\",\n  \"phoneNumber\": \"Lorem dolor\",\n  \"country\": \"dolor\",\n  \"addressLine1\": \"elit proident aliquip\",\n  \"addressLine2\": \"aliquip in dolor incididunt\",\n  \"region\": \"consectetur fugiat\",\n  \"city\": \"sint ad commodo occaecat sed\",\n  \"town\": \"reprehenderit occaecat\",\n  \"canReuse\": false,\n  \"companyId\": \"sit laboris cillum\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl}}/api/goods/order/shipping"
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												},
+												{
+													"id": "ee09a3de-7158-4d01-8e26-047b819d9a57",
+													"name": "Unauthorized",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"contactEmail\": \"voluptate enim officia\",\n  \"firstName\": \"fugia\",\n  \"lastName\": \"adipisicing sit anim reprehenderit\",\n  \"phoneNumber\": \"Lorem dolor\",\n  \"country\": \"dolor\",\n  \"addressLine1\": \"elit proident aliquip\",\n  \"addressLine2\": \"aliquip in dolor incididunt\",\n  \"region\": \"consectetur fugiat\",\n  \"city\": \"sint ad commodo occaecat sed\",\n  \"town\": \"reprehenderit occaecat\",\n  \"canReuse\": false,\n  \"companyId\": \"sit laboris cillum\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl}}/api/goods/order/shipping"
+													},
+													"status": "Unauthorized",
+													"code": 401,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												},
+												{
+													"id": "3510b0de-f082-4f92-9621-ad0ff8c80a05",
+													"name": "Forbidden",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"contactEmail\": \"voluptate enim officia\",\n  \"firstName\": \"fugia\",\n  \"lastName\": \"adipisicing sit anim reprehenderit\",\n  \"phoneNumber\": \"Lorem dolor\",\n  \"country\": \"dolor\",\n  \"addressLine1\": \"elit proident aliquip\",\n  \"addressLine2\": \"aliquip in dolor incididunt\",\n  \"region\": \"consectetur fugiat\",\n  \"city\": \"sint ad commodo occaecat sed\",\n  \"town\": \"reprehenderit occaecat\",\n  \"canReuse\": false,\n  \"companyId\": \"sit laboris cillum\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl}}/api/goods/order/shipping"
+													},
+													"status": "Forbidden",
+													"code": 403,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												}
+											]
+										}
+									],
+									"id": "6a365a4b-ff9f-417c-9be4-99556376ae6d"
+								},
+								{
+									"name": "shippingaddress",
+									"item": [
+										{
+											"name": "Anp Goods Services Features Order Get Shipping Address Endpoint",
+											"id": "1b51aba4-c13f-4664-bb3b-9274be238eb2",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": {
+														"token": "{{bearerToken}}"
+													}
+												},
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/goods/order/shippingaddress?supplierId=sint aliquip Excepteur magna eiusmod",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"goods",
+														"order",
+														"shippingaddress"
+													],
+													"query": [
+														{
+															"key": "supplierId",
+															"value": "sint aliquip Excepteur magna eiusmod",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"response": [
+												{
+													"id": "6d64e328-2c2b-4c0a-a8d7-b171dd705667",
+													"name": "Success",
+													"originalRequest": {
+														"method": "GET",
+														"header": [
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/goods/order/shippingaddress?supplierId=sint aliquip Excepteur magna eiusmod",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"goods",
+																"order",
+																"shippingaddress"
+															],
+															"query": [
+																{
+																	"description": "(Required) ",
+																	"key": "supplierId",
+																	"value": "sint aliquip Excepteur magna eiusmod"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												},
+												{
+													"id": "fcba1adb-3e4b-4068-8077-2350cbfbea3b",
+													"name": "Unauthorized",
+													"originalRequest": {
+														"method": "GET",
+														"header": [
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/goods/order/shippingaddress?supplierId=sint aliquip Excepteur magna eiusmod",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"goods",
+																"order",
+																"shippingaddress"
+															],
+															"query": [
+																{
+																	"description": "(Required) ",
+																	"key": "supplierId",
+																	"value": "sint aliquip Excepteur magna eiusmod"
+																}
+															]
+														}
+													},
+													"status": "Unauthorized",
+													"code": 401,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												},
+												{
+													"id": "c719c7e4-8781-4c42-994f-7f3e011e4355",
+													"name": "Forbidden",
+													"originalRequest": {
+														"method": "GET",
+														"header": [
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/goods/order/shippingaddress?supplierId=sint aliquip Excepteur magna eiusmod",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"goods",
+																"order",
+																"shippingaddress"
+															],
+															"query": [
+																{
+																	"description": "(Required) ",
+																	"key": "supplierId",
+																	"value": "sint aliquip Excepteur magna eiusmod"
+																}
+															]
+														}
+													},
+													"status": "Forbidden",
+													"code": 403,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												}
+											]
+										}
+									],
+									"id": "169e9a2f-e2ca-40c1-b022-da064e3855f2"
+								},
+								{
 									"name": "checkout",
 									"item": [
 										{
@@ -37835,155 +38148,6 @@
 										}
 									],
 									"id": "fda3247a-f46b-4ae8-a6f2-e524ad47ae7d"
-								},
-								{
-									"name": "shipping",
-									"item": [
-										{
-											"name": "Anp Goods Services Features Order Create Shipping Address Endpoint",
-											"id": "416085bb-1051-4e63-9ceb-d32e5c387b87",
-											"protocolProfileBehavior": {
-												"disableBodyPruning": true
-											},
-											"request": {
-												"auth": {
-													"type": "bearer",
-													"bearer": {
-														"token": "{{bearerToken}}"
-													}
-												},
-												"method": "POST",
-												"header": [
-													{
-														"key": "Content-Type",
-														"value": "application/json"
-													}
-												],
-												"body": {
-													"mode": "raw",
-													"raw": "{\n  \"contactEmail\": \"voluptate enim officia\",\n  \"firstName\": \"fugia\",\n  \"lastName\": \"adipisicing sit anim reprehenderit\",\n  \"phoneNumber\": \"Lorem dolor\",\n  \"country\": \"dolor\",\n  \"addressLine1\": \"elit proident aliquip\",\n  \"addressLine2\": \"aliquip in dolor incididunt\",\n  \"region\": \"consectetur fugiat\",\n  \"city\": \"sint ad commodo occaecat sed\",\n  \"town\": \"reprehenderit occaecat\",\n  \"canReuse\": false,\n  \"companyId\": \"sit laboris cillum\"\n}",
-													"options": {
-														"raw": {
-															"headerFamily": "json",
-															"language": "json"
-														}
-													}
-												},
-												"url": "{{baseUrl}}/api/goods/order/shipping"
-											},
-											"response": [
-												{
-													"id": "fe3d1886-1635-43f9-af9d-122f294cfcb8",
-													"name": "Success",
-													"originalRequest": {
-														"method": "POST",
-														"header": [
-															{
-																"key": "Content-Type",
-																"value": "application/json"
-															},
-															{
-																"description": "Added as a part of security scheme: bearer",
-																"key": "Authorization",
-																"value": "Bearer <token>"
-															}
-														],
-														"body": {
-															"mode": "raw",
-															"raw": "{\n  \"contactEmail\": \"voluptate enim officia\",\n  \"firstName\": \"fugia\",\n  \"lastName\": \"adipisicing sit anim reprehenderit\",\n  \"phoneNumber\": \"Lorem dolor\",\n  \"country\": \"dolor\",\n  \"addressLine1\": \"elit proident aliquip\",\n  \"addressLine2\": \"aliquip in dolor incididunt\",\n  \"region\": \"consectetur fugiat\",\n  \"city\": \"sint ad commodo occaecat sed\",\n  \"town\": \"reprehenderit occaecat\",\n  \"canReuse\": false,\n  \"companyId\": \"sit laboris cillum\"\n}",
-															"options": {
-																"raw": {
-																	"headerFamily": "json",
-																	"language": "json"
-																}
-															}
-														},
-														"url": "{{baseUrl}}/api/goods/order/shipping"
-													},
-													"status": "OK",
-													"code": 200,
-													"_postman_previewlanguage": "text",
-													"header": [],
-													"cookie": [],
-													"responseTime": null,
-													"body": ""
-												},
-												{
-													"id": "ee09a3de-7158-4d01-8e26-047b819d9a57",
-													"name": "Unauthorized",
-													"originalRequest": {
-														"method": "POST",
-														"header": [
-															{
-																"key": "Content-Type",
-																"value": "application/json"
-															},
-															{
-																"description": "Added as a part of security scheme: bearer",
-																"key": "Authorization",
-																"value": "Bearer <token>"
-															}
-														],
-														"body": {
-															"mode": "raw",
-															"raw": "{\n  \"contactEmail\": \"voluptate enim officia\",\n  \"firstName\": \"fugia\",\n  \"lastName\": \"adipisicing sit anim reprehenderit\",\n  \"phoneNumber\": \"Lorem dolor\",\n  \"country\": \"dolor\",\n  \"addressLine1\": \"elit proident aliquip\",\n  \"addressLine2\": \"aliquip in dolor incididunt\",\n  \"region\": \"consectetur fugiat\",\n  \"city\": \"sint ad commodo occaecat sed\",\n  \"town\": \"reprehenderit occaecat\",\n  \"canReuse\": false,\n  \"companyId\": \"sit laboris cillum\"\n}",
-															"options": {
-																"raw": {
-																	"headerFamily": "json",
-																	"language": "json"
-																}
-															}
-														},
-														"url": "{{baseUrl}}/api/goods/order/shipping"
-													},
-													"status": "Unauthorized",
-													"code": 401,
-													"_postman_previewlanguage": "text",
-													"header": [],
-													"cookie": [],
-													"responseTime": null,
-													"body": ""
-												},
-												{
-													"id": "3510b0de-f082-4f92-9621-ad0ff8c80a05",
-													"name": "Forbidden",
-													"originalRequest": {
-														"method": "POST",
-														"header": [
-															{
-																"key": "Content-Type",
-																"value": "application/json"
-															},
-															{
-																"description": "Added as a part of security scheme: bearer",
-																"key": "Authorization",
-																"value": "Bearer <token>"
-															}
-														],
-														"body": {
-															"mode": "raw",
-															"raw": "{\n  \"contactEmail\": \"voluptate enim officia\",\n  \"firstName\": \"fugia\",\n  \"lastName\": \"adipisicing sit anim reprehenderit\",\n  \"phoneNumber\": \"Lorem dolor\",\n  \"country\": \"dolor\",\n  \"addressLine1\": \"elit proident aliquip\",\n  \"addressLine2\": \"aliquip in dolor incididunt\",\n  \"region\": \"consectetur fugiat\",\n  \"city\": \"sint ad commodo occaecat sed\",\n  \"town\": \"reprehenderit occaecat\",\n  \"canReuse\": false,\n  \"companyId\": \"sit laboris cillum\"\n}",
-															"options": {
-																"raw": {
-																	"headerFamily": "json",
-																	"language": "json"
-																}
-															}
-														},
-														"url": "{{baseUrl}}/api/goods/order/shipping"
-													},
-													"status": "Forbidden",
-													"code": 403,
-													"_postman_previewlanguage": "text",
-													"header": [],
-													"cookie": [],
-													"responseTime": null,
-													"body": ""
-												}
-											]
-										}
-									],
-									"id": "6a365a4b-ff9f-417c-9be4-99556376ae6d"
 								},
 								{
 									"name": "transaction",
@@ -39092,170 +39256,6 @@
 										}
 									],
 									"id": "82965cf6-e7da-40e2-b8d4-1b223dc65fc1"
-								},
-								{
-									"name": "shippingaddress",
-									"item": [
-										{
-											"name": "Anp Goods Services Features Order Get Shipping Address Endpoint",
-											"id": "1b51aba4-c13f-4664-bb3b-9274be238eb2",
-											"protocolProfileBehavior": {
-												"disableBodyPruning": true
-											},
-											"request": {
-												"auth": {
-													"type": "bearer",
-													"bearer": {
-														"token": "{{bearerToken}}"
-													}
-												},
-												"method": "GET",
-												"header": [],
-												"url": {
-													"raw": "{{baseUrl}}/api/goods/order/shippingaddress?supplierId=sint aliquip Excepteur magna eiusmod",
-													"host": [
-														"{{baseUrl}}"
-													],
-													"path": [
-														"api",
-														"goods",
-														"order",
-														"shippingaddress"
-													],
-													"query": [
-														{
-															"key": "supplierId",
-															"value": "sint aliquip Excepteur magna eiusmod",
-															"description": "(Required) "
-														}
-													]
-												}
-											},
-											"response": [
-												{
-													"id": "6d64e328-2c2b-4c0a-a8d7-b171dd705667",
-													"name": "Success",
-													"originalRequest": {
-														"method": "GET",
-														"header": [
-															{
-																"description": "Added as a part of security scheme: bearer",
-																"key": "Authorization",
-																"value": "Bearer <token>"
-															}
-														],
-														"url": {
-															"raw": "{{baseUrl}}/api/goods/order/shippingaddress?supplierId=sint aliquip Excepteur magna eiusmod",
-															"host": [
-																"{{baseUrl}}"
-															],
-															"path": [
-																"api",
-																"goods",
-																"order",
-																"shippingaddress"
-															],
-															"query": [
-																{
-																	"description": "(Required) ",
-																	"key": "supplierId",
-																	"value": "sint aliquip Excepteur magna eiusmod"
-																}
-															]
-														}
-													},
-													"status": "OK",
-													"code": 200,
-													"_postman_previewlanguage": "text",
-													"header": [],
-													"cookie": [],
-													"responseTime": null,
-													"body": ""
-												},
-												{
-													"id": "fcba1adb-3e4b-4068-8077-2350cbfbea3b",
-													"name": "Unauthorized",
-													"originalRequest": {
-														"method": "GET",
-														"header": [
-															{
-																"description": "Added as a part of security scheme: bearer",
-																"key": "Authorization",
-																"value": "Bearer <token>"
-															}
-														],
-														"url": {
-															"raw": "{{baseUrl}}/api/goods/order/shippingaddress?supplierId=sint aliquip Excepteur magna eiusmod",
-															"host": [
-																"{{baseUrl}}"
-															],
-															"path": [
-																"api",
-																"goods",
-																"order",
-																"shippingaddress"
-															],
-															"query": [
-																{
-																	"description": "(Required) ",
-																	"key": "supplierId",
-																	"value": "sint aliquip Excepteur magna eiusmod"
-																}
-															]
-														}
-													},
-													"status": "Unauthorized",
-													"code": 401,
-													"_postman_previewlanguage": "text",
-													"header": [],
-													"cookie": [],
-													"responseTime": null,
-													"body": ""
-												},
-												{
-													"id": "c719c7e4-8781-4c42-994f-7f3e011e4355",
-													"name": "Forbidden",
-													"originalRequest": {
-														"method": "GET",
-														"header": [
-															{
-																"description": "Added as a part of security scheme: bearer",
-																"key": "Authorization",
-																"value": "Bearer <token>"
-															}
-														],
-														"url": {
-															"raw": "{{baseUrl}}/api/goods/order/shippingaddress?supplierId=sint aliquip Excepteur magna eiusmod",
-															"host": [
-																"{{baseUrl}}"
-															],
-															"path": [
-																"api",
-																"goods",
-																"order",
-																"shippingaddress"
-															],
-															"query": [
-																{
-																	"description": "(Required) ",
-																	"key": "supplierId",
-																	"value": "sint aliquip Excepteur magna eiusmod"
-																}
-															]
-														}
-													},
-													"status": "Forbidden",
-													"code": 403,
-													"_postman_previewlanguage": "text",
-													"header": [],
-													"cookie": [],
-													"responseTime": null,
-													"body": ""
-												}
-											]
-										}
-									],
-									"id": "169e9a2f-e2ca-40c1-b022-da064e3855f2"
 								},
 								{
 									"name": "retry-payment",
