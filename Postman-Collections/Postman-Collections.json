@@ -36652,7 +36652,7 @@
 													"variable": [
 														{
 															"key": "productId",
-															"value": "d9b172cc-ed3d-40d1-50bf-08ddb82745de",
+															"value": "{{productId}}",
 															"description": "(Required) "
 														}
 													]
