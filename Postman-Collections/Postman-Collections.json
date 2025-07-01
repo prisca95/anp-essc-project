@@ -1127,6 +1127,10 @@
 													"pm.collectionVariables.set(\"bearerToken\", pm.response.json().data.accessToken);\r",
 													"pm.collectionVariables.set(\"refreshToken\", pm.response.json().data.refreshToken);\r",
 													"pm.collectionVariables.set(\"userId\", pm.response.json().data.userId);\r",
+													"pm.collectionVariables.set(\"contactEmail\", pm.response.json().data.email);\r",
+													"pm.collectionVariables.set(\"fullName\", pm.response.json().data.fullName);\r",
+													"\r",
+													"\r",
 													"//pm.collectionVariables.set(\"supplierId\", pm.response.json().data.supplierId);\r",
 													"//supplier variable is created in the create supplier endpoint\r",
 													"\r",
@@ -1170,7 +1174,7 @@
 										],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n    //\"email\": \"{{email}}\",\n  \"userName\":  \"bahu@yopmail.com\",//\"milo@yopmail.com\",//\"yinka@yopmail.com\",\n  // \"userName\":\"cesaltino.babo@anp.tl\", //initiator\n //  \"userName\": \"abel.saldanha@anp.tl\", //1st approver\n  // \"userName\": \"jaime.ximenes@anp.tl\", //2nd approver\n  \"password\": \"Password12@@\"\n}",
+											"raw": "{\n    //\"email\": \"{{email}}\",\n  \"userName\":  \"belo_@yopmail.com\",//\"milo@yopmail.com\",//\"yinka@yopmail.com\",\n  // \"userName\":\"cesaltino.babo@anp.tl\", //initiator\n //  \"userName\": \"abel.saldanha@anp.tl\", //1st approver\n  // \"userName\": \"jaime.ximenes@anp.tl\", //2nd approver\n  \"password\": \"Password12@@\"\n}",
 											"options": {
 												"raw": {
 													"headerFamily": "json",
@@ -74675,6 +74679,10 @@
 		},
 		{
 			"key": "priceId2",
+			"value": ""
+		},
+		{
+			"key": "fullName",
 			"value": ""
 		}
 	]
