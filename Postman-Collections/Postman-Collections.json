@@ -36844,7 +36844,7 @@
 												],
 												"body": {
 													"mode": "raw",
-													"raw": "{\n  \"customerId\": \"occaecat deserunt\",\n  \"itemsList\": [\n    {\n      \"itemId\": \"non et anim sit\",\n      \"quantity\": 62076899,\n      \"cost\": 38457093.939313054,\n      \"productId\": \"aliquip anim\"\n    },\n    {\n      \"itemId\": \"amet ex id non nostrud\",\n      \"quantity\": 1780284,\n      \"cost\": 55600899.58293083,\n      \"productId\": \"fugiat ut ipsum sit\"\n    }\n  ],\n  \"orderId\": \"aliquip mollit minim ea voluptate\"\n}",
+													"raw": "{\n  //\"customerId\": \"{{supplierId}}\",\n  \"itemsList\": [\n    {\n    // \"itemId\": \"900000\",\n      \"quantity\": 1,\n      \"cost\": {{priceId}},\n      \"productId\": \"{{productId}}\"\n    },\n    {\n     // \"itemId\": \"amet ex id non nostrud\",\n      \"quantity\": 1,\n      \"cost\": {{priceId2}},\n      \"productId\": \"{{productId2}}\"\n    }\n  ]\n//  \"orderId\": \"aliquip mollit minim ea voluptate\"\n}",
 													"options": {
 														"raw": {
 															"headerFamily": "json",
