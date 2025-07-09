@@ -36844,7 +36844,7 @@
 												],
 												"body": {
 													"mode": "raw",
-													"raw": "{\n  //\"customerId\": \"{{supplierId}}\",\n  \"itemsList\": [\n    {\n    // \"itemId\": \"900000\",\n      \"quantity\": 1,\n      \"cost\": {{priceId}},\n      \"productId\": \"{{productId}}\"\n    },\n    {\n     // \"itemId\": \"amet ex id non nostrud\",\n      \"quantity\": 1,\n      \"cost\": {{priceId2}},\n      \"productId\": \"{{productId2}}\"\n    }\n  ]\n//  \"orderId\": \"aliquip mollit minim ea voluptate\"\n}",
+													"raw": "{\n  //\"customerId\": \"{{supplierId}}\",\n  \"itemsList\": [\n    {\n    // \"itemId\": \"900000\",\n      \"quantity\": 1,\n      \"cost\": {{priceId}},\n      \"productId\": \"{{productId}}\"\n    }\n    // {\n    //  // \"itemId\": \"amet ex id non nostrud\",\n    //   \"quantity\": 1,\n    //   \"cost\": {{priceId2}},\n    //   \"productId\": \"{{productId2}}\"\n    // }\n  ]\n//  \"orderId\": \"aliquip mollit minim ea voluptate\"\n}",
 													"options": {
 														"raw": {
 															"headerFamily": "json",
