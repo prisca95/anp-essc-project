@@ -37233,222 +37233,6 @@
 									"id": "aa29cb12-d3e7-4ea0-a191-30dc228b6606"
 								},
 								{
-									"name": "myOrder",
-									"item": [
-										{
-											"name": "Anp Goods Services Features Cart Get My Order Endpoint",
-											"id": "6e7da53d-7f2e-46f3-9378-506880a71de5",
-											"protocolProfileBehavior": {
-												"disableBodyPruning": true
-											},
-											"request": {
-												"auth": {
-													"type": "bearer",
-													"bearer": {
-														"token": "{{bearerToken}}"
-													}
-												},
-												"method": "GET",
-												"header": [],
-												"url": {
-													"raw": "{{baseUrl}}/api/goods/cart/myOrder?orderStatus=Shipped&searchValues=qui sunt&pageNumber=1&pageSize=10",
-													"host": [
-														"{{baseUrl}}"
-													],
-													"path": [
-														"api",
-														"goods",
-														"cart",
-														"myOrder"
-													],
-													"query": [
-														{
-															"key": "orderStatus",
-															"value": "Shipped"
-														},
-														{
-															"key": "searchValues",
-															"value": "qui sunt"
-														},
-														{
-															"key": "pageNumber",
-															"value": "1",
-															"description": "(Required) "
-														},
-														{
-															"key": "pageSize",
-															"value": "10",
-															"description": "(Required) "
-														}
-													]
-												}
-											},
-											"response": [
-												{
-													"id": "eb6afd8c-c78d-4295-8719-369117a7633d",
-													"name": "Success",
-													"originalRequest": {
-														"method": "GET",
-														"header": [
-															{
-																"description": "Added as a part of security scheme: bearer",
-																"key": "Authorization",
-																"value": "Bearer <token>"
-															}
-														],
-														"url": {
-															"raw": "{{baseUrl}}/api/goods/cart/myOrder?orderStatus=Shipped&searchValues=qui sunt&pageNumber=-69839832&pageSize=-69839832",
-															"host": [
-																"{{baseUrl}}"
-															],
-															"path": [
-																"api",
-																"goods",
-																"cart",
-																"myOrder"
-															],
-															"query": [
-																{
-																	"key": "orderStatus",
-																	"value": "Shipped"
-																},
-																{
-																	"key": "searchValues",
-																	"value": "qui sunt"
-																},
-																{
-																	"description": "(Required) ",
-																	"key": "pageNumber",
-																	"value": "-69839832"
-																},
-																{
-																	"description": "(Required) ",
-																	"key": "pageSize",
-																	"value": "-69839832"
-																}
-															]
-														}
-													},
-													"status": "OK",
-													"code": 200,
-													"_postman_previewlanguage": "text",
-													"header": [],
-													"cookie": [],
-													"responseTime": null,
-													"body": ""
-												},
-												{
-													"id": "aa80f2ee-169a-4894-a19a-06f8dba1365a",
-													"name": "Unauthorized",
-													"originalRequest": {
-														"method": "GET",
-														"header": [
-															{
-																"description": "Added as a part of security scheme: bearer",
-																"key": "Authorization",
-																"value": "Bearer <token>"
-															}
-														],
-														"url": {
-															"raw": "{{baseUrl}}/api/goods/cart/myOrder?orderStatus=Shipped&searchValues=qui sunt&pageNumber=-69839832&pageSize=-69839832",
-															"host": [
-																"{{baseUrl}}"
-															],
-															"path": [
-																"api",
-																"goods",
-																"cart",
-																"myOrder"
-															],
-															"query": [
-																{
-																	"key": "orderStatus",
-																	"value": "Shipped"
-																},
-																{
-																	"key": "searchValues",
-																	"value": "qui sunt"
-																},
-																{
-																	"description": "(Required) ",
-																	"key": "pageNumber",
-																	"value": "-69839832"
-																},
-																{
-																	"description": "(Required) ",
-																	"key": "pageSize",
-																	"value": "-69839832"
-																}
-															]
-														}
-													},
-													"status": "Unauthorized",
-													"code": 401,
-													"_postman_previewlanguage": "text",
-													"header": [],
-													"cookie": [],
-													"responseTime": null,
-													"body": ""
-												},
-												{
-													"id": "5d875a43-7219-4007-8969-68dbe5285fd6",
-													"name": "Forbidden",
-													"originalRequest": {
-														"method": "GET",
-														"header": [
-															{
-																"description": "Added as a part of security scheme: bearer",
-																"key": "Authorization",
-																"value": "Bearer <token>"
-															}
-														],
-														"url": {
-															"raw": "{{baseUrl}}/api/goods/cart/myOrder?orderStatus=Shipped&searchValues=qui sunt&pageNumber=-69839832&pageSize=-69839832",
-															"host": [
-																"{{baseUrl}}"
-															],
-															"path": [
-																"api",
-																"goods",
-																"cart",
-																"myOrder"
-															],
-															"query": [
-																{
-																	"key": "orderStatus",
-																	"value": "Shipped"
-																},
-																{
-																	"key": "searchValues",
-																	"value": "qui sunt"
-																},
-																{
-																	"description": "(Required) ",
-																	"key": "pageNumber",
-																	"value": "-69839832"
-																},
-																{
-																	"description": "(Required) ",
-																	"key": "pageSize",
-																	"value": "-69839832"
-																}
-															]
-														}
-													},
-													"status": "Forbidden",
-													"code": 403,
-													"_postman_previewlanguage": "text",
-													"header": [],
-													"cookie": [],
-													"responseTime": null,
-													"body": ""
-												}
-											]
-										}
-									],
-									"id": "375bf704-7500-488f-9024-a77ba91086d9"
-								},
-								{
 									"name": "remove",
 									"item": [
 										{
@@ -38148,6 +37932,224 @@
 										}
 									],
 									"id": "fda3247a-f46b-4ae8-a6f2-e524ad47ae7d"
+								},
+								{
+									"name": "myOrder",
+									"item": [
+										{
+											"name": "Anp Goods Services Features Cart Get My Order Endpoint",
+											"id": "6e7da53d-7f2e-46f3-9378-506880a71de5",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": {
+														"token": "{{bearerToken}}"
+													}
+												},
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/goods/cart/myOrder?pageNumber=1&pageSize=10",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"goods",
+														"cart",
+														"myOrder"
+													],
+													"query": [
+														{
+															"key": "orderStatus",
+															"value": "Shipped",
+															"disabled": true
+														},
+														{
+															"key": "searchValues",
+															"value": "qui sunt",
+															"disabled": true
+														},
+														{
+															"key": "pageNumber",
+															"value": "1",
+															"description": "(Required) "
+														},
+														{
+															"key": "pageSize",
+															"value": "10",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"response": [
+												{
+													"id": "eb6afd8c-c78d-4295-8719-369117a7633d",
+													"name": "Success",
+													"originalRequest": {
+														"method": "GET",
+														"header": [
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/goods/cart/myOrder?orderStatus=Shipped&searchValues=qui sunt&pageNumber=-69839832&pageSize=-69839832",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"goods",
+																"cart",
+																"myOrder"
+															],
+															"query": [
+																{
+																	"key": "orderStatus",
+																	"value": "Shipped"
+																},
+																{
+																	"key": "searchValues",
+																	"value": "qui sunt"
+																},
+																{
+																	"description": "(Required) ",
+																	"key": "pageNumber",
+																	"value": "-69839832"
+																},
+																{
+																	"description": "(Required) ",
+																	"key": "pageSize",
+																	"value": "-69839832"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												},
+												{
+													"id": "aa80f2ee-169a-4894-a19a-06f8dba1365a",
+													"name": "Unauthorized",
+													"originalRequest": {
+														"method": "GET",
+														"header": [
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/goods/cart/myOrder?orderStatus=Shipped&searchValues=qui sunt&pageNumber=-69839832&pageSize=-69839832",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"goods",
+																"cart",
+																"myOrder"
+															],
+															"query": [
+																{
+																	"key": "orderStatus",
+																	"value": "Shipped"
+																},
+																{
+																	"key": "searchValues",
+																	"value": "qui sunt"
+																},
+																{
+																	"description": "(Required) ",
+																	"key": "pageNumber",
+																	"value": "-69839832"
+																},
+																{
+																	"description": "(Required) ",
+																	"key": "pageSize",
+																	"value": "-69839832"
+																}
+															]
+														}
+													},
+													"status": "Unauthorized",
+													"code": 401,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												},
+												{
+													"id": "5d875a43-7219-4007-8969-68dbe5285fd6",
+													"name": "Forbidden",
+													"originalRequest": {
+														"method": "GET",
+														"header": [
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/goods/cart/myOrder?orderStatus=Shipped&searchValues=qui sunt&pageNumber=-69839832&pageSize=-69839832",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"goods",
+																"cart",
+																"myOrder"
+															],
+															"query": [
+																{
+																	"key": "orderStatus",
+																	"value": "Shipped"
+																},
+																{
+																	"key": "searchValues",
+																	"value": "qui sunt"
+																},
+																{
+																	"description": "(Required) ",
+																	"key": "pageNumber",
+																	"value": "-69839832"
+																},
+																{
+																	"description": "(Required) ",
+																	"key": "pageSize",
+																	"value": "-69839832"
+																}
+															]
+														}
+													},
+													"status": "Forbidden",
+													"code": 403,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												}
+											]
+										}
+									],
+									"id": "375bf704-7500-488f-9024-a77ba91086d9"
 								},
 								{
 									"name": "transaction",
