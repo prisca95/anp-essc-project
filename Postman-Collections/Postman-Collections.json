@@ -28761,6 +28761,148 @@
 											"body": ""
 										}
 									]
+								},
+								{
+									"name": "Success - Get A Supplier Copy 2",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "06130ddd-a937-4a0d-87c4-1f6f5e566239",
+												"exec": [
+													"pm.collectionVariables.set(\"supplierUserId\", pm.response.json().supplierUserId);\r",
+													"// pm.collectionVariables.set(\"tagid1\", pm.response.json().tags[0].tagId);\r",
+													"// pm.collectionVariables.set(\"tagid2\", pm.response.json().tags[1].tagId);\r",
+													"\r",
+													"pm.test(\"Status code is 200\", function () {\r",
+													"    pm.response.to.have.status(200);\r",
+													"});\r",
+													"\r",
+													"var responseJSON = pm.response.json();\r",
+													"\r",
+													"pm.test(\"Verify that supplier details are returned\", function () {\r",
+													"    pm.expect(responseJSON.companyId).to.be.a(\"string\").and.not.empty;\r",
+													"    pm.expect(responseJSON.businessName).to.be.a(\"string\").and.not.empty;\r",
+													"});\r",
+													""
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
+									"id": "55480ba5-dcdd-4b3b-89fb-80c8a84dddc0",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": {
+												"token": "{{bearerToken}}"
+											}
+										},
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/supplier/suppliers?supplierId={{supplierId}}",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"supplier",
+												"suppliers"
+											],
+											"query": [
+												{
+													"key": "supplierId",
+													"value": "{{supplierId}}",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"id": "a454e820-6927-4b4c-aaba-e5e885b56e62",
+											"name": "Success",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"description": "Added as a part of security scheme: bearer",
+														"key": "Authorization",
+														"value": "Bearer <token>"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/supplier/suppliers?supplierId=<string>",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"supplier",
+														"suppliers"
+													],
+													"query": [
+														{
+															"description": "(Required) ",
+															"key": "supplierId",
+															"value": "<string>"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"responseTime": null,
+											"body": ""
+										},
+										{
+											"id": "1b074b92-cb1d-4d42-bfca-dfae4966c0fa",
+											"name": "Unauthorized",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"description": "Added as a part of security scheme: bearer",
+														"key": "Authorization",
+														"value": "Bearer <token>"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/supplier/suppliers?supplierId=<string>",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"supplier",
+														"suppliers"
+													],
+													"query": [
+														{
+															"description": "(Required) ",
+															"key": "supplierId",
+															"value": "<string>"
+														}
+													]
+												}
+											},
+											"status": "Unauthorized",
+											"code": 401,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"responseTime": null,
+											"body": ""
+										}
+									]
 								}
 							],
 							"id": "1e8ee631-0129-4a08-8515-ad35a2b7ca73"
@@ -38152,6 +38294,155 @@
 									"id": "375bf704-7500-488f-9024-a77ba91086d9"
 								},
 								{
+									"name": "status",
+									"item": [
+										{
+											"name": "Anp Goods Services Features Order Set Order Status Endpoint",
+											"id": "657fd4bd-f0b5-4f12-b6d9-9a0ad6414c25",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": {
+														"token": "{{bearerToken}}"
+													}
+												},
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"orderId\": \"voluptate in qui ea cillum\",\n  \"orderStatus\": \"Unpaid\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl}}/api/goods/order/status"
+											},
+											"response": [
+												{
+													"id": "8e44f364-2fca-4d83-b09c-5241360d040e",
+													"name": "Success",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"orderId\": \"voluptate in qui ea cillum\",\n  \"orderStatus\": \"Unpaid\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl}}/api/goods/order/status"
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												},
+												{
+													"id": "b4e3bc99-6c8c-4152-8f49-2a2c7b1430d7",
+													"name": "Unauthorized",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"orderId\": \"voluptate in qui ea cillum\",\n  \"orderStatus\": \"Unpaid\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl}}/api/goods/order/status"
+													},
+													"status": "Unauthorized",
+													"code": 401,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												},
+												{
+													"id": "bef3d853-779c-4485-a003-a564f609af60",
+													"name": "Forbidden",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"orderId\": \"voluptate in qui ea cillum\",\n  \"orderStatus\": \"Unpaid\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl}}/api/goods/order/status"
+													},
+													"status": "Forbidden",
+													"code": 403,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												}
+											]
+										}
+									],
+									"id": "9c4843a2-0a94-4ad6-9bfc-44f7213dde58"
+								},
+								{
 									"name": "transaction",
 									"item": [
 										{
@@ -39451,155 +39742,6 @@
 										}
 									],
 									"id": "64a3cb72-5eb9-4771-86f9-7f3df25d7d85"
-								},
-								{
-									"name": "status",
-									"item": [
-										{
-											"name": "Anp Goods Services Features Order Set Order Status Endpoint",
-											"id": "657fd4bd-f0b5-4f12-b6d9-9a0ad6414c25",
-											"protocolProfileBehavior": {
-												"disableBodyPruning": true
-											},
-											"request": {
-												"auth": {
-													"type": "bearer",
-													"bearer": {
-														"token": "{{bearerToken}}"
-													}
-												},
-												"method": "POST",
-												"header": [
-													{
-														"key": "Content-Type",
-														"value": "application/json"
-													}
-												],
-												"body": {
-													"mode": "raw",
-													"raw": "{\n  \"orderId\": \"voluptate in qui ea cillum\",\n  \"orderStatus\": \"Unpaid\"\n}",
-													"options": {
-														"raw": {
-															"headerFamily": "json",
-															"language": "json"
-														}
-													}
-												},
-												"url": "{{baseUrl}}/api/goods/order/status"
-											},
-											"response": [
-												{
-													"id": "8e44f364-2fca-4d83-b09c-5241360d040e",
-													"name": "Success",
-													"originalRequest": {
-														"method": "POST",
-														"header": [
-															{
-																"key": "Content-Type",
-																"value": "application/json"
-															},
-															{
-																"description": "Added as a part of security scheme: bearer",
-																"key": "Authorization",
-																"value": "Bearer <token>"
-															}
-														],
-														"body": {
-															"mode": "raw",
-															"raw": "{\n  \"orderId\": \"voluptate in qui ea cillum\",\n  \"orderStatus\": \"Unpaid\"\n}",
-															"options": {
-																"raw": {
-																	"headerFamily": "json",
-																	"language": "json"
-																}
-															}
-														},
-														"url": "{{baseUrl}}/api/goods/order/status"
-													},
-													"status": "OK",
-													"code": 200,
-													"_postman_previewlanguage": "text",
-													"header": [],
-													"cookie": [],
-													"responseTime": null,
-													"body": ""
-												},
-												{
-													"id": "b4e3bc99-6c8c-4152-8f49-2a2c7b1430d7",
-													"name": "Unauthorized",
-													"originalRequest": {
-														"method": "POST",
-														"header": [
-															{
-																"key": "Content-Type",
-																"value": "application/json"
-															},
-															{
-																"description": "Added as a part of security scheme: bearer",
-																"key": "Authorization",
-																"value": "Bearer <token>"
-															}
-														],
-														"body": {
-															"mode": "raw",
-															"raw": "{\n  \"orderId\": \"voluptate in qui ea cillum\",\n  \"orderStatus\": \"Unpaid\"\n}",
-															"options": {
-																"raw": {
-																	"headerFamily": "json",
-																	"language": "json"
-																}
-															}
-														},
-														"url": "{{baseUrl}}/api/goods/order/status"
-													},
-													"status": "Unauthorized",
-													"code": 401,
-													"_postman_previewlanguage": "text",
-													"header": [],
-													"cookie": [],
-													"responseTime": null,
-													"body": ""
-												},
-												{
-													"id": "bef3d853-779c-4485-a003-a564f609af60",
-													"name": "Forbidden",
-													"originalRequest": {
-														"method": "POST",
-														"header": [
-															{
-																"key": "Content-Type",
-																"value": "application/json"
-															},
-															{
-																"description": "Added as a part of security scheme: bearer",
-																"key": "Authorization",
-																"value": "Bearer <token>"
-															}
-														],
-														"body": {
-															"mode": "raw",
-															"raw": "{\n  \"orderId\": \"voluptate in qui ea cillum\",\n  \"orderStatus\": \"Unpaid\"\n}",
-															"options": {
-																"raw": {
-																	"headerFamily": "json",
-																	"language": "json"
-																}
-															}
-														},
-														"url": "{{baseUrl}}/api/goods/order/status"
-													},
-													"status": "Forbidden",
-													"code": 403,
-													"_postman_previewlanguage": "text",
-													"header": [],
-													"cookie": [],
-													"responseTime": null,
-													"body": ""
-												}
-											]
-										}
-									],
-									"id": "9c4843a2-0a94-4ad6-9bfc-44f7213dde58"
 								}
 							],
 							"id": "3d6b9a6a-60c5-4f83-a6ac-98e07d163602"
